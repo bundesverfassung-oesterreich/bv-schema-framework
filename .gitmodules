@@ -1,0 +1,3 @@
+[submodule "frameworks/ediarum.BASE.edit"]
+	path = frameworks/ediarum.BASE.edit
+	url = https://github.com/ediarum/ediarum.BASE.edit.git
