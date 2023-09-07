@@ -2,7 +2,24 @@
 <project>
     <meta>
         <filters directoryPatterns="" filePatterns="\Qb-vg.xpr\E" positiveFilePatterns="" showHiddenFiles="false"/>
-        <options/>
+        <options>
+            <serialized xml:space="preserve">
+                <serializableOrderedMap>
+                    <entry>
+                        <String>frameworks.directory.url.with.editor.variables</String>
+                        <String>file:/home/zorg/Dokumente/bv/bv-schema-framework/frameworks</String>
+                    </entry>
+                    <entry>
+                        <String>key.editor.document.type.custom.locations.option.pane</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                    <entry>
+                        <String>use.custom.frameworks.directory.url</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                </serializableOrderedMap>
+            </serialized>
+        </options>
     </meta>
     <projectTree name="b-vg.xpr">
         <folder path="data/editions/"/>
