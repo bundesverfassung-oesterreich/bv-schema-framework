@@ -129,12 +129,13 @@
             <div xml:id="metadata_text">
                <head>Metadaten</head>
                <p><hi rend="bold">Metadaten</hi> zu den Dokumenten und ihren Texten stehen im
-                  <gi>teiHeader</gi>, dazu zählen Informationen zu den einzelnen
-                  Dokumenten, zu ihrer Entstehung und Beschaffenheit oder ihrer editorischen Erschließung/Bearbeitung. Eine Vielzahl der im
-                  TEI-Header vermerkten Informationen wird automatisch generiert oder automatisch
-                  anderen Quellen entnommen und ist demnach nicht zu manuellen Bearbeitung
-                  vorgesehen. Die folgenden Erläuterungen beschränken sich demnach auf die
-                  Elemente, die für die manuelle Bearbeitung von Relevanz sind.</p>
+                     <gi>teiHeader</gi>, dazu zählen Informationen zu den einzelnen Dokumenten, zu
+                  ihrer Entstehung und Beschaffenheit oder ihrer editorischen
+                  Erschließung/Bearbeitung. Eine Vielzahl der im TEI-Header vermerkten Informationen
+                  wird automatisch generiert oder automatisch anderen Quellen entnommen und ist
+                  demnach nicht zu manuellen Bearbeitung vorgesehen. Die folgenden Erläuterungen
+                  beschränken sich demnach auf die Elemente, die für die manuelle Bearbeitung von
+                  Relevanz sind.</p>
                <p>Die Struktur des <gi>teiHeader</gi> gestaltet sich wie folgt:</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <teiHeader>
@@ -193,8 +194,8 @@
                            <date when="2023">2023</date>
                            <availability>
                               <licence target="https://creativecommons.org/licenses/by/4.0/">
-                                 <p>The Creative Commons Attribution 4.0 International (CC BY
-                                    4.0) License applies to this text.</p>
+                                 <p>The Creative Commons Attribution 4.0 International (CC BY 4.0)
+                                    License applies to this text.</p>
                                  <p>The CC BY 4.0 License also applies to this TEI XML file.</p>
                               </licence>
                            </availability>
@@ -204,8 +205,8 @@
                         <sourceDesc>
                            <msDesc type="invetory">
                               <msIdentifier>
-                                 <institution key="https://d-nb.info/gnd/37748-X"
-                                    >Österreichisches Staatsarchiv</institution>
+                                 <institution key="https://d-nb.info/gnd/37748-X">Österreichisches
+                                    Staatsarchiv</institution>
                                  <repository key="https://d-nb.info/gnd/1601181-8">Archiv der
                                     Republik (Wien)</repository>
                                  <idno type="archive">AdR, Büro Seitz, Karton 7</idno>
@@ -226,8 +227,8 @@
                                  </handDesc>
                               </physDesc>
                               <history>
-                                 <origin from="1919-05-01" to="1919-11-30">Zwischen Mai und
-                                    November 1919</origin>
+                                 <origin from="1919-05-01" to="1919-11-30">Zwischen Mai und November
+                                    1919</origin>
                               </history>
                            </msDesc>
                         </sourceDesc>
@@ -250,15 +251,14 @@
                <div xml:id="revision">
                   <head>Status des Dokuments, Arbeitsstand</head>
                   <p>Der Status der Bearbeitung des gesamten Dokuments wird in der
-                     <gi>revisionDesc</gi> im Attribut <att>status</att> notiert. Ist das
-                     Dokument noch in Bearbeitung, hat <att>status</att> den Wert
-                     <val>draft</val>. Sind alle Arbeitsschritte für das Dokument
-                     abgeschlossen, hat <att>status</att> den Wert <val>done</val>. Wird der
-                     bearbeitungsstand eines Dokumentes auf <val>done</val> gesetzt, wird es
-                     automatisiert auf der Website publiziert.</p>
-                  <p>Es emfpiehlt sich, erfolgte Arbeitsschritte mittel der
-                     <gi>change</gi>-Elemente zu notieren, um einen Überblick über den
-                     Bearbeitungsstand zu bieten.</p>
+                        <gi>revisionDesc</gi> im Attribut <att>status</att> notiert. Ist das
+                     Dokument noch in Bearbeitung, hat <att>status</att> den Wert <val>draft</val>.
+                     Sind alle Arbeitsschritte für das Dokument abgeschlossen, hat <att>status</att>
+                     den Wert <val>done</val>. Wird der bearbeitungsstand eines Dokumentes auf
+                        <val>done</val> gesetzt, wird es automatisiert auf der Website
+                     publiziert.</p>
+                  <p>Es emfpiehlt sich, erfolgte Arbeitsschritte mittel der <gi>change</gi>-Elemente
+                     zu notieren, um einen Überblick über den Bearbeitungsstand zu bieten.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <revisionDesc status="draft">
                         <change>Strutktur erfasst</change>
@@ -418,18 +418,27 @@
                </div>
                <div>
                   <head>Hervorhebungen</head>
-                  <p>Xml ist nicht dazu bestimmt, typografische Informationen als solche mimetisch zu kodieren. Die semantische Funktion typografischer Eigenschaften sollte jedoch in einigen Fällen kodiert werden.
-                     Hervorhebungen im Kelsen-Text werden mit dem Element <gi>hi</gi> ausgezeichnet. Generell sollten jedoch bsp. Überschriften <hi rend="bold">semantisch</hi> bzw. entsprechend ihrer Funktion als <gi>head</gi> getagt werden. <list>
-                        <item>Sperrungen und/oder Schreibungen mit Versalien wie sie in Typoskripten häufig vorkommen</item>
+                  <p>Xml ist nicht dazu bestimmt, typografische Informationen als solche mimetisch
+                     zu kodieren. Die semantische Funktion typografischer Eigenschaften sollte
+                     jedoch in einigen Fällen kodiert werden. Hervorhebungen im Kelsen-Text werden
+                     mit dem Element <gi>hi</gi> ausgezeichnet. Generell sollten jedoch bsp.
+                     Überschriften <hi rend="bold">semantisch</hi> bzw. entsprechend ihrer Funktion
+                     als <gi>head</gi> getagt werden. <list>
+                        <item>Sperrungen und/oder Schreibungen mit Versalien wie sie in Typoskripten
+                           häufig vorkommen</item>
                         <item>sowie Schreibungen mit Kaptitälchen</item>
                         <item>sowie Unterstreichungen</item>
-                     </list>sollten in der Regel sämtlich mit <gi>hi</gi> ausgezeichnet werden, da sie tatsächlich bloße Hervorhebungen darstellen. Es wäre – wenn nötig – möglich, diese Kodierung durch <att>rend</att>-Attribute weiter zu differenzieren. Das könnte etwa der Fall sein, wenn verschiedene Hervorhebungen verschiedene Funktionen erfüllen.</p>
+                     </list>sollten in der Regel sämtlich mit <gi>hi</gi> ausgezeichnet werden, da
+                     sie tatsächlich bloße Hervorhebungen darstellen. Es wäre – wenn nötig –
+                     möglich, diese Kodierung durch <att>rend</att>-Attribute weiter zu
+                     differenzieren. Das könnte etwa der Fall sein, wenn verschiedene Hervorhebungen
+                     verschiedene Funktionen erfüllen.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
                            <div>
                               <p>[...]<hi>selbstverständlich</hi> und unproblematisch war, daß es
-                                 <hi>einer</hi> besonderen [...]</p>
+                                    <hi>einer</hi> besonderen [...]</p>
                            </div>
                         </body>
                      </text>
@@ -442,7 +451,7 @@
                      markiert. Innerhalb eines Attributs <att>n</att> sind die Seitenzahlen der
                      neuen Seite (pb=pagebegin) als Attributwert hinterlegt, das
                      <att>facs</att>-Attribut verweist auf die zugehörige Abbildung, während
-                     <att>xml:id </att>die zugehörige Id enthält.</p>
+                        <att>xml:id </att>die zugehörige Id enthält.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
@@ -454,20 +463,55 @@
                   </egXML>
                </div>
             </div>
+            <div>
+               <head>Fremdsprachige Textabschnitte</head>
+               <p>Text abweichend von der Hauptsprache wird im Element <gi>foreign</gi> kodiert. Der
+                  Attributwert von <att>xml:lang</att> umfasst dabei den dreibuchstabigen Sprachcode
+                  nach <ref target="https://iso639-3.sil.org">ISO-Norm 639-3</ref></p>
+               <p><gi>foreign</gi> kann überall innerhalb von <gi>text</gi> eingesetzt werden.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <text>
+                     <body>
+                        <div>
+                           <p>
+                              <foreign xml:lang="ISO 639-3 Sprachcode">[Fremdsprachiger
+                                 Textteil]</foreign>
+                           </p>
+                        </div>
+                     </body>
+                  </text>
+               </egXML>
+            </div>
+            <div>
+               <head>Entiäten</head>
+               <p>Die edierten Texte enthalten bzw. referenzieren oder erwähnen Entitäten, die in
+                  verschiedene Klassen eingeteilt werden können. Das Markieren dieser Entitäten
+                  ermöglicht es, sie als solche vom umgegebenden Text zu unterscheiden und
+                  gegebenfalls mit einer Indexansetzung zu verlinken, um so bsp. das Auffinden von
+                  Entitäten – equivalent zur Funktion eines Registers – zu vereinfachen.</p>
+               <p>Es folgt eine Liste der im Text zu referenzierenden Entitäten.</p>
                <div>
-                  <head>Fremdsprachige Textabschnitte</head>
-                  <p>Text abweichend von der Hauptsprache wird im Element <gi>foreign</gi> kodiert.
-                     Der Attributwert von <att>xml:lang</att> umfasst dabei den dreibuchstabigen
-                     Sprachcode nach <ref target="https://iso639-3.sil.org">ISO-Norm 639-3</ref></p>
-                  <p><gi>foreign</gi> kann überall innerhalb von <gi>text</gi> eingesetzt
-                     werden.</p>
+                  <head>Literaturangaben</head>
+                  <p>Literaturangaben werden mit dem Element <gi>bibl</gi> ausgezeichnet.</p>
+                  <p>Sofern vorhanden, werden die Namen des/r Autor*innen innerhalb des
+                        <gi>bibl</gi>-Elements mit einem <gi>persName</gi>-Element
+                     gekennzeichnet.</p>
+                  <p>Individuelle Seitenangaben zu der Literatur werden wiederum innerhalb eines
+                        <gi>biblScope</gi>-Elements erfasst.</p>
+                  <p>Um Literaturangaben, die auf die gleichen Quellen verweisen, miteinander in
+                     Beziehung zu setzen, wird den <gi>bibl</gi>-Elementen ein
+                     <att>sameAs</att>-Attribut zugewiesen, dass auf die Zotero-Id des
+                     refrerenzierten Textes verweist.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
                            <div>
                               <p>
-                                 <foreign xml:lang="ISO 639-3 Sprachcode">[Fremdsprachiger
-                                    Textteil]</foreign>
+                                 <bibl>
+                                    <persName>Gerhard Anschütz</persName>, Die Verfassung des
+                                    Deutschen Reichs vom 11. August 1919, 14. Aufl., Berlin 1933,
+                                       <biblScope> 30–21</biblScope>
+                                 </bibl>
                               </p>
                            </div>
                         </body>
@@ -475,157 +519,136 @@
                   </egXML>
                </div>
                <div>
-                  <head>Entiäten</head>
-                  <p>Die edierten Texte enthalten bzw. referenzieren oder erwähnen Entitäten, die in
-                     verschiedene Klassen eingeteilt werden können. Das Markieren dieser Entitäten
-                     ermöglicht es, sie als solche vom umgegebenden Text zu unterscheiden und
-                     gegebenfalls mit einer Indexansetzung zu verlinken, um so bsp. das Auffinden
-                     von Entitäten – equivalent zur Funktion eines Registers – zu vereinfachen.</p>
-                  <p>Es folgt eine Liste der im Text zu referenzierenden Entitäten.</p>
-                  <div>
-                     <head>Literaturangaben</head>
-                     <p>Literaturangaben werden mit dem Element <gi>bibl</gi> ausgezeichnet.</p>
-                     <p>Sofern vorhanden, werden die Namen des/r Autor*innen innerhalb des
-                        <gi>bibl</gi>-Elements mit einem <gi>persName</gi>-Element
-                        gekennzeichnet.</p><p>Individuelle Seitenangaben zu der Literatur werden wiederum
-                        innerhalb eines <gi>biblScope</gi>-Elements erfasst.</p>
-                     <p>Um Literaturangaben, die auf die gleichen Quellen verweisen, miteinander in Beziehung zu setzen, wird den <gi>bibl</gi>-Elementen ein <att>sameAs</att>-Attribut zugewiesen, dass auf die Zotero-Id des refrerenzierten Textes verweist.</p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <text>
-                           <body>
-                              <div>
-                                 <p>
-                                    <bibl>
-                                       <persName>Gerhard Anschütz</persName>,
-                                       Die Verfassung des Deutschen Reichs vom 11. August 1919,
-                                       14. Aufl., Berlin 1933, <biblScope>
-                                          30–21</biblScope>
-                                    </bibl>
-                                 </p>
-                              </div>
-                           </body>
-                        </text>
-                     </egXML>
-                  </div>
-                  <div>
-                     <head>Gesetzesangaben</head>
-                     <p>Analog zu der Literatur werden auch Gesetzesangaben mit einem
-                        <gi>bibl</gi>-Element ausgezeichnet. Eine Spezifizierung findet hier mit dem
+                  <head>Gesetzesangaben</head>
+                  <p>Analog zu der Literatur werden auch Gesetzesangaben mit einem
+                     <gi>bibl</gi>-Element ausgezeichnet. Eine Spezifizierung findet hier mit dem
                         <att>type</att>-Attribut und dem Wert "<val>statute</val>" statt.</p>
-                     <p>Im <att>sameAs</att>-Attribut wird die Id des Gesetzestextes aus dem entsprechenden Index referenziert.</p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <text>
-                           <body>
-                              <div>
-                                 <p>
-                                    <bibl type="statute" sameAs="[ID aus Gesetze.xml]">
-                                       [Gesetzesangabe]</bibl>
-                                 </p>
-                              </div>
-                           </body>
-                        </text>
-                     </egXML>
-                  </div>
-                  <div>
-                     <head>Personennamen</head>
-                     <p>Personennamen sind mit dem <gi>persName</gi>-Element als solche gekennzeichnet.
-                        Dabei wird nicht zwischen Vor- und Nachname, Titel o.ä. unterschieden. Mittel des <att>key</att>-Attributs wird auf die Id der entsprechenden Person im Index verwiesen.</p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <text>
-                           <body>
-                              <div>
-                                 <p>[Text] <persName key="123">Kant</persName> [weiterer Text]</p>
-                              </div>
-                           </body>
-                        </text>
-                     </egXML>
-                  </div>
-                  <div>
-                     <head>Indirekte Nennungen</head>
-                     <p>In Fällen, in denen Entitäten im Text nur indirekt genannt oder referenziert werden, wird das <gi>rs</gi>-Element verwendet, um die Nennung zu markieren. Durch das <att>ref</att> attribut wird die jeweilige Id angeben, während das <att>type</att>-Attribut die Art der Entität spezifiziert.</p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <text>
-                           <body>
-                              <div>
-                                 <p>Die oben genannte <rs>Person</rs> verweist auf den <rs>erwähnten Paragraphen</rs>, bezieht sich aber auch auf das <rs>besprochene Werk Kelsens</rs>.</p>
-                              </div>
-                           </body>
-                        </text>
-                     </egXML>
-                  </div>
+                  <p>Im <att>sameAs</att>-Attribut wird die Id des Gesetzestextes aus dem
+                     entsprechenden Index referenziert.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <text>
+                        <body>
+                           <div>
+                              <p>
+                                 <bibl type="statute" sameAs="[ID aus Gesetze.xml]">
+                                    [Gesetzesangabe]</bibl>
+                              </p>
+                           </div>
+                        </body>
+                     </text>
+                  </egXML>
                </div>
+               <div>
+                  <head>Personennamen</head>
+                  <p>Personennamen sind mit dem <gi>persName</gi>-Element als solche gekennzeichnet.
+                     Dabei wird nicht zwischen Vor- und Nachname, Titel o.ä. unterschieden. Mittel
+                     des <att>key</att>-Attributs wird auf die Id der entsprechenden Person im Index
+                     verwiesen.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <text>
+                        <body>
+                           <div>
+                              <p>[Text] <persName key="123">Kant</persName> [weiterer Text]</p>
+                           </div>
+                        </body>
+                     </text>
+                  </egXML>
+               </div>
+               <div>
+                  <head>Indirekte Nennungen</head>
+                  <p>In Fällen, in denen Entitäten im Text nur indirekt genannt oder referenziert
+                     werden, wird das <gi>rs</gi>-Element verwendet, um die Nennung zu markieren.
+                     Durch das <att>ref</att> attribut wird die jeweilige Id angeben, während das
+                        <att>type</att>-Attribut die Art der Entität spezifiziert.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <text>
+                        <body>
+                           <div>
+                              <p>Die oben genannte <rs ref="#p123" type="person">Person</rs>
+                                 verweist auf den <rs ref="#g123" type="statute">erwähnten
+                                    Paragraphen</rs>, bezieht sich aber auch auf das <rs ref="#z123"
+                                    type="bibl">besprochene Werk Kelsens</rs>.</p>
+                           </div>
+                        </body>
+                     </text>
+                  </egXML>
+               </div>
+            </div>
             <div>
                <head>Texteingriffe/Konjekturen</head>
-               <p>Editorische Eingriffe in den Text werden mit dem Element <gi>corr</gi>
-                  markiert. Dabei handelt es sich um Korrekturen von semantisch wenig relevanten
-                  ›Flüchtigkeitsfehlern‹, z.B. die Korrektur eines Buchstabendrehers oder auch um
-                  die Korrektur durch Löschung eines überzähligen Buchstabens. Für Korrekturen
-                  sind regulär keine weiteren Attribute zu vertiefenden Klassifizierung
-                  vorgesehen.</p>
+               <p>Editorische Eingriffe in den Text werden mit dem Element <gi>corr</gi> markiert.
+                  Das gilt nicht bei offensichtlichen, geringfügigen Fehlen wie Buchstabendrehern.
+                  Diese werden stillschweigend konjektiert.</p>
+               <p>Bei schwererwiegenderen Eingriffen ist es notwendig, den ursrprünglichen Text des
+                  Dokuments zu dokumentieren. In solchen Fällen, wird das <gi>corr</gi>-Element
+                  verwendet, das den korrigierten Text und ein <gi>sic</gi>-Element enthält, das
+                  wiederum den Originaltext dokumentiert.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <body>
-                     <div xml:id="e.02.001.01.002">
-                        <p xml:id="a.02.001.01.002.0001"><corr>…</corr>Hier ist ein unbedeutender
-                           Fehl<corr>e</corr>r – nämlich ein fehlendes ›e‹ korrigiert
-                           worden.</p>
+                     <div>
+                        <p>Es ist in dieser Situatuion notwendig den Bundestag zu
+                                 <corr>vertagen<sic>befragen</sic></corr></p>
                      </div>
                   </body>
                </egXML>
             </div>
             <div>
-               <head>Kennzeichnung von Fehlern</head>
-               <p>Bei Fehlern, die einen erheblichen semantischen Unterschied bedeuten, wird der
-                  Fehler nicht korrigiert, aber als solcher markier. Für diese Markierung ist der
-                  <gi>sic</gi>-tag zu verwenden, der den Fehler umschließt.</p>
+               <head>Textgenetische/Textkritische Anmerkungen</head>
+               <p>Ziel der editorischen Arbeit ist es, den lesbaren Text der letzten Schicht des
+                  Dokuments zur Verfügung zu stellen. Neben dieser Herstellung des lesbaren Textes
+                  gilt es jedoch auch Momente ihre Entstehung zu dokumentieren. Solche Phänomene
+                  können unterteil werden in: <list>
+                     <item n="1">Bearbeitungschritte, die die Textgestalt direkt verändern
+                        (Streichungen, Einfügungen, Ersetzungen)</item>
+                     <item n="2">Bearbeitungschritte, die den bestehenden Text metasprachlich
+                        kommentieren (Anmerkungen am Rand, etc.)</item>
+                  </list> Während im ersten Fall das Resultat der Bearbeitung in den Haupttext
+                  einfließt und der der Bearbeitung vorausliegende Zustand in einem Kommentar
+                  festgehalten wird, wird im zweiten Falle das Resultat – die Anmerkung – nur im
+                  Kommentar festgehalten. </p>
+               <p>Ein solcher Kommentar selbst besteht in beiden Fällen aus einem
+                  <gi>app</gi>-Element, das wiederum ein <gi>note</gi>-Element mit dem Inhalt des
+                  Kommentars enthält. Kommentare im Dokument selbst, wie im zweiten Fall auftreten,
+                  werden ebenfall von einem weiteren <gi>note</gi>-Element umschlossen, dass ein
+                     <att>type</att>-Attribut mit dem Wert <val>original</val> erhält. Im ersten
+                  Fall wird gestrichener oder überschriebener Text von einem <gi>del</gi>-Element
+                  umschlossen, während hinzugefügter oder überschreibender Text durch ein
+                     <gi>add</gi>-Element umschlossen wird.</p>
+               <p>Um den Bezugspunkt – die Stelle, auf die sich der Kommentar bezieht – im Dokument
+                  zu fixieren, werden zwei <gi>anchor</gi>-Elemente in den Text eingefügt, die wie
+                  zwei Klammern die Erstreckung des Kommentars bestimmen. Beide <gi>anchor</gi>
+                  erhalten beim Einfüge über das Framework automatisch ein
+                  <att>xml:id</att>-Attribut und ein <att>type</att>-Attribut dessen Wert angibt, ob
+                  es sich um den Beginn (<val>app_start</val>) oder das Ende (<val>app_end</val>)
+                  einer Stelle handelt.</p>
+               <p>Das <gi>app</gi>-Element erhält schließlich ein <att>from</att> und ein
+                     <att>to</att>-Attribut, das Verweise auf die <att>xml:id</att>s der
+                  entsprechenden <gi>anchor</gi>-Elemente enthält.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <body>
-                     <div xml:id="e.02.001.01.002">
-                        <p xml:id="a.02.001.01.002.0001"> Hier ist etwas <sic>unwichtig</sic>!
-                        </p>
+                     <div>
+                        <p>Die Republik Deutschösterreich ist ein freier Bund <anchor
+                              type="app_start" xml:id="a_1222"/>der souveränen Länder<anchor
+                              type="app_start" xml:id="a_1223"/>;</p>
+                        <app from="a_1222" to="a_1223">
+                           <note><persName key="p_0001">Kelsen</persName> am Rand:
+                                 <note type="original">Artiken?</note>; aus: <del>souveränder Länder</del></note>
+                        </app>
+                        <p>Es ist unter diesen <anchor type="app_start" xml:id="a_1233"/>Umständen
+                           jedoch <anchor type="app_start" xml:id="a_1235"/>weder ratsam noch
+                              nötig<anchor type="app_start" xml:id="a_1234"/>, die<anchor
+                              type="app_end" xml:id="a_1236"/> Bundesversammlung einzuberufen.</p>
+                        <app from="a_1233" to="a_1234">
+                           <note><persName key="p_0001">Kelsen</persName> am Rand (mit
+                              Anstreichung): <note type="original">möglich?</note></note>
+                        </app>
+                        <app from="a_1235" to="a_1236">
+                           <note><persName key="p_0001">Kelsen</persName> aus: <del>Bedingungen nicht
+                                 angezeigt, den</del></note>
+                        </app>
                      </div>
                   </body>
                </egXML>
-            </div>
-            <div xml:id="text_notes">
-               <head>Anmerkungen/Fußnoten</head>
-               <p>Die Anmerkungen/Fußnoten <gi>note</gi> in den Texten wird zunächst in solche
-                  von den Autor:innen des edierten Dokuments selber (<att>type</att> mit Wert
-                  "<val>original</val>") und solche von den Sachbearbeiter:innen gesetzte
-                  (<att>type</att> mit Wert "<val> editorial</val>") unterschieden.</p>
-               <p>Innerhalb von <gi>note</gi> steht der Text in einem oder gegebenenfalls
-                  mehreren <gi>p</gi>-Elementen.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <text>
-                     <body>
-                        <div>
-                           <p> [Ein Text]<note n="[Fußnotenzahl im Original]" type="original"
-                              xml:id="[ID nach Gesamtsystematik]">[Eine Anmerkung im
-                              Dokument]</note>
-                           </p>
-                        </div>
-                     </body>
-                  </text>
-               </egXML>
-               <p>Grunsätzlich ist eine Herausgeber:innenanmerkung wie folgt modelliert:</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <text>
-                     <body>
-                        <div>
-                           <p> [Ein Text]<note type="editorial"
-                              xml:id="[ID nach Gesamtsystematik]">[Eine
-                              Herausgeberanmerkung]</note>
-                           </p>
-                        </div>
-                     </body>
-                  </text>
-               </egXML>
-               <p>Bei Herausgeberanmerkungen wird jedoch unterschieden zwischen: <list>
-                  <item>Textkritischen Anmerkungen</item>
-                  <item>Textgenetischen Anmerkungen</item>
-                  <item>Sachanmerkungen</item>
-                  <item>Personenerläuterungen</item>
-               </list>
-               </p>
             </div>
             <div xml:id="structure_ids">
                <head>Identifikatoren-Gesamtsystematik</head>
