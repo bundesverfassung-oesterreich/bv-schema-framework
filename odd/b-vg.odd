@@ -543,6 +543,15 @@
                   <div>
                      <head>Indirekte Nennungen</head>
                      <p>In Fällen, in denen Entitäten im Text nur indirekt genannt oder referenziert werden, wird das <gi>rs</gi>-Element verwendet, um die Nennung zu markieren. Durch das <att>ref</att> attribut wird die jeweilige Id angeben, während das <att>type</att>-Attribut die Art der Entität spezifiziert.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <text>
+                           <body>
+                              <div>
+                                 <p>Die oben genannte <rs>Person</rs> verweist auf den <rs>erwähnten Paragraphen</rs>, bezieht sich aber auch auf das <rs>besprochene Werk Kelsens</rs>.</p>
+                              </div>
+                           </body>
+                        </text>
+                     </egXML>
                   </div>
                </div>
             <div>
