@@ -5,6 +5,8 @@
       <fileDesc>
          <titleStmt>
             <title>Die Entstehung des Bundes‐Verfassungsgesetzes 1920</title>
+            <author xml:id="CFH">Carl Friedrich Haak</author>
+            <author xml:id="PA">Peter Andorfer</author>
          </titleStmt>
          <publicationStmt>
             <p>Unveröffentlichte, interne Arbeitsversion.</p>
@@ -15,7 +17,7 @@
       </fileDesc>
       <revisionDesc>
          <listChange>
-            <change when="2023-09-01" who="#cfh" status="draft">beginne mit Basis</change>
+            <change when="2023-09-01" who="#CFH" status="draft">beginne mit Basis</change>
          </listChange>
       </revisionDesc>
    </teiHeader>
@@ -101,11 +103,10 @@
                   Forschungsvorhaben anpassen und erweitern. Dennoch existieren bereits zahlreiche
                   Standards, die für die als Grundlage für die Arbeit mit XML verwendet und
                   angepasst werden können (z.B. der Standard der <ref target="https://tei-c.org"
-                     >Text Encoding Initiative (TEI)</ref> oder des <ref
-                     target="https://www.deutschestextarchiv.de/doku/basisformat/">Deutschen
-                     Textarchivs </ref>). Aus Erfahrung lässt sich jedoch sagen, dass die Anpassung
-                  der Auszeichungen ein gewisses maß an Komplexität nicht übersteigen sollte, da mit
-                  steigender Komplexität auch Bearbeitungszeit und Fehlerquote steigen.</p>
+                     >Text Encoding Initiative (TEI)</ref>). Aus Erfahrung lässt sich jedoch sagen,
+                  dass die Anpassung der Auszeichungen ein gewisses Maß an Komplexität nicht
+                  übersteigen sollte, da mit steigender Komplexität auch Bearbeitungszeit und
+                  Fehlerquote steigen.</p>
                <p>Ob ein XML-Dokument ›korrekt‹ ist lässt sich auf zwei Ebenen übreprüfen. Allgemein
                   sollten alle Elemente korrekt ineinander verschachtelt sein, also die
                   grammatischen Regeln der XML eingehalten werden. Ein Dokument, dass diesen Reglen
@@ -122,22 +123,153 @@
             </div>
          </div>
          <div xml:id="structure">
-            <head>Datenstruktur</head>
+            <head>Daten-/Dokumentenstruktur</head>
             <p>Die digitale Edition der Dokumente basiert auf den Standards der <ref
                   target="https://tei-c.org">Text Encoding Initiative (TEI)</ref></p>
-            <div xml:id="structure_text">
-               <head>Haupttexte</head>
-               <p>Haupttexte umfassen den tatsächlichen, primären Text der Edierten Dokumente.</p>
-               <div xml:id="metadata_text">
-                  <head>Metadaten</head>
-                  <p><hi rend="bold">Metadaten</hi> zu den Dokumenten und ihren Texten stehen im
-                        <gi>teiHeader</gi>. Zudem finden sich Informationen zu den einzelnen
-                     Dokumenten, zu ihrer Entstehung und Beschaffenheit.</p>
-                  <p>Die Struktur des <gi>teiHeader</gi> gestaltet sich wie folgt:</p>
+            <div xml:id="metadata_text">
+               <head>Metadaten</head>
+               <p><hi rend="bold">Metadaten</hi> zu den Dokumenten und ihren Texten stehen im
+                  <gi>teiHeader</gi>, dazu zählen Informationen zu den einzelnen
+                  Dokumenten, zu ihrer Entstehung und Beschaffenheit oder ihrer editorischen Erschließung/Bearbeitung. Eine Vielzahl der im
+                  TEI-Header vermerkten Informationen wird automatisch generiert oder automatisch
+                  anderen Quellen entnommen und ist demnach nicht zu manuellen Bearbeitung
+                  vorgesehen. Die folgenden Erläuterungen beschränken sich demnach auf die
+                  Elemente, die für die manuelle Bearbeitung von Relevanz sind.</p>
+               <p>Die Struktur des <gi>teiHeader</gi> gestaltet sich wie folgt:</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <teiHeader>
+                     <fileDesc>
+                        <titleStmt>
+                           <title type="main">Kelsen Entwurf I</title>
+                           <title type="sub">Die Entstehung des Bundes-Verfassungsgesetzes
+                              1920</title>
+                           <principal>
+                              <persName role="acdh:hasPrincipialInvestigator">Olechowski,
+                                 Thomas</persName>
+                           </principal>
+                           <funder>
+                              <name>FWF - Der Wissenschaftsfonds</name>
+                              <address>
+                                 <street>Sensengasse 1</street>
+                                 <postCode>1090 Wien</postCode>
+                                 <placeName>
+                                    <country>A</country>
+                                    <settlement>Wien</settlement>
+                                 </placeName>
+                              </address>
+                           </funder>
+                           <respStmt>
+                              <resp>Digitalisierung (Fotografieren) des Archivmaterials</resp>
+                              <persName role="acdh:hasDigitisingAgent">Lein, Richard</persName>
+                           </respStmt>
+                           <respStmt>
+                              <resp>Digitalisierung (Fotografieren) des Archivmaterials</resp>
+                              <persName role="acdh:hasDigitisingAgent">Gassner, Miriam</persName>
+                           </respStmt>
+                           <respStmt>
+                              <resp>XML/TEI Datenmodellierung und Datengenerierung</resp>
+                              <persName role="acdh:hasContributor"
+                                 key="https://orcid.org/0000-0002-9575-9372">Peter
+                                 Andorfer</persName>
+                           </respStmt>
+                           <respStmt>
+                              <resp>XML/TEI Datenmodellierung und Datengenerierung</resp>
+                              <persName role="acdh:hasContributor"
+                                 key="https://orcid.org/0009-0006-7740-542X">Carl Friedrich
+                                 Haak</persName>
+                           </respStmt>
+                        </titleStmt>
+                        <publicationStmt>
+                           <publisher>
+                              <orgName key="https://d-nb.info/gnd/1226158307">Austrian Centre for
+                                 Digital Humanities and Cultural Heritage an der Österreichischen
+                                 Akademie der Wissenschaften</orgName>
+                           </publisher>
+                           <publisher>
+                              <orgName key="https://d-nb.info/gnd/1026192285">Universität Wien.
+                                 Institut für Rechts- und Verfassungsgeschichte</orgName>
+                           </publisher>
+                           <pubPlace ref="http://d-nb.info/gnd/4066009-6">Vienna</pubPlace>
+                           <date when="2023">2023</date>
+                           <availability>
+                              <licence target="https://creativecommons.org/licenses/by/4.0/">
+                                 <p>The Creative Commons Attribution 4.0 International (CC BY
+                                    4.0) License applies to this text.</p>
+                                 <p>The CC BY 4.0 License also applies to this TEI XML file.</p>
+                              </licence>
+                           </availability>
+                           <idno type="transkribus_doc">1529199</idno>
+                           <idno type="transkribus_collection">195363</idno>
+                        </publicationStmt>
+                        <sourceDesc>
+                           <msDesc type="invetory">
+                              <msIdentifier>
+                                 <institution key="https://d-nb.info/gnd/37748-X"
+                                    >Österreichisches Staatsarchiv</institution>
+                                 <repository key="https://d-nb.info/gnd/1601181-8">Archiv der
+                                    Republik (Wien)</repository>
+                                 <idno type="archive">AdR, Büro Seitz, Karton 7</idno>
+                              </msIdentifier>
+                              <msContents>
+                                 <msItem>
+                                    <author role="acdh:hasAuthor">Kelsen, Hans</author>
+                                    <title>Kelsen Entwurf I</title>
+                                 </msItem>
+                              </msContents>
+                              <physDesc>
+                                 <objectDesc form="">
+                                    <ab>Kelsen I (Titel des Dokuments "Entwurf I"), Zustand gut,
+                                       keine Anmerkungen, 126 Artikel</ab>
+                                 </objectDesc>
+                                 <handDesc>
+                                    <ab/>
+                                 </handDesc>
+                              </physDesc>
+                              <history>
+                                 <origin from="1919-05-01" to="1919-11-30">Zwischen Mai und
+                                    November 1919</origin>
+                              </history>
+                           </msDesc>
+                        </sourceDesc>
+                     </fileDesc>
+                     <profileDesc>
+                        <abstract>
+                           <ab/>
+                        </abstract>
+                        <creation>
+                           <date from="1919-05-01" to="1919-11-30">Zwischen Mai und November
+                              1919</date>
+                        </creation>
+                     </profileDesc>
+                     <revisionDesc status="draft">
+                        <change>Strutktur erfasst</change>
+                        <change>Entitäten verlinkt.</change>
+                     </revisionDesc>
+                  </teiHeader>
+               </egXML>
+               <div xml:id="revision">
+                  <head>Status des Dokuments, Arbeitsstand</head>
+                  <p>Der Status der Bearbeitung des gesamten Dokuments wird in der
+                     <gi>revisionDesc</gi> im Attribut <att>status</att> notiert. Ist das
+                     Dokument noch in Bearbeitung, hat <att>status</att> den Wert
+                     <val>draft</val>. Sind alle Arbeitsschritte für das Dokument
+                     abgeschlossen, hat <att>status</att> den Wert <val>done</val>. Wird der
+                     bearbeitungsstand eines Dokumentes auf <val>done</val> gesetzt, wird es
+                     automatisiert auf der Website publiziert.</p>
+                  <p>Es emfpiehlt sich, erfolgte Arbeitsschritte mittel der
+                     <gi>change</gi>-Elemente zu notieren, um einen Überblick über den
+                     Bearbeitungsstand zu bieten.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <teiHeader> </teiHeader>
+                     <revisionDesc status="draft">
+                        <change>Strutktur erfasst</change>
+                        <change>Entitäten verlinkt.</change>
+                     </revisionDesc>
                   </egXML>
                </div>
+            </div>
+            <div xml:id="structure_text">
+               <head>Haupttexte</head>
+               <p>Haupttexte umfassen den tatsächlichen Text der edierten Dokumente.</p>
                <div xml:id="content_text">
                   <head>Grundstruktur</head>
                   <p><hi rend="bold">Dokumenttexte</hi> stehen unmittelbar nach dem
@@ -188,8 +320,8 @@
                      ebenfalls mittels <gi>div</gi>-Elementen erfasst. Da unterhalb der Artikel
                      keine Strukturelemente existieren, die mittels <gi>div</gi>-Elementen erfasst
                      werden, ist eine Angabe der Struktur-Ebene mittels eines
-                     <att>n</att>-Attributes nicht nötig. Dass es sich um Artikel handelt wird mittels
-                        <att>type</att>="<val>aricle</val>" markiert.</p>
+                     <att>n</att>-Attributes nicht nötig. Dass es sich um Artikel handelt wird
+                     mittels <att>type</att>="<val>aricle</val>" markiert.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <body>
                         <div type="main"> [Umfasst das einzelne Werk im Gesamten] <div
@@ -219,7 +351,9 @@
                <div>
                   <head>Absätze</head>
                   <p>Der Text innerhalb von <gi>div</gi>-Elementen ist in <gi>p</gi>-Elementen
-                     strukturiert:</p>
+                     strukturiert. Ein solches Element markiert entweder einen Absatz (typographisch
+                     markiertes Strukturelement eines Prosatextes) oder einen Paragraphen (ein
+                     Absatz als Strukturelement eines Gesetzestextes).</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <body>
                         <div xml:id="e.02.001.01.002">
@@ -230,8 +364,9 @@
                   </egXML>
                   <p>Jedes <gi>p</gi>-Element außerhalb von <gi>note</gi> hat eine
                      <att>xml:id</att>, die der <ref target="#structure_ids"
-                        >Identifikatoren-Gesamtsystematik</ref> folgt. Ids sollten ausschließlich über die im Schema angebotene Funktionalität
-                     automatisch generiert werden.</p>
+                        >Identifikatoren-Gesamtsystematik</ref> folgt. Ids sollten ausschließlich
+                     über die im Schema angebotene Funktionalität automatisch generiert werden.</p>
+               </div>
                <div>
                   <head>Listen und Ziffern</head>
                   <p>Listen werden mit einem <gi>list</gi>-Element kodiert, jeder Listenpunkt
@@ -251,7 +386,9 @@
                         </item>
                      </list>
                   </egXML>
-                  <p>Mit Ziffern versehene Aufzählungen innheralb der Paragraphen werden ebenfalls auf die oben beschriebene Weise mittels <gi>list</gi>-Element kodiert, jeder Ziffer wird als Listenpunkt (<gi>item</gi>) codiert.</p>
+                  <p>Mit Ziffern versehene Aufzählungen innheralb der Paragraphen werden ebenfalls
+                     auf die oben beschriebene Weise mittels <gi>list</gi>-Element kodiert, jeder
+                     Ziffer wird als Listenpunkt (<gi>item</gi>) codiert.</p>
                </div>
                <div>
                   <head>Tabellen</head>
@@ -261,9 +398,10 @@
                      unterteilt sich wiederum in mindestens eine oder auch mehrere Zellen bzw.
                      Spalten, die innerhalb des <gi>row</gi>-Elements durch ein
                      <gi>cell</gi>-Element ausgezeichnet sind. Der eigentliche Tabelleninhalt steht
-                     innerhalb des <gi>cell</gi> -Elements.</p><p>Der Titel einer Tabelle wird mittels
-                     eines <gi>head</gi>-Elements gekennzeichnet und steht innerhalb des
-                        <gi>table</gi>-Elements an erster Stelle.</p>
+                     innerhalb des <gi>cell</gi> -Elements.</p>
+                  <p>Der Titel einer Tabelle wird mittels eines <gi>head</gi>-Elements
+                     gekennzeichnet und steht innerhalb des <gi>table</gi>-Elements an erster
+                     Stelle.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <table>
                         <head>Tabellentitel</head>
@@ -279,38 +417,48 @@
                   </egXML>
                </div>
                <div>
-                  <head>Texteingriffe/Konjekturen</head>
-                  <p>Editorische Eingriffe in den Text werden mit dem Element <gi>corr</gi>
-                     markiert. Dabei handelt es sich um Korrekturen von semantisch wenig relevanten ›Flüchtigkeitsfehlern‹, z.B. die Korrektur eines
-                     Buchstabendrehers oder auch um die Korrektur durch Löschung eines überzähligen
-                     Buchstabens. Für Korrekturen sind regulär keine weiteren
-                     Attribute zu vertiefenden Klassifizierung vorgesehen.</p>
+                  <head>Hervorhebungen</head>
+                  <p>Xml ist nicht dazu bestimmt, typografische Informationen als solche mimetisch zu kodieren. Die semantische Funktion typografischer Eigenschaften sollte jedoch in einigen Fällen kodiert werden.
+                     Hervorhebungen im Kelsen-Text werden mit dem Element <gi>hi</gi> ausgezeichnet. Generell sollten jedoch bsp. Überschriften <hi rend="bold">semantisch</hi> bzw. entsprechend ihrer Funktion als <gi>head</gi> getagt werden. <list>
+                        <item>Sperrungen und/oder Schreibungen mit Versalien wie sie in Typoskripten häufig vorkommen</item>
+                        <item>sowie Schreibungen mit Kaptitälchen</item>
+                        <item>sowie Unterstreichungen</item>
+                     </list>sollten in der Regel sämtlich mit <gi>hi</gi> ausgezeichnet werden, da sie tatsächlich bloße Hervorhebungen darstellen. Es wäre – wenn nötig – möglich, diese Kodierung durch <att>rend</att>-Attribute weiter zu differenzieren. Das könnte etwa der Fall sein, wenn verschiedene Hervorhebungen verschiedene Funktionen erfüllen.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <body>
-                        <div xml:id="e.02.001.01.002">
-                           <p xml:id="a.02.001.01.002.0001"><corr>…</corr>Hier ist ein unbedeutender Fehl<corr>e</corr>r – nämlich ein fehlendes ›e‹ korrigiert worden.</p>
-                        </div>
-                     </body>
+                     <text>
+                        <body>
+                           <div>
+                              <p>[...]<hi>selbstverständlich</hi> und unproblematisch war, daß es
+                                 <hi>einer</hi> besonderen [...]</p>
+                           </div>
+                        </body>
+                     </text>
                   </egXML>
                </div>
                <div>
-                  <head>Kennzeichnung von Fehlern</head>
-                  <p>Bei Fehlern, die einen erheblichen semantischen Unterschied bedeuten, wird der Fehler nicht korrigiert, aber als solcher markier. Für diese Markierung ist der <gi>sic</gi>-tag zu verwenden, der den Fehler umschließt.</p>
+                  <head>Seitenwechsel</head>
+                  <p>Seitenwechsel werden erhalten und sollten im nomralfall keiner Bearbeitung
+                     bedürfen. Grundsätzlich werden die Seitenwechsel mit einem <gi>pb</gi>-Element
+                     markiert. Innerhalb eines Attributs <att>n</att> sind die Seitenzahlen der
+                     neuen Seite (pb=pagebegin) als Attributwert hinterlegt, das
+                     <att>facs</att>-Attribut verweist auf die zugehörige Abbildung, während
+                     <att>xml:id </att>die zugehörige Id enthält.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <body>
-                        <div xml:id="e.02.001.01.002">
-                           <p xml:id="a.02.001.01.002.0001">
-                              Hier ist etwas <sic>unwichtig</sic>!
-                           </p>
-                        </div>
-                     </body>
+                     <text>
+                        <body>
+                           <div>
+                              <pb facs="#facs_6" n="6" xml:id="img_0006"/>
+                           </div>
+                        </body>
+                     </text>
                   </egXML>
                </div>
+            </div>
                <div>
                   <head>Fremdsprachige Textabschnitte</head>
-                  <p>Text abweichend von der Hauptsprache wird im Element <gi>foreign</gi> kodiert. Der Attributwert
-                     von <att>xml:lang</att> umfasst dabei den dreibuchstabigen Sprachcode nach <ref
-                        target="https://iso639-3.sil.org">ISO-Norm 639-3</ref></p>
+                  <p>Text abweichend von der Hauptsprache wird im Element <gi>foreign</gi> kodiert.
+                     Der Attributwert von <att>xml:lang</att> umfasst dabei den dreibuchstabigen
+                     Sprachcode nach <ref target="https://iso639-3.sil.org">ISO-Norm 639-3</ref></p>
                   <p><gi>foreign</gi> kann überall innerhalb von <gi>text</gi> eingesetzt
                      werden.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -326,450 +474,149 @@
                      </text>
                   </egXML>
                </div>
-               <div xml:id="text_notes">
-                  <head>Anmerkungen/Fußnoten</head>
-                  <p>Die Anmerkungen/Fußnoten <gi>note</gi> in den Texten wird zunächst in solche
-                     von den Autor:innen des edierten Dokuments selber (<att>type</att> mit Wert "<val>original</val>") und
-                     solche von den Sachbearbeiter:innen gesetzte (<att>type</att> mit Wert "<val>
-                        editorial</val>") unterschieden.</p>
-                  <p>Innerhalb von <gi>note</gi> steht der Text in einem oder gegebenenfalls
-                     mehreren <gi>p</gi>-Elementen.</p>
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <text>
-                        <body>
-                           <div>
-                              <p> [Ein Text]<note n="[Fußnotenzahl im Original]" type="original"
-                                    xml:id="[ID nach Gesamtsystematik]">[Eine Anmerkung im Dokument]</note>
-                              </p>
-                           </div>
-                        </body>
-                     </text>
-                  </egXML>
-                  <p>Grunsätzlich ist eine Herausgeber:innenanmerkung wie folgt modelliert:</p>
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <text>
-                        <body>
-                           <div>
-                              <p> [Ein Text]<note type="editorial"
-                                    xml:id="[ID nach Gesamtsystematik]">[Eine
-                                    Herausgeberanmerkung]</note>
-                              </p>
-                           </div>
-                        </body>
-                     </text>
-                  </egXML>
-                  <p>Bei Herausgeberanmerkungen wird jedoch unterschieden zwischen: <list>
-                        <item>Textkritischen Anmerkungen</item>
-                        <item>Textgenetischen Anmerkungen</item>
-                        <item>Sachanmerkungen</item>
-                        <item>Personenerläuterungen</item>
-                     </list>
-                  </p>
-               </div>
                <div>
-                  <head>Literaturangaben</head>
-                  <p>Literaturangaben werden mit dem Element <gi>bibl</gi> ausgezeichnet. Im
-                     Attribut <att>sameAs</att> steht die Zotero-ID, die den entsprechenden
-                     Literatureintrag in der Zotero-Bibliothek der Hans Kelsen Werke referenziert.
-                     Sie entspricht dem Muster "<val>zotero-[collection-Id]-[Titel-ID]</val>"</p>
-                  <p>Sofern vorhanden, werden die Namen des/r Autor*innen
-                     innerhalb des <gi>bibl</gi>-Elements mit einem <gi>persName</gi>-Element
-                     gekennzeichnet.<lb/>Individuelle Seitenangaben zu der Literatur werden wiederum
-                     innerhalb eines <gi>biblScope</gi>-Elements erfasst.</p>
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <text>
-                        <body>
-                           <div>
-                              <p> [Ein Text]<note n="[Fußnotenzahl im Druck]" type="editorial"
-                                    xml:id="[ID nach Gesamtsystematik]">
-                                    <p>
-                                       <bibl ref="zotero-2244380-W4Q8JDW2">
-                                          <persName key="N1.5.2.2.50">Gerhard Anschütz</persName>, Die
-                                          Verfassung des Deutschen Reichs vom 11. August 1919, 14.
-                                          Aufl., Berlin 1933<biblScope>,
-                                          Seitenangabe</biblScope>
-                                       </bibl>
-                                    </p>
-                                 </note></p>
-                           </div>
-                        </body>
-                     </text>
-                  </egXML>
-               </div>
-               <div>
-                  <head>Gesetzesangaben</head>
-                  <p>Analog zu der Literatur werden auch Gesetzesangaben mit einem
-                     <gi>bibl</gi>-Element ausgezeichnet. Eine Spezifizierung findet hier mit dem
+                  <head>Entiäten</head>
+                  <p>Die edierten Texte enthalten bzw. referenzieren oder erwähnen Entitäten, die in
+                     verschiedene Klassen eingeteilt werden können. Das Markieren dieser Entitäten
+                     ermöglicht es, sie als solche vom umgegebenden Text zu unterscheiden und
+                     gegebenfalls mit einer Indexansetzung zu verlinken, um so bsp. das Auffinden
+                     von Entitäten – equivalent zur Funktion eines Registers – zu vereinfachen.</p>
+                  <p>Es folgt eine Liste der im Text zu referenzierenden Entitäten.</p>
+                  <div>
+                     <head>Literaturangaben</head>
+                     <p>Literaturangaben werden mit dem Element <gi>bibl</gi> ausgezeichnet.</p>
+                     <p>Sofern vorhanden, werden die Namen des/r Autor*innen innerhalb des
+                        <gi>bibl</gi>-Elements mit einem <gi>persName</gi>-Element
+                        gekennzeichnet.</p><p>Individuelle Seitenangaben zu der Literatur werden wiederum
+                        innerhalb eines <gi>biblScope</gi>-Elements erfasst.</p>
+                     <p>Um Literaturangaben, die auf die gleichen Quellen verweisen, miteinander in Beziehung zu setzen, wird den <gi>bibl</gi>-Elementen ein <att>sameAs</att>-Attribut zugewiesen, dass auf die Zotero-Id des refrerenzierten Textes verweist.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <text>
+                           <body>
+                              <div>
+                                 <p>
+                                    <bibl>
+                                       <persName>Gerhard Anschütz</persName>,
+                                       Die Verfassung des Deutschen Reichs vom 11. August 1919,
+                                       14. Aufl., Berlin 1933, <biblScope>
+                                          30–21</biblScope>
+                                    </bibl>
+                                 </p>
+                              </div>
+                           </body>
+                        </text>
+                     </egXML>
+                  </div>
+                  <div>
+                     <head>Gesetzesangaben</head>
+                     <p>Analog zu der Literatur werden auch Gesetzesangaben mit einem
+                        <gi>bibl</gi>-Element ausgezeichnet. Eine Spezifizierung findet hier mit dem
                         <att>type</att>-Attribut und dem Wert "<val>statute</val>" statt.</p>
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <text>
-                        <body>
-                           <div>
-                              <p> [Ein Text]<note n="[Fußnotenzahl im Druck]" type="editorial"
-                                    xml:id="[ID nach Gesamtsystematik]">
-                                    <p>
-                                       <bibl type="statute" ref="[ID aus Gesetze.xml]">
-                                          [Gesetzesangabe]</bibl>
-                                    </p>
-                                 </note>
-                              </p>
-                           </div>
-                        </body>
-                     </text>
-                  </egXML>
-                  <p>Das Attribut <att>ref</att> verweist auf den entsprechenden Registereintrag
-                     des Gesetzes mit dem Wert seiner dortigen <att>xml:id</att>.
+                     <p>Im <att>sameAs</att>-Attribut wird die Id des Gesetzestextes aus dem entsprechenden Index referenziert.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <text>
+                           <body>
+                              <div>
+                                 <p>
+                                    <bibl type="statute" sameAs="[ID aus Gesetze.xml]">
+                                       [Gesetzesangabe]</bibl>
+                                 </p>
+                              </div>
+                           </body>
+                        </text>
+                     </egXML>
+                  </div>
+                  <div>
+                     <head>Personennamen</head>
+                     <p>Personennamen sind mit dem <gi>persName</gi>-Element als solche gekennzeichnet.
+                        Dabei wird nicht zwischen Vor- und Nachname, Titel o.ä. unterschieden. Mittel des <att>key</att>-Attributs wird auf die Id der entsprechenden Person im Index verwiesen.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <text>
+                           <body>
+                              <div>
+                                 <p>[Text] <persName key="123">Kant</persName> [weiterer Text]</p>
+                              </div>
+                           </body>
+                        </text>
+                     </egXML>
+                  </div>
+                  <div>
+                     <head>Indirekte Nennungen</head>
+                     <p>In Fällen, in denen Entitäten im Text nur indirekt genannt oder referenziert werden, wird das <gi>rs</gi>-Element verwendet, um die Nennung zu markieren. Durch das <att>ref</att> attribut wird die jeweilige Id angeben, während das <att>type</att>-Attribut die Art der Entität spezifiziert.</p>
+                  </div>
                </div>
-               <div>
-                  <head>Hervorhebungen</head>
-                  <p>Hervorhebungen im Kelsen-Text werden mit dem Element <gi>hi</gi> ausgezeichnet.
-                     Eine Variation ist die Hervorhebung eines "Typs 2" mit dem zusätzlichen
-                     Attribut <att>rend</att> plus Wert "<val>b</val>".</p>
-                  <p>Über die jeweiligen Anwendungsfälle informieren die allgemeinen
-                     Editionsrichtlinien des Projektes.</p>
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <text>
-                        <body>
-                           <div>
-                              <p>[...]<hi>selbstverständlich</hi> und unproblematisch war, daß es
-                                    <hi rend="b">einer</hi> besonderen [...]</p>
-                           </div>
-                        </body>
-                     </text>
-                  </egXML>
-               </div>
-               <div>
-                  <head>Personennamen</head>
-                  <p>Personennamen sind mit dem <gi>persName</gi>-Element als solche gekennzeichnet.
-                     Dabei wird nicht zwischen Vor- und Nachname, Titel o.ä. unterschieden.
-                     Innerhalb eines <att>key</att> wird auf den entsprechenden Eintrag zur Person
-                     im Personenregister verwiesen, Wert ist die dortige <att>xml:id</att> des
-                     Personeneintrags. Außerdem wird, falls vorhanden, der permanente Link zum
-                     Eintrag der Person in der Gemeindamen Normdatei der Deutschen Nationalbbliothek
-                     (GND) in einem Attribut <att>ref</att> hinterlegt.</p>
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <text>
-                        <body>
-                           <div>
-                              <p>[Text] <persName key="[xml:id wie in Personen.xml]"
-                                    ref="[GND-Link]">Kant</persName> [weiterer Text]</p>
-                           </div>
-                        </body>
-                     </text>
-                  </egXML>
-               </div>
-               <div>
-                  <head>Seitenwechsel</head>
-                  <p>Seitenwechsel werden erhalten und sollten im nomralfall keiner Bearbeitung bedürfen. Grundsätzlich werden die Seitenwechsel mit einem <gi>pb</gi>-Element markiert.
-                     Innerhalb eines Attributs <att>n</att> sind die Seitenzahlen der neuen Seite (pb=pagebegin) als Attributwert hinterlegt, das <att>facs</att>-Attribut verweist auf die zugehörige Abbildung, während <att>xml:id die zugehörige Id enthält.</att></p>
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <text>
-                        <body>
-                           <div>
-                              <pb facs="#facs_6" n="6" xml:id="img_0006"/>
-                           </div>
-                        </body>
-                     </text>
-                  </egXML>
-               </div>
+            <div>
+               <head>Texteingriffe/Konjekturen</head>
+               <p>Editorische Eingriffe in den Text werden mit dem Element <gi>corr</gi>
+                  markiert. Dabei handelt es sich um Korrekturen von semantisch wenig relevanten
+                  ›Flüchtigkeitsfehlern‹, z.B. die Korrektur eines Buchstabendrehers oder auch um
+                  die Korrektur durch Löschung eines überzähligen Buchstabens. Für Korrekturen
+                  sind regulär keine weiteren Attribute zu vertiefenden Klassifizierung
+                  vorgesehen.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <body>
+                     <div xml:id="e.02.001.01.002">
+                        <p xml:id="a.02.001.01.002.0001"><corr>…</corr>Hier ist ein unbedeutender
+                           Fehl<corr>e</corr>r – nämlich ein fehlendes ›e‹ korrigiert
+                           worden.</p>
+                     </div>
+                  </body>
+               </egXML>
             </div>
-            <div xml:id="structure_register">
-               <head>Register</head>
-               <p>Bei den Registern der digitalen Edition handelt es sich um kummulierte
-                  Gesamtregister, die jegliche in den einzelnen Druckbänden befindliche Einträge
-                  umfassen. Unterschieden wird basierend auf der Druckversion zwischen einem
-                  Gesetzesregister, Personenregister und Sachregister.</p>
-               <div xml:id="metadata_register">
-                  <head>Metadaten</head>
-                  <p>Metadaten zu den einzelnen Registern werden innerhalb des <gi>teiHeader</gi>
-                     erfasst, der einheitlich für alle Register verwendet wird:</p>
-                  <p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples"> [TEI Header WIP] </egXML>
-                  </p>
-               </div>
-               <div xml:id="content_register">
-                  <head>Grundaufbau</head>
-                  <div xml:id="content_statute">
-                     <head>Gesetzesregister</head>
-                     <p>Sämtliche Einträge im Gesetzesregister stehen innerhalb eines <gi>text</gi>,
-                           <gi> body</gi> und <gi>listBibl</gi>-Elements. Sie umschließen den
-                        gesamten Registerinhalt.</p>
-                     <div>
-                        <head>Grundform eines Registereintrags</head>
-                        <p>Ein Registereintrag umfasst je ein Gesetz. Er wird durch ein
-                              <gi>bibl</gi>-Element gekennzeichnet und mittels des Attributs
-                              <att>type</att> mit dem Wert "<val> statute</val>" als Gesetz
-                           klassifiziert. Jedes <gi>bibl</gi> erhält zudem eine <att>xml:id</att>,
-                           die der <ref target="#structure_ids">
-                              Identifikatoren-Gesamtsystematik</ref> folgt.<lb/>Ein Eintrag im
-                           Gesetzesregister umfasst mindestens den Langtitel des Gesetzes, das
-                           Erscheinungsland sowie das Erscheinungsjahr. Ersterer steht innerhalb
-                           eines <gi>title</gi> -Elements mit dem Attribut <att>type</att> und dem
-                           Wert "<val>reg</val>" (= regular). Der Ort wird durch ein
-                              <gi>pubPlace</gi>-Element ausgezeichnet, wobei der Wert des Attributs
-                              "<att>key</att>" dem jeweiligen ISO-Ländercode (<ref
-                              target="https://www.iso.org/iso-3166-country-codes.html">ISO-Norm 3166
-                              alpha-3</ref>) entspricht. Er wird entsprechend der ISO-Norm in
-                           Großbuchstaben angegeben. Das Jahr steht wiederum als Wert des Attributs
-                              <att> when</att> innerhalb eines <gi>date</gi>-Elements.</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <bibl type="statute" xml:id="s_isr_vqh_mxb">
-                              <title type="reg">Kaiserliches Manifest vom 4. März 1849 wodurch der
-                                 Reichstag von Kremsier aufgelöset, und den Völkern Österreichs aus
-                                 eigner Macht des Kaisers eine Reichsverfassung für das gesammte
-                                 Kaiserthum Österreich verliehen wird, RGBl 1849/149</title>
-                              <pubPlace key="AUT">Österreich</pubPlace>
-                              <date when="1849"/>
-                           </bibl>
-                        </egXML>
-                        <p>Optional können einem Registereintrag weitere Angaben (Kurztitel,
-                           Gesetzeserweiterungen, Fundstellen) hinzugefügt werden.</p>
+            <div>
+               <head>Kennzeichnung von Fehlern</head>
+               <p>Bei Fehlern, die einen erheblichen semantischen Unterschied bedeuten, wird der
+                  Fehler nicht korrigiert, aber als solcher markier. Für diese Markierung ist der
+                  <gi>sic</gi>-tag zu verwenden, der den Fehler umschließt.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <body>
+                     <div xml:id="e.02.001.01.002">
+                        <p xml:id="a.02.001.01.002.0001"> Hier ist etwas <sic>unwichtig</sic>!
+                        </p>
                      </div>
-                     <div>
-                        <head>Kurztitel</head>
-                        <p>Ein Registereintrag kann mehrere Arten von Gesetzeskurztiteln umfassen:<lb/><list>
-                              <item>Von den Editor*innen festgelegte Kurztitel</item>
-                              <item>Alternative editorische Kurztitel, die in den Druckbänden
-                                 ebenfalls Verwendung finden</item>
-                              <item>Von Hans Kelsen im Original verwendete Kurztitel
-                                 (Kelsen-Kurztitel)</item>
-                              <item>Kurztitel von Gesetzeserweiterungen</item>
-                           </list></p>
-                        <p>Grundsätzlich werden Kurztitel mit einem <gi>title</gi>-Element und dem
-                           Attribut <att>type</att> mit dem Wert "<val>short</val>"
-                           gekennzeichnet.</p>
-                        <p>Zur weiteren Unterscheidung der unterscheidlichen Kurztitel wird
-                           zusätzlich das Attribut <att>subtype</att> verwendet, das den Wert "<val>
-                              alt</val>" für alternative Kurztitel oder "<val>original</val>" für
-                           Kelsen-Kurztitel haben kann. Reguläre Kurztitel sowie Kurztitel von
-                           Gesetzeserweiterungen erhalten keine weiteren Attribute.</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <bibl type="statute" xml:id="s_isr_vqh_mxb">
-                              <title type="short">Kurztitel</title>
-                              <title type="short" subtype="alt">Alternativer Kurztitel</title>
-                              <title type="short" subtype="original">Kelsen-Kurztitel</title>
-                              <title type="reg">Langtitel</title>
-                              <pubPlace>Erscheinungsort</pubPlace>
-                           </bibl>
-                        </egXML>
-                        <p>Die Angabe von Kurztiteln ist optional.</p>
-                     </div>
-                     <div>
-                        <head>Gesetzeserweiterungen</head>
-                        <p>Erweiterungen von Gesetzen werden dem Eintrag des Ursprungsgesetzes
-                           hinzugefügt. Sie werden mit einem <gi>bibl</gi>-Element und dem Attribut
-                              <att> type</att> mit dem dem Wert "<val>statute_expanded</val>"
-                           gekennzeichnet. Wie das Ursprungsgesetz erhalten auch
-                           Gesetzeserweiterungen eine <att> xml:id</att>, die der <ref
-                              target="#structure_ids"> Identifikatoren-Gesamtsystematik</ref>
-                           folgt.<lb/>Gesetzeserweiterungen umfassen mindestens einen Langtitel
-                           sowie ein Erscheinungsjahr. Der Langtitel der Erweiterung steht innerhalb
-                           eines <gi>title</gi>-Elements ohne weitere Attribute. Das
-                           Erscheinungsjahr steht als Wert des Attributs <att> when</att> innerhalb
-                           eines <gi>date </gi>-Elements. Optional können Gesetzeserweiterungen
-                           zusätzlich Kurztitel und/oder Fundstellen hinzugefügt werden.</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <bibl type="statute" xml:id="[ID des Eintrags]">
-                              <title type="short">StGG Reichsvertretung 1867</title>
-                              <title type="short" subtype="original">Reichsvertretungsgesetz</title>
-                              <title type="reg">Gesetz vom 21. December 1867, wodurch das
-                                 Grundgesetz über die Reichsvertretung vom 26. Februar 1861
-                                 abgeändert wird, RGBl 1867/141</title>
-                              <pubPlace>Österreich</pubPlace>
-                              <date>1867</date>
-                              <bibl type="statute_expanded" xml:id="[ID des Eintrags]">
-                                 <title>idF RGBl 1873/40</title>
-                                 <date when="1873"/>
-                              </bibl>
-                              <bibl type="statute_expanded" xml:id="[ID des Eintrags]">
-                                 <title>idF RGBl 1907/15</title>
-                                 <date when="1907"/>
-                              </bibl>
-                           </bibl>
-                        </egXML>
-                        <p>Die Angabe von Gesetzeserweiterungen ist optional.</p>
-                     </div>
-                     <div>
-                        <head>Fundstellen im Druck</head>
-                        <p>Fundstellen zu Gesetzen oder Gesetzeserweiterungen in den Druckbänden
-                           werden dem Eintrag des Ursprungsgesetzes hinzugefügt. Sie werden
-                           innerhalb eines <gi>linkGrp</gi>-Elements als einzelne <gi>ptr</gi>
-                           refernziert.<lb/>Unterschieden wird zwischen drei Arten von Referenzen:<list>
-                              <item>Die Angabe eines übergreifenden HKW-Bandes</item>
-                              <item>Seitenangaben für einen bestimmten HKW-Band</item>
-                              <item>Fußnoten in einem bestimmten HKW-Band</item>
-                           </list></p>
-                        <p>Zur Unterscheidung der unterscheidlichen Referenzen wird das
-                           <gi>ptr</gi>-Element um das das Attribut <att>type</att> erweitert, das
-                           den Wert "<val>volume</val>" (übergreifenden HKW-Band), "<val>page</val>"
-                           (Seitenzahl in einem Band) oder "<val>note</val>" (Fußnote in einem Band)
-                           erhält.<lb/>Das vorgesehene einheitliche Format zur Angabe von
-                           Fundstellen entspricht abhängig von der gewählten Referenzart: Band,
-                           Band#Seite, Band#Seite.Fußnotennummer.</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <bibl type="statute"> [Ein Gesetzeseintrag] <linkGrp>
-                                 <ptr type="volume" target="HKW-Band"/>
-                                 <ptr type="page" target="HKW-Band#Seite"/>
-                                 <ptr type="note" target="HKW-Band#Seite.Fußnotennummer"/>
-                              </linkGrp>
-                           </bibl>
-                        </egXML>
-                     </div>
-                  </div>
-                  <div xml:id="content_person">
-                     <head>Personenregister</head>
-                     <p>Sämtliche Einträge im Personenregister stehen innerhalb eines <gi>text</gi>,
-                           <gi> body</gi> und <gi>listPerson</gi>-Elements. Sie umschließen den
-                        gesamten Registerinhalt.</p>
-                     <div>
-                        <head>Grundform eines Registereintrags</head>
-                        <p>Ein Registereintrag umfasst je eine Person. Er wird durch ein
-                              <gi>person</gi>-Element gekennzeichnet und erhält außerdem eine
-                              <att>xml:id</att>, die der <ref target="structure_ids"
-                              >Identifikatoren-Gesamtsystematik</ref> folgt.</p>
-                        <p>Ein Eintrag im Personenregister umfasst mindestens den Personennamen
-                           sowie deren Lebensdaten.<lb/>Personennamen werden durch ein
-                              <gi>persName</gi>-Element gekennzeichnet. Das Attribut <att>type</att>
-                           mit dem Wert "<val>reg</val>" klassifiziert diesen als den regulär
-                           bekannten Namen der Person. Außerdem wird eine Differenzierung zwischen
-                           Vor- und Nachnamen vorgenommen. Nachnamen stehen innerhalb des Elements
-                              <gi>surname</gi>, Vornamen wiederum innerhalb von
-                           <gi>forename</gi>.<lb/>Die Elemente <gi>birth</gi> und <gi>death</gi>
-                           umfassen jeweils das Geburts- bzw. Todesjahr der Person.</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <person xml:id="N1.5.2.2.928">
-                              <persName type="reg">
-                                 <surname>Kelsen</surname>
-                                 <forename>Margarete</forename>
-                              </persName>
-                              <birth>1890</birth>
-                              <death>1973</death>
-                           </person>
-                        </egXML>
-                        <p>Optional können einem Registereintrag weitere Angaben hinzugefügt werden
-                           (alternativer Name, Geburtsname, Biografie, Norm-ID).</p>
-                     </div>
-                  </div>
-                  <div>
-                     <head>Alternative Namen</head>
-                     <p>Alternative Namen bzw. Schreibweisen eines Namens, unter denen die Person
-                        ebenfalls bekannt ist, werden mit dem Element <gi>persName</gi> und dem
-                        Attribut <att>type</att> mit dem Wert "<val>alt</val>" ausgezeichnet. Dabei
-                        kann eine Differenzieurng zwischen Vor- und Nachnamen vorgenommen werden
-                        oder nicht.<lb/>Einfache Namen ohne entsprechende Differenzierung werden
-                        innerhalb des <gi>persName</gi>-Elements durch <gi>name</gi> gekennzeichnet.
-                        Eine Differenzierung folgt wiederum dem Prinzip des regulären
-                        Personennamens: Nachnamen stehen innerhalb des Elements <gi>surname</gi>,
-                        Vornamen wiederum innerhalb von <gi>forename</gi></p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <person> [Informationen zur Person] <persName type="alt">
-                              <name>Alternativer Name</name>
-                           </persName>
-                           <persName type="alt">
-                              <surname>alternativer Nachname</surname>
-                              <forename>alternativer Vorname</forename>
-                           </persName> [weitere Informationen zur Person] </person>
-                     </egXML>
-                     <p>Die Angabe von alternativen Namen ist optional.</p>
-                  </div>
-                  <div>
-                     <head>Geburtsnamen</head>
-                     <p>Als Unterform der alternativen Namen werden Geburtsnamen ebenfalls mit dem
-                        Element <gi>persName</gi> und dem Attribut <att>type</att> mit dem Wert
-                           "<val> alt</val>" ausgezeichnet, erhalten zur weiteren Spezifizierung
-                        jedoch zusätzlich das Attribut <att>subtype</att> mit dem Wert
-                           "<val>birthname</val>". Da davon ausgegangen wird, dass Geburtsnamen
-                        ausschließlich die Nachnamen einer Person betreffen, findet keine
-                        Differenzierung zwischen Vor- und Nachnamen statt.</p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <person xml:id="N1.5.2.2.928">
-                           <persName type="reg">
-                              <surname>Kelsen</surname>
-                              <forename>Margarete</forename>
-                           </persName>
-                           <persName type="alt" subtype="birthname">
-                              <name>Bondi</name>
-                           </persName> [weitere Informationen zur Person] </person>
-                     </egXML>
-                  </div>
-                  <div>
-                     <head>Biographien</head>
-                     <p>Informationen zu Leben und Wirken der Person werden analog zu <ref
-                           target="#text_notes">Anmerkungen</ref> innerhalb eines
-                        <gi>note</gi>-Elements erfasst. Eine genauere Spezifizierung erfolgt
-                        mithilfe des Attributs <att> type</att> mit dem Wert
-                        "<val>biography</val>".</p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <person xml:id="N1.5.2.2.928"> [Informationen zur Person] <note
-                              type="biography">Margarete Kelsen, geb. Bondi (1890–1973) war die
-                              Tochter des wohlhabenden Wiener Ehepaares Ferdinand (?–um 1898) und
-                              Bertha Bondi, geb. Prager (1859–1934); Margarete heiratete Kelsen am
-                              25. 5. 1912 und war fast 61 Jahre dessen Ehefrau. Ob sie zunächst zu
-                              Hans in die Familienwohnung der Kelsens in der Marokkanergasse 20 (3.
-                              Wiener Gemeindebezirk) (vgl. Anm. 54) zog, ist ungewiss; ab 20. 5.
-                              1912 war Margarete im 9. Bezirk in der Wiederhofergasse 7/9 (der
-                              Wohnung ihrer Mutter Berta) gemeldet. Seit dem 25. 9. 1912 war das
-                              junge Paar im 8. Bezirk in der Wickenburggasse 23 (Stiege 2, Top 15)
-                              gemeldet; diese Wohnung bewohnte es mit den beiden Töchtern (vgl. Anm.
-                              220) bis zum Weggang aus Wien im Jahre 1930/31 (die melderechtliche
-                              Abmeldung erfolgte erst zum 18. 2. 1931). Margarete, die bis in die
-                              1930er Jahre für Kelsen teils die Reinschrift der Manuskripte fertigte
-                              und ab den 1940er Jahren den weitaus größten Teil seiner Manuskripte
-                              in Typoskriptform brachte, ging an der Seite ihres Mannes nach Köln,
-                              Genf und schließlich in die USA, wo sie in Berkeley am 5. 1. 1973
-                              wenige Monate vor ihm verstarb.</note>
-                        </person>
-                     </egXML>
-                     <p>Die Angabe von Biographien ist optional.</p>
-                  </div>
-                  <div>
-                     <head>Normdaten</head>
-                     <p>Normdaten, in der Regel eine URI zum GND-Eintrag der Person, folgen stets
-                        unmittelbar auf das öffnende <gi>person</gi>-Tag und werden mit dem Element
-                           <gi> idno</gi> gekennzeichnet. Das Attribut <att>type</att> mit dem Wert
-                           "<val> gnd</val>" klassifiziert die Angabe als GND-URI. Der Wert des
-                        Attributs <att> source</att> umfasst wiederum die eigentliche URI.</p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <person xml:id="N1.5.2.2.928">
-                           <idno type="uri" source="http://d-nb.info/gnd/13725945X"/>
-                           <persName type="reg">
-                              <surname>Kelsen</surname>
-                              <forename>Margarete</forename>
-                           </persName> [Weitere Informationen zur Person] </person>
-                     </egXML>
-                     <p>Die Angabe von Normdaten ist optional.</p>
-                  </div>
-                  <div>
-                     <head>Fundstellen im Druck</head>
-                     <p>Fundstellen zu Personeneinträgen in den Druckbänden werden, analog zum
-                        Gesetzesregister, dem Eintrag dem jeweiligen Registereintrag hinzugefügt.
-                        Sie werden innerhalb eines <gi>linkGrp</gi>-Elements als einzelne
-                           <gi>ptr</gi> refernziert.<lb/>Unterschieden wird zwischen drei Arten von Referenzen:<list>
-                           <item>Die Angabe eines übergreifenden HKW-Bandes</item>
-                           <item>Seitenangaben für einen bestimmten HKW-Band</item>
-                           <item>Fußnoten in einem bestimmten HKW-Band</item>
-                        </list></p>
-                     <p>Zur Unterscheidung der unterscheidlichen Referenzen wird das
-                        <gi>ptr</gi>-Element um das das Attribut <att>type</att> erweitert, das den
-                        Wert "<val>volume</val>" (übergreifenden HKW-Band), "<val>page</val>"
-                        (Seitenzahl in einem Band) oder "<val>note</val>" (Fußnote in einem Band)
-                        erhält.<lb/>Das vorgesehene einheitliche Format zur Angabe von Fundstellen
-                        entspricht abhängig von der gewählten Referenzart: Band, Band#Seite,
-                        Band#Seite.Fußnotennummer.</p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <bibl type="statute"> [Ein Personeneintrag] <linkGrp>
-                              <ptr type="volume" target="HKW-Band"/>
-                              <ptr type="page" target="HKW-Band#Seite"/>
-                              <ptr type="note" target="HKW-Band#Seite.Fußnotennummer"/>
-                           </linkGrp>
-                        </bibl>
-                     </egXML>
-                  </div>
-                  <div xml:id="content_items">
-                     <head>Sachregister</head>
-                     <p>[WIP]</p>
-                  </div>
-               </div>
+                  </body>
+               </egXML>
+            </div>
+            <div xml:id="text_notes">
+               <head>Anmerkungen/Fußnoten</head>
+               <p>Die Anmerkungen/Fußnoten <gi>note</gi> in den Texten wird zunächst in solche
+                  von den Autor:innen des edierten Dokuments selber (<att>type</att> mit Wert
+                  "<val>original</val>") und solche von den Sachbearbeiter:innen gesetzte
+                  (<att>type</att> mit Wert "<val> editorial</val>") unterschieden.</p>
+               <p>Innerhalb von <gi>note</gi> steht der Text in einem oder gegebenenfalls
+                  mehreren <gi>p</gi>-Elementen.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <text>
+                     <body>
+                        <div>
+                           <p> [Ein Text]<note n="[Fußnotenzahl im Original]" type="original"
+                              xml:id="[ID nach Gesamtsystematik]">[Eine Anmerkung im
+                              Dokument]</note>
+                           </p>
+                        </div>
+                     </body>
+                  </text>
+               </egXML>
+               <p>Grunsätzlich ist eine Herausgeber:innenanmerkung wie folgt modelliert:</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <text>
+                     <body>
+                        <div>
+                           <p> [Ein Text]<note type="editorial"
+                              xml:id="[ID nach Gesamtsystematik]">[Eine
+                              Herausgeberanmerkung]</note>
+                           </p>
+                        </div>
+                     </body>
+                  </text>
+               </egXML>
+               <p>Bei Herausgeberanmerkungen wird jedoch unterschieden zwischen: <list>
+                  <item>Textkritischen Anmerkungen</item>
+                  <item>Textgenetischen Anmerkungen</item>
+                  <item>Sachanmerkungen</item>
+                  <item>Personenerläuterungen</item>
+               </list>
+               </p>
             </div>
             <div xml:id="structure_ids">
                <head>Identifikatoren-Gesamtsystematik</head>
@@ -7052,68 +6899,7 @@
                            </row>
                         </table>
                      </div>
-                     <div xml:id="action_pubPlace_code">
-                        <head>ISO-Ländercode</head>
-                        <table>
-                           <row>
-                              <cell role="label">Fundort</cell>
-                              <cell role="data"><hi rend="bold">Symbolleiste</hi>: Ergänzungen -&gt;
-                                 ISO-Ländercode</cell>
-                           </row>
-                           <row>
-                              <cell role="label">Aktionsbeschreibung</cell>
-                              <cell role="data">Dem Registereintrag einen ISO-Ländercode (ISO 3166
-                                 alpha-3, in GROSSBUCHSTABEN) hinzufügen</cell>
-                           </row>
-                           <row>
-                              <cell role="label">Anwendungsfall</cell>
-                              <cell role="data">Einem bereits vorhandenen Eintrag im
-                                 Gesetzesregister soll nachträglich ein noch nicht hinterlegtes
-                                 Erscheinungsland über den ISO-Code hinzugefügt werden.</cell>
-                           </row>
-                           <row>
-                              <cell role="label">Anwendungsbeispiel</cell>
-                              <cell role="data">Zum Hinzufügen eines Erscheinungslandes zu einem
-                                 Gesetz den Cursor auf den entsprechenden Registereintrag setzten
-                                 und die Aktion in der Symbolleiste auswählen. Es erscheint ein
-                                 separates Fenster, in das der ISO-Code des Landes manuell
-                                 eingetragen wird. Der Code entspricht der <ref
-                                    target="https://www.iso.org/iso-3166-country-codes.html"
-                                    >ISO-Norm 3166 alpha-3</ref> und wird in GROSSBUCHSTABEN
-                                    eingetragen.<lb/><hi rend="bold">!WICHTIG!</hi> Zu einem Gesetz
-                                 kann jeweils nur ein Erscheinungsland angegeben werden. Sollte das
-                                 Land in der Auswahlliste fehlen, das vorhandene Erscheinungsland im
-                                 Registereintrag mithilfe der Aktion <ref
-                                    target="#action_general_delete_element">Einzelne Angabe
-                                    löschen</ref> entfernen und diese Aktion anwenden, um den
-                                 ISO-Code sowie Ländernamen manuell hinzufügen. Alternativ kann der
-                                 ISO-Code auch ohne löschen über den Textmodus in den Daten direkt
-                                 eingetragen werden.<lb/><hi rend="bold">!WICHTIG!</hi> Diese Aktion
-                                 ermöglicht ausschließlich das Eintragen des ISO-Ländercodes, der
-                                 als Attribut im <gi>pubPlace-Element</gi> hinterlegt ist. Der
-                                 Ländername muss nach Verwendung der Aktion jedoch nochmals in
-                                 Reintext manuell eingetragen werden.</cell>
-                           </row>
-                           <row>
-                              <cell role="label">XML-Code</cell>
-                              <cell role="data">
-                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                    <pubPlace key="[ISO-Ländercode]"/>
-                                 </egXML>
-                              </cell>
-                           </row>
-                           <row>
-                              <cell role="label">Code-Erläuterung</cell>
-                              <cell role="data">Erscheinungsländer werden mit einem
-                                 selbstschließenden <gi>pubPlace</gi>-Element gekennzeichnet, wobei
-                                 der ISO-Ländercode als Wert des Attributs <att>key</att> angegeben
-                                 wird. Da das Erscheinungsland noch nicht im CSS hinterlegt ist,
-                                 erfolgt die Anzeige noch nicht automatisiert, sonder muss manuell
-                                 eingetragen werden und in der Folge durch die Arbeitsstelle
-                                 Frankfurt dem CSS und der Auswahlliste hinzugefügt werden.</cell>
-                           </row>
-                        </table>
-                     </div>
+
                   </div>
                   <div xml:id="actions_statutes_search">
                      <head>Suche</head>
