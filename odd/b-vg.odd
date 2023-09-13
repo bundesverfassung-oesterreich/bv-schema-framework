@@ -577,6 +577,20 @@
                   </egXML>
                </div>
                <div>
+                  <head>Begriffserleuterungen/Abkürzungen</head>
+                  <p>Erläuterungsbedürftige Begriffe und Abkürzungen werden mittels eines <gi>term</gi>-Elements als solche gekennzeichnet.
+                     Mittels der <att>key</att>-Attributs wird auf die Id der entsprechenden Ansetzung im Index verwiesen.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <text>
+                        <body>
+                           <div>
+                              <p>irgendein Text <term key="bv_term_123">B-VG</term> weiterer Text</p>
+                           </div>
+                        </body>
+                     </text>
+                  </egXML>
+               </div>
+               <div>
                   <head>Indirekte Nennungen</head>
                   <p>In Fällen, in denen Entitäten im Text nur indirekt genannt oder referenziert
                      werden, wird das <gi>rs</gi>-Element verwendet, um die Nennung zu markieren.
