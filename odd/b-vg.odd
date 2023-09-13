@@ -279,11 +279,12 @@
                   <div>
                      <head>Der Inhalt</head>
                      <p>Der inhaltliche Haupttext findet sich im <gi>body</gi> eines XML-Dokuments,
-                        innerhalb eines oder mehrerer Elemente <gi>div</gi>. Ein Haupttext beginnt
-                        in der Regel mit einem Titel <gi>head</gi>. Die einzelnen Texte sind in sich
-                        selbst vielfältig strukturiert. Neben losen, allgemein bestimmten
-                        Struktureinheiten wie Kapiteln, Abschnitten und Unterabschnitten, existieren
-                        kleinere spezifische Strukturelemente wie Artikel, Absätze und Ziffern.</p>
+                        innerhalb eines <gi>div</gi>-Elements mit dem
+                           <att>type</att>=<val>main</val>. Ein Haupttext beginnt in der Regel mit
+                        einem Titel <gi>head</gi>. Die einzelnen Texte sind in sich selbst
+                        vielfältig Baumartig strukturiert. Neben losen, allgemein bestimmten Struktureinheiten
+                        wie Kapiteln, Abschnitten und Unterabschnitten, existieren kleinere
+                        spezifische Strukturelemente wie Artikel, Absätze und Ziffern.</p>
                   </div>
                </div>
                <div>
@@ -291,24 +292,45 @@
                   <p>Der Dokumententext wird im <gi>text</gi> inklusive aller Abschnitte in
                         <gi>div</gi>-Elementen erfasst. <gi>div</gi>-Elementen, die einen größeren
                      Dokumentenabschnitt repräsentieren, erhalten den
-                        <att>type</att>="<val>structure</val>"</p>
+                        <att>type</att>="<val>section</val>"</p>
+                  <p>Die Dokumente sind jedoch tiefer als auf nur einer Ebene strukturiert: sie
+                     enthalten teilweise komplexe verschachtelte Strukturen mit Abschnitten,
+                     Unterabschnitten, Unter-Unterabschnitten etc. Um zu codieren, auf welcher ebene
+                     sich ein <gi>div</gi>-Element befindet, werden in aufsteigender Folge
+                        <gi>div</gi>-Elemente verwendet, die eine natürliche Zahl von 1–7 enthalten.
+                     Ein <gi>div</gi> (Abschnitt) kann demzufolge mehrere <gi>div1</gi>
+                     (Unterabschnitte) enthalten, die wiederum mehrere <gi>div2</gi>
+                     (Unter-Unterabschnitte). Es ist nicht möglich, eine Ebene in der Zählung auszulassen. Abschnitte der ersten Ebene (Kapitel, Hauptabschnitte etc.) erhalten den <att>type</att>=<val>section</val>, Subabschnitte (<gi>div1</gi>–<gi>div7  </gi>)erahlten – unabhängig von ihrer Konkreten Ebene – den <att>type</att>=<val>subsection</val></p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <body>
-                        <div type="main"> [Umfasst das einzelne Werk im Gesamten] <div
-                              type="section" n="1"> [Abschnitt I] <div type="section" n="2"
-                                 xml:id="e.02.001.03.003"> Unterabschnitt I.A </div>
+                     <text>
+                        <body>
+                           <div type="main">
+                              <head>Titel des Dokuments</head>
+                              <p>irgendein Text</p>
+                              <div type="section">
+                                 <head>Titel des ersten Abschnitts</head>
+                                 <p>irgendein Text</p>
+                                 <div1 type="section">
+                                    <head>Titel des Unterabschnitts I.A </head>
+                                    <p>irgendein Text</p>
+                                 </div1>
+                              </div>
+                              <div type="section">
+                                 <head>Titel des zweiten Abschnitts</head>
+                                 <p>irgendein Text</p>
+                                 <div1 type="section">
+                                    <head>Titel des Unterabschnitts II.A </head>
+                                    <p>irgendein Text</p>
+                                    <div2 type="section">
+                                       <head>Titel des Unter-Unterabschnitts II.A.a </head>
+                                       <p>irgendein Text</p>
+                                    </div2>
+                                 </div1>
+                              </div>
                            </div>
-                           <div type="section" n="1"> [Abschnitt II] <div type="section" n="2"
-                                 xml:id="e.02.001.03.003"> Unterabschnitt II.A </div>
-                              <div type="section" n="2" xml:id="e.02.001.03.003"> Unterabschnitt
-                                 II.B </div>
-                           </div>
-                        </div>
-                     </body>
+                        </body>
+                     </text>
                   </egXML>
-                  <p>Die <att>n</att>-Attribute können unendlich nach aufsteigender Zählung belegt
-                     werden, je nach Tiefe der Kapitelstrukturen. Sie geben jeweil die Sturkturebene
-                     an, auf der ein Abschnitt verortet ist.</p>
                   <p>Jedes <gi>div</gi>-Element muss über eine <att>xml:id</att>, verfügen, die der
                         <ref target="#structure_ids">Identifikatoren-Gesamtsystematik</ref> folgt.
                      Ids sollten ausschließlich über die im Schema angebotene Funktionalität
@@ -631,8 +653,9 @@
                               type="app_start" xml:id="a_1222"/>der souveränen Länder<anchor
                               type="app_start" xml:id="a_1223"/>;</p>
                         <app from="a_1222" to="a_1223">
-                           <note><persName key="p_0001">Kelsen</persName> am Rand:
-                                 <note type="original">Artiken?</note>; aus: <del>souveränder Länder</del></note>
+                           <note><persName key="p_0001">Kelsen</persName> am Rand: <note
+                                 type="original">Artiken?</note>; aus: <del>souveränder
+                              Länder</del></note>
                         </app>
                         <p>Es ist unter diesen <anchor type="app_start" xml:id="a_1233"/>Umständen
                            jedoch <anchor type="app_start" xml:id="a_1235"/>weder ratsam noch
@@ -643,8 +666,8 @@
                               Anstreichung): <note type="original">möglich?</note></note>
                         </app>
                         <app from="a_1235" to="a_1236">
-                           <note><persName key="p_0001">Kelsen</persName> aus: <del>Bedingungen nicht
-                                 angezeigt, den</del></note>
+                           <note><persName key="p_0001">Kelsen</persName> aus: <del>Bedingungen
+                                 nicht angezeigt, den</del></note>
                         </app>
                      </div>
                   </body>
