@@ -898,13 +898,14 @@
             <head>Appendix</head>
             <schemaSpec ident="tei_b_vg" start="TEI" prefix="undefined" targetLang="de" docLang="de">
                <moduleRef key="header"
-                  include="teiHeader fileDesc titleStmt publicationStmt sourceDesc change encodingDesc editionStmt revisionDesc profileDesc"/>
+                  include="teiHeader fileDesc titleStmt publicationStmt sourceDesc change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability"/>
                <moduleRef key="core"
-                  include="p title note bibl date hi item pb publisher foreign corr ref list author respStmt resp head biblScope term"/>
+                  include="p title note bibl date hi item pb publisher foreign corr ref list author respStmt resp head biblScope term address pubPlace author title graphic"/>
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
+               <moduleRef key="transcr" include="facsimile surface"/>
                <moduleRef key="namesdates"
-                  include="persName listPerson orgName"/>
+                  include="persName listPerson orgName placeName country settlement"/>
                <moduleRef key="figures" include="cell table row"/>
                <moduleRef key="textcrit" include="app"/>
                <moduleRef key="linking" include="anchor"/>
@@ -1181,9 +1182,9 @@
                <elementSpec ident="date" mode="change">
                   <attList>
                      <attDef ident="when" mode="change" usage="req"/>
-                     <attDef ident="notBefore-iso" mode="change" usage="req"/>
+                     <attDef ident="notBefore-iso" mode="change" usage="rec"/>
                      <attDef ident="notBefore" mode="delete"/>
-                     <attDef ident="notAfter-iso" mode="change" usage="req"/>
+                     <attDef ident="notAfter-iso" mode="change" usage="rec"/>
                      <attDef ident="notAfter" mode="delete"/>
                      <attDef ident="subtype" mode="delete"/>
                      <attDef ident="type" mode="delete"/>
