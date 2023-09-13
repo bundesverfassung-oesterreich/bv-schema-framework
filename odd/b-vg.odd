@@ -295,12 +295,7 @@
                         <att>type</att>="<val>section</val>"</p>
                   <p>Die Dokumente sind jedoch tiefer als auf nur einer Ebene strukturiert: sie
                      enthalten teilweise komplexe verschachtelte Strukturen mit Abschnitten,
-                     Unterabschnitten, Unter-Unterabschnitten etc. Um zu codieren, auf welcher ebene
-                     sich ein <gi>div</gi>-Element befindet, werden in aufsteigender Folge
-                        <gi>div</gi>-Elemente verwendet, die eine natürliche Zahl von 1–7 enthalten.
-                     Ein <gi>div</gi> (Abschnitt) kann demzufolge mehrere <gi>div1</gi>
-                     (Unterabschnitte) enthalten, die wiederum mehrere <gi>div2</gi>
-                     (Unter-Unterabschnitte). Es ist nicht möglich, eine Ebene in der Zählung auszulassen. Abschnitte der ersten Ebene (Kapitel, Hauptabschnitte etc.) erhalten den <att>type</att>=<val>section</val>, Subabschnitte (<gi>div1</gi>–<gi>div7  </gi>)erahlten – unabhängig von ihrer Konkreten Ebene – den <att>type</att>=<val>subsection</val></p>
+                     Unterabschnitten, Unter-Unterabschnitten etc. Um dies zu codieren, können <gi>div</gi>-Element verschachtelt werden. Abschnitte der ersten Ebene (Oberkapitel, Hauptabschnitte etc.) erhalten den <att>type</att>=<val>section</val>, Subabschnitte und Unterkapitel erahlten – unabhängig von ihrer Konkreten Ebene – den <att>type</att>=<val>sub_section</val></p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
@@ -310,22 +305,22 @@
                               <div type="section">
                                  <head>Titel des ersten Abschnitts</head>
                                  <p>irgendein Text</p>
-                                 <div1 type="section">
+                                 <div type="sub_section">
                                     <head>Titel des Unterabschnitts I.A </head>
                                     <p>irgendein Text</p>
-                                 </div1>
+                                 </div>
                               </div>
                               <div type="section">
                                  <head>Titel des zweiten Abschnitts</head>
                                  <p>irgendein Text</p>
-                                 <div1 type="section">
+                                 <div type="sub_section">
                                     <head>Titel des Unterabschnitts II.A </head>
                                     <p>irgendein Text</p>
-                                    <div2 type="section">
+                                    <div type="sub_section">
                                        <head>Titel des Unter-Unterabschnitts II.A.a </head>
                                        <p>irgendein Text</p>
-                                    </div2>
-                                 </div1>
+                                    </div>
+                                 </div>
                               </div>
                            </div>
                         </body>
@@ -552,7 +547,7 @@
                         <body>
                            <div>
                               <p>
-                                 <bibl type="statute" sameAs="[ID aus Gesetze.xml]">
+                                 <bibl type="statute" sameAs="id des Gesetztestextes">
                                     [Gesetzesangabe]</bibl>
                               </p>
                            </div>
