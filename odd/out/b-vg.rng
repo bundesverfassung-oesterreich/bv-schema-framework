@@ -1,0 +1,3359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         xmlns:tei="http://www.tei-c.org/ns/1.0"
+         xmlns:teix="http://www.tei-c.org/ns/Examples"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+         ns="http://www.tei-c.org/ns/1.0"><!--
+Schema generated from ODD source 2023-09-13T12:22:18Z. .
+TEI Edition: Version 4.4.0. Last updated on
+        19th April 2022, revision ff9cc28b0
+TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
+  
+--><!---->
+   <define name="undefinedmacro.paraContent">
+      <zeroOrMore>
+         <choice>
+            <text/>
+            <ref name="undefinedmodel.gLike"/>
+            <ref name="undefinedmodel.phrase"/>
+            <ref name="undefinedmodel.inter"/>
+            <ref name="undefinedmodel.global"/>
+            <ref name="undefinedmodel.lLike"/>
+         </choice>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmacro.phraseSeq">
+      <zeroOrMore>
+         <choice>
+            <text/>
+            <ref name="undefinedmodel.gLike"/>
+            <ref name="undefinedmodel.attributable"/>
+            <ref name="undefinedmodel.phrase"/>
+            <ref name="undefinedmodel.global"/>
+         </choice>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmacro.phraseSeq.limited">
+      <zeroOrMore>
+         <choice>
+            <text/>
+            <ref name="undefinedmodel.limitedPhrase"/>
+            <ref name="undefinedmodel.global"/>
+         </choice>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmacro.specialPara">
+      <zeroOrMore>
+         <choice>
+            <text/>
+            <ref name="undefinedmodel.gLike"/>
+            <ref name="undefinedmodel.phrase"/>
+            <ref name="undefinedmodel.inter"/>
+            <ref name="undefinedmodel.divPart"/>
+            <ref name="undefinedmodel.global"/>
+         </choice>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedatt.anchoring.attributes">
+      <ref name="undefinedatt.anchoring.attribute.anchored"/>
+      <ref name="undefinedatt.anchoring.attribute.targetEnd"/>
+   </define>
+   <define name="undefinedatt.anchoring.attribute.anchored">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="anchored"
+                    a:defaultValue="true">
+            <a:documentation>(verankert) gibt an, ob eine Vorlage den exakten Referenzort der Anmerkung anzeigt.</a:documentation>
+            <data type="boolean"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.anchoring.attribute.targetEnd">
+      <optional>
+         <attribute name="targetEnd">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Bereichsende) verweist auf das Ende eines Bereichs, dem das <code xmlns="http://www.w3.org/1999/xhtml">&lt;note&gt;</code>-Element angefügt ist, es sei denn die Anmerkung ist in den Text an diesem Punkt bereits eingebettet.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.ascribed.attributes">
+      <ref name="undefinedatt.ascribed.attribute.who"/>
+   </define>
+   <define name="undefinedatt.ascribed.attribute.who">
+      <optional>
+         <attribute name="who">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the person, or group of people, to whom the element content is ascribed.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.canonical.attributes">
+      <ref name="undefinedatt.canonical.attribute.key"/>
+      <ref name="undefinedatt.canonical.attribute.ref"/>
+   </define>
+   <define name="undefinedatt.canonical.attribute.key">
+      <optional>
+         <attribute name="key">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind.</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.canonical.attribute.ref">
+      <optional>
+         <attribute name="ref">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.ranging.attribute.atLeast">
+      <optional>
+         <attribute name="atLeast">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives a minimum estimated value for the approximate measurement.</a:documentation>
+            <choice>
+               <data type="double"/>
+               <data type="token">
+                  <param name="pattern">(\-?[\d]+/\-?[\d]+)</param>
+               </data>
+               <data type="decimal"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.ranging.attribute.atMost">
+      <optional>
+         <attribute name="atMost">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives a maximum estimated value for the approximate measurement.</a:documentation>
+            <choice>
+               <data type="double"/>
+               <data type="token">
+                  <param name="pattern">(\-?[\d]+/\-?[\d]+)</param>
+               </data>
+               <data type="decimal"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.ranging.attribute.min">
+      <optional>
+         <attribute name="min">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">where the measurement summarizes more than one observation or a range, supplies the minimum value observed.</a:documentation>
+            <choice>
+               <data type="double"/>
+               <data type="token">
+                  <param name="pattern">(\-?[\d]+/\-?[\d]+)</param>
+               </data>
+               <data type="decimal"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.ranging.attribute.max">
+      <optional>
+         <attribute name="max">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">where the measurement summarizes more than one observation or a range, supplies the maximum value observed.</a:documentation>
+            <choice>
+               <data type="double"/>
+               <data type="token">
+                  <param name="pattern">(\-?[\d]+/\-?[\d]+)</param>
+               </data>
+               <data type="decimal"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.ranging.attribute.confidence">
+      <optional>
+         <attribute name="confidence">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the degree of statistical confidence (between zero and one) that a value falls within the range specified by <code xmlns="http://www.w3.org/1999/xhtml">@min</code> and <code xmlns="http://www.w3.org/1999/xhtml">@max</code>, or the proportion of observed values that fall within that range.</a:documentation>
+            <data type="double"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.written.attributes">
+      <ref name="undefinedatt.written.attribute.hand"/>
+   </define>
+   <define name="undefinedatt.written.attribute.hand">
+      <optional>
+         <attribute name="hand">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a <code xmlns="http://www.w3.org/1999/xhtml">&lt;handNote&gt;</code> element describing the hand considered responsible for the content of the element concerned.</a:documentation>
+            <data type="anyURI">
+               <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.cReferencing.attributes">
+      <ref name="undefinedatt.cReferencing.attribute.cRef"/>
+   </define>
+   <define name="undefinedatt.cReferencing.attribute.cRef">
+      <optional>
+         <attribute name="cRef">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(canonical reference) specifies the destination of the pointer by supplying a canonical reference expressed using the scheme defined in a <code xmlns="http://www.w3.org/1999/xhtml">&lt;refsDecl&gt;</code> element in the TEI header</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.w3c.attributes">
+      <ref name="undefinedatt.datable.w3c.attribute.when"/>
+      <ref name="undefinedatt.datable.w3c.attribute.notBefore"/>
+      <ref name="undefinedatt.datable.w3c.attribute.notAfter"/>
+      <ref name="undefinedatt.datable.w3c.attribute.from"/>
+      <ref name="undefinedatt.datable.w3c.attribute.to"/>
+   </define>
+   <define name="undefinedatt.datable.w3c.attribute.when">
+      <optional>
+         <attribute name="when">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the value of the date or time in a standard form, e.g. yyyy-mm-dd.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.w3c.attribute.notBefore">
+      <optional>
+         <attribute name="notBefore">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the earliest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.w3c.attribute.notAfter">
+      <optional>
+         <attribute name="notAfter">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the latest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.w3c.attribute.from">
+      <optional>
+         <attribute name="from">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the starting point of the period in standard form, e.g. yyyy-mm-dd.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.w3c.attribute.to">
+      <optional>
+         <attribute name="to">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the ending point of the period in standard form, e.g. yyyy-mm-dd.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            id="tei_b_vg-att.datable.w3c-att-datable-w3c-when-constraint-rule-1">
+      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:eg="http://www.tei-c.org/ns/Examples"
+                xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                context="tei:*[@when]">
+         <sch:report test="@notBefore|@notAfter|@from|@to" role="nonfatal">The @when attribute cannot be used with any other att.datable.w3c attributes.</sch:report>
+      </sch:rule>
+   </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            id="tei_b_vg-att.datable.w3c-att-datable-w3c-from-constraint-rule-2">
+      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:eg="http://www.tei-c.org/ns/Examples"
+                xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                context="tei:*[@from]">
+         <sch:report test="@notBefore" role="nonfatal">The @from and @notBefore attributes cannot be used together.</sch:report>
+      </sch:rule>
+   </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            id="tei_b_vg-att.datable.w3c-att-datable-w3c-to-constraint-rule-3">
+      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:eg="http://www.tei-c.org/ns/Examples"
+                xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                context="tei:*[@to]">
+         <sch:report test="@notAfter" role="nonfatal">The @to and @notAfter attributes cannot be used together.</sch:report>
+      </sch:rule>
+   </pattern>
+   <define name="undefinedatt.datable.attributes">
+      <ref name="undefinedatt.datable.w3c.attributes"/>
+      <ref name="undefinedatt.datable.iso.attributes"/>
+      <ref name="undefinedatt.datable.custom.attributes"/>
+      <ref name="undefinedatt.datable.attribute.calendar"/>
+      <ref name="undefinedatt.datable.attribute.period"/>
+   </define>
+   <define name="undefinedatt.datable.attribute.calendar">
+      <optional>
+         <attribute name="calendar">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates one or more systems or calendars to which the date represented by the content of this element belongs.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            id="tei_b_vg-att.datable-calendar-calendar-constraint-rule-4">
+      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:eg="http://www.tei-c.org/ns/Examples"
+                xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                context="tei:*[@calendar]">
+         <sch:assert test="string-length(.) gt 0"> @calendar indicates one or more systems or calendars to
+              which the date represented by the content of this element belongs, but this
+              <sch:name/> element has no textual content.</sch:assert>
+      </sch:rule>
+   </pattern>
+   <define name="undefinedatt.datable.attribute.period">
+      <optional>
+         <attribute name="period">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies pointers to one or more definitions of named periods of time (typically <code xmlns="http://www.w3.org/1999/xhtml">&lt;category&gt;</code>s or <code xmlns="http://www.w3.org/1999/xhtml">&lt;calendar&gt;</code>s) within which the datable item is understood to have occurred.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.declarable.attributes">
+      <ref name="undefinedatt.declarable.attribute.default"/>
+   </define>
+   <define name="undefinedatt.declarable.attribute.default">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="default"
+                    a:defaultValue="false">
+            <a:documentation>indicates whether or not this element is selected by default when its parent is selected.</a:documentation>
+            <choice>
+               <value>true</value>
+               <a:documentation>This element is selected if its parent is selected</a:documentation>
+               <value>false</value>
+               <a:documentation>This element can only be selected explicitly, unless it is the only one of its kind, in which case it is selected if its parent is selected.</a:documentation>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.declaring.attributes">
+      <ref name="undefinedatt.declaring.attribute.decls"/>
+   </define>
+   <define name="undefinedatt.declaring.attribute.decls">
+      <optional>
+         <attribute name="decls">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies one or more declarable elements within the header, which are understood to apply to the element bearing this attribute and its content.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.fragmentable.attributes">
+      <ref name="undefinedatt.fragmentable.attribute.part"/>
+   </define>
+   <define name="undefinedatt.fragmentable.attribute.part">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="part"
+                    a:defaultValue="N">
+            <a:documentation>specifies whether or not its parent element is fragmented in some way, typically by some other overlapping structure: for example a speech which is divided between two or more verse stanzas, a paragraph which is split across a page division, a verse line which is divided between two speakers.</a:documentation>
+            <choice>
+               <value>Y</value>
+               <a:documentation>(yes) the element is fragmented in some (unspecified) respect</a:documentation>
+               <value>N</value>
+               <a:documentation>(no) the element is not fragmented, or no claim is made as to its completeness</a:documentation>
+               <value>I</value>
+               <a:documentation>(initial) this is the initial part of a fragmented element</a:documentation>
+               <value>M</value>
+               <a:documentation>(medial) this is a medial part of a fragmented element</a:documentation>
+               <value>F</value>
+               <a:documentation>(final) this is the final part of a fragmented element</a:documentation>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.divLike.attributes">
+      <ref name="undefinedatt.fragmentable.attributes"/>
+      <ref name="undefinedatt.divLike.attribute.org"/>
+      <ref name="undefinedatt.divLike.attribute.sample"/>
+   </define>
+   <define name="undefinedatt.divLike.attribute.org">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="org"
+                    a:defaultValue="uniform">
+            <a:documentation>(organization) specifies how the content of the division is organized.</a:documentation>
+            <choice>
+               <value>composite</value>
+               <a:documentation>no claim is made about the sequence in which the immediate contents of this division are to be processed, or their inter-relationships.</a:documentation>
+               <value>uniform</value>
+               <a:documentation>the immediate contents of this element are regarded as forming a logical unit, to be processed in sequence.</a:documentation>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.divLike.attribute.sample">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="sample"
+                    a:defaultValue="complete">
+            <a:documentation>indicates whether this division is a sample of the original source and if so, from which part.</a:documentation>
+            <choice>
+               <value>initial</value>
+               <a:documentation>division lacks material present at end in source.</a:documentation>
+               <value>medial</value>
+               <a:documentation>division lacks material at start and end.</a:documentation>
+               <value>final</value>
+               <a:documentation>division lacks material at start.</a:documentation>
+               <value>unknown</value>
+               <a:documentation>position of sampled material within original unknown.</a:documentation>
+               <value>complete</value>
+               <a:documentation>division is not a sample.</a:documentation>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.docStatus.attributes">
+      <ref name="undefinedatt.docStatus.attribute.status"/>
+   </define>
+   <define name="undefinedatt.docStatus.attribute.status">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="status"
+                    a:defaultValue="draft">
+            <a:documentation>describes the status of a document either currently or, when associated with a dated element, at the time indicated.
+Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] draft; 6] embargoed; 7] expired; 8] frozen; 9] galley; 10] proposed; 11] published; 12] recommendation; 13] submitted; 14] unfinished; 15] withdrawn</a:documentation>
+            <data type="token">
+               <param name="pattern">[^\p{C}\p{Z}]+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.responsibility.attributes">
+      <ref name="undefinedatt.global.responsibility.attribute.cert"/>
+      <ref name="undefinedatt.global.responsibility.attribute.resp"/>
+   </define>
+   <define name="undefinedatt.global.responsibility.attribute.cert">
+      <optional>
+         <attribute name="cert">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(certainty) signifies the degree of certainty associated with the intervention or interpretation.</a:documentation>
+            <choice>
+               <data type="double"/>
+               <choice>
+                  <value>high</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>medium</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>low</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>unknown</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               </choice>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.responsibility.attribute.resp">
+      <optional>
+         <attribute name="resp">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.editLike.attributes">
+      <ref name="undefinedatt.editLike.attribute.evidence"/>
+      <ref name="undefinedatt.editLike.attribute.instant"/>
+   </define>
+   <define name="undefinedatt.editLike.attribute.evidence">
+      <optional>
+         <attribute name="evidence">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the nature of the evidence supporting the reliability or accuracy of the intervention or interpretation.
+Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentation>
+            <list>
+               <oneOrMore>
+                  <choice>
+                     <value>internal</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">there is internal evidence to support the intervention.</a:documentation>
+                     <value>external</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">there is external evidence to support the intervention.</a:documentation>
+                     <value>conjecture</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the intervention or interpretation has been made by the editor, cataloguer, or scholar on the basis of their expertise.</a:documentation>
+                     <data type="token">
+                        <param name="pattern">[^\p{C}\p{Z}]+</param>
+                     </data>
+                  </choice>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.editLike.attribute.instant">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="instant"
+                    a:defaultValue="false">
+            <a:documentation>indicates whether this is an instant revision or not.</a:documentation>
+            <choice>
+               <data type="boolean"/>
+               <choice>
+                  <value>unknown</value>
+                  <a:documentation/>
+                  <value>inapplicable</value>
+                  <a:documentation/>
+               </choice>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.rendition.attributes">
+      <ref name="undefinedatt.global.rendition.attribute.rend"/>
+      <ref name="undefinedatt.global.rendition.attribute.style"/>
+      <ref name="undefinedatt.global.rendition.attribute.rendition"/>
+   </define>
+   <define name="undefinedatt.global.rendition.attribute.rend">
+      <optional>
+         <attribute name="rend">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">[^\p{C}\p{Z}]+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.rendition.attribute.style">
+      <optional>
+         <attribute name="style">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains an expression in some formal style definition language which defines the rendering or presentation used for this element in the source text</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.rendition.attribute.rendition">
+      <optional>
+         <attribute name="rendition">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a description of the rendering or presentation used for this element in the source text.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.source.attributes">
+      <ref name="undefinedatt.global.source.attribute.source"/>
+   </define>
+   <define name="undefinedatt.global.source.attribute.source">
+      <optional>
+         <attribute name="source">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the source from which some aspect of this element is drawn.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            id="tei_b_vg-att.global.source-source-only_1_ODD_source-constraint-rule-5">
+      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:eg="http://www.tei-c.org/ns/Examples"
+                xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                context="tei:*/@source">
+         <sch:let name="srcs" value="tokenize( normalize-space(.),' ')"/>
+         <sch:report test="( parent::tei:classRef                               | parent::tei:dataRef                               | parent::tei:elementRef                               | parent::tei:macroRef                               | parent::tei:moduleRef                               | parent::tei:schemaSpec )                               and                               $srcs[2]">
+              When used on a schema description element (like
+              <sch:value-of select="name(..)"/>), the @source attribute
+              should have only 1 value. (This one has <sch:value-of select="count($srcs)"/>.)
+            </sch:report>
+      </sch:rule>
+   </pattern>
+   <define name="undefinedatt.global.attributes">
+      <ref name="undefinedatt.global.rendition.attributes"/>
+      <ref name="undefinedatt.global.linking.attributes"/>
+      <ref name="undefinedatt.global.responsibility.attributes"/>
+      <ref name="undefinedatt.global.source.attributes"/>
+      <ref name="undefinedatt.global.attribute.xmlid"/>
+      <ref name="undefinedatt.global.attribute.n"/>
+      <ref name="undefinedatt.global.attribute.xmllang"/>
+      <ref name="undefinedatt.global.attribute.xmlbase"/>
+      <ref name="undefinedatt.global.attribute.xmlspace"/>
+   </define>
+   <define name="undefinedatt.global.attribute.xmlid">
+      <optional>
+         <attribute name="xml:id">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(identifier) provides a unique identifier for the element bearing the attribute.</a:documentation>
+            <data type="ID"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.attribute.n">
+      <optional>
+         <attribute name="n">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(number) gives a number (or other label) for an element, which is not necessarily unique within the document.</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.attribute.xmllang">
+      <optional>
+         <attribute name="xml:lang">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated according to <a xmlns="http://www.w3.org/1999/xhtml"
+                  href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a>.</a:documentation>
+            <choice>
+               <data type="language"/>
+               <choice>
+                  <value/>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               </choice>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.attribute.xmlbase">
+      <optional>
+         <attribute name="xml:base">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides a base URI reference with which applications can resolve relative URI references into absolute URI references.</a:documentation>
+            <data type="anyURI">
+               <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.attribute.xmlspace">
+      <optional>
+         <attribute name="xml:space">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signals an intention about how white space should be managed by applications.</a:documentation>
+            <choice>
+               <value>default</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signals that the application's default white-space processing modes are acceptable</a:documentation>
+               <value>preserve</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the intent that applications preserve all white space</a:documentation>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.internetMedia.attributes">
+      <ref name="undefinedatt.internetMedia.attribute.mimeType"/>
+   </define>
+   <define name="undefinedatt.internetMedia.attribute.mimeType">
+      <optional>
+         <attribute name="mimeType">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(MIME media type) specifies the applicable multimedia internet mail extension (MIME) media type</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">[^\p{C}\p{Z}]+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.naming.attributes">
+      <ref name="undefinedatt.canonical.attributes"/>
+      <ref name="undefinedatt.naming.attribute.role"/>
+      <ref name="undefinedatt.naming.attribute.nymRef"/>
+   </define>
+   <define name="undefinedatt.naming.attribute.role">
+      <optional>
+         <attribute name="role">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">may be used to specify further information about the entity referenced by this name in the form of a set of whitespace-separated values, for example the occupation of a person, or the status of a place.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">[^\p{C}\p{Z}]+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.naming.attribute.nymRef">
+      <optional>
+         <attribute name="nymRef">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference to the canonical name) provides a means of locating the canonical form (nym) of the names associated with the object named by the element bearing it.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.placement.attributes">
+      <ref name="undefinedatt.placement.attribute.place"/>
+   </define>
+   <define name="undefinedatt.placement.attribute.place">
+      <optional>
+         <attribute name="place">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies where this item is placed.
+Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf; 6] above; 7] right; 8] below; 9] left; 10] end; 11] inline; 12] inspace</a:documentation>
+            <list>
+               <oneOrMore>
+                  <choice>
+                     <value>top</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">at the top of the page</a:documentation>
+                     <value>bottom</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">at the foot of the page</a:documentation>
+                     <value>margin</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">in the margin (left, right, or both)</a:documentation>
+                     <value>opposite</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">on the opposite, i.e. facing, page</a:documentation>
+                     <value>overleaf</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">on the other side of the leaf</a:documentation>
+                     <value>above</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">above the line</a:documentation>
+                     <value>right</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">to the right, e.g. to the right of a vertical line of text, or to the right of a figure</a:documentation>
+                     <value>below</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">below the line</a:documentation>
+                     <value>left</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">to the left, e.g. to the left of a vertical line of text, or to the left of a figure</a:documentation>
+                     <value>end</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">at the end of e.g. chapter or volume.</a:documentation>
+                     <value>inline</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">within the body of the text.</a:documentation>
+                     <value>inspace</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">in a predefined space, for example left by an earlier scribe.</a:documentation>
+                     <data type="token">
+                        <param name="pattern">[^\p{C}\p{Z}]+</param>
+                     </data>
+                  </choice>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.typed.attributes">
+      <ref name="undefinedatt.typed.attribute.type"/>
+      <ref name="undefinedatt.typed.attribute.subtype"/>
+   </define>
+   <define name="undefinedatt.typed.attribute.type">
+      <optional>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
+            <data type="token">
+               <param name="pattern">[^\p{C}\p{Z}]+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.typed.attribute.subtype">
+      <optional>
+         <attribute name="subtype">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(subtype) provides a sub-categorization of the element, if needed</a:documentation>
+            <data type="token">
+               <param name="pattern">[^\p{C}\p{Z}]+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            id="tei_b_vg-att.typed-subtypeTyped-constraint-rule-6">
+      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:eg="http://www.tei-c.org/ns/Examples"
+                xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                context="tei:*[@subtype]">
+         <sch:assert test="@type">The <sch:name/> element should not be categorized in detail with @subtype unless also categorized in general with @type</sch:assert>
+      </sch:rule>
+   </pattern>
+   <define name="undefinedatt.pointing.attributes">
+      <ref name="undefinedatt.pointing.attribute.targetLang"/>
+      <ref name="undefinedatt.pointing.attribute.target"/>
+      <ref name="undefinedatt.pointing.attribute.evaluate"/>
+   </define>
+   <define name="undefinedatt.pointing.attribute.targetLang">
+      <optional>
+         <attribute name="targetLang">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the language of the content to be found at the destination referenced by <code xmlns="http://www.w3.org/1999/xhtml">@target</code>, using a language tag generated according to <a xmlns="http://www.w3.org/1999/xhtml"
+                  href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a>.</a:documentation>
+            <choice>
+               <data type="language"/>
+               <choice>
+                  <value/>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               </choice>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            id="tei_b_vg-att.pointing-targetLang-targetLang-constraint-rule-7">
+      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:eg="http://www.tei-c.org/ns/Examples"
+                xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                context="tei:*[not(self::tei:schemaSpec)][@targetLang]">
+         <sch:assert test="@target">@targetLang should only be used on <sch:name/> if @target is specified.</sch:assert>
+      </sch:rule>
+   </pattern>
+   <define name="undefinedatt.pointing.attribute.target">
+      <optional>
+         <attribute name="target">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the destination of the reference by supplying one or more URI References</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.pointing.attribute.evaluate">
+      <optional>
+         <attribute name="evaluate">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(evaluate) specifies the intended meaning when the target of a pointer is itself a pointer.</a:documentation>
+            <choice>
+               <value>all</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">if the element pointed to is itself a pointer, then the target of that pointer will be taken, and so on, until an element is found which is not a pointer.</a:documentation>
+               <value>one</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">if the element pointed to is itself a pointer, then its target (whether a pointer or not) is taken as the target of this pointer.</a:documentation>
+               <value>none</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">no further evaluation of targets is carried out beyond that needed to find the element specified in the pointer's target.</a:documentation>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.sortable.attributes">
+      <ref name="undefinedatt.sortable.attribute.sortKey"/>
+   </define>
+   <define name="undefinedatt.sortable.attribute.sortKey">
+      <optional>
+         <attribute name="sortKey">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the sort key for this element in an index, list or group which contains it.</a:documentation>
+            <data type="token">
+               <param name="pattern">[^\p{C}\p{Z}]+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.citing.attributes">
+      <ref name="undefinedatt.citing.attribute.unit"/>
+      <ref name="undefinedatt.citing.attribute.from"/>
+      <ref name="undefinedatt.citing.attribute.to"/>
+   </define>
+   <define name="undefinedatt.citing.attribute.unit">
+      <optional>
+         <attribute name="unit">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies the unit of information conveyed by the element, e.g. columns, pages, volume, entry.
+Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line; 5] chapter (chapter); 6] part; 7] column; 8] entry</a:documentation>
+            <choice>
+               <value>volume</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(volume) the element contains a volume number.</a:documentation>
+               <value>issue</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element contains an issue number, or volume and issue numbers.</a:documentation>
+               <value>page</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page) the element contains a page number or page range.</a:documentation>
+               <value>line</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element contains a line number or line range.</a:documentation>
+               <value>chapter</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(chapter) the element contains a chapter indication (number and/or title)</a:documentation>
+               <value>part</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element identifies a part of a book or collection.</a:documentation>
+               <value>column</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element identifies a column.</a:documentation>
+               <value>entry</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element identifies an entry number or label in a list of entries.</a:documentation>
+               <data type="token">
+                  <param name="pattern">[^\p{C}\p{Z}]+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.citing.attribute.from">
+      <optional>
+         <attribute name="from">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the starting point of the range of units indicated by the <code xmlns="http://www.w3.org/1999/xhtml">@unit</code> attribute.</a:documentation>
+            <data type="token">
+               <param name="pattern">[^\p{C}\p{Z}]+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.citing.attribute.to">
+      <optional>
+         <attribute name="to">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the end-point of the range of units indicated by the <code xmlns="http://www.w3.org/1999/xhtml">@unit</code> attribute.</a:documentation>
+            <data type="token">
+               <param name="pattern">[^\p{C}\p{Z}]+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedmodel.nameLike.agent">
+      <choice>
+         <ref name="undefinedorgName"/>
+         <ref name="undefinedpersName"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.nameLike.agent_alternation">
+      <choice>
+         <ref name="undefinedorgName"/>
+         <ref name="undefinedpersName"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.nameLike.agent_sequence">
+      <ref name="undefinedorgName"/>
+      <ref name="undefinedpersName"/>
+   </define>
+   <define name="undefinedmodel.nameLike.agent_sequenceOptional">
+      <optional>
+         <ref name="undefinedorgName"/>
+      </optional>
+      <optional>
+         <ref name="undefinedpersName"/>
+      </optional>
+   </define>
+   <define name="undefinedmodel.nameLike.agent_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="undefinedorgName"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="undefinedpersName"/>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmodel.nameLike.agent_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="undefinedorgName"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="undefinedpersName"/>
+      </oneOrMore>
+   </define>
+   <define name="undefinedmodel.segLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.hiLike">
+      <choice>
+         <ref name="undefinedhi"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.hiLike_alternation">
+      <choice>
+         <ref name="undefinedhi"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.hiLike_sequence">
+      <ref name="undefinedhi"/>
+   </define>
+   <define name="undefinedmodel.hiLike_sequenceOptional">
+      <optional>
+         <ref name="undefinedhi"/>
+      </optional>
+   </define>
+   <define name="undefinedmodel.hiLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="undefinedhi"/>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmodel.hiLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="undefinedhi"/>
+      </oneOrMore>
+   </define>
+   <define name="undefinedmodel.emphLike">
+      <choice>
+         <ref name="undefinedforeign"/>
+         <ref name="undefinedterm"/>
+         <ref name="undefinedtitle"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.emphLike_alternation">
+      <choice>
+         <ref name="undefinedforeign"/>
+         <ref name="undefinedterm"/>
+         <ref name="undefinedtitle"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.emphLike_sequence">
+      <ref name="undefinedforeign"/>
+      <ref name="undefinedterm"/>
+      <ref name="undefinedtitle"/>
+   </define>
+   <define name="undefinedmodel.emphLike_sequenceOptional">
+      <optional>
+         <ref name="undefinedforeign"/>
+      </optional>
+      <optional>
+         <ref name="undefinedterm"/>
+      </optional>
+      <optional>
+         <ref name="undefinedtitle"/>
+      </optional>
+   </define>
+   <define name="undefinedmodel.emphLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="undefinedforeign"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="undefinedterm"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="undefinedtitle"/>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmodel.emphLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="undefinedforeign"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="undefinedterm"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="undefinedtitle"/>
+      </oneOrMore>
+   </define>
+   <define name="undefinedmodel.highlighted">
+      <choice>
+         <ref name="undefinedmodel.hiLike"/>
+         <ref name="undefinedmodel.emphLike"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.dateLike">
+      <choice>
+         <ref name="undefineddate"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.dateLike_alternation">
+      <choice>
+         <ref name="undefineddate"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.dateLike_sequence">
+      <ref name="undefineddate"/>
+   </define>
+   <define name="undefinedmodel.dateLike_sequenceOptional">
+      <optional>
+         <ref name="undefineddate"/>
+      </optional>
+   </define>
+   <define name="undefinedmodel.dateLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="undefineddate"/>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmodel.dateLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="undefineddate"/>
+      </oneOrMore>
+   </define>
+   <define name="undefinedmodel.measureLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.measureLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.measureLike_sequence">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.measureLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.measureLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.measureLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.egLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.egLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.egLike_sequence">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.egLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.egLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.egLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.graphicLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.offsetLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.offsetLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.offsetLike_sequence">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.offsetLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.offsetLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.offsetLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.pPart.msdesc">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.pPart.editorial">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.pPart.editorial_alternation">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.pPart.editorial_sequence">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.pPart.editorial_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.pPart.editorial_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.pPart.editorial_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.pPart.transcriptional">
+      <choice>
+         <ref name="undefinedcorr"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.pPart.transcriptional_alternation">
+      <choice>
+         <ref name="undefinedcorr"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.pPart.transcriptional_sequence">
+      <ref name="undefinedcorr"/>
+   </define>
+   <define name="undefinedmodel.pPart.transcriptional_sequenceOptional">
+      <optional>
+         <ref name="undefinedcorr"/>
+      </optional>
+   </define>
+   <define name="undefinedmodel.pPart.transcriptional_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="undefinedcorr"/>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmodel.pPart.transcriptional_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="undefinedcorr"/>
+      </oneOrMore>
+   </define>
+   <define name="undefinedmodel.pPart.edit">
+      <choice>
+         <ref name="undefinedmodel.pPart.editorial"/>
+         <ref name="undefinedmodel.pPart.transcriptional"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.ptrLike">
+      <choice>
+         <ref name="undefinedref"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.lPart">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.global.meta">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.milestoneLike">
+      <choice>
+         <ref name="undefinedpb"/>
+         <ref name="undefinedanchor"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.gLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.oddDecl">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.oddDecl_alternation">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.oddDecl_sequence">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.oddDecl_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.oddDecl_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.oddDecl_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.phrase.xml">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.specDescLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.biblLike">
+      <choice>
+         <ref name="undefinedbibl"/>
+         <ref name="undefinedmsDesc"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.biblLike_alternation">
+      <choice>
+         <ref name="undefinedbibl"/>
+         <ref name="undefinedmsDesc"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.biblLike_sequence">
+      <ref name="undefinedbibl"/>
+      <ref name="undefinedmsDesc"/>
+   </define>
+   <define name="undefinedmodel.biblLike_sequenceOptional">
+      <optional>
+         <ref name="undefinedbibl"/>
+      </optional>
+      <optional>
+         <ref name="undefinedmsDesc"/>
+      </optional>
+   </define>
+   <define name="undefinedmodel.biblLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="undefinedbibl"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="undefinedmsDesc"/>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmodel.biblLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="undefinedbibl"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="undefinedmsDesc"/>
+      </oneOrMore>
+   </define>
+   <define name="undefinedmodel.headLike">
+      <choice>
+         <ref name="undefinedhead"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.headLike_alternation">
+      <choice>
+         <ref name="undefinedhead"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.headLike_sequence">
+      <ref name="undefinedhead"/>
+   </define>
+   <define name="undefinedmodel.headLike_sequenceOptional">
+      <optional>
+         <ref name="undefinedhead"/>
+      </optional>
+   </define>
+   <define name="undefinedmodel.headLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="undefinedhead"/>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmodel.headLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="undefinedhead"/>
+      </oneOrMore>
+   </define>
+   <define name="undefinedmodel.labelLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.labelLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.labelLike_sequence">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.labelLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.labelLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.labelLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.listLike">
+      <choice>
+         <ref name="undefinedlist"/>
+         <ref name="undefinedlistPerson"/>
+         <ref name="undefinedtable"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.listLike_alternation">
+      <choice>
+         <ref name="undefinedlist"/>
+         <ref name="undefinedlistPerson"/>
+         <ref name="undefinedtable"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.listLike_sequence">
+      <ref name="undefinedlist"/>
+      <ref name="undefinedlistPerson"/>
+      <ref name="undefinedtable"/>
+   </define>
+   <define name="undefinedmodel.listLike_sequenceOptional">
+      <optional>
+         <ref name="undefinedlist"/>
+      </optional>
+      <optional>
+         <ref name="undefinedlistPerson"/>
+      </optional>
+      <optional>
+         <ref name="undefinedtable"/>
+      </optional>
+   </define>
+   <define name="undefinedmodel.listLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="undefinedlist"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="undefinedlistPerson"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="undefinedtable"/>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmodel.listLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="undefinedlist"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="undefinedlistPerson"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="undefinedtable"/>
+      </oneOrMore>
+   </define>
+   <define name="undefinedmodel.noteLike">
+      <choice>
+         <ref name="undefinednote"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.lLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.lLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.lLike_sequence">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.lLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.lLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.lLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.pLike">
+      <choice>
+         <ref name="undefinedp"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.pLike_alternation">
+      <choice>
+         <ref name="undefinedp"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.pLike_sequence">
+      <ref name="undefinedp"/>
+   </define>
+   <define name="undefinedmodel.pLike_sequenceOptional">
+      <optional>
+         <ref name="undefinedp"/>
+      </optional>
+   </define>
+   <define name="undefinedmodel.pLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="undefinedp"/>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmodel.pLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="undefinedp"/>
+      </oneOrMore>
+   </define>
+   <define name="undefinedmodel.stageLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.stageLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.stageLike_sequence">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.stageLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.stageLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.stageLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.global.edit">
+      <choice>
+         <ref name="undefinedapp"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.divPart">
+      <choice>
+         <ref name="undefinedmodel.lLike"/>
+         <ref name="undefinedmodel.pLike"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.personLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.placeNamePart">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.placeNamePart_alternation">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.placeNamePart_sequence">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.placeNamePart_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.placeNamePart_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.placeNamePart_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.placeStateLike">
+      <choice>
+         <ref name="undefinedmodel.placeNamePart"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.placeStateLike_alternation">
+      <choice>
+         <ref name="undefinedmodel.placeNamePart_alternation"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.placeStateLike_sequence">
+      <ref name="undefinedmodel.placeNamePart_sequence"/>
+   </define>
+   <define name="undefinedmodel.placeStateLike_sequenceOptional">
+      <optional>
+         <ref name="undefinedmodel.placeNamePart_sequenceOptional"/>
+      </optional>
+   </define>
+   <define name="undefinedmodel.placeStateLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="undefinedmodel.placeNamePart_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmodel.placeStateLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="undefinedmodel.placeNamePart_sequenceRepeatable"/>
+      </oneOrMore>
+   </define>
+   <define name="undefinedmodel.publicationStmtPart.agency">
+      <choice>
+         <ref name="undefinedpublisher"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.publicationStmtPart.detail">
+      <choice>
+         <ref name="undefinedmodel.ptrLike"/>
+         <ref name="undefineddate"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.quoteLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.quoteLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.quoteLike_sequence">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.quoteLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.quoteLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.quoteLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.attributable">
+      <choice>
+         <ref name="undefinedmodel.quoteLike"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.attributable_alternation">
+      <choice>
+         <ref name="undefinedmodel.quoteLike_alternation"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.attributable_sequence">
+      <ref name="undefinedmodel.quoteLike_sequence"/>
+   </define>
+   <define name="undefinedmodel.attributable_sequenceOptional">
+      <optional>
+         <ref name="undefinedmodel.quoteLike_sequenceOptional"/>
+      </optional>
+   </define>
+   <define name="undefinedmodel.attributable_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="undefinedmodel.quoteLike_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmodel.attributable_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="undefinedmodel.quoteLike_sequenceRepeatable"/>
+      </oneOrMore>
+   </define>
+   <define name="undefinedmodel.respLike">
+      <choice>
+         <ref name="undefinedauthor"/>
+         <ref name="undefinedrespStmt"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.divWrapper">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.divTopPart">
+      <choice>
+         <ref name="undefinedmodel.headLike"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.divTop">
+      <choice>
+         <ref name="undefinedmodel.divWrapper"/>
+         <ref name="undefinedmodel.divTopPart"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.divBottomPart">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.divBottom">
+      <choice>
+         <ref name="undefinedmodel.divWrapper"/>
+         <ref name="undefinedmodel.divBottomPart"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.imprintPart">
+      <choice>
+         <ref name="undefinedpublisher"/>
+         <ref name="undefinedbiblScope"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.addressLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.addressLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.addressLike_sequence">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.addressLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.addressLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.addressLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.nameLike">
+      <choice>
+         <ref name="undefinedmodel.nameLike.agent"/>
+         <ref name="undefinedmodel.offsetLike"/>
+         <ref name="undefinedmodel.placeStateLike"/>
+         <ref name="undefinedmodel.persNamePart"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.nameLike_alternation">
+      <choice>
+         <ref name="undefinedmodel.nameLike.agent_alternation"/>
+         <ref name="undefinedmodel.offsetLike_alternation"/>
+         <ref name="undefinedmodel.placeStateLike_alternation"/>
+         <ref name="undefinedmodel.persNamePart_alternation"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.nameLike_sequence">
+      <ref name="undefinedmodel.nameLike.agent_sequence"/>
+      <ref name="undefinedmodel.offsetLike_sequence"/>
+      <ref name="undefinedmodel.placeStateLike_sequence"/>
+      <ref name="undefinedmodel.persNamePart_sequence"/>
+   </define>
+   <define name="undefinedmodel.nameLike_sequenceOptional">
+      <optional>
+         <ref name="undefinedmodel.nameLike.agent_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="undefinedmodel.offsetLike_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="undefinedmodel.placeStateLike_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="undefinedmodel.persNamePart_sequenceOptional"/>
+      </optional>
+   </define>
+   <define name="undefinedmodel.nameLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="undefinedmodel.nameLike.agent_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="undefinedmodel.offsetLike_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="undefinedmodel.placeStateLike_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="undefinedmodel.persNamePart_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+   </define>
+   <define name="undefinedmodel.nameLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="undefinedmodel.nameLike.agent_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="undefinedmodel.offsetLike_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="undefinedmodel.placeStateLike_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="undefinedmodel.persNamePart_sequenceRepeatable"/>
+      </oneOrMore>
+   </define>
+   <define name="undefinedmodel.global">
+      <choice>
+         <ref name="undefinedmodel.global.meta"/>
+         <ref name="undefinedmodel.milestoneLike"/>
+         <ref name="undefinedmodel.noteLike"/>
+         <ref name="undefinedmodel.global.edit"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.biblPart">
+      <choice>
+         <ref name="undefinedmodel.respLike"/>
+         <ref name="undefinedmodel.imprintPart"/>
+         <ref name="undefinedbibl"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.pPart.data">
+      <choice>
+         <ref name="undefinedmodel.dateLike"/>
+         <ref name="undefinedmodel.measureLike"/>
+         <ref name="undefinedmodel.addressLike"/>
+         <ref name="undefinedmodel.nameLike"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.inter">
+      <choice>
+         <ref name="undefinedmodel.egLike"/>
+         <ref name="undefinedmodel.oddDecl"/>
+         <ref name="undefinedmodel.biblLike"/>
+         <ref name="undefinedmodel.labelLike"/>
+         <ref name="undefinedmodel.listLike"/>
+         <ref name="undefinedmodel.stageLike"/>
+         <ref name="undefinedmodel.attributable"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.common">
+      <choice>
+         <ref name="undefinedmodel.divPart"/>
+         <ref name="undefinedmodel.inter"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.phrase">
+      <choice>
+         <ref name="undefinedmodel.segLike"/>
+         <ref name="undefinedmodel.highlighted"/>
+         <ref name="undefinedmodel.graphicLike"/>
+         <ref name="undefinedmodel.pPart.msdesc"/>
+         <ref name="undefinedmodel.pPart.edit"/>
+         <ref name="undefinedmodel.ptrLike"/>
+         <ref name="undefinedmodel.lPart"/>
+         <ref name="undefinedmodel.phrase.xml"/>
+         <ref name="undefinedmodel.specDescLike"/>
+         <ref name="undefinedmodel.pPart.data"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.limitedPhrase">
+      <choice>
+         <ref name="undefinedmodel.hiLike"/>
+         <ref name="undefinedmodel.emphLike"/>
+         <ref name="undefinedmodel.pPart.msdesc"/>
+         <ref name="undefinedmodel.pPart.editorial"/>
+         <ref name="undefinedmodel.ptrLike"/>
+         <ref name="undefinedmodel.phrase.xml"/>
+         <ref name="undefinedmodel.pPart.data"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.divLike">
+      <choice>
+         <ref name="undefineddiv"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.divGenLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.div1Like">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.teiHeaderPart">
+      <choice>
+         <ref name="undefinedencodingDesc"/>
+         <ref name="undefinedprofileDesc"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.sourceDescPart">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.encodingDescPart">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.profileDescPart">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.resource">
+      <choice>
+         <ref name="undefinedtext"/>
+      </choice>
+   </define>
+   <define name="undefinedatt.personal.attributes">
+      <ref name="undefinedatt.naming.attributes"/>
+      <ref name="undefinedatt.personal.attribute.full"/>
+      <ref name="undefinedatt.personal.attribute.sort"/>
+   </define>
+   <define name="undefinedatt.personal.attribute.full">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="full"
+                    a:defaultValue="yes">
+            <a:documentation>indicates whether the name component is given in full, as an abbreviation or simply as an initial.</a:documentation>
+            <choice>
+               <value>yes</value>
+               <a:documentation>(yes) the name component is spelled out in full.</a:documentation>
+               <value>abb</value>
+               <a:documentation>(abbreviated) the name component is given in an abbreviated form.</a:documentation>
+               <value>init</value>
+               <a:documentation>(initial letter) the name component is indicated only by one initial.</a:documentation>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.personal.attribute.sort">
+      <optional>
+         <attribute name="sort">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(sort) specifies the sort order of the name component in relation to others within the name.</a:documentation>
+            <data type="nonNegativeInteger"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedp">
+      <element name="p">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Absatz) markiert einen Absatz in einem Prosatext. [3.1. Paragraphs 7.2.5. Speech Contents]</a:documentation>
+         <ref name="undefinedmacro.paraContent"/>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="tei_b_vg-p-abstractModel-structure-p-in-ab-or-p-constraint-report-5">
+            <rule context="tei:p">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="    (ancestor::tei:ab or ancestor::tei:p)                          and not( ancestor::tei:floatingText                                 |parent::tei:exemplum                                 |parent::tei:item                                 |parent::tei:note                                 |parent::tei:q                                 |parent::tei:quote                                 |parent::tei:remarks                                 |parent::tei:said                                 |parent::tei:sp                                 |parent::tei:stage                                 |parent::tei:cell                                 |parent::tei:figure                                )">
+        Abstract model violation: Paragraphs may not occur inside other paragraphs or ab elements.
+      </sch:report>
+            </rule>
+         </pattern>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="tei_b_vg-p-abstractModel-structure-p-in-l-or-lg-constraint-report-6">
+            <rule context="tei:p">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="    (ancestor::tei:l or ancestor::tei:lg)                          and not( ancestor::tei:floatingText                                 |parent::tei:figure                                 |parent::tei:note                                )">
+        Abstract model violation: Lines may not contain higher-level structural elements such as div, p, or ab, unless p is a child of figure or note, or is a descendant of floatingText.
+      </sch:report>
+            </rule>
+         </pattern>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.declaring.attributes"/>
+         <ref name="undefinedatt.fragmentable.attributes"/>
+         <ref name="undefinedatt.written.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedforeign">
+      <element name="foreign">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(fremd) identifiziert ein Wort oder eine Phrase, die zu einer anderen Sprache gehört, als der umgebende Text. [3.3.2.1. Foreign Words or Expressions]</a:documentation>
+         <ref name="undefinedmacro.phraseSeq"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedhi">
+      <element name="hi">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(hervorgehoben) markiert ein Wort oder eine Textpassage, das/die sich grafisch vom umgebenden Text abhebt, ohne dass ein inhaltlicher Grund dafür angegeben wird. [3.3.2.2. Emphatic Words and Phrases 3.3.2. Emphasis, Foreign Words, and Unusual Language]</a:documentation>
+         <ref name="undefinedmacro.paraContent"/>
+         <optional>
+            <attribute name="rend">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <data type="token">
+                        <param name="pattern">[^\p{C}\p{Z}]+</param>
+                     </data>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedterm">
+      <element name="term">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Fachbegriff) enthält ein einzelnes Wort, Mehrworttermini oder symbolische Bezeichnungen, die als Fachbegriffe verstanden werden [3.4.1. Terms and Glosses]</a:documentation>
+         <ref name="undefinedmacro.phraseSeq"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.declaring.attributes"/>
+         <ref name="undefinedatt.pointing.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <ref name="undefinedatt.canonical.attributes"/>
+         <ref name="undefinedatt.sortable.attributes"/>
+         <ref name="undefinedatt.cReferencing.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedcorr">
+      <element name="corr">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Korrektur) enthält die korrekte Form einer offenbar fehlerhaften Textstelle in der Vorlage. [3.5.1. Apparent Errors]</a:documentation>
+         <ref name="undefinedmacro.paraContent"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.editLike.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefineddate">
+      <element name="date">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Datum) enthält ein Datum in beliebigem Format. [3.6.4. Dates and Times 2.2.4. Publication, Distribution, Licensing, etc. 2.6. The Revision Description 3.12.2.4. Imprint, Size of a Document, and Reprint Information 15.2.3. The Setting Description 13.4. Dates]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="undefinedmodel.gLike"/>
+               <ref name="undefinedmodel.phrase"/>
+               <ref name="undefinedmodel.global"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="undefinedatt.global.attribute.xmlid"/>
+         <attribute name="when">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the value of the date or time in a standard form, e.g. yyyy-mm-dd.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+            </choice>
+         </attribute>
+         <attribute name="notBefore-iso">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the earliest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+               <data type="token">
+                  <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+               </data>
+            </choice>
+         </attribute>
+         <attribute name="notAfter-iso">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the latest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+               <data type="token">
+                  <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+               </data>
+            </choice>
+         </attribute>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedref">
+      <element name="ref">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Referenz) definiert einen externen oder internen Verweis, der auch durch einen zusätzlichen Text oder Kommentar ergänzt werden kann. [3.7. Simple Links and Cross-References 16.1. Links]</a:documentation>
+         <ref name="undefinedmacro.paraContent"/>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="tei_b_vg-ref-refAtts-constraint-report-7">
+            <rule context="tei:ref">
+               <report xmlns:eg="http://www.tei-c.org/ns/Examples"
+                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                       test="@target and @cRef">Only one of the
+	attributes @target' and @cRef' may be supplied on <name/>
+               </report>
+            </rule>
+         </pattern>
+         <ref name="undefinedatt.cReferencing.attributes"/>
+         <ref name="undefinedatt.declaring.attributes"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.internetMedia.attributes"/>
+         <ref name="undefinedatt.pointing.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedlist">
+      <element name="list">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Liste) enthält eine Reihe von Listenpunkten, die als Liste organisiert sind. [3.8. Lists]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <choice>
+                  <ref name="undefinedmodel.divTop"/>
+                  <ref name="undefinedmodel.global"/>
+               </choice>
+            </zeroOrMore>
+            <choice>
+               <oneOrMore>
+                  <group>
+                     <ref name="undefineditem"/>
+                     <zeroOrMore>
+                        <ref name="undefinedmodel.global"/>
+                     </zeroOrMore>
+                  </group>
+               </oneOrMore>
+               <group>
+                  <oneOrMore>
+                     <group>
+                        <zeroOrMore>
+                           <ref name="undefinedmodel.global"/>
+                        </zeroOrMore>
+                        <ref name="undefineditem"/>
+                        <zeroOrMore>
+                           <ref name="undefinedmodel.global"/>
+                        </zeroOrMore>
+                     </group>
+                  </oneOrMore>
+               </group>
+            </choice>
+            <zeroOrMore>
+               <group>
+                  <ref name="undefinedmodel.divBottom"/>
+                  <zeroOrMore>
+                     <ref name="undefinedmodel.global"/>
+                  </zeroOrMore>
+               </group>
+            </zeroOrMore>
+         </group>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="tei_b_vg-list-gloss-list-must-have-labels-constraint-rule-8">
+            <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:eg="http://www.tei-c.org/ns/Examples"
+                      xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                      context="tei:list[@type='gloss']">
+               <sch:assert test="tei:label">The content of a "gloss" list should include a sequence of one or more pairs of a label element followed by an item element</sch:assert>
+            </sch:rule>
+         </pattern>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.sortable.attributes"/>
+         <ref name="undefinedatt.typed.attribute.subtype"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Typ) beschreibt die Art der Listenpunkte.
+Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (instructions); 4] litany (litany); 5] syllogism (syllogism)</a:documentation>
+               <choice>
+                  <value>gloss</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Gloss) jeder Listenpunkt erläutert einen Begriff oder ein Konzept, das von einem voranstehenden <code xmlns="http://www.w3.org/1999/xhtml">&lt;label&gt;</code>-Element genannt wird.</a:documentation>
+                  <value>index</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Index) jeder Listenpunkt ist ein Registereintrag z. B. in einem alphabetisch geordneten Sachregister am Ende einer Druckausgabe.</a:documentation>
+                  <value>instructions</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Arbeitsschritt) jeder Listenpunkt ist ein Arbeitsschritt in einer Folge von Anweisungen, wie z. B. in einem Rezept.</a:documentation>
+                  <value>litany</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Litanei) jeder Listenpunkt ist Teil einer Reihenfolge von Gebeten, Bitten oder Anrufungen die üblicherweise in einem religiösen Ritual verwendet werden.</a:documentation>
+                  <value>syllogism</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(logischer Schluss) jeder Listenpunkt ist Teil eines Arguments, das aus zwei oder mehr Prämissen und einem daraus gezogenen Schluss besteht.</a:documentation>
+                  <data type="token">
+                     <param name="pattern">[^\p{C}\p{Z}]+</param>
+                  </data>
+               </choice>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefineditem">
+      <element name="item">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Listenpunkt) enthält einen Listenpunkt. [3.8. Lists 2.6. The Revision Description]</a:documentation>
+         <ref name="undefinedmacro.specialPara"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.sortable.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedhead">
+      <element name="head">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Überschrift) enthält eine beliebige Art von Überschrift, z. B. eines Kapitels, einer Liste, eines Glossars oder einer Handschriftenbeschreibung. [4.2.1. Headings and Trailers]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="undefinedmodel.gLike"/>
+               <ref name="undefinedmodel.phrase"/>
+               <ref name="undefinedmodel.inter"/>
+               <ref name="undefinedmodel.lLike"/>
+               <ref name="undefinedmodel.global"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <ref name="undefinedatt.placement.attributes"/>
+         <ref name="undefinedatt.written.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinednote">
+      <element name="note">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Anmerkung) enthält eine Anmerkung oder Annotation. [3.9.1. Notes and Simple Annotation 2.2.6. The Notes Statement 3.12.2.8. Notes and Statement of Language 9.3.5.4. Notes within Entries]</a:documentation>
+         <ref name="undefinedmacro.specialPara"/>
+         <ref name="undefinedatt.placement.attributes"/>
+         <ref name="undefinedatt.pointing.attributes"/>
+         <ref name="undefinedatt.written.attributes"/>
+         <ref name="undefinedatt.anchoring.attributes"/>
+         <optional>
+            <attribute name="xml:id">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(identifier) Sollte durch das Framework generiert werden.</a:documentation>
+               <data type="ID"/>
+            </attribute>
+         </optional>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
+            <choice>
+               <value>app</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Das Element enhält einen Apparateintrag der Editor:innen.</a:documentation>
+               <value>original</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Das Element enthält einen im edierten Dokument hinzugefügten Kommentar der Autor:innen.</a:documentation>
+            </choice>
+         </attribute>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedpb">
+      <element name="pb">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Seitenanfang) markiert den Anfang einer neuen Seite in einem Dokument mit Seitenzahlen [3.11.3. Milestone
+Elements]</a:documentation>
+         <empty/>
+         <attribute name="xml:id">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(identifier) automatisch generierte id (img)</a:documentation>
+            <data type="ID"/>
+         </attribute>
+         <optional>
+            <attribute name="n">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(number) Die Nummer der Seite, auf das sich das pb-Element bezieht (automatisch generiert).</a:documentation>
+               <data type="string"/>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedauthor">
+      <element name="author">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Autor) enthält in einer bibliografischen Referenz den oder die Namen eines Autors eines Werks (oder einer für das Werk verantwortlichen Körperschaft); zum Beispiel in der Form, wie sie eine anerkannte bibliografische Instanz anbietet. [3.12.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement]</a:documentation>
+         <ref name="undefinedmacro.phraseSeq"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.naming.attributes"/>
+         <ref name="undefinedatt.datable.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedrespStmt">
+      <element name="respStmt">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Angaben zur Verantwortlichkeit) enthält Angaben zur Verantwortlichkeit für den intellektuellen Inhalt eines Textes, einer Edition, einer Aufnahme oder Reihe, wo die spezialisierten Elemente <code xmlns="http://www.w3.org/1999/xhtml">&lt;author&gt;</code>, <code xmlns="http://www.w3.org/1999/xhtml">&lt;editor&gt;</code> etc. nicht ausreichen oder unzutreffend sind; auch verwendbar für Informationen zu Individuen oder Organisationen, die bei der Produktion oder Verbreitung eines bibliografischen Objekts eine Rolle gespielt. [3.12.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.2. The Edition Statement 2.2.5. The Series Statement]</a:documentation>
+         <group>
+            <choice>
+               <group>
+                  <oneOrMore>
+                     <ref name="undefinedresp"/>
+                  </oneOrMore>
+                  <oneOrMore>
+                     <ref name="undefinedmodel.nameLike.agent"/>
+                  </oneOrMore>
+               </group>
+               <group>
+                  <oneOrMore>
+                     <ref name="undefinedmodel.nameLike.agent"/>
+                  </oneOrMore>
+                  <oneOrMore>
+                     <ref name="undefinedresp"/>
+                  </oneOrMore>
+               </group>
+            </choice>
+            <zeroOrMore>
+               <ref name="undefinednote"/>
+            </zeroOrMore>
+         </group>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.canonical.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedresp">
+      <element name="resp">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Verantwortlichkeit) enthält eine Phrase, die die Art der intellektuellen Verantwortung einer Person oder die Rolle einer Organisation bei der Herstellung oder Distribution eines Werkes beschreibt. [3.12.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.2. The Edition Statement 2.2.5. The Series Statement]</a:documentation>
+         <ref name="undefinedmacro.phraseSeq.limited"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.canonical.attributes"/>
+         <ref name="undefinedatt.datable.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedtitle">
+      <element name="title">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Titel) beinhaltet einen Titel eines beliebigen Werks. [3.12.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.5. The Series Statement]</a:documentation>
+         <ref name="undefinedmacro.paraContent"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.typed.attribute.subtype"/>
+         <ref name="undefinedatt.canonical.attributes"/>
+         <ref name="undefinedatt.datable.attributes"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">klassifiziert den Titel entsprechend einer geeigneten Typologie.
+Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] short; 5] desc (descriptive)</a:documentation>
+               <data type="token">
+                  <param name="pattern">[^\p{C}\p{Z}]+</param>
+               </data>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="level">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gibt den bibliografischen Typ eines Titels an, d.h. ob er einen Artikel, ein Buch, eine Zeitschrift, eine Reihe oder unpubliziertes Material bezeichnet.</a:documentation>
+               <choice>
+                  <value>a</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(unselbständig) der Titel gehört zu einer unselbständigen Publikation, wie einem Artikel, Gedicht oder einem anderen Werk, das als Teil einer umfangreicheren Einheit publiziert wurde.</a:documentation>
+                  <value>m</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Monografie) der Titel bezieht sich auf Monografien wie z.B. ein Bücher oder andere selbständige Publikationen, also auch auf einzelne Bände in einem mehrbändigen Werk.</a:documentation>
+                  <value>j</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Zeitschrift) der Titel bezieht sich auf jede Art fortlaufender oder periodischer Veröffentlichungen wie z. B. Zeitschriften, Magazine oder Zeitungen.</a:documentation>
+                  <value>s</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Reihe) der Titel bezeichnet eine Reihe von ansonsten selbständig publizierten Veröffentlichungen, wie z. B. eine Buchreihe.</a:documentation>
+                  <value>u</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(unveröffentlicht) der Titel bezieht sich auf unveröffentliches Material (incl. universitäre Qualifikationsarbeiten, soweit sie nicht von einem Verlag veröffentlicht worden sind).</a:documentation>
+               </choice>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedpublisher">
+      <element name="publisher">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Verlag) gibt den Namen der Organisation an, die für die Veröffentlichung und Verbreitung eines bibliografischen Objekts verantwortlich ist. [3.12.2.4. Imprint, Size of a Document, and Reprint Information 2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
+         <ref name="undefinedmacro.phraseSeq"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.canonical.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedbiblScope">
+      <element name="biblScope">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Geltungsbereich einer bibliografischen Referenz) grenzt den Geltungsbereich einer bibliografischen Referenz ein, zum Beispiel in Form von Seitenangaben oder benannten Unterabschnitten eines umfangreicheren Werks. [3.12.2.5. Scopes and Ranges in Bibliographic Citations]</a:documentation>
+         <ref name="undefinedmacro.phraseSeq"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.citing.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedbibl">
+      <element name="bibl">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(bibliografische Angabe) enthält eine lose strukturierte bibliografische Angabe, in der einzelne Komponenten explizit ausgezeichnet sein können. [3.12.1. Methods of Encoding Bibliographic References and Lists of References 2.2.7. The Source Description 15.3.2. Declarable Elements]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="undefinedmodel.gLike"/>
+               <ref name="undefinedmodel.highlighted"/>
+               <ref name="undefinedmodel.pPart.data"/>
+               <ref name="undefinedmodel.pPart.edit"/>
+               <ref name="undefinedmodel.segLike"/>
+               <ref name="undefinedmodel.ptrLike"/>
+               <ref name="undefinedmodel.biblPart"/>
+               <ref name="undefinedmodel.global"/>
+            </choice>
+         </zeroOrMore>
+         <optional>
+            <attribute name="sameAs">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Weist auf den entsprechenden Eintrag in der Zotero-Datenbank oder des Gesetzesregisters des Projekts hin.</a:documentation>
+               <data type="anyURI">
+                  <param name="pattern">\S+</param>
+               </data>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedteiHeader">
+      <element name="teiHeader">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(TEI-Header (elektronische Titelseite)) beinhaltet beschreibende und erklärende Metadaten, die einer digitalen Ressource oder einer Sammlung von Ressourcen vorangestellt sind. [2.1.1. The TEI Header and Its Components 15.1. Varieties of Composite Text]</a:documentation>
+         <group>
+            <ref name="undefinedfileDesc"/>
+            <zeroOrMore>
+               <ref name="undefinedmodel.teiHeaderPart"/>
+            </zeroOrMore>
+            <optional>
+               <ref name="undefinedrevisionDesc"/>
+            </optional>
+         </group>
+         <ref name="undefinedatt.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedfileDesc">
+      <element name="fileDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Dateibeschreibung) enthält die vollständige bibliografische Beschreibung einer elektronischen Datei. [2.2. The File Description 2.1.1. The TEI Header and Its Components]</a:documentation>
+         <group>
+            <group>
+               <ref name="undefinedtitleStmt"/>
+               <optional>
+                  <ref name="undefinededitionStmt"/>
+               </optional>
+               <ref name="undefinedpublicationStmt"/>
+            </group>
+            <oneOrMore>
+               <ref name="undefinedsourceDesc"/>
+            </oneOrMore>
+         </group>
+         <ref name="undefinedatt.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedtitleStmt">
+      <element name="titleStmt">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Angaben zum Titel) umfasst Angaben zum Titel eines Werks und zu den für seinen Inhalt Verantwortlichen. [2.2.1. The Title Statement 2.2. The File Description]</a:documentation>
+         <group>
+            <oneOrMore>
+               <ref name="undefinedtitle"/>
+            </oneOrMore>
+            <zeroOrMore>
+               <ref name="undefinedmodel.respLike"/>
+            </zeroOrMore>
+         </group>
+         <ref name="undefinedatt.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinededitionStmt">
+      <element name="editionStmt">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Angaben zur Ausgabe) umfasst Angaben, die sich auf eine spezifische Ausgabe eines Textes beziehen. [2.2.2. The Edition Statement 2.2. The File Description]</a:documentation>
+         <choice>
+            <oneOrMore>
+               <ref name="undefinedmodel.pLike"/>
+            </oneOrMore>
+            <zeroOrMore>
+               <ref name="undefinedmodel.respLike"/>
+            </zeroOrMore>
+         </choice>
+         <ref name="undefinedatt.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedpublicationStmt">
+      <element name="publicationStmt">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Angaben zur Veröffentlichung) umfasst Angaben zu Veröffentlichung oder Vertrieb eines elektronischen oder sonstigen Textes. [2.2.4. Publication, Distribution, Licensing, etc. 2.2. The File Description]</a:documentation>
+         <choice>
+            <oneOrMore>
+               <group>
+                  <ref name="undefinedmodel.publicationStmtPart.agency"/>
+                  <zeroOrMore>
+                     <ref name="undefinedmodel.publicationStmtPart.detail"/>
+                  </zeroOrMore>
+               </group>
+            </oneOrMore>
+            <oneOrMore>
+               <ref name="undefinedmodel.pLike"/>
+            </oneOrMore>
+         </choice>
+         <ref name="undefinedatt.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedsourceDesc">
+      <element name="sourceDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Beschreibung der Quellen) beschreibt die Quelle, von der sich der elektronische Text ableitet. Üblicherweise eine bibliografische Beschreibung im Falle eines digitalisierten Textes oder eine Bezeichnung wie "born digital" für einen nur in elektronischer Form vorliegenden Text.  [2.2.7. The Source Description]</a:documentation>
+         <choice>
+            <oneOrMore>
+               <ref name="undefinedmodel.pLike"/>
+            </oneOrMore>
+            <oneOrMore>
+               <choice>
+                  <ref name="undefinedmodel.biblLike"/>
+                  <ref name="undefinedmodel.sourceDescPart"/>
+                  <ref name="undefinedmodel.listLike"/>
+               </choice>
+            </oneOrMore>
+         </choice>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.declarable.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedencodingDesc">
+      <element name="encodingDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Beschreibung der Kodierung) dokumentiert das Verhältnis zwischen dem elektronischen Text und seiner Quelle oder den Quellen, von denen er sich ableitet. [2.3. The Encoding Description 2.1.1. The TEI Header and Its Components]</a:documentation>
+         <oneOrMore>
+            <choice>
+               <ref name="undefinedmodel.encodingDescPart"/>
+               <ref name="undefinedmodel.pLike"/>
+            </choice>
+         </oneOrMore>
+         <ref name="undefinedatt.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedprofileDesc">
+      <element name="profileDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Beschreibung des Textprofils) enthält eine detaillierte Beschreibung der nicht-bibliografischen Merkmale des Textes, besonders der verwendeten Sprachen und Subsprachen, der Entstehungsbedingungen eines Textes sowie der Beteiligten und deren Umfeld. [2.4. The Profile Description 2.1.1. The TEI Header and Its Components]</a:documentation>
+         <zeroOrMore>
+            <ref name="undefinedmodel.profileDescPart"/>
+         </zeroOrMore>
+         <ref name="undefinedatt.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedrevisionDesc">
+      <element name="revisionDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Beschreibung der Dateihistorie) dokumentiert die Änderungen, die an der Datei vorgenommen wurden. [2.6. The Revision Description 2.1.1. The TEI Header and Its Components]</a:documentation>
+         <choice>
+            <ref name="undefinedlist"/>
+            <oneOrMore>
+               <ref name="undefinedchange"/>
+            </oneOrMore>
+         </choice>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.docStatus.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedchange">
+      <element name="change">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Änderung) verzeichnet Änderungen oder Korrekturen während der Erstellung eines Basisdokuments oder während der Überarbeitung einer elektronischen Datei. [2.6. The Revision Description 2.4.1. Creation 11.7. Identifying Changes and Revisions]</a:documentation>
+         <ref name="undefinedmacro.specialPara"/>
+         <ref name="undefinedatt.ascribed.attributes"/>
+         <ref name="undefinedatt.datable.attributes"/>
+         <ref name="undefinedatt.docStatus.attributes"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <optional>
+            <attribute name="target">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ziel) verweist auf ein oder mehrere Elemente, die zu dieser Änderung gehören. </a:documentation>
+               <list>
+                  <oneOrMore>
+                     <data type="anyURI">
+                        <param name="pattern">\S+</param>
+                     </data>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedTEI">
+      <element name="TEI">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(TEI-Dokument) enthält ein einzelnes TEI-konformes Dokument, das aus einem einzigen TEI-Header und einem oder mehreren Mitgliedern der model.resource-Klasse besteht. Mehrere <code xmlns="http://www.w3.org/1999/xhtml">&lt;TEI&gt;</code>-Elemente können in einem <code xmlns="http://www.w3.org/1999/xhtml">&lt;teiCorpus&gt;</code>-Element zusammengefasst werden. [4. Default Text Structure 15.1. Varieties of Composite Text]</a:documentation>
+         <group>
+            <ref name="undefinedteiHeader"/>
+            <choice>
+               <group>
+                  <oneOrMore>
+                     <ref name="undefinedmodel.resource"/>
+                  </oneOrMore>
+                  <zeroOrMore>
+                     <ref name="undefinedTEI"/>
+                  </zeroOrMore>
+               </group>
+               <oneOrMore>
+                  <ref name="undefinedTEI"/>
+               </oneOrMore>
+            </choice>
+         </group>
+         <sch:ns xmlns="http://www.tei-c.org/ns/1.0"
+                 xmlns:eg="http://www.tei-c.org/ns/Examples"
+                 xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                 prefix="tei"
+                 uri="http://www.tei-c.org/ns/1.0"/>
+         <sch:ns xmlns="http://www.tei-c.org/ns/1.0"
+                 xmlns:eg="http://www.tei-c.org/ns/Examples"
+                 xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                 prefix="xs"
+                 uri="http://www.w3.org/2001/XMLSchema"/>
+         <sch:ns xmlns="http://www.tei-c.org/ns/1.0"
+                 xmlns:eg="http://www.tei-c.org/ns/Examples"
+                 xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                 prefix="rng"
+                 uri="http://relaxng.org/ns/structure/1.0"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <optional>
+            <attribute name="version">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gibt die Versionsnummer der TEI-Richtlinien an, gegen die dieses Dokument validiert wird.</a:documentation>
+               <data type="token">
+                  <param name="pattern">[\d]+(\.[\d]+){0,2}</param>
+               </data>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedtext">
+      <element name="text">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text) enthält einen einzelnen, eigenständigen oder kompilierten Text, zum Beispiel ein Gedicht oder Drama, eine Sammlung von Aufsätzen, einen Roman, ein Wörterbuch oder ein Korpus-Sample. [4. Default Text Structure 15.1. Varieties of Composite Text]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="undefinedmodel.global"/>
+            </zeroOrMore>
+            <choice>
+               <ref name="undefinedbody"/>
+            </choice>
+            <zeroOrMore>
+               <ref name="undefinedmodel.global"/>
+            </zeroOrMore>
+         </group>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.declaring.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <ref name="undefinedatt.written.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedbody">
+      <element name="body">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Textkörper) enthält den gesamten Textkörper eines eigenständigen Textes, außer den Vorspann (front) und Nachspann (back). [4. Default Text Structure]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="undefinedmodel.global"/>
+            </zeroOrMore>
+            <optional>
+               <group>
+                  <ref name="undefinedmodel.divTop"/>
+                  <zeroOrMore>
+                     <choice>
+                        <ref name="undefinedmodel.global"/>
+                        <ref name="undefinedmodel.divTop"/>
+                     </choice>
+                  </zeroOrMore>
+               </group>
+            </optional>
+            <optional>
+               <group>
+                  <ref name="undefinedmodel.divGenLike"/>
+                  <zeroOrMore>
+                     <choice>
+                        <ref name="undefinedmodel.global"/>
+                        <ref name="undefinedmodel.divGenLike"/>
+                     </choice>
+                  </zeroOrMore>
+               </group>
+            </optional>
+            <choice>
+               <oneOrMore>
+                  <group>
+                     <ref name="undefinedmodel.divLike"/>
+                     <zeroOrMore>
+                        <choice>
+                           <ref name="undefinedmodel.global"/>
+                           <ref name="undefinedmodel.divGenLike"/>
+                        </choice>
+                     </zeroOrMore>
+                  </group>
+               </oneOrMore>
+               <oneOrMore>
+                  <group>
+                     <ref name="undefinedmodel.div1Like"/>
+                     <zeroOrMore>
+                        <choice>
+                           <ref name="undefinedmodel.global"/>
+                           <ref name="undefinedmodel.divGenLike"/>
+                        </choice>
+                     </zeroOrMore>
+                  </group>
+               </oneOrMore>
+               <group>
+                  <oneOrMore>
+                     <group>
+                        <choice>
+                           <ref name="undefinedmodel.common"/>
+                        </choice>
+                        <zeroOrMore>
+                           <ref name="undefinedmodel.global"/>
+                        </zeroOrMore>
+                     </group>
+                  </oneOrMore>
+                  <optional>
+                     <choice>
+                        <oneOrMore>
+                           <group>
+                              <ref name="undefinedmodel.divLike"/>
+                              <zeroOrMore>
+                                 <choice>
+                                    <ref name="undefinedmodel.global"/>
+                                    <ref name="undefinedmodel.divGenLike"/>
+                                 </choice>
+                              </zeroOrMore>
+                           </group>
+                        </oneOrMore>
+                        <oneOrMore>
+                           <group>
+                              <ref name="undefinedmodel.div1Like"/>
+                              <zeroOrMore>
+                                 <choice>
+                                    <ref name="undefinedmodel.global"/>
+                                    <ref name="undefinedmodel.divGenLike"/>
+                                 </choice>
+                              </zeroOrMore>
+                           </group>
+                        </oneOrMore>
+                     </choice>
+                  </optional>
+               </group>
+            </choice>
+            <zeroOrMore>
+               <group>
+                  <ref name="undefinedmodel.divBottom"/>
+                  <zeroOrMore>
+                     <ref name="undefinedmodel.global"/>
+                  </zeroOrMore>
+               </group>
+            </zeroOrMore>
+         </group>
+         <ref name="undefinedatt.global.attribute.xmlid"/>
+         <ref name="undefinedatt.global.attribute.n"/>
+         <ref name="undefinedatt.global.attribute.xmllang"/>
+         <ref name="undefinedatt.global.attribute.xmlbase"/>
+         <ref name="undefinedatt.global.attribute.xmlspace"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefineddiv">
+      <element name="div">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Textabschnitt) enthält einen Unterabschnitt in Vorspann (front), Textkörper oder Nachspann (back) eines Textes. [4.1. Divisions of the Body]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <choice>
+                  <ref name="undefinedmodel.divTop"/>
+                  <ref name="undefinedmodel.global"/>
+               </choice>
+            </zeroOrMore>
+            <optional>
+               <group>
+                  <choice>
+                     <oneOrMore>
+                        <group>
+                           <choice>
+                              <ref name="undefinedmodel.divLike"/>
+                              <ref name="undefinedmodel.divGenLike"/>
+                           </choice>
+                           <zeroOrMore>
+                              <ref name="undefinedmodel.global"/>
+                           </zeroOrMore>
+                        </group>
+                     </oneOrMore>
+                     <group>
+                        <oneOrMore>
+                           <group>
+                              <choice>
+                                 <ref name="undefinedmodel.common"/>
+                              </choice>
+                              <zeroOrMore>
+                                 <ref name="undefinedmodel.global"/>
+                              </zeroOrMore>
+                           </group>
+                        </oneOrMore>
+                        <zeroOrMore>
+                           <group>
+                              <choice>
+                                 <ref name="undefinedmodel.divLike"/>
+                                 <ref name="undefinedmodel.divGenLike"/>
+                              </choice>
+                              <zeroOrMore>
+                                 <ref name="undefinedmodel.global"/>
+                              </zeroOrMore>
+                           </group>
+                        </zeroOrMore>
+                     </group>
+                  </choice>
+                  <zeroOrMore>
+                     <group>
+                        <ref name="undefinedmodel.divBottom"/>
+                        <zeroOrMore>
+                           <ref name="undefinedmodel.global"/>
+                        </zeroOrMore>
+                     </group>
+                  </zeroOrMore>
+               </group>
+            </optional>
+         </group>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="tei_b_vg-div-abstractModel-structure-div-in-l-or-lg-constraint-report-8">
+            <rule context="tei:div">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="(ancestor::tei:l or ancestor::tei:lg) and not(ancestor::tei:floatingText)">
+        Abstract model violation: Lines may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
+      </sch:report>
+            </rule>
+         </pattern>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="tei_b_vg-div-abstractModel-structure-div-in-ab-or-p-constraint-report-9">
+            <rule context="tei:div">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
+        Abstract model violation: p and ab may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
+      </sch:report>
+            </rule>
+         </pattern>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.divLike.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <ref name="undefinedatt.declaring.attributes"/>
+         <ref name="undefinedatt.written.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedatt.datable.custom.attributes">
+      <ref name="undefinedatt.datable.custom.attribute.when-custom"/>
+      <ref name="undefinedatt.datable.custom.attribute.notBefore-custom"/>
+      <ref name="undefinedatt.datable.custom.attribute.notAfter-custom"/>
+      <ref name="undefinedatt.datable.custom.attribute.from-custom"/>
+      <ref name="undefinedatt.datable.custom.attribute.to-custom"/>
+      <ref name="undefinedatt.datable.custom.attribute.datingPoint"/>
+      <ref name="undefinedatt.datable.custom.attribute.datingMethod"/>
+   </define>
+   <define name="undefinedatt.datable.custom.attribute.when-custom">
+      <optional>
+         <attribute name="when-custom">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the value of a date or time in some custom standard form.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">[^\p{C}\p{Z}]+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.custom.attribute.notBefore-custom">
+      <optional>
+         <attribute name="notBefore-custom">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the earliest possible date for the event in some custom standard form.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">[^\p{C}\p{Z}]+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.custom.attribute.notAfter-custom">
+      <optional>
+         <attribute name="notAfter-custom">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the latest possible date for the event in some custom standard form.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">[^\p{C}\p{Z}]+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.custom.attribute.from-custom">
+      <optional>
+         <attribute name="from-custom">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the starting point of the period in some custom standard form.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">[^\p{C}\p{Z}]+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.custom.attribute.to-custom">
+      <optional>
+         <attribute name="to-custom">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the ending point of the period in some custom standard form.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">[^\p{C}\p{Z}]+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.custom.attribute.datingPoint">
+      <optional>
+         <attribute name="datingPoint">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a pointer to some location defining a named point in time with reference to which the datable item is understood to have occurred</a:documentation>
+            <data type="anyURI">
+               <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.custom.attribute.datingMethod">
+      <optional>
+         <attribute name="datingMethod">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a pointer to a <code xmlns="http://www.w3.org/1999/xhtml">&lt;calendar&gt;</code> element or other means of interpreting the values of the custom dating attributes.</a:documentation>
+            <data type="anyURI">
+               <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedmodel.persNamePart">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.persNamePart_alternation">
+      <notAllowed/>
+   </define>
+   <define name="undefinedmodel.persNamePart_sequence">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.persNamePart_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.persNamePart_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="undefinedmodel.persNamePart_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="undefinedatt.datable.iso.attributes">
+      <ref name="undefinedatt.datable.iso.attribute.when-iso"/>
+      <ref name="undefinedatt.datable.iso.attribute.notBefore-iso"/>
+      <ref name="undefinedatt.datable.iso.attribute.notAfter-iso"/>
+      <ref name="undefinedatt.datable.iso.attribute.from-iso"/>
+      <ref name="undefinedatt.datable.iso.attribute.to-iso"/>
+   </define>
+   <define name="undefinedatt.datable.iso.attribute.when-iso">
+      <optional>
+         <attribute name="when-iso">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the value of a date or time in a standard form.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+               <data type="token">
+                  <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.iso.attribute.notBefore-iso">
+      <optional>
+         <attribute name="notBefore-iso">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the earliest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+               <data type="token">
+                  <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.iso.attribute.notAfter-iso">
+      <optional>
+         <attribute name="notAfter-iso">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the latest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+               <data type="token">
+                  <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.iso.attribute.from-iso">
+      <optional>
+         <attribute name="from-iso">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the starting point of the period in standard form.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+               <data type="token">
+                  <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datable.iso.attribute.to-iso">
+      <optional>
+         <attribute name="to-iso">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the ending point of the period in standard form.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+               <data type="token">
+                  <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedorgName">
+      <element name="orgName">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(organization name) contains an organizational name. [13.2.2. Organizational Names]</a:documentation>
+         <ref name="undefinedmacro.phraseSeq"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.datable.attributes"/>
+         <ref name="undefinedatt.editLike.attributes"/>
+         <ref name="undefinedatt.personal.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedpersName">
+      <element name="persName">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(personal name) contains a proper noun or proper-noun phrase referring to a person, possibly including one or more of the person's forenames, surnames, honorifics, added names, etc. [13.2.1. Personal Names]</a:documentation>
+         <ref name="undefinedmacro.phraseSeq"/>
+         <ref name="undefinedatt.global.attribute.xmlid"/>
+         <ref name="undefinedatt.global.attribute.n"/>
+         <ref name="undefinedatt.global.attribute.xmllang"/>
+         <ref name="undefinedatt.global.attribute.xmlbase"/>
+         <ref name="undefinedatt.global.attribute.xmlspace"/>
+         <ref name="undefinedatt.personal.attribute.sort"/>
+         <ref name="undefinedatt.canonical.attribute.ref"/>
+         <optional>
+            <attribute name="key">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Verweist auf den Eintrag der Person im Personenregister.</a:documentation>
+               <data type="string"/>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedlistPerson">
+      <element name="listPerson">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(list of persons) contains a list of descriptions, each of which provides information about an identifiable person or a group of people, for example the participants in a language interaction, or the people referred to in a historical source. [13.3.2. The Person Element 15.2. Contextual Information 2.4. The Profile Description 15.3.2. Declarable Elements]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="undefinedmodel.headLike"/>
+            </zeroOrMore>
+            <zeroOrMore>
+               <empty/>
+            </zeroOrMore>
+            <oneOrMore>
+               <group>
+                  <oneOrMore>
+                     <choice>
+                        <ref name="undefinedmodel.personLike"/>
+                        <ref name="undefinedlistPerson"/>
+                     </choice>
+                  </oneOrMore>
+                  <zeroOrMore>
+                     <empty/>
+                  </zeroOrMore>
+               </group>
+            </oneOrMore>
+         </group>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <ref name="undefinedatt.declarable.attributes"/>
+         <ref name="undefinedatt.sortable.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedatt.tableDecoration.attributes">
+      <ref name="undefinedatt.tableDecoration.attribute.role"/>
+      <ref name="undefinedatt.tableDecoration.attribute.rows"/>
+      <ref name="undefinedatt.tableDecoration.attribute.cols"/>
+   </define>
+   <define name="undefinedatt.tableDecoration.attribute.role">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="role"
+                    a:defaultValue="data">
+            <a:documentation>(role) indicates the kind of information held in this cell or in each cell of this row.
+Suggested values include: 1] label; 2] data</a:documentation>
+            <choice>
+               <value>label</value>
+               <a:documentation>labelling or descriptive information only.</a:documentation>
+               <value>data</value>
+               <a:documentation>data values.</a:documentation>
+               <data type="token">
+                  <param name="pattern">[^\p{C}\p{Z}]+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.tableDecoration.attribute.rows">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="rows"
+                    a:defaultValue="1">
+            <a:documentation>(rows) indicates the number of rows occupied by this cell or row.</a:documentation>
+            <data type="nonNegativeInteger"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.tableDecoration.attribute.cols">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="cols"
+                    a:defaultValue="1">
+            <a:documentation>(columns) indicates the number of columns occupied by this cell or row.</a:documentation>
+            <data type="nonNegativeInteger"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedtable">
+      <element name="table">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Tabelle) enthält Text, der in Tabellenform, also in Zeilen und Spalten, dargestellt ist. [14.1.1. TEI Tables]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <choice>
+                  <ref name="undefinedmodel.headLike"/>
+                  <ref name="undefinedmodel.global"/>
+               </choice>
+            </zeroOrMore>
+            <choice>
+               <oneOrMore>
+                  <group>
+                     <ref name="undefinedrow"/>
+                     <zeroOrMore>
+                        <ref name="undefinedmodel.global"/>
+                     </zeroOrMore>
+                  </group>
+               </oneOrMore>
+               <oneOrMore>
+                  <group>
+                     <ref name="undefinedmodel.graphicLike"/>
+                     <zeroOrMore>
+                        <ref name="undefinedmodel.global"/>
+                     </zeroOrMore>
+                  </group>
+               </oneOrMore>
+            </choice>
+            <zeroOrMore>
+               <group>
+                  <ref name="undefinedmodel.divBottom"/>
+                  <zeroOrMore>
+                     <ref name="undefinedmodel.global"/>
+                  </zeroOrMore>
+               </group>
+            </zeroOrMore>
+         </group>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <optional>
+            <attribute name="rows">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Zeilen) gibt die Anzahl der Tabellenzeilen an.</a:documentation>
+               <data type="nonNegativeInteger"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="cols">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Spalten) gibt die Anzahl der Tabellenspalten an.</a:documentation>
+               <data type="nonNegativeInteger"/>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedrow">
+      <element name="row">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Tabellenzeile) enthält eine Zeile einer Tabelle. [14.1.1. TEI Tables]</a:documentation>
+         <oneOrMore>
+            <ref name="undefinedcell"/>
+         </oneOrMore>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.tableDecoration.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedcell">
+      <element name="cell">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Tabellenzelle) enthält eine Zelle einer Tabelle. [14.1.1. TEI Tables]</a:documentation>
+         <ref name="undefinedmacro.specialPara"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.tableDecoration.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedmodel.rdgLike">
+      <notAllowed/>
+   </define>
+   <define name="undefinedapp">
+      <element name="app">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(apparatus entry) Umfasst eine editorische Fußnote, die einen textgenetischen oder textkritischen Inhalt hat. [12.1.1. The Apparatus Entry]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <choice>
+                  <ref name="undefinedmodel.rdgLike"/>
+                  <ref name="undefinedmodel.noteLike"/>
+               </choice>
+            </zeroOrMore>
+         </group>
+         <ref name="undefinedatt.global.attribute.xmlid"/>
+         <ref name="undefinedatt.global.attribute.n"/>
+         <ref name="undefinedatt.typed.attribute.subtype"/>
+         <attribute name="from">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies the beginning of the lemma in the base text.</a:documentation>
+            <data type="anyURI">
+               <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedatt.global.linking.attributes">
+      <ref name="undefinedatt.global.linking.attribute.corresp"/>
+      <ref name="undefinedatt.global.linking.attribute.synch"/>
+      <ref name="undefinedatt.global.linking.attribute.sameAs"/>
+      <ref name="undefinedatt.global.linking.attribute.copyOf"/>
+      <ref name="undefinedatt.global.linking.attribute.next"/>
+      <ref name="undefinedatt.global.linking.attribute.prev"/>
+      <ref name="undefinedatt.global.linking.attribute.exclude"/>
+      <ref name="undefinedatt.global.linking.attribute.select"/>
+   </define>
+   <define name="undefinedatt.global.linking.attribute.corresp">
+      <optional>
+         <attribute name="corresp">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(corresponds) points to elements that correspond to the current element in some way.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.linking.attribute.synch">
+      <optional>
+         <attribute name="synch">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(synchronous) points to elements that are synchronous with the current element.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.linking.attribute.sameAs">
+      <optional>
+         <attribute name="sameAs">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to an element that is the same as the current element.</a:documentation>
+            <data type="anyURI">
+               <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.linking.attribute.copyOf">
+      <optional>
+         <attribute name="copyOf">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to an element of which the current element is a copy.</a:documentation>
+            <data type="anyURI">
+               <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.linking.attribute.next">
+      <optional>
+         <attribute name="next">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to the next element of a virtual aggregate of which the current element is part.</a:documentation>
+            <data type="anyURI">
+               <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.linking.attribute.prev">
+      <optional>
+         <attribute name="prev">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(previous) points to the previous element of a virtual aggregate of which the current element is part.</a:documentation>
+            <data type="anyURI">
+               <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.linking.attribute.exclude">
+      <optional>
+         <attribute name="exclude">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to elements that are in exclusive alternation with the current element.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.global.linking.attribute.select">
+      <optional>
+         <attribute name="select">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">selects one or more alternants; if one alternant is selected, the ambiguity or uncertainty is marked as resolved. If more than one alternant is selected, the degree of ambiguity or uncertainty is marked as reduced by the number of alternants not selected.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedanchor">
+      <element name="anchor">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ankerpunkt) fügt an einer Stelle im Text eine Kennung ein, unabhängig von der Textstruktur. [8.4.2. Synchronization and Overlap 16.5. Correspondence and Alignment]</a:documentation>
+         <empty/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedmsDesc">
+      <element name="msDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript description) contains a description of a single identifiable manuscript or other text-bearing object such as an early printed book. [10.1. Overview]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="undefinedmodel.headLike"/>
+            </zeroOrMore>
+            <choice>
+               <oneOrMore>
+                  <ref name="undefinedmodel.pLike"/>
+               </oneOrMore>
+               <empty/>
+            </choice>
+         </group>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.sortable.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <ref name="undefinedatt.declaring.attributes"/>
+         <ref name="undefinedatt.docStatus.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <start>
+      <choice>
+         <ref name="undefinedTEI"/>
+      </choice>
+   </start>
+</grammar>
