@@ -529,7 +529,7 @@
                         <body>
                            <div>
                               <p>
-                                 <bibl>
+                                 <bibl type="lit" sameAs="zotero id">
                                     <persName>Gerhard Anschütz</persName>, Die Verfassung des
                                     Deutschen Reichs vom 11. August 1919, 14. Aufl., Berlin 1933,
                                        <biblScope> 30–21</biblScope>
@@ -644,7 +644,7 @@
                   Kommentar festgehalten. </p>
                <p>Ein solcher Kommentar selbst besteht in beiden Fällen aus einem
                   <gi>app</gi>-Element, das wiederum ein <gi>note</gi>-Element mit dem Inhalt des
-                  Kommentars enthält. Kommentare im Dokument selbst, wie im zweiten Fall auftreten,
+                  Kommentars enthält (durch den <att>type</att> <val>app</val> markiert). Kommentare im Dokument selbst, wie im zweiten Fall auftreten,
                   werden ebenfall von einem weiteren <gi>note</gi>-Element umschlossen, dass ein
                      <att>type</att>-Attribut mit dem Wert <val>original</val> erhält. Im ersten
                   Fall wird gestrichener oder überschriebener Text von einem <gi>del</gi>-Element
@@ -665,7 +665,7 @@
                               type="app" xml:id="a_1222"/>der souveränen Länder<anchor
                               type="app" xml:id="a_1223"/>;</p>
                         <app from="a_1222" to="a_1223">
-                           <note><persName key="p_0001">Kelsen</persName> am Rand: <note
+                           <note type="app"><persName key="p_0001">Kelsen</persName> am Rand: <note
                                  type="original">Artiken?</note>; aus: <del>souveränder
                               Länder</del></note>
                         </app>
@@ -674,11 +674,11 @@
                               nötig<anchor type="app" xml:id="a_1234"/>, die<anchor
                               type="app" xml:id="a_1236"/> Bundesversammlung einzuberufen.</p>
                         <app from="a_1233" to="a_1234">
-                           <note><persName key="p_0001">Kelsen</persName> am Rand (mit
+                           <note type="app"><persName key="p_0001">Kelsen</persName> am Rand (mit
                               Anstreichung): <note type="original">möglich?</note></note>
                         </app>
                         <app from="a_1235" to="a_1236">
-                           <note><persName key="p_0001">Kelsen</persName> aus: <del>Bedingungen
+                           <note type="app"><persName key="p_0001">Kelsen</persName> aus: <del>Bedingungen
                                  nicht angezeigt, den</del></note>
                         </app>
                      </div>
@@ -761,6 +761,7 @@
                   </div>
             </div>
          </div>
+         <!--
          <div xml:id="manual" xml:lang="de">
             <head>Handbuch zu den Aktionen der Editionsumgebung</head>
             <p>Das folgende Handbuch umfasst eine detaillierte Erläuterung der einzelnen Aktionen in
@@ -892,32 +893,28 @@
                   Überblick.</p>
             </div>
          </div>
+         -->
          <div xml:id="appendix">
             <head>Appendix</head>
-            <schemaSpec ident="tei_hkw" start="TEI" prefix="undefined" targetLang="de" docLang="de">
-               <!-- Weitere benötigte Elemente -->
+            <schemaSpec ident="tei_b_vg" start="TEI" prefix="undefined" targetLang="de" docLang="de">
                <moduleRef key="header"
-                  include="teiHeader fileDesc titleStmt publicationStmt sourceDesc change encodingDesc idno quotation editionStmt authority availability biblFull revisionDesc edition licence seriesStmt biblScope resp biblScope notesStmt projectDesc editorialDecl profileDesc langUsage language"/>
+                  include="teiHeader fileDesc titleStmt publicationStmt sourceDesc change encodingDesc editionStmt revisionDesc profileDesc"/>
                <moduleRef key="core"
-                  include="p title note bibl date cit desc editor hi item lb pb publisher quote foreign pubPlace corr ref list author respStmt resp analytic head biblScope email"/>
-               <moduleRef key="textstructure" include="TEI text body div epigraph front"/>
+                  include="p title note bibl date hi item pb publisher foreign corr ref list author respStmt resp head biblScope term"/>
+               <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
-               <moduleRef key="transcr" include="supplied"/>
                <moduleRef key="namesdates"
-                  include="persName birth death listPerson person forename surname orgName"/>
-               <moduleRef key="figures" include="figure cell table row"/>
-               <moduleRef key="textcrit" include="listApp app listWit"/>
+                  include="persName listPerson orgName"/>
+               <moduleRef key="figures" include="cell table row"/>
+               <moduleRef key="textcrit" include="app"/>
+               <moduleRef key="linking" include="anchor"/>
                <!-- Anpassung des app Elements -->
                <elementSpec ident="app" mode="change">
-                  <desc versionDate="2023-01-31" xml:lang="en">Umfasst eine editorische Fußnote, die
-                     einen textgenetischen Inhalt hat. Für die Arbeit in der Editionsumgebung wird
-                     für eine spezifische Suchfunktion das Element app mit einem Attribut type um
-                     alle Sachanmerkungen gesetzt.</desc>
-                  <classes mode="change">
-                     <memberOf key="att.typed" mode="delete"/>
-                  </classes>
+                  <desc>Umfasst eine editorische Fußnote, die
+                     einen textgenetischen oder textkritischen Inhalt hat.</desc>
                   <attList>
-                     <attDef ident="from" mode="delete"/>
+                     <attDef ident="from" mode="change" usage="req"/>
+                     <attDef ident="to" mode="change" usage="req"/>
                      <attDef ident="loc" mode="delete"/>
                      <attDef ident="xml:lang" mode="delete"/>
                      <attDef ident="xml:base" mode="delete"/>
@@ -940,18 +937,7 @@
                      <attDef ident="resp" mode="delete"/>
                      <attDef ident="source" mode="delete"/>
                      <attDef ident="to" mode="delete"/>
-                     <attDef ident="type" usage="opt">
-                        <datatype>
-                           <dataRef name="string"/>
-                        </datatype>
-                        <valDesc versionDate="2023-01-31" xml:lang="de">Dieser Wert zeigt an, dass
-                           das Element app nur für die Such-Aktion in der HKW-Editionsumgebung
-                           benötig wird. Vor Publikation der Daten wird das Element
-                           gelöscht.</valDesc>
-                        <valList type="closed">
-                           <valItem ident="delete_after_editing"/>
-                        </valList>
-                     </attDef>
+                     <attDef ident="type" mode="delete"/>
                   </attList>
                </elementSpec>
                <!-- Anpassung des note Elementes -->
@@ -959,22 +945,11 @@
                   <attList>
                      <attDef ident="type" mode="change" usage="req">
                         <valList type="closed" mode="change">
-                           <valItem mode="add" ident="editorial">
-                              <desc versionDate="2023-01-31" xml:lang="de">Dieser Wert editorial
-                                 zeigt an, dass es sich um eine Herausgeberfußnote handelt.</desc>
+                           <valItem mode="add" ident="app">
+                              <desc>Das Element enhält einen Apparateintrag der Editor:innen.</desc>
                            </valItem>
                            <valItem mode="add" ident="original">
-                              <desc versionDate="2023-01-31" xml:lang="de">Dieser Wert original
-                                 zeigt an, dass dies eine von Kelsen im Original gesetzte Fußnote
-                                 ist.</desc>
-                           </valItem>
-                           <valItem mode="add" ident="interna">
-                              <desc versionDate="2023-02-01" xml:lang="de">Interne editorische
-                                 Anmerkung, wird zum Abschluss der Bearbeitung gelöscht</desc>
-                           </valItem>
-                           <valItem mode="add" ident="biography">
-                              <desc versionDate="2023-02-01" xml:lang="de">Biographische
-                                 Beschreibung der Person im Personenregister.</desc>
+                              <desc versionDate="2023-01-31" xml:lang="de">Das Element enthält einen im edierten Dokument hinzugefügten Kommentar der Autor:innen.</desc>
                            </valItem>
                         </valList>
                      </attDef>
@@ -986,10 +961,7 @@
                      <attDef ident="facs" mode="delete"/>
                      <attDef ident="corresp" mode="delete"/>
                      <attDef ident="synch" mode="delete"/>
-                     <attDef ident="sameAs" mode="change" usage="opt">
-                        <desc versionDate="2023-02-01" xml:lang="de">Verweist auf die xml:id des
-                           Personeneintrags im Personenregister bei Personenerläuterungen.</desc>
-                     </attDef>
+                     <attDef ident="sameAs" mode="delete"/>
                      <attDef ident="copyOf" mode="delete"/>
                      <attDef ident="next" mode="delete"/>
                      <attDef ident="prev" mode="delete"/>
@@ -999,48 +971,14 @@
                      <attDef ident="style" mode="delete"/>
                      <attDef ident="rendition" mode="delete"/>
                      <attDef ident="cert" mode="delete"/>
-                     <attDef ident="resp" mode="change" usage="opt">
-                        <desc versionDate="2023-02-01" xml:lang="de">Kürzel des Bearbeiters bei
-                           internen Anmerkungen</desc>
-                     </attDef>
+                     <attDef ident="resp" mode="delete"/>
                      <attDef ident="source" mode="delete"/>
-                     <attDef ident="n" mode="change" usage="rec">
-                        <desc versionDate="2023-01-31" xml:lang="en">Fußnotenzahl wie im Druck. Wird
-                           gegebenenfalls nachträglich ergänzt.</desc>
-                     </attDef>
+                     <attDef ident="n" mode="delete"/>
                      <attDef ident="xml:id" mode="change" usage="rec">
-                        <desc versionDate="2023-01-31" xml:lang="en">Nachträglich automatisiert
-                           aktualisierte Id nach dem Schema fn.edit|orig.02.001.01.001.0001
-                           (fußnote.editorial|original.HKW-Band.Laufnummer Einzelwerk.Ebene 1.
-                           Laufnummer Ebene 1.Laufnummer Fußnote.)</desc>
+                        <desc>Sollte durch das Framework generiert werden.</desc>
                      </attDef>
-                     <attDef ident="subtype" mode="change">
-                        <desc versionDate="2023-07-25" xml:lang="de"/>
-                        <valList type="closed" mode="change">
-                           <valItem mode="add" ident="pers_desc">
-                              <desc versionDate="2023-01-31" xml:lang="de">Die Anmerkung ist eine
-                                 Personenerläuterung</desc>
-                           </valItem>
-                           <valItem mode="add" ident=""/>
-                           <valItem mode="add" ident="pers_desc_no_import">
-                              <desc versionDate="2023-07-25" xml:lang="de">Die Anmerkung ist eine
-                                 Personenerläuterung, aber nicht mit der Personen.xml
-                                 verknüpft.</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                     <attDef ident="timestamp" mode="add">
-                        <datatype>
-                           <dataRef name="string"/>
-                        </datatype>
-                     </attDef>
+                     <attDef ident="subtype" mode="delete"/>
                   </attList>
-                  <classes mode="change">
-                     <memberOf key="att.anchoring" mode="delete"/>
-                     <memberOf key="att.placement" mode="delete"/>
-                     <memberOf key="att.pointing" mode="delete"/>
-                     <memberOf key="att.written" mode="delete"/>
-                  </classes>
                </elementSpec>
                <!-- Anpassung des bibl Elements -->
                <elementSpec ident="bibl" mode="change">
@@ -1056,7 +994,7 @@
                      <memberOf key="att.sortable" mode="delete"/>
                   </classes>
                   <attList>
-                     <attDef ident="sameAs" usage="opt">
+                     <attDef ident="sameAs" usage="rec">
                         <desc versionDate="2023-02-01" xml:lang="de">Weist auf den entsprechenden
                            Eintrag in der Zotero-Datenbank oder des Gesetzesregisters des Projekts
                            hin.</desc>
@@ -1065,19 +1003,17 @@
                         </datatype>
                      </attDef>
                      <attDef ident="subtype" mode="delete"/>
-                     <attDef ident="type" mode="change">
+                     <attDef ident="type" mode="change" usage="req">
                         <valList type="closed" mode="change">
                            <valItem mode="add" ident="statute">
-                              <desc versionDate="2023-02-01" xml:lang="de">Das Element bezieht sich
+                              <desc>Das Element bezieht sich
                                  auf ein Gesetz.</desc>
                            </valItem>
-                           <valItem mode="add" ident="statute_expanded">
-                              <desc versionDate="2023-02-01" xml:lang="de">Hinweis auf eine
-                                 Gesetzeserweiterung (im Register)</desc>
+                           <valItem mode="add" ident="lit">
+                              <desc>Verweis auf sonstige Literatur.</desc>
                            </valItem>
                         </valList>
                      </attDef>
-                     <attDef ident="type" mode="delete"/>
                   </attList>
                </elementSpec>
                <!-- Anpassnung hi-Element -->
@@ -1089,7 +1025,8 @@
                   <attList>
                      <attDef ident="rendition" mode="delete"/>
                      <attDef ident="style" mode="delete"/>
-                     <attDef ident="rend" mode="change">
+                     <attDef ident="rend" mode="change"/>
+                     <!--
                         <desc versionDate="2023-01-31" xml:lang="en">Beschreibt, wie der
                            entsprechende Textteil im HKW-Druckband hervorgehoben ist.</desc>
                         <valList type="closed" mode="change">
@@ -1118,7 +1055,7 @@
                                  (= Hervorhebung Typ 2)</desc>
                            </valItem>
                         </valList>
-                     </attDef>
+                     </attDef>-->
                      <attDef ident="hand" mode="delete"/>
                   </attList>
                </elementSpec>
@@ -1130,9 +1067,20 @@
                      <memberOf key="att.spanning" mode="delete"/>
                   </classes>
                   <attList>
+                     <attDef ident="facs" mode="change" usage="req">
+                        <datatype>
+                           <dataRef key="teidata.pointer"/>
+                        </datatype>
+                     </attDef>
+                     <attDef ident="n" mode="change">
+                        <desc>Die Nummer der Seite, auf das
+                           sich das pb-Element bezieht (automatisch generiert).</desc>
+                     </attDef>
+                     <attDef ident="xml:id" mode="change" usage="req">
+                        <desc>automatisch generierte id (img)</desc>
+                     </attDef>
                      <attDef ident="ana" mode="delete"/>
                      <attDef ident="change" mode="delete"/>
-                     <attDef ident="facs" mode="delete"/>
                      <attDef ident="corresp" mode="delete"/>
                      <attDef ident="synch" mode="delete"/>
                      <attDef ident="sameAs" mode="delete"/>
@@ -1147,41 +1095,8 @@
                      <attDef ident="cert" mode="delete"/>
                      <attDef ident="resp" mode="delete"/>
                      <attDef ident="source" mode="delete"/>
-                     <attDef ident="type" mode="change">
-                        <desc versionDate="2023-01-31" xml:lang="en">Zeigt an, ob sich das Element
-                           auf das Original Kelsens, auf die Druckausgabe der HKW, auf die Wieder
-                           Rechtstheoretische Schule (WRS) oder auf den Separatdruck (Sep)
-                           bezieht.</desc>
-                        <valList mode="change" type="closed">
-                           <valItem mode="add" ident="wrs">
-                              <desc versionDate="2023-01-31" xml:lang="de">Wiener Rechtstheoretische
-                                 Schule</desc>
-                           </valItem>
-                           <valItem mode="add" ident="sep">
-                              <desc versionDate="2023-01-31" xml:lang="de">Separatdruck</desc>
-                           </valItem>
-                           <valItem mode="add" ident="original">
-                              <desc versionDate="2023-01-31" xml:lang="de">Erstdruck</desc>
-                           </valItem>
-                           <valItem mode="add" ident="editorial">
-                              <desc versionDate="2023-01-31" xml:lang="de">Hans Kelsen Werke
-                                 Druckband</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
+                     <attDef ident="type" mode="delete"/>
                      <attDef ident="subtype" mode="delete"/>
-                     <attDef ident="n" mode="change">
-                        <desc versionDate="2023-01-31" xml:lang="en">Die Nummer der Seite, auf das
-                           sich das pb-Element bezieht</desc>
-                     </attDef>
-                     <attDef ident="xml:id" mode="change" usage="rec">
-                        <desc versionDate="2023-01-31" xml:lang="en">Die XML-Id des pb-Elementes
-                           wird nach dem Schema s.orig|sep|wrs|hkw.02.001.01.001.0001
-                           (seite.original|separatdruck|wienerrechtstheoretischschule|hkwdruckband.HKW-Band.Einzelwerk.Ebene
-                           1.Laufnummer Ebene.Seitenbeginn (Laufnummer) gebildet. Dies geschieht
-                           nicht manuell, sondern in einem automaischen Prozess, weshalb der Wert
-                           auch bei manueller Setzung nicht gesetzt werden soll.</desc>
-                     </attDef>
                      <attDef ident="xml:lang" mode="delete"/>
                      <attDef ident="xml:base" mode="delete"/>
                      <attDef ident="xml:space" mode="delete"/>
@@ -1191,33 +1106,11 @@
                <elementSpec ident="persName" mode="change">
                   <attList>
                      <attDef ident="key" mode="change" usage="rec">
-                        <desc versionDate="2023-01-31" xml:lang="de">Verweist auf den Eintrag der
+                        <desc>Verweist auf den Eintrag der
                            Person im Personenregister.</desc>
                      </attDef>
-                     <attDef ident="ref" mode="change" usage="rec">
-                        <desc versionDate="2023-01-31" xml:lang="de">Verweis auf Normdatei zur
-                           Person.</desc>
-                     </attDef>
-                     <attDef ident="type" mode="change">
-                        <valList mode="change">
-                           <valItem mode="add" ident="reg">
-                              <desc versionDate="2023-02-01" xml:lang="de">Regulärer Name (im
-                                 Register)</desc>
-                           </valItem>
-                           <valItem mode="add" ident="alt">
-                              <desc versionDate="2023-02-01" xml:lang="de">Alternativer Name (im
-                                 Register)</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                     <attDef ident="subtype" mode="change">
-                        <valList mode="change">
-                           <valItem mode="add" ident="birthname">
-                              <desc versionDate="2023-06-20" xml:lang="en">Kennzeichnet den
-                                 angegebenen Namen als Geburtsnamen</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
                      <attDef ident="rend" mode="delete"/>
                      <attDef ident="style" mode="delete"/>
                      <attDef ident="rendition" mode="delete"/>
@@ -1284,265 +1177,14 @@
                      <attDef ident="source" mode="delete"/>
                   </attList>
                </elementSpec>
-               <!-- Anpassung von figure -->
-               <elementSpec ident="figure" mode="change">
-                  <attList>
-                     <attDef ident="ana" mode="delete"/>
-                     <attDef ident="change" mode="delete"/>
-                     <attDef ident="corresp" mode="delete"/>
-                     <attDef ident="synch" mode="delete"/>
-                     <attDef ident="sameAs" mode="delete"/>
-                     <attDef ident="copyOf" mode="delete"/>
-                     <attDef ident="next" mode="delete"/>
-                     <attDef ident="prev" mode="delete"/>
-                     <attDef ident="exclude" mode="delete"/>
-                     <attDef ident="select" mode="delete"/>
-                     <attDef ident="rend" mode="delete"/>
-                     <attDef ident="style" mode="delete"/>
-                     <attDef ident="rendition" mode="delete"/>
-                     <attDef ident="cert" mode="delete"/>
-                     <attDef ident="resp" mode="delete"/>
-                     <attDef ident="source" mode="delete"/>
-                     <attDef ident="subtype" mode="delete"/>
-                     <attDef ident="type" mode="change" usage="req">
-                        <desc versionDate="2023-02-01" xml:lang="de">Bestimmt, wer die Abbildung zum
-                           Text ergänzt hat.</desc>
-                        <valList type="closed" mode="change">
-                           <valItem mode="add" ident="editorial">
-                              <desc versionDate="2023-02-01" xml:lang="de">Abbildung durch die
-                                 Herausgeber eingefügt.</desc>
-                           </valItem>
-                           <valItem mode="add" ident="original">
-                              <desc versionDate="2023-02-01" xml:lang="de">Abbildung im
-                                 Original/Erstdruck vorhanden.</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                     <attDef ident="facs" mode="change">
-                        <desc versionDate="2023-02-01" xml:lang="de">Pfad zu Abbildung, falls
-                           vorhanden.</desc>
-                     </attDef>
-                  </attList>
-                  <classes mode="change">
-                     <memberOf key="att.placement" mode="delete"/>
-                     <memberOf key="att.written" mode="delete"/>
-                  </classes>
-               </elementSpec>
-               <!-- Anpassung von supplied -->
-               <elementSpec ident="supplied" mode="change">
-                  <classes mode="change">
-                     <memberOf key="att.dimensions" mode="delete"/>
-                     <memberOf key="att.editLike" mode="delete"/>
-                  </classes>
-                  <attList>
-                     <attDef ident="reason" mode="delete"/>
-                     <attDef ident="ana" mode="delete"/>
-                     <attDef ident="change" mode="delete"/>
-                     <attDef ident="facs" mode="delete"/>
-                     <attDef ident="corresp" mode="delete"/>
-                     <attDef ident="synch" mode="delete"/>
-                     <attDef ident="sameAs" mode="delete"/>
-                     <attDef ident="copyOf" mode="delete"/>
-                     <attDef ident="next" mode="delete"/>
-                     <attDef ident="prev" mode="delete"/>
-                     <attDef ident="exclude" mode="delete"/>
-                     <attDef ident="select" mode="delete"/>
-                     <attDef ident="rend" mode="delete"/>
-                     <attDef ident="style" mode="delete"/>
-                     <attDef ident="rendition" mode="delete"/>
-                     <attDef ident="cert" mode="delete"/>
-                     <attDef ident="resp" mode="change" usage="req">
-                        <valList type="closed" mode="change">
-                           <valItem mode="add" ident="editorial">
-                              <desc versionDate="2023-02-01" xml:lang="de">Ergänzung durch den
-                                 Herausgeber der HKW.</desc>
-                           </valItem>
-                           <valItem mode="add" ident="original">
-                              <desc versionDate="2023-02-01" xml:lang="de">Ergänzung durch Hans
-                                 Kelsen selbst.</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                     <attDef ident="source" mode="delete"/>
-                  </attList>
-               </elementSpec>
-               <!-- Anpassung von foreign -->
-               <elementSpec ident="foreign" mode="change">
-                  <attList>
-                     <attDef ident="xml:lang" mode="change" usage="rec">
-                        <desc versionDate="2023-02-01" xml:lang="de">Der Attributwert von @xml:lang
-                           umfasst dabei den dreibuchstabigen Sprachcode nach ISO-Norm 639-3.</desc>
-                     </attDef>
-                     <attDef ident="ana" mode="delete"/>
-                     <attDef ident="change" mode="delete"/>
-                     <attDef ident="facs" mode="delete"/>
-                     <attDef ident="corresp" mode="delete"/>
-                     <attDef ident="synch" mode="delete"/>
-                     <attDef ident="sameAs" mode="delete"/>
-                     <attDef ident="copyOf" mode="delete"/>
-                     <attDef ident="next" mode="delete"/>
-                     <attDef ident="prev" mode="delete"/>
-                     <attDef ident="exclude" mode="delete"/>
-                     <attDef ident="select" mode="delete"/>
-                     <attDef ident="rend" mode="delete"/>
-                     <attDef ident="style" mode="delete"/>
-                     <attDef ident="rendition" mode="delete"/>
-                     <attDef ident="cert" mode="delete"/>
-                     <attDef ident="resp" mode="delete"/>
-                     <attDef ident="source" mode="delete"/>
-                  </attList>
-               </elementSpec>
-               <!-- Anpassung von ref -->
-               <elementSpec ident="ref" mode="change">
-                  <classes mode="change">
-                     <memberOf key="att.declaring" mode="delete"/>
-                  </classes>
-                  <attList>
-                     <attDef ident="ana" mode="delete"/>
-                     <attDef ident="change" mode="delete"/>
-                     <attDef ident="facs" mode="delete"/>
-                     <attDef ident="targetLang" mode="delete"/>
-                     <attDef ident="evaluate" mode="delete"/>
-                     <attDef ident="source" mode="delete"/>
-                     <attDef ident="cert" mode="delete"/>
-                     <attDef ident="resp" mode="delete"/>
-                     <attDef ident="rend" mode="delete"/>
-                     <attDef ident="style" mode="delete"/>
-                     <attDef ident="rendition" mode="delete"/>
-                     <attDef ident="corresp" mode="delete"/>
-                     <attDef ident="synch" mode="delete"/>
-                     <attDef ident="sameAs" mode="delete"/>
-                     <attDef ident="copyOf" mode="delete"/>
-                     <attDef ident="next" mode="delete"/>
-                     <attDef ident="prev" mode="delete"/>
-                     <attDef ident="exclude" mode="delete"/>
-                     <attDef ident="select" mode="delete"/>
-                  </attList>
-               </elementSpec>
-               <moduleRef key="linking" include="linkGrp ab"/>
-               <elementSpec ident="corr" mode="change">
-                  <attList>
-                     <attDef ident="rend" mode="change">
-                        <desc versionDate="2023-06-20" xml:lang="en">Zeichnet einen durch die
-                           Editor:innen korrigierten Textteil aus.</desc>
-                        <valList mode="change">
-                           <valItem mode="add" ident="sup">
-                              <desc versionDate="2023-06-20" xml:lang="en">Wird ausschließlich zur
-                                 Auszeichnung einer hochgestellten eckigen Klammer verwendet.</desc>
-                           </valItem>
-                           <valItem mode="add" ident="sub">
-                              <desc versionDate="2023-06-20" xml:lang="en">Wird ausschließlich zur
-                                 Auszeichnung einer tiefgestellten eckigen Klammer verwendet.</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                  </attList>
-               </elementSpec>
-               <elementSpec ident="row" mode="change">
-                  <desc versionDate="2023-06-20" xml:lang="de">Enthält eine Zeile einer
-                     Tabelle.</desc>
-               </elementSpec>
                <elementSpec ident="ptr" mode="delete"/>
-               <elementSpec ident="title" mode="change">
-                  <attList>
-                     <attDef ident="type" mode="change">
-                        <desc versionDate="2023-06-26" xml:lang="en">Zeichnet den titel eines
-                           Werks/Gesetzes aus.</desc>
-                        <valList mode="change">
-                           <valItem mode="change" ident="main">
-                              <desc versionDate="2023-06-26" xml:lang="en">Haupttitel</desc>
-                           </valItem>
-                           <valItem mode="change" ident="sub">
-                              <desc versionDate="2023-06-26" xml:lang="en">Untertitel des
-                                 Haupttitels</desc>
-                           </valItem>
-                           <valItem mode="change" ident="short">
-                              <desc versionDate="2023-06-26" xml:lang="en">Kurztitel</desc>
-                           </valItem>
-                           <valItem mode="add" ident="reg">
-                              <desc versionDate="2023-06-26" xml:lang="undefined">Regulärer
-                                 Langtitel eines Gesetzes im Gesetzesregister</desc>
-                           </valItem>
-                           <valItem mode="add" ident="original">
-                              <desc versionDate="2023-06-26" xml:lang="undefined">Kelsen-Langtitel
-                                 eines Gesetzes im Gesetzesregisters</desc>
-                           </valItem>
-                           <valItem mode="delete" ident="alt"/>
-                           <valItem mode="delete" ident="desc"/>
-                        </valList>
-                     </attDef>
-                     <attDef ident="rend" mode="delete"/>
-                     <attDef ident="style" mode="delete"/>
-                     <attDef ident="rendition" mode="delete"/>
-                     <attDef ident="facs" mode="delete"/>
-                     <attDef ident="change" mode="delete"/>
-                     <attDef ident="cert" mode="delete"/>
-                     <attDef ident="resp" mode="delete"/>
-                     <attDef ident="source" mode="delete"/>
-                     <attDef ident="ana" mode="delete"/>
-                     <attDef ident="when-custom" mode="delete"/>
-                     <attDef ident="notBefore-custom" mode="delete"/>
-                     <attDef ident="notAfter-custom" mode="delete"/>
-                     <attDef ident="from-custom" mode="delete"/>
-                     <attDef ident="to-custom" mode="delete"/>
-                     <attDef ident="datingPoint" mode="delete"/>
-                     <attDef ident="datingMethod" mode="delete"/>
-                     <attDef ident="when-iso" mode="delete"/>
-                     <attDef ident="notBefore-iso" mode="delete"/>
-                     <attDef ident="notAfter-iso" mode="delete"/>
-                     <attDef ident="from-iso" mode="delete"/>
-                     <attDef ident="to-iso" mode="delete"/>
-                     <attDef ident="when" mode="delete"/>
-                     <attDef ident="notBefore" mode="delete"/>
-                     <attDef ident="notAfter" mode="delete"/>
-                     <attDef ident="from" mode="delete"/>
-                     <attDef ident="to" mode="delete"/>
-                     <attDef ident="subtype" mode="change">
-                        <valList mode="change">
-                           <valItem mode="add" ident="original">
-                              <desc versionDate="2023-06-26" xml:lang="undefined">zur Auszeichnung
-                                 eines Kelsen-Kurztitels im Gesetzesregister</desc>
-                           </valItem>
-                           <valItem mode="add" ident="alt">
-                              <desc versionDate="2023-06-26" xml:lang="undefined">Zur Auszeichnung
-                                 eines alternativen Kurztitels im Gesetzesregister</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                  </attList>
-                  <classes mode="change">
-                     <memberOf key="att.datable" mode="delete"/>
-                  </classes>
-               </elementSpec>
-               <elementSpec ident="front" mode="change">
-                  <classes mode="change">
-                     <memberOf key="att.declaring" mode="delete"/>
-                  </classes>
-                  <attList>
-                     <attDef ident="rend" mode="delete"/>
-                     <attDef ident="style" mode="delete"/>
-                     <attDef ident="rendition" mode="delete"/>
-                     <attDef ident="corresp" mode="delete"/>
-                     <attDef ident="synch" mode="delete"/>
-                     <attDef ident="sameAs" mode="delete"/>
-                     <attDef ident="copyOf" mode="delete"/>
-                     <attDef ident="next" mode="delete"/>
-                     <attDef ident="prev" mode="delete"/>
-                     <attDef ident="exclude" mode="delete"/>
-                     <attDef ident="select" mode="delete"/>
-                     <attDef ident="facs" mode="delete"/>
-                     <attDef ident="change" mode="delete"/>
-                     <attDef ident="cert" mode="delete"/>
-                     <attDef ident="resp" mode="delete"/>
-                     <attDef ident="source" mode="delete"/>
-                     <attDef ident="ana" mode="delete"/>
-                  </attList>
-               </elementSpec>
-
-
                <elementSpec ident="date" mode="change">
                   <attList>
                      <attDef ident="when" mode="change" usage="req"/>
+                     <attDef ident="notBefore-iso" mode="change" usage="req"/>
+                     <attDef ident="notBefore" mode="delete"/>
+                     <attDef ident="notAfter-iso" mode="change" usage="req"/>
+                     <attDef ident="notAfter" mode="delete"/>
                      <attDef ident="subtype" mode="delete"/>
                      <attDef ident="type" mode="delete"/>
                      <attDef ident="confidence" mode="delete"/>
@@ -1566,13 +1208,9 @@
                      <attDef ident="when-custom" mode="delete"/>
                      <attDef ident="to-iso" mode="delete"/>
                      <attDef ident="from-iso" mode="delete"/>
-                     <attDef ident="notAfter-iso" mode="delete"/>
                      <attDef ident="when-iso" mode="delete"/>
-                     <attDef ident="notBefore-iso" mode="delete"/>
                      <attDef ident="to" mode="delete"/>
-                     <attDef ident="notAfter" mode="delete"/>
                      <attDef ident="from" mode="delete"/>
-                     <attDef ident="notBefore" mode="delete"/>
                      <attDef ident="period" mode="delete"/>
                      <attDef ident="calendar" mode="delete"/>
                      <attDef ident="key" mode="delete"/>
@@ -1598,61 +1236,6 @@
                      <attDef ident="xml:base" mode="delete"/>
                      <attDef ident="xml:space" mode="delete"/>
                      <attDef ident="xml:lang" mode="delete"/>
-                  </attList>
-               </elementSpec>
-               <elementSpec ident="idno" mode="change">
-                  <attList>
-                     <attDef ident="type" mode="change">
-                        <valList mode="change">
-                           <valItem mode="add" ident="gnd">
-                              <desc versionDate="2023-07-10" xml:lang="de">Gibt eine GND-URI
-                                 an</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                     <attDef ident="rend" mode="delete"/>
-                     <attDef ident="style" mode="delete"/>
-                     <attDef ident="rendition" mode="delete"/>
-                     <attDef ident="corresp" mode="delete"/>
-                     <attDef ident="synch" mode="delete"/>
-                     <attDef ident="sameAs" mode="delete"/>
-                     <attDef ident="copyOf" mode="delete"/>
-                     <attDef ident="next" mode="delete"/>
-                     <attDef ident="prev" mode="delete"/>
-                     <attDef ident="exclude" mode="delete"/>
-                     <attDef ident="select" mode="delete"/>
-                     <attDef ident="change" mode="delete"/>
-                     <attDef ident="facs" mode="delete"/>
-                     <attDef ident="cert" mode="delete"/>
-                     <attDef ident="resp" mode="delete"/>
-                     <attDef ident="ana" mode="delete"/>
-                     <attDef ident="source" mode="change" usage="req">
-                        <desc versionDate="2023-07-10" xml:lang="de">Umfasst die URiI der jeweils
-                           angegeben Quelle (GND, etc.)</desc>
-                     </attDef>
-                     <attDef ident="n" mode="delete"/>
-                     <attDef ident="xml:lang" mode="delete"/>
-                     <attDef ident="xml:base" mode="delete"/>
-                     <attDef ident="xml:space" mode="delete"/>
-                     <attDef ident="sortKey" mode="delete"/>
-                     <attDef ident="calendar" mode="delete"/>
-                     <attDef ident="period" mode="delete"/>
-                     <attDef ident="when" mode="delete"/>
-                     <attDef ident="notBefore" mode="delete"/>
-                     <attDef ident="notAfter" mode="delete"/>
-                     <attDef ident="from" mode="delete"/>
-                     <attDef ident="to" mode="delete"/>
-                     <attDef ident="when-iso" mode="delete"/>
-                     <attDef ident="notBefore-iso" mode="delete"/>
-                     <attDef ident="notAfter-iso" mode="delete"/>
-                     <attDef ident="from-iso" mode="delete"/>
-                     <attDef ident="when-custom" mode="delete"/>
-                     <attDef ident="notBefore-custom" mode="delete"/>
-                     <attDef ident="notAfter-custom" mode="delete"/>
-                     <attDef ident="from-custom" mode="delete"/>
-                     <attDef ident="to-custom" mode="delete"/>
-                     <attDef ident="datingPoint" mode="delete"/>
-                     <attDef ident="datingMethod" mode="delete"/>
                   </attList>
                </elementSpec>
                <moduleRef key="msdescription" include="msDesc"/>
