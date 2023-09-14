@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-09-13T13:27:44Z. .
+Schema generated from ODD source 2023-09-14T09:22:17Z. .
 TEI Edition: Version 4.4.0. Last updated on
         19th April 2022, revision ff9cc28b0
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
@@ -199,6 +199,19 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a <code xmlns="http://www.w3.org/1999/xhtml">&lt;handNote&gt;</code> element describing the hand considered responsible for the content of the element concerned.</a:documentation>
             <data type="anyURI">
                <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.breaking.attributes">
+      <ref name="undefinedatt.breaking.attribute.break"/>
+   </define>
+   <define name="undefinedatt.breaking.attribute.break">
+      <optional>
+         <attribute name="break">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates whether or not the element bearing this attribute should be considered to mark the end of an orthographic token in the same way as whitespace.</a:documentation>
+            <data type="token">
+               <param name="pattern">[^\p{C}\p{Z}]+</param>
             </data>
          </attribute>
       </optional>
@@ -994,6 +1007,66 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
          </attribute>
       </optional>
    </define>
+   <define name="undefinedatt.edition.attributes">
+      <ref name="undefinedatt.edition.attribute.ed"/>
+      <ref name="undefinedatt.edition.attribute.edRef"/>
+   </define>
+   <define name="undefinedatt.edition.attribute.ed">
+      <optional>
+         <attribute name="ed">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(edition) supplies a sigil or other arbitrary identifier for the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">[^\p{C}\p{Z}]+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.edition.attribute.edRef">
+      <optional>
+         <attribute name="edRef">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(edition reference) provides a pointer to the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.spanning.attributes">
+      <ref name="undefinedatt.spanning.attribute.spanTo"/>
+   </define>
+   <define name="undefinedatt.spanning.attribute.spanTo">
+      <optional>
+         <attribute name="spanTo">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the end of a span initiated by the element bearing this attribute.</a:documentation>
+            <data type="anyURI">
+               <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            id="tei_b_vg-att.spanning-spanTo-spanTo-points-to-following-constraint-rule-8">
+      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:eg="http://www.tei-c.org/ns/Examples"
+                xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                context="tei:*[@spanTo]">
+         <sch:assert test="id(substring(@spanTo,2)) and following::*[@xml:id=substring(current()/@spanTo,2)]">
+The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow the current element <sch:name/>
+         </sch:assert>
+      </sch:rule>
+   </pattern>
    <define name="undefinedatt.citing.attributes">
       <ref name="undefinedatt.citing.attribute.unit"/>
       <ref name="undefinedatt.citing.attribute.from"/>
@@ -1333,6 +1406,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    <define name="undefinedmodel.milestoneLike">
       <choice>
          <ref name="undefinedpb"/>
+         <ref name="undefinedlb"/>
          <ref name="undefinedanchor"/>
       </choice>
    </define>
@@ -1679,9 +1753,6 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <ref name="undefinedavailability"/>
       </choice>
    </define>
-   <define name="undefinedmodel.availabilityPart">
-      <notAllowed/>
-   </define>
    <define name="undefinedmodel.descLike">
       <notAllowed/>
    </define>
@@ -1760,6 +1831,26 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       <choice>
          <ref name="undefinedmodel.divWrapper"/>
          <ref name="undefinedmodel.divBottomPart"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.titlepagePart">
+      <choice>
+         <ref name="undefinedgraphic"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.msQuoteLike">
+      <choice>
+         <ref name="undefinedtitle"/>
+      </choice>
+   </define>
+   <define name="undefinedmodel.msItemPart">
+      <choice>
+         <ref name="undefinedmodel.biblLike"/>
+         <ref name="undefinedmodel.quoteLike"/>
+         <ref name="undefinedmodel.respLike"/>
+         <ref name="undefinedmodel.msQuoteLike"/>
+         <ref name="undefinedidno"/>
+         <ref name="undefinedmsItem"/>
       </choice>
    </define>
    <define name="undefinedmodel.imprintPart">
@@ -1887,6 +1978,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <ref name="undefinedmodel.imprintPart"/>
          <ref name="undefinedbibl"/>
          <ref name="undefinedavailability"/>
+         <ref name="undefinedmsIdentifier"/>
       </choice>
    </define>
    <define name="undefinedmodel.addrPart">
@@ -1961,14 +2053,14 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <ref name="undefinedprofileDesc"/>
       </choice>
    </define>
-   <define name="undefinedmodel.sourceDescPart">
-      <notAllowed/>
-   </define>
    <define name="undefinedmodel.encodingDescPart">
       <notAllowed/>
    </define>
    <define name="undefinedmodel.profileDescPart">
-      <notAllowed/>
+      <choice>
+         <ref name="undefinedabstract"/>
+         <ref name="undefinedcreation"/>
+      </choice>
    </define>
    <define name="undefinedmodel.resource">
       <choice>
@@ -2248,7 +2340,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-list-gloss-list-must-have-labels-constraint-rule-8">
+                  id="tei_b_vg-list-gloss-list-must-have-labels-constraint-rule-9">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:eg="http://www.tei-c.org/ns/Examples"
                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
@@ -2376,6 +2468,19 @@ Elements]</a:documentation>
                <param name="pattern">\S+</param>
             </data>
          </attribute>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedlb">
+      <element name="lb">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Zeilenanfang) markiert den Anfang einer neuen typographischen Zeile in einer bestimmten Auflage oder Version eines Textes. [3.11.3. Milestone
+Elements 7.2.5. Speech Contents]</a:documentation>
+         <empty/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <ref name="undefinedatt.edition.attributes"/>
+         <ref name="undefinedatt.spanning.attributes"/>
+         <ref name="undefinedatt.breaking.attributes"/>
          <empty/>
       </element>
    </define>
@@ -2673,13 +2778,8 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
    </define>
    <define name="undefinedavailability">
       <element name="availability">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Verfügbarkeit) liefert Informationen zur Verfügbarkeit eines Textes, zum Beispiel Einschränkungen bezüglich des Gebrauchs oder der Weitergabe, Lizensierungen usw. [2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
-         <oneOrMore>
-            <choice>
-               <ref name="undefinedmodel.availabilityPart"/>
-               <ref name="undefinedmodel.pLike"/>
-            </choice>
-         </oneOrMore>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Verfügbarkeit) Dokument auf dem der Inhalt der Datei basiert. [2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
+         <ref name="undefinedlicence"/>
          <ref name="undefinedatt.global.attributes"/>
          <ref name="undefinedatt.declarable.attributes"/>
          <optional>
@@ -2698,21 +2798,20 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
          <empty/>
       </element>
    </define>
+   <define name="undefinedlicence">
+      <element name="licence">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">beinhaltet für den Text gültige Lizenzinformationen oder andere rechtswirksame Vereinbarungen. [2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
+         <ref name="undefinedmacro.specialPara"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.pointing.attributes"/>
+         <ref name="undefinedatt.datable.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="undefinedsourceDesc">
       <element name="sourceDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Beschreibung der Quellen) beschreibt die Quelle, von der sich der elektronische Text ableitet. Üblicherweise eine bibliografische Beschreibung im Falle eines digitalisierten Textes oder eine Bezeichnung wie "born digital" für einen nur in elektronischer Form vorliegenden Text.  [2.2.7. The Source Description]</a:documentation>
-         <choice>
-            <oneOrMore>
-               <ref name="undefinedmodel.pLike"/>
-            </oneOrMore>
-            <oneOrMore>
-               <choice>
-                  <ref name="undefinedmodel.biblLike"/>
-                  <ref name="undefinedmodel.sourceDescPart"/>
-                  <ref name="undefinedmodel.listLike"/>
-               </choice>
-            </oneOrMore>
-         </choice>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Beschreibung der Quellen) Dokument auf dem der Inhalt der Datei basiert. [2.2.7. The Source Description]</a:documentation>
+         <ref name="undefinedmsDesc"/>
          <ref name="undefinedatt.global.attributes"/>
          <ref name="undefinedatt.declarable.attributes"/>
          <empty/>
@@ -2738,6 +2837,33 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
             <ref name="undefinedmodel.profileDescPart"/>
          </zeroOrMore>
          <ref name="undefinedatt.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedabstract">
+      <element name="abstract">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enthält eine (formale) Zusammenfassung, die einem bestehenden Quelldokument vorangestellt wird. [2.4.4. Abstracts]</a:documentation>
+         <oneOrMore>
+            <choice>
+               <ref name="undefinedmodel.pLike"/>
+               <ref name="undefinedmodel.listLike"/>
+            </choice>
+         </oneOrMore>
+         <ref name="undefinedatt.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedcreation">
+      <element name="creation">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Entstehung) beinhaltet Informationen zur Entstehung eines Textes. [2.4.1. Creation 2.4. The Profile Description]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="undefinedmodel.limitedPhrase"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.datable.attributes"/>
          <empty/>
       </element>
    </define>
@@ -2966,63 +3092,14 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
    </define>
    <define name="undefineddiv">
       <element name="div">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Textabschnitt) enthält einen Unterabschnitt in Vorspann (front), Textkörper oder Nachspann (back) eines Textes. [4.1. Divisions of the Body]</a:documentation>
-         <group>
-            <zeroOrMore>
-               <choice>
-                  <ref name="undefinedmodel.divTop"/>
-                  <ref name="undefinedmodel.global"/>
-               </choice>
-            </zeroOrMore>
-            <optional>
-               <group>
-                  <choice>
-                     <oneOrMore>
-                        <group>
-                           <choice>
-                              <ref name="undefinedmodel.divLike"/>
-                              <ref name="undefinedmodel.divGenLike"/>
-                           </choice>
-                           <zeroOrMore>
-                              <ref name="undefinedmodel.global"/>
-                           </zeroOrMore>
-                        </group>
-                     </oneOrMore>
-                     <group>
-                        <oneOrMore>
-                           <group>
-                              <choice>
-                                 <ref name="undefinedmodel.common"/>
-                              </choice>
-                              <zeroOrMore>
-                                 <ref name="undefinedmodel.global"/>
-                              </zeroOrMore>
-                           </group>
-                        </oneOrMore>
-                        <zeroOrMore>
-                           <group>
-                              <choice>
-                                 <ref name="undefinedmodel.divLike"/>
-                                 <ref name="undefinedmodel.divGenLike"/>
-                              </choice>
-                              <zeroOrMore>
-                                 <ref name="undefinedmodel.global"/>
-                              </zeroOrMore>
-                           </group>
-                        </zeroOrMore>
-                     </group>
-                  </choice>
-                  <zeroOrMore>
-                     <group>
-                        <ref name="undefinedmodel.divBottom"/>
-                        <zeroOrMore>
-                           <ref name="undefinedmodel.global"/>
-                        </zeroOrMore>
-                     </group>
-                  </zeroOrMore>
-               </group>
-            </optional>
-         </group>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Textabschnitt) enthält textuelle Einheiten [4.1. Divisions of the Body]</a:documentation>
+         <choice>
+            <ref name="undefinedp"/>
+            <ref name="undefinedhead"/>
+            <ref name="undefineddiv"/>
+            <ref name="undefinedpb"/>
+            <ref name="undefinedapp"/>
+         </choice>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="tei_b_vg-div-abstractModel-structure-div-in-l-or-lg-constraint-report-8">
             <rule context="tei:div">
@@ -3053,9 +3130,17 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
          </pattern>
          <ref name="undefinedatt.global.attributes"/>
          <ref name="undefinedatt.divLike.attributes"/>
-         <ref name="undefinedatt.typed.attributes"/>
+         <ref name="undefinedatt.typed.attribute.subtype"/>
          <ref name="undefinedatt.declaring.attributes"/>
          <ref name="undefinedatt.written.attributes"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
+               <data type="token">
+                  <param name="pattern">[^\p{C}\p{Z}]+</param>
+               </data>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -3247,6 +3332,268 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
                <data type="boolean"/>
             </attribute>
          </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedatt.msExcerpt.attributes">
+      <ref name="undefinedatt.msExcerpt.attribute.defective"/>
+   </define>
+   <define name="undefinedatt.msExcerpt.attribute.defective">
+      <optional>
+         <attribute name="defective">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates whether the passage being quoted is defective, i.e. incomplete through loss or damage.</a:documentation>
+            <choice>
+               <data type="boolean"/>
+               <choice>
+                  <value>unknown</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>inapplicable</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               </choice>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.msClass.attributes">
+      <ref name="undefinedatt.msClass.attribute.class"/>
+   </define>
+   <define name="undefinedatt.msClass.attribute.class">
+      <optional>
+         <attribute name="class">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies the text types or classifications applicable to this item by pointing to other elements or resources defining the classification concerned. </a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedmsDesc">
+      <element name="msDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript description) contains a description of a single identifiable manuscript or other text-bearing object such as an early printed book. [10.1. Overview]</a:documentation>
+         <group>
+            <ref name="undefinedmsIdentifier"/>
+            <zeroOrMore>
+               <ref name="undefinedmodel.headLike"/>
+            </zeroOrMore>
+            <choice>
+               <oneOrMore>
+                  <ref name="undefinedmodel.pLike"/>
+               </oneOrMore>
+               <group>
+                  <optional>
+                     <ref name="undefinedmsContents"/>
+                  </optional>
+                  <optional>
+                     <ref name="undefinedphysDesc"/>
+                  </optional>
+                  <optional>
+                     <ref name="undefinedhistory"/>
+                  </optional>
+                  <empty/>
+               </group>
+            </choice>
+         </group>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.sortable.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <ref name="undefinedatt.declaring.attributes"/>
+         <ref name="undefinedatt.docStatus.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedmsIdentifier">
+      <element name="msIdentifier">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript identifier) contains the information required to identify the manuscript or similar object being described. [10.4. The Manuscript Identifier]</a:documentation>
+         <group>
+            <group>
+               <optional>
+                  <ref name="undefinedplaceName"/>
+               </optional>
+               <optional>
+                  <ref name="undefinedcountry"/>
+               </optional>
+               <optional>
+                  <ref name="undefinedsettlement"/>
+               </optional>
+               <optional>
+                  <ref name="undefinedinstitution"/>
+               </optional>
+               <optional>
+                  <ref name="undefinedrepository"/>
+               </optional>
+               <zeroOrMore>
+                  <ref name="undefinedidno"/>
+               </zeroOrMore>
+            </group>
+            <zeroOrMore>
+               <empty/>
+            </zeroOrMore>
+         </group>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="tei_b_vg-msIdentifier-msId_minimal-constraint-report-10">
+            <rule context="tei:msIdentifier">
+               <report xmlns:eg="http://www.tei-c.org/ns/Examples"
+                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                       test="not(parent::tei:msPart) and (local-name(*[1])='idno' or local-name(*[1])='altIdentifier' or normalize-space(.)='')">An msIdentifier must contain either a repository or location.</report>
+            </rule>
+         </pattern>
+         <ref name="undefinedatt.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedinstitution">
+      <element name="institution">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(institution) contains the name of an organization such as a university or library, with which a manuscript or other object is identified, generally its holding institution. [10.4. The Manuscript Identifier]</a:documentation>
+         <ref name="undefinedmacro.phraseSeq.limited"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.naming.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedrepository">
+      <element name="repository">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(repository) contains the name of a repository within which manuscripts or other objects are stored, possibly forming part of an institution. [10.4. The Manuscript Identifier]</a:documentation>
+         <ref name="undefinedmacro.phraseSeq.limited"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.naming.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedmsContents">
+      <element name="msContents">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript contents) describes the intellectual content of a manuscript, manuscript part, or other object either as a series of paragraphs or as a series of structured manuscript items. [10.6. Intellectual Content]</a:documentation>
+         <choice>
+            <oneOrMore>
+               <ref name="undefinedmodel.pLike"/>
+            </oneOrMore>
+            <group>
+               <zeroOrMore>
+                  <choice>
+                     <ref name="undefinedmsItem"/>
+                  </choice>
+               </zeroOrMore>
+            </group>
+         </choice>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.msExcerpt.attributes"/>
+         <ref name="undefinedatt.msClass.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedmsItem">
+      <element name="msItem">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript item) describes an individual work or item within the intellectual content of a manuscript, manuscript part, or other object. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <empty/>
+            </zeroOrMore>
+            <choice>
+               <oneOrMore>
+                  <ref name="undefinedmodel.pLike"/>
+               </oneOrMore>
+               <oneOrMore>
+                  <choice>
+                     <ref name="undefinedmodel.titlepagePart"/>
+                     <ref name="undefinedmodel.msItemPart"/>
+                     <ref name="undefinedmodel.global"/>
+                  </choice>
+               </oneOrMore>
+            </choice>
+         </group>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.msExcerpt.attributes"/>
+         <ref name="undefinedatt.msClass.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedphysDesc">
+      <element name="physDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(physical description) contains a full physical description of a manuscript, manuscript part, or other object optionally subdivided using more specialized elements from the model.physDescPart class. [10.7. Physical Description]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="undefinedmodel.pLike"/>
+            </zeroOrMore>
+            <optional>
+               <ref name="undefinedobjectDesc"/>
+            </optional>
+            <optional>
+               <ref name="undefinedhandDesc"/>
+            </optional>
+         </group>
+         <ref name="undefinedatt.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedobjectDesc">
+      <element name="objectDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(object description) contains a description of the physical components making up the object which is being described. [10.7.1. Object Description]</a:documentation>
+         <choice>
+            <oneOrMore>
+               <ref name="undefinedmodel.pLike"/>
+            </oneOrMore>
+            <empty/>
+         </choice>
+         <ref name="undefinedatt.global.attributes"/>
+         <optional>
+            <attribute name="form">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(form) a short project-specific name identifying the physical form of the carrier, for example as a codex, roll, fragment, partial leaf, cutting etc.</a:documentation>
+               <data type="token">
+                  <param name="pattern">[^\p{C}\p{Z}]+</param>
+               </data>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedhandDesc">
+      <element name="handDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description of hands) contains a description of all the different hands used in a manuscript or other object. [10.7.2. Writing, Decoration, and Other Notations]</a:documentation>
+         <choice>
+            <oneOrMore>
+               <ref name="undefinedmodel.pLike"/>
+            </oneOrMore>
+            <empty/>
+         </choice>
+         <ref name="undefinedatt.global.attributes"/>
+         <optional>
+            <attribute name="hands">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(hands) specifies the number of distinct hands identified within the manuscript</a:documentation>
+               <data type="nonNegativeInteger"/>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedhistory">
+      <element name="history">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(history) groups elements describing the full history of a manuscript, manuscript part, or other object. [10.8. History]</a:documentation>
+         <choice>
+            <oneOrMore>
+               <ref name="undefinedmodel.pLike"/>
+            </oneOrMore>
+            <group>
+               <optional>
+                  <ref name="undefinedorigin"/>
+               </optional>
+            </group>
+         </choice>
+         <ref name="undefinedatt.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedorigin">
+      <element name="origin">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(origin) contains any descriptive or other information concerning the origin of a manuscript, manuscript part, or other object. [10.8. History]</a:documentation>
+         <ref name="undefinedmacro.specialPara"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.editLike.attributes"/>
+         <ref name="undefinedatt.datable.attributes"/>
          <empty/>
       </element>
    </define>
@@ -3497,6 +3844,23 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <ref name="undefinedatt.global.attribute.xmlspace"/>
          <ref name="undefinedatt.personal.attribute.sort"/>
          <ref name="undefinedatt.canonical.attribute.ref"/>
+         <optional>
+            <attribute name="role">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Rolle einer Person</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <choice>
+                        <value>acdh:hasDigitisingAgent</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Person verantwortlich für Digitalisierung</a:documentation>
+                        <value>acdh:hasContributor</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">allgemein beteiligte Person</a:documentation>
+                        <value>acdh:hasPrincipialInvestigator</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Projektleitung</a:documentation>
+                     </choice>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
          <optional>
             <attribute name="key">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Verweist auf den Eintrag der Person im Personenregister.</a:documentation>
@@ -3827,28 +4191,6 @@ Suggested values include: 1] label; 2] data</a:documentation>
          <empty/>
          <ref name="undefinedatt.global.attributes"/>
          <ref name="undefinedatt.typed.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="undefinedmsDesc">
-      <element name="msDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript description) contains a description of a single identifiable manuscript or other text-bearing object such as an early printed book. [10.1. Overview]</a:documentation>
-         <group>
-            <zeroOrMore>
-               <ref name="undefinedmodel.headLike"/>
-            </zeroOrMore>
-            <choice>
-               <oneOrMore>
-                  <ref name="undefinedmodel.pLike"/>
-               </oneOrMore>
-               <empty/>
-            </choice>
-         </group>
-         <ref name="undefinedatt.global.attributes"/>
-         <ref name="undefinedatt.sortable.attributes"/>
-         <ref name="undefinedatt.typed.attributes"/>
-         <ref name="undefinedatt.declaring.attributes"/>
-         <ref name="undefinedatt.docStatus.attributes"/>
          <empty/>
       </element>
    </define>

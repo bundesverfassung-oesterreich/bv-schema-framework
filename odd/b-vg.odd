@@ -898,17 +898,60 @@
             <head>Appendix</head>
             <schemaSpec ident="tei_b_vg" start="TEI" prefix="undefined" targetLang="de" docLang="de">
                <moduleRef key="header"
-                  include="teiHeader fileDesc titleStmt publicationStmt sourceDesc change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability"/>
-               <moduleRef key="core"
-                  include="p title note bibl date hi item pb publisher foreign corr ref list author respStmt resp head biblScope term address pubPlace author title graphic"/>
+                  include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
+               <!-- remove lb after asking  -->
+               <moduleRef key="core"                 
+                  include="lb p title note bibl date hi item pb publisher foreign corr ref list author respStmt resp head biblScope term address pubPlace author title graphic"/>
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
                <moduleRef key="transcr" include="facsimile surface"/>
+               <moduleRef key="msdescription" include="msDesc history  msIdentifier msContents physDesc institution repository msItem objectDesc handDesc origin"/>
                <moduleRef key="namesdates"
                   include="persName listPerson orgName placeName country settlement"/>
                <moduleRef key="figures" include="cell table row"/>
                <moduleRef key="textcrit" include="app"/>
                <moduleRef key="linking" include="anchor"/>
+               <elementSpec ident="sourceDesc" mode="change">
+                  <desc>Dokument auf dem der Inhalt der Datei basiert.</desc>
+                  <content>
+                     <elementRef key="msDesc" minOccurs="1"
+                        maxOccurs="1"/>
+                  </content>
+               </elementSpec>
+               <elementSpec ident="availability" mode="change">
+                  <desc>Dokument auf dem der Inhalt der Datei basiert.</desc>
+                  <content>
+                     <elementRef key="licence"/>
+                  </content>
+               </elementSpec>
+               <!-- better create a check her to prevent section-divs in section-divs … -->
+               <elementSpec ident="div" mode="change">
+                  <desc>enthält textuelle Einheiten</desc>
+                  <content>
+                     <alternate>
+                        <elementRef key="p"/>
+                        <elementRef key="head"/>
+                        <elementRef key="div"/>
+                        <elementRef key="pb"/>
+                        <elementRef key="app"/>
+                     </alternate>
+                  </content>
+                  <attList >
+                     <attDef ident="type" mode="change">
+                        <valList type="closed">
+                           <valItem ident="article">
+                              <desc>Artikel eines Gesetzes</desc>
+                           </valItem>
+                           <valItem ident="section">
+                              <desc>erste Strukturebene eines Haupttextes (Hauptkapitel)</desc>
+                           </valItem>
+                           <valItem ident="sub_section">
+                              <desc>tiefere Strukturebene eines Haupttextes (Unterkapitel, Unterabschnitte etc.)</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
                <!-- Anpassung des app Elements -->
                <elementSpec ident="app" mode="change">
                   <desc>Umfasst eine editorische Fußnote, die
@@ -1110,6 +1153,20 @@
                         <desc>Verweist auf den Eintrag der
                            Person im Personenregister.</desc>
                      </attDef>
+                     <attDef ident="role" mode="change" usage="opt">
+                        <desc>Rolle einer Person</desc>
+                        <valList type="closed" mode="replace">
+                           <valItem ident="acdh:hasDigitisingAgent">
+                              <desc>Person verantwortlich für Digitalisierung</desc>
+                           </valItem>
+                           <valItem ident="acdh:hasContributor">
+                              <desc>allgemein beteiligte Person</desc>
+                           </valItem>
+                           <valItem ident="acdh:hasPrincipialInvestigator">
+                              <desc>Projektleitung</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
                      <attDef ident="type" mode="delete"/>
                      <attDef ident="subtype" mode="delete"/>
                      <attDef ident="rend" mode="delete"/>
@@ -1151,7 +1208,6 @@
                      <attDef ident="evidence" mode="delete"/>
                      <attDef ident="instant" mode="delete"/>
                      <attDef ident="full" mode="delete"/>
-                     <attDef ident="role" mode="delete"/>
                      <attDef ident="nymRef" mode="delete"/>
                   </attList>
                </elementSpec>
@@ -1239,7 +1295,6 @@
                      <attDef ident="xml:lang" mode="delete"/>
                   </attList>
                </elementSpec>
-               <moduleRef key="msdescription" include="msDesc"/>
             </schemaSpec>
          </div>
       </body>
