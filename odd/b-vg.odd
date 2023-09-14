@@ -296,11 +296,7 @@
                   <p>Die Dokumente sind jedoch tiefer als auf nur einer Ebene strukturiert: sie
                      enthalten teilweise komplexe verschachtelte Strukturen mit Abschnitten,
                      Unterabschnitten, Unter-Unterabschnitten etc. Um dies zu codieren, können
-                        <gi>div</gi>-Element verschachtelt werden. Abschnitte der ersten Ebene
-                     (Oberkapitel, Hauptabschnitte etc.) erhalten den
-                        <att>type</att>=<val>section</val>, Subabschnitte und Unterkapitel erahlten
-                     – unabhängig von ihrer Konkreten Ebene – den
-                        <att>type</att>=<val>sub_section</val></p>
+                        <gi>div</gi>-Element verschachtelt werden.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
@@ -310,7 +306,7 @@
                               <div type="section">
                                  <head>Titel des ersten Abschnitts</head>
                                  <p>irgendein Text</p>
-                                 <div type="sub_section">
+                                 <div type="section">
                                     <head>Titel des Unterabschnitts I.A </head>
                                     <p>irgendein Text</p>
                                  </div>
@@ -318,10 +314,10 @@
                               <div type="section">
                                  <head>Titel des zweiten Abschnitts</head>
                                  <p>irgendein Text</p>
-                                 <div type="sub_section">
+                                 <div type="section">
                                     <head>Titel des Unterabschnitts II.A </head>
                                     <p>irgendein Text</p>
-                                    <div type="sub_section">
+                                    <div type="section">
                                        <head>Titel des Unter-Unterabschnitts II.A.a </head>
                                        <p>irgendein Text</p>
                                     </div>
@@ -901,7 +897,7 @@
                   include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
                <!-- remove lb after asking  -->
                <moduleRef key="core"                 
-                  include="lb p title note bibl date hi item pb publisher foreign corr ref list author respStmt resp head biblScope term address pubPlace author title graphic"/>
+                  include="lb p title note bibl date hi item pb publisher foreign corr ref list author respStmt resp head biblScope term address pubPlace author title graphic street postCode"/>
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
                <moduleRef key="transcr" include="facsimile surface"/>
@@ -944,9 +940,6 @@
                            </valItem>
                            <valItem ident="section">
                               <desc>erste Strukturebene eines Haupttextes (Hauptkapitel)</desc>
-                           </valItem>
-                           <valItem ident="sub_section">
-                              <desc>tiefere Strukturebene eines Haupttextes (Unterkapitel, Unterabschnitte etc.)</desc>
                            </valItem>
                         </valList>
                      </attDef>
