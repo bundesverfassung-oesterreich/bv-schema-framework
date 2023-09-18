@@ -132,10 +132,8 @@
                      <gi>teiHeader</gi>, dazu zählen Informationen zu den einzelnen Dokumenten, zu
                   ihrer Entstehung und Beschaffenheit oder ihrer editorischen
                   Erschließung/Bearbeitung. Eine Vielzahl der im TEI-Header vermerkten Informationen
-                  wird automatisch generiert oder automatisch anderen Quellen entnommen und ist
-                  demnach nicht zu manuellen Bearbeitung vorgesehen. Die folgenden Erläuterungen
-                  beschränken sich demnach auf die Elemente, die für die manuelle Bearbeitung von
-                  Relevanz sind.</p>
+                  wird automatisch generiert oder automatisch anderen Quellen (vor allem goobi)
+                  entnommen.</p>
                <p>Die Struktur des <gi>teiHeader</gi> gestaltet sich wie folgt:</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <teiHeader>
@@ -412,7 +410,7 @@
                   <head>Tabellen</head>
                   <p>Tabellen werden mit einem <gi>table</gi>-Element gekennzeichnet, wobei sie
                      stets zeilenweise dargestellt werden. Die einzelnen Zeilen werden durch ein
-                        <gi> row</gi>-Element gekenzeichnet. Jede Tabellenzeile <gi>row</gi>
+                        <gi>row</gi>-Element gekenzeichnet. Jede Tabellenzeile <gi>row</gi>
                      unterteilt sich wiederum in mindestens eine oder auch mehrere Zellen bzw.
                      Spalten, die innerhalb des <gi>row</gi>-Elements durch ein
                      <gi>cell</gi>-Element ausgezeichnet sind. Der eigentliche Tabelleninhalt steht
@@ -482,54 +480,30 @@
                </div>
             </div>
             <div>
-               <head>Fremdsprachige Textabschnitte</head>
-               <p>Text abweichend von der Hauptsprache wird im Element <gi>foreign</gi> kodiert. Der
-                  Attributwert von <att>xml:lang</att> umfasst dabei den dreibuchstabigen Sprachcode
-                  nach <ref target="https://iso639-3.sil.org">ISO-Norm 639-3</ref></p>
-               <p><gi>foreign</gi> kann überall innerhalb von <gi>text</gi> eingesetzt werden.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <text>
-                     <body>
-                        <div>
-                           <p>
-                              <foreign xml:lang="ISO 639-3 Sprachcode">[Fremdsprachiger
-                                 Textteil]</foreign>
-                           </p>
-                        </div>
-                     </body>
-                  </text>
-               </egXML>
-            </div>
-            <div>
                <head>Entiäten</head>
                <p>Die edierten Texte enthalten bzw. referenzieren oder erwähnen Entitäten, die in
                   verschiedene Klassen eingeteilt werden können. Das Markieren dieser Entitäten
-                  ermöglicht es, sie als solche vom umgegebenden Text zu unterscheiden und
-                  gegebenfalls mit einer Indexansetzung zu verlinken, um so bsp. das Auffinden von
-                  Entitäten – equivalent zur Funktion eines Registers – zu vereinfachen.</p>
-               <p>Es folgt eine Liste der im Text zu referenzierenden Entitäten.</p>
+                  ermöglicht es, sie als solche vom umgegebenden Text zu unterscheiden und mit einer
+                  Indexansetzung zu verlinken, um so z.B. das Auffinden von Entitäten – equivalent
+                  zur Funktion eines Registers – zu vereinfachen.</p>
+               <p>Es folgt eine Liste der im Text zu referenzierenden Entitäten, deren Tagging stets
+                  durch das <gi>rs</gi>-Attribut mit <att>type</att> und <att>ref</att> erfolgt.</p>
                <div>
                   <head>Literaturangaben</head>
-                  <p>Literaturangaben werden mit dem Element <gi>bibl</gi> ausgezeichnet.</p>
-                  <p>Sofern vorhanden, werden die Namen des/r Autor*innen innerhalb des
-                        <gi>bibl</gi>-Elements mit einem <gi>persName</gi>-Element
-                     gekennzeichnet.</p>
-                  <p>Individuelle Seitenangaben zu der Literatur werden wiederum innerhalb eines
-                        <gi>biblScope</gi>-Elements erfasst.</p>
+                  <p>Literaturangaben werden mittels des Elements <gi>rs</gi> und des
+                        <att>type</att>=<val>lit</val> ausgezeichnet.</p>
                   <p>Um Literaturangaben, die auf die gleichen Quellen verweisen, miteinander in
-                     Beziehung zu setzen, wird den <gi>bibl</gi>-Elementen ein
-                     <att>sameAs</att>-Attribut zugewiesen, dass auf die Zotero-Id des
-                     refrerenzierten Textes verweist.</p>
+                     Beziehung zu setzen, wird den <gi>rs</gi>-Elementen ein <att>ref</att>-Attribut
+                     zugewiesen, dass auf die Zotero-Id des refrerenzierten Textes verweist.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
                            <div>
                               <p>
-                                 <bibl type="lit" sameAs="zotero id">
-                                    <persName>Gerhard Anschütz</persName>, Die Verfassung des
-                                    Deutschen Reichs vom 11. August 1919, 14. Aufl., Berlin 1933,
-                                       <biblScope> 30–21</biblScope>
-                                 </bibl>
+                                 <rs type="lit" ref="zotero id">
+                                    <rs type="person" ref="#p123">Gerhard Anschütz</rs>, Die
+                                    Verfassung des Deutschen Reichs vom 11. August 1919, 14. Aufl.,
+                                    Berlin 1933, 30–21. </rs>
                               </p>
                            </div>
                         </body>
@@ -538,35 +512,54 @@
                </div>
                <div>
                   <head>Gesetzesangaben</head>
-                  <p>Analog zu der Literatur werden auch Gesetzesangaben mit einem
-                     <gi>bibl</gi>-Element ausgezeichnet. Eine Spezifizierung findet hier mit dem
+                  <p>Analog zu der Literatur werden auch Gesetzesangaben mittels eines
+                     <gi>rs</gi>-Elements ausgezeichnet. Eine Spezifizierung findet hier mit dem
                         <att>type</att>-Attribut und dem Wert "<val>statute</val>" statt.</p>
-                  <p>Im <att>sameAs</att>-Attribut wird die Id des Gesetzestextes aus dem
+                  <p>Im <att>key</att>-Attribut wird die Id des Gesetzestextes aus dem
                      entsprechenden Index referenziert.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
                            <div>
-                              <p>
-                                 <bibl type="statute" sameAs="id des Gesetztestextes">
-                                    [Gesetzesangabe]</bibl>
-                              </p>
+                              <p> Die referenzierte Stelle, <rs type="statute"
+                                    ref="id des Gesetztestextes"> B-VG Art 1, Abs 15, Z 19</rs>,
+                                 existiert vermutlich nicht. </p>
                            </div>
                         </body>
                      </text>
                   </egXML>
                </div>
                <div>
-                  <head>Personennamen</head>
-                  <p>Personennamen sind mit dem <gi>persName</gi>-Element als solche gekennzeichnet.
-                     Dabei wird nicht zwischen Vor- und Nachname, Titel o.ä. unterschieden. Mittel
-                     des <att>key</att>-Attributs wird auf die Id der entsprechenden Person im Index
+                  <head>Institutionen</head>
+                  <p>Institutionen werden mittels des <gi>rs</gi>-Element und dem
+                        <att>type</att>=<val>institution</val> als solche gekennzeichnet. Mittel des
+                        <att>ref</att>-Attributs wird auf die Id der entsprechenden Person im Index
                      verwiesen.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
                            <div>
-                              <p>[Text] <persName key="123">Kant</persName> [weiterer Text]</p>
+                              <p>Der <rs ref="#i123" type="instituion">Gerichtshof</rs> untersteht
+                                 dem <rs ref="#i123" type="institution"
+                                 >Wirtschaftsministerium</rs>.</p>
+                           </div>
+                        </body>
+                     </text>
+                  </egXML>
+               </div>
+               <div>
+                  <head>Personen</head>
+                  <p>Personennamen und inderekte Nennungen von Personen werden mittels de
+                        <gi>rs</gi>-Element und dem <att>type</att>=<val>person</val> als solche
+                     gekennzeichnet. Dabei wird nicht zwischen Vor- und Nachname, Titel o.ä.
+                     unterschieden. Mittel des <att>ref</att>-Attributs wird auf die Id der
+                     entsprechenden Person im Index verwiesen.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <text>
+                        <body>
+                           <div>
+                              <p>Die oben genannte <rs ref="#p123" type="person">Person</rs>
+                                 verweist auf <rs ref="#g123" type="person">Kelsen</rs>.</p>
                            </div>
                         </body>
                      </text>
@@ -574,32 +567,16 @@
                </div>
                <div>
                   <head>Begriffserleuterungen/Abkürzungen</head>
-                  <p>Erläuterungsbedürftige Begriffe und Abkürzungen werden mittels eines <gi>term</gi>-Elements als solche gekennzeichnet.
-                     Mittels der <att>key</att>-Attributs wird auf die Id der entsprechenden Ansetzung im Index verwiesen.</p>
+                  <p>Erläuterungsbedürftige Begriffe und Abkürzungen werden mittels eines
+                        <gi>rs</gi>-Elements mit dem <att>type</att>=<val>term</val> als solche
+                     gekennzeichnet. Mittels der <att>ref</att>-Attributs wird auf die Id der
+                     entsprechenden Ansetzung im Index verwiesen.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
                            <div>
-                              <p>irgendein Text <term key="bv_term_123">B-VG</term> weiterer Text</p>
-                           </div>
-                        </body>
-                     </text>
-                  </egXML>
-               </div>
-               <div>
-                  <head>Indirekte Nennungen</head>
-                  <p>In Fällen, in denen Entitäten im Text nur indirekt genannt oder referenziert
-                     werden, wird das <gi>rs</gi>-Element verwendet, um die Nennung zu markieren.
-                     Durch das <att>ref</att> attribut wird die jeweilige Id angeben, während das
-                        <att>type</att>-Attribut die Art der Entität spezifiziert.</p>
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <text>
-                        <body>
-                           <div>
-                              <p>Die oben genannte <rs ref="#p123" type="person">Person</rs>
-                                 verweist auf den <rs ref="#g123" type="statute">erwähnten
-                                    Paragraphen</rs>, bezieht sich aber auch auf das <rs ref="#z123"
-                                    type="bibl">besprochene Werk Kelsens</rs>.</p>
+                              <p>irgendein Text <rs type="term" key="bv_term_123">B-VG</rs> weiterer
+                                 Text</p>
                            </div>
                         </body>
                      </text>
@@ -610,16 +587,16 @@
                <head>Texteingriffe/Konjekturen</head>
                <p>Editorische Eingriffe in den Text werden mit dem Element <gi>corr</gi> markiert.
                   Das gilt nicht bei offensichtlichen, geringfügigen Fehlen wie Buchstabendrehern.
-                  Diese werden stillschweigend konjektiert.</p>
+                  Diese werden stillschweigend emendiert.</p>
                <p>Bei schwererwiegenderen Eingriffen ist es notwendig, den ursrprünglichen Text des
                   Dokuments zu dokumentieren. In solchen Fällen, wird das <gi>corr</gi>-Element
-                  verwendet, das den korrigierten Text und ein <gi>sic</gi>-Element enthält, das
-                  wiederum den Originaltext dokumentiert.</p>
+                  verwendet, das den korrigierten Text zu taggen, auf das ein <gi>sic</gi>-Element
+                  folgt, das wiederum den Originaltext dokumentiert.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <body>
                      <div>
                         <p>Es ist in dieser Situatuion notwendig den Bundestag zu
-                                 <corr>vertagen<sic>befragen</sic></corr></p>
+                              <corr>vertagen</corr><sic>befragen</sic></p>
                      </div>
                   </body>
                </egXML>
@@ -638,45 +615,44 @@
                   einfließt und der der Bearbeitung vorausliegende Zustand in einem Kommentar
                   festgehalten wird, wird im zweiten Falle das Resultat – die Anmerkung – nur im
                   Kommentar festgehalten. </p>
-               <p>Ein solcher Kommentar selbst besteht in beiden Fällen aus einem
-                  <gi>app</gi>-Element, das wiederum ein <gi>note</gi>-Element mit dem Inhalt des
-                  Kommentars enthält (durch den <att>type</att> <val>app</val> markiert). Kommentare im Dokument selbst, wie im zweiten Fall auftreten,
-                  werden ebenfall von einem weiteren <gi>note</gi>-Element umschlossen, dass ein
-                     <att>type</att>-Attribut mit dem Wert <val>original</val> erhält. Im ersten
-                  Fall wird gestrichener oder überschriebener Text von einem <gi>del</gi>-Element
-                  umschlossen, während hinzugefügter oder überschreibender Text durch ein
-                     <gi>add</gi>-Element umschlossen wird.</p>
-               <p>Um den Bezugspunkt – die Stelle, auf die sich der Kommentar bezieht – im Dokument
-                  zu fixieren, werden zwei <gi>anchor</gi>-Elemente in den Text eingefügt, die wie
-                  zwei Klammern die Erstreckung des Kommentars bestimmen. Beide <gi>anchor</gi>
-                  erhalten beim Einfüge über das Framework automatisch ein
-                  <att>xml:id</att>-Attribut und ein <att>type</att>-Attribut dessen Wert angibt, dass eine Stelle markiert wird (<val>app</val>).</p>
-               <p>Das <gi>app</gi>-Element erhält schließlich ein <att>from</att> und ein
-                     <att>to</att>-Attribut, das Verweise auf die <att>xml:id</att>s der
-                  entsprechenden <gi>anchor</gi>-Elemente enthält.</p>
+               <p>Ein solcher Kommentar der Editor:innen besteht in beiden Fällen aus einem
+                     <gi>note</gi>-Element das den Inhalt des editorischen/textgenetischen
+                  Kommentars enthält (durch den <att>type</att>
+                  <val>editor</val> markiert). Um den Referenzbereich des Kommentars im
+                  kommentierten Text – also seine betreffende ›Stelle‹ – zu markieren wird ein
+                  zusätzliches Anchor-Element verwendet: Das <gi>anchor</gi>-Element mit dem
+                     <att>type</att>=<val>editor</val> markiert stets den <hi rend="bold"
+                     >Beginn</hi> der Stelle, das <gi>note</gi>-Element, das den Kommentar-Text
+                  enhält, ihr <hi rend="Bold">Ende</hi>. Um diese Relation eindeutig zu kodieren,
+                  erhalten beide Elemente – über das Framework automatisiert – eine Id. Die des
+                     <gi>anchor</gi>-Elements wird mit den Suffix ›_s‹ (für ›start‹) die des
+                     <gi>note</gi>-Elements mit dem Suffix ›_e‹ (für ›end‹) versehen.</p>
+               <p>Kommentare im Dokument selbst, wie sie im zweiten Fall auftreten, werden zusätlich
+                  von einem <gi>note</gi>-Element umschlossen, dass ein <att>type</att>-Attribut mit
+                  dem Wert <val>original</val> erhält. Im ersten Fall wird gestrichener oder
+                  überschriebener Text von einem <gi>del</gi>-Element umschlossen, während
+                  hinzugefügter oder überschreibender Text durch ein <gi>add</gi>-Element
+                  umschlossen wird.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <body>
                      <div>
-                        <p>Die Republik Deutschösterreich ist ein freier Bund <anchor
-                              type="app" xml:id="a_1222"/>der souveränen Länder<anchor
-                              type="app" xml:id="a_1223"/>;</p>
-                        <app from="a_1222" to="a_1223">
-                           <note type="app"><persName key="p_0001">Kelsen</persName> am Rand: <note
-                                 type="original">Artiken?</note>; aus: <del>souveränder
-                              Länder</del></note>
-                        </app>
-                        <p>Es ist unter diesen <anchor type="app" xml:id="a_1233"/>Umständen
-                           jedoch <anchor type="app" xml:id="a_1235"/>weder ratsam noch
-                              nötig<anchor type="app" xml:id="a_1234"/>, die<anchor
-                              type="app" xml:id="a_1236"/> Bundesversammlung einzuberufen.</p>
-                        <app from="a_1233" to="a_1234">
-                           <note type="app"><persName key="p_0001">Kelsen</persName> am Rand (mit
-                              Anstreichung): <note type="original">möglich?</note></note>
-                        </app>
-                        <app from="a_1235" to="a_1236">
-                           <note type="app"><persName key="p_0001">Kelsen</persName> aus: <del>Bedingungen
-                                 nicht angezeigt, den</del></note>
-                        </app>
+                        <p>Die Republik Deutschösterreich ist ein freier Bund <anchor type="editor"
+                              xml:id="a_1222_s"/> der souveränen Länder <note type="editor"
+                              xml:id="a_1222_e">
+                              <rs type="person" ref="p_0001">Kelsen</rs> am Rand: <note
+                                 type="original">Artikel?</note>; aus: <del>souveräner Länder</del>
+                           </note> ; Sie besteht aus neun selbstständigen Bundesländern. </p>
+                        <p>Es ist unter diesen <anchor type="app" xml:id="e_1236_s"/>Umständen
+                           jedoch <anchor type="editor" xml:id="e_1235_s"/>weder ratsam noch nötig,
+                              <note type="editor" xml:id="e_1235_e">
+                              <rs type="person" ref="p_0001">Falser</rs> am Rand (mit Anstreichung):
+                                 <note type="original">möglich?</note>
+                           </note> die Bundesversammlung einzuberufen. <note type="editor"
+                              xml:id="e_1236_e">
+                              <persName key="p_0001">Kelsen</persName> aus: <del>Bedingungen nicht
+                                 verpflichtend, die Bundesversammlung zu Rate zu ziehen.</del>
+                           </note>
+                        </p>
                      </div>
                   </body>
                </egXML>
@@ -697,64 +673,97 @@
                         <att>xml:id</att>-Attribut zu finden ist. Solche Ids, die innerhalb eines
                      Xml-Dokuments deklariert werden, sollten <hi rend="bold">ausschließlich über
                         die im Framework zur Verfügung gestellten Funktionen generiert werden</hi>,
-                     da das Zuweisen der gleichen Id an zwei verschiedene Elemente innerhalb
-                     eines Dokumentes invalides Xml erzeugt.</p>
+                     da das Zuweisen der gleichen Id an zwei verschiedene Elemente innerhalb eines
+                     Dokumentes invalides Xml erzeugt.</p>
                </div>
                <div>
                   <head>Referenzen auf externe Quelllen</head>
                   <p>Innerhalb der Xml-Dateien, kann auf Entitäten verwiesen werden, deren
                      Index-Ansetzungen nicht in Xml-Dateien gespeichert sind. Wir verwenden zwei
                      Datenbanken für das Erfassen und Speichern von Daten:<list>
-                        <item><hi rend="bold">Baserow</hi>, eine Excell ähnliche Datenbank, wird verwendet, um Personen,
-                           Gesetze, Institutionen und die Dokumente der Edition selbst zu
-                           indizieren. Die Verwaltung und Erzeugung von Ids verläuft dort, wenn ein
-                           neuer Eintrag angelegt wird, automatisiert. Fehlende Entitäten müssen währen der manuellen Bearbeitung des Xml von den Bearbeiter:innen stetig ergänzt werden. Die automatisch generierte Id befindet sich stets im Feld „bv_id“</item>
-                        <item><hi rend="bold">Zotero</hi>, eine komplexe bibliographische Datenbank, wird verwendet, um
-                           Quellen der Sekundärliteatur zu verwalten.</item>
+                        <item><hi rend="bold">Baserow</hi>, eine Excell ähnliche Datenbank, wird
+                           verwendet, um Personen, Gesetze, Institutionen und die Dokumente der
+                           Edition selbst zu indizieren. Die Verwaltung und Erzeugung von Ids
+                           verläuft dort, wenn ein neuer Eintrag angelegt wird, automatisiert.
+                           Fehlende Entitäten müssen währen der manuellen Bearbeitung des Xml von
+                           den Bearbeiter:innen stetig ergänzt werden. Die automatisch generierte Id
+                           befindet sich stets im Feld „bv_id“</item>
+                        <item><hi rend="bold">Zotero</hi>, eine komplexe bibliographische Datenbank,
+                           wird verwendet, um Quellen der Sekundärliteatur zu verwalten.</item>
                      </list>
                   </p>
-                  <p>Das auffinden der korrekten Id für eine Referenz auf einen der durch die Datenbanken repräsentierten Indizes ist über das Framwork integriert, was in den meisten Fällen das konsultieren der Datenbank überflüssig machen sollte.</p>
+                  <p>Das auffinden der korrekten Id für eine Referenz auf einen der durch die
+                     Datenbanken repräsentierten Indizes ist über das Framwork integriert, was in
+                     den meisten Fällen das konsultieren der Datenbank überflüssig machen
+                     sollte.</p>
                </div>
                <div>
-               <table>
-                  <row>
-                     <cell role="label">Dokumente der Edition</cell>
-                     <cell role="data">Die Ids der edierten Dokumente befinden sich in der entsprechenden <ref target="https://baserow.acdh-dev.oeaw.ac.at/database/421/table/2289">Baserow-Datenbank</ref> und im allerersten Element (<gi>TEI</gi>) der Xml-Datei, die dem Dokument entspricht.</cell>
-                  </row>
-                  <row>
-                     <cell role="label">alle div</cell>
-                     <cell role="data">Die Id befindet sich im <att>xml:id</att> des Elements. Sie wird automatisch über das Framework generiert.</cell>
-                  </row>
-                  <row>
-                     <cell role="label">Seitenwechsel im Original &lt;pb&gt;</cell>
-                     <cell role="data">Die Id befindet sich im <att>xml:id</att> des Elements. Sie wird automatisch in der Xml-Datei zur Verfügung gestellt.</cell>
-                  </row>
-                  <row>
-                     <cell role="label">Absätze/Paragraphen</cell>
-                     <cell role="data">Die Id befindet sich im <att>xml:id</att> des Elements. Sie wird automatisch über das Framework generiert.</cell>
-                  </row>
-                  <row>
-                     <cell role="label"><gi>anchor</gi> zur Markierung/Referenzierung von Stellen</cell>
-                     <cell role="data">Die Id befindet sich im <att>xml:id</att> des Elements. Sie wird automatisch über das Framework generiert.</cell>
-                  </row>
-                  <row>
-                     <cell role="label">Personen</cell>
-                     <cell role="data">Die Ids der Personen befinden sich in der entsprechenden <ref target="https://baserow.acdh-dev.oeaw.ac.at/database/421/table/2290">Baserow-Datenbank</ref>. Das Framework integriert eine Funtkion, die das Konsultieren der Datenbank in den meisten Fällen überflüssig macht.</cell>
-                  </row>
-                  <row>
-                     <cell role="label">Gesetze</cell>
-                     <cell role="data">Die Ids der Gesetze befinden sich in der entsprechenden <ref target="https://baserow.acdh-dev.oeaw.ac.at/database/421/table/2588">Baserow-Datenbank</ref>. Das Framework integriert eine Funtkion, die das Konsultieren der Datenbank in den meisten Fällen überflüssig macht.</cell>
-                  </row>
-                  <row>
-                     <cell role="label">Sachbegriffe</cell>
-                     <cell role="data">Die Ids Sachbegriffe befinden sich in der entsprechenden <ref target="https://baserow.acdh-dev.oeaw.ac.at/database/421/table/2589">Baserow-Datenbank</ref>.Das Framework integriert eine Funtkion, die das Konsultieren der Datenbank in den meisten Fällen überflüssig macht.</cell>
-                  </row>
-                  <row>
-                     <cell role="label">Literaturangaben</cell>
-                     <cell role="data">Die Ids von Literaturangaben stammen aus der Zotero-Datenbank. Das Framework integriert eine Funtkion, die das Konsultieren der Datenbank in den meisten Fällen überflüssig macht.</cell>
-                  </row>
-               </table>
-                  </div>
+                  <table>
+                     <row>
+                        <cell role="label">Dokumente der Edition</cell>
+                        <cell role="data">Die Ids der edierten Dokumente befinden sich in der
+                           entsprechenden <ref
+                              target="https://baserow.acdh-dev.oeaw.ac.at/database/421/table/2289"
+                              >Baserow-Datenbank</ref> und im allerersten Element (<gi>TEI</gi>) der
+                           Xml-Datei, die dem Dokument entspricht.</cell>
+                     </row>
+                     <row>
+                        <cell role="label">alle div</cell>
+                        <cell role="data">Die Id befindet sich im <att>xml:id</att> des Elements.
+                           Sie wird automatisch über das Framework generiert.</cell>
+                     </row>
+                     <row>
+                        <cell role="label">Seitenwechsel im Original &lt;pb&gt;</cell>
+                        <cell role="data">Die Id befindet sich im <att>xml:id</att> des Elements.
+                           Sie wird automatisch in der Xml-Datei zur Verfügung gestellt.</cell>
+                     </row>
+                     <row>
+                        <cell role="label">Absätze/Paragraphen</cell>
+                        <cell role="data">Die Id befindet sich im <att>xml:id</att> des Elements.
+                           Sie wird automatisch über das Framework generiert.</cell>
+                     </row>
+                     <row>
+                        <cell role="label"><gi>anchor</gi> zur Markierung/Referenzierung von
+                           Stellen</cell>
+                        <cell role="data">Die Id befindet sich im <att>xml:id</att> des Elements.
+                           Sie wird automatisch über das Framework generiert.</cell>
+                     </row>
+                     <row>
+                        <cell role="label">Personen</cell>
+                        <cell role="data">Die Ids der Personen befinden sich in der entsprechenden
+                              <ref
+                              target="https://baserow.acdh-dev.oeaw.ac.at/database/421/table/2290"
+                              >Baserow-Datenbank</ref>. Das Framework integriert eine Funtkion, die
+                           das Konsultieren der Datenbank in den meisten Fällen überflüssig
+                           macht.</cell>
+                     </row>
+                     <row>
+                        <cell role="label">Gesetze</cell>
+                        <cell role="data">Die Ids der Gesetze befinden sich in der entsprechenden
+                              <ref
+                              target="https://baserow.acdh-dev.oeaw.ac.at/database/421/table/2588"
+                              >Baserow-Datenbank</ref>. Das Framework integriert eine Funtkion, die
+                           das Konsultieren der Datenbank in den meisten Fällen überflüssig
+                           macht.</cell>
+                     </row>
+                     <row>
+                        <cell role="label">Sachbegriffe</cell>
+                        <cell role="data">Die Ids Sachbegriffe befinden sich in der entsprechenden
+                              <ref
+                              target="https://baserow.acdh-dev.oeaw.ac.at/database/421/table/2589"
+                              >Baserow-Datenbank</ref>.Das Framework integriert eine Funtkion, die
+                           das Konsultieren der Datenbank in den meisten Fällen überflüssig
+                           macht.</cell>
+                     </row>
+                     <row>
+                        <cell role="label">Literaturangaben</cell>
+                        <cell role="data">Die Ids von Literaturangaben stammen aus der
+                           Zotero-Datenbank. Das Framework integriert eine Funtkion, die das
+                           Konsultieren der Datenbank in den meisten Fällen überflüssig
+                           macht.</cell>
+                     </row>
+                  </table>
+               </div>
             </div>
          </div>
          <!--
@@ -896,12 +905,14 @@
                <moduleRef key="header"
                   include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
                <!-- remove lb after asking  -->
-               <moduleRef key="core"                 
-                  include="lb p title note bibl date hi item pb publisher foreign corr ref list author respStmt resp head biblScope term address pubPlace author title graphic street postCode"/>
+               <moduleRef key="core"
+                  include=" rs lb p title note bibl date hi item pb publisher foreign corr ref list author respStmt resp head biblScope term address pubPlace author title graphic street postCode"/>
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
                <moduleRef key="transcr" include="facsimile surface"/>
-               <moduleRef key="msdescription" include="msDesc history  msIdentifier msContents physDesc institution repository msItem objectDesc handDesc origin"/>
+               <!-- todo: wir brauchen  für die physDesc eigentlich noch daten, was jetzt dort erfasst wird, gehort eigentlich mit zum msContent-->
+               <moduleRef key="msdescription"
+                  include="msDesc history  msIdentifier msContents physDesc institution repository msItem objectDesc handDesc origin"/>
                <moduleRef key="namesdates"
                   include="persName listPerson orgName placeName country settlement"/>
                <moduleRef key="figures" include="cell table row"/>
@@ -910,8 +921,7 @@
                <elementSpec ident="sourceDesc" mode="change">
                   <desc>Dokument auf dem der Inhalt der Datei basiert.</desc>
                   <content>
-                     <elementRef key="msDesc" minOccurs="1"
-                        maxOccurs="1"/>
+                     <elementRef key="msDesc" minOccurs="1" maxOccurs="1"/>
                   </content>
                </elementSpec>
                <elementSpec ident="availability" mode="change">
@@ -924,15 +934,15 @@
                <elementSpec ident="div" mode="change">
                   <desc>enthält textuelle Einheiten</desc>
                   <content>
-                     <alternate>
-                        <elementRef key="p"/>
-                        <elementRef key="head"/>
-                        <elementRef key="div"/>
-                        <elementRef key="pb"/>
-                        <elementRef key="app"/>
+                     <alternate maxOccurs="unbounded" minOccurs="0">
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="p"/>
+                        <elementRef maxOccurs="3" minOccurs="0" key="head"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="div"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="pb"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="app"/>
                      </alternate>
                   </content>
-                  <attList >
+                  <attList>
                      <attDef ident="type" mode="change">
                         <valList type="closed">
                            <valItem ident="article">
@@ -947,8 +957,8 @@
                </elementSpec>
                <!-- Anpassung des app Elements -->
                <elementSpec ident="app" mode="change">
-                  <desc>Umfasst eine editorische Fußnote, die
-                     einen textgenetischen oder textkritischen Inhalt hat.</desc>
+                  <desc>Umfasst eine editorische Fußnote, die einen textgenetischen oder
+                     textkritischen Inhalt hat.</desc>
                   <attList>
                      <attDef ident="from" mode="change" usage="req"/>
                      <attDef ident="to" mode="change" usage="req"/>
@@ -986,7 +996,8 @@
                               <desc>Das Element enhält einen Apparateintrag der Editor:innen.</desc>
                            </valItem>
                            <valItem mode="add" ident="original">
-                              <desc versionDate="2023-01-31" xml:lang="de">Das Element enthält einen im edierten Dokument hinzugefügten Kommentar der Autor:innen.</desc>
+                              <desc>Das Element enthält einen im edierten Dokument hinzugefügten
+                                 Kommentar der Autor:innen.</desc>
                            </valItem>
                         </valList>
                      </attDef>
@@ -1017,7 +1028,45 @@
                      <attDef ident="subtype" mode="delete"/>
                   </attList>
                </elementSpec>
-               <!-- Anpassung des bibl Elements -->
+               <!-- Anpassung von rs -->
+               <elementSpec ident="rs" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.naming" mode="delete"/>
+                     <memberOf key="att.sortable" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                     <memberOf key="att.docStatus" mode="delete"/>
+                     <memberOf key="att.sortable" mode="delete"/>
+                  </classes>
+                  <attList>
+                     <attDef ident="ana" mode="delete"/>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="key" mode="change" usage="req"/>
+                     <attDef ident="type" mode="change" usage="req">
+                        <valList>
+                           <valItem ident="person">
+                              <desc>rs referentiert Person über den Key in der Datenbank</desc>
+                           </valItem>
+                           <valItem ident="institution">
+                              <desc>rs referentiert Institution über den Key in der Datenbank</desc>
+                           </valItem>
+                           <valItem ident="lit">
+                              <desc>rs referentiert Literatur über den Key in der
+                                 Zotero-Datenbank</desc>
+                           </valItem>
+                           <valItem ident="statute">
+                              <desc>rs referentiert Gesetzestext über den Key in der
+                                 Datenbank</desc>
+                           </valItem>
+                           <valItem ident="term">
+                              <desc>rs referentiert Begriff/Abkürzung über den Key in der
+                                 Datenbank</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               <!-- Anpassung des bibl Elements
                <elementSpec ident="bibl" mode="change">
                   <classes mode="change">
                      <memberOf key="att.declarable" mode="delete"/>
@@ -1043,8 +1092,7 @@
                      <attDef ident="type" mode="change" usage="req">
                         <valList type="closed" mode="change">
                            <valItem mode="add" ident="statute">
-                              <desc>Das Element bezieht sich
-                                 auf ein Gesetz.</desc>
+                              <desc>Das Element bezieht sich auf ein Gesetz.</desc>
                            </valItem>
                            <valItem mode="add" ident="lit">
                               <desc>Verweis auf sonstige Literatur.</desc>
@@ -1052,7 +1100,7 @@
                         </valList>
                      </attDef>
                   </attList>
-               </elementSpec>
+               </elementSpec> -->
                <!-- Anpassnung hi-Element -->
                <elementSpec ident="hi" mode="change">
                   <classes mode="change">
@@ -1110,8 +1158,8 @@
                         </datatype>
                      </attDef>
                      <attDef ident="n" mode="change">
-                        <desc>Die Nummer der Seite, auf das
-                           sich das pb-Element bezieht (automatisch generiert).</desc>
+                        <desc>Die Nummer der Seite, auf das sich das pb-Element bezieht (automatisch
+                           generiert).</desc>
                      </attDef>
                      <attDef ident="xml:id" mode="change" usage="req">
                         <desc>automatisch generierte id (img)</desc>
@@ -1139,12 +1187,11 @@
                      <attDef ident="xml:space" mode="delete"/>
                   </attList>
                </elementSpec>
-               <!-- Anpassung von persName -->
+               <!-- Anpassung von persName
                <elementSpec ident="persName" mode="change">
                   <attList>
                      <attDef ident="key" mode="change" usage="rec">
-                        <desc>Verweist auf den Eintrag der
-                           Person im Personenregister.</desc>
+                        <desc>Verweist auf den Eintrag der Person im Personenregister.</desc>
                      </attDef>
                      <attDef ident="role" mode="change" usage="opt">
                         <desc>Rolle einer Person</desc>
@@ -1203,7 +1250,7 @@
                      <attDef ident="full" mode="delete"/>
                      <attDef ident="nymRef" mode="delete"/>
                   </attList>
-               </elementSpec>
+               </elementSpec>-->
                <!-- Anpassung von body -->
                <elementSpec ident="body" mode="change">
                   <attList>
@@ -1230,7 +1277,7 @@
                <elementSpec ident="ptr" mode="delete"/>
                <elementSpec ident="date" mode="change">
                   <attList>
-                     <attDef ident="when" mode="change" usage="req"/>
+                     <attDef ident="when" mode="change" usage="rec"/>
                      <attDef ident="notBefore-iso" mode="change" usage="rec"/>
                      <attDef ident="notBefore" mode="delete"/>
                      <attDef ident="notAfter-iso" mode="change" usage="rec"/>
