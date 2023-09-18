@@ -1,3 +1,4 @@
+<?xml-model href="/home/zorg/Dokumente/bv/bv-schema-framework/odd/out/b-vg.rng", type="application/xml", schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="/home/zorg/Dokumente/bv/bv-schema-framework/odd/out/b-vg.rng", type="application/xml", schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bv_doc_id__1">
     <teiHeader>
         <fileDesc>
