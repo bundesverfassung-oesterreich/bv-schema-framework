@@ -285,7 +285,7 @@
                         kleinere spezifische Strukturelemente wie Artikel, Absätze und Ziffern.</p>
                   </div>
                </div>
-               <div>
+               <div>                  
                   <head>Abschnitte und Unterabschnitte</head>
                   <p>Der Dokumententext wird im <gi>text</gi> inklusive aller Abschnitte in
                         <gi>div</gi>-Elementen erfasst. <gi>div</gi>-Elementen, die einen größeren
@@ -341,7 +341,7 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <body>
                         <div type="main"> [Umfasst das einzelne Werk im Gesamten] <div
-                              type="section" n="1">
+                              type="section">
                               <head>Abschnitt I. </head>
                               <div ana="article">
                                  <head>Artikel XVII. </head>
@@ -372,9 +372,9 @@
                      Absatz als Strukturelement eines Gesetzestextes).</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <body>
-                        <div xml:id="e.02.001.01.002">
-                           <p xml:id="a.02.001.01.002.0001">[Absatz]</p>
-                           <p xml:id="a.02.001.01.002.0002">[Absatz]</p>
+                        <div>
+                           <p>[Absatz]</p>
+                           <p>[Absatz]</p>
                         </div>
                      </body>
                   </egXML>
@@ -447,8 +447,7 @@
                      </list>sollten in der Regel sämtlich mit <gi>hi</gi> ausgezeichnet werden, da
                      sie tatsächlich bloße Hervorhebungen darstellen. Es wäre – wenn nötig –
                      möglich, diese Kodierung durch <att>rend</att>-Attribute weiter zu
-                     differenzieren. Das könnte etwa der Fall sein, wenn verschiedene Hervorhebungen
-                     verschiedene Funktionen erfüllen.</p>
+                     differenzieren, falls unterschiedliche Hervorhebungen verschiedene Funktionen erfüllen sollten.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
@@ -642,7 +641,7 @@
                               <rs type="person" ref="p_0001">Kelsen</rs> am Rand: <note
                                  type="original">Artikel?</note>; aus: <del>souveräner Länder</del>
                            </note> ; Sie besteht aus neun selbstständigen Bundesländern. </p>
-                        <p>Es ist unter diesen <anchor type="app" xml:id="e_1236_s"/>Umständen
+                        <p>Es ist unter diesen <anchor type="editor" xml:id="e_1236_s"/>Umständen
                            jedoch <anchor type="editor" xml:id="e_1235_s"/>weder ratsam noch nötig,
                               <note type="editor" xml:id="e_1235_e">
                               <rs type="person" ref="p_0001">Falser</rs> am Rand (mit Anstreichung):
@@ -916,8 +915,29 @@
                <moduleRef key="namesdates"
                   include="persName listPerson orgName placeName country settlement"/>
                <moduleRef key="figures" include="cell table row"/>
-               <moduleRef key="textcrit" include="app"/>
+               <!--<moduleRef key="textcrit" include="app"/>-->
                <moduleRef key="linking" include="anchor"/>
+               <elementSpec ident="anchor" mode="change">
+                  <desc>Element bestimmt im Falle einer editorischen Anmerkung den Beginn der Stelle.</desc>
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
+                  <attList>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList type="closed">
+                           <valItem ident="editor">
+                              <desc>Beginn der Stelle</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="xml:id" mode="replace" usage="req">
+                        <datatype>
+                           <dataRef key="teidata.text"/> 
+                        </datatype>
+                     </attDef>
+                  </attList>
+               </elementSpec>
                <elementSpec ident="sourceDesc" mode="change">
                   <desc>Dokument auf dem der Inhalt der Datei basiert.</desc>
                   <content>
@@ -936,14 +956,15 @@
                   <content>
                      <alternate maxOccurs="unbounded" minOccurs="0">
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="p"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="list"/>
                         <elementRef maxOccurs="3" minOccurs="0" key="head"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="div"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="pb"/>
-                        <elementRef maxOccurs="unbounded" minOccurs="0" key="app"/>
+                        <!--<elementRef maxOccurs="unbounded" minOccurs="0" key="app"/>-->
                      </alternate>
                   </content>
                   <attList>
-                     <attDef ident="type" mode="change">
+                     <attDef ident="type" mode="replace" usage="req">
                         <valList type="closed">
                            <valItem ident="article">
                               <desc>Artikel eines Gesetzes</desc>
@@ -951,11 +972,14 @@
                            <valItem ident="section">
                               <desc>erste Strukturebene eines Haupttextes (Hauptkapitel)</desc>
                            </valItem>
+                           <valItem ident="main">
+                              <desc>einziges direktes child von body</desc>
+                           </valItem>
                         </valList>
                      </attDef>
                   </attList>
                </elementSpec>
-               <!-- Anpassung des app Elements -->
+               <!-- Anpassung des app Elements 
                <elementSpec ident="app" mode="change">
                   <desc>Umfasst eine editorische Fußnote, die einen textgenetischen oder
                      textkritischen Inhalt hat.</desc>
@@ -986,13 +1010,24 @@
                      <attDef ident="to" mode="delete"/>
                      <attDef ident="type" mode="delete"/>
                   </attList>
-               </elementSpec>
+               </elementSpec>-->
                <!-- Anpassung des note Elementes -->
+               <!-- todo: type=editor->xml:id non-empty -->
+               <!-- placement? -->
+               <!-- hand? -->
                <elementSpec ident="note" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.pointing" mode="delete"/>
+                     <memberOf key="att.written" mode="delete"/>
+                     <memberOf key="att.anchoring" mode="delete"/>
+                     <memberOf key="att.placement" mode="delete"/>
+                  </classes>
                   <attList>
+                     <attDef ident="subtype" mode="delete"/>
                      <attDef ident="type" mode="change" usage="req">
                         <valList type="closed" mode="change">
-                           <valItem mode="add" ident="app">
+                           <valItem mode="add" ident="editor">
                               <desc>Das Element enhält einen Apparateintrag der Editor:innen.</desc>
                            </valItem>
                            <valItem mode="add" ident="original">
@@ -1041,9 +1076,9 @@
                   <attList>
                      <attDef ident="ana" mode="delete"/>
                      <attDef ident="ref" mode="delete"/>
-                     <attDef ident="key" mode="change" usage="req"/>
-                     <attDef ident="type" mode="change" usage="req">
-                        <valList>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList type="closed">
                            <valItem ident="person">
                               <desc>rs referentiert Person über den Key in der Datenbank</desc>
                            </valItem>
@@ -1063,6 +1098,12 @@
                                  Datenbank</desc>
                            </valItem>
                         </valList>
+                     </attDef>
+                     <!-- todo: only non empty string with certain attribs! -->
+                     <attDef ident="key" mode="replace" usage="req">
+                        <datatype>
+                           <dataRef key="teidata.text"/> 
+                        </datatype>
                      </attDef>
                   </attList>
                </elementSpec>
@@ -1102,6 +1143,7 @@
                   </attList>
                </elementSpec> -->
                <!-- Anpassnung hi-Element -->
+               <!-- Hervorhebungen differenzieren? -->
                <elementSpec ident="hi" mode="change">
                   <classes mode="change">
                      <memberOf key="att.global.rendition"/>
@@ -1110,37 +1152,24 @@
                   <attList>
                      <attDef ident="rendition" mode="delete"/>
                      <attDef ident="style" mode="delete"/>
-                     <attDef ident="rend" mode="change"/>
-                     <!--
-                        <desc versionDate="2023-01-31" xml:lang="en">Beschreibt, wie der
-                           entsprechende Textteil im HKW-Druckband hervorgehoben ist.</desc>
+                     <attDef ident="rend" mode="change">
+                        <desc>Beschreibt, wie der
+                           entsprechende Textteil hervorgehoben ist.</desc>
                         <valList type="closed" mode="change">
                            <valItem mode="add" ident="smaller">
-                              <desc versionDate="2023-01-31" xml:lang="de">Kleiner dargestellter
-                                 Text.</desc>
+                              <desc >Kleinere Schrift.</desc>
                            </valItem>
-                           <valItem mode="add" ident="c">
-                              <desc versionDate="2023-01-31" xml:lang="de">Zentrierter Text.</desc>
+                           <valItem mode="add" ident="undelined">
+                              <desc>Unterstrichen</desc>
                            </valItem>
-                           <valItem mode="add" ident="right">
-                              <desc versionDate="2023-01-31" xml:lang="de">Rechts positionierter
-                                 Text.</desc>
+                           <valItem mode="add" ident="spaced">
+                              <desc>Gesperrt</desc>
                            </valItem>
-                           <valItem mode="add" ident="sub">
-                              <desc versionDate="2023-01-31" xml:lang="de">Tiefer gesetzter Text,
-                                 oder Zeichen.</desc>
-                           </valItem>
-                           <valItem mode="add" ident="sup">
-                              <desc versionDate="2023-01-31" xml:lang="de">Hochgestellter Text, oder
-                                 Zeichen.</desc>
-                           </valItem>
-                           <valItem mode="add" ident="et"/>
-                           <valItem mode="add" ident="b">
-                              <desc versionDate="2023-06-20" xml:lang="en">(Halb)Fettgedruckter Text
-                                 (= Hervorhebung Typ 2)</desc>
+                           <valItem mode="add" ident="majuscule">
+                              <desc>Majuskeln oder Kapitälchen</desc>
                            </valItem>
                         </valList>
-                     </attDef>-->
+                     </attDef>
                      <attDef ident="hand" mode="delete"/>
                   </attList>
                </elementSpec>
