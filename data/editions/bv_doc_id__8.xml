@@ -8,7 +8,7 @@
                     <persName role="acdh:hasPrincipialInvestigator">Olechowski, Thomas</persName>
                 </principal>
                 <funder>
-                    <name>FWF - Der Wissenschaftsfonds</name>
+                    <orgName>FWF - Der Wissenschaftsfonds</orgName>
                     <address>
                         <street>Sensengasse 1</street>
                         <postCode>1090 Wien</postCode>
@@ -65,14 +65,13 @@
                         <msItem>
                             <author role="acdh:hasAuthor">Falser, Stephan</author>
                         <title>Falser I</title>
+                        <p>Falser I (Titel des Dokuments: "Die Verfassung des Bundesstaates Österreich"), Zustand gut, ohne Ergänzungen, 39 Artikel</p>
                         </msItem>
                     </msContents>
                     <physDesc>
-                        <objectDesc form="">
-                            <ab>Falser I (Titel des Dokuments: "Die Verfassung des Bundesstaates Österreich"), Zustand gut, ohne Ergänzungen, 39 Artikel</ab>
+                        <objectDesc form="bv_manifestation_type_id__4">
                         </objectDesc>
                         <handDesc>
-                        <ab/>
                         </handDesc>
                     </physDesc>
                     <history>
@@ -83,19 +82,23 @@
         </fileDesc>
         <profileDesc>
          <abstract>
-            <ab/>
+            <p/>
          </abstract>
-         <creation><date from="1919-10-07" to="1919-10-07">7. Oktober 1919</date></creation>
+         <creation>
+            <date notBefore-iso="1919-10-07" notAfter-iso="1919-10-07">
+                7. Oktober 1919
+            </date>
+         </creation>
       </profileDesc>
     </teiHeader>
     <facsimile xmlns="http://www.tei-c.org/ns/1.0"><surface ulx="0" uly="0" lrx="2787" lry="4505" xml:id="facs_1"><graphic url="https://files.transkribus.eu/Get?id=LGZFEWGMMBCWSUQRHELYEZCM&amp;fileType=view" width="2787px" height="4505px"/></surface><surface ulx="0" uly="0" lrx="2796" lry="4506" xml:id="facs_2"><graphic url="https://files.transkribus.eu/Get?id=XFRLOMTLQPXPXOQVPBLTQHKX&amp;fileType=view" width="2796px" height="4506px"/></surface><surface ulx="0" uly="0" lrx="2743" lry="4428" xml:id="facs_3"><graphic url="https://files.transkribus.eu/Get?id=HJUKASCEUSBXRMUHVHMWXMXD&amp;fileType=view" width="2743px" height="4428px"/></surface><surface ulx="0" uly="0" lrx="2781" lry="4496" xml:id="facs_4"><graphic url="https://files.transkribus.eu/Get?id=VCFIJZNJMRPOXAWCDARJIBSD&amp;fileType=view" width="2781px" height="4496px"/></surface><surface ulx="0" uly="0" lrx="2709" lry="4448" xml:id="facs_5"><graphic url="https://files.transkribus.eu/Get?id=VYVSYNVQWOOVZUMVWJCEVRBC&amp;fileType=view" width="2709px" height="4448px"/></surface><surface ulx="0" uly="0" lrx="2758" lry="4464" xml:id="facs_6"><graphic url="https://files.transkribus.eu/Get?id=MDJWSOSPCKQEJAYKTDPGLHSZ&amp;fileType=view" width="2758px" height="4464px"/></surface><surface ulx="0" uly="0" lrx="2737" lry="4450" xml:id="facs_7"><graphic url="https://files.transkribus.eu/Get?id=EPVIPUGSOQGVQRVEJCRDNLZI&amp;fileType=view" width="2737px" height="4450px"/></surface><surface ulx="0" uly="0" lrx="2754" lry="4448" xml:id="facs_8"><graphic url="https://files.transkribus.eu/Get?id=DASGVFXKKZBGOJWTVBRCFYRV&amp;fileType=view" width="2754px" height="4448px"/></surface><surface ulx="0" uly="0" lrx="2747" lry="4454" xml:id="facs_9"><graphic url="https://files.transkribus.eu/Get?id=DRKGBKFRWTCDLAIJVDRCDZSU&amp;fileType=view" width="2747px" height="4454px"/></surface><surface ulx="0" uly="0" lrx="2736" lry="4448" xml:id="facs_10"><graphic url="https://files.transkribus.eu/Get?id=BVSGIYMRJTSPLCGMOCJIHSIA&amp;fileType=view" width="2736px" height="4448px"/></surface><surface ulx="0" uly="0" lrx="2739" lry="4447" xml:id="facs_11"><graphic url="https://files.transkribus.eu/Get?id=JZOQGSKYCLNAHLLUTEWSZGCH&amp;fileType=view" width="2739px" height="4447px"/></surface><surface ulx="0" uly="0" lrx="2638" lry="4428" xml:id="facs_12"><graphic url="https://files.transkribus.eu/Get?id=IYLPGZWUKHMBMYPSTUPTDIAR&amp;fileType=view" width="2638px" height="4428px"/></surface><surface ulx="0" uly="0" lrx="2722" lry="4445" xml:id="facs_13"><graphic url="https://files.transkribus.eu/Get?id=JMKBQQHGDKBGNUGIGTUGGCRN&amp;fileType=view" width="2722px" height="4445px"/></surface><surface ulx="0" uly="0" lrx="2717" lry="4432" xml:id="facs_14"><graphic url="https://files.transkribus.eu/Get?id=VBKQWYQPRXXUFIROJCWEQTHS&amp;fileType=view" width="2717px" height="4432px"/></surface><surface ulx="0" uly="0" lrx="2743" lry="4428" xml:id="facs_15"><graphic url="https://files.transkribus.eu/Get?id=HNTVLQRZRCQEEXINZKASYEEQ&amp;fileType=view" width="2743px" height="4428px"/></surface><surface ulx="0" uly="0" lrx="2732" lry="4431" xml:id="facs_16"><graphic url="https://files.transkribus.eu/Get?id=XMAAMOTXLKHRVRSPIHAMXRJL&amp;fileType=view" width="2732px" height="4431px"/></surface><surface ulx="0" uly="0" lrx="2748" lry="4423" xml:id="facs_17"><graphic url="https://files.transkribus.eu/Get?id=TEGHWIECSMUVNDZQQLWVOFQN&amp;fileType=view" width="2748px" height="4423px"/></surface><surface ulx="0" uly="0" lrx="2705" lry="4415" xml:id="facs_18"><graphic url="https://files.transkribus.eu/Get?id=DIZFYTVWDIOSNIZURDJHOXAE&amp;fileType=view" width="2705px" height="4415px"/></surface></facsimile>
-    <text type="">
+    <text type="bv_doctype_id__1">
         <body><div><pb facs="#facs_1" n="1" xml:id="img_0001"/><pb facs="#facs_2" n="2" xml:id="img_0002"/><p>Falser
       <lb/>Die Verfassung des Bundesstaates
       <lb/>------------
       <lb/>Oesterreich.
       <lb/>--------
-      </p><div ana="article">
+      </p><div type="article">
 <head>Artikel 1.</head>
 <p>
 </p><p>Unter dem völkerrechtlichen Zwange des Friedensvertrages von
@@ -110,7 +113,7 @@
       <lb/>Republik Oesterreich
       <lb/>und mit der Bundeshauptstadt Wien zusammen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel II.
       </head>
 <p>Die Selbständigkeit jedes Bundesgliedes bleibt gewahrt und
@@ -119,7 +122,7 @@
       <lb/>desgesetze beschränkt ist oder beschlänkt wird.
       <lb/>1)
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel III.
       </head>
 <p>Der Bund schützt sein Gebiet und das Gebiet seiner Glieder
@@ -133,7 +136,7 @@
       <lb/>rung außer Stande ist, die Unruhen zu unterdrücken, oder wenn zu be-
       <lb/>fürchten ist, daß sie auf das Gebiet anderer Bundesglieder übergreifen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel IV.
       </head>
 <p>Zum Zwecke der Erfüllung der im Artikel III enthaltenen Auf-
@@ -157,7 +160,7 @@
       <lb/>zen ist nur in den Fällen des Artikels III und bei militärischen
       <lb/>Uebungen zulässig.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel V.
       </head>
 <p>Jedes Bundesmitglied hat zur Aufrechthaltung der Ruhe und
@@ -175,7 +178,7 @@
       <lb/>jägertruppe des davon betroffenen Landes (der Bundeshauptstadt) ,dem
       <lb/>Bunde und dem vom Bunde bestellten Oberbefehlshaber unterstellt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel VI.
       </head>
 <p>Die Bundesglieder sind verpflichtet, ihre Verfassungen dem
@@ -204,7 +207,7 @@
       <lb/>ab, so kann der davon betroffene Teil der Landesverfassung (des
       <lb/>Statutes der Stadt Wien) nicht in Kraft treten.</p><p>11</p><pb facs="#facs_5" n="5" xml:id="img_0005"/><p>- 4 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel VII.
       </head>
 <p>Die Glaubens- und Gewissensfreiheit ist unverletzlich. Niemand
@@ -223,19 +226,19 @@
       <lb/>Die freie Ausübung gottesdienstlicher Handlungen ist innerhalb
       <lb/>der Schranken der Sittlichkeit und der öffentlichen Ordnung gewähr-
       <lb/>leistet.</p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel VIII.
       </head>
 <p>Jede Religionsgesellschaft ordnet innerhalb der gesetzlichen
       <lb/>Schranken ihre Angelegenheiten selbständig.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel IX.
       </head>
 <p>Die Pressfreiheit ist gewährleistet; durch ein Bundesgesetz sind
       <lb/>Bestimmungen gegen den Mißbrauch dieses Rechtes zu treffen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel X.
       </head>
 <p>Die Bürger haben das Recht Vereine zu bilden, soferne diese
@@ -247,7 +250,7 @@
       <lb/>1) Zu Artikel VII: Gegen den Satz: „Niemand darf......gezwungen
       <lb/>werden" bestehen bei der Mehrheit des Ausschusses Bedenken.</p><pb facs="#facs_6" n="6" xml:id="img_0006"/><p>- 5 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XI.
       </head>
 <p>Niemand darf seinen verfassungsmässigen Richter entzogen werden;
@@ -255,7 +258,7 @@
       <lb/>Die Militärgerichtsbarkeit bleibt nur für rein militärische
       <lb/>Vergehen bestehen und ist durch Bundesgesetz zu regeln.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XII.
       </head>
 <p>Alle Bundesglieder sind verpflichtet, die Angehörigen des Bundes-
@@ -266,7 +269,7 @@
       <lb/>währleistet. Vorübergehende allgemeine Beschränkung der Freizügigkeit
       <lb/>ist mit Zustimmung des Bundesrates zulässig. Niemand kann in mehr
       <lb/>als einem Gebiete eines Bundesgliedes politische Rechte ausüben.</p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XIII.
       </head>
 <p>Die Freiheit des Handels und der Gewerbe ist im ganzen Umfange
@@ -274,7 +277,7 @@
       <lb/>auf Grund von Bundesgesetzen erlassene Verordnungen eine Einschrän-
       <lb/>kung bedingen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XIV.
       </head>
 <p>In die Zuständigkeit des Bundes fallen:
@@ -353,7 +356,7 @@
       <lb/>13./ Die Oberaufsicht über die Strassen und Brücken, deren Instandhaltung
       <lb/>für den Bundesstaat Bedeutung hat.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XV.
       </head>
 <p>Die Angelegenheiten, welche zur Zuständigkeit der Gesetzgebung
@@ -361,7 +364,7 @@
       <lb/>standes erforderlichen Bestimmungen auch auf dem Gebiete der
       <lb/>Strafjustiz und Polizaistraf - sowie der Zivilgesetzgebung treffen,
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XVI.</head>
 <p>
 </p><p>Die Landesregierungen sind verpflichtet, alle Gesetzesbeschlüs-
@@ -378,7 +381,7 @@
       <lb/>se zu beharren, so hat dessen Kundmachung durch die Landesregie-
       <lb/>rung zu erfolgen.</p><pb facs="#facs_10" n="10" xml:id="img_0010"/><p>- 9 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XVII.
       </head>
 <p>Gesetzesbeschlüsse der Landtage oder des Wiener Gemeinderates
@@ -401,7 +404,7 @@
       <lb/>tes bei der Landesregierung folgenden Tag.
       <lb/>Die Fristen der Artikel XVI und XVII sind gewährt, wenn das
       <lb/>Schreiben vor Ablauf der Frist zur Post gegeben worden ist.</p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XVIII.
       </head>
 <p>Der Bund wird vertreten:
@@ -431,7 +434,7 @@
       <lb/>mung teilnehmenden Vertreter ermittelt; Stimmengleichheit be-
       <lb/>dingt Stimmenenthaltung für das betreffende Bundesglied.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XIX.
       </head>
 <p>Die Bundesversammlungen und das Länderhaus werden auf 6
@@ -453,7 +456,7 @@
       <lb/>nicht rechtzeitig wählen, gilt dies als Stimmenthaltung bis zum
       <lb/>Eintritte der Vertreter (Schlußabsatz des Artikel XVIII.)
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XX.
       </head>
 <p>Wenn 5 Bundesglieder durch ihre Vertretung (Landtag, Gemeinde-
@@ -461,7 +464,7 @@
       <lb/>Versammlung und das Länderhaus aufzulösen und Neuwahlen auszuschrei-
       <lb/>ben.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXI.</head>
 <p>
 </p><p>Bundesgesetze kommen durch den übereinstimmenden Beschluß
@@ -473,7 +476,7 @@
       <lb/>die Gesetzgebung über Steuern, Abgaben und Gefälle (diese in den
       <lb/>Schranken des Artikels XIV Z. 4) steht ausschließend der Bundesver-
       <lb/>sammlung zu.</p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXII.
       </head>
 <p>Zu einem giltigen Beschlüsse ist in beiden Vertretungskörpern
@@ -488,7 +491,7 @@
       <lb/>Abgelehnte Anträge können erst nach Durchführung allgemeiner
       <lb/>Neuwahlen wieder eingebracht werden.</p><p>15</p><pb facs="#facs_13" n="13" xml:id="img_0013"/><p>- 12  -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXIII.
       </head>
 <p>Die Bundesversammlung und das Länderhaus versammeln sich
@@ -498,7 +501,7 @@
       <lb/>den Mitglieder beschlossen werden, die aber nur mit 2/3 Mehrheit abge-
       <lb/>ändert werden können.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXIV.
       </head>
 <p>Zu ausserordentlichen Tagungen sind Bundesversammlung und Län-
@@ -506,7 +509,7 @@
       <lb/>muß erfolgen, wenn ein Viertel der Mitglieder der Bundesversammlung
       <lb/>oder 3 Bundesglieder es verlangen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXV.</head>
 <p>
 </p><p>Bundesgesetze, sowie allgemein verbindliche Bundesbeschlüsse
@@ -515,13 +518,13 @@
       <lb/>Die Durchführung der Volksabstimmung und die Frist zur Einbrin-
       <lb/>gung dieses Verlangens wird durch Bundesgesetz geregelt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXVI.
       </head>
 <p>Die Sitzungen der Bundesversammlung und des Länderhauses sind
       <lb/>in der Regel öffentlich.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXVII.</head>
 <p>
 </p><p>Die oberste vollziehende und leitende Verwaltungsbehörde
@@ -545,7 +548,7 @@
       <lb/>das älteste Mitglied des neu gewählten Bundesrates und wenn auch
       <lb/>dieser es unterläßt, der Bundeskanzler die Einberufungsschreiben zu
       <lb/>erlassen.</p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXVIII.
       </head>
 <p>Den Vorsitz im Bundesrate führt der Bundespräsident, der aus
@@ -555,13 +558,13 @@
       <lb/>Um giltig verhandeln und beschliessen zu können, ist die An-
       <lb/>wesenheit von wenigstens 4 Mitgliedern des Bundesrates notwendig.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXIX.
       </head>
 <p>Die Mitglieder des Bundesrates beziehen einen jährlichen Ge-
       <lb/>halt aus der Bundeskasse.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXX.
       </head>
 <p>Die Mitglieder des Bundesrates haben bei den Verhandlungen der
@@ -570,7 +573,7 @@
       <lb/>Recht, über einen zur Beratung gestellten Gegenstand Anträge zu
       <lb/>stellen.</p><p>16</p><pb facs="#facs_15" n="15" xml:id="img_0015"/><p>- 14 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXXI.
       </head>
 <p>Der Bundesrat hat insbesondere folgende Befugnisse und
@@ -606,13 +609,13 @@
       <lb/>Für seine gesamte Amtsführung ist er der Bundesversammlung ver-
       <lb/>antwortlich.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXXII.
       </head>
 <p>Die Geschäfte des Bundesrates werden unter die einzelnen Mit-
       <lb/>glieder durch Beschluß des Bundesrates verteilt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXXIII.
       </head>
 <p>Zur Erledigung aller Geschäfte des Bundesrates ist ihm die
@@ -633,7 +636,7 @@
       <lb/>als Bundesbeamter, sondern in Vertretung des Volkes; er ist in
       <lb/>dieser Eigenschaft ausschließlich der Bundesversammlung verantwortlich.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXXIV.
       </head>
 <p>Die im Kaiserstaate Oesterreich im Zeitpunkte der Einführung
@@ -648,7 +651,7 @@
       <lb/>bung und Verwaltung berührt die Fortdauer der Giltigkeit der vor-
       <lb/>stehend erwähnten Gesetze und Verordnungen nicht.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXXV.</head>
 <p>
 </p><p>Zur Aenderung der Bestimmungen dieser Bundesverfassung ist
@@ -664,7 +667,7 @@
       <lb/>Wahlberechtigte hat eine Stimme.
       <lb/>Ein Bundesgesetz wird die näheren Bestimmungen über die Durch-
       <lb/>führung dieser Wahl und die Art der Fragestellung regeln.</p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXXVI.
       </head>
 <p>Innerhalb der ersten 3 Jahre nach Beginn der Wirksamkeit die-
@@ -686,7 +689,7 @@
       <lb/>Die gegenwärtige Bundesverfassung bleibt dann so lange noch in
       <lb/>Kraft, bis sie im Sinne des Artikels XXXV abgeändert wird.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXXVII.</head>
 <p>
 </p><p>Drei Monate nach Kundmachung dieser Bundesverfassung im Staats-
@@ -697,7 +700,7 @@
       <lb/>regierungen einzuladen, die Wahlen in das Länderhaus durch die Landtage
       <lb/>(den Wiener Gemeinderat) zu veranlassen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXXVIII.
       </head>
 <p>Die Bundesverfassung und die erstmalige Ausschreibung der Wahlen
@@ -705,7 +708,7 @@
       <lb/>Amtsblatte der Stadt Wien zu veröffentlichen, wobei ebenfalls die
       <lb/>Annahme der Bundesverfassung durch die Bundesglieder festzustellen ist.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Artikel XXXIX.</head>
 <p>
 </p><p>Die Bundesversammlung und das Länderhaus sind von der Staatsre-

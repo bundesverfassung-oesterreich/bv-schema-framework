@@ -8,7 +8,7 @@
                     <persName role="acdh:hasPrincipialInvestigator">Olechowski, Thomas</persName>
                 </principal>
                 <funder>
-                    <name>FWF - Der Wissenschaftsfonds</name>
+                    <orgName>FWF - Der Wissenschaftsfonds</orgName>
                     <address>
                         <street>Sensengasse 1</street>
                         <postCode>1090 Wien</postCode>
@@ -65,14 +65,13 @@
                         <msItem>
                             <author role="acdh:hasAuthor">Kelsen, Hans</author>
                         <title>Kelsen Entwurf II</title>
+                        <p>Kelsen II (Titel des Dokuments: "Entwurf II"), Zustand gut, zahlreiche handschriftliche Ergänzungen und Korrekturen, 170 Artikel</p>
                         </msItem>
                     </msContents>
                     <physDesc>
-                        <objectDesc form="">
-                            <ab>Kelsen II (Titel des Dokuments: "Entwurf II"), Zustand gut, zahlreiche handschriftliche Ergänzungen und Korrekturen, 170 Artikel</ab>
+                        <objectDesc form="bv_manifestation_type_id__2">
                         </objectDesc>
                         <handDesc>
-                        <ab/>
                         </handDesc>
                     </physDesc>
                     <history>
@@ -83,16 +82,20 @@
         </fileDesc>
         <profileDesc>
          <abstract>
-            <ab/>
+            <p/>
          </abstract>
-         <creation><date from="1919-05-01" to="1919-11-30">Zwischen Mai und November 1919</date></creation>
+         <creation>
+            <date notBefore-iso="1919-05-01" notAfter-iso="1919-11-30">
+                Zwischen Mai und November 1919
+            </date>
+         </creation>
       </profileDesc>
     </teiHeader>
     <facsimile xmlns="http://www.tei-c.org/ns/1.0"><surface ulx="0" uly="0" lrx="3237" lry="5106" xml:id="facs_1"><graphic url="https://files.transkribus.eu/Get?id=QLGFFSLKSLSMIWNXRVCNSDHJ&amp;fileType=view" width="3237px" height="5106px"/></surface><surface ulx="0" uly="0" lrx="3262" lry="5133" xml:id="facs_2"><graphic url="https://files.transkribus.eu/Get?id=AHYPZYQQHPDCIKNIDNWJWHOX&amp;fileType=view" width="3262px" height="5133px"/></surface><surface ulx="0" uly="0" lrx="3085" lry="4985" xml:id="facs_3"><graphic url="https://files.transkribus.eu/Get?id=TXKQDNFSHRIIZQJYRNKHLIRK&amp;fileType=view" width="3085px" height="4985px"/></surface><surface ulx="0" uly="0" lrx="3110" lry="4999" xml:id="facs_4"><graphic url="https://files.transkribus.eu/Get?id=KIORKNOZATWALJUITRESVKYV&amp;fileType=view" width="3110px" height="4999px"/></surface><surface ulx="0" uly="0" lrx="3095" lry="4986" xml:id="facs_5"><graphic url="https://files.transkribus.eu/Get?id=LDBCDQCSUACKTZCYCTODYQAI&amp;fileType=view" width="3095px" height="4986px"/></surface><surface ulx="0" uly="0" lrx="3084" lry="5021" xml:id="facs_6"><graphic url="https://files.transkribus.eu/Get?id=NXHXSRCGRXUJSVECJXBEAQZW&amp;fileType=view" width="3084px" height="5021px"/></surface><surface ulx="0" uly="0" lrx="3081" lry="4987" xml:id="facs_7"><graphic url="https://files.transkribus.eu/Get?id=KKQWBLCBHSKPIWUTUNFPUZAH&amp;fileType=view" width="3081px" height="4987px"/></surface><surface ulx="0" uly="0" lrx="3081" lry="5002" xml:id="facs_8"><graphic url="https://files.transkribus.eu/Get?id=KNWSOHGJNBDGZFKOFITQGQDE&amp;fileType=view" width="3081px" height="5002px"/></surface><surface ulx="0" uly="0" lrx="3099" lry="5002" xml:id="facs_9"><graphic url="https://files.transkribus.eu/Get?id=NMDVVFVWBUYXJKAHLRXLILJQ&amp;fileType=view" width="3099px" height="5002px"/></surface><surface ulx="0" uly="0" lrx="3102" lry="4986" xml:id="facs_10"><graphic url="https://files.transkribus.eu/Get?id=JYZVUEFVZLVJGOHPLBBVVWXE&amp;fileType=view" width="3102px" height="4986px"/></surface><surface ulx="0" uly="0" lrx="3091" lry="4995" xml:id="facs_11"><graphic url="https://files.transkribus.eu/Get?id=VBRMXBOUNDPFYSQXKAVUDSXB&amp;fileType=view" width="3091px" height="4995px"/></surface><surface ulx="0" uly="0" lrx="3108" lry="5006" xml:id="facs_12"><graphic url="https://files.transkribus.eu/Get?id=AMDSXFIXPZTKGLELFLPZODJQ&amp;fileType=view" width="3108px" height="5006px"/></surface><surface ulx="0" uly="0" lrx="3112" lry="4997" xml:id="facs_13"><graphic url="https://files.transkribus.eu/Get?id=EZWTJHUZZSRPHMJRYAVYEOUU&amp;fileType=view" width="3112px" height="4997px"/></surface><surface ulx="0" uly="0" lrx="3098" lry="4964" xml:id="facs_14"><graphic url="https://files.transkribus.eu/Get?id=QVIRXKIASQFWKHRCKWKYGMWO&amp;fileType=view" width="3098px" height="4964px"/></surface><surface ulx="0" uly="0" lrx="3101" lry="4990" xml:id="facs_15"><graphic url="https://files.transkribus.eu/Get?id=LAAOGBJPRQZTVYBYEXQMLEID&amp;fileType=view" width="3101px" height="4990px"/></surface><surface ulx="0" uly="0" lrx="3111" lry="5013" xml:id="facs_16"><graphic url="https://files.transkribus.eu/Get?id=FTKUECCKWBXVSZUAVMSQUCME&amp;fileType=view" width="3111px" height="5013px"/></surface><surface ulx="0" uly="0" lrx="3120" lry="5010" xml:id="facs_17"><graphic url="https://files.transkribus.eu/Get?id=JBSFFDMPIXPFLFVTVOMVPNQT&amp;fileType=view" width="3120px" height="5010px"/></surface><surface ulx="0" uly="0" lrx="3089" lry="4955" xml:id="facs_18"><graphic url="https://files.transkribus.eu/Get?id=GELTRLJCTDHDTASFTTYYMMQM&amp;fileType=view" width="3089px" height="4955px"/></surface><surface ulx="0" uly="0" lrx="3102" lry="5002" xml:id="facs_19"><graphic url="https://files.transkribus.eu/Get?id=XVRKUYGYNMJURHTUFJZLDIZR&amp;fileType=view" width="3102px" height="5002px"/></surface><surface ulx="0" uly="0" lrx="3095" lry="4995" xml:id="facs_20"><graphic url="https://files.transkribus.eu/Get?id=VEKXMOVOAICPPJJJWZVSYQVC&amp;fileType=view" width="3095px" height="4995px"/></surface><surface ulx="0" uly="0" lrx="3073" lry="4991" xml:id="facs_21"><graphic url="https://files.transkribus.eu/Get?id=SZTMJCNDEVXVUBYPGIUFIVOI&amp;fileType=view" width="3073px" height="4991px"/></surface><surface ulx="0" uly="0" lrx="3100" lry="4963" xml:id="facs_22"><graphic url="https://files.transkribus.eu/Get?id=XTAKFTTNMGDWROMNWYPPJUFY&amp;fileType=view" width="3100px" height="4963px"/></surface><surface ulx="0" uly="0" lrx="3102" lry="5009" xml:id="facs_23"><graphic url="https://files.transkribus.eu/Get?id=SHZUCGITXLYOLMJBLUSHMQUA&amp;fileType=view" width="3102px" height="5009px"/></surface><surface ulx="0" uly="0" lrx="3097" lry="4976" xml:id="facs_24"><graphic url="https://files.transkribus.eu/Get?id=IPOZUNAHEDRKQMCEFSINZETU&amp;fileType=view" width="3097px" height="4976px"/></surface><surface ulx="0" uly="0" lrx="3090" lry="4955" xml:id="facs_25"><graphic url="https://files.transkribus.eu/Get?id=JZDYQRDQVQQPEAATUHQIXMZD&amp;fileType=view" width="3090px" height="4955px"/></surface><surface ulx="0" uly="0" lrx="3136" lry="5007" xml:id="facs_26"><graphic url="https://files.transkribus.eu/Get?id=QQDEQYUKOIVDKXJCJXDFBKAU&amp;fileType=view" width="3136px" height="5007px"/></surface><surface ulx="0" uly="0" lrx="3097" lry="4957" xml:id="facs_27"><graphic url="https://files.transkribus.eu/Get?id=AVLEWGYMNEUZKBUXVYILIJCW&amp;fileType=view" width="3097px" height="4957px"/></surface><surface ulx="0" uly="0" lrx="3125" lry="5001" xml:id="facs_28"><graphic url="https://files.transkribus.eu/Get?id=HEKFAGOGBNYWHNRSQSPVZZYM&amp;fileType=view" width="3125px" height="5001px"/></surface><surface ulx="0" uly="0" lrx="3092" lry="4952" xml:id="facs_29"><graphic url="https://files.transkribus.eu/Get?id=NVGVGWVEKBOOFODIYKOUTMZU&amp;fileType=view" width="3092px" height="4952px"/></surface><surface ulx="0" uly="0" lrx="3124" lry="5008" xml:id="facs_30"><graphic url="https://files.transkribus.eu/Get?id=WXCHRKQDUUZMCWJJKOMCXROM&amp;fileType=view" width="3124px" height="5008px"/></surface><surface ulx="0" uly="0" lrx="3114" lry="5006" xml:id="facs_31"><graphic url="https://files.transkribus.eu/Get?id=OCWDKKZDIMDNOKCWSLMZIDZM&amp;fileType=view" width="3114px" height="5006px"/></surface><surface ulx="0" uly="0" lrx="3102" lry="4978" xml:id="facs_32"><graphic url="https://files.transkribus.eu/Get?id=VIGOVNDMGWLRAXGRUNSIVJPL&amp;fileType=view" width="3102px" height="4978px"/></surface><surface ulx="0" uly="0" lrx="3144" lry="5017" xml:id="facs_33"><graphic url="https://files.transkribus.eu/Get?id=CRSKPITIRJVWTQATEFGUVUXI&amp;fileType=view" width="3144px" height="5017px"/></surface><surface ulx="0" uly="0" lrx="3107" lry="4997" xml:id="facs_34"><graphic url="https://files.transkribus.eu/Get?id=ZEIGSPZXNQPUXGSVUGRCPBDR&amp;fileType=view" width="3107px" height="4997px"/></surface><surface ulx="0" uly="0" lrx="3113" lry="5011" xml:id="facs_35"><graphic url="https://files.transkribus.eu/Get?id=EQGLFWXDVTEGFXEFWDDBWOTC&amp;fileType=view" width="3113px" height="5011px"/></surface><surface ulx="0" uly="0" lrx="3102" lry="4995" xml:id="facs_36"><graphic url="https://files.transkribus.eu/Get?id=RLEHVEJVJGQVMTDLZDNUZKFT&amp;fileType=view" width="3102px" height="4995px"/></surface><surface ulx="0" uly="0" lrx="3104" lry="4995" xml:id="facs_37"><graphic url="https://files.transkribus.eu/Get?id=WMKEPYWIHKLQAZJTCBOVNIOK&amp;fileType=view" width="3104px" height="4995px"/></surface><surface ulx="0" uly="0" lrx="3117" lry="4995" xml:id="facs_38"><graphic url="https://files.transkribus.eu/Get?id=CGZLTNMLEYDCNMDWQZOOZOKJ&amp;fileType=view" width="3117px" height="4995px"/></surface><surface ulx="0" uly="0" lrx="3094" lry="5007" xml:id="facs_39"><graphic url="https://files.transkribus.eu/Get?id=XUULHPKCFXGTFSRRMGYGTUGL&amp;fileType=view" width="3094px" height="5007px"/></surface><surface ulx="0" uly="0" lrx="3087" lry="4934" xml:id="facs_40"><graphic url="https://files.transkribus.eu/Get?id=JKQJDYSPJZUQQBWKBHHRBYKH&amp;fileType=view" width="3087px" height="4934px"/></surface><surface ulx="0" uly="0" lrx="3094" lry="4992" xml:id="facs_41"><graphic url="https://files.transkribus.eu/Get?id=YCGLQAOMSILDJHIWITGRHBRQ&amp;fileType=view" width="3094px" height="4992px"/></surface><surface ulx="0" uly="0" lrx="3085" lry="4953" xml:id="facs_42"><graphic url="https://files.transkribus.eu/Get?id=TIXGIGCRSLZSORPSIGYBZUEN&amp;fileType=view" width="3085px" height="4953px"/></surface><surface ulx="0" uly="0" lrx="3105" lry="4994" xml:id="facs_43"><graphic url="https://files.transkribus.eu/Get?id=BULBJLQMPBDWAYSZLJPLXZHY&amp;fileType=view" width="3105px" height="4994px"/></surface><surface ulx="0" uly="0" lrx="3102" lry="4999" xml:id="facs_44"><graphic url="https://files.transkribus.eu/Get?id=PSXUIGQVIDJWVTARVJGGMAFF&amp;fileType=view" width="3102px" height="4999px"/></surface><surface ulx="0" uly="0" lrx="3102" lry="4954" xml:id="facs_45"><graphic url="https://files.transkribus.eu/Get?id=OZIOAAWDCIJKEZZOOIIIEKHD&amp;fileType=view" width="3102px" height="4954px"/></surface><surface ulx="0" uly="0" lrx="3085" lry="4963" xml:id="facs_46"><graphic url="https://files.transkribus.eu/Get?id=NGAFHGRUOVIGDGBQFEHADBIV&amp;fileType=view" width="3085px" height="4963px"/></surface><surface ulx="0" uly="0" lrx="3115" lry="5001" xml:id="facs_47"><graphic url="https://files.transkribus.eu/Get?id=IEGZENIEVBHNZGIOLWNQURCR&amp;fileType=view" width="3115px" height="5001px"/></surface><surface ulx="0" uly="0" lrx="3099" lry="4953" xml:id="facs_48"><graphic url="https://files.transkribus.eu/Get?id=CLKUAIQFKTVYNLXRRGJYYHQV&amp;fileType=view" width="3099px" height="4953px"/></surface><surface ulx="0" uly="0" lrx="3087" lry="4959" xml:id="facs_49"><graphic url="https://files.transkribus.eu/Get?id=STITVBRAAAHHUEHRLXYCHWJO&amp;fileType=view" width="3087px" height="4959px"/></surface><surface ulx="0" uly="0" lrx="3099" lry="4962" xml:id="facs_50"><graphic url="https://files.transkribus.eu/Get?id=RAMBAQNVTRAAUSXHBFBPSAYU&amp;fileType=view" width="3099px" height="4962px"/></surface><surface ulx="0" uly="0" lrx="3105" lry="5007" xml:id="facs_51"><graphic url="https://files.transkribus.eu/Get?id=DJVRZZEXLDDGHUQCXTHGJBYC&amp;fileType=view" width="3105px" height="5007px"/></surface><surface ulx="0" uly="0" lrx="3101" lry="4965" xml:id="facs_52"><graphic url="https://files.transkribus.eu/Get?id=XNYPILHZYHLINFSYCSBXURWN&amp;fileType=view" width="3101px" height="4965px"/></surface><surface ulx="0" uly="0" lrx="3085" lry="4985" xml:id="facs_53"><graphic url="https://files.transkribus.eu/Get?id=XVEHGKWYYGEZCNKGZUPPDNGG&amp;fileType=view" width="3085px" height="4985px"/></surface><surface ulx="0" uly="0" lrx="3107" lry="4967" xml:id="facs_54"><graphic url="https://files.transkribus.eu/Get?id=PJNWTWMOFUTSVRWGFKWZMAMV&amp;fileType=view" width="3107px" height="4967px"/></surface><surface ulx="0" uly="0" lrx="3101" lry="4979" xml:id="facs_55"><graphic url="https://files.transkribus.eu/Get?id=DIYMWQQCLKQGBMCBGBNNPNZC&amp;fileType=view" width="3101px" height="4979px"/></surface><surface ulx="0" uly="0" lrx="3084" lry="5008" xml:id="facs_56"><graphic url="https://files.transkribus.eu/Get?id=LWGKZQPLNHTRXBYHZOCLOGLU&amp;fileType=view" width="3084px" height="5008px"/></surface><surface ulx="0" uly="0" lrx="3097" lry="4953" xml:id="facs_57"><graphic url="https://files.transkribus.eu/Get?id=WQQVGANZHWFLQJCWYFSLCIFR&amp;fileType=view" width="3097px" height="4953px"/></surface></facsimile>
-    <text type="">
+    <text type="bv_doctype_id__1">
         <body><div><pb facs="#facs_1" n="1" xml:id="img_0001"/><p>Erster Abschnitt.
       <lb/>Allgemeine Bestimmungen.
-      </p><div ana="article">
+      </p><div type="article">
 <head>Art. 1.
       </head>
 <p>Die Republik Oesterreich ist ein freier
@@ -100,7 +103,7 @@
       <lb/>reich' Oberösterreich, Steiermark etz. und
       <lb/>der Bundeshaupstadt Wien, die die Stellung
       <lb/>eines selbständigen Landes hat.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 2.
       </head>
 <p>Oesterreich ist eine demokratische Re-
@@ -108,7 +111,7 @@
       <lb/>Alle Öffentlichen Gewalten werden vom
       <lb/>Volke eingesetzt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 3.
       </head>
 <p>Das Bundesgebiet umfasst die Gebiete
@@ -117,7 +120,7 @@
       <lb/>Oberösterreich
       <lb/>etz.
       <lb/>Wien :</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 4.
       </head>
 <p>Das Bundesgebiet bildet ein einheitli-
@@ -125,7 +128,7 @@
       <lb/>Innerhalb der Grenzen des Bundes dürfen
       <lb/>keinerlei Zwischenzollinien errichtet werden.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 5.
       </head>
 <p>Eine Aenderung des Bundesgebietes, die
@@ -142,7 +145,7 @@
       <lb/>28</p><pb facs="#facs_2" n="2" xml:id="img_0002"/><p>Erster Abschnitt.
       <lb/>Allgemeine Bestimmungen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 1.
       </head>
 <p>Die Republik Oesterreich ist ein freier
@@ -151,7 +154,7 @@
       <lb/>der Bundeshaupstadt Wien, die die Stellung
       <lb/>eines selbständigen Landes hat.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 2.
       </head>
 <p>Oesterreich ist eine demokratische Re-
@@ -159,7 +162,7 @@
       <lb/>Alle öffentlichen Gewalten werden vom
       <lb/>Volke eingesetzt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 3.</head>
 <p>
 </p><p>Das Bundesgebiet umfasst die Gebiete
@@ -169,14 +172,14 @@
       <lb/>etz.
       <lb/>Wien :
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 4.
       </head>
 <p>Das Bundesgebiet bildet ein einheitli-
       <lb/>ches Zoll- und Handelsgebiet.
       <lb/>Innerhalb der Grenzen des Bundes dürfen
       <lb/>keinerlei Zwischenzollinien errichtet werden.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 5.
       </head>
 <p>Eine Aenderung des Bundesgebietes, die
@@ -187,7 +190,7 @@
       <lb/>und desjenigen Landes erfolgen, dessen Ge-
       <lb/>biet eine Veränderung erfährt.</p><p>28</p><pb facs="#facs_3" n="3" xml:id="img_0003"/><p>- 2 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 6.
       </head>
 <p>Jeder Landesbürger ist Bürger des
@@ -196,7 +199,7 @@
       <lb/>Heimatsberechtigung in der Gemeinde eines
       <lb/>Landes gebunden.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 7.
       </head>
 <p>Jeder Bundesangehörige hat in je¬
@@ -204,7 +207,7 @@
       <lb/>und Pflichten wie die Angehörigen der Länder
       <lb/>selbst
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 8.
       </head>
 <p>Die selbstständingen Länder Niederöster-
@@ -228,7 +231,7 @@
       <lb/>sorge.
       <lb/>In diesen Angelegenheiten steht
       <lb/>dem Bunde die Gesetzgebung und Vollziehung zu.</p><p>29</p><pb facs="#facs_4" n="4" xml:id="img_0004"/><p>- 3 -</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 9.
       </head>
 <p>Der Gesetzgebung des Bundes ist
@@ -252,12 +255,12 @@
       <lb/>6./die Feststellung der Grundsätze
       <lb/>des Wasser und Elektrizitätsrechtes.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 10.
       </head>
 <p>Bundesrecht bricht Landesrecht.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 11.
       </head>
 <p>Soferne eine Angelegenheit nicht</p><p>ausdrücklich durch die Bundesverfassung der
@@ -274,7 +277,7 @@
       <lb/>des bundesgesetzlich festgelegten
       <lb/>Rahmens der Landesgesetzgebung.</p><p>30</p><pb facs="#facs_5" n="5" xml:id="img_0005"/><p>- 4 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 12.
       </head>
 <p>Der vom ganzen Bundesvolke Oester-
@@ -282,7 +285,7 @@
       <lb/>mit dem von den Landtagen gewählten Bundes-
       <lb/>rate das höchste Organ des Bundes.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 13.
       </head>
 <p>Der Sitz des Bundestages sowie des
@@ -292,7 +295,7 @@
       <lb/>Bundesrat in einen anderen Ort des Bundesge-
       <lb/>bietes berufen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 14.
       </head>
 <p>Dem Bundestage obliegt im Zusammen-
@@ -312,7 +315,7 @@
       <lb/>deutung / Regierungsübereinkommen /hat ledig-
       <lb/>lich die Bundesregierung zu genehmigen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 15.
       </head>
 <p>Dem Bundestag obliegt die jährli-
@@ -323,7 +326,7 @@
       <lb/>ten Bundesrechnungsabschlusses / Art.... ./.</p><p>31</p><pb facs="#facs_6" n="6" xml:id="img_0006"/><p>- 5 -</p><p>Diese Beschlüsse bedürfen der Ge-
       <lb/>nehmigung des Bundesrates.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 16.
       </head>
 <p>Zum Bundestag werden in dem gesam-
@@ -344,7 +347,7 @@
       <lb/>erlassen.Sie bildet einen Bestandteil der
       <lb/>Bundesverfassung.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 17.
       </head>
 <p>Die Legislaturperiode des Bundes-
@@ -357,7 +360,7 @@
       <lb/>tages darf nicht länger als ein Jahr betra-
       <lb/>gen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art.18.
       </head>
 <p>Während der Sitzungsperiode kann
@@ -371,7 +374,7 @@
       <lb/>ten Antrag den Bundespräsidenten im Wege der
       <lb/>Bundesregierung zu verständigen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 19.
       </head>
 <p>Auf Antrag der Bundesregierung kann</p><p>der Bundespräsident den Bundestag, jedoch nur
@@ -382,7 +385,7 @@
       <lb/>sammlung binnen . . . Wochen nach durchge-
       <lb/>führter Wahl einzuberufen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 20.
       </head>
 <p>Der Bundestag wählt aus seiner
@@ -395,7 +398,7 @@
       <lb/>setzes von der Bundesversammlung zu beschlies-
       <lb/>senden autonomen Geschäftsordnung.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 27.
       </head>
 <p>Gesetzesvorschläge gelangen an den
@@ -418,7 +421,7 @@
       <lb/>präsidenten ratifiziert sind erlangen durch
       <lb/>die Kundmachung im Bundesgesetzblatt Gesetzes-
       <lb/>kraft.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 28.
       </head>
 <p>Zu einem Beschluss des Bundestages
@@ -431,7 +434,7 @@
       <lb/>mit einer Mehrheit von drei Viertel aller
       <lb/>abgegebenen Stimmen beschlossen werden.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 29.
       </head>
 <p>Jede Gesamtänderung der Bundesver-
@@ -444,7 +447,7 @@
       <lb/>Abstimmung des gesamten Bundesvolkes zu un-
       <lb/>terziehen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 30.
       </head>
 <p>Einer solchen Volksabstimmung ist
@@ -454,7 +457,7 @@
       <lb/>der Stimmenberechtigten dreier Länder inner-
       <lb/>halb 6 Wochen nach erfolgter Kundmachung des
       <lb/>Gesetzes gefordert wird.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 31.
       </head>
 <p>Stimmenberechtigt ist jeder zum
@@ -467,7 +470,7 @@
       <lb/>sich für die Verfassungsänderung oder gegen
       <lb/>das Bundesgesetz ausgesprochen hat.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 32.
       </head>
 <p>Das Ergebnis der Volksabstimmung
@@ -475,7 +478,7 @@
       <lb/>Bundesgesetz durch Volksabstimmung abgelehnt
       <lb/>wurde, ist seine Ausserkraftsetzung im Bun-
       <lb/>desgesetzblatt kundzumachen.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 33.
       </head>
 <p>Ist eine Gesamtänderung der Bun-
@@ -484,7 +487,7 @@
       <lb/>Bundestag aufzulösen und gemäss Art. IV der
       <lb/>Bundesverfassung Neuwahlen auszuschreiben.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 34.
       </head>
 <p>Das Verfahren für die Volksabstim-
@@ -492,7 +495,7 @@
       <lb/>Initiative ist in dem Gesetz über die Wahl-
       <lb/>ordnung für die Wahl zum Bundestag geregelt.</p><p>35</p><pb facs="#facs_10" n="10" xml:id="img_0010"/><p>- 10 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 21
       </head>
 <p>Die Sitzungen des Bundestages
@@ -503,7 +506,7 @@
       <lb/>. . . Mitgliedern verlangt und vom Hause
       <lb/>nach Entfernung der Zuhörer beschlossen wird.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 22.
       </head>
 <p>Wahrheitsgetreue Berichte über die
@@ -512,7 +515,7 @@
       <lb/>ben von jeder Verantwortung frei.
       <lb/>B.) der Bundesrat.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 23.
       </head>
 <p>In den Bundesrat entsendet jeder</p><p>Landtag aus seiner Mitte nach dem Verhältnis-
@@ -526,7 +529,7 @@
       <lb/>Mitglieder wird durch den Bundesrat nach
       <lb/>jeder allgemeinen Volkszählung neu festgesetzt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 24.
       </head>
 <p>Den Vorsitz im Bundesrat führt der</p><p>Stellvertreter des Bundespräsidenten. Der
@@ -546,7 +549,7 @@
       <lb/>Der Bundesrat gibt sich seine Ge-
       <lb/>schäftsordnung durch Beschluss.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 25.
       </head>
 <p>Der Bundesrat wird vom Bundesprä-</p><p>sidenten alljährlich an den Sitz des Bundes-
@@ -556,7 +559,7 @@
       <lb/>Die Sitzungen des Bundesrates sind
       <lb/>nicht öffentlich.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 26.
       </head>
 <p>Die Mitglieder des Bundesrates</p><p>bleiben bis zum Beginn der neuen Session des
@@ -572,7 +575,7 @@
       <lb/>C der Weg der Bundesgesetzgebung.
       <lb/>Art. 21-28 jetzt: 27-34
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 35.
       </head>
 <p>Jeder Gesetzesbeschluss sowie je-
@@ -594,7 +597,7 @@
       <lb/>Genehmigung ist in schriftlicher Ausferti-
       <lb/>gung dem Bundestag bekanntzugeben.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 36 .
       </head>
 <p>(1) Hat der Bundesrat einem Beschluss</p><p>des Bundestages die Genehmigung verweigert
@@ -624,7 +627,7 @@
       <lb/>diesem Falle auch ohne Genmehmigung
       <lb/>des Bundesrates Geltung.</p><p>38</p><pb facs="#facs_13" n="13" xml:id="img_0013"/><p>- 13 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 37.
       </head>
 <p>Das verfassungsmässige Zustande-
@@ -635,7 +638,7 @@
       <lb/>kanzler und den ressortmässig zuständigen
       <lb/>Staatssekretären zu gegenzeichnen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 38.
       </head>
 <p>Die Kundmachung der Bundesgesetze</p><p>erfolgt mit Berufung auf den Beschluss des
@@ -645,7 +648,7 @@
       <lb/>im Bundesgesetzblatt durch den Bundeskanz-
       <lb/>ler.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 39.
       </head>
 <p>Die verbindende Kraft der im Bun-
@@ -665,7 +668,7 @@
       <lb/>D Stellung der Mitglieder des Bundes-
       <lb/>tages und des Bundesrates.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 40.
       </head>
 <p>Die Mitglieder des Bundestages kön¬
@@ -689,7 +692,7 @@
       <lb/>für die ganze Sitzungsperiode aufgeschoben
       <lb/>werden.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 41.
       </head>
 <p>Die Mitglieder des Bundesrates ge¬
@@ -697,13 +700,13 @@
       <lb/>tages gewährte Immunität auch für ihre Funk-
       <lb/>tion im Bundesrat während der ganzen Dauer
       <lb/>dieser Funktion.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 42.
       </head>
 <p>Niemand kann gleichzeitig dem Bun-
       <lb/>destage und dem Bundesrat angehören.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 43.
       </head>
 <p>Die dem Bundestag oder dem Bundes-
@@ -713,7 +716,7 @@
       <lb/>E Stellung der Bundesregierung im
       <lb/>Bundestag und Bundesrat.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 44.
       </head>
 <p>Die Mitglieder der Bundesregierung
@@ -725,7 +728,7 @@
       <lb/>destag sowie der Bundesrat kann die Anwesen-
       <lb/>heit der Mitglieder der Bundesregierung
       <lb/>verlangen.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 45.
       </head>
 <p>Der Bundestag und der Bundesrat
@@ -737,7 +740,7 @@
       <lb/>Ausübung der Regierungs- und Vollzugsge-
       <lb/>walt in Entschliessungen Ausdruck zu geben.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 46
       </head>
 <p>Auf Antrag von mindestens . . </p><p>Mitgliedern hat der Bundestag Untersuchungs-
@@ -757,7 +760,7 @@
       <lb/>A Von der Regierungsgewalt des Bundes.
       <lb/>1./ Der Bundespräsident.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 47.
       </head>
 <p>Der Bundespräsident und sein Stell-
@@ -776,7 +779,7 @@
       <lb/>präsidenten durch Tod, Amtsverzicht oder
       <lb/>aus anderen Gründen erledigt wird.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 48.
       </head>
 <p>Zum Bundespräsidenten sowie zu
@@ -788,7 +791,7 @@
       <lb/>welchem die Wahl stattfindet, das 40. Le-
       <lb/>bensjahr vollendet hat.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 49.
       </head>
 <p>Der Stimmzettel für die Präsident-
@@ -798,7 +801,7 @@
       <lb/>geben.</p><p>Jeder Wähler darf nur einen Kandi-
       <lb/>daten für die Präsidentschaft bezeichnen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 50.
       </head>
 <p>Als zum Bundespräsidenten gewählt
@@ -808,7 +811,7 @@
       <lb/>Stimmziffer erreicht, gilt als zum Stellver-
       <lb/>treter des Bundespräsidenten gewählt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 51.
       </head>
 <p>Der Bundespräsident und sein Stell-
@@ -819,7 +822,7 @@
       <lb/>getreulich beobachten und meine Pflicht nach
       <lb/>bestem Wissen und Gewissen erfüllen werde.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 52.
       </head>
 <p>Der Bundespräsident und sein Stell-
@@ -827,7 +830,7 @@
       <lb/>keit keiner politischen Körperschaft ange-
       <lb/>hören und keinen anderen Beruf ausüben.</p><p>43</p><pb facs="#facs_18" n="18" xml:id="img_0018"/><p>- 18 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 53.
       </head>
 <p>Eine strafgerichtliche Verfolgung
@@ -841,14 +844,14 @@
       <lb/>der und eine Mehrheit von 3/4 der Abstim-
       <lb/>menden erforderlich.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 54.
       </head>
 <p>Das Wahlverfahren für die Präsi-
       <lb/>dentschaftswahl ist in dem Gesetze betref-
       <lb/>fend die Wahlordnung für die Wahl zum Bun-
       <lb/>destag zu regeln.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 55.
       </head>
 <p>Der Bundespräsident vertritt die
@@ -856,7 +859,7 @@
       <lb/>bigt die Gesandten und ratifiziert die
       <lb/>Staatsverträge.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 56
       </head>
 <p>Dem Bundespräsidenten obliegt:
@@ -877,14 +880,14 @@
       <lb/>strafgerichtlichen Verfahren.
       <lb/>Diese Akte des Bundespräsidenten
       <lb/>erfolgen auf Vorschlag der Bundesregierung.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 57.
       </head>
 <p>Der Bundespräsident ernennt auf
       <lb/>Vorschlag der zuständigen Landesregierung
       <lb/>die Landesbeamten.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 58.
       </head>
 <p>Der Bundespräsident kann das ihm
@@ -893,7 +896,7 @@
       <lb/>klasse den ressortmässig zuständigen Mit-
       <lb/>gliedern der Bundesregierung, bezw. den
       <lb/>Landesregierungen delegieren.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 59.
       </head>
 <p>Alle Akte des Bundespräsidenten
@@ -903,7 +906,7 @@
       <lb/>Ernennung von Landesbeamten der Gegenzeich-
       <lb/>nung des zuständigen Landeshauptmannes.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 60.
       </head>
 <p>Wenn der Bundespräsident verhin-</p><p>45</p><pb facs="#facs_20" n="20" xml:id="img_0020"/><p>- 20 -
@@ -924,7 +927,7 @@
       <lb/>ums die Neuwahl derselben sofort auszu-
       <lb/>schreiben und durchzuführen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 61.
       </head>
 <p>Der Bundespräsident bleibt auch</p><p>nach Ablauf der Legislaturperiode und nach
@@ -936,7 +939,7 @@
       <lb/>selben ist zulässig.
       <lb/>2.) Die Bundesregierung.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 62.
       </head>
 <p>Mit der Ausübung der Regierungs-
@@ -954,7 +957,7 @@
       <lb/>Jede Behörde kann im Rahmen der Ge-
       <lb/>setze innerhalb ihres Wirkungskreises Voll-
       <lb/>zugsanweisungen erlassen.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 63.
       </head>
 <p>Die Bundesregierung wird vom Bundestag
@@ -967,7 +970,7 @@
       <lb/>Bundespräsidenten mit dem Datum des Tages der
       <lb/>Abgelobung ausgefertigt und vom neu bestellten
       <lb/>Bundeskanzler gegengezeichnet.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 64.
       </head>
 <p>Bis die neue Bundesregierung gebildet
@@ -982,7 +985,7 @@
       <lb/>47</p><pb facs="#facs_22" n="22" xml:id="img_0022"/><p>- 22 -
       <lb/>weiligen Leitung der Verwaltung zu betrauen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 65.
       </head>
 <p>Versagt der Bundestag oder der Bundes-
@@ -1007,7 +1010,7 @@
       <lb/>Wunsch vom Bundespräsidenten ihres Amtes ent-
       <lb/>hoben.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 66.
       </head>
 <p>Der Bundespräsident, sein Stellvertre-
@@ -1015,7 +1018,7 @@
       <lb/>sind nach Maßgabe des Art. . . . . . der Bundes-
       <lb/>verfassung dem Bundestag und dem Bundesrate
       <lb/>verantwortlich.</p><p>48</p><pb facs="#facs_23" n="23" xml:id="img_0023"/><p>- 23 -</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 67.
       </head>
 <p>Zur Durchführung der Bundesverwal¬
@@ -1028,13 +1031,13 @@
       <lb/>Aenderungen des Wirkungskreises und
       <lb/>der Zahl der Bundesämter erfolgen durch ein-
       <lb/>faches Gesetz.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 68.
       </head>
 <p>Zur Vertretung des Bundeskanzlers ist
       <lb/>ein Vizekanzler berufen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 69.
       </head>
 <p>Der Bundeskanzler, ein Vizekanzler
@@ -1051,7 +1054,7 @@
       <lb/>3. Das Bundesheer.
       <lb/>==========
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 70
       </head>
 <p>Das Bundesheer ist bestimmt, die Re¬
@@ -1066,14 +1069,14 @@
       <lb/>gegen Naturgewalten verwendet werden, die
       <lb/>das Leben oder das Eigentum der Bürger bedro-
       <lb/>hen.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 71.
       </head>
 <p>Das gesamte Heereswesen ist Bundes-
       <lb/>angelegenheit und wird durch eigene Bundesor-
       <lb/>gane besorgt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 72.
       </head>
 <p>Ueber das Heer verfügt die Bundesre-
@@ -1081,7 +1084,7 @@
       <lb/>lich durch Befehlshaber aus, welche ihr ver-
       <lb/>antwortlich sind.
       <lb/>B. Von der Gerichtsbarkeit des Bundes.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 73.
       </head>
 <p>Alle Gerichtsbarkeit geht vom Bunde
@@ -1089,7 +1092,7 @@
       <lb/>Die Urteile und Erkenntnisse werden im
       <lb/>Namen der Republik Oesterreich ausgefertigt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 74.
       </head>
 <p>Die Verfassung und Zuständigkeit der
@@ -1106,25 +1109,25 @@
       <lb/>Bundesversammlung und dem Bundesrat vorzule-
       <lb/>gen und über Beschluß eines der beiden Vertre-
       <lb/>tungskörper sofort ausser Kraft zu setzen.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 75.
       </head>
 <p>Die Militärgerichtsbarkeit ist -
       <lb/>ausser für Kriegszeiten - aufzuheben. Das
       <lb/>Nähere regelt ein Bundesgesetz.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 76.
       </head>
 <p>Die Gerichtsbarkeit in Polizei= und
       <lb/>Gefällstrafsachen wird durch Gesetz gere-
       <lb/>gelt.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 77.
       </head>
 <p>Die Todesstrafe ist abgeschafft.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 78.
       </head>
 <p>Die Richter werden - soferne nicht
@@ -1145,7 +1148,7 @@
       <lb/>dung ist von ihrer Einteilung in Gehaltsklas-
       <lb/>sen unabhängig.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 79.
       </head>
 <p>Die Richter sind in Ausübung ihres
@@ -1159,7 +1162,7 @@
       <lb/>durch Senate oder Kommissionen zu erledigen
       <lb/>sind.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 80.
       </head>
 <p>Vor Erreichung der im Gerichtsorga-
@@ -1184,7 +1187,7 @@
       <lb/>mes Richter ohne die sonst vorgeschriebenen
       <lb/>Förmlichkeiten übersetzt und in den Ruhestand
       <lb/>versetzt werden können.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 81.
       </head>
 <p>Die Prüfung der Giltigkeit gehörig
@@ -1196,7 +1199,7 @@
       <lb/>widrig abgelehnt, hat es gleichzeitig den An-
       <lb/>trag auf Kassation dieses Gesetzes oder dieser Vollzugsanweisung
       <lb/>beim Bundesverfassungsgerichte zu stellen.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 82.
       </head>
 <p>Wegen der von einem Richter in Aus¬
@@ -1211,7 +1214,7 @@
       <lb/>des Richters, dieser nur, wenn ihm Vorsatz
       <lb/>oder grobe Fahrlässigkeit zur Last fällt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 83.
       </head>
 <p>Die Verhandlungen vor dem erkennen-
@@ -1220,7 +1223,7 @@
       <lb/>bestimmt das Gesetz.
       <lb/>Im Strafverfahren gilt der Anklage-
       <lb/>prozeß.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 84.
       </head>
 <p>Bei den mit schweren Strafen bedroh-
@@ -1229,20 +1232,20 @@
       <lb/>den Inhalt einer Druckschrift verübten Ver-
       <lb/>brechen und Vergehen entscheiden Geschworene,
       <lb/>über die Schuld des Angeklagten.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 85.
       </head>
 <p>Als oberste Instanz in Zivil= und Straf-
       <lb/>rechtssachen besteht das oberste Bundesge-
       <lb/>richt in Wien.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 86.
       </head>
 <p>Die Erteilung von Amnestien erfolgt
       <lb/>durch Bundesgesetz.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 87.
       </head>
 <p>Die Rechtspflege wird von der Ver-
@@ -1251,7 +1254,7 @@
       <lb/>Staatsanwaltschaft gilt als Verwaltungsbehör¬
       <lb/>de.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 88.
       </head>
 <p>In allen Fällen, wo eine Verwaltungs-
@@ -1264,7 +1267,7 @@
       <lb/>suchen.</p><p>Vierter Abschnitt.
       <lb/>Von der Gesetzgebung und Vollziehung der Länder.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 89.
       </head>
 <p>Die gesetzgebende Gewalt der Länder
@@ -1279,7 +1282,7 @@
       <lb/>tes nicht enger ziehen, als dies in der Wahl-
       <lb/>ordnung zum Bundestag der Fall ist.
       <lb/>55</p><pb facs="#facs_30" n="30" xml:id="img_0030"/><p>- 30 -</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 90.
       </head>
 <p>Die Mitglieder des Landtages genie-
@@ -1291,7 +1294,7 @@
       <lb/>auch für die öffentlichen Sitzungen der Land-
       <lb/>tage und ihrer Ausschüsse.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 91.
       </head>
 <p>Zu einem Landesgesetze ist erforder-</p><p>lich der Beschluß des Landtages, die Beurkun-
@@ -1299,7 +1302,7 @@
       <lb/>chung durch die Landesregierung im Landesge-
       <lb/>setzblatte.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 92.
       </head>
 <p>Alle Gesetzesbeschlüsse der Landtage
@@ -1317,7 +1320,7 @@
       <lb/>des Landtages mit einer Mehrheit von drei viertel
       <lb/>aller abgegebenen Stimmen wiederholt wird.</p><p>56</p><pb facs="#facs_31" n="31" xml:id="img_0031"/><p>- 31 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 93
       </head>
 <p>Die durch Landesgesetz zu erlassende
@@ -1329,7 +1332,7 @@
       <lb/>der des Landtages mit einer Mehrheit von
       <lb/>Dreiviertel aller abgegebenen Stimmen beschlos-
       <lb/>sen werden.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 94
       </head>
 <p>Die Kundmachung der Landesgesetze er-
@@ -1344,7 +1347,7 @@
       <lb/>der erfolgten Verlautbarung in Wirksamkeit.
       <lb/>Eine Abkürzung dieses Termins bedarf der Zu-
       <lb/>stimmung der Bundesregierung.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 95
       </head>
 <p>Jeder Landtag kann auf Antrag der Bun-
@@ -1356,7 +1359,7 @@
       <lb/>gewählten Landtag zu berufen.
       <lb/>57</p><pb facs="#facs_32" n="32" xml:id="img_0032"/><p>- 32 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 96.
       </head>
 <p>Die vollziehende Gewalt jedes Landes
@@ -1370,7 +1373,7 @@
       <lb/>seiner Stellvertreter bedarf der Bestätigung
       <lb/>durch die Bundesregierung.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 97.
       </head>
 <p>Der Landeshauptmann bezw. sein Stell-
@@ -1384,7 +1387,7 @@
       <lb/>Landesregierung gemäß Art. 166 der Bundesverfas
       <lb/>sung verantwortlich.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 98.
       </head>
 <p>Zur Leitung des gesamten inneren
@@ -1395,7 +1398,7 @@
       <lb/>geregelten Geschäftsgang in sämtlichen Zweigen
       <lb/>der Landesverwaltung zu sorgen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 99.
       </head>
 <p>In dem der Landesregierung vom Bunde
@@ -1411,7 +1414,7 @@
       <lb/>selben Bestimmungen wie für jene des Landes-
       <lb/>hauptmannes.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 100.
       </head>
 <p>Die Bestellung des Landesamtsdirek-
@@ -1421,7 +1424,7 @@
       <lb/>zeptsbeamte der Landesregierung berufen, auf
       <lb/>den in diesem Falleauch die Bestimmungen des
       <lb/>§ 7, Abs. 2, Anwendung finden.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 101.
       </head>
 <p>Die vollziehende Gewalt des Bundes
@@ -1443,7 +1446,7 @@
       <lb/>bestimmt ist - bis zur Bundesregierung bezw.
       <lb/>den ressortmäßig zustehenden Bundesämtern.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 102.
       </head>
 <p>Aus besonderen Gründen kann auf Be-
@@ -1456,7 +1459,7 @@
       <lb/>innerhalb des übertragenen Wirkungskreises
       <lb/>an die Weisungen des Bundeskommissärs unmit-
       <lb/>telbar gebunden.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 103
       </head>
 <p>Den Ländern ist es untersagt,
@@ -1470,7 +1473,7 @@
       <lb/>eingehen.</p><p>Fünfter Abschnitt.
       <lb/>Von der Rechnungskontrolle des Bundes.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 104
       </head>
 <p>Zur Ueberprüfung der Gebahrung in der
@@ -1489,7 +1492,7 @@
       <lb/>steht unmittelbar der Bundesversammlung und
       <lb/>dem Bundesrat.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 105.
       </head>
 <p>Der Bundesrechnungshof besteht
@@ -1498,7 +1501,7 @@
       <lb/>Der Präsident des Bundesrechnunfs-
       <lb/>hofes wird vom Bundestag gewählt. Die Wahl
       <lb/>bedarf der Genehmigung des Bundesrates.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 106.
       </head>
 <p>Der Präsident des Bundesrechnungs-
@@ -1509,7 +1512,7 @@
       <lb/>5 Jahren weder Mitglied der Bundesregierung
       <lb/>noch einer Landesregierung gewesen sind.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 107.
       </head>
 <p>Dem Präsidenten des Bundes-
@@ -1520,7 +1523,7 @@
       <lb/>Abgesehen von dem in Art. . . ,.</p><p>61</p><pb facs="#facs_36" n="36" xml:id="img_0036"/><p>- 36 -
       <lb/>der Bundesverfassung analoge Anwendung.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 102.
       </head>
 <p>Der Präsident des Bundesrech-
@@ -1541,7 +1544,7 @@
       <lb/>kungskreises muss der Präsident auf Verlan-
       <lb/>gen jedesmal gehört werden.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 109.
       </head>
 <p>Bei vorübergehender Verhinderung
@@ -1559,7 +1562,7 @@
       <lb/>finden auch auf den Stellvertreter die
       <lb/>Bestimmungen des Art. . . . . . Anwendung.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 110.
       </head>
 <p>Die Beamten des Bundesrechnungs-</p><p>hofes ernennt über Vorschlag des Präsiden-
@@ -1571,7 +1574,7 @@
       <lb/>Auf die letzterwähnte Weise
       <lb/>sind alle übrigen Stellen zu besetzen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 116.
       </head>
 <p>Kein Mitglied des Bundesrechnungs-
@@ -1585,7 +1588,7 @@
       <lb/>hältnisse von öffentlichen Beamten oder
       <lb/>deren Angehörigen zum Zwecke haben.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 111.
       </head>
 <p>Alle Urkunden über Staatsschulden
@@ -1597,7 +1600,7 @@
       <lb/>rechnungsmässige Richtigkeit der Gebarung
       <lb/>bekräftigt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 113.
       </head>
 <p>Bei der Ueberprüfung der seiner</p><p>Kontrolle unterstellten Gebarung hat der
@@ -1608,7 +1611,7 @@
       <lb/>ist. Keinesfalls darf er sich bloss auf
       <lb/>eine ziffernmässige Nachprüfung beschränken.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 114.
       </head>
 <p>Der Bundesrechnungshof ist gegen-
@@ -1628,7 +1631,7 @@
       <lb/>an diesen Amtshandlungen durch Beauftragte 
       <lb/>teilzunehmen.</p><p>64</p><pb facs="#facs_39" n="39" xml:id="img_0039"/><p>- 39 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 114.
       </head>
 <p>Die der Bundesregierung sowie
@@ -1642,7 +1645,7 @@
       <lb/>selbst betreffen, hat der Bundesrechnungs-
       <lb/>hof mit diesen Behörden das Einvernehmen zu
       <lb/>pflegen.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 116.
       </head>
 <p>Der Bundesrechnungshof hat für
@@ -1661,7 +1664,7 @@
       <lb/>vernehmen mit dem Bundesrechnungshofe
       <lb/>getroffen werden.</p><pb facs="#facs_40" n="40" xml:id="img_0040"/><p>- 40 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 117.
       </head>
 <p>Lassen sich Meinungsverschieden-
@@ -1673,14 +1676,14 @@
       <lb/>die sich im Einvernehmen nicht austragen
       <lb/>lassen, entscheidet der Bundesrat.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 118.
       </head>
 <p>Die anweisenden Behörden haben
       <lb/>nach Ablauf jedes Verwaltungsjahres ihre
       <lb/>Rechnungsabschlüsse dem Bundesrechnungshofe
       <lb/>nach dessen Anordnung vorzulegen.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 119.
       </head>
 <p>Der Bundesrechnungshof verfasst
@@ -1692,7 +1695,7 @@
       <lb/>desrechnungsabschlüsse den zuständigen Land-
       <lb/>tagen zur verfassungsmässigen Behandlung.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 120.
       </head>
 <p>Die näheren Bestimmungen über die</p><p>innere Einrichtung und den Geschäftsgang des
@@ -1703,7 +1706,7 @@
       <lb/>./.</p><p>66</p><pb facs="#facs_41" n="41" xml:id="img_0041"/><p>Sechster Abschnitt.
       <lb/>Von den Grund- und Freiheitsrechten.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 121.
       </head>
 <p>Vor dem Gesetze sind alle Staats-
@@ -1711,7 +1714,7 @@
       <lb/>tionalität und der Konfession sind für immer
       <lb/>ausgeschlossen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 122.
       </head>
 <p>Der Adel, seine äusseren Ehrenvor-
@@ -1725,14 +1728,14 @@
       <lb/>Ehrenzeichen dürfen weiter getragen werden,
       <lb/>neue Ehrenzeichen können nur durch Bundesge-
       <lb/>setz geschaffen werden.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 123.
       </head>
 <p>Die öffentlichen Aemter und Funk-
       <lb/>tionen sind für alle Staatsbürger ohne Unter-
       <lb/>schied gleich zugänglich.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 124.
       </head>
 <p>Die Freizügigkeit der Personen und
@@ -1740,7 +1743,7 @@
       <lb/>mann gewährleistet. Einschränkungen können
       <lb/>nur durch Bundesgesetz bestimmt werden.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 125.
       </head>
 <p>Die Auswanderungsfreiheit ist nur
@@ -1750,7 +1753,7 @@
       <lb/>infolge Auswanderung wird durch besondere
       <lb/>Gesetze geregelt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 126.
       </head>
 <p>Jedermann kann an jedem Orte des
@@ -1761,7 +1764,7 @@
       <lb/>wahl ist nur durch das Familienrecht be-
       <lb/>schränkt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 127.
       </head>
 <p>Jedermann geniesst die persönli-
@@ -1777,14 +1780,14 @@
       <lb/>werden, Einwendungen gegen ihre Freiheits-
       <lb/>entziehung vorzubringen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 128.
       </head>
 <p>Jedermann geniesst das Hausrecht.
       <lb/>Wann eine Hausdurchsuchung zulässig ist,
       <lb/>bestimmt das Gesetz.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 129.
       </head>
 <p>Das Brief - Post, Telegraphen und
@@ -1793,7 +1796,7 @@
       <lb/>licher Untersuchung und im Kriegsfall
       <lb/>könne nur durch Bundesgesetz bestimmt werden.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 130.
       </head>
 <p>Die Freiheit der Meinungsäusserung
@@ -1810,7 +1813,7 @@
       <lb/>können für Lichtspiele durch Gesetz abweichen-
       <lb/>de Bestimmungen getroffen werden.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 131.
       </head>
 <p>Alle Staatsbürger haben das nur
@@ -1824,7 +1827,7 @@
       <lb/>Vereinen bestimmen die Vorschriften des bür-
       <lb/>gerlichen Rechts.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 137.
       </head>
 <p>Alle Staatsbürger haben das Recht
@@ -1837,7 +1840,7 @@
       <lb/>Sitze des Bundestages oder des Bundesrates
       <lb/>oder der Landtage wenn diese versammelt
       <lb/>sind, überhaupt nicht stattfinden.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 133.
       </head>
 <p>Die volle Glaubens- und Gewissens
@@ -1847,7 +1850,7 @@
       <lb/>Einschränkungen sind nur durch das
       <lb/>Strafgesetz zulässig.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 134.
       </head>
 <p>Der Genuss der bürgerlichen und</p><p>politischen Rechte sowie die Zulassung zu
@@ -1871,7 +1874,7 @@
       <lb/>oder zur Benützung einer religiösen Eides-
       <lb/>formel gezwungen werden.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 135.
       </head>
 <p>Es besteht keine Staatskirche.
@@ -1908,7 +1911,7 @@
       <lb/>die gemeinschaftliche Pflege einer Weltan-
       <lb/>schauung zur Aufgabe machen.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 136.
       </head>
 <p>Die auf Gesetz, Vertrag oder be-
@@ -1921,7 +1924,7 @@
       <lb/>Stiftungen und sonstigen Vermögen werden
       <lb/>gewährleistet.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 137.
       </head>
 <p>Soweit das Bedürfnis nach Gottes-</p><p>dienst und Seelsorge im Heer, in Kranken-
@@ -1931,7 +1934,7 @@
       <lb/>zuzulassen, wobei jeder Zwang fernzuhalten
       <lb/>ist.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 136.
       </head>
 <p>Die nähere Durchführung der Be-
@@ -1939,14 +1942,14 @@
       <lb/>durch Bundesgesetz.
       <lb/>72</p><pb facs="#facs_47" n="47" xml:id="img_0047"/><p>- 47 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 139
       </head>
 <p>Die Kunst, die Wissenschaft und ihre
       <lb/>Lehrer sind frei und stehen unter dem Schutz
       <lb/>des Staates.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 190.
       </head>
 <p>Das gesamte Schulwesen steht unter der
@@ -1957,7 +1960,7 @@
       <lb/>Volksschule mit mindestens . . . . Schuljahren.
       <lb/>Der Unterricht und die Lehrmittel in den
       <lb/>Volksschulen sind unentgeltlich.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 141
       </head>
 <p>Der Religionsunterricht ist ordentliches
@@ -1982,7 +1985,7 @@
       <lb/>bleiben erhalten.
       <lb/>73</p><pb facs="#facs_48" n="48" xml:id="img_0048"/><p>- 48 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 147.
       </head>
 <p>Wo Staatsbürger, die eine andere als die
@@ -1994,7 +1997,7 @@
       <lb/>Der Unterricht in der deutschen Sprache
       <lb/>ist jedoch auch in solchen Schulen stets Pflicht-
       <lb/>gegenstand.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 142.
       </head>
 <p>Die Denkmäler der Kunst, der Geschichte
@@ -2003,7 +2006,7 @@
       <lb/>Der Bund hat die Abwanderung der Kunst-
       <lb/>schätze in das Ausland zu verhüten.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 149.
       </head>
 <p>Die Staatssprache in der Republik Oester-
@@ -2023,7 +2026,7 @@
       <lb/>ten werden.
       <lb/>74</p><pb facs="#facs_49" n="49" xml:id="img_0049"/><p>- 49 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 145.
       </head>
 <p>Oesterreichische Staatsbürger, die nach
@@ -2033,7 +2036,7 @@
       <lb/>Religions-, Unterrichts-, Erziehungs- und sonstigen
       <lb/>Anstalten ihre eigene Sprache nach Belieben zu
       <lb/>gebrauchen und ihre Religion frei auszuüben.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 146.
       </head>
 <p>Wo eine verhältnismäßig beträchtliche An-
@@ -2044,7 +2047,7 @@
       <lb/>zwecke aus öffentlichen Mitteln zugewendet
       <lb/>werden, diese Minderhei-
       <lb/>ten mit einem am angemessenen Teil zu beteilen.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 147.
       </head>
 <p>Das Eigentum ist gewährleistet, insoweit
@@ -2061,7 +2064,7 @@
       <lb/>kann sowie das Enteignungsverfahren werden in
       <lb/>besonderen Gesetzen geregelt.</p><p>75</p><pb facs="#facs_50" n="50" xml:id="img_0050"/><p>- 50 -
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 149.
       </head>
 <p>Das Erbrecht wird gewährleistet, soweit
@@ -2069,7 +2072,7 @@
       <lb/>am Erbgute vorbehalten wird.
       <lb/>Alle Fideikomisse sind aufzuheben.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 150.
       </head>
 <p>Der Bund kann durch Gesetz gegen Entschä-
@@ -2092,7 +2095,7 @@
       <lb/>güter nach gemeinschaftlichen Grundsätzen zu
       <lb/>regeln.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 151.
       </head>
 <p>Wer durch rechtswidrige Ausübung der
@@ -2105,7 +2108,7 @@
       <lb/>Die nähere Regelung erfolgt durch Bundes-
       <lb/>gesetz.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 152.
       </head>
 <p>Die Arbeitskraft steht unter dem beson-
@@ -2118,7 +2121,7 @@
       <lb/>leistet. Alle Abreden und Maßnahmen, welche
       <lb/>diese Freiheit einzuschränken oder zu behindern
       <lb/>suchen, sind rechtswidrig.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 153.
       </head>
 <p>Im Falle einer dringenden Gefahr für den
@@ -2137,7 +2140,7 @@
       <lb/>Von den Garantien der Verfassung und Verwaltung.
       <lb/>A) Die Verwaltungsgerichte.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art.154.
       </head>
 <p>Wegen Rechtsverletzung durch die Ent-</p><p>77</p><pb facs="#facs_52" n="52" xml:id="img_0052"/><p>- 52 -
@@ -2150,7 +2153,7 @@
       <lb/>tungsgerichte;
       <lb/>b) in Angelegenheiten der Bundesverwaltung,
       <lb/>das Bundesverwaltungsgericht.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 155.
       </head>
 <p>In jeder Landeshauptstadt wird ein Landes-
@@ -2165,7 +2168,7 @@
       <lb/>Bundesregierung den Präsidenten, auf Vorschlag
       <lb/>der Landesregierung den Vizepräsidenten des
       <lb/>Landesverwaltungsgerichtes.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 156.
       </head>
 <p>Das Bundesverwaltungsgericht in Wien muß
@@ -2176,7 +2179,7 @@
       <lb/>der Vizepräsident und die Hälfte der Mitglieder
       <lb/>auf Vorschlag des Bundesrates vom Bundespräsi-
       <lb/>denten ernannt.</p><p>78</p><pb facs="#facs_53" n="53" xml:id="img_0053"/><p>- 53 -</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 157.
       </head>
 <p>Das Bundesverwaltungsgericht und die Lan-
@@ -2193,7 +2196,7 @@
       <lb/>bei sein Sündesverw. Gerst m
       <lb/>Deines générales als
       <lb/>bestellt.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 158.
       </head>
 <p>Die Organisation der Landesverwaltungs-
@@ -2201,7 +2204,7 @@
       <lb/>sowie das Verfahren vor ihnen, wird durch ein
       <lb/>besonderes Bundesgesetz geregelt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 159.
       </head>
 <p>Von der Zuständigkeit der Verwaltungsge-
@@ -2215,7 +2218,7 @@
       <lb/>vorzugehen haben.
       <lb/>d) Disziplinarangelegenheiten.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 160.
       </head>
 <p>Durch Landesgesetz bezw. durch Bundesge-
@@ -2229,7 +2232,7 @@
       <lb/>desregierung bezw. des zuständigen Bundesamtes
       <lb/>beendet sei.</p><p>B) Das Bundesverfassungsgericht.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 161.
       </head>
 <p>Das Bundesverfassungsgericht in Wien ent-
@@ -2237,7 +2240,7 @@
       <lb/>Ländern, sowie zwischen einem Lande und dem
       <lb/>Bund.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 162.
       </head>
 <p>Es entscheidet ferner:
@@ -2247,7 +2250,7 @@
       <lb/>b) zwischen Landesregierungen untereinan-
       <lb/>der, sowie zwischen einer Landesregierung und
       <lb/>der Bundesregierung.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 163.
       </head>
 <p>Das Bundesverfassungsgericht entscheidet
@@ -2266,7 +2269,7 @@
       <lb/>tet die erlassende Behörde zur Kundmachung der
       <lb/>erfolgten Aufhebung.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 164.
       </head>
 <p>Das Bundesverfassungsgericht entscheidet
@@ -2282,7 +2285,7 @@
       <lb/>pflichtet die zuständige Landesregierung zur
       <lb/>Verlautbarung der erfolgten Aufhebung im Lan-
       <lb/>desgesetzblatte.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 164.
       </head>
 <p>Das Bundesverfassungsgericht entscheidet
@@ -2292,7 +2295,7 @@
       <lb/>Antrag des Bundestages auf Erklärung des
       <lb/>Mandatsverlustes eines seiner Mitglieder.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 166.</head>
 <p>
 </p><p>Das Bundesverfassungsgericht entscheidet
@@ -2327,14 +2330,14 @@
       <lb/>Das verurteilende Erkenntnis des Bundes-
       <lb/>verfassungsgerichtes hat auf Verlust des Amtes
       <lb/>eventuell auch der politischen Rechte zu lauten.</p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 167.
       </head>
 <p>Die Exekution der Erkenntnisse des Bun-
       <lb/>desverfassungsgerichtes obliegt dem Bundesprä-
       <lb/>sidenten.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 168.
       </head>
 <p>Das Bundesverfassungsgericht in Wien
@@ -2346,7 +2349,7 @@
       <lb/>Bundestag, 7 Mitglieder und 4 Ersarzmitgliedner
       <lb/>vom Bundesrat auf Lebensdauer gewählt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 169.
       </head>
 <p>Der Präsident des Bundesverfassungsge-
@@ -2359,7 +2362,7 @@
       <lb/>sungsgerichtes aus der Mitte seiner Mitglieder
       <lb/>gewählt.
       </p></div>
-<div ana="article">
+<div type="article">
 <head>Art. 170.
       </head>
 <p>Die nähere Organisation des Bundesver-
