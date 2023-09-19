@@ -910,7 +910,8 @@
                <!-- remove lb after asking  -->
                <moduleRef key="core"
                   include=" rs lb p title note bibl date hi item pb publisher corr list author 
-                  respStmt resp head biblScope address pubPlace author title graphic street postCode"/>
+                  respStmt resp head biblScope address pubPlace author title graphic street 
+                  unclear postCode"/>
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
                <moduleRef key="transcr" include="facsimile surface"/>
@@ -948,6 +949,30 @@
                      </s:rule>
                   </constraint>
                </constraintSpec>
+               <elementSpec ident="revisionDesc" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
+                  <attList>
+                     <attDef ident="status" mode="replace">
+                        <valList type="closed">
+                           <valItem ident="draft">
+                              <desc>Document is still being changed.</desc>
+                           </valItem>
+                           <valItem ident="done">Document is ready to be published online.</valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="unclear" mode="change">
+                  <desc>Markiert eine nicht oder nur vage entzifferbare Stelle.</desc>
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.editLike" mode="delete"/>
+                     <memberOf key="att.dimensions" mode="delete"/>
+                     <memberOf key="att.ranging" mode="delete"/>
+                  </classes>
+               </elementSpec>
                <elementSpec ident="anchor" mode="change">
                   <desc>Element bestimmt im Falle einer editorischen Anmerkung den Beginn der Stelle.</desc>
                   <classes mode="change">
