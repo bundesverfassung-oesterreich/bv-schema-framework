@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:eg="http://www.tei-c.org/ns/Examples"
    xmlns:egXML="http://www.tei-c.org/ns/Examples" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:tei="http://www.tei-c.org/ns/1.0" xml:lang="de">
@@ -902,21 +905,49 @@
             <head>Appendix</head>
             <schemaSpec ident="tei_b_vg" start="TEI" prefix="undefined" targetLang="de" docLang="de">
                <moduleRef key="header"
-                  include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
+                  include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc
+                  editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
                <!-- remove lb after asking  -->
                <moduleRef key="core"
-                  include=" rs lb p title note bibl date hi item pb publisher foreign corr ref list author respStmt resp head biblScope term address pubPlace author title graphic street postCode"/>
+                  include=" rs lb p title note bibl date hi item pb publisher corr list author 
+                  respStmt resp head biblScope address pubPlace author title graphic street postCode"/>
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
                <moduleRef key="transcr" include="facsimile surface"/>
                <!-- todo: wir brauchen  für die physDesc eigentlich noch daten, was jetzt dort erfasst wird, gehort eigentlich mit zum msContent-->
                <moduleRef key="msdescription"
-                  include="msDesc history  msIdentifier msContents physDesc institution repository msItem objectDesc handDesc origin"/>
+                  include="msDesc history  msIdentifier msContents physDesc institution repository 
+                  msItem objectDesc handDesc origin"/>
                <moduleRef key="namesdates"
-                  include="persName listPerson orgName placeName country settlement"/>
+                  include="persName orgName placeName country settlement"/>
                <moduleRef key="figures" include="cell table row"/>
                <!--<moduleRef key="textcrit" include="app"/>-->
                <moduleRef key="linking" include="anchor"/>
+               <!-- stricter usage for address -->
+               <constraintSpec ident="address_usage" scheme="schematron">
+                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                     <s:rule context="//tei:address">
+                        <s:report test="not(parent::tei:funder)">&lt;address&gt; schould be only used in a funder element in the header!</s:report>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
+               <!-- stricter usage for country and settlement -->
+               <constraintSpec ident="country_settlement_usage" scheme="schematron">
+                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                     <s:rule context="//tei:country|//tei:settlement">
+                        <s:report test="not(parent::tei:placeName)">&lt;country&gt; &amp; &lt;settlement&gt; schould be only used in a funder element in the header!</s:report>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
+               <!-- stricter usage for placeName, persName, orgName, msDesc -->
+               <constraintSpec ident="other_headerelements_usage" scheme="schematron">
+                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                     <s:rule context="//tei:placeName|//tei:persName|//tei:orgName|//tei:msDesc">
+                        <s:let name="el_name" value="local-name(.)"/>
+                        <s:report test="not(ancestor::tei:teiHeader)">&lt;"<s:value-of select="$el_name"/>"&gt; schould be only used the teiHeader!</s:report>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
                <elementSpec ident="anchor" mode="change">
                   <desc>Element bestimmt im Falle einer editorischen Anmerkung den Beginn der Stelle.</desc>
                   <classes mode="change">
@@ -979,38 +1010,6 @@
                      </attDef>
                   </attList>
                </elementSpec>
-               <!-- Anpassung des app Elements 
-               <elementSpec ident="app" mode="change">
-                  <desc>Umfasst eine editorische Fußnote, die einen textgenetischen oder
-                     textkritischen Inhalt hat.</desc>
-                  <attList>
-                     <attDef ident="from" mode="change" usage="req"/>
-                     <attDef ident="to" mode="change" usage="req"/>
-                     <attDef ident="loc" mode="delete"/>
-                     <attDef ident="xml:lang" mode="delete"/>
-                     <attDef ident="xml:base" mode="delete"/>
-                     <attDef ident="xml:space" mode="delete"/>
-                     <attDef ident="ana" mode="delete"/>
-                     <attDef ident="change" mode="delete"/>
-                     <attDef ident="facs" mode="delete"/>
-                     <attDef ident="corresp" mode="delete"/>
-                     <attDef ident="synch" mode="delete"/>
-                     <attDef ident="sameAs" mode="delete"/>
-                     <attDef ident="copyOf" mode="delete"/>
-                     <attDef ident="next" mode="delete"/>
-                     <attDef ident="prev" mode="delete"/>
-                     <attDef ident="exclude" mode="delete"/>
-                     <attDef ident="select" mode="delete"/>
-                     <attDef ident="rend" mode="delete"/>
-                     <attDef ident="style" mode="delete"/>
-                     <attDef ident="rendition" mode="delete"/>
-                     <attDef ident="cert" mode="delete"/>
-                     <attDef ident="resp" mode="delete"/>
-                     <attDef ident="source" mode="delete"/>
-                     <attDef ident="to" mode="delete"/>
-                     <attDef ident="type" mode="delete"/>
-                  </attList>
-               </elementSpec>-->
                <!-- Anpassung des note Elementes -->
                <!-- todo: type=editor->xml:id non-empty -->
                <!-- placement? -->
@@ -1107,43 +1106,8 @@
                      </attDef>
                   </attList>
                </elementSpec>
-               <!-- Anpassung des bibl Elements
-               <elementSpec ident="bibl" mode="change">
-                  <classes mode="change">
-                     <memberOf key="att.declarable" mode="delete"/>
-                     <memberOf key="att.docStatus" mode="delete"/>
-                     <memberOf key="att.global" mode="delete"/>
-                     <memberOf key="att.sortable" mode="delete"/>
-                     <memberOf key="att.typed" mode="delete"/>
-                     <memberOf key="att.declarable" mode="delete"/>
-                     <memberOf key="att.docStatus" mode="delete"/>
-                     <memberOf key="att.global" mode="delete"/>
-                     <memberOf key="att.sortable" mode="delete"/>
-                  </classes>
-                  <attList>
-                     <attDef ident="sameAs" usage="rec">
-                        <desc versionDate="2023-02-01" xml:lang="de">Weist auf den entsprechenden
-                           Eintrag in der Zotero-Datenbank oder des Gesetzesregisters des Projekts
-                           hin.</desc>
-                        <datatype>
-                           <dataRef key="teidata.pointer"/>
-                        </datatype>
-                     </attDef>
-                     <attDef ident="subtype" mode="delete"/>
-                     <attDef ident="type" mode="change" usage="req">
-                        <valList type="closed" mode="change">
-                           <valItem mode="add" ident="statute">
-                              <desc>Das Element bezieht sich auf ein Gesetz.</desc>
-                           </valItem>
-                           <valItem mode="add" ident="lit">
-                              <desc>Verweis auf sonstige Literatur.</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                  </attList>
-               </elementSpec> -->
                <!-- Anpassnung hi-Element -->
-               <!-- Hervorhebungen differenzieren? -->
+               <!-- Hervorhebungen differenzieren oder als emphasis vereinheitlichen? -->
                <elementSpec ident="hi" mode="change">
                   <classes mode="change">
                      <memberOf key="att.global.rendition"/>
@@ -1156,17 +1120,22 @@
                         <desc>Beschreibt, wie der
                            entsprechende Textteil hervorgehoben ist.</desc>
                         <valList type="closed" mode="change">
-                           <valItem mode="add" ident="smaller">
-                              <desc >Kleinere Schrift.</desc>
-                           </valItem>
-                           <valItem mode="add" ident="undelined">
-                              <desc>Unterstrichen</desc>
-                           </valItem>
-                           <valItem mode="add" ident="spaced">
-                              <desc>Gesperrt</desc>
-                           </valItem>
-                           <valItem mode="add" ident="majuscule">
-                              <desc>Majuskeln oder Kapitälchen</desc>
+                           <!--
+                              <valItem mode="add" ident="smaller">
+                                 <desc >kleinere Schrift</desc>
+                              </valItem>
+                              <valItem mode="add" ident="underlined">
+                                 <desc>Unterstrichen</desc>
+                              </valItem>
+                              <valItem mode="add" ident="majuscule">
+                                 <desc>Majuskeln oder Kapitälchen</desc>
+                              </valItem>
+                              <valItem mode="add" ident="spaced">
+                                 <desc>Gesperrt / Leerzeichen zwischen den Lettern</desc>
+                              </valItem>
+                           -->
+                           <valItem mode="add" ident="emphasis">
+                              <desc>Hervorhebung im Dokument (Majuskeln, Kapitälchen, Unterstreichungen, fette Type)</desc>
                            </valItem>
                         </valList>
                      </attDef>
@@ -1216,72 +1185,11 @@
                      <attDef ident="xml:space" mode="delete"/>
                   </attList>
                </elementSpec>
-               <!-- Anpassung von persName
-               <elementSpec ident="persName" mode="change">
-                  <attList>
-                     <attDef ident="key" mode="change" usage="rec">
-                        <desc>Verweist auf den Eintrag der Person im Personenregister.</desc>
-                     </attDef>
-                     <attDef ident="role" mode="change" usage="opt">
-                        <desc>Rolle einer Person</desc>
-                        <valList type="closed" mode="replace">
-                           <valItem ident="acdh:hasDigitisingAgent">
-                              <desc>Person verantwortlich für Digitalisierung</desc>
-                           </valItem>
-                           <valItem ident="acdh:hasContributor">
-                              <desc>allgemein beteiligte Person</desc>
-                           </valItem>
-                           <valItem ident="acdh:hasPrincipialInvestigator">
-                              <desc>Projektleitung</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                     <attDef ident="type" mode="delete"/>
-                     <attDef ident="subtype" mode="delete"/>
-                     <attDef ident="rend" mode="delete"/>
-                     <attDef ident="style" mode="delete"/>
-                     <attDef ident="rendition" mode="delete"/>
-                     <attDef ident="facs" mode="delete"/>
-                     <attDef ident="change" mode="delete"/>
-                     <attDef ident="cert" mode="delete"/>
-                     <attDef ident="resp" mode="delete"/>
-                     <attDef ident="source" mode="delete"/>
-                     <attDef ident="synch" mode="delete"/>
-                     <attDef ident="corresp" mode="delete"/>
-                     <attDef ident="sameAs" mode="delete"/>
-                     <attDef ident="copyOf" mode="delete"/>
-                     <attDef ident="next" mode="delete"/>
-                     <attDef ident="prev" mode="delete"/>
-                     <attDef ident="exclude" mode="delete"/>
-                     <attDef ident="select" mode="delete"/>
-                     <attDef ident="ana" mode="delete"/>
-                     <attDef ident="calendar" mode="delete"/>
-                     <attDef ident="period" mode="delete"/>
-                     <attDef ident="when" mode="delete"/>
-                     <attDef ident="notBefore" mode="delete"/>
-                     <attDef ident="notAfter" mode="delete"/>
-                     <attDef ident="from" mode="delete"/>
-                     <attDef ident="to" mode="delete"/>
-                     <attDef ident="when-iso" mode="delete"/>
-                     <attDef ident="notBefore-iso" mode="delete"/>
-                     <attDef ident="notAfter-iso" mode="delete"/>
-                     <attDef ident="from-iso" mode="delete"/>
-                     <attDef ident="to-iso" mode="delete"/>
-                     <attDef ident="when-custom" mode="delete"/>
-                     <attDef ident="notBefore-custom" mode="delete"/>
-                     <attDef ident="from-custom" mode="delete"/>
-                     <attDef ident="notAfter-custom" mode="delete"/>
-                     <attDef ident="to-custom" mode="delete"/>
-                     <attDef ident="datingPoint" mode="delete"/>
-                     <attDef ident="datingMethod" mode="delete"/>
-                     <attDef ident="evidence" mode="delete"/>
-                     <attDef ident="instant" mode="delete"/>
-                     <attDef ident="full" mode="delete"/>
-                     <attDef ident="nymRef" mode="delete"/>
-                  </attList>
-               </elementSpec>-->
                <!-- Anpassung von body -->
                <elementSpec ident="body" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
                   <attList>
                      <attDef ident="decls" mode="delete"/>
                      <attDef ident="ana" mode="delete"/>
@@ -1364,6 +1272,137 @@
                      <attDef ident="xml:lang" mode="delete"/>
                   </attList>
                </elementSpec>
+               <!-- Anpassung des bibl Elements
+               <elementSpec ident="bibl" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.declarable" mode="delete"/>
+                     <memberOf key="att.docStatus" mode="delete"/>
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.sortable" mode="delete"/>
+                     <memberOf key="att.typed" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                     <memberOf key="att.docStatus" mode="delete"/>
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.sortable" mode="delete"/>
+                  </classes>
+                  <attList>
+                     <attDef ident="sameAs" usage="rec">
+                        <desc versionDate="2023-02-01" xml:lang="de">Weist auf den entsprechenden
+                           Eintrag in der Zotero-Datenbank oder des Gesetzesregisters des Projekts
+                           hin.</desc>
+                        <datatype>
+                           <dataRef key="teidata.pointer"/>
+                        </datatype>
+                     </attDef>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="type" mode="change" usage="req">
+                        <valList type="closed" mode="change">
+                           <valItem mode="add" ident="statute">
+                              <desc>Das Element bezieht sich auf ein Gesetz.</desc>
+                           </valItem>
+                           <valItem mode="add" ident="lit">
+                              <desc>Verweis auf sonstige Literatur.</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec> -->
+               <!-- Anpassung von persName
+               <elementSpec ident="persName" mode="change">
+                  <attList>
+                     <attDef ident="key" mode="change" usage="rec">
+                        <desc>Verweist auf den Eintrag der Person im Personenregister.</desc>
+                     </attDef>
+                     <attDef ident="role" mode="change" usage="opt">
+                        <desc>Rolle einer Person</desc>
+                        <valList type="closed" mode="replace">
+                           <valItem ident="acdh:hasDigitisingAgent">
+                              <desc>Person verantwortlich für Digitalisierung</desc>
+                           </valItem>
+                           <valItem ident="acdh:hasContributor">
+                              <desc>allgemein beteiligte Person</desc>
+                           </valItem>
+                           <valItem ident="acdh:hasPrincipialInvestigator">
+                              <desc>Projektleitung</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="change" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="ana" mode="delete"/>
+                     <attDef ident="calendar" mode="delete"/>
+                     <attDef ident="period" mode="delete"/>
+                     <attDef ident="when" mode="delete"/>
+                     <attDef ident="notBefore" mode="delete"/>
+                     <attDef ident="notAfter" mode="delete"/>
+                     <attDef ident="from" mode="delete"/>
+                     <attDef ident="to" mode="delete"/>
+                     <attDef ident="when-iso" mode="delete"/>
+                     <attDef ident="notBefore-iso" mode="delete"/>
+                     <attDef ident="notAfter-iso" mode="delete"/>
+                     <attDef ident="from-iso" mode="delete"/>
+                     <attDef ident="to-iso" mode="delete"/>
+                     <attDef ident="when-custom" mode="delete"/>
+                     <attDef ident="notBefore-custom" mode="delete"/>
+                     <attDef ident="from-custom" mode="delete"/>
+                     <attDef ident="notAfter-custom" mode="delete"/>
+                     <attDef ident="to-custom" mode="delete"/>
+                     <attDef ident="datingPoint" mode="delete"/>
+                     <attDef ident="datingMethod" mode="delete"/>
+                     <attDef ident="evidence" mode="delete"/>
+                     <attDef ident="instant" mode="delete"/>
+                     <attDef ident="full" mode="delete"/>
+                     <attDef ident="nymRef" mode="delete"/>
+                  </attList>
+               </elementSpec>-->
+               <!-- Anpassung des app Elements 
+               <elementSpec ident="app" mode="change">
+                  <desc>Umfasst eine editorische Fußnote, die einen textgenetischen oder
+                     textkritischen Inhalt hat.</desc>
+                  <attList>
+                     <attDef ident="from" mode="change" usage="req"/>
+                     <attDef ident="to" mode="change" usage="req"/>
+                     <attDef ident="loc" mode="delete"/>
+                     <attDef ident="xml:lang" mode="delete"/>
+                     <attDef ident="xml:base" mode="delete"/>
+                     <attDef ident="xml:space" mode="delete"/>
+                     <attDef ident="ana" mode="delete"/>
+                     <attDef ident="change" mode="delete"/>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="to" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                  </attList>
+               </elementSpec>-->
             </schemaSpec>
          </div>
       </body>
