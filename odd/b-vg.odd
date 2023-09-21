@@ -938,7 +938,7 @@
                      </s:rule>
                   </constraint>
                </constraintSpec>
-               <elementSpec ident="idno">
+               <elementSpec ident="idno" mode="change">
                   <desc>contains an identifier equaling the document in different sources</desc>
                   <attList>
                      <attDef ident="type" mode="replace">
@@ -951,6 +951,9 @@
                            </valItem>
                            <valItem ident="goobi">
                               <desc>goobi-id of the document</desc>
+                           </valItem>
+                           <valItem ident="archive">
+                              <desc>archive signature of the document</desc>
                            </valItem>
                         </valList>
                      </attDef>
