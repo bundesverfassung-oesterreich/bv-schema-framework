@@ -27,38 +27,38 @@
    <text>
       <body>
          <head>Überblick</head>
-         <p>Dieses TEI ODD umfasst die Editionsrichtlinen und Datenmoddelierung für das Projekt »Die
-            Entstehung des Bundes‐Verfassungsgesetzes 1920«</p>
+         <p>Dieses TEI ODD umfasst die Editionsrichtlinien und Datenmodellierung für das Projekt „Die
+            Entstehung des Bundes‐Verfassungsgesetzes 1920“</p>
          <div xml:id="introduction">
             <head>Einführung</head>
             <p>Es werden die einzelnen Aspekte des Edierens in den Blick genommen sowie die
                entsprechende Modellierung des Textes mit TEI XML anhand von Beispielen erläutert.
                Außerdem wird beschrieben, wie man die Modellierung mit der Editionsumgebung im
-               Oxygen-Editor vornimmt.</p>
+               Oxygen-Editor umsetzt.</p>
             <p>Diese Datei wird laufend weiterentwickelt und aktualisiert. Vorschläge zur Anpassung
                von allen Seiten sind willkommen.</p>
             <p>Stand: September 2023</p>
          </div>
          <div xml:id="ocr">
             <head>Workflow Texterfassung</head>
-            <p>Nachdem die gescanten Dokumente auf goobi gesammelt wurden, werden sie in Transkribus
+            <p>Nachdem die abgescannten Dokumente auf Goobi gesammelt wurden, werden sie in Transkribus
                semiautomatisch transkribiert. Ziel dieses Schrittes ist möglichst alle basalen
-               textuellen Informationen zu sichern, typografisce und strukturelle Informationen
+               textuellen Informationen zu sichern, typographische und strukturelle Informationen
                können ignoriert werden. Der edierte Text wird in diesem Arbeitschritt also zunächst
                als Buchstabenkette betrachtet.</p>
-            <p>Nach erfolgter Transkription wird der Text automatisiert in einem Export-Repository
-               verfügbar gemacht. Bearbeiter:Innen wählen einen unbearbeiteten Text und kopieren ihn
-               in das Repository für manuelle Korrekturen und das tagging. In diesem
+            <p>Nach erfolgter Transkription wird der Text automatisiert in einem Export-Repository auf Github
+               verfügbar gemacht. Bearbeiter:innen wählen einen unbearbeiteten Text und kopieren ihn
+               in das Repository für manuelle Korrekturen und Tagging. In diesem
                Bearbeitungsschritt werden unter anderem<list>
                   <item>die semantischen Strukturelemente des Dokuments codiert</item>
                   <item>Entitäten – wie Personen, Orte und Texte – mit den Indizes / externen
                      Quellen verlinkt</item>
-                  <item>Metadaten erzeugt werden</item>
-                  <item>die Transkriptionen der Dokumente auf Integrität überprüft</item>
+                  <item>Metadaten erzeugt</item>
+                  <item>die Transkriptionen der Dokumente auf Integrität überprüft werden</item>
                </list></p>
             <p>Der Stand der Bearbeitung wird in den Metadaten festgehalten. Wenn der
                Bearbeitungsstand eines Dokumentes auf abgeschlossen gesetzt ist und das Dokument zur
-               ›Publikation‹ freigegeben wird, wird es automatisiert auf der Website publiziert.</p>
+               ‚Publikation‘ freigegeben wird, wird es automatisiert auf der Website publiziert.</p>
          </div>
          <div xml:id="oxygen">
             <head>Arbeiten im Oxygen XML Editor</head>
@@ -66,7 +66,7 @@
             <div xml:id="xml">
                <head>Kurzüberblick XML</head>
                <p>Bei XML (kurz für <hi rend="bold">eXtensible Markup Language</hi>) handelt es sich
-                  um eine Auszeichnungssprache, die zur hierachischen und eindeutigen Darstellung
+                  um eine Auszeichnungssprache, die zur hierarchischen und eindeutigen Darstellung
                   von Daten in Texten dient. Es bietet also eine einfache Möglichkeit, in Texten
                   enthaltene Informationen explizit und einheitlich zu kennzeichnen. Dies geschieht
                   unabhängig von deren graphischer Präsentation. Die Auszeichnung erfolgt in
@@ -91,7 +91,7 @@
                   Attribute hinzugefügt werden. Handelt es sich also um eine editorische Anmerkung
                   wird dem Tag, das Attribut <att>type</att>="<val>editorial</val>" hinzugefügt;
                   eine Anmerkung auf dem Textträger erhält hingegen das Attribut
-                     "<val>original</val>". Das vollständige Element lautet wiefolgt: <tag>note
+                     "<val>original</val>". Das vollständige Element lautet wie folgt: <tag>note
                      type="editorial"</tag> bzw. <tag>note type="original"</tag>.</p>
                <p>Die Grundstruktur von XML zeichnet sich vor allem durch zwei Aspekte aus:
                   Verschachtelung und Hierarchisierung. Sie wird allgemein als <hi rend="bold"
@@ -100,22 +100,22 @@
                   sich jedoch nicht überlappen. Jedes Element, das innerhalb eines Elements steht,
                   muss innerhalb dessen auch wieder geschlossen werden (z.B. &lt;starttag1
                   attribut="attributwert"&gt;...&lt;starttag2&gt;...&lt;endtag2&gt;...&lt;endtag1&gt;).</p>
-               <p>Der größte Vorteil von XML liegt wohl in dessen Anpassbarkeit. Da es selbst keine
+               <p>Der größte Vorteil von XML liegt wohl in seiner Anpassbarkeit. Da es selbst keine
                   Vorgaben zur genauen Benennung oder Strukturierung der Tags und Attribute
                   festlegt, lassen sich diese für die Bedürfnisse unterschiedlichster
                   Forschungsvorhaben anpassen und erweitern. Dennoch existieren bereits zahlreiche
                   Standards, die für die als Grundlage für die Arbeit mit XML verwendet und
                   angepasst werden können (z.B. der Standard der <ref target="https://tei-c.org"
                      >Text Encoding Initiative (TEI)</ref>). Aus Erfahrung lässt sich jedoch sagen,
-                  dass die Anpassung der Auszeichungen ein gewisses Maß an Komplexität nicht
+                  dass die Anpassung der Auszeichnungen ein gewisses Maß an Komplexität nicht
                   übersteigen sollte, da mit steigender Komplexität auch Bearbeitungszeit und
                   Fehlerquote steigen.</p>
-               <p>Ob ein XML-Dokument ›korrekt‹ ist lässt sich auf zwei Ebenen übreprüfen. Allgemein
+               <p>Ob ein XML-Dokument ‚korrekt‘ ist lässt sich auf zwei Ebenen überprüfen. Allgemein
                   sollten alle Elemente korrekt ineinander verschachtelt sein, also die
-                  grammatischen Regeln der XML eingehalten werden. Ein Dokument, dass diesen Reglen
-                  entspricht, gilt als "wohlgeformt". Konkrete Regeln werden jeweils mittels eines
+                  ‚grammatischen Regeln‘ der XML eingehalten werden. Ein Dokument, dass diesen Reglen
+                  entspricht, gilt als ‚wohlgeformt‘. Konkrete Regeln werden jeweils mittels eines
                      <hi rend="bold">XML-Schemas</hi> festgelegt, gegen das validiert wird.
-                  Entspricht ein XML-Dokument den Vorgaben des Schemas gilt es als "valide".</p>
+                  Entspricht ein XML-Dokument den Vorgaben des Schemas gilt es als ‚valide‘.</p>
                <p>
                   <hi rend="smaller">Quellen: Vogeler, Georg/Sahle/Patrick: XML. In: Jannidis,
                      Fotis/Kohle, Hubertus/Rehbein, Malte (Hg.): Digital Humanities. Eine
@@ -142,15 +142,13 @@
                   <teiHeader>
                      <fileDesc>
                         <titleStmt>
-                           <title type="main">Kelsen Entwurf I</title>
-                           <title type="sub">Die Entstehung des Bundes-Verfassungsgesetzes
-                              1920</title>
+                           <title type="main">Kelsen Entwurf IV</title>
+                           <title type="sub">Die Entstehung des Bundes-Verfassungsgesetzes 1920</title>
                            <principal>
-                              <persName role="acdh:hasPrincipialInvestigator">Olechowski,
-                                 Thomas</persName>
+                              <persName role="acdh:hasPrincipialInvestigator">Olechowski, Thomas</persName>
                            </principal>
                            <funder>
-                              <name>FWF - Der Wissenschaftsfonds</name>
+                              <orgName>FWF - Der Wissenschaftsfonds</orgName>
                               <address>
                                  <street>Sensengasse 1</street>
                                  <postCode>1090 Wien</postCode>
@@ -170,83 +168,69 @@
                            </respStmt>
                            <respStmt>
                               <resp>XML/TEI Datenmodellierung und Datengenerierung</resp>
-                              <persName role="acdh:hasContributor"
-                                 key="https://orcid.org/0000-0002-9575-9372">Peter
-                                 Andorfer</persName>
+                              <persName role="acdh:hasContributor" key="https://orcid.org/0000-0002-9575-9372">Peter Andorfer</persName>
                            </respStmt>
                            <respStmt>
                               <resp>XML/TEI Datenmodellierung und Datengenerierung</resp>
-                              <persName role="acdh:hasContributor"
-                                 key="https://orcid.org/0009-0006-7740-542X">Carl Friedrich
-                                 Haak</persName>
+                              <persName role="acdh:hasContributor" key="https://orcid.org/0009-0006-7740-542X">Carl Friedrich Haak</persName>
                            </respStmt>
                         </titleStmt>
                         <publicationStmt>
                            <publisher>
-                              <orgName key="https://d-nb.info/gnd/1226158307">Austrian Centre for
-                                 Digital Humanities and Cultural Heritage an der Österreichischen
-                                 Akademie der Wissenschaften</orgName>
+                              <orgName key="https://d-nb.info/gnd/1226158307">Austrian Centre for Digital Humanities and Cultural Heritage an der Österreichischen Akademie der Wissenschaften</orgName>
                            </publisher>
                            <publisher>
-                              <orgName key="https://d-nb.info/gnd/1026192285">Universität Wien.
-                                 Institut für Rechts- und Verfassungsgeschichte</orgName>
+                              <orgName key="https://d-nb.info/gnd/1026192285">Universität Wien. Institut für Rechts- und Verfassungsgeschichte</orgName>
                            </publisher>
                            <pubPlace ref="http://d-nb.info/gnd/4066009-6">Vienna</pubPlace>
                            <date when="2023">2023</date>
                            <availability>
                               <licence target="https://creativecommons.org/licenses/by/4.0/">
-                                 <p>The Creative Commons Attribution 4.0 International (CC BY 4.0)
-                                    License applies to this text.</p>
+                                 <p>The Creative Commons Attribution 4.0 International (CC BY 4.0) License
+                                    applies to this text.</p>
                                  <p>The CC BY 4.0 License also applies to this TEI XML file.</p>
                               </licence>
                            </availability>
-                           <idno type="transkribus_doc">1529199</idno>
+                           <idno type="transkribus_doc">1529202</idno>
                            <idno type="transkribus_collection">195363</idno>
+                           <idno type="goobi">14505</idno>
                         </publicationStmt>
                         <sourceDesc>
                            <msDesc type="invetory">
                               <msIdentifier>
-                                 <institution key="https://d-nb.info/gnd/37748-X">Österreichisches
-                                    Staatsarchiv</institution>
-                                 <repository key="https://d-nb.info/gnd/1601181-8">Archiv der
-                                    Republik (Wien)</repository>
+                                 <institution key="https://d-nb.info/gnd/37748-X">Österreichisches Staatsarchiv</institution>
+                                 <repository key="https://d-nb.info/gnd/1601181-8">Archiv der Republik (Wien)</repository>
                                  <idno type="archive">AdR, Büro Seitz, Karton 7</idno>
                               </msIdentifier>
                               <msContents>
                                  <msItem>
                                     <author role="acdh:hasAuthor">Kelsen, Hans</author>
-                                    <title>Kelsen Entwurf I</title>
+                                    <title>Kelsen Entwurf IV</title>
+                                    <note type="editor">Kelsen IV (Titel des Dokuments: "Entwurf IV"), Zustand: gut, wenngleich schlechtes Durchschlagpapier, keine Anmerkungen, 131 Artikel</note>
                                  </msItem>
                               </msContents>
                               <physDesc>
-                                 <objectDesc form="">
-                                    <ab>Kelsen I (Titel des Dokuments "Entwurf I"), Zustand gut,
-                                       keine Anmerkungen, 126 Artikel</ab>
+                                 <objectDesc form="bv_manifestation_type_id__2">
                                  </objectDesc>
                                  <handDesc>
-                                    <ab/>
                                  </handDesc>
                               </physDesc>
                               <history>
-                                 <origin from="1919-05-01" to="1919-11-30">Zwischen Mai und November
-                                    1919</origin>
+                                 <origin from="1919-05-01" to="1919-11-30">Zwischen Mai und November 1919</origin>
                               </history>
                            </msDesc>
                         </sourceDesc>
                      </fileDesc>
                      <profileDesc>
                         <abstract>
-                           <ab/>
+                           <p/>
                         </abstract>
                         <creation>
-                           <date from="1919-05-01" to="1919-11-30">Zwischen Mai und November
-                              1919</date>
+                           <date notBefore-iso="1919-05-01" notAfter-iso="1919-11-30">
+                              Zwischen Mai und November 1919
+                           </date>
                         </creation>
                      </profileDesc>
-                     <revisionDesc status="draft">
-                        <change>Strutktur erfasst</change>
-                        <change>Entitäten verlinkt.</change>
-                     </revisionDesc>
                   </teiHeader>
                </egXML>
                <div xml:id="revision">
@@ -255,10 +239,10 @@
                         <gi>revisionDesc</gi> im Attribut <att>status</att> notiert. Ist das
                      Dokument noch in Bearbeitung, hat <att>status</att> den Wert <val>draft</val>.
                      Sind alle Arbeitsschritte für das Dokument abgeschlossen, hat <att>status</att>
-                     den Wert <val>done</val>. Wird der bearbeitungsstand eines Dokumentes auf
+                     den Wert <val>done</val>. Wird der Bearbeitungsstand eines Dokumentes auf
                         <val>done</val> gesetzt, wird es automatisiert auf der Website
                      publiziert.</p>
-                  <p>Es emfpiehlt sich, erfolgte Arbeitsschritte mittel der <gi>change</gi>-Elemente
+                  <p>Es empfiehlt sich, erfolgte Arbeitsschritte mittel der <gi>change</gi>-Elemente
                      zu notieren, um einen Überblick über den Bearbeitungsstand zu bieten.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <revisionDesc status="draft">
@@ -288,7 +272,7 @@
                         kleinere spezifische Strukturelemente wie Artikel, Absätze und Ziffern.</p>
                   </div>
                </div>
-               <div>                  
+               <div>
                   <head>Abschnitte und Unterabschnitte</head>
                   <p>Der Dokumententext wird im <gi>text</gi> inklusive aller Abschnitte in
                         <gi>div</gi>-Elementen erfasst. <gi>div</gi>-Elementen, die einen größeren
@@ -450,7 +434,8 @@
                      </list>sollten in der Regel sämtlich mit <gi>hi</gi> ausgezeichnet werden, da
                      sie tatsächlich bloße Hervorhebungen darstellen. Es wäre – wenn nötig –
                      möglich, diese Kodierung durch <att>rend</att>-Attribute weiter zu
-                     differenzieren, falls unterschiedliche Hervorhebungen verschiedene Funktionen erfüllen sollten.</p>
+                     differenzieren, falls unterschiedliche Hervorhebungen verschiedene Funktionen
+                     erfüllen sollten.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
@@ -621,14 +606,14 @@
                      <gi>note</gi>-Element das den Inhalt des editorischen/textgenetischen
                   Kommentars enthält (durch den <att>type</att>
                   <val>editor</val> markiert). Um den Referenzbereich des Kommentars im
-                  kommentierten Text – also seine betreffende ›Stelle‹ – zu markieren wird ein
+                  kommentierten Text – also seine betreffende ‚Stelle‘ – zu markieren wird ein
                   zusätzliches Anchor-Element verwendet: Das <gi>anchor</gi>-Element mit dem
                      <att>type</att>=<val>editor</val> markiert stets den <hi rend="bold"
                      >Beginn</hi> der Stelle, das <gi>note</gi>-Element, das den Kommentar-Text
                   enhält, ihr <hi rend="Bold">Ende</hi>. Um diese Relation eindeutig zu kodieren,
                   erhalten beide Elemente – über das Framework automatisiert – eine Id. Die des
-                     <gi>anchor</gi>-Elements wird mit den Suffix ›_s‹ (für ›start‹) die des
-                     <gi>note</gi>-Elements mit dem Suffix ›_e‹ (für ›end‹) versehen.</p>
+                     <gi>anchor</gi>-Elements wird mit den Suffix ‚_s‘ (für ‚start‘) die des
+                     <gi>note</gi>-Elements mit dem Suffix ‚_e‘ (für ‚end‘) versehen.</p>
                <p>Kommentare im Dokument selbst, wie sie im zweiten Fall auftreten, werden zusätlich
                   von einem <gi>note</gi>-Element umschlossen, dass ein <att>type</att>-Attribut mit
                   dem Wert <val>original</val> erhält. Im ersten Fall wird gestrichener oder
@@ -919,8 +904,7 @@
                <moduleRef key="msdescription"
                   include="msDesc history  msIdentifier msContents physDesc institution repository 
                   msItem objectDesc handDesc origin"/>
-               <moduleRef key="namesdates"
-                  include="persName orgName placeName country settlement"/>
+               <moduleRef key="namesdates" include="persName orgName placeName country settlement"/>
                <moduleRef key="figures" include="cell table row"/>
                <!--<moduleRef key="textcrit" include="app"/>-->
                <moduleRef key="linking" include="anchor"/>
@@ -928,7 +912,8 @@
                <constraintSpec ident="address_usage" scheme="schematron">
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                      <s:rule context="//tei:address">
-                        <s:report test="not(parent::tei:funder)">&lt;address&gt; schould be only used in a funder element in the header!</s:report>
+                        <s:report test="not(parent::tei:funder)">&lt;address&gt; schould be only
+                           used in a funder element in the header!</s:report>
                      </s:rule>
                   </constraint>
                </constraintSpec>
@@ -936,7 +921,9 @@
                <constraintSpec ident="country_settlement_usage" scheme="schematron">
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                      <s:rule context="//tei:country|//tei:settlement">
-                        <s:report test="not(parent::tei:placeName)">&lt;country&gt; &amp; &lt;settlement&gt; schould be only used in a funder element in the header!</s:report>
+                        <s:report test="not(parent::tei:placeName)">&lt;country&gt; &amp;
+                           &lt;settlement&gt; schould be only used in a funder element in the
+                           header!</s:report>
                      </s:rule>
                   </constraint>
                </constraintSpec>
@@ -945,10 +932,30 @@
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                      <s:rule context="//tei:placeName|//tei:persName|//tei:orgName|//tei:msDesc">
                         <s:let name="el_name" value="local-name(.)"/>
-                        <s:report test="not(ancestor::tei:teiHeader)">&lt;"<s:value-of select="$el_name"/>"&gt; schould be only used the teiHeader!</s:report>
+                        <s:report test="not(ancestor::tei:teiHeader)">&lt;"<s:value-of
+                              select="$el_name"/>"&gt; schould be only used the
+                           teiHeader!</s:report>
                      </s:rule>
                   </constraint>
                </constraintSpec>
+               <elementSpec ident="idno">
+                  <desc>contains an identifier equaling the document in different sources</desc>
+                  <attList>
+                     <attDef ident="type" mode="replace">
+                        <valList type="closed">
+                           <valItem ident="transkribus_doc">
+                              <desc>id of the document in transkribus</desc>
+                           </valItem>
+                           <valItem ident="transkribus_collection">
+                              <desc>transkribus collection id of the document</desc>
+                           </valItem>
+                           <valItem ident="goobi">
+                              <desc>goobi-id of the document</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
                <elementSpec ident="revisionDesc" mode="change">
                   <classes mode="change">
                      <memberOf key="att.global" mode="delete"/>
@@ -959,7 +966,9 @@
                            <valItem ident="draft">
                               <desc>Document is still being changed.</desc>
                            </valItem>
-                           <valItem ident="done">Document is ready to be published online.</valItem>
+                           <valItem ident="done">
+                              <desc>Document is ready to be published online.</desc>
+                           </valItem>
                         </valList>
                      </attDef>
                   </attList>
@@ -974,7 +983,8 @@
                   </classes>
                </elementSpec>
                <elementSpec ident="anchor" mode="change">
-                  <desc>Element bestimmt im Falle einer editorischen Anmerkung den Beginn der Stelle.</desc>
+                  <desc>Element bestimmt im Falle einer editorischen Anmerkung den Beginn der
+                     Stelle.</desc>
                   <classes mode="change">
                      <memberOf key="att.global" mode="delete"/>
                   </classes>
@@ -989,7 +999,7 @@
                      </attDef>
                      <attDef ident="xml:id" mode="replace" usage="req">
                         <datatype>
-                           <dataRef key="teidata.text"/> 
+                           <dataRef key="teidata.text"/>
                         </datatype>
                      </attDef>
                   </attList>
@@ -1006,7 +1016,15 @@
                      <elementRef key="licence"/>
                   </content>
                </elementSpec>
-               <!-- better create a check her to prevent section-divs in section-divs … -->
+               <!-- better create a check her to prevent section-divs in art-divs … -->
+               <constraintSpec ident="div_nesting" scheme="schematron">
+                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                     <s:rule context="//tei:div">
+                        <s:report test="self::tei:div[@type='article']//tei:div[@type='section']">a div representing an article shouldn’t contain a div representing a section</s:report>
+                        <s:report test="self::tei:div[@type='article' and parent::*[@type!='section']]">a div representing an article should allways have a div representing a section as parent.</s:report>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
                <elementSpec ident="div" mode="change">
                   <desc>enthält textuelle Einheiten</desc>
                   <content>
@@ -1030,6 +1048,22 @@
                            </valItem>
                            <valItem ident="main">
                               <desc>einziges direktes child von body</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               <!-- Anpassung des head Elements -->
+               <elementSpec ident="head" mode="change">
+                  <desc>encodes heading of some sort</desc>
+                  <attList>
+                     <attDef ident="type" mode="replace" usage="opt">
+                        <valList>
+                           <valItem ident="main">
+                              <desc>main-title as opposed to one or more subtitles</desc>
+                           </valItem>
+                           <valItem ident="sub">
+                              <desc>subtitle as opposed to one main-title</desc>
                            </valItem>
                         </valList>
                      </attDef>
@@ -1126,7 +1160,7 @@
                      <!-- todo: only non empty string with certain attribs! -->
                      <attDef ident="key" mode="replace" usage="req">
                         <datatype>
-                           <dataRef key="teidata.text"/> 
+                           <dataRef key="teidata.text"/>
                         </datatype>
                      </attDef>
                   </attList>
@@ -1142,8 +1176,7 @@
                      <attDef ident="rendition" mode="delete"/>
                      <attDef ident="style" mode="delete"/>
                      <attDef ident="rend" mode="change">
-                        <desc>Beschreibt, wie der
-                           entsprechende Textteil hervorgehoben ist.</desc>
+                        <desc>Beschreibt, wie der entsprechende Textteil hervorgehoben ist.</desc>
                         <valList type="closed" mode="change">
                            <!--
                               <valItem mode="add" ident="smaller">
@@ -1160,7 +1193,8 @@
                               </valItem>
                            -->
                            <valItem mode="add" ident="emphasis">
-                              <desc>Hervorhebung im Dokument (Majuskeln, Kapitälchen, Unterstreichungen, fette Type)</desc>
+                              <desc>Hervorhebung im Dokument (Majuskeln, Kapitälchen,
+                                 Unterstreichungen, fette Type)</desc>
                            </valItem>
                         </valList>
                      </attDef>
