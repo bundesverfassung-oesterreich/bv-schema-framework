@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-09-21T10:43:53Z. .
+Schema generated from ODD source 2023-09-21T11:50:11Z. .
 TEI Edition: Version 4.4.0. Last updated on
         19th April 2022, revision ff9cc28b0
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
@@ -2390,7 +2390,12 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
          <optional>
             <attribute name="type">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <text/>
+               <choice>
+                  <value>main</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">main-title as opposed to one or more subtitles</a:documentation>
+                  <value>sub</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">subtitle as opposed to one main-title</a:documentation>
+               </choice>
             </attribute>
          </optional>
          <empty/>
@@ -2400,6 +2405,12 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
       <element name="note">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Anmerkung) enthält eine Anmerkung oder Annotation. [3.9.1. Notes and Simple Annotation 2.2.6. The Notes Statement 3.12.2.8. Notes and Statement of Language 9.3.5.4. Notes within Entries]</a:documentation>
          <ref name="undefinedmacro.specialPara"/>
+         <optional>
+            <attribute name="xml:id">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(identifier) Sollte durch das Framework generiert werden.</a:documentation>
+               <data type="ID"/>
+            </attribute>
+         </optional>
          <attribute name="type">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
             <choice>
@@ -4164,8 +4175,12 @@ Suggested values include: 1] label; 2] data</a:documentation>
               xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
               context="//tei:div">
-         <s:report test="self::tei:div[@type='article']//tei:div[@type='section']">a div representing an article shouldn’t contain a div representing a section</s:report>
-         <s:report test="self::tei:div[@type='article' and parent::*[@type!='section']]">a div representing an article should allways have a div representing a section as parent.</s:report>
+         <s:report test="self::tei:div[@type='article']//tei:div[@type='section']">a
+                           div representing an article shouldn’t contain a div representing a
+                           section</s:report>
+         <s:report test="self::tei:div[@type='article' and parent::*[@type!='section']]">a
+                           div representing an article should allways have a div representing a
+                           section as parent.</s:report>
       </s:rule>
    </pattern>
 </grammar>
