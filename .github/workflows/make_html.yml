@@ -11,15 +11,28 @@ jobs:
       - name: send odd get xhtml
         run: |
           output_dir="./html/"
+          index_path="${output_dir}index.html"
+          css_path="${output_dir}site.css"
           rm -rf "$output_dir"
           mkdir "$output_dir"
           echo "sending post request to teigarage"
           # other post url i found, no clue what it does like with the other
           # 'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/TEI%3Atext%3Axml/xhtml%3Aapplication%3Axhtml%2Bxml/'
+          # so we transform via api and write to $index_path
           curl -X 'POST' \
             'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/oddhtml%3Aapplication%3Axhtml%2Bxml/' \
             -F 'fileToConvert=@./odd/b-vg.odd' \
-            -o "${output_dir}index.html"
+            -o "$index_path"
+          # we link local css to retrieved html
+          # this is how this is supposed to be done ;)
+          sed -i 's/<link rel="stylesheet"/<link rel="stylesheet" type="text\/css" href=".\/site.css"\/><link rel="stylesheet"/g' $index_path
+          # we create an css file
+          cat > $css_path <<- EOM
+          body {
+            padding-left: 25%;
+            padding-right: 25%;
+          }
+          EOM
       - name: Commit data
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
