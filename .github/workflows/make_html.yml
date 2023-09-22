@@ -19,7 +19,7 @@ jobs:
           curl -X 'POST' \
             'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/oddhtml%3Aapplication%3Axhtml%2Bxml/' \
             -F 'fileToConvert=@./odd/b-vg.odd' \
-            -o "${output_dir}docu.html"
+            -o "${output_dir}index.html"
       - name: Commit data
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
