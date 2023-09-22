@@ -8,8 +8,6 @@
       <fileDesc>
          <titleStmt>
             <title>Die Entstehung des Bundes‐Verfassungsgesetzes 1920</title>
-            <author xml:id="CFH">Carl Friedrich Haak</author>
-            <author xml:id="PA">Peter Andorfer</author>
          </titleStmt>
          <publicationStmt>
             <p>Unveröffentlichte, interne Arbeitsversion.</p>
@@ -530,17 +528,17 @@
                   </egXML>
                </div>
                <div>
-                  <head>Institutionen</head>
+                  <head>Institutionen/Organisationen</head>
                   <p>Institutionen werden mittels des <gi>rs</gi>-Element und dem
-                        <att>type</att>=<val>institution</val> als solche gekennzeichnet. Mittel des
-                        <att>ref</att>-Attributs wird auf die Id der entsprechenden Person im Index
+                        <att>type</att>=<val>org</val> als solche gekennzeichnet. Mittel des
+                        <att>ref</att>-Attributs wird auf die Id der entsprechenden Institution/Organisation im Index
                      verwiesen.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
                            <div>
-                              <p>Der <rs ref="#i123" type="instituion">Gerichtshof</rs> untersteht
-                                 dem <rs ref="#i123" type="institution"
+                              <p>Der <rs ref="#i123" type="org">Gerichtshof</rs> untersteht
+                                 dem <rs ref="#i123" type="org"
                                  >Wirtschaftsministerium</rs>.</p>
                            </div>
                         </body>
@@ -1161,7 +1159,7 @@
                            <valItem ident="person">
                               <desc>rs referentiert Person über den Key in der Datenbank</desc>
                            </valItem>
-                           <valItem ident="institution">
+                           <valItem ident="org">
                               <desc>rs referentiert Institution über den Key in der Datenbank</desc>
                            </valItem>
                            <valItem ident="lit">
