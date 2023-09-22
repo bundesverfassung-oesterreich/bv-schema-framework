@@ -28,10 +28,23 @@ jobs:
           sed -i 's/<link rel="stylesheet"/<link rel="stylesheet" type="text\/css" href=".\/site.css"\/><link rel="stylesheet"/g' $index_path
           # we create an css file
           cat > $css_path <<- EOM
-          body {
-            padding-left: 25%;
-            padding-right: 25%;
-          }
+            body {
+              padding-left: 25%;
+              padding-right: 25%;
+              max-width: 40rem;
+              min-width: 60rem;
+            }
+
+            h1 {
+              margin-left: 0rem !important;
+              color: rgb(58, 58, 58) !important;
+            }
+
+            a {
+              color: rgb(58, 58, 58) !important;
+              text-decoration:none !important;
+              font-weight: bolder;
+            }
           EOM
       - name: Commit data
         uses: stefanzweifel/git-auto-commit-action@v4
