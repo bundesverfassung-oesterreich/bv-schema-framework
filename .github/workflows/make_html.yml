@@ -1,0 +1,26 @@
+name: html from odd
+on:
+  push
+jobs:
+  download:
+    name: convert odd
+    runs-on: ubuntu-latest
+    steps:
+      - name: Perfom Checkout
+        uses: actions/checkout@v3
+      - name: send odd get xhtml
+        run: |
+          output_dir="./html/"
+          rm -rf "$output_dir"
+          mkdir "$output_dir"
+          echo "sending post request to teigarage"
+          # other post url i found, no clue what it does like with the other
+          # 'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/TEI%3Atext%3Axml/xhtml%3Aapplication%3Axhtml%2Bxml/'
+          curl -X 'POST' \
+            'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/oddhtml%3Aapplication%3Axhtml%2Bxml/' \
+            -F 'fileToConvert=@./odd/b-vg.odd' \
+            -o "${output_dir}docu.html"
+      - name: Commit data
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: created new documentation html from odd
