@@ -1,0 +1,116 @@
+/* deal with header later */
+teiHeader {
+    display: none;
+}
+
+
+/* make graphic elements basically a list, entries only need to be deleted, other manipulations are not necessary */
+
+facsimile {
+    display: block;
+    content: "Faksimiles";
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    margin: 2rem;
+}
+
+surface {
+    display: block;
+    font-size: 1rem;
+    color: gray;
+    padding: 0.5rem;
+    border: solid black 1px;
+    border-radius: 15px;
+    margin: 0.5rem;
+}
+
+graphic {
+    content: attr(url);
+}
+
+/* display text */
+text {
+    display: block;
+    content: '(' attr(type) ')';
+    font-size: 2rem;
+    font-weight: bold;
+    color: gray;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+}
+
+div {
+    display: block;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+div[type="main"] {
+    border: dotted gray 1px;
+    border-radius: 15px;
+}
+
+div[type="article"] {
+    border: solid CornflowerBlue 4px;
+    background-color: AliceBlue;
+    border-radius: 15px;
+}
+
+div[type="section"] {
+    border: dotted CornflowerBlue 6px;
+    background-color: AliceBlue;
+    border-radius: 15px;
+}
+
+head {
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+p {
+    display: block;
+    color: black;
+    font-size: 1rem;
+    line-height: 1.6;
+    border: dashed orange 2px;
+    border-radius: 15px;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: Gainsboro;
+}
+
+pb {
+    /* facs="#facs_6" n="6" xml:id="img_0006"/> */
+    display: block;
+    font-size: 2rem;
+    /* content: 'Bild ' attr(n) ' ↓'; */
+    border: solid red 1px;
+    content: ' –– Seitenbeginn –– ';
+    color: gray;
+}
+
+pb:before {
+    
+}
+
+lb {
+    color: gray;
+    font-size: 1.5rem;
+    background-color: orange;
+}
+
+lb[break="no"]:before {
+    content: "–";
+    color: red;
+    font-weight: bold;
+}
+
+lb:after {
+    content: "\a";
+}
