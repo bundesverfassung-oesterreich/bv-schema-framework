@@ -972,11 +972,17 @@
                   <attList>
                      <attDef ident="status" mode="replace">
                         <valList type="closed">
-                           <valItem ident="draft">
-                              <desc>Document is still being changed.</desc>
+                           <valItem ident="created">
+                              <desc>The document was created by an automated workflow.</desc>
+                           </valItem>
+                           <valItem ident="structured">
+                              <desc>The document makro structure was checked/corrected by hand.</desc>
+                           </valItem>
+                           <valItem ident="text_correct">
+                              <desc>All text in the document is correct.</desc>
                            </valItem>
                            <valItem ident="done">
-                              <desc>Document is ready to be published online.</desc>
+                              <desc>Document is done.</desc>
                            </valItem>
                         </valList>
                      </attDef>
