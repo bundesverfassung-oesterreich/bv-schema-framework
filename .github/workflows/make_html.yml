@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Perfom Checkout
         uses: actions/checkout@v3
-      - name: send odd get xhtml
+      - name: send odd get xhtml/rng
         run: |
           output_dir="./html/"
           index_path="${output_dir}index.html"
@@ -46,10 +46,21 @@ jobs:
               font-weight: bolder;
             }
           EOM
+      - name: send odd get rng
+        run: |
+          output_dir="./rng/"
+          index_path="${output_dir}schema.rng"
+          rm -rf "$output_dir"
+          mkdir "$output_dir"
+          echo "sending post request to teigarage"
+          curl -X 'POST' \
+            'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/relaxng%3Aapplication%3Axml-relaxng/' \
+            -F 'fileToConvert=@./odd/b-vg.odd' \
+            -o "$index_path"
       - name: Commit data
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: created new documentation html from odd
+          commit_message: created new html/rng from odd
       - name: Deploy Online
         uses: peaceiris/actions-gh-pages@v3
         with:
