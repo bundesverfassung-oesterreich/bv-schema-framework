@@ -90,13 +90,9 @@ pb {
     display: block;
     font-size: 2rem;
     /* content: 'Bild ' attr(n) ' ↓'; */
-    border: solid red 1px;
+    border: solid black 2px;
     content: ' –– Seitenbeginn –– ';
     color: gray;
-}
-
-pb:before {
-    
 }
 
 lb {
