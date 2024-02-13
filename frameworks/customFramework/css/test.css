@@ -107,7 +107,7 @@ lb[break="no"]:before {
     font-weight: bold;
 }
 
-pb:after {
+lb:after {
     content: "\a";
 }
 
