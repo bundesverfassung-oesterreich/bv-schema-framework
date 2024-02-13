@@ -82,6 +82,59 @@
 									</poPatch>
 									<poPatch>
 										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[0]/actionModes</String>
+										</field>
+										<field name="index">
+											<Integer>0</Integer>
+										</field>
+										<field name="value">
+											<null/>
+										</field>
+										<field name="patchHandling">
+											<String>removeIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[0]/actionModes</String>
+										</field>
+										<field name="index">
+											<Integer>0</Integer>
+										</field>
+										<field name="value">
+											<actionMode>
+												<field name="xpathCondition">
+													<String></String>
+												</field>
+												<field name="argValues">
+													<serializableOrderedMap>
+														<entry>
+															<String>element</String>
+															<String>&lt;hi rend="emphasis">&lt;/hi></String>
+														</entry>
+														<entry>
+															<String>schemaAware</String>
+															<String>false</String>
+														</entry>
+													</serializableOrderedMap>
+												</field>
+												<field name="operationID">
+													<String>ro.sync.ecss.extensions.commons.operations.ToggleSurroundWithElementOperation</String>
+												</field>
+											</actionMode>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
@@ -371,13 +424,13 @@
 															<field name="argValues">
 																<serializableOrderedMap>
 																	<entry>
-																		<String>element</String>
+																		<String>fragment</String>
 																		<String>&lt;head>&lt;/head></String>
 																	</entry>
 																</serializableOrderedMap>
 															</field>
 															<field name="operationID">
-																<String>ro.sync.ecss.extensions.commons.operations.ToggleSurroundWithElementOperation</String>
+																<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
 															</field>
 														</actionMode>
 													</actionMode-array>
