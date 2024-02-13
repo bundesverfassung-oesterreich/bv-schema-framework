@@ -1033,11 +1033,9 @@
                      <alternate maxOccurs="unbounded" minOccurs="0">
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="p"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="list"/>
-                        <elementRef maxOccurs="unbounded" minOccurs="0" key="del"/>
                         <elementRef maxOccurs="3" minOccurs="0" key="head"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="div"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="pb"/>
-                        <!--<elementRef maxOccurs="unbounded" minOccurs="0" key="app"/>-->
                      </alternate>
                   </content>
                   <attList>
@@ -1075,6 +1073,21 @@
                <!-- todo: type=editor->xml:id non-empty
                            make sure, there is an note element with the corresponding id …
                -->
+               <elementSpec ident="p" mode="add">
+                  <content>
+                     <alternate maxOccurs="unbounded" minOccurs="0">
+                        <text/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="del"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="list"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="rs"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="lb"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="pb"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="hi"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="unclear"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="gap"/>
+                     </alternate>
+                  </content>
+               </elementSpec>
                <elementSpec ident="anchor" mode="change">
                   <desc>Element bestimmt im Falle einer editorischen Anmerkung den Beginn der
                      Stelle.</desc>
