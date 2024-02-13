@@ -1230,7 +1230,6 @@
                <!-- Anpassnung pb-Element -->
                <elementSpec ident="pb" mode="change">
                   <classes mode="change">
-                     <memberOf key="att.breaking" mode="delete"/>
                      <memberOf key="att.edition" mode="delete"/>
                      <memberOf key="att.spanning" mode="delete"/>
                   </classes>
@@ -1240,12 +1239,15 @@
                            <dataRef key="teidata.pointer"/>
                         </datatype>
                      </attDef>
-                     <attDef ident="n" mode="change">
+                     <attDef ident="n" mode="change" usage="req">
                         <desc>Die Nummer der Seite, auf das sich das pb-Element bezieht (automatisch
                            generiert).</desc>
                      </attDef>
                      <attDef ident="xml:id" mode="change" usage="req">
                         <desc>automatisch generierte id (img)</desc>
+                     </attDef>
+                     <attDef ident="break" mode="change" usage="req">
+                        <desc>Auf "no" setzen, wenn der Seitenumbruch ein Wort trennt, auf "yes" setzen wenn der Seitenumbruch mit der Wortgrenze korreliert.</desc>
                      </attDef>
                      <attDef ident="ana" mode="delete"/>
                      <attDef ident="change" mode="delete"/>
