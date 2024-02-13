@@ -50,18 +50,18 @@ div {
     margin: 2rem;
 }
 
-div[type="main"] {
+div[type = "main"] {
     border: dotted gray 1px;
     border-radius: 15px;
 }
 
-div[type="article"] {
+div[type = "article"] {
     border: solid CornflowerBlue 4px;
     background-color: AliceBlue;
     border-radius: 15px;
 }
 
-div[type="section"] {
+div[type = "section"] {
     border: dotted CornflowerBlue 6px;
     background-color: AliceBlue;
     border-radius: 15px;
@@ -101,7 +101,7 @@ lb {
     background-color: orange;
 }
 
-lb[break="no"]:before {
+lb[break = "no"]:before {
     content: "–";
     color: red;
     font-weight: bold;
@@ -117,8 +117,19 @@ pb {
     background-color: orange;
 }
 
-pb[break="no"]:before {
+pb[break = "no"]:before {
     content: "–";
     color: red;
     font-weight: bold;
+}
+
+del {
+    text-decoration-line: line-through;
+}
+
+gap {
+    color: grey;
+}
+gap:before {
+    content: "[??????????????]";
 }

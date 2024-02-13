@@ -343,13 +343,18 @@
                                  <head>Artikel XVII. </head>
                                  <p>Gesetzesbeschlüsse der Landtage oder des Wiener Gemeinderates
                                     <lb/>können wegen Verfassungswidrigkeit (Artikel 6 - 14 ) von
-                                    der <lb/>Staatsregierung binnen 14 Tagen nach Einlangen der
-                                    Mitteilung <lb/>und wenn gegen diese Beschlüsse im Sinne des
-                                    Artikels XVI zu- <lb/>nächst eine Vorstellung erhoben worden
-                                    ist, nach Ablauf weiterer <lb/>14 Tage beim
-                                    Verfassungsgerichtshofe angefochten werden; diese
+                                    der
+                                    <lb/>Staatsregierung binnen 14 Tagen nach Einlangen der
+                                    Mitteilung
+                                    <lb/>und wenn gegen diese Beschlüsse im Sinne des Artikels XVI
+                                    zu-
+                                    <lb/>nächst eine Vorstellung erhoben worden ist, nach Ablauf
+                                    weiterer
+                                    <lb/>14 Tage beim Verfassungsgerichtshofe angefochten werden;
+                                    diese
                                     <lb/>Anfechtung ist der Landesregierung unverzüglich auf dem
-                                    kürzesten <lb/>Wege mitzuteilen.</p>
+                                    kürzesten
+                                    <lb/>Wege mitzuteilen.</p>
                               </div>
                            </div>
                         </div>
@@ -382,12 +387,12 @@
                <div>
                   <head>Listen und Ziffern</head>
                   <p>Listen werden mittels eines <gi>list</gi>-Elements kodiert, jeder Listenpunkt
-                     wird mit einem <gi>item</gi>-Element umschlossen.<lb/>Listentitel werden durch
-                     ein <gi>head</gi>-Element ohne weitere Attribute gekennzeichnet. Es steht an
-                     erster Stelle (first child) innerhalb des
-                     <gi>list</gi>-Elements.<lb/>Listenelemente können zusätzlich verschachtelt
-                     werden, sprich ein Listenpunkt <gi>item</gi> kann eine untergeordnete Liste
-                     enthalten.</p>
+                     wird mit einem <gi>item</gi>-Element umschlossen.
+                     <lb/>Listentitel werden durch ein <gi>head</gi>-Element ohne weitere Attribute
+                     gekennzeichnet. Es steht an erster Stelle (first child) innerhalb des
+                        <gi>list</gi>-Elements.
+                     <lb/>Listenelemente können zusätzlich verschachtelt werden, sprich ein
+                     Listenpunkt <gi>item</gi> kann eine untergeordnete Liste enthalten.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <list>
                         <head>Listentitel</head>
@@ -532,15 +537,14 @@
                   <head>Institutionen/Organisationen</head>
                   <p>Institutionen werden mittels des <gi>rs</gi>-Element und dem
                         <att>type</att>=<val>org</val> als solche gekennzeichnet. Mittel des
-                        <att>ref</att>-Attributs wird auf die Id der entsprechenden Institution/Organisation im Index
-                     verwiesen.</p>
+                        <att>ref</att>-Attributs wird auf die Id der entsprechenden
+                     Institution/Organisation im Index verwiesen.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
                            <div>
-                              <p>Der <rs ref="#i123" type="org">Gerichtshof</rs> untersteht
-                                 dem <rs ref="#i123" type="org"
-                                 >Wirtschaftsministerium</rs>.</p>
+                              <p>Der <rs ref="#i123" type="org">Gerichtshof</rs> untersteht dem <rs
+                                    ref="#i123" type="org">Wirtschaftsministerium</rs>.</p>
                            </div>
                         </body>
                      </text>
@@ -902,11 +906,10 @@
                <moduleRef key="core"
                   include=" rs lb p title note bibl date hi item pb publisher corr list author 
                   respStmt resp head biblScope address pubPlace author title graphic street 
-                  unclear postCode"/>
+                  unclear postCode del gap"/>
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
                <moduleRef key="transcr" include="facsimile surface"/>
-               <!-- todo: wir brauchen  für die physDesc eigentlich noch daten, was jetzt dort erfasst wird, gehort eigentlich mit zum msContent-->
                <moduleRef key="msdescription"
                   include="msDesc history  msIdentifier msContents physDesc institution repository 
                   msItem objectDesc handDesc origin"/>
@@ -976,7 +979,8 @@
                               <desc>The document was created by an automated workflow.</desc>
                            </valItem>
                            <valItem ident="structured">
-                              <desc>The document makro structure was checked/corrected by hand.</desc>
+                              <desc>The document makro structure was checked/corrected by
+                                 hand.</desc>
                            </valItem>
                            <valItem ident="text_correct">
                               <desc>All text in the document is correct.</desc>
@@ -1029,6 +1033,7 @@
                      <alternate maxOccurs="unbounded" minOccurs="0">
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="p"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="list"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="del"/>
                         <elementRef maxOccurs="3" minOccurs="0" key="head"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="div"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="pb"/>
@@ -1204,23 +1209,17 @@
                      <attDef ident="rend" mode="change">
                         <desc>Beschreibt, wie der entsprechende Textteil hervorgehoben ist.</desc>
                         <valList type="closed" mode="change">
-                           <!--
-                              <valItem mode="add" ident="smaller">
-                                 <desc >kleinere Schrift</desc>
-                              </valItem>
-                              <valItem mode="add" ident="underlined">
-                                 <desc>Unterstrichen</desc>
-                              </valItem>
-                              <valItem mode="add" ident="majuscule">
-                                 <desc>Majuskeln oder Kapitälchen</desc>
-                              </valItem>
-                              <valItem mode="add" ident="spaced">
-                                 <desc>Gesperrt / Leerzeichen zwischen den Lettern</desc>
-                              </valItem>
-                           -->
+                           <valItem mode="add" ident="underlined">
+                              <desc>Unterstrichen</desc>
+                           </valItem>
+                           <valItem mode="add" ident="majuscule">
+                              <desc>Majuskeln oder Kapitälchen</desc>
+                           </valItem>
+                           <valItem mode="add" ident="spaced">
+                              <desc>Gesperrt / Leerzeichen zwischen den Lettern</desc>
+                           </valItem>
                            <valItem mode="add" ident="emphasis">
-                              <desc>Hervorhebung im Dokument (Majuskeln, Kapitälchen,
-                                 Unterstreichungen, fette Type)</desc>
+                              <desc>(allgemein) Hervorhebung im Text</desc>
                            </valItem>
                         </valList>
                      </attDef>
@@ -1247,7 +1246,8 @@
                         <desc>automatisch generierte id (img)</desc>
                      </attDef>
                      <attDef ident="break" mode="change" usage="req">
-                        <desc>Auf "no" setzen, wenn der Seitenumbruch ein Wort trennt, auf "yes" setzen wenn der Seitenumbruch mit der Wortgrenze korreliert.</desc>
+                        <desc>Auf "no" setzen, wenn der Seitenumbruch ein Wort trennt, auf "yes"
+                           setzen, wenn der Seitenumbruch mit der Wortgrenze korreliert.</desc>
                      </attDef>
                      <attDef ident="ana" mode="delete"/>
                      <attDef ident="change" mode="delete"/>
