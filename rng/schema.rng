@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-02-13T09:44:28Z. . 
+Schema generated from ODD source 2024-02-13T10:27:05Z. . 
 TEI Edition: P5 Version 4.7.0. Last updated on 16th November 2023, revision e5dd73ed0 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.7.0/ 
   
@@ -2799,16 +2799,20 @@ Elements]</a:documentation>
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(identifier) automatisch generierte id (img)</a:documentation>
             <data type="ID"/>
          </attribute>
-         <optional>
-            <attribute name="n">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(number) Die Nummer der Seite, auf das sich das pb-Element bezieht (automatisch generiert).</a:documentation>
-               <data type="string"/>
-            </attribute>
-         </optional>
+         <attribute name="n">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(number) Die Nummer der Seite, auf das sich das pb-Element bezieht (automatisch generiert).</a:documentation>
+            <data type="string"/>
+         </attribute>
          <attribute name="facs">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(facsimile) points to one or more images, portions of an image, or surfaces which correspond to the current element.</a:documentation>
             <data type="anyURI">
                <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+         <attribute name="break">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Auf "no" setzen, wenn der Seitenumbruch ein Wort trennt, auf "yes" setzen wenn der Seitenumbruch mit der Wortgrenze korreliert.</a:documentation>
+            <data type="token">
+               <param name="pattern">[^\p{C}\p{Z}]+</param>
             </data>
          </attribute>
          <empty/>
