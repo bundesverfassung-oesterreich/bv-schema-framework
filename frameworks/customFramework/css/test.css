@@ -107,6 +107,18 @@ lb[break="no"]:before {
     font-weight: bold;
 }
 
-lb:after {
+pb:after {
     content: "\a";
+}
+
+pb {
+    color: gray;
+    font-size: 1.5rem;
+    background-color: orange;
+}
+
+pb[break="no"]:before {
+    content: "–";
+    color: red;
+    font-weight: bold;
 }
