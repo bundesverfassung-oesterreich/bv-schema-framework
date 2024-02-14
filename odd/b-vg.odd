@@ -924,7 +924,8 @@
                      <s:schema>
                         <s:pattern id="duplicate_id">
                            <s:rule context="titleStmt">
-                              <sch:assert test="count(title[@type='main']) = 1">there should be only one main-title (Haupttitel), maybe use a sub-titel?</sch:assert>         
+                              <s:assert test="count(title[@type='main']) = 1">there should be only one main-title (Haupttitel), maybe use a sub-titel?</s:assert>
+                           </s:rule>
                         </s:pattern>
                      </s:schema>
                   </constraint>
