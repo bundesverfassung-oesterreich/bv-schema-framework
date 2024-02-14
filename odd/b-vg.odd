@@ -917,7 +917,7 @@
                <moduleRef key="figures" include="cell table row"/>
                <!--<moduleRef key="textcrit" include="app"/>-->
                <moduleRef key="linking" include="anchor"/>
-               <!-- make sure there is only one title in the doc -->       
+               <!-- make sure there is only one title in the doc      
                <constraintSpec ident="only_one_main_head" scheme="schematron">
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron"
                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -929,7 +929,7 @@
                         </s:pattern>
                      </s:schema>
                   </constraint>
-               </constraintSpec>
+               </constraintSpec>-->  
                <!-- stricter usage for address -->
                <constraintSpec ident="address_usage" scheme="schematron">
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
