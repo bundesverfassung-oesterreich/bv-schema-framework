@@ -1,10 +1,139 @@
-/* deal with header later */
+TEI {
+    -oxy-foldable:false;
+    -oxy-display-tags: none;
+}
+
+/*START META*/
 teiHeader {
-    display: none;
+    -oxy-display-tags: none;
+}
+
+teiHeader fileDesc{
+    -oxy-display-tags: none;
+}
+
+teiHeader fileDesc titleStmt{
+    -oxy-display-tags: none;
 }
 
 
-/* make graphic elements basically a list, entries only need to be deleted, other manipulations are not necessary */
+teiHeader fileDesc titleStmt *{
+    -oxy-display-tags: all;
+    display: None;
+}
+
+teiHeader fileDesc titleStmt title {
+    display: block;
+    -oxy-foldable:false;
+    -oxy-folded:true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding-left: 1rem;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    content: oxy_textfield(
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+    -oxy-display-tags: none;
+}
+
+teiHeader fileDesc titleStmt title[type="main"] {
+    padding-left: 1rem;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+teiHeader fileDesc titleStmt title[type="main"]:before {
+    content: "Hauptitel:";
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+teiHeader fileDesc titleStmt title[type="sub"] {
+    padding-left: 1rem;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+teiHeader fileDesc titleStmt title[type="sub"]:before {
+    content: "Untertitel:";
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+teiHeader fileDesc titleStmt title:after {
+    margin-right: 10px;
+    visibility: -oxy-collapse-text;
+    content: 
+    oxy_buttonGroup(label, '+|-', fontInherit, false, actions, 
+        oxy_action_list(
+            oxy_action(name, 'Untertitel hinzufügen', description, 'fügt Untertitel nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<title xmlns="http://www.music-encoding.org/ns/mei" type="sub"></title>', arg-insertLocation, '.', arg-insertPosition, 'After'),
+            oxy_action(name, 'Hauptitel hinzufügen', description, 'fügt Titel nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<title xmlns="http://www.music-encoding.org/ns/mei" type="main"></title>', arg-insertLocation, '.', arg-insertPosition, 'After'), 
+            oxy_action(name, 'Titel löschen', description, 'löscht aktuellen Titel', operation, 'DeleteElementOperation')
+        )
+    )
+        
+}
+
+teiHeader fileDesc publicationStmt{
+    display: block;
+    content: "Dokument";
+    -oxy-foldable:true;
+    -oxy-folded:true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+teiHeader fileDesc publicationStmt {
+    display: block;
+    content: "IDs";
+    -oxy-foldable:true;
+    -oxy-folded:true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 1rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+teiHeader fileDesc publicationStmt * {
+    visibility: hidden;
+    display: none;
+}
+
+teiHeader publicationStmt idno {
+    padding-top: .5rem;
+    padding-bottom: 0;
+    margin: 0;
+    visibility: visible;
+    display: block!important;
+    font-size: 1rem;
+    font-weight: normal;
+    visibility:-oxy-collapse-text;
+    content: oxy_textfield(
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+    -oxy-display-tags: none;
+}
+
+teiHeader publicationStmt idno:before {
+    content: attr(type)": ";
+}
+
+/*END META*/
 
 facsimile {
     display: block;
@@ -15,6 +144,9 @@ facsimile {
     border: solid green 4px;
     border-radius: 15px;
     margin: 2rem;
+    -oxy-foldable:true;
+    -oxy-folded:true;
+    -oxy-display-tags: none;
 }
 
 surface {
@@ -22,13 +154,20 @@ surface {
     font-size: 1rem;
     color: gray;
     padding: 0.5rem;
-    border: solid black 1px;
     border-radius: 15px;
     margin: 0.5rem;
+    width: fit-content;
+    visibility:-oxy-collapse-text;
+    -oxy-display-tags: none;
 }
 
 graphic {
-    content: attr(url);
+    -oxy-display-tags: none;
+    content: oxy_textfield(
+        edit, '@url',
+        columns, 140
+    );
+    width: fit-content;
 }
 
 /* display text */
@@ -44,6 +183,10 @@ text {
     border-radius: 15px;
 }
 
+body {
+    -oxy-display-tags: none;
+}
+
 div {
     display: block;
     padding: 2rem;
@@ -56,21 +199,30 @@ div[type = "main"] {
 }
 
 div[type = "article"] {
-    border: solid CornflowerBlue 4px;
+    border: solid rgb(36, 104, 231) 4px;
     background-color: AliceBlue;
     border-radius: 15px;
+    -oxy-foldable:true;
+    -oxy-folded:true;
 }
 
 div[type = "section"] {
     border: dotted CornflowerBlue 6px;
-    background-color: AliceBlue;
+    background-color: rgb(205, 231, 255);
     border-radius: 15px;
+    -oxy-foldable:true;
+    -oxy-folded:true;
 }
 
 head {
     color: black;
     font-weight: bold;
     font-size: 1.5rem;
+    -oxy-foldable:false;
+}
+
+head:before {
+    content: "\a";
 }
 
 p {
@@ -78,7 +230,7 @@ p {
     color: black;
     font-size: 1rem;
     line-height: 1.6;
-    border: dashed orange 2px;
+    border: dashed lightgrey 2px;
     border-radius: 15px;
     margin: 1rem;
     padding: 1rem;
@@ -98,7 +250,7 @@ pb {
 lb {
     color: gray;
     font-size: 1.5rem;
-    background-color: orange;
+    background-color: lightgrey;
     visibility:-oxy-collapse-text;
 }
 
@@ -115,7 +267,7 @@ lb:after {
 pb {
     color: gray;
     font-size: 1.5rem;
-    background-color: orange;
+    background-color: lightgrey;
     visibility:-oxy-collapse-text;
 }
 
@@ -131,7 +283,8 @@ del {
 
 gap {
     color: grey;
+    visibility:-oxy-collapse-text;
 }
 gap:before {
-    content: "[??????????????]";
+    content: "[???]";
 }
