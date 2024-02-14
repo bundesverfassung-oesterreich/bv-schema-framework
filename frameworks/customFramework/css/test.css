@@ -191,6 +191,7 @@ div {
     display: block;
     padding: 2rem;
     margin: 2rem;
+    -oxy-not-foldable-child: head;
 }
 
 div[type = "main"] {
@@ -252,11 +253,18 @@ lb {
     font-size: 1.5rem;
     background-color: lightgrey;
     visibility:-oxy-collapse-text;
+    -oxy-display-tags: none;
+}
+
+lb:before {
+    content: "·";
+    color: yellow;
+    font-weight: bold;
 }
 
 lb[break = "no"]:before {
     content: "–";
-    color: red;
+    color: yellow;
     font-weight: bold;
 }
 
@@ -273,7 +281,7 @@ pb {
 
 pb[break = "no"]:before {
     content: "–";
-    color: red;
+    color: yellow;
     font-weight: bold;
 }
 
