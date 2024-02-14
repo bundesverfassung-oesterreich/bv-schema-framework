@@ -1089,7 +1089,7 @@
                <elementSpec ident="p" mode="change">
                   <content>
                      <alternate maxOccurs="unbounded" minOccurs="0">
-                        <text/>
+                        <textNode/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="del"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="list"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="rs"/>
