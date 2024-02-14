@@ -99,6 +99,7 @@ lb {
     color: gray;
     font-size: 1.5rem;
     background-color: orange;
+    visibility:-oxy-collapse-text;
 }
 
 lb[break = "no"]:before {
@@ -115,6 +116,7 @@ pb {
     color: gray;
     font-size: 1.5rem;
     background-color: orange;
+    visibility:-oxy-collapse-text;
 }
 
 pb[break = "no"]:before {
