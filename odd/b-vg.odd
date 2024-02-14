@@ -917,6 +917,18 @@
                <moduleRef key="figures" include="cell table row"/>
                <!--<moduleRef key="textcrit" include="app"/>-->
                <moduleRef key="linking" include="anchor"/>
+               <!-- make sure there is only one title in the doc -->       
+               <constraintSpec ident="only_one_main_head" scheme="schematron">
+                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron"
+                     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                     <s:schema>
+                        <s:pattern id="duplicate_id">
+                           <s:rule context="titleStmt">
+                              <sch:assert test="count(title[@type='main']) = 1">there should be only one main-title (Haupttitel), maybe use a sub-titel?</sch:assert>         
+                        </s:pattern>
+                     </s:schema>
+                  </constraint>
+               </constraintSpec>
                <!-- stricter usage for address -->
                <constraintSpec ident="address_usage" scheme="schematron">
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
