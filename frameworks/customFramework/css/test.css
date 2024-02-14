@@ -112,6 +112,7 @@ teiHeader fileDesc publicationStmt * {
     display: none;
 }
 
+
 teiHeader publicationStmt idno {
     padding-top: .5rem;
     padding-bottom: 0;
@@ -131,6 +132,33 @@ teiHeader publicationStmt idno {
 
 teiHeader publicationStmt idno:before {
     content: attr(type)": ";
+}
+
+teiHeader sourceDesc msDesc {
+    display: block;
+    content: "Dokumentenbeschreibung";
+    -oxy-foldable:true;
+    -oxy-folded:true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+teiHeader sourceDesc msDesc *{
+    -oxy-display-tags: none;
+}
+
+teiHeader sourceDesc msDesc msIdentifier {
+    -oxy-display-tags: all;
+}
+
+teiHeader sourceDesc msDesc msIdentifier institution {
+    -oxy-display-tags: all;
 }
 
 /*END META*/
