@@ -1,3 +1,6 @@
+@namespace oxy url('http://www.oxygenxml.com/extensions/author');
+@namespace xml url('http://www.tei-c.org/ns/1.0');
+
 TEI {
     -oxy-foldable:false;
     -oxy-display-tags: none;
@@ -46,7 +49,7 @@ teiHeader fileDesc titleStmt title[type="main"] {
 }
 
 teiHeader fileDesc titleStmt title[type="main"]:before {
-    content: "Hauptitel:";
+    content: "Haupttitel:";
     font-weight: bolder;
     font-size: 1rem;
 }
@@ -58,7 +61,7 @@ teiHeader fileDesc titleStmt title[type="sub"] {
 }
 
 teiHeader fileDesc titleStmt title[type="sub"]:before {
-    content: "Untertitel:";
+    content: "Nebentitel:";
     font-weight: bolder;
     font-size: 1rem;
 }
@@ -69,8 +72,8 @@ teiHeader fileDesc titleStmt title:after {
     content: 
     oxy_buttonGroup(label, '+|-', fontInherit, false, actions, 
         oxy_action_list(
-            oxy_action(name, 'Untertitel hinzufügen', description, 'fügt Untertitel nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<title xmlns="http://www.music-encoding.org/ns/mei" type="sub"></title>', arg-insertLocation, '.', arg-insertPosition, 'After'),
-            oxy_action(name, 'Hauptitel hinzufügen', description, 'fügt Titel nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<title xmlns="http://www.music-encoding.org/ns/mei" type="main"></title>', arg-insertLocation, '.', arg-insertPosition, 'After'), 
+            oxy_action(name, 'Nebentitel hinzufügen', description, 'fügt Nebentitel nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<title xmlns="http://www.tei-c.org/ns/1.0" type="sub"></title>', arg-insertLocation, '.', arg-insertPosition, 'After'),
+            oxy_action(name, 'Haupttitel hinzufügen', description, 'fügt Titel nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<title xmlns="http://www.tei-c.org/ns/1.0" type="main"></title>', arg-insertLocation, '.', arg-insertPosition, 'After'), 
             oxy_action(name, 'Titel löschen', description, 'löscht aktuellen Titel', operation, 'DeleteElementOperation')
         )
     )
@@ -130,8 +133,23 @@ teiHeader publicationStmt idno {
     -oxy-display-tags: none;
 }
 
-teiHeader publicationStmt idno:before {
-    content: attr(type)": ";
+teiHeader publicationStmt idno[type="transkribus_doc"]:before {
+    content: "Transkribus document-ID: ";
+}
+
+teiHeader publicationStmt idno[type="transkribus_collection"]:before {
+    content: "Transkribus collection-ID: ";
+}
+
+teiHeader publicationStmt idno[type="goobi"]:before {
+    content: "Goobi-ID: ";
+}
+
+/* START msDesc START*/
+
+
+teiHeader sourceDesc {
+    -oxy-display-tags: none;
 }
 
 teiHeader sourceDesc msDesc {
@@ -149,19 +167,20 @@ teiHeader sourceDesc msDesc {
     font-size: 1.5rem;
 }
 
-/*teiHeader sourceDesc msDesc *{
-    -oxy-display-tags: none;
-}*/
-
 teiHeader sourceDesc msDesc msIdentifier {
-    -oxy-display-tags: default;
+    -oxy-display-tags: none;
+     visibility:-oxy-collapse-text;
+}
+
+teiHeader sourceDesc msDesc msIdentifier *{
+    -oxy-display-tags: none;
+     margin: 1rem;
+     -oxy-foldable:false;
 }
 
 teiHeader sourceDesc msDesc msIdentifier institution {
     display: block;
-    border: 1px dotted black;  
     -oxy-display-tags: none;
-    -oxy-foldable:true;
     visibility:-oxy-collapse-text;
     font-size: 1rem;
     padding-top:0;
@@ -188,9 +207,7 @@ teiHeader sourceDesc msDesc msIdentifier institution:before {
 
 teiHeader sourceDesc msDesc msIdentifier repository {
     display: block;
-    border: 1px dotted black;  
     -oxy-display-tags: none;
-    -oxy-foldable:true;
     visibility:-oxy-collapse-text;
     font-size: 1rem;
     padding-top:0;
@@ -216,9 +233,7 @@ teiHeader sourceDesc msDesc msIdentifier repository:before {
 
 teiHeader sourceDesc msDesc msIdentifier idno[type="archive"] {
     display: block;
-    border: 1px dotted black;  
     -oxy-display-tags: none;
-    -oxy-foldable:true;
     visibility:-oxy-collapse-text;
     font-size: 1rem;
     padding-top:0;
@@ -236,12 +251,281 @@ teiHeader sourceDesc msDesc msIdentifier idno:before {
     font-size: 1.25rem;
 }
 
+/* END msDesc END */
+
+/* START msContents START */
+
+teiHeader sourceDesc msDesc msContents, teiHeader sourceDesc msDesc msContents * {
+    -oxy-display-tags: none;
+}
+
+teiHeader sourceDesc msDesc msContents msItem *{
+    display: block;
+    border: 1rem;
+    -oxy-display-tags: none;
+}
+
+teiHeader sourceDesc msDesc msContents msItem author[role="acdh\:hasAuthor"] {
+    display: block;
+    border: 1px dotted black;
+    visibility:-oxy-collapse-text;
+    font-size: 1rem;
+    padding-top:0;
+    content:
+    "Autor: "
+    oxy_textfield(
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+}
+
+teiHeader sourceDesc msDesc msContents msItem author[role="acdh\:hasAuthor"]:after {
+    content:
+        oxy_buttonGroup(label, '+|-', fontInherit, false, actions, 
+        oxy_action_list(
+            oxy_action(name, 'Autor hinzufügen', description, 'fügt Autor nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<author xmlns="http://www.tei-c.org/ns/1.0" role="acdh\:hasAuthor"></author>', arg-insertLocation, '.', arg-insertPosition, 'After'),
+            oxy_action(name, 'Autor löschen', description, 'löscht aktuellen Autor', operation, 'DeleteElementOperation')
+        )
+    );
+}
+
+teiHeader sourceDesc msDesc msContents msItem title {
+    display: block;
+    border: 1px dotted black;  
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    font-size: 1rem;
+    padding-top:0;
+    content:
+    oxy_textfield(
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+}
+
+teiHeader sourceDesc msDesc msContents msItem title:after {
+    content: 
+    oxy_buttonGroup(label, '+|-', fontInherit, false, actions, 
+        oxy_action_list(
+            oxy_action(name, 'Nebentitel hinzufügen', description, 'fügt Nebentitel nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<title xmlns="http://www.tei-c.org/ns/1.0" type="sub"></title>', arg-insertLocation, '.', arg-insertPosition, 'After'),
+            oxy_action(name, 'Haupttitel hinzufügen', description, 'fügt Titel nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<title xmlns="http://www.tei-c.org/ns/1.0" type="main"></title>', arg-insertLocation, '.', arg-insertPosition, 'After'), 
+            oxy_action(name, 'Titel löschen', description, 'löscht aktuellen Titel', operation, 'DeleteElementOperation')
+        )
+    )
+}
+
+
+teiHeader sourceDesc msDesc msContents msItem title:before {
+    content: "Haupttitel";
+}
+
+teiHeader sourceDesc msDesc msContents msItem title[type="sub"]:before {
+    content: "Nebentitel";
+}
+
+teiHeader sourceDesc msDesc msContents msItem note[type="editor"] {
+    content: 
+    oxy_textfield(
+        edit, '#text',
+        columns, 140
+    )
+    oxy_buttonGroup(label, '+|-', fontInherit, false, actions, 
+        oxy_action_list(
+            oxy_action(name, 'Notiz hinzufügen', description, 'fügt Notiz nach aktueller ein', operation, 'InsertFragmentOperation', arg-fragment, '<note xmlns="http://www.tei-c.org/ns/1.0" type="editor"></note>', arg-insertLocation, '.', arg-insertPosition, 'After'),
+            oxy_action(name, 'Notiz löschen', description, 'löscht aktuelle Notiz', operation, 'DeleteElementOperation')
+        )
+    )
+}
+
+/* END msContents END */
+
+/* START physDesc START */
+
+teiHeader sourceDesc physDesc {
+    -oxy-display-tags: none;
+}
+
+teiHeader sourceDesc msDesc objectDesc {
+    -oxy-display-tags: none;
+    font-size: 1rem;
+    content: 
+    "Typ: "
+        oxy_editor(
+            type, combo,
+            edit, "@form"
+        )
+    "   Editorische Beschreibung: "
+    oxy_textfield(
+        edit, '#text',
+        columns, 140
+    )
+}
+
+teiHeader sourceDesc msDesc handDesc {
+    display: none;
+    font-size: 1rem;
+    content: 
+    "Typ: "
+    oxy_textfield(
+        edit, '@form',
+        columns, 140
+    )
+    "Editorische Beschreibung: "
+    oxy_textfield(
+        edit, '#text',
+        columns, 140
+    )
+}
+
+/* END physDesc END */
+
+/* START history START */
+
+teiHeader sourceDesc history {
+    -oxy-display-tags: none;
+    display: block;
+}
+
+teiHeader sourceDesc history origin {
+        width: 100%;
+        font-size: 1rem;
+        content:
+        "Entstehungszeitraum (Freitext)\a"
+        oxy_textfield(
+            fontInherit, true,
+            edit, '#text'
+           )  
+            
+            "\a"
+                   
+        oxy_datePicker(
+            columns, 16, 
+            edit, "@notBefore-iso",
+            format, "yyyy-MM-dd"
+            validateInput, true
+            )
+        oxy_datePicker(
+            columns, 16, 
+            edit, "@notAfter-iso",
+            format, "yyyy-MM-dd"
+            validateInput, true);
+}
+
+/* END history END */
+
+/* START abstract START */
+teiHeader profileDesc, teiHeader profileDesc * {
+    -oxy-display-tags: none;
+}
+
+teiHeader profileDesc abstract{
+    content:"Inhalt\a";
+    display: block;
+    -oxy-foldable:true;
+    -oxy-folded: true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+teiHeader profileDesc abstract p{
+    width: 100%;
+    margin: 0;
+    display: block;
+    font-size: 1rem;
+    content:
+        oxy_textfield(
+            width, 100%,
+            fontInherit, true,
+            edit, '#text'
+           );
+}
+
+
+teiHeader profileDesc creation {
+    display: none;
+}
+
+/* END abstract END */
+
+/* START revisionDesc START */
+teiHeader revisionDesc {
+    content:
+        "Bearbeitungsstand\a"
+        /*oxy_textfield(
+            width, 100%,
+            fontInherit, true,
+            edit, '@status'
+            values, "created, structured"*/
+        oxy_editor(
+            type, combo,
+            edit, "@status"
+        );
+    display: block;
+    -oxy-foldable:true;
+    -oxy-folded: true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+teiHeader revisionDesc change {
+    display: block;
+    -oxy-foldable:true;
+    -oxy-folded: true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 1rem;
+    margin: 3rem;
+    font-weight: normal;
+    font-size: 1rem;
+    content: 
+        oxy_datePicker(
+            columns, 16, 
+            edit, "@when",
+            format, "yyyy-MM-dd"
+            validateInput, false
+        )
+        "Bemerkung: "
+        oxy_textfield(
+            edit, '#text',
+            columns, 140,
+            fontInherit, true
+        )
+        "erzeugt von: "
+        oxy_textfield(
+            edit, '@who',
+            columns, 50,
+            fontInherit, true
+        )
+        oxy_buttonGroup(label, '+|-', fontInherit, false, actions, 
+        oxy_action_list(
+            oxy_action(name, 'Bearbeitungsschritt hinzufügen', description, 'fügt Bearbeitungsschritt nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<change xmlns="http://www.tei-c.org/ns/1.0" when="" who=""></change>', arg-insertLocation, '.', arg-insertPosition, 'After'),
+            oxy_action(name, 'Bearbeitungsschritt hinzufügen', description, 'löscht aktuellen Bearbeitungsschritt', operation, 'DeleteElementOperation')
+        )
+    );
+}
+
+/* END revisionDesc END */
+
 /*END META*/
 
 facsimile {
     display: block;
     content: "Faksimiles";
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     padding: 1rem;
     border: solid green 4px;
@@ -260,25 +544,27 @@ surface {
     border-radius: 15px;
     margin: 0.5rem;
     width: fit-content;
-    visibility:-oxy-collapse-text;
+    border: 1px black solid;
+    content: attr(xml|id);
     -oxy-display-tags: none;
 }
 
 graphic {
     -oxy-display-tags: none;
-    content: oxy_textfield(
+    content: oxy_urlChooser(
         edit, '@url',
-        columns, 140
-    );
+        columns, 140);
     width: fit-content;
 }
 
 /* display text */
 text {
     display: block;
-    content: '(' attr(type) ')';
-    font-size: 2rem;
-    font-weight: bold;
+    content:
+    "Textsorte: "
+        oxy_editor(
+        type, combo,
+        edit, "@type");
     color: gray;
     padding: 2rem;
     margin: 2rem;
