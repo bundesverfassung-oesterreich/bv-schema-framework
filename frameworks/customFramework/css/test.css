@@ -18,7 +18,7 @@ teiHeader fileDesc titleStmt{
 
 
 teiHeader fileDesc titleStmt *{
-    -oxy-display-tags: all;
+    -oxy-display-tags: default;
     display: None;
 }
 
@@ -149,16 +149,91 @@ teiHeader sourceDesc msDesc {
     font-size: 1.5rem;
 }
 
-teiHeader sourceDesc msDesc *{
+/*teiHeader sourceDesc msDesc *{
     -oxy-display-tags: none;
-}
+}*/
 
 teiHeader sourceDesc msDesc msIdentifier {
-    -oxy-display-tags: all;
+    -oxy-display-tags: default;
 }
 
 teiHeader sourceDesc msDesc msIdentifier institution {
-    -oxy-display-tags: all;
+    display: block;
+    border: 1px dotted black;  
+    -oxy-display-tags: none;
+    -oxy-foldable:true;
+    visibility:-oxy-collapse-text;
+    font-size: 1rem;
+    padding-top:0;
+    content:
+    oxy_textfield(
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    )
+    "\aURL:"
+    oxy_textfield(
+        edit, '@key',
+        columns, 140,
+        fontInherit, true
+    );
+}
+
+teiHeader sourceDesc msDesc msIdentifier institution:before {
+    content: "archivierende Institution";
+    font-weight: bolder;
+    font-size: 1.25rem;
+}
+
+
+teiHeader sourceDesc msDesc msIdentifier repository {
+    display: block;
+    border: 1px dotted black;  
+    -oxy-display-tags: none;
+    -oxy-foldable:true;
+    visibility:-oxy-collapse-text;
+    font-size: 1rem;
+    padding-top:0;
+    content:
+    oxy_textfield(
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    )
+    "\aURL:"
+    oxy_textfield(
+        edit, '@key',
+        columns, 140,
+        fontInherit, true
+    );
+}
+
+teiHeader sourceDesc msDesc msIdentifier repository:before {
+    content: "Archiv";
+    font-weight: bolder;
+    font-size: 1.25rem;
+}
+
+teiHeader sourceDesc msDesc msIdentifier idno[type="archive"] {
+    display: block;
+    border: 1px dotted black;  
+    -oxy-display-tags: none;
+    -oxy-foldable:true;
+    visibility:-oxy-collapse-text;
+    font-size: 1rem;
+    padding-top:0;
+    content: 
+    oxy_textfield(
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+}
+
+teiHeader sourceDesc msDesc msIdentifier idno:before {
+    content: "Signatur";
+    font-weight: bolder;
+    font-size: 1.25rem;
 }
 
 /*END META*/
