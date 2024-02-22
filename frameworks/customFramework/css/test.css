@@ -188,6 +188,7 @@ teiHeader sourceDesc msDesc msIdentifier institution {
     padding-top:0;
     content:
     oxy_textfield(
+        width, 50%,
         edit, '#text',
         columns, 140,
         fontInherit, true
@@ -221,7 +222,8 @@ teiHeader sourceDesc msDesc msIdentifier repository {
         columns, 140,
         fontInherit, true
     )
-    "\aURL: "
+    "\a"
+    "Archiv-URL: "
     oxy_textfield(
         width, 50%,
         edit, '@key',
@@ -231,7 +233,7 @@ teiHeader sourceDesc msDesc msIdentifier repository {
 }
 
 teiHeader sourceDesc msDesc msIdentifier repository:before {
-    content: "Archiv";
+    content: "Archiv (Name): ";
     font-weight: bolder;
     font-size: 1.25rem;
 }
@@ -273,7 +275,6 @@ teiHeader sourceDesc msDesc msContents msItem *{
 
 teiHeader sourceDesc msDesc msContents msItem author[role="acdh\:hasAuthor"] {
     display: block;
-    border: 1px dotted black;
     visibility:-oxy-collapse-text;
     font-size: 1rem;
     padding-top:0;
@@ -299,7 +300,6 @@ teiHeader sourceDesc msDesc msContents msItem author[role="acdh\:hasAuthor"]:aft
 
 teiHeader sourceDesc msDesc msContents msItem title {
     display: block;
-    border: 1px dotted black;  
     -oxy-display-tags: none;
     visibility:-oxy-collapse-text;
     font-size: 1rem;
@@ -335,10 +335,11 @@ teiHeader sourceDesc msDesc msContents msItem title[type="sub"]:before {
 
 teiHeader sourceDesc msDesc msContents msItem note[type="editor"] {
     content: 
-    oxy_textfield(
-        width, 50%,
+    oxy_textArea(
+        rows, "5",
+        columns, "70",
         edit, '#text',
-        columns, 140
+        columns, "140"
     )
     oxy_buttonGroup(label, '+|-', fontInherit, false, actions, 
         oxy_action_list(
@@ -366,10 +367,11 @@ teiHeader sourceDesc msDesc objectDesc {
             edit, "@form"
         )
     "   Editorische Beschreibung: "
-    oxy_textfield(
+    oxy_textArea(
         width, 50%,
         edit, '#text',
-        columns, 140
+        columns, 80,
+        rows, 2
     )
 }
 
@@ -699,4 +701,24 @@ gap {
 }
 gap:before {
     content: "[???]";
+}
+
+textArea {
+    white-space: pre-wrap;
+}
+
+textArea[language="CSS"]:before {
+    content: oxy_textArea(
+      edit, '#text',
+      contentType, 'text/css',
+      rows, 10,
+      columns, 30);
+}
+
+textArea[language="XML"]:before {
+    content: oxy_textArea(
+      edit, '#text',
+      contentType, 'text/xml',
+      rows, 10,
+      columns, 30);
 }
