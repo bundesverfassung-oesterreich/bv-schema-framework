@@ -1336,6 +1336,12 @@
                      <attDef ident="source" mode="delete"/>
                   </attList>
                </elementSpec>
+               <elementSpec ident="text" mode="change">
+                  <attDef ident="type" mode="replace">
+                     <valList type="closed" mode="replace">
+                     </valList>
+                  </attDef>
+               </elementSpec>
                <elementSpec ident="ptr" mode="delete"/>
                <elementSpec ident="date" mode="change">
                   <attList>
