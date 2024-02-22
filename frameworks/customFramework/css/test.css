@@ -35,6 +35,7 @@ teiHeader fileDesc titleStmt title {
     font-weight: bolder;
     font-size: 1.5rem;
     content: oxy_textfield(
+        width, 50%,
         edit, '#text',
         columns, 140,
         fontInherit, true
@@ -126,6 +127,7 @@ teiHeader publicationStmt idno {
     font-weight: normal;
     visibility:-oxy-collapse-text;
     content: oxy_textfield(
+        width, 50%,
         edit, '#text',
         columns, 140,
         fontInherit, true
@@ -190,8 +192,9 @@ teiHeader sourceDesc msDesc msIdentifier institution {
         columns, 140,
         fontInherit, true
     )
-    "\aURL:"
+    "\aURL: "
     oxy_textfield(
+        width, 50%,
         edit, '@key',
         columns, 140,
         fontInherit, true
@@ -213,12 +216,14 @@ teiHeader sourceDesc msDesc msIdentifier repository {
     padding-top:0;
     content:
     oxy_textfield(
+        width, 50%,
         edit, '#text',
         columns, 140,
         fontInherit, true
     )
-    "\aURL:"
+    "\aURL: "
     oxy_textfield(
+        width, 50%,
         edit, '@key',
         columns, 140,
         fontInherit, true
@@ -239,6 +244,7 @@ teiHeader sourceDesc msDesc msIdentifier idno[type="archive"] {
     padding-top:0;
     content: 
     oxy_textfield(
+        width, 50%,
         edit, '#text',
         columns, 140,
         fontInherit, true
@@ -274,6 +280,7 @@ teiHeader sourceDesc msDesc msContents msItem author[role="acdh\:hasAuthor"] {
     content:
     "Autor: "
     oxy_textfield(
+        width, 50%,
         edit, '#text',
         columns, 140,
         fontInherit, true
@@ -299,6 +306,7 @@ teiHeader sourceDesc msDesc msContents msItem title {
     padding-top:0;
     content:
     oxy_textfield(
+        width, 50%,
         edit, '#text',
         columns, 140,
         fontInherit, true
@@ -318,7 +326,7 @@ teiHeader sourceDesc msDesc msContents msItem title:after {
 
 
 teiHeader sourceDesc msDesc msContents msItem title:before {
-    content: "Haupttitel";
+    content: "Haupttitel: ";
 }
 
 teiHeader sourceDesc msDesc msContents msItem title[type="sub"]:before {
@@ -328,6 +336,7 @@ teiHeader sourceDesc msDesc msContents msItem title[type="sub"]:before {
 teiHeader sourceDesc msDesc msContents msItem note[type="editor"] {
     content: 
     oxy_textfield(
+        width, 50%,
         edit, '#text',
         columns, 140
     )
@@ -358,6 +367,7 @@ teiHeader sourceDesc msDesc objectDesc {
         )
     "   Editorische Beschreibung: "
     oxy_textfield(
+        width, 50%,
         edit, '#text',
         columns, 140
     )
@@ -369,11 +379,13 @@ teiHeader sourceDesc msDesc handDesc {
     content: 
     "Typ: "
     oxy_textfield(
+        width, 50%,
         edit, '@form',
         columns, 140
     )
     "Editorische Beschreibung: "
     oxy_textfield(
+        width, 50%,
         edit, '#text',
         columns, 140
     )
@@ -394,6 +406,7 @@ teiHeader sourceDesc history origin {
         content:
         "Entstehungszeitraum (Freitext)\a"
         oxy_textfield(
+            width, 50%,
             fontInherit, true,
             edit, '#text'
            )  
@@ -441,8 +454,8 @@ teiHeader profileDesc abstract p{
     display: block;
     font-size: 1rem;
     content:
-        oxy_textfield(
-            width, 100%,
+        oxy_textArea(
+            width, 70%,
             fontInherit, true,
             edit, '#text'
            );
@@ -500,12 +513,14 @@ teiHeader revisionDesc change {
         )
         "Bemerkung: "
         oxy_textfield(
+            width, 50%,
             edit, '#text',
             columns, 140,
             fontInherit, true
         )
         "erzeugt von: "
         oxy_textfield(
+            width, 50%,        
             edit, '@who',
             columns, 50,
             fontInherit, true
