@@ -222,7 +222,7 @@
                                  </msItem>
                               </msContents>
                               <physDesc>
-                                 <objectDesc form="bv_manifestation_type_id__2"> </objectDesc>
+                                 <objectDesc form="Druck"> </objectDesc>
                                  <handDesc> </handDesc>
                               </physDesc>
                               <history>
@@ -1013,6 +1013,18 @@
                      <memberOf key="att.dimensions" mode="delete"/>
                      <memberOf key="att.ranging" mode="delete"/>
                   </classes>
+               </elementSpec>
+               <elementSpec ident="objectDesc" mode="change">
+                  <desc>Beschreibt die materielle Form des Dokuments</desc>
+                  <attList>
+                     <attDef ident="form" mode="replace" usage="req">
+                        <valList type="closed">
+                           <valItem ident="article">
+                              <desc>Artikel eines Gesetzes</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
                </elementSpec>
                <elementSpec ident="sourceDesc" mode="change">
                   <desc>Dokument auf dem der Inhalt der Datei basiert.</desc>

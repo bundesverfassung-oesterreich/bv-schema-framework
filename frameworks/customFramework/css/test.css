@@ -203,7 +203,7 @@ teiHeader sourceDesc msDesc msIdentifier institution {
 }
 
 teiHeader sourceDesc msDesc msIdentifier institution:before {
-    content: "archivierende Institution";
+    content: "archivierende Institution: ";
     font-weight: bolder;
     font-size: 1.25rem;
 }
@@ -254,7 +254,7 @@ teiHeader sourceDesc msDesc msIdentifier idno[type="archive"] {
 }
 
 teiHeader sourceDesc msDesc msIdentifier idno:before {
-    content: "Signatur";
+    content: "Signatur: ";
     font-weight: bolder;
     font-size: 1.25rem;
 }
@@ -404,6 +404,7 @@ teiHeader sourceDesc history {
 
 teiHeader sourceDesc history origin {
         width: 100%;
+        -oxy-display-tags: none;
         font-size: 1rem;
         content:
         "Entstehungszeitraum (Freitext)\a"
