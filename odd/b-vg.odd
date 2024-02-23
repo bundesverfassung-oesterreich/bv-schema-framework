@@ -201,6 +201,7 @@
                            </availability>
                            <idno type="transkribus_doc">1529202</idno>
                            <idno type="transkribus_collection">195363</idno>
+                           <idno type="bv_data_set">Datenset A</idno>
                            <idno type="goobi">14505</idno>
                         </publicationStmt>
                         <sourceDesc>
@@ -1151,6 +1152,19 @@
                <!-- todo: type=editor->xml:id non-empty -->
                <!-- placement? -->
                <!-- hand? -->
+               <elementSpec ident="idno" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList type="closed" usage="req">
+                           <valItem ident="transkribus_doc">transkribus doc id</valItem>
+                           <valItem ident="transkribus_collection">transkribus collection id</valItem>
+                           <valItem ident="bv_data_set">datenset</valItem>
+                           <valItem ident="goobi">Id in goobi</valItem>
+                           <valItem ident="archive">Signatur im Archiv</valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
                <elementSpec ident="note" mode="change">
                   <classes mode="change">
                      <memberOf key="att.pointing" mode="delete"/>
