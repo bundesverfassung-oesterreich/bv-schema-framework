@@ -1,0 +1,21 @@
+name: html from odd
+on:
+  workflow_dispatch:
+  repository_dispatch:
+env:
+  HTML_OUTOUT_DIR: ./html/
+jobs:
+  download:
+    name: convert odd
+    runs-on: ubuntu-latest
+    steps:
+      - name: Perfom Checkout
+        uses: actions/checkout@v3
+      - name: fetch jsons from baserow, write types to odd
+        run: |
+          pip install -r ./pyscripts/requirements.txt
+          python ./pyscripts/update_schema_typelists.py
+      - name: Commit data
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: updated odd types from baserow jsons
