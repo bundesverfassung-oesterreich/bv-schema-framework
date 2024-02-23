@@ -704,6 +704,10 @@ gap:before {
     content: "[???]";
 }
 
+hi {
+    font-weight: bold;
+}
+
 textArea {
     white-space: pre-wrap;
 }

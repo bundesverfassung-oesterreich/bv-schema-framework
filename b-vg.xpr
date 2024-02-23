@@ -578,7 +578,7 @@
                                     <Boolean>false</Boolean>
                                 </field>
                             </documentTypeEntry>
-<documentTypeEntry>
+                            <documentTypeEntry>
                                 <field name="documentTypeID">
                                     <String>6/tei/teip5jtei.framework/TEI JTEI</String>
                                 </field>
