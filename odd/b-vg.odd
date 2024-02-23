@@ -1345,26 +1345,6 @@
                      <attDef ident="source" mode="delete"/>
                   </attList>
                </elementSpec>
-               <elementSpec ident="text" mode="change">
-                  <attlist>
-                     <attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed" mode="replace">
-                           <valItem ident="Verfassungsentwurf">
-                              <desc>Verfassungsentwurf</desc>
-                           </valItem>
-                           <valItem ident="Verfassungstext">
-                              <desc>Verfassungstext</desc>
-                           </valItem>
-                           <valItem ident="Sitzungsprotokoll">
-                              <desc>Sitzungsprotokoll</desc>
-                           </valItem>
-                           <valItem ident="Stellungnahme zum Verfassungsentwurf">
-                              <desc>Stellungnahme zum Verfassungsentwurf</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                  </attlist>
-               </elementSpec>
                <elementSpec ident="ptr" mode="delete"/>
                <elementSpec ident="date" mode="change">
                   <attList>
@@ -1424,6 +1404,26 @@
                      <attDef ident="xml:base" mode="delete"/>
                      <attDef ident="xml:space" mode="delete"/>
                      <attDef ident="xml:lang" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="text" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList type="closed" mode="replace">
+                           <valItem ident="Verfassungsentwurf">
+                              <desc>Verfassungsentwurf</desc>
+                           </valItem>
+                           <valItem ident="Verfassungstext">
+                              <desc>Verfassungstext</desc>
+                           </valItem>
+                           <valItem ident="Sitzungsprotokoll">
+                              <desc>Sitzungsprotokoll</desc>
+                           </valItem>
+                           <valItem ident="Stellungnahme zum Verfassungsentwurf">
+                              <desc>Stellungnahme zum Verfassungsentwurf</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
                   </attList>
                </elementSpec>
                <!-- Anpassung des bibl Elements
