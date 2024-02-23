@@ -362,10 +362,10 @@ teiHeader sourceDesc msDesc objectDesc {
     font-size: 1rem;
     content: 
     "Typ: "
-        oxy_editor(
-            type, combo,
-            edit, "@form"
-        )
+     oxy_editor(
+        type, combo,
+        edit, "@form"
+    )
     "   Editorische Beschreibung: "
     oxy_textArea(
         width, 50%,
@@ -578,16 +578,16 @@ graphic {
 /* display text */
 text {
     display: block;
-    content:
-    "Textsorte: "
-        oxy_editor(
-        edit, "@type"
-     );
     color: gray;
     padding: 2rem;
     margin: 2rem;
     border: solid green 4px;
     border-radius: 15px;
+    content: "Textsorte: "
+        oxy_editor(
+            type, combo,
+            edit, "@type"
+        );
 }
 
 body {

@@ -1348,7 +1348,7 @@
                <elementSpec ident="text" mode="change">
                   <attlist>
                      <attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed">
+                        <valList type="closed" mode="replace">
                            <valItem ident="Verfassungsentwurf">
                               <desc>Verfassungsentwurf</desc>
                            </valItem>
