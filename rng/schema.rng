@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-02-23T11:01:08Z. . 
+Schema generated from ODD source 2024-02-23T11:06:00Z. . 
 TEI Edition: P5 Version 4.7.0. Last updated on 16th November 2023, revision e5dd73ed0 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.7.0/ 
   
@@ -3749,21 +3749,19 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
                <ref name="undefinedchange"/>
             </oneOrMore>
          </choice>
-         <optional>
-            <attribute name="status">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <choice>
-                  <value>created</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The document was created by an automated workflow.</a:documentation>
-                  <value>structured</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The document makro structure was checked/corrected by hand.</a:documentation>
-                  <value>text_correct</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">All text in the document is correct.</a:documentation>
-                  <value>done</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Document is done.</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
+         <attribute name="status">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>created</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The document was created by an automated workflow.</a:documentation>
+               <value>structured</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The document makro structure was checked/corrected by hand.</a:documentation>
+               <value>text_correct</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">All text in the document is correct.</a:documentation>
+               <value>done</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Document is done.</a:documentation>
+            </choice>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -5359,7 +5357,8 @@ Suggested values include: 1] label; 2] data</a:documentation>
              xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         <s:pattern id="duplicate_id">
                            <s:rule context="titleStmt">
-                              <s:assert test="count(title[@type='main']) = 1">there should be only one main-title (Haupttitel), maybe use a sub-titel?</s:assert>
+                              <s:assert test="count(title[@type='main']) = 1">there should be only
+                                 one main-title (Haupttitel), maybe use a sub-titel?</s:assert>
                            </s:rule>
                         </s:pattern>
                      </s:schema>
