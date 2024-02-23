@@ -55,7 +55,7 @@ def get_valItems_from_json(cfg: CFG) -> list:
             "\n",
             NewElement.desc(description_text),
             "\n",
-            type=value
+            ident=value
         )
         valItems.append(valItem)
     return valItems
