@@ -578,7 +578,7 @@
                                     <Boolean>false</Boolean>
                                 </field>
                             </documentTypeEntry>
-                            <documentTypeEntry>
+<documentTypeEntry>
                                 <field name="documentTypeID">
                                     <String>6/tei/teip5jtei.framework/TEI JTEI</String>
                                 </field>
@@ -797,7 +797,7 @@
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>6/tei/teip5odd.framework/TEI ODD/TEI ODD to XML Schema</String>
+                                        <String>6/tei/teip5odd.framework/TEI ODD/TEI ODD to RELAX NG XML</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
