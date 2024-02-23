@@ -1,4 +1,4 @@
-name: html from odd
+name: update types in odd from baserow dump
 on:
   workflow_dispatch:
   repository_dispatch:
