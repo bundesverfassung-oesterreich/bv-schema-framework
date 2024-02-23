@@ -995,6 +995,9 @@
                            <valItem ident="text_correct">
                               <desc>All text in the document is correct.</desc>
                            </valItem>
+                           <valItem ident="entities_tagged">
+                              <desc>All entities in the document are tagged correctly.</desc>
+                           </valItem>
                            <valItem ident="done">
                               <desc>Document is done.</desc>
                            </valItem>
