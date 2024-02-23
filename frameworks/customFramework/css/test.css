@@ -581,8 +581,8 @@ text {
     content:
     "Textsorte: "
         oxy_editor(
-        type, combo,
-        edit, "@type");
+        edit, "@type"
+     );
     color: gray;
     padding: 2rem;
     margin: 2rem;

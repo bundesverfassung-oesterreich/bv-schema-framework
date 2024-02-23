@@ -42,7 +42,7 @@
 													<Integer>2</Integer>
 												</field>
 												<field name="uri">
-													<String>${pd}/odd/out/b-vg.xsd</String>
+													<String>https://bundesverfassung-oesterreich.github.io/bv-schema-framework/rng/schema.rng</String>
 												</field>
 											</docTypeSchema>
 										</field>
@@ -1616,6 +1616,23 @@
 										</field>
 										<field name="patchHandling">
 											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>description</String>
+										</field>
+										<field name="index">
+											<Integer>-1</Integer>
+										</field>
+										<field name="value">
+											<String>Framework for B-VG 1920 project</String>
+										</field>
+										<field name="patchHandling">
+											<String>set</String>
 										</field>
 										<field name="anchor">
 											<null/>
