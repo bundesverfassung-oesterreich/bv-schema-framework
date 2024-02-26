@@ -640,6 +640,40 @@ head {
     );
 }
 
+head{
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+    -oxy-foldable:false;
+    visibility:-oxy-collapse-text;
+    content:
+    oxy_textfield(
+        width, 50%,
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+}
+
+div:not([type='article'])>head {
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+    -oxy-foldable:false;
+    visibility:-oxy-collapse-text;
+    content: oxy_editor(
+        type, combo,
+        edit, '@type'
+    )
+    "\a"
+    oxy_textfield(
+        width, 50%,
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+}
+
 head:before {
     content: "\a";
 }
