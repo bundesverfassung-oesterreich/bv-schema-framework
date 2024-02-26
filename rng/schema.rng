@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-02-26T11:29:26Z. . 
+Schema generated from ODD source 2024-02-26T11:45:21Z. . 
 TEI Edition: P5 Version 4.7.0. Last updated on 16th November 2023, revision e5dd73ed0 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.7.0/ 
   
@@ -49,23 +49,6 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.7.0/
             <ref name="undefinedmodel.global"/>
          </choice>
       </zeroOrMore>
-   </define>
-   <define name="undefinedatt.ascribed.attributes">
-      <ref name="undefinedatt.ascribed.attribute.who"/>
-   </define>
-   <define name="undefinedatt.ascribed.attribute.who">
-      <optional>
-         <attribute name="who">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the person, or group of people, to whom the element content is ascribed.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <data type="anyURI">
-                     <param name="pattern">\S+</param>
-                  </data>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
    </define>
    <define name="undefinedatt.canonical.attributes">
       <ref name="undefinedatt.canonical.attribute.key"/>
@@ -3572,36 +3555,32 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
          <ref name="undefinedatt.sortable.attributes"/>
          <ref name="undefinedatt.datable.attributes"/>
          <ref name="undefinedatt.typed.attribute.subtype"/>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <choice>
-                  <value>transkribus_doc</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">id of the document in transkribus</a:documentation>
-                  <value>transkribus_collection</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">transkribus collection id of the document</a:documentation>
-                  <value>goobi</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">goobi-id of the document</a:documentation>
-                  <value>archive</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">archive signature of the document</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <choice>
-                  <value>transkribus_doc</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">id of the document in transkribus</a:documentation>
-                  <value>transkribus_collection</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">transkribus collection id of the document</a:documentation>
-                  <value>goobi</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">goobi-id of the document</a:documentation>
-                  <value>archive</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">archive signature of the document</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>transkribus_doc</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">id of the document in transkribus</a:documentation>
+               <value>transkribus_collection</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">transkribus collection id of the document</a:documentation>
+               <value>goobi</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">goobi-id of the document</a:documentation>
+               <value>archive</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">archive signature of the document</a:documentation>
+            </choice>
+         </attribute>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>transkribus_doc</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">id of the document in transkribus</a:documentation>
+               <value>transkribus_collection</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">transkribus collection id of the document</a:documentation>
+               <value>goobi</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">goobi-id of the document</a:documentation>
+               <value>archive</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">archive signature of the document</a:documentation>
+            </choice>
+         </attribute>
          <optional>
             <attribute name="calendar">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates one or more systems or calendars to which the date represented by the content of this element belongs.</a:documentation>
@@ -3832,19 +3811,6 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Document is done.</a:documentation>
             </choice>
          </attribute>
-         <attribute name="who">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <choice>
-               <value>#s_kury</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">#s_kury</a:documentation>
-               <value>#m_huber</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">#m_huber</a:documentation>
-               <value>#n_zügel</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">#n_zügel</a:documentation>
-               <value>#cfh</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">#cfh</a:documentation>
-            </choice>
-         </attribute>
          <empty/>
       </element>
    </define>
@@ -3852,11 +3818,29 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
       <element name="change">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Änderung) verzeichnet Änderungen oder Korrekturen während der Erstellung eines Basisdokuments oder während der Überarbeitung einer elektronischen Datei. [2.6. The Revision Description 2.4.1. Creation 11.7. Identifying Changes and Revisions]</a:documentation>
          <ref name="undefinedmacro.specialPara"/>
-         <ref name="undefinedatt.ascribed.attributes"/>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="tei_b_vg-change-calendar-check-change-constraint-rule-21">
+            <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:eg="http://www.tei-c.org/ns/Examples"
+                      xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                      context="tei:*[@calendar]">
+                    <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
+                        systems or calendars to which the date represented by the content of this element belongs,
+                        but this <sch:name/> element has no textual content.</sch:assert>
+                </sch:rule>
+         </pattern>
          <ref name="undefinedatt.datable.attributes"/>
          <ref name="undefinedatt.docStatus.attributes"/>
          <ref name="undefinedatt.global.attributes"/>
          <ref name="undefinedatt.typed.attributes"/>
+         <attribute name="who">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <empty/>
+         </attribute>
          <optional>
             <attribute name="calendar">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates one or more systems or calendars to which the date represented by the content of this element belongs.</a:documentation>
@@ -3870,7 +3854,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-change-calendar-calendar-check-change-constraint-rule-21">
+                  id="tei_b_vg-change-calendar-calendar-check-change-constraint-rule-22">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -4341,7 +4325,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
       
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-facsimile-no_facsimile_text_nodes-constraint-rule-22">
+                  id="tei_b_vg-facsimile-no_facsimile_text_nodes-constraint-rule-23">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -4477,7 +4461,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </choice>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-msDesc-one_ms_singleton_max-constraint-rule-23">
+                  id="tei_b_vg-msDesc-one_ms_singleton_max-constraint-rule-24">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -4753,7 +4737,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-origin-calendar-calendar-check-origin-constraint-rule-24">
+                  id="tei_b_vg-origin-calendar-calendar-check-origin-constraint-rule-25">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5016,7 +5000,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-orgName-calendar-calendar-check-orgName-constraint-rule-25">
+                  id="tei_b_vg-orgName-calendar-calendar-check-orgName-constraint-rule-26">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5055,7 +5039,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-persName-calendar-calendar-check-persName-constraint-rule-26">
+                  id="tei_b_vg-persName-calendar-calendar-check-persName-constraint-rule-27">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5094,7 +5078,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-placeName-calendar-calendar-check-placeName-constraint-rule-27">
+                  id="tei_b_vg-placeName-calendar-calendar-check-placeName-constraint-rule-28">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5132,7 +5116,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-country-calendar-calendar-check-country-constraint-rule-28">
+                  id="tei_b_vg-country-calendar-calendar-check-country-constraint-rule-29">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5170,7 +5154,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-settlement-calendar-calendar-check-settlement-constraint-rule-29">
+                  id="tei_b_vg-settlement-calendar-calendar-check-settlement-constraint-rule-30">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5459,7 +5443,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                         </s:pattern>
                      </s:schema>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-address_usage-constraint-rule-31">
+            id="tei_b_vg-address_usage-constraint-rule-32">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
@@ -5471,7 +5455,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                      </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-country_settlement_usage-constraint-rule-32">
+            id="tei_b_vg-country_settlement_usage-constraint-rule-33">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
@@ -5484,7 +5468,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                      </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-other_headerelements_usage-constraint-rule-33">
+            id="tei_b_vg-other_headerelements_usage-constraint-rule-34">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
@@ -5497,7 +5481,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                      </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-div_nesting-constraint-rule-34">
+            id="tei_b_vg-div_nesting-constraint-rule-35">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
