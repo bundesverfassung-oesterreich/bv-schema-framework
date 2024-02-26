@@ -1004,6 +1004,9 @@
                            </valItem>
                         </valList>
                      </attDef>
+                     <attDef>
+                        <valList type="closed"></valList>
+                     </attDef>
                   </attList>
                </elementSpec>
                <elementSpec ident="unclear" mode="change">

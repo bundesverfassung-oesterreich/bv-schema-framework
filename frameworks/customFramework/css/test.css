@@ -521,12 +521,11 @@ teiHeader revisionDesc change {
             columns, 140,
             fontInherit, true
         )
+        "\a "
         "erzeugt von: "
-        oxy_textfield(
-            width, 50%,        
-            edit, '@who',
-            columns, 50,
-            fontInherit, true
+        oxy_editor(
+            type, combo,
+            edit, '@who'
         )
         oxy_buttonGroup(label, '+|-', fontInherit, false, actions, 
         oxy_action_list(
@@ -700,6 +699,7 @@ gap {
     color: grey;
     visibility:-oxy-collapse-text;
 }
+
 gap:before {
     content: "[???]";
 }
