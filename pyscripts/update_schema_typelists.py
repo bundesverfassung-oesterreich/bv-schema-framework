@@ -123,7 +123,7 @@ if __name__ == "__main__":
         CFG(
             source_json_url="https://raw.githubusercontent.com/bundesverfassung-oesterreich/bv-entities/main/json_dumps/xml_authors.json",
             type_column_name="shorthand",
-            targeted_element_name="revisionDesc",
+            targeted_element_name="change",
             targeted_attribute_name="who"
         )
     ]

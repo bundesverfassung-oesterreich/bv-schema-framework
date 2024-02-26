@@ -961,7 +961,7 @@
                <elementSpec ident="idno" mode="change">
                   <desc>contains an identifier equaling the document in different sources</desc>
                   <attList>
-                     <attDef ident="type" mode="replace">
+                     <attDef ident="type" mode="replace" usage="req">
                         <valList type="closed">
                            <valItem ident="transkribus_doc">
                               <desc>id of the document in transkribus</desc>
@@ -1004,20 +1004,13 @@
                            </valItem>
                         </valList>
                      </attDef>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="change" mode="change">
+                  <attList>
                      <attDef ident="who" mode="replace" usage="req">
                         <valList type="closed">
-                           <valItem ident="#s_kury">
-                              <desc>#s_kury</desc>
-                           </valItem>
-                           <valItem ident="#m_huber">
-                              <desc>#m_huber</desc>
-                           </valItem>
-                           <valItem ident="#n_zügel">
-                              <desc>#n_zügel</desc>
-                           </valItem>
-                           <valItem ident="#cfh">
-                              <desc>#cfh</desc>
-                           </valItem>
+                           
                         </valList>
                      </attDef>
                   </attList>
