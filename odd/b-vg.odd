@@ -1071,7 +1071,7 @@
                <elementSpec ident="head" mode="change">
                   <desc>encodes heading of some sort</desc>
                   <attList>
-                     <attDef ident="type" mode="replace" usage="opt">
+                     <attDef ident="type" mode="replace" usage="req">
                         <valList type="closed">
                            <valItem ident="main">
                               <desc>main-title as opposed to one or more subtitles</desc>
