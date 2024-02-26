@@ -119,6 +119,12 @@ if __name__ == "__main__":
             targeted_element_name="objectDesc",
             targeted_attribute_name="form",
             type_description_field_name="has_description",
+        ),
+        CFG(
+            source_json_url="https://raw.githubusercontent.com/bundesverfassung-oesterreich/bv-entities/main/json_dumps/xml_authors.json",
+            type_column_name="shorthand",
+            targeted_element_name="revisionDesc",
+            targeted_attribute_name="who"
         )
     ]
     for cfg in cfgs:
