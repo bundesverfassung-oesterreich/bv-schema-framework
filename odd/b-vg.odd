@@ -1004,8 +1004,8 @@
                            </valItem>
                         </valList>
                      </attDef>
-                     <attDef>
-                        <valList ident="who" type="closed"></valList>
+                     <attDef ident="who">
+                        <valList type="closed"></valList>
                      </attDef>
                   </attList>
                </elementSpec>
