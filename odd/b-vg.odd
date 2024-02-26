@@ -1170,7 +1170,7 @@
                <!-- hand? -->
                <elementSpec ident="idno" mode="change">
                   <attList>
-                     <attDef ident="type" mode="replace" usage="req">
+                     <attDef ident="type" mode="change" usage="req">
                         <valList type="closed" usage="req">
                            <valItem ident="transkribus_doc">transkribus doc id</valItem>
                            <valItem ident="transkribus_collection">transkribus collection
