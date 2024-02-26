@@ -932,6 +932,9 @@
                   <attList>
                      <attDef ident="type" mode="replace" usage="req">
                         <valList type="closed">
+                           <valItem ident="bv_data_set">
+                              <desc>data set containing the document</desc>
+                           </valItem>
                            <valItem ident="transkribus_doc">
                               <desc>id of the document in transkribus</desc>
                            </valItem>
@@ -1127,20 +1130,6 @@
                <!-- todo: type=editor->xml:id non-empty -->
                <!-- placement? -->
                <!-- hand? -->
-               <elementSpec ident="idno" mode="change">
-                  <attList>
-                     <attDef ident="type" mode="change" usage="req">
-                        <valList type="closed" usage="req">
-                           <valItem ident="transkribus_doc">transkribus doc id</valItem>
-                           <valItem ident="transkribus_collection">transkribus collection
-                              id</valItem>
-                           <valItem ident="bv_data_set">datenset</valItem>
-                           <valItem ident="goobi">Id in goobi</valItem>
-                           <valItem ident="archive">Signatur im Archiv</valItem>
-                        </valList>
-                     </attDef>
-                  </attList>
-               </elementSpec>
                <elementSpec ident="note" mode="change">
                   <classes mode="change">
                      <memberOf key="att.pointing" mode="delete"/>
