@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-02-26T11:12:43Z. .
+Schema generated from ODD source 2024-02-26T11:47:40Z. .
 TEI Edition: Version 4.4.0. Last updated on
         19th April 2022, revision ff9cc28b0
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
@@ -54,23 +54,6 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
             <ref name="undefinedmodel.global"/>
          </choice>
       </zeroOrMore>
-   </define>
-   <define name="undefinedatt.ascribed.attributes">
-      <ref name="undefinedatt.ascribed.attribute.who"/>
-   </define>
-   <define name="undefinedatt.ascribed.attribute.who">
-      <optional>
-         <attribute name="who">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the person, or group of people, to whom the element content is ascribed.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <data type="anyURI">
-                     <param name="pattern">\S+</param>
-                  </data>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
    </define>
    <define name="undefinedatt.canonical.attributes">
       <ref name="undefinedatt.canonical.attribute.key"/>
@@ -3002,21 +2985,19 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
          <ref name="undefinedatt.sortable.attributes"/>
          <ref name="undefinedatt.datable.attributes"/>
          <ref name="undefinedatt.typed.attribute.subtype"/>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <choice>
-                  <value>transkribus_doc</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">id of the document in transkribus</a:documentation>
-                  <value>transkribus_collection</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">transkribus collection id of the document</a:documentation>
-                  <value>goobi</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">goobi-id of the document</a:documentation>
-                  <value>archive</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">archive signature of the document</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>transkribus_doc</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">id of the document in transkribus</a:documentation>
+               <value>transkribus_collection</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">transkribus collection id of the document</a:documentation>
+               <value>goobi</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">goobi-id of the document</a:documentation>
+               <value>archive</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">archive signature of the document</a:documentation>
+            </choice>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -3135,6 +3116,17 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Document is done.</a:documentation>
             </choice>
          </attribute>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedchange">
+      <element name="change">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Änderung) verzeichnet Änderungen oder Korrekturen während der Erstellung eines Basisdokuments oder während der Überarbeitung einer elektronischen Datei. [2.6. The Revision Description 2.4.1. Creation 11.7. Identifying Changes and Revisions]</a:documentation>
+         <ref name="undefinedmacro.specialPara"/>
+         <ref name="undefinedatt.datable.attributes"/>
+         <ref name="undefinedatt.docStatus.attributes"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
          <attribute name="who">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <choice>
@@ -3148,18 +3140,6 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">#cfh</a:documentation>
             </choice>
          </attribute>
-         <empty/>
-      </element>
-   </define>
-   <define name="undefinedchange">
-      <element name="change">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Änderung) verzeichnet Änderungen oder Korrekturen während der Erstellung eines Basisdokuments oder während der Überarbeitung einer elektronischen Datei. [2.6. The Revision Description 2.4.1. Creation 11.7. Identifying Changes and Revisions]</a:documentation>
-         <ref name="undefinedmacro.specialPara"/>
-         <ref name="undefinedatt.ascribed.attributes"/>
-         <ref name="undefinedatt.datable.attributes"/>
-         <ref name="undefinedatt.docStatus.attributes"/>
-         <ref name="undefinedatt.global.attributes"/>
-         <ref name="undefinedatt.typed.attributes"/>
          <optional>
             <attribute name="target">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ziel) verweist auf ein oder mehrere Elemente, die zu dieser Änderung gehören. </a:documentation>

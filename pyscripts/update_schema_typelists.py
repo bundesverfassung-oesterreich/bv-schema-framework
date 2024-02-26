@@ -124,7 +124,8 @@ if __name__ == "__main__":
             source_json_url="https://raw.githubusercontent.com/bundesverfassung-oesterreich/bv-entities/main/json_dumps/xml_authors.json",
             type_column_name="shorthand",
             targeted_element_name="change",
-            targeted_attribute_name="who"
+            targeted_attribute_name="who",
+            type_description_field_name="name"
         )
     ]
     for cfg in cfgs:
