@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-02-26T11:45:21Z. . 
+Schema generated from ODD source 2024-02-26T11:46:43Z. . 
 TEI Edition: P5 Version 4.7.0. Last updated on 16th November 2023, revision e5dd73ed0 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.7.0/ 
   
@@ -3839,7 +3839,16 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
          <ref name="undefinedatt.typed.attributes"/>
          <attribute name="who">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <empty/>
+            <choice>
+               <value>#s_kury</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">#s_kury</a:documentation>
+               <value>#m_huber</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">#m_huber</a:documentation>
+               <value>#n_zügel</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">#n_zügel</a:documentation>
+               <value>#cfh</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">#cfh</a:documentation>
+            </choice>
          </attribute>
          <optional>
             <attribute name="calendar">
