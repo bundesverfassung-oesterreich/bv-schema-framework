@@ -21,9 +21,6 @@ jobs:
           rm -rf "$HTML_OUTOUT_DIR"
           mkdir "$HTML_OUTOUT_DIR"
           echo "sending post request to teigarage"
-          # other post url i found, no clue what it does like with the other
-          # 'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/TEI%3Atext%3Axml/xhtml%3Aapplication%3Axhtml%2Bxml/'
-          # so we transform via api and write to $index_path
           curl -X 'POST' \
             'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/oddhtml%3Aapplication%3Axhtml%2Bxml/' \
             -F 'fileToConvert=@./odd/b-vg.odd' \
