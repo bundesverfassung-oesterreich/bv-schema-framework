@@ -65,7 +65,8 @@ jobs:
           cp -r $rng_output_dir $HTML_OUTOUT_DIR
       - name: publish framework addon
         run: |
-          git checkout main -- frameworks/customFramework
+          git checkout main -- ~/frameworks/customFramework
+          ls
           ADDON_DIR="~/html/ADDON/"
           if [ -d $ADDON_DIR ]; then rm -rf $ADDON_DIR & mkdir $ADDON_DIR; fi
           FRAMEWORKS_DIR="~/frameworks"
