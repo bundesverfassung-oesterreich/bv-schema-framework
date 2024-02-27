@@ -64,7 +64,8 @@ jobs:
         run: |
           ls
           ADDON_DIR="html/ADDON/"
-          if [ -d $ADDON_DIR ]; then rm -rf $ADDON_DIR & mkdir $ADDON_DIR; fi
+          if [ -d $ADDON_DIR ]; then rm -rf $ADDON_DIR; fi
+          mkdir $ADDON_DIR
           FRAMEWORKS_DIR="frameworks"
           CUSTOM_FRAMEWORK_FOLDER="customFramework"
           TARGET_ZIP="${ADDON_DIR}b-vg-framework.zip"
