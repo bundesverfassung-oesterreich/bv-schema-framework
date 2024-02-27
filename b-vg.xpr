@@ -96,6 +96,14 @@
                         </authorSchemaAwareOptions>
                     </entry>
                     <entry>
+                        <String>author.image.width.autoscale.limit</String>
+                        <Integer>150</Integer>
+                    </entry>
+                    <entry>
+                        <String>author.show.doctypes</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                    <entry>
                         <String>auto.apply.best.smart.paste.strategy.solution</String>
                         <Boolean>false</Boolean>
                     </entry>
@@ -709,6 +717,10 @@
                         </documentTypeEntry-array>
                     </entry>
                     <entry>
+                        <String>key.author.editor.option.pane</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                    <entry>
                         <String>key.author.editor.schema.aware.option.pane</String>
                         <Boolean>true</Boolean>
                     </entry>
@@ -727,6 +739,10 @@
                     <entry>
                         <String>key.editor.open.option.pane</String>
                         <Boolean>false</Boolean>
+                    </entry>
+                    <entry>
+                        <String>key.editor.option.pane.group</String>
+                        <Boolean>true</Boolean>
                     </entry>
                     <entry>
                         <String>key.editor.save.option.pane</String>
@@ -756,6 +772,22 @@
                                 </field>
                             </scenarioAssociation>
                         </scenarioAssociation-array>
+                    </entry>
+                    <entry>
+                        <String>tagless.editor.tags.display.mode</String>
+                        <Integer>0</Integer>
+                    </entry>
+                    <entry>
+                        <String>tags.background.color</String>
+                        <String>255,255,102</String>
+                    </entry>
+                    <entry>
+                        <String>tags.compact.mode</String>
+                        <Boolean>false</Boolean>
+                    </entry>
+                    <entry>
+                        <String>tags.foreground.color</String>
+                        <String>102,102,102</String>
                     </entry>
                 </serializableOrderedMap>
             </serialized>
