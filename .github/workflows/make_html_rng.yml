@@ -5,9 +5,6 @@ on:
     workflows: ["update types in odd from baserow dump"]
     types:
       - completed
-    workflows: ["update types in odd from baserow dump"]
-    types:
-      - completed
 env:
   HTML_OUTOUT_DIR: ./html/
 jobs:
