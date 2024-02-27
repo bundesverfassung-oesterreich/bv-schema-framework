@@ -68,7 +68,7 @@ jobs:
           mkdir $ADDON_DIR
           FRAMEWORKS_DIR="frameworks"
           CUSTOM_FRAMEWORK_FOLDER="customFramework"
-          TARGET_ZIP="${ADDON_DIR}b-vg-framework.zip"
+          TARGET_ZIP="../${ADDON_DIR}b-vg-framework.zip"
           cd $FRAMEWORKS_DIR
           zip -r $TARGET_ZIP $CUSTOM_FRAMEWORK_FOLDER
           cd ~
