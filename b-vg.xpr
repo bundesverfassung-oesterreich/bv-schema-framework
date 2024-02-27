@@ -412,14 +412,6 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>6/ooxml/ooxml.framework/OOXML</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
                                     <String>6/opf/opf2.0.framework/OPF 2.0</String>
                                 </field>
                                 <field name="enable">
@@ -460,22 +452,6 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>6/extensions/extensions.framework/Oxygen Extensions</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/report/report.framework/Oxygen Report</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
                                     <String>6/samples/personal.framework/Personal (Sample)</String>
                                 </field>
                                 <field name="enable">
@@ -485,14 +461,6 @@
                             <documentTypeEntry>
                                 <field name="documentTypeID">
                                     <String>6/samples-json/personal_sample_json_.framework/Personal (Sample-JSON)</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/publishing_template/publishing_template.framework/Publishing Template</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
