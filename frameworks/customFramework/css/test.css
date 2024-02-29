@@ -147,6 +147,10 @@ teiHeader publicationStmt idno[type="goobi"]:before {
     content: "Goobi-ID: ";
 }
 
+teiHeader publicationStmt idno[type="bv_data_set"]:before {
+    content: "Dataset: ";
+}
+
 /* START msDesc START*/
 
 
