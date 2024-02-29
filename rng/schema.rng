@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-02-27T16:08:41Z. . 
+Schema generated from ODD source 2024-02-29T09:59:18Z. . 
 TEI Edition: P5 Version 4.7.0. Last updated on 16th November 2023, revision e5dd73ed0 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.7.0/ 
   
@@ -1483,6 +1483,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    <define name="undefinedmodel.pPart.transcriptional">
       <choice>
          <ref name="undefinedcorr"/>
+         <ref name="undefinedadd"/>
          <ref name="undefineddel"/>
          <ref name="undefinedunclear"/>
       </choice>
@@ -1490,18 +1491,23 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    <define name="undefinedmodel.pPart.transcriptional_alternation">
       <choice>
          <ref name="undefinedcorr"/>
+         <ref name="undefinedadd"/>
          <ref name="undefineddel"/>
          <ref name="undefinedunclear"/>
       </choice>
    </define>
    <define name="undefinedmodel.pPart.transcriptional_sequence">
       <ref name="undefinedcorr"/>
+      <ref name="undefinedadd"/>
       <ref name="undefineddel"/>
       <ref name="undefinedunclear"/>
    </define>
    <define name="undefinedmodel.pPart.transcriptional_sequenceOptional">
       <optional>
          <ref name="undefinedcorr"/>
+      </optional>
+      <optional>
+         <ref name="undefinedadd"/>
       </optional>
       <optional>
          <ref name="undefineddel"/>
@@ -1515,6 +1521,9 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <ref name="undefinedcorr"/>
       </zeroOrMore>
       <zeroOrMore>
+         <ref name="undefinedadd"/>
+      </zeroOrMore>
+      <zeroOrMore>
          <ref name="undefineddel"/>
       </zeroOrMore>
       <zeroOrMore>
@@ -1524,6 +1533,9 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    <define name="undefinedmodel.pPart.transcriptional_sequenceRepeatable">
       <oneOrMore>
          <ref name="undefinedcorr"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="undefinedadd"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="undefineddel"/>
@@ -2678,6 +2690,18 @@ Sample values include: 1] rubbing (rubbing); 2] mildew (mildew); 3] smoke (smoke
                </data>
             </attribute>
          </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedadd">
+      <element name="add">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hinzufügung) enthält Buchstaben, Wörter oder Phrasen, die in den Ausgangstext von einem Autor, einem Schreiber oder im Rahmen einer zuvor erfolgten Annotation oder Korrektur in den Ausgangstext eingefügt wurden  [3.5.3. Additions, Deletions, and Omissions]</a:documentation>
+         <ref name="undefinedmacro.paraContent"/>
+         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.transcriptional.attributes"/>
+         <ref name="undefinedatt.placement.attributes"/>
+         <ref name="undefinedatt.typed.attributes"/>
+         <ref name="undefinedatt.dimensions.attributes"/>
          <empty/>
       </element>
    </define>
