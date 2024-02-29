@@ -1832,12 +1832,12 @@
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>insert.lb_in_word</String>
+																<String>insert.pb</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>insert.lb</String>
+																<String>insert.pb_in_word</String>
 															</field>
 														</toolbarItem>
 													</toolbarEntry-array>
