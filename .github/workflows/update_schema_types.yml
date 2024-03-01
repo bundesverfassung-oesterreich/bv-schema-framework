@@ -16,6 +16,6 @@ jobs:
           pip install -r ./pyscripts/requirements.txt
           python ./pyscripts/update_schema_typelists.py
       - name: Commit data
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: updated odd types from baserow jsons
