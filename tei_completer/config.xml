@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://baserow-ac.acdh-dev.oeaw.ac.at/docs#/default/list_tables_db__db_id__tables_get-->
+<config xmlns="http://humanistika.org/ns/tei-completer">
+    <server>
+        <baseUrl>https://baserow-ac.acdh-dev.oeaw.ac.at/ac/b-vg</baseUrl>
+    </server>
+    <autoComplete>
+        <context>//rs[@type="person"]</context>
+        <attribute>@ref</attribute>
+        <dependent default="persons" label="Datenbank">./@type</dependent>
+        <selection label="Suchtext">./text()</selection>
+        <request>
+            <url>$baseUrl/$dependent?q=$selection</url>
+        </request>
+    </autoComplete>
+</config>
