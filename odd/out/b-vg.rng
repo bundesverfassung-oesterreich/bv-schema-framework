@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-04-16T10:43:27Z. .
+Schema generated from ODD source 2024-04-16T10:51:23Z. .
 TEI Edition: Version 4.4.0. Last updated on
         19th April 2022, revision ff9cc28b0
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
@@ -2660,6 +2660,8 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
          <attribute name="type">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
             <choice>
+               <value>editor</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Das Element enhält einen Kommentar der Editor:innen.</a:documentation>
                <value>comment</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Das Element enthält einen im edierten Dokument hinzugefügten Kommentar der (historischen) Autor:innen.</a:documentation>
             </choice>
@@ -4568,7 +4570,20 @@ Suggested values include: 1] label; 2] data</a:documentation>
               xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
               context="//tei:head[@type='sub']">
          <s:assert test="./parent::*/tei:head[@type='main']"> "head"-elements with
-                           @type "sub" should have a sibling wiht @type "main" </s:assert>
+                           @type "sub" should have a sibling with @type "main" </s:assert>
+      </s:rule>
+   </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            id="tei_b_vg-check_note_position-constraint-rule-19">
+      <s:rule xmlns="http://www.tei-c.org/ns/1.0"
+              xmlns:eg="http://www.tei-c.org/ns/Examples"
+              xmlns:egXML="http://www.tei-c.org/ns/Examples"
+              xmlns:s="http://purl.oclc.org/dsdl/schematron"
+              xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+              context="//tei:note[@type='editor']">
+         <s:assert test="parent::tei:msItem">
+                           note @type="editor" is only allowed inside the ms-description of the document header
+                        </s:assert>
       </s:rule>
    </pattern>
 </grammar>

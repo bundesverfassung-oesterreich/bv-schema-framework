@@ -1575,7 +1575,7 @@
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                      <s:rule context="//tei:head[@type='sub']">
                         <s:assert test="./parent::*/tei:head[@type='main']"> "head"-elements with
-                           @type "sub" should have a sibling wiht @type "main" </s:assert>
+                           @type "sub" should have a sibling with @type "main" </s:assert>
                      </s:rule>
                   </constraint>
                </constraintSpec>
@@ -1611,6 +1611,15 @@
                   </content>
                </elementSpec>
                <!-- Anpassung des note Elementes -->
+               <constraintSpec ident="check_note_position" scheme="schematron">
+                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                     <s:rule context="//tei:note[@type='editor']">
+                        <s:assert test="parent::tei:msItem">
+                           note @type="editor" is only allowed inside the ms-description of the document header
+                        </s:assert>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
                <elementSpec ident="note" mode="change">
                   <classes mode="change">
                      <memberOf key="att.pointing" mode="delete"/>
@@ -1627,9 +1636,9 @@
                      <attDef iden="xml:space" mode="delete"/>
                      <attDef ident="type" mode="change" usage="req">
                         <valList type="closed" mode="change">
-                           <!--<valItem mode="add" ident="editor">
-                              <desc>Das Element enhält einen Apparateintrag der Editor:innen.</desc>
-                           </valItem>-->
+                           <valItem mode="add" ident="editor">
+                              <desc>Das Element enhält einen Kommentar der Editor:innen.</desc>
+                           </valItem>
                            <valItem mode="add" ident="comment">
                               <desc>Das Element enthält einen im edierten Dokument hinzugefügten
                                  Kommentar der (historischen) Autor:innen.</desc>
