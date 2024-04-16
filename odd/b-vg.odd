@@ -31,33 +31,33 @@
          <div xml:id="introduction">
             <head>Einführung</head>
             <p>Es werden die einzelnen Aspekte des Edierens in den Blick genommen sowie die
-               entsprechende Modellierung des Textes mit TEI XML anhand von Beispielen erläutert.
-               Außerdem wird beschrieben, wie man die Modellierung mit der Editionsumgebung im
-               Oxygen-Editor umsetzt.</p>
+               entsprechende Modellierung des Textes mittels TEI XML anhand von Beispielen
+               erläutert. </p>
             <p>Diese Datei wird laufend weiterentwickelt und aktualisiert. Vorschläge zur Anpassung
                von allen Seiten sind willkommen.</p>
-            <p>Stand: September 2023</p>
+            <p>Stand: April 2024</p>
          </div>
          <div xml:id="ocr">
             <head>Workflow Texterfassung</head>
             <p>Nachdem die abgescannten Dokumente auf Goobi gesammelt wurden, werden sie in
-               Transkribus semiautomatisch transkribiert. Ziel dieses Schrittes ist möglichst alle
-               basalen textuellen Informationen zu sichern, typographische und strukturelle
-               Informationen können ignoriert werden. Der edierte Text wird in diesem Arbeitschritt
-               also zunächst als Buchstabenkette betrachtet.</p>
+               Transkribus semiautomatisch transkribiert. Ziel dieses Schrittes ist es, möglichst
+               alle basalen textuellen Informationen zu sichern; typographische und strukturelle
+               Informationen können ignoriert werden. Der zu edierende Text wird in diesem
+               Arbeitschritt also zunächst als Buchstabenkette betrachtet.</p>
             <p>Nach erfolgter Transkription wird der Text automatisiert in einem Export-Repository
                auf Github verfügbar gemacht. Bearbeiter:innen wählen einen unbearbeiteten Text und
                kopieren ihn in das Repository für manuelle Korrekturen und Tagging. In diesem
                Bearbeitungsschritt werden unter anderem<list>
-                  <item>die semantischen Strukturelemente des Dokuments codiert</item>
+                  <item>die semantischen Strukturelemente des Dokuments kodiert</item>
                   <item>Entitäten – wie Personen, Orte und Texte – mit den Indizes / externen
                      Quellen verlinkt</item>
                   <item>Metadaten erzeugt</item>
-                  <item>die Transkriptionen der Dokumente auf Integrität überprüft werden</item>
+                  <item>die Transkriptionen der Dokumente auf Integrität überprüft</item>
                </list></p>
             <p>Der Stand der Bearbeitung wird in den Metadaten festgehalten. Wenn der
-               Bearbeitungsstand eines Dokumentes auf abgeschlossen gesetzt ist und das Dokument zur
-               ‚Publikation‘ freigegeben wird, wird es automatisiert auf der Website publiziert.</p>
+               Bearbeitungsstand eines Dokumentes auf „abgeschlossen“ gesetzt ist und das Dokument
+               zur ‚Publikation‘ freigegeben wird, wird es automatisiert auf der Website
+               publiziert.</p>
          </div>
          <div xml:id="oxygen">
             <head>Arbeiten im Oxygen XML Editor</head>
@@ -134,8 +134,8 @@
                      <gi>teiHeader</gi>, dazu zählen Informationen zu den einzelnen Dokumenten, zu
                   ihrer Entstehung und Beschaffenheit oder ihrer editorischen
                   Erschließung/Bearbeitung. Eine Vielzahl der im TEI-Header vermerkten Informationen
-                  wird automatisch generiert oder automatisch anderen Quellen (vor allem goobi)
-                  entnommen.</p>
+                  wird automatisch generiert oder automatisch anderen Quellen (vor allem
+                  goobi/baserow) entnommen.</p>
                <p>Die Struktur des <gi>teiHeader</gi> gestaltet sich wie folgt:</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <teiHeader>
@@ -247,41 +247,42 @@
                <div xml:id="revision">
                   <head>Status des Dokuments, Arbeitsstand</head>
                   <p>Der Status der Bearbeitung des gesamten Dokuments wird in der
-                        <gi>revisionDesc</gi> im Attribut <att>status</att> notiert. Ist das
-                     Dokument noch in Bearbeitung, hat <att>status</att> den Wert <val>draft</val>.
-                     Sind alle Arbeitsschritte für das Dokument abgeschlossen, hat <att>status</att>
-                     den Wert <val>done</val>. Wird der Bearbeitungsstand eines Dokumentes auf
-                        <val>done</val> gesetzt, wird es automatisiert auf der Website
-                     publiziert.</p>
+                        <gi>revisionDesc</gi> im Attribut <att>status</att> notiert. Wenn das
+                     Dokument noch nicht oder nur basal bearbeitet wurde, hat <att>status</att> den
+                     Wert <val>created</val>. Sind alle Arbeitsschritte für das Dokument
+                     abgeschlossen, hat <att>status</att> den Wert <val>done</val>. Wird der
+                     Bearbeitungsstand eines Dokumentes auf <val>done</val> gesetzt, wird es
+                     automatisiert auf der Website publiziert.</p>
                   <p>Es empfiehlt sich, erfolgte Arbeitsschritte mittel der <gi>change</gi>-Elemente
-                     zu notieren, um einen Überblick über den Bearbeitungsstand zu bieten.</p>
+                     zu notieren, um einen Überblick über den Bearbeitungsstand zu bieten. Alle
+                     Bearbeiter:Innen verfügen über ein Kürzel, das – ebenso wie das aktuelle Datum
+                     – mittels dropdown ausgewählt werden sollte.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <revisionDesc status="draft">
-                        <change>Strutktur erfasst</change>
-                        <change>Entitäten verlinkt.</change>
+                     <revisionDesc status="text_correct">
+                        <change when="2024-02-27" who="#cfh">document automatically created</change>
+                        <change when="2024-02-27" who="#cfh">tagged structure</change>
+                        <change when="2024-02-27" who="#cfh">text endgülitg korrigiert</change>
                      </revisionDesc>
                   </egXML>
                </div>
             </div>
             <div xml:id="structure_text">
                <head>Haupttexte</head>
-               <p>Haupttexte umfassen den tatsächlichen Text der edierten Dokumente.</p>
+               <p>Haupttexte umfassen den grundlegenden Text der edierten Dokumente.</p>
                <div xml:id="content_text">
                   <head>Grundstruktur</head>
                   <p><hi rend="bold">Dokumenttexte</hi> stehen unmittelbar nach dem
                         <gi>teiHeader</gi> innerhalb eines <gi>text</gi>-Elements, das den Beginn
                      und das Ende des Werkstextes im XML-Dokument markiert. Der eigentliche
                      Textinhalt steht wiederum in einem <gi>body</gi>-Element. </p>
-                  <div>
-                     <head>Der Inhalt</head>
-                     <p>Der inhaltliche Haupttext findet sich im <gi>body</gi> eines XML-Dokuments,
-                        innerhalb eines <gi>div</gi>-Elements mit dem
-                           <att>type</att>=<val>main</val>. Ein Haupttext beginnt in der Regel mit
-                        einem Titel <gi>head</gi>. Die einzelnen Texte sind in sich selbst
-                        vielfältig Baumartig strukturiert. Neben losen, allgemein bestimmten
-                        Struktureinheiten wie Kapiteln, Abschnitten und Unterabschnitten, existieren
-                        kleinere spezifische Strukturelemente wie Artikel, Absätze und Ziffern.</p>
-                  </div>
+                  <head>Der Inhalt</head>
+                  <p>Der inhaltliche Haupttext findet sich im <gi>body</gi> eines XML-Dokuments,
+                     innerhalb eines <gi>div</gi>-Elements mit dem <att>type</att>=<val>main</val>.
+                     Ein Haupttext beginnt in der Regel mit einem Titel <gi>head</gi>. Die einzelnen
+                     Texte sind in sich selbst vielfältig Baumartig strukturiert. Neben allgemein
+                     bestimmten Struktureinheiten wie Kapiteln, Abschnitten und Unterabschnitten,
+                     existieren kleinere spezifische Strukturelemente wie Artikel, Absätze und
+                     Ziffern.</p>
                </div>
                <div>
                   <head>Abschnitte und Unterabschnitte</head>
@@ -291,10 +292,10 @@
                         <att>type</att>="<val>section</val>".</p>
                   <p>Die Dokumente sind jedoch tiefer als auf nur einer Ebene strukturiert: sie
                      enthalten teilweise komplexe verschachtelte Strukturen mit Abschnitten,
-                     Unterabschnitten, Unter-Unterabschnitten etc. Um dies zu codieren, können
+                     Unterabschnitten, Unter-Unterabschnitten etc. Um dies zu kodieren, können
                         <gi>div</gi> -Elemente verschachtelt werden. Sie alle erhalten den
-                        <att>type</att>="<val>section</val>", gleichgülitg, ob es sich um unter-
-                     oder übergeordnete Abschnitte handelt.</p>
+                        <att>type</att>="<val>section</val>", egal <hi rend="bold">ob es sich um
+                        unter- oder übergeordnete Abschnitte handelt</hi>.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
@@ -325,46 +326,88 @@
                         </body>
                      </text>
                   </egXML>
-                  <p>Jedes <gi>div</gi>-Element muss über eine <att>xml:id</att>, verfügen, die der
-                        <ref target="#structure_ids">Identifikatoren-Gesamtsystematik</ref> folgt.
-                     Ids sollten ausschließlich über die im Schema angebotene Funktionalität
-                     automatisch generiert werden.</p>
+                  <p>Das in manchen Fällen auftretende mehrspaltige Layout kann ignoriert werden,
+                     eine Imitation oder Kodierung ist nicht vorgesehen.</p>
                </div>
                <div>
                   <head>Artikel</head>
-                  <p>Da viele der Edierten Dokumente ebenfalls über Artikel verfügen, werden diese
-                     ebenfalls mittels <gi>div</gi>-Elementen erfasst. Dass diese Elemente Artikel
-                     kodieren, wird mittels <att>type</att>="<val>aricle</val>" markiert.</p>
+                  <p>In den vielen edierten Dokumente vorhandenen Artikel, werden ebenfalls mittels
+                        <gi>div</gi>-Elementen erfasst. Dass diese Elemente Artikel kodieren, wird
+                     mittels <att>type</att>="<val>article</val>" markiert.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <body>
                         <div type="main"> [Umfasst das einzelne Werk im Gesamten] <div
                               type="section">
                               <head>Abschnitt I. </head>
-                              <div ana="article">
+                              <div type="article">
                                  <head>Artikel XVII. </head>
                                  <p>Gesetzesbeschlüsse der Landtage oder des Wiener Gemeinderates
-                                    <lb/>können wegen Verfassungswidrigkeit (Artikel 6 - 14 ) von
-                                    der
-                                    <lb/>Staatsregierung binnen 14 Tagen nach Einlangen der
-                                    Mitteilung
-                                    <lb/>und wenn gegen diese Beschlüsse im Sinne des Artikels XVI
-                                    zu-
-                                    <lb/>nächst eine Vorstellung erhoben worden ist, nach Ablauf
-                                    weiterer
-                                    <lb/>14 Tage beim Verfassungsgerichtshofe angefochten werden;
-                                    diese
-                                    <lb/>Anfechtung ist der Landesregierung unverzüglich auf dem
-                                    kürzesten
-                                    <lb/>Wege mitzuteilen.</p>
+                                    können wegen Verfassungswidrigkeit (Artikel 6 - 14 ) von der
+                                    Staatsregierung binnen 14 Tagen nach Einlangen der Mitteilung
+                                    und wenn gegen diese Beschlüsse im Sinne des Artikels XVI zu
+                                    nächst eine Vorstellung erhoben worden ist, nach Ablauf …</p>
                               </div>
                            </div>
                         </div>
                      </body>
                   </egXML>
-                  <p>Jedes <gi>div</gi>-Element muss über eine <att>xml:id</att>, verfügen, die der
-                        <ref target="#structure_ids">Identifikatoren-Gesamtsystematik</ref> folgt.
-                     Ids sollten ausschließlich über die im Schema angebotene Funktionalität
-                     automatisch generiert werden.</p>
+               </div>
+               <div>
+                  <head>Präambel</head>
+                  <p>Auch wenn eine Präambel sich aufgrund ihres metareferenziellen Charakters auf
+                     alle Artikel und Abschnitte des Dokuments bezieht, sollte sie den folgenden
+                     Inhalten des Dokumentes in einem gesondertem <gi>div</gi>
+                     <att>type</att> = <val>preamble</val> vorangestellt werden. Es wird in diesem
+                     Falle also zuungunsten des referenziellen Charakters der sequenzielle (i.e. die
+                     Präambel steht linear vor dem Text) kodiert, um die Dokumentenstruktur nicht
+                     weiter zu verschachteln.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <body>
+                        <div type="main">
+                           <head type="main">Bundes-Verfassungsgesetz</head>
+                           <head type="sub">Entwurf 2</head>
+                           <div type="präambel"> Das Volk der demokratischen Republik Österreich,
+                              deren Recht von ihm ausgeht und das sich freiwillig und rechtmäßig zur
+                              Gemeinschaft aller Staatsbürgerinnen und Staatsbürger als
+                              Zusammenschluss freier und souveräner Personen verbunden hat … </div>
+                           <div type="section">
+                              <head>Abschnitt 1</head>
+                              <div type="article">
+                                 <head>Artikel 1.</head>
+                                 <p> … </p>
+                              </div>
+                           </div>
+                        </div>
+                     </body>
+                  </egXML>
+               </div>
+               <div>
+                  <head>Überschriften</head>
+                  <p> Alle Überschriften müssen als <gi>head</gi> codiert werden. Wenn eine
+                     Texteinheit mehr als eine Überschrift enthält, sollte ein Hierarchie der
+                     Überschriften mittels des <att>type</att> kodiert werden. Ziel ist es eine
+                     Hauptüberschrift (<att>type</att>="<val>main</val>") und eine oder mehrere
+                     Neben-/Unterüberschriften (<att>type</att>="<val>sub</val>") zu
+                     unterscheiden.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <text>
+                        <body>
+                           <div type="main">
+                              <head type="main">Haupttitel des Dokuments</head>
+                              <head type="sub">Nebentitel des Dokuments</head>
+                              <p>irgendein Text</p>
+                           </div>
+                        </body>
+                     </text>
+                  </egXML>
+                  <div>
+                     <head>Kolumnen-Titel</head>
+                     <p>Einige der historischen Dokumente – vor allem Drucke – enthalten
+                        Kolumnentitel, also sich auf jeder Seite widerholende Angaben zu Titel
+                        und/oder Verfasser des Dokuments. Diese meist oberhalb des Textes
+                        positionierten Angaben können restlos aus den Dokumenten entfernt
+                        werden.</p>
+                  </div>
                </div>
                <div>
                   <head>Absätze</head>
@@ -375,25 +418,67 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <body>
                         <div>
-                           <p>[Absatz]</p>
-                           <p>[Absatz]</p>
+                           <p>Ein Absatz</p>
+                           <p>Ein weiterer Absatz</p>
                         </div>
                      </body>
                   </egXML>
-                  <p>Jedes <gi>p</gi>-Element kann über eine <att>xml:id</att> verfügen, die der
+                  <!--<p>Jedes <gi>p</gi>-Element kann über eine <att>xml:id</att> verfügen, die der
                         <ref target="#structure_ids">Identifikatoren-Gesamtsystematik</ref> folgt.
                      Ids sollten ausschließlich über die im Schema angebotene Funktionalität
-                     automatisch generiert werden.</p>
+                     automatisch generiert werden.</p>-->
+                  <div>
+                     <head>Zeilenumbrüche</head>
+                     <p>Die in den Xml-Dokumenten kodierten Zeilenumbrüche sollen vor allem die
+                        Korrektur erleichtern. Da eine zeilengenaue Darstellung nicht angestrebt
+                        wird, müssen keine fehlenden Zeilenumbrüche ergänzt werden. <hi rend="bold"
+                           >Inkorrekt getrennte Wörter</hi> oder <hi rend="bold">fäschlich als
+                           getrennt erkannte Wörter müssen</hi> aber korrigiert werden</p>
+                     <p>Zeilenumbrüche werden mittels des <gi>lb</gi>-Tags (lb = linebegin) kodiert.
+                        Wenn der Zeilenumbruch mit der Wortgrenze zusammenfällt, also kein Wort
+                        getrennt wird, wird dies mittels des Attributs <att>break</att> mit dem Wert
+                           <val>yes</val> kodiert. Wenn im Gegensatz der Zeilenumbruch nicht mit
+                        einer Wortgrenze zusammenfällt, also ein Wort getrennt wird, wir dies
+                        mittels des Attributs <att>break</att> mit dem Wert <val>no</val> kodiert.
+                        Das manuelle Erzeugen von Trennstrichen ("-") ist in keinem Fall nötig.
+                        Eventuell vorhandene Trennstriche sollten entfernt und das getrennte Wort
+                        entweder verbunden oder der korrekte <gi>lb</gi>-Tag gesetzt werden.</p>
+                     <p>Das Framework stellt bei Zeilenumbrüchen, die ein Wort trennen, einen gelben
+                        Trennstrich dar. Dieser wird bloß scheinbar erzeugt und kann nicht als Text
+                        verändert werden. Einzig durch das löschen des dahinter liegenden Tags und
+                        das einsetzen des korrekten (etwa über die Schaltfläche in der Menüleiste)
+                        kann ein evenetueller Fehler behoben werden.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <body>
+                           <div>
+                              <p>Hier trennt der Zeilenumbruch
+                                 <lb break="yes"/> kein Wort. Er kann ignoriert oder auch gelöscht
+                                 werden.</p>
+                              <p>Hier trennt der Zeilenum
+                                 <lb break="no"/> bruch ein Wort. Da das korrekt durch
+                                    <att>break</att> kodiert wurde, kann dieser Zeilenumbruch
+                                 gelöscht/ignoriert werden.</p>
+                              <p>Hier markiert ein falsch gesetzter lb-Tag,
+                                 <lb break="no"/> dass eine Worttrennung vorliegt, obwohl dies nicht
+                                 der Fall ist.
+                                 <lb break="yes"/> Der im letzten Beispiel gesetzte lb-Tag könnte
+                                 nun entweder <hi xmlns="http://www.tei-c.org/ns/1.0" rend="bold"
+                                    >gelöscht</hi> oder durch den korrekten Tag:
+                                 <lb break="yes"/> ersetzt werden. </p>
+                           </div>
+                        </body>
+                     </egXML>
+                  </div>
                </div>
                <div>
                   <head>Listen und Ziffern</head>
                   <p>Listen werden mittels eines <gi>list</gi>-Elements kodiert, jeder Listenpunkt
-                     wird mit einem <gi>item</gi>-Element umschlossen.
-                     <lb/>Listentitel werden durch ein <gi>head</gi>-Element ohne weitere Attribute
+                     wird von einem <gi>item</gi>-Element umschlossen.</p>
+                  <p>Listentitel werden durch ein <gi>head</gi>-Element ohne weitere Attribute
                      gekennzeichnet. Es steht an erster Stelle (first child) innerhalb des
-                        <gi>list</gi>-Elements.
-                     <lb/>Listenelemente können zusätzlich verschachtelt werden, sprich ein
-                     Listenpunkt <gi>item</gi> kann eine untergeordnete Liste enthalten.</p>
+                        <gi>list</gi>-Elements. Listenelemente können zusätzlich verschachtelt
+                     werden, sprich ein Listenpunkt <gi>item</gi> kann eine untergeordnete Liste
+                     enthalten.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <list>
                         <head>Listentitel</head>
@@ -405,9 +490,22 @@
                      </list>
                   </egXML>
                   <p>Mit Ziffern versehene Aufzählungen innerhalb der Paragraphen werden ebenfalls
-                     auf die oben beschriebene Weise mittels <gi>list</gi>-Element kodiert, jeder
+                     auf die oben beschriebene Weise mittels <gi>list</gi>-Element kodiert, jede
                      Ziffer wird als Listenpunkt (<gi>item</gi>) codiert.</p>
+                  <p>Die in den Dokumenten enthaltenen Ordnungsnummern müssen als <gi>label</gi>
+                     kodiert werden. Dieser Tag muss <hi rend="bold">vor</hi> dem zugehörigen
+                        <gi>item</gi> stehen.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <list>
+                        <head>Listentitel</head>
+                        <label>1)</label>
+                        <item>Inhalt des ersten Listenpunktes</item>
+                        <label>2)</label>
+                        <item>Inhalt des zweiten Listenpunktes</item>
+                     </list>
+                  </egXML>
                </div>
+               <!--
                <div>
                   <head>Tabellen</head>
                   <p>Tabellen werden mit einem <gi>table</gi>-Element gekennzeichnet, wobei sie
@@ -434,32 +532,34 @@
                      </table>
                   </egXML>
                </div>
+               -->
                <div>
                   <head>Hervorhebungen</head>
                   <p>Xml ist nicht primär dazu bestimmt, typographische Informationen als solche
                      mimetisch zu kodieren. Die semantische Funktion typographischer Eigenschaften
                      sollte jedoch in einigen Fällen kodiert werden. Hervorhebungen im edierten Text
-                     werden mit dem Element <gi>hi</gi> ausgezeichnet. Generell sollten jedoch z.B.
-                     Überschriften <hi rend="bold">semantisch</hi> bzw. entsprechend ihrer Funktion
-                     als <gi>head</gi> getagt werden. Sollte sich in solchen Fällen wärehnd der
-                     Arbeit herausstellen, dass die angebotenen Differenzierungen nicht ausreichend
-                     sind, können diese erweitert werden.<list>
+                     werden mit dem Element <gi>emph</gi> ausgezeichnet. Generell sollten jedoch
+                     z.B. Überschriften <hi rend="bold">semantisch</hi> bzw. entsprechend ihrer
+                     spezifischen Funktion als <gi>head</gi> – und nicht mit <gi>emph</gi> – getagt
+                     werden. Mit <gi>emph</gi> werden unterschiedslos die folgenden Phänomene
+                     kodiert, da sie tatsächlich bloße Hervorhebungen darstellen:<list>
                         <item>Sperrungen und/oder Schreibungen mit Versalien (wie sie in
                            Typoskripten häufig vorkommen)</item>
                         <item>sowie Schreibungen mit Kapitälchen (wie sie in historischen Drucken
                            auftreten)</item>
                         <item>sowie Unterstreichungen (Manus-/Typosskripte)</item>
-                     </list>sollten in der Regel sämtlich mit <gi>hi</gi> ausgezeichnet werden, da
-                     sie tatsächlich bloße Hervorhebungen darstellen. Es wäre – wenn nötig –
-                     möglich, diese Kodierung durch <att>rend</att>-Attribute weiter zu
-                     differenzieren, falls unterschiedliche Hervorhebungen verschiedene Funktionen
-                     erfüllen sollten.</p>
+                     </list></p>
+                  <p>Anmerkung: Sollte sich während der Arbeit herausstellen, dass die angebotenen
+                     Differenzierungen nicht ausreichend sind, können diese erweitert werden. Es
+                     wäre – wenn nötig – möglich, diese Kodierung weiter zu differenzieren, falls
+                     unterschiedliche Hervorhebungen innerhalb eines einzigen Dokuments verschiedene
+                     Funktionen erfüllen sollten.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
                            <div>
-                              <p>[...]<hi>selbstverständlich</hi> und unproblematisch war, daß es
-                                    <hi>einer</hi> besonderen [...]</p>
+                              <p>[...]<emph>selbstverständlich</emph> und unproblematisch war, daß
+                                 es <emph>einer</emph> besonderen [...]</p>
                            </div>
                         </body>
                      </text>
@@ -467,23 +567,69 @@
                </div>
                <div>
                   <head>Seitenwechsel</head>
-                  <p>Seitenwechsel werden erhalten und sollten im Normalfall keiner Bearbeitung
-                     bedürfen. Grundsätzlich werden die Seitenwechsel mit einem <gi>pb</gi>-Element
-                     markiert. Innerhalb eines Attributs <att>n</att> sind die Seitenzahlen der
-                     neuen Seite (pb=pagebegin) als Attributwert hinterlegt, das
-                     <att>facs</att>-Attribut verweist auf die zugehörige Abbildung, während
-                        <att>xml:id </att>die zugehörige (automatisch generierte) Id enthält.</p>
+                  <p><hi rend="bold">Seitenwechsel</hi> werden erhalten und sollten im Normalfall
+                     keiner Bearbeitung bedürfen. Grundsätzlich werden Seitenwechsel mit einem
+                        <gi>pb</gi>-Element markiert. Innerhalb eines Attributs <att>n</att> sind
+                     die Seitenzahlen der neuen Seite (pb = pagebegin) als Attributwert hinterlegt,
+                     das <att>facs</att>-Attribut verweist auf die zugehörige Abbildung, während
+                        <att>xml:id </att>die zugehörige (automatisch generierte) Id enthält. Alle
+                     diese Informationen sollten im gesammten Korpus standartmäßig korrekt sein. </p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
-                           <div>
-                              <pb facs="#facs_6" n="6" xml:id="img_0006"/>
-                           </div>
+                           <div> Hier ist der Text auf Seite 5. <pb facs="#facs_6" n="6"
+                                 xml:id="img_0006"/> Hier beginnt der Text auf Seite 6 </div>
+                           <div> Hier ist der Text auf Seite 6. Ein Wort wird im Seitenwechsel ge
+                                 <pb break="no" facs="#facs_7" n="7" xml:id="img_0007"/> trennt und
+                              auf Seite 7 fortgesetzt. </div>
                         </body>
                      </text>
                   </egXML>
+                  <p>Wenn der Seitenumbruch mit der Wortgrenze zusammenfällt, also kein Wort
+                     getrennt wird, muss dies nicht extra kodiert werden. Wenn im Gegensatz der
+                     Seitenumbruch nicht mit einer Wortgrenze zusammenfällt, also ein Wort getrennt
+                     wird, wir dies mittels des Attributs <att>break</att> mit dem Wert
+                        <val>no</val> kodiert. Das manuelle Erzeugen von Trennstrichen ("-") ist in
+                     keinem Fall nötig. Eventuell vorhandene Trennstriche sollten entfernt und das
+                     getrennte Wort entweder verbunden oder der korrekte Attributwert gesetzt
+                     werden.</p>
+                  <p>Die in den Dokumenten befindlichen Paginierungen (Seitenzählungen) und/oder
+                     Foliierungen (Blattzählungen), die von den Verfasser:innen oder Archivar:innen
+                     aufgebracht wurden, werden grundsätzlich wie jeder andere Text behandelt. Um
+                     sie jedoch vom sie umgebenden Fließtext zu trennen, sollten sie mittels <gi>ab
+                           <att>type</att>="<val>pagecounter</val>"</gi> kodiert werden. </p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <text>
+                        <body>
+                           <div> Hier ist der Text auf Seite 5. Und eine historische Paginierung:
+                                 <ab type="pagecounter">-5-</ab>
+                              <pb facs="#facs_6" n="6" xml:id="img_0006"/>
+                              <ab type="pagecounter">-6-</ab> Hier beginnt der Text auf Seite 6,
+                              darüber steht eine Seitenzahl … </div>
+                        </body>
+                     </text>
+                  </egXML>
+                  <div>
+                     <head>Fortsetzungszeichen</head>
+                     <p>Einige der editieren Dokumente – vor allem Typoskripte – enthalten Zeichen,
+                        die angeben, dass das Ende einer Texteinheit nicht mit dem Ende der Seite
+                        zusammenfällt, dass also z.B. ein Absatz auf der Folgeseite fortgesetzt
+                        wird. Diese Zeichen sollten aus den Dokumenten entfernt werden.
+                        Beispiel:</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <text>
+                           <body>
+                              <div> Hier ist der Text auf Seite 5. Der Absatz wird jedoch auf der
+                                 <lb/>./. <pb facs="#facs_6" n="6" xml:id="img_0006"/> Folgeseite
+                                 fortgesetzt, was durch das im historischen Medium nötige, heute
+                                 aber überflüssige Zeichen „./.“ markiert wird. </div>
+                           </body>
+                        </text>
+                     </egXML>
+                  </div>
                </div>
             </div>
+            <!--
             <div>
                <head>Entiäten</head>
                <p>Die edierten Texte enthalten bzw. referenzieren oder erwähnen Entitäten, die in
@@ -586,80 +732,153 @@
                      </text>
                   </egXML>
                </div>
-            </div>
+            </div>-->
             <div>
                <head>Texteingriffe/Konjekturen</head>
                <p>Editorische Eingriffe in den Text werden mit dem Element <gi>corr</gi> markiert.
-                  Das gilt nicht bei offensichtlichen, geringfügigen Fehlen wie Buchstabendrehern.
-                  Diese werden stillschweigend konjektiert.</p>
-               <p>Bei schwerwiegenderen Eingriffen ist es notwendig, den ursprünglichen Text des
-                  Dokuments zu dokumentieren. In solchen Fällen, wird das <gi>corr</gi>-Element
-                  verwendet, das den korrigierten Text zu taggen, auf das ein <gi>sic</gi>-Element
-                  folgt, das wiederum den Originaltext dokumentiert.</p>
+                  Es ist im Rahmen solcher Eingriffe notwendig, den ursprünglichen Text des
+                  Dokuments zu dokumentieren, wofür das <gi>sic</gi>-Element verwendet wird. Um die
+                  Beziehung zwischen Korrigiertem Text (<gi>corr</gi>) und authentischer
+                  problematischer Schreibung (<gi>sic</gi>) zu kodieren, werden beide Elemente von
+                  einem <gi>choice</gi>-Element umschlossen.</p>
+               <p>Für solche "Korrekturen" kommen offensichtliche Verschreibungen und Textfehler in
+                  Frage. Historische Graphievarianzen werden nur in seltenen Einzelfällen angepasst,
+                  so etwa Konsonantenverdopplungen bei Worttrennungen. Eine genaue Entscheidung
+                  obliegt im Einzelfall den Herausgebern.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <body>
                      <div>
-                        <p>Es ist in dieser Situatuion notwendig den Bundestag zu
-                              <corr>vertagen</corr><sic>befragen</sic></p>
+                        <p> Es ist in dieser Situatuion notwendig, den Bundestag zu <choice>
+                              <corr>vertagen</corr>
+                              <sic>befragen</sic>
+                           </choice>. </p>
                      </div>
                   </body>
                </egXML>
             </div>
             <div>
-               <head>Textgenetische/Textkritische Anmerkungen</head>
+               <head>Textgenetische/Textkritische Phänomene</head>
                <p>Ziel der editorischen Arbeit ist es, den lesbaren Text der letzten Schicht des
                   Dokuments zur Verfügung zu stellen. Neben dieser Herstellung des lesbaren Textes
-                  gilt es jedoch auch Momente ihre Entstehung zu dokumentieren. Solche Phänomene
+                  gilt es jedoch auch Momente seiner Entstehung zu dokumentieren. Solche Phänomene
                   können unterteilt werden in: <list>
                      <item n="1">historische Bearbeitungschritte, die die Textgestalt direkt
-                        verändern (Streichungen, Einfügungen, Ersetzungen)</item>
+                        verändern (Streichungen, Einfügungen, Ersetzungen, Hinzufügungen)</item>
                      <item n="2">historische Bearbeitungschritte, die den bestehenden Text
                         (metasprachlich) kommentieren (Anmerkungen am Rand, etc.)</item>
                   </list> Während im ersten Fall das Resultat der Bearbeitung in den Haupttext
-                  einfließt und der der Bearbeitung vorausliegende Zustand in einem Kommentar
-                  festgehalten wird, wird im zweiten Falle das Resultat – die Anmerkung – bloß im
-                  Kommentar festgehalten. </p>
-               <p>Ein solcher Kommentar der Editor:innen besteht in beiden Fällen aus einem
-                     <gi>note</gi>-Element das den Inhalt des editorischen/textgenetischen
-                  Kommentars enthält (durch den <att>type</att>= <val>editor</val> markiert). Um den
-                  Referenzbereich des Kommentars im kommentierten Text – also seine betreffende
-                  ‚Stelle‘ – zu markieren wird ein zusätzliches Anchor-Element verwendet: Das
-                     <gi>anchor</gi>-Element mit dem <att>type</att>=<val>editor</val> markiert
-                  stets den <hi rend="bold">Beginn</hi> der Stelle, das <gi>note</gi>-Element, das
-                  den Kommentar-Text enthält, ihr <hi rend="bold">Ende</hi>. Um diese Relation
-                  eindeutig zu kodieren, erhalten beide Elemente – über das Framework automatisiert
-                  – eine Id. Die des <gi>anchor</gi>-Elements wird mit den Suffix ‚_s‘ (für ‚start‘)
-                  die des <gi>note</gi>-Elements mit dem Suffix ‚_e‘ (für ‚end‘) versehen.</p>
-               <p>Kommentare im Dokument selbst, wie sie im zweiten Fall auftreten, werden
-                  zusätzlich von einem <gi>note</gi>-Element umschlossen, dass ein
-                  <att>type</att>-Attribut mit dem Wert <val>original</val> erhält. Im ersten Fall
-                  wird gestrichener oder überschriebener Text von einem <gi>del</gi>-Element
-                  umschlossen, während hinzugefügter oder überschreibender Text durch ein
-                     <gi>add</gi>-Element umschlossen wird.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <body>
-                     <div>
-                        <p>Die Republik Deutschösterreich ist ein freier Bund <anchor type="editor"
-                              xml:id="a_1222_s"/> der souveränen Länder <note type="editor"
-                              xml:id="a_1222_e">
-                              <rs type="person" ref="p_0001">Kelsen</rs> am Rand: <note
-                                 type="original">Artikel?</note>; aus: <del>souveräner Länder</del>
-                           </note> ; Sie besteht aus neun selbstständigen Bundesländern. </p>
-                        <p>Es ist unter diesen <anchor type="editor" xml:id="e_1236_s"/>Umständen
-                           jedoch <anchor type="editor" xml:id="e_1235_s"/>weder ratsam noch nötig,
-                              <note type="editor" xml:id="e_1235_e">
-                              <rs type="person" ref="p_0001">Falser</rs> am Rand (mit Anstreichung):
-                                 <note type="original">möglich?</note>
-                           </note> die Bundesversammlung einzuberufen. <note type="editor"
-                              xml:id="e_1236_e">
-                              <persName key="p_0001">Kelsen</persName> aus: <del>Bedingungen nicht
-                                 verpflichtend, die Bundesversammlung zu Rate zu ziehen.</del>
-                           </note>
-                        </p>
-                     </div>
-                  </body>
-               </egXML>
+                  einfließt und der der Bearbeitung vorausliegende Zustand durch Kodierung
+                  festgehalten wird, wird im zweiten Falle bloß das Resultat – die Anmerkung –
+                  festgehalten.</p>
+               <p>Generell muss die <hi rend="bold">temporalen Dimensionen</hi> des
+                  Änderungesgeschehens <hi rend="bold">nicht</hi> dokumentiert werden. Es wird also
+                  nicht angestrebt, zu kodieren, ob eine Änderung relativ früher oder später
+                  erfolgte als eine andere. Ebenso müssen <hi rend="bold">spatiale Informationen
+                     nicht</hi> dokumentiert werden. Dh. es ist beispielsweise nicht nötig, zu
+                  kodieren, wo genau sich eine Hinzufügung auf der Seite befindet. Editorische
+                  Stellenkommentare werden nicht erzeugt.</p>
+               <div>
+                  <head>Streichungen</head>
+                  <p>Streichungen im Text werden mittels des <gi>del</gi>-Tag kodiert. Die genaue
+                     Gestalt der Streichung kann (sofern sich keine dem widersprechenden Einzelfälle
+                     finden) ignoriert werden.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <body>
+                        <div>
+                           <p>Die Republik Deutschösterreich ist ein freier<del>, förderaler</del>
+                              Bund der souveränen Länder …</p>
+                           <p>(Das zweite Adjektiv wurde samt Komma gestrichen.)</p>
+                        </div>
+                     </body>
+                  </egXML>
+               </div>
+               <div>
+                  <head>Hinzufügung/Einfügungen</head>
+                  <p>Textuelle Einheiten dich nach dem Verfassen der Grundschicht dem Text auf der
+                     Seite hinzugefügt wurden, werden – ohne kodieren der genauen Technik oder
+                     Position – mit <gi>add</gi> kodiert. Dies trifft auf Einfügungen am Rand, in
+                     der Zeile und Einklebungen gleichermaßen zu, bezieht sich aber nicht auf
+                     Anmerkungen etc.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <body>
+                        <div>
+                           <p>Hier wurde etwas <add>als Beispiel und innheralb der Zeile</add>
+                                 hinzugefügt.<add>Stellen wir uns vor, dashier wäre am Rand
+                                 hinzugefügt worden. Wir können es trotzdem genau so
+                              kodieren.</add></p>
+                        </div>
+                     </body>
+                  </egXML>
+               </div>
+               <div>
+                  <head>Ersetzungen</head>
+                  <p>Wenn Teile eines Textes (Zeichen, Worte, Sätze, Absätze …) im Laufe der
+                     Dokumentengenese durch andere Ersetzt wurden, wird dies als
+                     Streichung/Hinzufügung kodiert, gleichgültig, ob eine Streichung oder
+                     Überschreibung vorliegt. Der geänderte Bereich wird von einem
+                     <gi>choice</gi>-Tag umschlossen, die ersetzte Textstelle wird mittels
+                        <gi>del</gi>, die ersetzende Hinzufügung mittels <gi>add</gi> kodiert.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <body>
+                        <div>
+                           <p>Hier steht der originale Text der
+                                    <choice><del>ersten</del><add>zweiten</add></choice>
+                              Fassung.</p>
+                           <p>Im obigen Beispiel ersetzt „zweiten“ das überschriebene/gestrichene
+                              „ersten“.</p>
+                        </div>
+                     </body>
+                  </egXML>
+               </div>
+               <div>
+                  <head>Unleserliche Textstellen</head>
+                  <p>Um anzugeben, dass ein Teil des Textes nicht entziffert werden konnte, kann an
+                     die Stelle der nichtleserlichen Zeichen/Worte der <gi>gap</gi>-Tag gesetzt
+                     werden, der die Lücke in der Transkription entsprechend qualifiziert. Mittels
+                        <att>reason</att> = <val>illegible</val> wird der Grund – mangelnde
+                     Lesbarkeit – explizit gemacht, mittels <gi>extend</gi>, wird angegeben, welche
+                     mutmaßliche Anzahl von Worten/Zeichen nicht gelesen werden konnte.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <body>
+                        <div>
+                           <p>Hier existiert eine Lücke in der Transkription, der Text solle
+                              leserlich geschrieben sein, ist aber nicht <gap extend="1 Wort"
+                                 reason="illegible"/> geschrieben.</p>
+                        </div>
+                     </body>
+                  </egXML>
+               </div>
+               <div>
+                  <head>Metatexte: Kommentare und Anmerkungen</head>
+                  <p>Kommentare oder Anmerkungen, die sich auf den Haupttext des Dokumentes
+                     beziehen, ohne in ihn eingeglieder zu werden, müssen mittels des <gi>note</gi>
+                     Tags mit dem <att>type</att> = <val>comment</val> getagt werden. Als
+                     Bezugspunkt des Kommentars wird standardmäßig das Elternelement des
+                        <gi>note</gi>-Elements verstanden. Der Kommentar bezieht sich also auf den
+                     Text, in dessen Element er sich befindet. Diese Elternelemente können z.B.
+                        <gi>p</gi>, <gi>head</gi> oder auch <gi>div</gi> sein. Um Texteinheiten zu
+                     referenzieren, die kleiner als ein Absatz sind, kann ein <gi>span</gi>-Element
+                     erzeugt werden, das den Bezugsramen markiert.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <body>
+                        <div type="article">
+                           <head> Art. 12 <note type="comment">(Dieser Kommentar bezieht sich auf
+                                 die Überschrift.) Nicht sehr catchy.</note>
+                           </head>
+                           <p> Das Bundes-Verfassungsgesetz darf keinen Artikel 12. enthalten. <note
+                                 type="comment">(Dieser Kommentar bezieht sich auf den Absatz.)
+                                 Warum nicht? Gründe angeben!</note>
+                           </p>
+                           <p>Ein Bundes-Verfassungsgesetz, das einen Artikel 12 enthält, ist shc
+                              ungültig.</p>
+                           <note type="comment">(Dieser Kommentar bezieht sich auf den Artikel.)
+                              Vielleicht besser als Artikel 13?</note>
+                        </div>
+                     </body>
+                  </egXML>
+               </div>
             </div>
+            <!--
             <div xml:id="structure_ids">
                <head>Indizes/Ids</head>
                <p>Um effektiv mit Xml zu arbeiten und Datenkonsitenz zu gewährleisten, ist es nötig,
@@ -762,7 +981,7 @@
                      </row>
                   </table>
                </div>
-            </div>
+            </div>-->
          </div>
          <!--
          <div xml:id="manual" xml:lang="de">
@@ -901,10 +1120,11 @@
             <head>Appendix</head>
             <schemaSpec ident="tei_b_vg" start="TEI" prefix="undefined" targetLang="de" docLang="de">
                <moduleRef key="header"
-                  include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc                   editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
+                  include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
                <!-- remove lb after asking  -->
                <moduleRef key="core"
-                  include=" rs lb p title note bibl date hi item pb publisher corr list author add respStmt resp head biblScope address pubPlace author title graphic street                    unclear postCode del gap"/>
+                  include=" rs lb p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address pubPlace author title graphic street unclear postCode del gap"/>
+               <!--hi-->
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
                <moduleRef key="transcr" include="facsimile surface"/>
@@ -912,8 +1132,7 @@
                   include="msDesc history  msIdentifier msContents physDesc institution repository                    msItem objectDesc handDesc origin"/>
                <moduleRef key="namesdates" include="persName orgName placeName country settlement"/>
                <moduleRef key="figures" include="cell table row"/>
-               <!--<moduleRef key="textcrit" include="app"/>-->
-               <moduleRef key="linking" include="anchor"/>
+               <moduleRef key="linking" include="ab"/>
                <!-- make sure there is only one title in the doc -->
                <constraintSpec ident="only_one_main_head" scheme="schematron">
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -999,11 +1218,8 @@
                            <valItem ident="text_correct">
                               <desc>All text in the document is correct.</desc>
                            </valItem>
-                           <valItem ident="entities_tagged">
-                              <desc>All entities in the document are tagged correctly.</desc>
-                           </valItem>
                            <valItem ident="done">
-                              <desc>Document is done.</desc>
+                              <desc>Document is done and should be published.</desc>
                            </valItem>
                         </valList>
                      </attDef>
@@ -1029,6 +1245,7 @@
                      </attDef>
                   </attList>
                </elementSpec>
+               <!--
                <elementSpec ident="unclear" mode="change">
                   <desc>Markiert eine nicht oder nur vage entzifferbare Stelle.</desc>
                   <classes mode="change">
@@ -1038,6 +1255,7 @@
                      <memberOf key="att.ranging" mode="delete"/>
                   </classes>
                </elementSpec>
+               -->
                <elementSpec ident="objectDesc" mode="change">
                   <desc>Beschreibt die materielle Form des Dokuments</desc>
                   <attList>
@@ -1062,6 +1280,221 @@
                      </attDef>
                   </attList>
                </elementSpec>
+               <constraintSpec ident="check_corr" scheme="schematron">
+                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                     <s:rule context="//tei:corr">
+                        <s:report test="parent::*[not(local-name()='choice')]"> a choice must be
+                           placed inside "choice"-tag </s:report>
+                        <s:assert test="parent::*/tei:sic"> document the original variant with a
+                           "sic"-tag </s:assert>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
+               <elementSpec ident="corr" mode="change">
+                  <desc>Umschließt korrigierte Texteinheit</desc>
+                  <attList>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="ana" mode="delete"/>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="change" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="evidence" mode="delete"/>
+                     <attDef ident="instant" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="gap" mode="change">
+                  <desc>markiert nicht entzifferte Stelle</desc>
+                  <attList>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="ana" mode="delete"/>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="change" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="start" mode="delete"/>
+                     <attDef ident="end" mode="delete"/>
+                     <attDef ident="dur" mode="delete"/>
+                     <attDef ident="dur-iso" mode="delete"/>
+                     <attDef ident="evidence" mode="delete"/>
+                     <attDef ident="instant" mode="delete"/>
+                     <attDef ident="unit" mode="delete"/>
+                     <attDef ident="quantity" mode="delete"/>
+                     <attDef ident="precision" mode="delete"/>
+                     <attDef ident="scope" mode="delete"/>
+                     <attDef ident="atLeast" mode="delete"/>
+                     <attDef ident="atMost" mode="delete"/>
+                     <attDef ident="min" mode="delete"/>
+                     <attDef ident="max" mode="delete"/>
+                     <attDef ident="confidence" mode="delete"/>
+                     <attDef ident="agent" mode="delete"/>
+                     <attDef ident="reason" mode="replace" usage="req">
+                        <desc>grund für die Lücke in der transkription</desc>
+                        <valList type="closed">
+                           <valItem ident="illegible">
+                              <desc>unelserliche Stelle</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="extend" mode="change" usage="req">
+                        <desc>geschätzter Umfang der unleserlichen Stelle ("1 Wort", "3 Buchstaben"
+                           o.ä.)</desc>
+                        <datatype>
+                           <dataRef key="teidata.text"/>
+                        </datatype>
+                     </attDef>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList type="closed">
+                           <valItem ident="article">
+                              <desc>Artikel eines Gesetzes</desc>
+                           </valItem>
+                           <valItem ident="section">
+                              <desc>erste Strukturebene eines Haupttextes (Hauptkapitel)</desc>
+                           </valItem>
+                           <valItem ident="main">
+                              <desc>einziges direktes child von body</desc>
+                           </valItem>
+                           <valItem ident="preamble">
+                              <desc>Präambel eines Gesetztestextes</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               <constraintSpec ident="check_sic" scheme="schematron">
+                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                     <s:rule context="//tei:sic">
+                        <s:assert test="parent::*/tei:corr"> always use sic with corr </s:assert>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
+               <elementSpec ident="sic" mode="change">
+                  <desc>Dokumentiert modifizierte Texteinheit</desc>
+                  <attList>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="ana" mode="delete"/>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="change" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="add" mode="change">
+                  <desc>Text der der Grundschicht hinzugefügt wurde</desc>
+                  <attList>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="ana" mode="delete"/>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="change" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="status" mode="delete"/>
+                     <attDef ident="cause" mode="delete"/>
+                     <attDef ident="seq" mode="delete"/>
+                     <attDef ident="evidence" mode="delete"/>
+                     <attDef ident="instant" mode="delete"/>
+                     <attDef ident="hand" mode="delete"/>
+                     <attDef ident="place" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="unit" mode="delete"/>
+                     <attDef ident="quantity" mode="delete"/>
+                     <attDef ident="extent" mode="delete"/>
+                     <attDef ident="precision" mode="delete"/>
+                     <attDef ident="scope" mode="delete"/>
+                     <attDef ident="atLeast" mode="delete"/>
+                     <attDef ident="atMost" mode="delete"/>
+                     <attDef ident="min" mode="delete"/>
+                     <attDef ident="max" mode="delete"/>
+                     <attDef ident="confidence" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="del" mode="change">
+                  <desc>Streichung im Dokument</desc>
+                  <attList>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="ana" mode="delete"/>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="change" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="status" mode="delete"/>
+                     <attDef ident="cause" mode="delete"/>
+                     <attDef ident="seq" mode="delete"/>
+                     <attDef ident="evidence" mode="delete"/>
+                     <attDef ident="instant" mode="delete"/>
+                     <attDef ident="hand" mode="delete"/>
+                     <attDef ident="type" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="unit" mode="delete"/>
+                     <attDef ident="quantity" mode="delete"/>
+                     <attDef ident="extent" mode="delete"/>
+                     <attDef ident="precision" mode="delete"/>
+                     <attDef ident="scope" mode="delete"/>
+                     <attDef ident="atLeast" mode="delete"/>
+                     <attDef ident="atMost" mode="delete"/>
+                     <attDef ident="min" mode="delete"/>
+                     <attDef ident="max" mode="delete"/>
+                     <attDef ident="confidence" mode="delete"/>
+                  </attList>
+               </elementSpec>
                <elementSpec ident="sourceDesc" mode="change">
                   <desc>Dokument auf dem der Inhalt der Datei basiert.</desc>
                   <content>
@@ -1083,13 +1516,17 @@
                            section</s:report>
                         <s:report
                            test="self::tei:div[@type='article' and parent::*[@type!='section']]">a
-                           div representing an article should allways have a div representing a
+                           div representing an article should always have a div representing a
                            section as parent.</s:report>
+                        <s:report
+                           test="self::tei:div[@type='preamble' and parent::*[@type!='main']]">a div
+                           representing a preamble should always be a direct child of the main
+                           div</s:report>
                      </s:rule>
                   </constraint>
                </constraintSpec>
                <elementSpec ident="div" mode="change">
-                  <desc>enthält textuelle Einheiten</desc>
+                  <desc>enthält Makro-Texteinheiten</desc>
                   <content>
                      <alternate maxOccurs="unbounded" minOccurs="0">
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="p"/>
@@ -1111,11 +1548,37 @@
                            <valItem ident="main">
                               <desc>einziges direktes child von body</desc>
                            </valItem>
+                           <valItem ident="preamble">
+                              <desc>Präambel eines Gesetztestextes</desc>
+                           </valItem>
                         </valList>
                      </attDef>
                   </attList>
                </elementSpec>
                <!-- Anpassung des head Elements -->
+               <constraintSpec ident="head_rules" scheme="schematron">
+                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                     <s:rule context="//tei:head[not(@type)]">
+                        <s:report test="following-sibling::tei:head|preceding-sibling::tei:head">
+                           "head" sibling elements should have a @type attribute (either main or
+                           sub) </s:report>
+                        <s:report
+                           test="self::tei:div[@type='article' and parent::*[@type!='section']]">a
+                           div representing an article should always have a div representing a
+                           section as parent.</s:report>
+                        <s:report
+                           test="self::tei:div[@type='preamble' and parent::*[@type!='main']]">a div
+                           representing a preamble should always be a direct child of the main
+                           div</s:report>
+                     </s:rule>
+                  </constraint>
+                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                     <s:rule context="//tei:head[@type='sub']">
+                        <s:assert test="./parent::*./tei:head[@type='main']"> "head"-elements with
+                           @type "sub" should have a sibling wiht @type "main" </s:assert>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
                <elementSpec ident="head" mode="change">
                   <desc>encodes heading of some sort</desc>
                   <attList>
@@ -1131,9 +1594,7 @@
                      </attDef>
                   </attList>
                </elementSpec>
-               <!-- todo: type=editor->xml:id non-empty
-                           make sure, there is an note element with the corresponding id …
-               -->
+               <!-- Anpassung des p Elements -->
                <elementSpec ident="p" mode="change">
                   <content>
                      <alternate maxOccurs="unbounded" minOccurs="0">
@@ -1149,32 +1610,7 @@
                      </alternate>
                   </content>
                </elementSpec>
-               <elementSpec ident="anchor" mode="change">
-                  <desc>Element bestimmt im Falle einer editorischen Anmerkung den Beginn der
-                     Stelle.</desc>
-                  <classes mode="change">
-                     <memberOf key="att.global" mode="delete"/>
-                  </classes>
-                  <attList>
-                     <attDef ident="subtype" mode="delete"/>
-                     <attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="editor">
-                              <desc>Beginn der Stelle</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                     <attDef ident="xml:id" mode="replace" usage="req">
-                        <datatype>
-                           <dataRef key="teidata.text"/>
-                        </datatype>
-                     </attDef>
-                  </attList>
-               </elementSpec>
                <!-- Anpassung des note Elementes -->
-               <!-- todo: type=editor->xml:id non-empty -->
-               <!-- placement? -->
-               <!-- hand? -->
                <elementSpec ident="note" mode="change">
                   <classes mode="change">
                      <memberOf key="att.pointing" mode="delete"/>
@@ -1182,6 +1618,7 @@
                      <memberOf key="att.anchoring" mode="delete"/>
                      <memberOf key="att.placement" mode="delete"/>
                   </classes>
+                  <!-- hand? -->
                   <attList>
                      <attDef ident="subtype" mode="delete"/>
                      <attDef iden="n" mode="delete"/>
@@ -1190,12 +1627,12 @@
                      <attDef iden="xml:space" mode="delete"/>
                      <attDef ident="type" mode="change" usage="req">
                         <valList type="closed" mode="change">
-                           <valItem mode="add" ident="editor">
+                           <!--<valItem mode="add" ident="editor">
                               <desc>Das Element enhält einen Apparateintrag der Editor:innen.</desc>
-                           </valItem>
-                           <valItem mode="add" ident="original">
+                           </valItem>-->
+                           <valItem mode="add" ident="comment">
                               <desc>Das Element enthält einen im edierten Dokument hinzugefügten
-                                 Kommentar der Autor:innen.</desc>
+                                 Kommentar der (historischen) Autor:innen.</desc>
                            </valItem>
                         </valList>
                      </attDef>
@@ -1220,14 +1657,14 @@
                      <attDef ident="resp" mode="delete"/>
                      <attDef ident="source" mode="delete"/>
                      <attDef ident="n" mode="delete"/>
-                     <attDef ident="xml:id" mode="change" usage="rec">
+                     <!--<attDef ident="xml:id" mode="change" usage="opt">
                         <desc>Sollte durch das Framework generiert werden.</desc>
-                     </attDef>
+                     </attDef>-->
                      <attDef ident="subtype" mode="delete"/>
                   </attList>
                </elementSpec>
                <!-- Anpassung von rs -->
-               <elementSpec ident="rs" mode="change">
+               <!--<elementSpec ident="rs" mode="change">
                   <classes mode="change">
                      <memberOf key="att.global" mode="delete"/>
                      <memberOf key="att.naming" mode="delete"/>
@@ -1262,17 +1699,15 @@
                            </valItem>
                         </valList>
                      </attDef>
-                     <!-- todo: only non empty string with certain attribs! -->
                      <attDef ident="key" mode="replace" usage="req">
                         <datatype>
                            <dataRef key="teidata.text"/>
                         </datatype>
                      </attDef>
                   </attList>
-               </elementSpec>
+                  </elementSpec>-->
                <!-- Anpassnung hi-Element -->
-               <!-- Hervorhebungen differenzieren oder als emphasis vereinheitlichen? -->
-               <elementSpec ident="hi" mode="change">
+               <!--<elementSpec ident="hi" mode="change">
                   <classes mode="change">
                      <memberOf key="att.global.rendition"/>
                      <memberOf key="att.global" mode="delete"/>
@@ -1299,6 +1734,35 @@
                      </attDef>
                      <attDef ident="hand" mode="delete"/>
                   </attList>
+               </elementSpec>-->
+               <elementSpec ident="emph" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global.rendition"/>
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
+                  <attList>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rend" mode="delete"/>
+                     <!--<attDef ident="rend" mode="change">
+                        <desc>Beschreibt, wie der entsprechende Textteil hervorgehoben ist.</desc>
+                        <valList type="closed" mode="change">
+                           <valItem mode="add" ident="underlined">
+                              <desc>Unterstrichen</desc>
+                           </valItem>
+                           <valItem mode="add" ident="majuscule">
+                              <desc>Majuskeln oder Kapitälchen</desc>
+                           </valItem>
+                           <valItem mode="add" ident="spaced">
+                              <desc>Gesperrt / Leerzeichen zwischen den Lettern</desc>
+                           </valItem>
+                           <valItem mode="add" ident="emphasis">
+                              <desc>(allgemein) Hervorhebung im Text</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>-->
+                     <attDef ident="hand" mode="delete"/>
+                  </attList>
                </elementSpec>
                <!-- Anpassnung pb-Element -->
                <elementSpec ident="pb" mode="change">
@@ -1319,7 +1783,7 @@
                      <attDef ident="xml:id" mode="change" usage="req">
                         <desc>automatisch generierte id (img)</desc>
                      </attDef>
-                     <attDef ident="break" mode="change" usage="req">
+                     <attDef ident="break" mode="change" usage="opt">
                         <desc>Auf "no" setzen, wenn der Seitenumbruch ein Wort trennt, auf "yes"
                            setzen, wenn der Seitenumbruch mit der Wortgrenze korreliert.</desc>
                      </attDef>
@@ -1344,6 +1808,38 @@
                      <attDef ident="xml:lang" mode="delete"/>
                      <attDef ident="xml:base" mode="delete"/>
                      <attDef ident="xml:space" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="ab" mode="change">
+                  <attList>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="ana" mode="delete"/>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="change" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="decls" mode="delete"/>
+                     <attDef ident="part" mode="delete"/>
+                     <attDef ident="hand" mode="delete"/>
+                     <attDef ident="type" mode="change" usage="req">
+                        <valList type="closed" mode="change">
+                           <valItem mode="add" ident="pagecounter">
+                              <desc>historische Paginierung/Foliierung</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
                   </attList>
                </elementSpec>
                <!-- Anpassung von body -->
