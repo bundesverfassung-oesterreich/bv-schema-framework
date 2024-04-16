@@ -1574,7 +1574,7 @@
                   </constraint>
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                      <s:rule context="//tei:head[@type='sub']">
-                        <s:assert test="./parent::*./tei:head[@type='main']"> "head"-elements with
+                        <s:assert test="./parent::*/tei:head[@type='main']"> "head"-elements with
                            @type "sub" should have a sibling wiht @type "main" </s:assert>
                      </s:rule>
                   </constraint>
