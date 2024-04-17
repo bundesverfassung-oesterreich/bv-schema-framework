@@ -578,9 +578,9 @@
                      <text>
                         <body>
                            <div> Hier ist der Text auf Seite 5. <pb facs="#facs_6" n="6"
-                                 xml:id="img_0006"/> Hier beginnt der Text auf Seite 6 </div>
+                              xml:id="img_0006" break="yes"/> Hier beginnt der Text auf Seite 6 </div>
                            <div> Hier ist der Text auf Seite 6. Ein Wort wird im Seitenwechsel ge
-                                 <pb break="no" facs="#facs_7" n="7" xml:id="img_0007"/> trennt und
+                                 <pb break="no" facs="#facs_7" n="7" xml:id="img_0007" /> trennt und
                               auf Seite 7 fortgesetzt. </div>
                         </body>
                      </text>
@@ -602,9 +602,9 @@
                      <text>
                         <body>
                            <div> Hier ist der Text auf Seite 5. Und eine historische Paginierung:
-                                 <ab type="pagecounter">-5-</ab>
-                              <pb facs="#facs_6" n="6" xml:id="img_0006"/>
-                              <ab type="pagecounter">-6-</ab> Hier beginnt der Text auf Seite 6,
+                                 <seg type="page_counter">-5-</seg>
+                              <pb facs="#facs_6" n="6" xml:id="img_0006" break="yes"/>
+                              <seg type="page_counter">-6-</seg> Hier beginnt der Text auf Seite 6,
                               darüber steht eine Seitenzahl … </div>
                         </body>
                      </text>
@@ -620,7 +620,7 @@
                         <text>
                            <body>
                               <div> Hier ist der Text auf Seite 5. Der Absatz wird jedoch auf der
-                                 <lb/>./. <pb facs="#facs_6" n="6" xml:id="img_0006"/> Folgeseite
+                                 <lb/>./. <pb facs="#facs_6" n="6" xml:id="img_0006" break="yes"/> Folgeseite
                                  fortgesetzt, was durch das im historischen Medium nötige, heute
                                  aber überflüssige Zeichen „./.“ markiert wird. </div>
                            </body>
@@ -814,16 +814,17 @@
                   <head>Ersetzungen</head>
                   <p>Wenn Teile eines Textes (Zeichen, Worte, Sätze, Absätze …) im Laufe der
                      Dokumentengenese durch andere Ersetzt wurden, wird dies als
-                     Streichung/Hinzufügung kodiert, gleichgültig, ob eine Streichung oder
-                     Überschreibung vorliegt. Der geänderte Bereich wird von einem
-                     <gi>choice</gi>-Tag umschlossen, die ersetzte Textstelle wird mittels
+                     Streichung/Hinzufügung kodiert, gleichgültig, ob nun tatsächlich eine
+                     Streichung oder bloß eine Überschreibung vorliegt. Der geänderte Bereich wird
+                     von einem <gi>choice</gi>-Tag umschlossen, die ersetzte Textstelle wird mittels
                         <gi>del</gi>, die ersetzende Hinzufügung mittels <gi>add</gi> kodiert.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <body>
                         <div>
-                           <p>Hier steht der originale Text der
-                                    <choice><del>ersten</del><add>zweiten</add></choice>
-                              Fassung.</p>
+                           <p>Hier steht der originale Text der <choice>
+                                 <del>ersten</del>
+                                 <add>zweiten</add>
+                              </choice> Fassung.</p>
                            <p>Im obigen Beispiel ersetzt „zweiten“ das überschriebene/gestrichene
                               „ersten“.</p>
                         </div>
@@ -857,20 +858,24 @@
                         <gi>note</gi>-Elements verstanden. Der Kommentar bezieht sich also auf den
                      Text, in dessen Element er sich befindet. Diese Elternelemente können z.B.
                         <gi>p</gi>, <gi>head</gi> oder auch <gi>div</gi> sein. Um Texteinheiten zu
-                     referenzieren, die kleiner als ein Absatz sind, kann ein <gi>span</gi>-Element
-                     erzeugt werden, das den Bezugsramen markiert.</p>
+                     referenzieren, die kleiner als ein Absatz sind, kann ein <gi>seg</gi>-Element
+                     mit dem <att>type</att>=<val>note_ref</val> erzeugt werden, das den Bezugsramen
+                     markiert.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <body>
                         <div type="article">
                            <head> Art. 12 <note type="comment">(Dieser Kommentar bezieht sich auf
-                                 die Überschrift.) Nicht sehr catchy.</note>
+                                 die Überschrift, weil er sich im head-Element befindet.) Nicht sehr
+                                 catchy.</note>
                            </head>
                            <p> Das Bundes-Verfassungsgesetz darf keinen Artikel 12. enthalten. <note
                                  type="comment">(Dieser Kommentar bezieht sich auf den Absatz.)
                                  Warum nicht? Gründe angeben!</note>
                            </p>
-                           <p>Ein Bundes-Verfassungsgesetz, das einen Artikel 12 enthält, ist shc
-                              ungültig.</p>
+                           <p> Ein Bundes-Verfassungsgesetz, das einen <seg type="note_ref"> Artikel
+                                 12 enthält <note type="comment"> (Dieser Kommentar bezieht sich auf
+                                    den vom seg-Tag umschlossenen Text.) </note>
+                              </seg>, ist ungültig. </p>
                            <note type="comment">(Dieser Kommentar bezieht sich auf den Artikel.)
                               Vielleicht besser als Artikel 13?</note>
                         </div>
@@ -1132,7 +1137,7 @@
                   include="msDesc history  msIdentifier msContents physDesc institution repository                    msItem objectDesc handDesc origin"/>
                <moduleRef key="namesdates" include="persName orgName placeName country settlement"/>
                <moduleRef key="figures" include="cell table row"/>
-               <moduleRef key="linking" include="ab"/>
+               <moduleRef key="linking" include="seg"/>
                <!-- make sure there is only one title in the doc -->
                <constraintSpec ident="only_one_main_head" scheme="schematron">
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -1280,6 +1285,39 @@
                      </attDef>
                   </attList>
                </elementSpec>
+             
+               <elementSpec ident="choice" mode="change">
+                  <desc>Beschreibt die materielle Form des Dokuments</desc>
+                  <attList>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="ana" mode="delete"/>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="change" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+                  <content>
+                     <alternate minOccurs="2"
+                        maxOccurs="unbounded">
+                        <classRef key="model.choicePart"/>
+                        <elementRef key="choice"/>
+                        <elementRef key="del"/>
+                        <elementRef key="add"/>
+                     </alternate>
+                  </content>
+               </elementSpec>
+               
                <constraintSpec ident="check_corr" scheme="schematron">
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                      <s:rule context="//tei:corr">
@@ -1599,14 +1637,18 @@
                   <content>
                      <alternate maxOccurs="unbounded" minOccurs="0">
                         <textNode/>
-                        <elementRef maxOccurs="unbounded" minOccurs="0" key="del"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="seg"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="list"/>
-                        <elementRef maxOccurs="unbounded" minOccurs="0" key="rs"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="note"/>
+                        <!--<elementRef maxOccurs="unbounded" minOccurs="0" key="rs"/>-->
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="lb"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="pb"/>
-                        <elementRef maxOccurs="unbounded" minOccurs="0" key="hi"/>
-                        <elementRef maxOccurs="unbounded" minOccurs="0" key="unclear"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="emph"/>
+                        <!--<elementRef maxOccurs="unbounded" minOccurs="0" key="unclear"/>-->
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="gap"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="del"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="add"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="choice"/>
                      </alternate>
                   </content>
                </elementSpec>
@@ -1614,9 +1656,8 @@
                <constraintSpec ident="check_note_position" scheme="schematron">
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                      <s:rule context="//tei:note[@type='editor']">
-                        <s:assert test="parent::tei:msItem">
-                           note @type="editor" is only allowed inside the ms-description of the document header
-                        </s:assert>
+                        <s:assert test="parent::tei:msItem"> note @type="editor" is only allowed
+                           inside the ms-description of the document header </s:assert>
                      </s:rule>
                   </constraint>
                </constraintSpec>
@@ -1792,7 +1833,7 @@
                      <attDef ident="xml:id" mode="change" usage="req">
                         <desc>automatisch generierte id (img)</desc>
                      </attDef>
-                     <attDef ident="break" mode="change" usage="opt">
+                     <attDef ident="break" mode="change" usage="req">
                         <desc>Auf "no" setzen, wenn der Seitenumbruch ein Wort trennt, auf "yes"
                            setzen, wenn der Seitenumbruch mit der Wortgrenze korreliert.</desc>
                      </attDef>
@@ -1819,7 +1860,57 @@
                      <attDef ident="xml:space" mode="delete"/>
                   </attList>
                </elementSpec>
-               <elementSpec ident="ab" mode="change">
+               <constraintSpec ident="check_note_seg" scheme="schematron">
+                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                     <s:rule context="//tei:seg[@type='note_ref']">
+                        <s:assert test="./tei:note">a seg-Element of @type "note_ref" must contain a
+                           notechild of @type "comment", thats its sole purpose </s:assert>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
+               <elementSpec ident="seg" mode="change">
+                  <attList>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="ana" mode="delete"/>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="change" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="function" mode="delete"/>
+                     <attDef ident="met" mode="delete"/>
+                     <attDef ident="real" mode="delete"/>
+                     <attDef ident="rhyme" mode="delete"/>
+                     <attDef ident="datcat" mode="delete"/>
+                     <attDef ident="valueDatcat" mode="delete"/>
+                     <attDef ident="targetDatcat" mode="delete"/>
+                     <attDef ident="part" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="hand" mode="delete"/>
+                     <attDef ident="notation" mode="delete"/>
+                     <attDef ident="type" mode="change" usage="req">
+                        <valList type="closed" mode="change">
+                           <valItem mode="add" ident="page_counter">
+                              <desc>historische Paginierung/Foliierung</desc>
+                           </valItem>
+                           <valItem mode="add" ident="note_ref">
+                              <desc>Bezugsrahmen eines Kommentars</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               <!--<elementSpec ident="ab" mode="change">
                   <attList>
                      <attDef ident="rend" mode="delete"/>
                      <attDef ident="style" mode="delete"/>
@@ -1850,7 +1941,7 @@
                         </valList>
                      </attDef>
                   </attList>
-               </elementSpec>
+               </elementSpec>-->
                <!-- Anpassung von body -->
                <elementSpec ident="body" mode="change">
                   <classes mode="change">

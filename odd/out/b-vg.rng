@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-04-16T11:55:31Z. .
+Schema generated from ODD source 2024-04-16T13:17:54Z. .
 TEI Edition: Version 4.4.0. Last updated on
         19th April 2022, revision ff9cc28b0
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
@@ -430,6 +430,34 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
       <optional>
          <attribute name="period">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies pointers to one or more definitions of named periods of time (typically <code xmlns="http://www.w3.org/1999/xhtml">&lt;category&gt;</code>s or <code xmlns="http://www.w3.org/1999/xhtml">&lt;calendar&gt;</code>s) within which the datable item is understood to have occurred.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datcat.attribute.datcat">
+      <optional>
+         <attribute name="datcat" ns="http://www.isocat.org/ns/dcr">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a PID (persistent identifier) that aligns the given element with the appropriate Data Category (or categories) in ISOcat.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="undefinedatt.datcat.attribute.valueDatcat">
+      <optional>
+         <attribute name="valueDatcat" ns="http://www.isocat.org/ns/dcr">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a PID (persistent identifier) that aligns the content of the given element or the value of the given attribute with the appropriate simple Data Category (or categories) in ISOcat.</a:documentation>
             <list>
                <oneOrMore>
                   <data type="anyURI">
@@ -1194,7 +1222,9 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       </oneOrMore>
    </define>
    <define name="undefinedmodel.segLike">
-      <notAllowed/>
+      <choice>
+         <ref name="undefinedseg"/>
+      </choice>
    </define>
    <define name="undefinedmodel.hiLike">
       <notAllowed/>
@@ -1664,41 +1694,29 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    <define name="undefinedmodel.pLike">
       <choice>
          <ref name="undefinedp"/>
-         <ref name="undefinedab"/>
       </choice>
    </define>
    <define name="undefinedmodel.pLike_alternation">
       <choice>
          <ref name="undefinedp"/>
-         <ref name="undefinedab"/>
       </choice>
    </define>
    <define name="undefinedmodel.pLike_sequence">
       <ref name="undefinedp"/>
-      <ref name="undefinedab"/>
    </define>
    <define name="undefinedmodel.pLike_sequenceOptional">
       <optional>
          <ref name="undefinedp"/>
-      </optional>
-      <optional>
-         <ref name="undefinedab"/>
       </optional>
    </define>
    <define name="undefinedmodel.pLike_sequenceOptionalRepeatable">
       <zeroOrMore>
          <ref name="undefinedp"/>
       </zeroOrMore>
-      <zeroOrMore>
-         <ref name="undefinedab"/>
-      </zeroOrMore>
    </define>
    <define name="undefinedmodel.pLike_sequenceRepeatable">
       <oneOrMore>
          <ref name="undefinedp"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="undefinedab"/>
       </oneOrMore>
    </define>
    <define name="undefinedmodel.stageLike">
@@ -1933,6 +1951,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <ref name="undefinedsic"/>
          <ref name="undefinedcorr"/>
          <ref name="undefinedunclear"/>
+         <ref name="undefinedseg"/>
       </choice>
    </define>
    <define name="undefinedmodel.imprintPart">
@@ -2201,13 +2220,13 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
             <choice>
                <text/>
                <zeroOrMore>
-                  <ref name="undefineddel"/>
+                  <ref name="undefinedseg"/>
                </zeroOrMore>
                <zeroOrMore>
                   <ref name="undefinedlist"/>
                </zeroOrMore>
                <zeroOrMore>
-                  <ref name="undefinedrs"/>
+                  <ref name="undefinednote"/>
                </zeroOrMore>
                <zeroOrMore>
                   <ref name="undefinedlb"/>
@@ -2216,10 +2235,19 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
                   <ref name="undefinedpb"/>
                </zeroOrMore>
                <zeroOrMore>
-                  <ref name="undefinedunclear"/>
+                  <ref name="undefinedemph"/>
                </zeroOrMore>
                <zeroOrMore>
                   <ref name="undefinedgap"/>
+               </zeroOrMore>
+               <zeroOrMore>
+                  <ref name="undefineddel"/>
+               </zeroOrMore>
+               <zeroOrMore>
+                  <ref name="undefinedadd"/>
+               </zeroOrMore>
+               <zeroOrMore>
+                  <ref name="undefinedchoice"/>
                </zeroOrMore>
             </choice>
          </zeroOrMore>
@@ -2290,14 +2318,20 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    </define>
    <define name="undefinedchoice">
       <element name="choice">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Alternative) gruppiert alternative Kodierungen für eine Stelle im Text. [3.5. Simple Editorial Changes]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Alternative) Beschreibt die materielle Form des Dokuments [3.5. Simple Editorial Changes]</a:documentation>
          <oneOrMore>
             <choice>
                <ref name="undefinedmodel.choicePart"/>
                <ref name="undefinedchoice"/>
+               <ref name="undefineddel"/>
+               <ref name="undefinedadd"/>
             </choice>
          </oneOrMore>
-         <ref name="undefinedatt.global.attributes"/>
+         <ref name="undefinedatt.global.attribute.xmlid"/>
+         <ref name="undefinedatt.global.attribute.n"/>
+         <ref name="undefinedatt.global.attribute.xmllang"/>
+         <ref name="undefinedatt.global.attribute.xmlbase"/>
+         <ref name="undefinedatt.global.attribute.xmlspace"/>
          <empty/>
       </element>
    </define>
@@ -2702,14 +2736,12 @@ Elements]</a:documentation>
                <param name="pattern">\S+</param>
             </data>
          </attribute>
-         <optional>
-            <attribute name="break">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Auf "no" setzen, wenn der Seitenumbruch ein Wort trennt, auf "yes" setzen, wenn der Seitenumbruch mit der Wortgrenze korreliert.</a:documentation>
-               <data type="token">
-                  <param name="pattern">[^\p{C}\p{Z}]+</param>
-               </data>
-            </attribute>
-         </optional>
+         <attribute name="break">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Auf "no" setzen, wenn der Seitenumbruch ein Wort trennt, auf "yes" setzen, wenn der Seitenumbruch mit der Wortgrenze korreliert.</a:documentation>
+            <data type="token">
+               <param name="pattern">[^\p{C}\p{Z}]+</param>
+            </data>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -4394,40 +4426,10 @@ Suggested values include: 1] label; 2] data</a:documentation>
          </attribute>
       </optional>
    </define>
-   <define name="undefinedab">
-      <element name="ab">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(anonymous block) contains any arbitrary component-level unit of text, acting as an anonymous container for phrase or inter level elements analogous to, but without the semantic baggage of, a paragraph. [16.3. Blocks, Segments, and Anchors]</a:documentation>
+   <define name="undefinedseg">
+      <element name="seg">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(arbiträres Segment) beschreibt Segmente eines Texts unterhalb des Chunk-Level. [16.3. Blocks, Segments, and Anchors 6.2. Components of the Verse Line 7.2.5. Speech Contents]</a:documentation>
          <ref name="undefinedmacro.paraContent"/>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-ab-abstractModel-structure-ab-in-ab-or-p-constraint-report-10">
-            <rule context="tei:ab">
-               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
-                           xmlns:eg="http://www.tei-c.org/ns/Examples"
-                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
-                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                           test="    (ancestor::tei:p or ancestor::tei:ab)                          and not( ancestor::tei:floatingText                                  |parent::tei:exemplum                                 |parent::tei:item                                 |parent::tei:note                                 |parent::tei:q                                 |parent::tei:quote                                 |parent::tei:remarks                                 |parent::tei:said                                 |parent::tei:sp                                 |parent::tei:stage                                 |parent::tei:cell                                 |parent::tei:figure                                )">
-        Abstract model violation: ab may not occur inside paragraphs or other ab elements.
-      </sch:report>
-            </rule>
-         </pattern>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-ab-abstractModel-structure-ab-in-l-or-lg-constraint-report-11">
-            <rule context="tei:ab">
-               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
-                           xmlns:eg="http://www.tei-c.org/ns/Examples"
-                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
-                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                           test="    (ancestor::tei:l or ancestor::tei:lg)                         and not( ancestor::tei:floatingText                                 |parent::tei:figure                                 |parent::tei:note                                )">
-        Abstract model violation: Lines may not contain higher-level divisions such as p or ab, unless ab is a child of figure or note, or is a descendant of floatingText.
-      </sch:report>
-            </rule>
-         </pattern>
          <ref name="undefinedatt.global.attribute.xmlid"/>
          <ref name="undefinedatt.global.attribute.n"/>
          <ref name="undefinedatt.global.attribute.xmllang"/>
@@ -4436,8 +4438,10 @@ Suggested values include: 1] label; 2] data</a:documentation>
          <attribute name="type">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
             <choice>
-               <value>pagecounter</value>
+               <value>page_counter</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">historische Paginierung/Foliierung</a:documentation>
+               <value>note_ref</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Bezugsrahmen eines Kommentars</a:documentation>
             </choice>
          </attribute>
          <empty/>
@@ -4581,9 +4585,20 @@ Suggested values include: 1] label; 2] data</a:documentation>
               xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
               context="//tei:note[@type='editor']">
-         <s:assert test="parent::tei:msItem">
-                           note @type="editor" is only allowed inside the ms-description of the document header
-                        </s:assert>
+         <s:assert test="parent::tei:msItem"> note @type="editor" is only allowed
+                           inside the ms-description of the document header </s:assert>
+      </s:rule>
+   </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            id="tei_b_vg-check_note_seg-constraint-rule-20">
+      <s:rule xmlns="http://www.tei-c.org/ns/1.0"
+              xmlns:eg="http://www.tei-c.org/ns/Examples"
+              xmlns:egXML="http://www.tei-c.org/ns/Examples"
+              xmlns:s="http://purl.oclc.org/dsdl/schematron"
+              xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+              context="//tei:seg[@type='note_ref']">
+         <s:assert test="./tei:note">a seg-Element of @type "note_ref" must contain a
+                           notechild of @type "comment", thats its sole purpose </s:assert>
       </s:rule>
    </pattern>
 </grammar>
