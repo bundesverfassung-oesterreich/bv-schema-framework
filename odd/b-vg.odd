@@ -1398,28 +1398,12 @@
                            </valItem>
                         </valList>
                      </attDef>
-                     <attDef ident="extend" mode="change" usage="req">
+                     <attDef ident="extend" mode="change" usage="rec">
                         <desc>geschätzter Umfang der unleserlichen Stelle ("1 Wort", "3 Buchstaben"
                            o.ä.)</desc>
                         <datatype>
                            <dataRef key="teidata.text"/>
                         </datatype>
-                     </attDef>
-                     <attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="article">
-                              <desc>Artikel eines Gesetzes</desc>
-                           </valItem>
-                           <valItem ident="section">
-                              <desc>erste Strukturebene eines Haupttextes (Hauptkapitel)</desc>
-                           </valItem>
-                           <valItem ident="main">
-                              <desc>einziges direktes child von body</desc>
-                           </valItem>
-                           <valItem ident="preamble">
-                              <desc>Präambel eines Gesetztestextes</desc>
-                           </valItem>
-                        </valList>
                      </attDef>
                   </attList>
                </elementSpec>
