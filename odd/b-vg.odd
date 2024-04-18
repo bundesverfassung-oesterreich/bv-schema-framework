@@ -1580,21 +1580,6 @@
                <!-- Anpassung des head Elements -->
                <constraintSpec ident="head_rules" scheme="schematron">
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
-                     <s:rule context="//tei:head[not(@type)]">
-                        <s:report test="following-sibling::tei:head|preceding-sibling::tei:head">
-                           "head" sibling elements should have a @type attribute (either main or
-                           sub) </s:report>
-                        <s:report
-                           test="self::tei:div[@type='article' and parent::*[@type!='section']]">a
-                           div representing an article should always have a div representing a
-                           section as parent.</s:report>
-                        <s:report
-                           test="self::tei:div[@type='preamble' and parent::*[@type!='main']]">a div
-                           representing a preamble should always be a direct child of the main
-                           div</s:report>
-                     </s:rule>
-                  </constraint>
-                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                      <s:rule context="//tei:head[@type='sub']">
                         <s:assert test="parent::*/tei:head[@type='main']"> "head"-elements with
                            @type "sub" should have a sibling with @type "main" </s:assert>
