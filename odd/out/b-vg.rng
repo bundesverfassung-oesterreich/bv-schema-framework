@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-04-16T13:17:54Z. .
+Schema generated from ODD source 2024-04-18T11:39:36Z. .
 TEI Edition: Version 4.4.0. Last updated on
         19th April 2022, revision ff9cc28b0
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
@@ -2357,6 +2357,24 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">unelserliche Stelle</a:documentation>
             </choice>
          </attribute>
+         <empty/>
+      </element>
+   </define>
+   <define name="undefinedadd">
+      <element name="add">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hinzufügung) Text der der Grundschicht hinzugefügt wurdeenthält nachträglich (in eigenem Überarbeitungsvorgang) hinzugefügten Text [3.5.3. Additions, Deletions, and Omissions]</a:documentation>
+         <ref name="undefinedmacro.paraContent"/>
+         <zeroOrMore>
+            <ref name="undefinedp"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="undefinedhead"/>
+         </zeroOrMore>
+         <ref name="undefinedatt.global.attribute.xmlid"/>
+         <ref name="undefinedatt.global.attribute.n"/>
+         <ref name="undefinedatt.global.attribute.xmllang"/>
+         <ref name="undefinedatt.global.attribute.xmlbase"/>
+         <ref name="undefinedatt.global.attribute.xmlspace"/>
          <attribute name="type">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <choice>
@@ -2370,18 +2388,6 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Präambel eines Gesetztestextes</a:documentation>
             </choice>
          </attribute>
-         <empty/>
-      </element>
-   </define>
-   <define name="undefinedadd">
-      <element name="add">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hinzufügung) Text der der Grundschicht hinzugefügt wurde [3.5.3. Additions, Deletions, and Omissions]</a:documentation>
-         <ref name="undefinedmacro.paraContent"/>
-         <ref name="undefinedatt.global.attribute.xmlid"/>
-         <ref name="undefinedatt.global.attribute.n"/>
-         <ref name="undefinedatt.global.attribute.xmllang"/>
-         <ref name="undefinedatt.global.attribute.xmlbase"/>
-         <ref name="undefinedatt.global.attribute.xmlspace"/>
          <empty/>
       </element>
    </define>
@@ -3408,6 +3414,12 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
                </zeroOrMore>
                <zeroOrMore>
                   <ref name="undefinedpb"/>
+               </zeroOrMore>
+               <zeroOrMore>
+                  <ref name="undefinednote"/>
+               </zeroOrMore>
+               <zeroOrMore>
+                  <ref name="undefinedadd"/>
                </zeroOrMore>
             </choice>
          </zeroOrMore>
@@ -4545,28 +4557,8 @@ Suggested values include: 1] label; 2] data</a:documentation>
                            representing a preamble should always be a direct child of the main
                            div</s:report>
       </s:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+   </pattern>ident.*"add"<pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="tei_b_vg-head_rules-constraint-rule-17">
-      <s:rule xmlns="http://www.tei-c.org/ns/1.0"
-              xmlns:eg="http://www.tei-c.org/ns/Examples"
-              xmlns:egXML="http://www.tei-c.org/ns/Examples"
-              xmlns:s="http://purl.oclc.org/dsdl/schematron"
-              xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-              context="//tei:head[not(@type)]">
-         <s:report test="following-sibling::tei:head|preceding-sibling::tei:head">
-                           "head" sibling elements should have a @type attribute (either main or
-                           sub) </s:report>
-         <s:report test="self::tei:div[@type='article' and parent::*[@type!='section']]">a
-                           div representing an article should always have a div representing a
-                           section as parent.</s:report>
-         <s:report test="self::tei:div[@type='preamble' and parent::*[@type!='main']]">a div
-                           representing a preamble should always be a direct child of the main
-                           div</s:report>
-      </s:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-head_rules-constraint-rule-18">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
               xmlns:egXML="http://www.tei-c.org/ns/Examples"
@@ -4578,7 +4570,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
       </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-check_note_position-constraint-rule-19">
+            id="tei_b_vg-check_note_position-constraint-rule-18">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
               xmlns:egXML="http://www.tei-c.org/ns/Examples"
@@ -4590,7 +4582,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
       </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-check_note_seg-constraint-rule-20">
+            id="tei_b_vg-check_note_seg-constraint-rule-19">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
               xmlns:egXML="http://www.tei-c.org/ns/Examples"
