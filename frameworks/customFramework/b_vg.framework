@@ -82,6 +82,40 @@
 									</poPatch>
 									<poPatch>
 										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[0]/name</String>
+										</field>
+										<field name="index">
+											<Integer>-1</Integer>
+										</field>
+										<field name="value">
+											<String>Hervorhebung</String>
+										</field>
+										<field name="patchHandling">
+											<String>set</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[0]/description</String>
+										</field>
+										<field name="index">
+											<Integer>-1</Integer>
+										</field>
+										<field name="value">
+											<String>Hervorhebung (Unterstreichung, Fett etc.)</String>
+										</field>
+										<field name="patchHandling">
+											<String>set</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
 											<String>authorExtensionDescriptor/actionDescriptors/[0]/actionModes</String>
 										</field>
 										<field name="index">
@@ -113,7 +147,7 @@
 													<serializableOrderedMap>
 														<entry>
 															<String>element</String>
-															<String>&lt;hi rend="emphasis" xmlns="http://www.tei-c.org/ns/1.0">&lt;/hi></String>
+															<String>&lt;emph xmlns="http://www.tei-c.org/ns/1.0">&lt;/emph></String>
 														</entry>
 														<entry>
 															<String>schemaAware</String>
@@ -1972,7 +2006,41 @@
 											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
 										</field>
 										<field name="index">
-											<Integer>3</Integer>
+											<Integer>2</Integer>
+										</field>
+										<field name="value">
+											<null/>
+										</field>
+										<field name="patchHandling">
+											<String>removeIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>1</Integer>
+										</field>
+										<field name="value">
+											<null/>
+										</field>
+										<field name="patchHandling">
+											<String>removeIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>1</Integer>
 										</field>
 										<field name="value">
 											<toolbarItem>
@@ -1993,7 +2061,7 @@
 											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
 										</field>
 										<field name="index">
-											<Integer>4</Integer>
+											<Integer>2</Integer>
 										</field>
 										<field name="value">
 											<toolbarItem>
@@ -2004,23 +2072,6 @@
 										</field>
 										<field name="patchHandling">
 											<String>addIndex</String>
-										</field>
-										<field name="anchor">
-											<null/>
-										</field>
-									</poPatch>
-									<poPatch>
-										<field name="fieldPath">
-											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
-										</field>
-										<field name="index">
-											<Integer>1</Integer>
-										</field>
-										<field name="value">
-											<null/>
-										</field>
-										<field name="patchHandling">
-											<String>removeIndex</String>
 										</field>
 										<field name="anchor">
 											<null/>
