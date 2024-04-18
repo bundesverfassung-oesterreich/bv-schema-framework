@@ -268,7 +268,7 @@
 													<serializableOrderedMap>
 														<entry>
 															<String>fragment</String>
-															<String>&lt;p xmlns="http://www.tei-c.org/ns/1.0"/></String>
+															<String>&lt;pp xmlns="http://www.tei-c.org/ns/1.0"/></String>
 														</entry>
 														<entry>
 															<String>insertPosition</String>
@@ -808,6 +808,72 @@
 															</field>
 															<field name="operationID">
 																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>100</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>insert.typo_paragraph</String>
+												</field>
+												<field name="name">
+													<String>Absatz einfügen (p)</String>
+												</field>
+												<field name="description">
+													<String>Absatz einfügen test</String>
+												</field>
+												<field name="largeIconPath">
+													<String>/images/Paragraph24.png</String>
+												</field>
+												<field name="smallIconPath">
+													<String>/images/Paragraph24.png</String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String></String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>element</String>
+																		<String>&lt;p xmlns="http://www.tei-c.org/ns/1.0">&lt;/p></String>
+																	</entry>
+																	<entry>
+																		<String>schemaAware</String>
+																		<String>true</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.ToggleSurroundWithElementOperation</String>
 															</field>
 														</actionMode>
 													</actionMode-array>
@@ -1747,6 +1813,56 @@
 											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
 										</field>
 										<field name="index">
+											<Integer>4</Integer>
+										</field>
+										<field name="value">
+											<null/>
+										</field>
+										<field name="patchHandling">
+											<String>removeIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>4</Integer>
+										</field>
+										<field name="value">
+											<toolbar>
+												<field name="id">
+													<String>${i18n(link)}</String>
+												</field>
+												<field name="type">
+													<Integer>3</Integer>
+												</field>
+												<field name="largeIconPath">
+													<String>/images/Link24.png</String>
+												</field>
+												<field name="smallIconPath">
+													<String>/images/Link16.png</String>
+												</field>
+												<field name="toolbarEntriesDescriptorList">
+													<toolbarEntry-array/>
+												</field>
+											</toolbar>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
+										</field>
+										<field name="index">
 											<Integer>5</Integer>
 										</field>
 										<field name="value">
@@ -1817,7 +1933,7 @@
 													<toolbarEntry-array>
 														<toolbarItem>
 															<field name="actionID">
-																<String>paragraph</String>
+																<String>insert.typo_paragraph</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
