@@ -1557,6 +1557,7 @@
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="div"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="pb"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="note"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="add"/>
                      </alternate>
                   </content>
                   <attList>
