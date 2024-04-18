@@ -2699,10 +2699,10 @@
 													<Integer>3</Integer>
 												</field>
 												<field name="largeIconPath">
-													<String></String>
+													<String>/images/OrderedList24.png</String>
 												</field>
 												<field name="smallIconPath">
-													<String></String>
+													<String>/images/OrderedList16.png</String>
 												</field>
 												<field name="toolbarEntriesDescriptorList">
 													<toolbarEntry-array>
