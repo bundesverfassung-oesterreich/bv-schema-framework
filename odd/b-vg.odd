@@ -1579,7 +1579,7 @@
                      </attDef>
                   </attList>
                </elementSpec>
-               <elementSpec ident="add" mode="change">
+               <elementSpec ident="add" mode="replace">
                   <desc>enthält nachträglich (in eigenem Überarbeitungsvorgang) hinzugefügten Text</desc>
                   <content>
                      <macroRef key="macro.paraContent"/>
