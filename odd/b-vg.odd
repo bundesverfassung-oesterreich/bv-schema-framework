@@ -1586,24 +1586,6 @@
                      <elementRef maxOccurs="unbounded" minOccurs="0" key="p"/>
                      <elementRef maxOccurs="unbounded" minOccurs="0" key="head"/>
                   </content>
-                  <attList>
-                     <attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="article">
-                              <desc>Artikel eines Gesetzes</desc>
-                           </valItem>
-                           <valItem ident="section">
-                              <desc>erste Strukturebene eines Haupttextes (Hauptkapitel)</desc>
-                           </valItem>
-                           <valItem ident="main">
-                              <desc>einziges direktes child von body</desc>
-                           </valItem>
-                           <valItem ident="preamble">
-                              <desc>Präambel eines Gesetztestextes</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                  </attList>
                </elementSpec>
                <!-- Anpassung des head Elements -->
                <constraintSpec ident="head_rules" scheme="schematron">
