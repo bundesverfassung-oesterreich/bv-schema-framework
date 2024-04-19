@@ -691,7 +691,10 @@ p {
     padding: 1rem;
     background-color: Gainsboro;
 }
-
+note {
+    display: block;
+    border: dashed green 4px;
+}
 list {
     width: 75%;
     flex-wrap: wrap;

@@ -898,11 +898,11 @@
 																<serializableOrderedMap>
 																	<entry>
 																		<String>element</String>
-																		<String>&lt;p xmlns="http://www.tei-c.org/ns/1.0">&lt;/p></String>
+																		<String>&lt;p xmlns="http://www.tei-c.org/ns/1.0"/></String>
 																	</entry>
 																	<entry>
 																		<String>schemaAware</String>
-																		<String>true</String>
+																		<String>false</String>
 																	</entry>
 																</serializableOrderedMap>
 															</field>
