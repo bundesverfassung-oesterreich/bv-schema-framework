@@ -1434,21 +1434,138 @@
 															<field name="argValues">
 																<serializableOrderedMap>
 																	<entry>
-																		<String>fragment</String>
+																		<String>element</String>
 																		<String>&lt;note type="comment" xmlns="http://www.tei-c.org/ns/1.0"/></String>
-																	</entry>
-																	<entry>
-																		<String>goToNextEditablePosition</String>
-																		<String>true</String>
-																	</entry>
-																	<entry>
-																		<String>insertEvenIfInvalid</String>
-																		<String>true</String>
 																	</entry>
 																</serializableOrderedMap>
 															</field>
 															<field name="operationID">
-																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+																<String>ro.sync.ecss.extensions.commons.operations.ToggleSurroundWithElementOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>109</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>insert.seg_page</String>
+												</field>
+												<field name="name">
+													<String>historische Seitenzahl</String>
+												</field>
+												<field name="description">
+													<String>markiert eine historische Blatt- oder Seitenzählung</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String></String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>element</String>
+																		<String>&lt;seg type="page_counter" xmlns="http://www.tei-c.org/ns/1.0">&lt;/seg></String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.ToggleSurroundWithElementOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>110</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>insert.comment_mikro</String>
+												</field>
+												<field name="name">
+													<String>Bezugsrahmen für Kommentar</String>
+												</field>
+												<field name="description">
+													<String>Erzeugt Bezugsrahmen für kommentar, wenn sich dieser nur auf wenige Worte o.ä. bezieht.</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String></String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;seg  type="note_ref" xmlns="http://www.tei-c.org/ns/1.0">
+&lt;/seg></String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
 															</field>
 														</actionMode>
 													</actionMode-array>
@@ -2271,6 +2388,17 @@
 														<toolbarItem>
 															<field name="actionID">
 																<String>insert.comment</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert.comment_mikro</String>
+															</field>
+														</toolbarItem>
+														<toolbarSeparator/>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert.seg_page</String>
 															</field>
 														</toolbarItem>
 													</toolbarEntry-array>

@@ -779,8 +779,26 @@ gap:before {
     content: "[???]";
 }
 
-hi {
-    font-weight: bold;
+seg {
+    display: inline;
+}
+
+seg[type="page_counter"]{
+    color: #f3f3f3;
+    border: solid #f3f3f3 2px!important;
+}
+
+
+seg[type="note_ref"]:before{
+    font-size: 2rem;
+    content: "{";
+    color: white;
+}
+
+seg[type="note_ref"]:after{
+    font-size: 2rem;
+    content: "}";
+    color: white;
 }
 
 textArea {
