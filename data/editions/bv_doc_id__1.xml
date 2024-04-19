@@ -106,6 +106,7 @@
             <revisionDesc status="created">
                   <change when="2024-02-27" who="#cfh">document automatically created</change>
                   <change when="2024-03-22" who="#m_huber">angefangen div zu erzeugen</change>
+                  <change when="2024-04-19" who="#m_huber">fixed headings</change>
             </revisionDesc>
       </teiHeader>
       <facsimile xmlns="http://www.tei-c.org/ns/1.0">
@@ -361,7 +362,7 @@
             <body>
                   <div type="main">
                         <pb facs="#facs_2" n="2" xml:id="img_0002" break="yes"/>
-                        <p>Entw I</p>
+                        <head>Entwurf I</head>
                         <div type="section">
                               <head>Erster Abschnitt.</head>
                               <head>Allgemeine Bestimmungen.</head>
