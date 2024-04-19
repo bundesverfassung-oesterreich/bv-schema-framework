@@ -614,7 +614,6 @@ div[type = "article"] {
     background-color: AliceBlue;
     border-radius: 15px;
     -oxy-foldable:true;
-    -oxy-folded:true;
 }
 
 div[type = "section"] {
@@ -622,7 +621,6 @@ div[type = "section"] {
     background-color: rgb(205, 231, 255);
     border-radius: 15px;
     -oxy-foldable:true;
-    -oxy-folded:true;
 }
 
 head {
