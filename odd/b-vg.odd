@@ -578,9 +578,9 @@
                      <text>
                         <body>
                            <div> Hier ist der Text auf Seite 5. <pb facs="#facs_6" n="6"
-                              xml:id="img_0006" break="yes"/> Hier beginnt der Text auf Seite 6 </div>
+                                 xml:id="img_0006" break="yes"/> Hier beginnt der Text auf Seite 6 </div>
                            <div> Hier ist der Text auf Seite 6. Ein Wort wird im Seitenwechsel ge
-                                 <pb break="no" facs="#facs_7" n="7" xml:id="img_0007" /> trennt und
+                                 <pb break="no" facs="#facs_7" n="7" xml:id="img_0007"/> trennt und
                               auf Seite 7 fortgesetzt. </div>
                         </body>
                      </text>
@@ -596,16 +596,16 @@
                   <p>Die in den Dokumenten befindlichen Paginierungen (Seitenzählungen) und/oder
                      Foliierungen (Blattzählungen), die von den Verfasser:innen oder Archivar:innen
                      aufgebracht wurden, werden grundsätzlich wie jeder andere Text behandelt. Um
-                     sie jedoch vom sie umgebenden Fließtext zu trennen, sollten sie mittels <gi>ab
-                           <att>type</att>="<val>pagecounter</val>"</gi> kodiert werden. </p>
+                     sie jedoch vom sie umgebenden Fließtext zu trennen, sollten sie mittels <gi>fw
+                           <att>type</att>="<val>pageNum</val>"</gi> kodiert werden. </p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
                            <div> Hier ist der Text auf Seite 5. Und eine historische Paginierung:
-                                 <seg type="page_counter">-5-</seg>
+                                 <fw type="pageNum">-5-</fw>
                               <pb facs="#facs_6" n="6" xml:id="img_0006" break="yes"/>
-                              <seg type="page_counter">-6-</seg> Hier beginnt der Text auf Seite 6,
-                              darüber steht eine Seitenzahl … </div>
+                              <fw type="pageNum">-6-</fw> Hier beginnt der Text auf Seite 6, darüber
+                              steht eine Seitenzahl … </div>
                         </body>
                      </text>
                   </egXML>
@@ -620,9 +620,9 @@
                         <text>
                            <body>
                               <div> Hier ist der Text auf Seite 5. Der Absatz wird jedoch auf der
-                                 <lb/>./. <pb facs="#facs_6" n="6" xml:id="img_0006" break="yes"/> Folgeseite
-                                 fortgesetzt, was durch das im historischen Medium nötige, heute
-                                 aber überflüssige Zeichen „./.“ markiert wird. </div>
+                                 <lb/>./. <pb facs="#facs_6" n="6" xml:id="img_0006" break="yes"/>
+                                 Folgeseite fortgesetzt, was durch das im historischen Medium
+                                 nötige, heute aber überflüssige Zeichen „./.“ markiert wird. </div>
                            </body>
                         </text>
                      </egXML>
@@ -1132,7 +1132,7 @@
                <!--hi-->
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
-               <moduleRef key="transcr" include="facsimile surface"/>
+               <moduleRef key="transcr" include="facsimile surface fw"/>
                <moduleRef key="msdescription"
                   include="msDesc history  msIdentifier msContents physDesc institution repository                    msItem objectDesc handDesc origin"/>
                <moduleRef key="namesdates" include="persName orgName placeName country settlement"/>
@@ -1285,7 +1285,6 @@
                      </attDef>
                   </attList>
                </elementSpec>
-             
                <elementSpec ident="choice" mode="change">
                   <desc>Beschreibt die materielle Form des Dokuments</desc>
                   <attList>
@@ -1308,8 +1307,7 @@
                      <attDef ident="source" mode="delete"/>
                   </attList>
                   <content>
-                     <alternate minOccurs="2"
-                        maxOccurs="unbounded">
+                     <alternate minOccurs="2" maxOccurs="unbounded">
                         <classRef key="model.choicePart"/>
                         <elementRef key="choice"/>
                         <elementRef key="del"/>
@@ -1317,7 +1315,6 @@
                      </alternate>
                   </content>
                </elementSpec>
-               
                <constraintSpec ident="check_corr" scheme="schematron">
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                      <s:rule context="//tei:corr">
@@ -1580,7 +1577,8 @@
                   </attList>
                </elementSpec>
                <elementSpec ident="add" mode="replace">
-                  <desc>enthält nachträglich (in eigenem Überarbeitungsvorgang) hinzugefügten Text</desc>
+                  <desc>enthält nachträglich (in eigenem Überarbeitungsvorgang) hinzugefügten
+                     Text</desc>
                   <content>
                      <macroRef key="macro.paraContent"/>
                      <elementRef maxOccurs="unbounded" minOccurs="0" key="p"/>
@@ -1847,6 +1845,17 @@
                      </s:rule>
                   </constraint>
                </constraintSpec>
+               <elementSpec ident="fw" mode="change">
+                  <attList mode="replace">
+                     <attDef ident="type" mode="add" usage="req">
+                        <valList type="closed" mode="change">
+                           <valItem mode="add" ident="page_counter">
+                              <desc>historische Paginierung/Foliierung</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
                <elementSpec ident="seg" mode="change">
                   <attList>
                      <attDef ident="rend" mode="delete"/>
@@ -1879,9 +1888,6 @@
                      <attDef ident="notation" mode="delete"/>
                      <attDef ident="type" mode="change" usage="req">
                         <valList type="closed" mode="change">
-                           <valItem mode="add" ident="page_counter">
-                              <desc>historische Paginierung/Foliierung</desc>
-                           </valItem>
                            <valItem mode="add" ident="note_ref">
                               <desc>Bezugsrahmen eines Kommentars</desc>
                            </valItem>

@@ -20,7 +20,7 @@
 											<Integer>-1</Integer>
 										</field>
 										<field name="value">
-											<String>b-vg</String>
+											<String>b-vgh</String>
 										</field>
 										<field name="patchHandling">
 											<String>set</String>
@@ -1497,7 +1497,7 @@
 																<serializableOrderedMap>
 																	<entry>
 																		<String>element</String>
-																		<String>&lt;seg type="page_counter" xmlns="http://www.tei-c.org/ns/1.0">&lt;/seg></String>
+																		<String>&lt;fw type="pageNum" xmlns="http://www.tei-c.org/ns/1.0">&lt;/seg></String>
 																	</entry>
 																</serializableOrderedMap>
 															</field>
