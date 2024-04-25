@@ -628,33 +628,14 @@ head {
     font-weight: bold;
     font-size: 1.5rem;
     -oxy-foldable:false;
-    visibility:-oxy-collapse-text;
+}
+
+head{
     content: oxy_editor(
         type, combo,
         edit, '@type'
     )
-    "\a"
-    oxy_textfield(
-        width, 50%,
-        edit, '#text',
-        columns, 140,
-        fontInherit, true
-    );
-}
-
-head{
-    color: black;
-    font-weight: bold;
-    font-size: 1.5rem;
-    -oxy-foldable:false;
-    visibility:-oxy-collapse-text;
-    content:
-    oxy_textfield(
-        width, 50%,
-        edit, '#text',
-        columns, 140,
-        fontInherit, true
-    );
+    "\a";
 }
 
 div:not([type='article'])>head {
@@ -784,7 +765,6 @@ seg {
 }
 
 seg[type="page_counter"]{
-    color: #f3f3f3;
     border: solid #f3f3f3 2px!important;
 }
 
