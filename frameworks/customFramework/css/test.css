@@ -670,7 +670,7 @@ p {
     border-radius: 15px;
     margin: 1rem;
     padding: 1rem;
-    background-color: Gainsboro;
+    background-color: antiquewhite;
 }
 
 p::before {
@@ -681,6 +681,20 @@ p::before {
     )
     "\a";
 }
+
+p[type="legal_section"] {
+    background-color: Gainsboro;
+}
+    
+p[type="legal_section"] label {    
+    display: inline-block;
+    width: fit-content;
+    color: grey;
+    background-color: orange;
+    padding: 0.3rem;
+    border-radius: 15px;
+}
+
 note {
     display: block;
     border: dashed green 4px;
