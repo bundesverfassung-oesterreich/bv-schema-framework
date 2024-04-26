@@ -672,6 +672,15 @@ p {
     padding: 1rem;
     background-color: Gainsboro;
 }
+
+p::before {
+    content:
+    oxy_editor(
+        type, combo,
+        edit, '@type'
+    )
+    "\a";
+}
 note {
     display: block;
     border: dashed green 4px;

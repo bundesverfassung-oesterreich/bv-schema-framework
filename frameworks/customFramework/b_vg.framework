@@ -874,7 +874,7 @@
 													<String>Absatz einfügen (p)</String>
 												</field>
 												<field name="description">
-													<String>Absatz einfügen test</String>
+													<String>Absatz einfügen</String>
 												</field>
 												<field name="largeIconPath">
 													<String>/images/Paragraph24.png</String>
@@ -898,7 +898,7 @@
 																<serializableOrderedMap>
 																	<entry>
 																		<String>element</String>
-																		<String>&lt;p xmlns="http://www.tei-c.org/ns/1.0"/></String>
+																		<String>&lt;p xmlns="http://www.tei-c.org/ns/1.0">&lt;/p></String>
 																	</entry>
 																	<entry>
 																		<String>schemaAware</String>
@@ -1570,6 +1570,72 @@
 															</field>
 															<field name="operationID">
 																<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>111</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>insert.jur_paragraph</String>
+												</field>
+												<field name="name">
+													<String>juristischen Paragraphen einfügen</String>
+												</field>
+												<field name="description">
+													<String>juristischen Paragraphen einfügen</String>
+												</field>
+												<field name="largeIconPath">
+													<String>/images/Paragraph24.png</String>
+												</field>
+												<field name="smallIconPath">
+													<String>/images/Paragraph24.png</String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String></String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>element</String>
+																		<String>&lt;p type="legal_section" xmlns="http://www.tei-c.org/ns/1.0">&lt;/p></String>
+																	</entry>
+																	<entry>
+																		<String>schemaAware</String>
+																		<String>false</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.ToggleSurroundWithElementOperation</String>
 															</field>
 														</actionMode>
 													</actionMode-array>
@@ -2386,6 +2452,11 @@
 														<toolbarItem>
 															<field name="actionID">
 																<String>insert.article</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert.jur_paragraph</String>
 															</field>
 														</toolbarItem>
 														<toolbarSeparator/>
