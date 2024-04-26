@@ -412,27 +412,44 @@
                <div>
                   <head>Absätze</head>
                   <p>Der Text innerhalb von <gi>div</gi>-Elementen ist in <gi>p</gi>-Elementen
-                     strukturiert. Ein solches Element markiert entweder einen Absatz (typographisch
-                     markiertes Strukturelement eines Prosatextes) oder einen Paragraphen (ein
-                     Absatz als Strukturelement eines Gesetzestextes).</p>
+                     strukturiert. Solche <gi>p</gi>-Elementene markieren<list>
+                        <item>Absätze (typographisch markierte Strukturelemente eines Prosatextes),
+                           ohne <att>type</att>-Attribut</item>
+                        <item>Paragraphen (Absätze als Strukturelemente eines Gesetzestextes),
+                              <att>type</att>-Attribut mit dem Wert <val>legal_section</val>; wenn
+                           eine Nummerierung der Paragraphen existiert, muss diese mit <gi>label</gi> getaggt werden.</item>
+                     </list>
+                  </p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <body>
                         <div>
-                           <p>Ein Absatz</p>
-                           <p>Ein weiterer Absatz</p>
+                           <p>Ein Absatz der bloßen Fließtext enthält. Beispielsweise freitextliche
+                              Kommentare etc.</p>
+                           <!--Ein Paragraph eines Gesetzestextes muss mit type-Attribut versehen
+                              werden:-->
+                           <p type="legal_section"> Der Bundesversammlung obliegt im
+                              <lb break="yes"/> Zusammenwirken mit dem Bundesrate die
+                              <lb break="yes"/> Gesetzgebung des Bundes.
+                              <lb break="yes"/>Die Bundesversammlung allein hat
+                              <lb break="yes"/>das Recht Krieg zu erklären und Friedens
+                              <lb break="no"/>verträge zu genehmigen. Ein solcher Be
+                              <lb break="no"/>schluß bedarf auch der Genehmigung des
+                              <lb break="yes"/>Bundesrates. </p>
+                           <!--Wenn die Paragraphen nummeriert sind, muss diese Nummerierung mit einem label-Tag getagt werden.-->
+                           <p type="legal_section">
+                              <label>(1)</label>Oesterreich ist eine demokratische Republik <lb break="yes"/>(2) Alle
+                              Öffentliche Gewalt geht vom Volke aus und <lb break="yes"/>wird in dessen Namen
+                              ausgeübt <note type="comment">Art. 1</note>
+                           </p>
                         </div>
                      </body>
                   </egXML>
-                  <!--<p>Jedes <gi>p</gi>-Element kann über eine <att>xml:id</att> verfügen, die der
-                        <ref target="#structure_ids">Identifikatoren-Gesamtsystematik</ref> folgt.
-                     Ids sollten ausschließlich über die im Schema angebotene Funktionalität
-                     automatisch generiert werden.</p>-->
                   <div>
                      <head>Zeilenumbrüche</head>
                      <p>Die in den Xml-Dokumenten kodierten Zeilenumbrüche sollen vor allem die
                         Korrektur erleichtern. Da eine zeilengenaue Darstellung nicht angestrebt
                         wird, müssen keine fehlenden Zeilenumbrüche ergänzt werden. <hi rend="bold"
-                           >Inkorrekt getrennte Wörter</hi> oder <hi rend="bold">fäschlich als
+                           >Inkorrekt getrennte Wörter </hi>oder<hi rend="bold"> fäschlich als
                            getrennt erkannte Wörter müssen</hi> aber korrigiert werden</p>
                      <p>Zeilenumbrüche werden mittels des <gi>lb</gi>-Tags (lb = linebegin) kodiert.
                         Wenn der Zeilenumbruch mit der Wortgrenze zusammenfällt, also kein Wort
@@ -472,8 +489,9 @@
                </div>
                <div>
                   <head>Listen und Ziffern</head>
-                  <p>Listen werden mittels eines <gi>list</gi>-Elements kodiert, jeder Listenpunkt
-                     wird von einem <gi>item</gi>-Element umschlossen.</p>
+                  <p>Listen (etwa die Aufzählungen von Gesetzgebungs-Kompetenzen) werden mittels
+                     eines <gi>list</gi>-Elements kodiert, jeder Listenpunkt wird von einem
+                        <gi>item</gi>-Element umschlossen.</p>
                   <p>Listentitel werden durch ein <gi>head</gi>-Element ohne weitere Attribute
                      gekennzeichnet. Es steht an erster Stelle (first child) innerhalb des
                         <gi>list</gi>-Elements. Listenelemente können zusätzlich verschachtelt
@@ -872,10 +890,10 @@
                                  type="comment">(Dieser Kommentar bezieht sich auf den Absatz.)
                                  Warum nicht? Gründe angeben!</note>
                            </p>
-                           <p> Ein Bundes-Verfassungsgesetz, das einen <seg type="note_ref"> Artikel
+                           <p> Ein Bundes-Verfassungsgesetz, das einen <fw type="pageNum"> Artikel
                                  12 enthält <note type="comment"> (Dieser Kommentar bezieht sich auf
                                     den vom seg-Tag umschlossenen Text.) </note>
-                              </seg>, ist ungültig. </p>
+                              </fw>, ist ungültig. </p>
                            <note type="comment">(Dieser Kommentar bezieht sich auf den Artikel.)
                               Vielleicht besser als Artikel 13?</note>
                         </div>
@@ -1628,8 +1646,16 @@
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="add"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="choice"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="fw"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="label"/>
                      </alternate>
                   </content>
+                  <attDef ident="type" mode="change" usage="opt">
+                     <valList type="closed" mode="change">
+                        <valItem mode="add" ident="legal_section">
+                           <desc>Das Element enthält einen juristischen Paragraphen.</desc>
+                        </valItem>
+                     </valList>
+                  </attDef>
                </elementSpec>
                <!-- Anpassung des note Elementes -->
                <constraintSpec ident="check_note_position" scheme="schematron">

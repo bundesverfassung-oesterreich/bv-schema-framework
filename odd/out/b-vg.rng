@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-04-26T08:12:46Z. .
+Schema generated from ODD source 2024-04-26T11:45:13Z. .
 TEI Edition: Version 4.4.0. Last updated on
         19th April 2022, revision ff9cc28b0
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
@@ -4583,7 +4583,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
               xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
               context="//tei:seg[@type='note_ref']">
          <s:assert test="./tei:note">a seg-Element of @type "note_ref" must contain a
-                           notechild of @type "comment", thats its sole purpose </s:assert>
+                           notechild of @type "comment", that's its sole purpose </s:assert>
       </s:rule>
    </pattern>
 </grammar>
