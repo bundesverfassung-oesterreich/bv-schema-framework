@@ -1850,7 +1850,7 @@
                   <attList mode="replace">
                      <attDef ident="type" mode="replace" usage="req">
                         <valList type="closed" mode="change">
-                           <valItem mode="add" ident="page_counter">
+                           <valItem mode="add" ident="pageNum">
                               <desc>historische Paginierung/Foliierung</desc>
                            </valItem>
                         </valList>
