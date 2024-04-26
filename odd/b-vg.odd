@@ -1847,7 +1847,7 @@
                </constraintSpec>
                <elementSpec ident="fw" mode="change">
                   <attList mode="replace">
-                     <attDef ident="type" mode="add" usage="req">
+                     <attDef ident="type" mode="replace" usage="req">
                         <valList type="closed" mode="change">
                            <valItem mode="add" ident="page_counter">
                               <desc>historische Paginierung/Foliierung</desc>
