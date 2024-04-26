@@ -1627,6 +1627,7 @@
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="del"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="add"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="choice"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="fw"/>
                      </alternate>
                   </content>
                </elementSpec>
@@ -1792,6 +1793,17 @@
                      <attDef ident="hand" mode="delete"/>
                   </attList>
                </elementSpec>
+               <elementSpec ident="fw" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList type="closed" mode="change">
+                           <valItem mode="add" ident="pageNum">
+                              <desc>historische Paginierung/Foliierung</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
                <!-- Anpassnung pb-Element -->
                <elementSpec ident="pb" mode="change">
                   <classes mode="change">
@@ -1846,17 +1858,6 @@
                      </s:rule>
                   </constraint>
                </constraintSpec>
-               <elementSpec ident="fw" mode="change">
-                  <attList mode="replace">
-                     <attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed" mode="change">
-                           <valItem mode="add" ident="pageNum">
-                              <desc>historische Paginierung/Foliierung</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                  </attList>
-               </elementSpec>
                <elementSpec ident="seg" mode="change">
                   <attList>
                      <attDef ident="rend" mode="delete"/>
