@@ -1854,7 +1854,7 @@
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                      <s:rule context="//tei:seg[@type='note_ref']">
                         <s:assert test="./tei:note">a seg-Element of @type "note_ref" must contain a
-                           notechild of @type "comment", thats its sole purpose </s:assert>
+                           notechild of @type "comment", that's its sole purpose </s:assert>
                      </s:rule>
                   </constraint>
                </constraintSpec>
