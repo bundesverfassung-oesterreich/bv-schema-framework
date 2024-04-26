@@ -760,12 +760,14 @@ gap:before {
     content: "[???]";
 }
 
-seg {
+fw[type="pageNum"]{
+    border: solid #f3f3f3 2px!important;
     display: inline;
+    padding: .5rem;
 }
 
-seg[type="page_counter"]{
-    border: solid #f3f3f3 2px!important;
+seg {
+    display: inline;
 }
 
 

@@ -1497,7 +1497,11 @@
 																<serializableOrderedMap>
 																	<entry>
 																		<String>element</String>
-																		<String>&lt;fw type="pageNum" xmlns="http://www.tei-c.org/ns/1.0">&lt;/seg></String>
+																		<String>&lt;fw type="pageNum" xmlns="http://www.tei-c.org/ns/1.0">&lt;/fw></String>
+																	</entry>
+																	<entry>
+																		<String>schemaAware</String>
+																		<String>true</String>
 																	</entry>
 																</serializableOrderedMap>
 															</field>
