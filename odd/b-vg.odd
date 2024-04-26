@@ -1649,13 +1649,34 @@
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="label"/>
                      </alternate>
                   </content>
-                  <attDef ident="type" mode="change" usage="opt">
-                     <valList type="closed" mode="change">
-                        <valItem mode="add" ident="legal_section">
-                           <desc>Das Element enthält einen juristischen Paragraphen.</desc>
-                        </valItem>
-                     </valList>
-                  </attDef>
+                  <attList>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="ana" mode="delete"/>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="change" mode="delete"/>
+                     <attDef ident="certresp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="decls" mode="delete"/>
+                     <attDef ident="part" mode="delete"/>
+                     <attDef ident="hand" mode="delete"/>
+                     <attDef ident="type" mode="add" usage="opt">
+                        <valList type="closed" mode="change">
+                           <valItem mode="add" ident="legal_section">
+                              <desc>Das Element enthält einen juristischen Paragraphen.</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
                </elementSpec>
                <!-- Anpassung des note Elementes -->
                <constraintSpec ident="check_note_position" scheme="schematron">
