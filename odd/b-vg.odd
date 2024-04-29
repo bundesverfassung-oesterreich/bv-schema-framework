@@ -410,7 +410,7 @@
                   </div>
                </div>
                <div>
-                  <head>Absätze</head>
+                  <head>Absätze &amp; Paragraphen</head>
                   <p>Der Text innerhalb von <gi>div</gi>-Elementen ist in <gi>p</gi>-Elementen
                      strukturiert. Solche <gi>p</gi>-Elementene markieren<list>
                         <item>Absätze (typographisch markierte Strukturelemente eines Prosatextes),
