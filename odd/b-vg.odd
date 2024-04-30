@@ -881,6 +881,11 @@
                      markiert.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <body>
+                        <!--
+                           Achtung!! der die Relation erläuternde Text in Klammern in den folgenden 
+                           Beispielen dient nur dem besseren Verständnis, in den Dokumenten dürfen solche 
+                           Texte nicht eingefügt werden 
+                        -->
                         <div type="article">
                            <head> Art. 12 <note type="comment">(Dieser Kommentar bezieht sich auf
                                  die Überschrift, weil er sich im head-Element befindet.) Nicht sehr
