@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://www.oxygenxml.com/ns/extension http://www.oxygenxml.com/ns/extension/extensions.xsd">
     <xt:extension id="bv-g1920">
         <xt:location href="https://bundesverfassung-oesterreich.github.io/bv-schema-framework/ADDON/b-vg-framework.zip"/>
-        <xt:version>1.1.5</xt:version>
+        <xt:version>1.1.6</xt:version>
         <xt:oxy_version>14.0+</xt:oxy_version>
         <xt:type>framework</xt:type>
         <xt:author>cfh</xt:author>
