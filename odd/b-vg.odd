@@ -1632,6 +1632,20 @@
                         </valList>
                      </attDef>
                   </attList>
+                  <content>
+                     <alternate minOccurs="0"
+                        maxOccurs="unbounded">
+                        <textNode/>
+                        <elementRef key="lg"/>
+                        <elementRef key="add"/>
+                        <elementRef key="del"/>
+                        <classRef key="model.gLike"/>
+                        <classRef key="model.phrase"/>
+                        <classRef key="model.inter"/>
+                        <classRef key="model.lLike"/>
+                        <classRef key="model.global"/>
+                     </alternate>
+                  </content>
                </elementSpec>
                <!-- Anpassung des p Elements -->
                <elementSpec ident="p" mode="change">

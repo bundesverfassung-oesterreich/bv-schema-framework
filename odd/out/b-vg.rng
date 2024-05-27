@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-04-26T11:45:13Z. .
+Schema generated from ODD source 2024-05-27T12:30:51Z. .
 TEI Edition: Version 4.4.0. Last updated on
         19th April 2022, revision ff9cc28b0
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
@@ -2241,6 +2241,9 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
                <zeroOrMore>
                   <ref name="undefinedfw"/>
                </zeroOrMore>
+               <zeroOrMore>
+                  <ref name="undefinedlabel"/>
+               </zeroOrMore>
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
@@ -2271,10 +2274,22 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       </sch:report>
             </rule>
          </pattern>
-         <ref name="undefinedatt.global.attributes"/>
-         <ref name="undefinedatt.declaring.attributes"/>
-         <ref name="undefinedatt.fragmentable.attributes"/>
-         <ref name="undefinedatt.written.attributes"/>
+         <ref name="undefinedatt.global.attribute.xmlid"/>
+         <ref name="undefinedatt.global.attribute.n"/>
+         <ref name="undefinedatt.global.attribute.xmllang"/>
+         <ref name="undefinedatt.global.attribute.xmlbase"/>
+         <ref name="undefinedatt.global.attribute.xmlspace"/>
+         <ref name="undefinedatt.global.responsibility.attribute.cert"/>
+         <ref name="undefinedatt.global.responsibility.attribute.resp"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <choice>
+                  <value>legal_section</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Das Element enthält einen juristischen Paragraphen.</a:documentation>
+               </choice>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -2640,6 +2655,8 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
          <zeroOrMore>
             <choice>
                <text/>
+               <ref name="undefinedadd"/>
+               <ref name="undefineddel"/>
                <ref name="undefinedmodel.gLike"/>
                <ref name="undefinedmodel.phrase"/>
                <ref name="undefinedmodel.inter"/>
