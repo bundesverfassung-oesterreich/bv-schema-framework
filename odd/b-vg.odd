@@ -1697,6 +1697,15 @@
                      </attDef>
                   </attList>
                </elementSpec>
+               <elementSpec ident="item" mode="change">
+                  <content>
+                     <alternate maxOccurs="unbounded" minOccurs="0">
+                        <macroRef key="macro.specialPara"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="del"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="add"/>
+                     </alternate>
+                  </content>
+               </elementSpec>
                <!-- Anpassung des note Elementes -->
                <constraintSpec ident="check_note_position" scheme="schematron">
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
