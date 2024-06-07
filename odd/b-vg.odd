@@ -35,7 +35,7 @@
                erläutert. </p>
             <p>Diese Datei wird laufend weiterentwickelt und aktualisiert. Vorschläge zur Anpassung
                von allen Seiten sind willkommen.</p>
-            <p>Stand: April 2024</p>
+            <p>Stand: Juni 2024</p>
          </div>
          <div xml:id="ocr">
             <head>Workflow Texterfassung</head>
@@ -250,9 +250,7 @@
                         <gi>revisionDesc</gi> im Attribut <att>status</att> notiert. Wenn das
                      Dokument noch nicht oder nur basal bearbeitet wurde, hat <att>status</att> den
                      Wert <val>created</val>. Sind alle Arbeitsschritte für das Dokument
-                     abgeschlossen, hat <att>status</att> den Wert <val>done</val>. Wird der
-                     Bearbeitungsstand eines Dokumentes auf <val>done</val> gesetzt, wird es
-                     automatisiert auf der Website publiziert.</p>
+                     abgeschlossen, hat <att>status</att> den Wert <val>done</val>.</p>
                   <p>Es empfiehlt sich, erfolgte Arbeitsschritte mittel der <gi>change</gi>-Elemente
                      zu notieren, um einen Überblick über den Bearbeitungsstand zu bieten. Alle
                      Bearbeiter:Innen verfügen über ein Kürzel, das – ebenso wie das aktuelle Datum
@@ -417,7 +415,8 @@
                            ohne <att>type</att>-Attribut</item>
                         <item>Paragraphen (Absätze als Strukturelemente eines Gesetzestextes),
                               <att>type</att>-Attribut mit dem Wert <val>legal_section</val>; wenn
-                           eine Nummerierung der Paragraphen existiert, muss diese mit <gi>label</gi> getaggt werden.</item>
+                           eine Nummerierung der Paragraphen existiert, muss diese mit
+                              <gi>label</gi> getaggt werden.</item>
                      </list>
                   </p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -437,54 +436,21 @@
                               <lb break="yes"/>Bundesrates. </p>
                            <!--Wenn die Paragraphen nummeriert sind, muss diese Nummerierung mit einem label-Tag getagt werden.-->
                            <p type="legal_section">
-                              <label>(1)</label>Oesterreich ist eine demokratische Republik <lb break="yes"/>(2) Alle
-                              Öffentliche Gewalt geht vom Volke aus und <lb break="yes"/>wird in dessen Namen
-                              ausgeübt <note type="comment">Art. 1</note>
+                              <label>(1)</label>Oesterreich ist eine demokratische Republik
+                              <lb break="yes"/>(2) Alle Öffentliche Gewalt geht vom Volke aus und
+                              <lb break="yes"/>wird in dessen Namen ausgeübt <note type="comment"
+                                 >Art. 1</note>
                            </p>
                         </div>
                      </body>
                   </egXML>
                   <div>
                      <head>Zeilenumbrüche</head>
-                     <p>Die in den Xml-Dokumenten kodierten Zeilenumbrüche sollen vor allem die
-                        Korrektur erleichtern. Da eine zeilengenaue Darstellung nicht angestrebt
-                        wird, müssen keine fehlenden Zeilenumbrüche ergänzt werden. <hi rend="bold"
-                           >Inkorrekt getrennte Wörter </hi>oder<hi rend="bold"> fäschlich als
-                           getrennt erkannte Wörter müssen</hi> aber korrigiert werden</p>
-                     <p>Zeilenumbrüche werden mittels des <gi>lb</gi>-Tags (lb = linebegin) kodiert.
-                        Wenn der Zeilenumbruch mit der Wortgrenze zusammenfällt, also kein Wort
-                        getrennt wird, wird dies mittels des Attributs <att>break</att> mit dem Wert
-                           <val>yes</val> kodiert. Wenn im Gegensatz der Zeilenumbruch nicht mit
-                        einer Wortgrenze zusammenfällt, also ein Wort getrennt wird, wir dies
-                        mittels des Attributs <att>break</att> mit dem Wert <val>no</val> kodiert.
-                        Das manuelle Erzeugen von Trennstrichen ("-") ist in keinem Fall nötig.
-                        Eventuell vorhandene Trennstriche sollten entfernt und das getrennte Wort
-                        entweder verbunden oder der korrekte <gi>lb</gi>-Tag gesetzt werden.</p>
-                     <p>Das Framework stellt bei Zeilenumbrüchen, die ein Wort trennen, einen gelben
-                        Trennstrich dar. Dieser wird bloß scheinbar erzeugt und kann nicht als Text
-                        verändert werden. Einzig durch das löschen des dahinter liegenden Tags und
-                        das einsetzen des korrekten (etwa über die Schaltfläche in der Menüleiste)
-                        kann ein evenetueller Fehler behoben werden.</p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <body>
-                           <div>
-                              <p>Hier trennt der Zeilenumbruch
-                                 <lb break="yes"/> kein Wort. Er kann ignoriert oder auch gelöscht
-                                 werden.</p>
-                              <p>Hier trennt der Zeilenum
-                                 <lb break="no"/> bruch ein Wort. Da das korrekt durch
-                                    <att>break</att> kodiert wurde, kann dieser Zeilenumbruch
-                                 gelöscht/ignoriert werden.</p>
-                              <p>Hier markiert ein falsch gesetzter lb-Tag,
-                                 <lb break="no"/> dass eine Worttrennung vorliegt, obwohl dies nicht
-                                 der Fall ist.
-                                 <lb break="yes"/> Der im letzten Beispiel gesetzte lb-Tag könnte
-                                 nun entweder <hi xmlns="http://www.tei-c.org/ns/1.0" rend="bold"
-                                    >gelöscht</hi> oder durch den korrekten Tag:
-                                 <lb break="yes"/> ersetzt werden. </p>
-                           </div>
-                        </body>
-                     </egXML>
+                     <p>Da Zeilenumbrüche als bloß materiell bedingte typographische Konvention und Notwendigkeit
+                        keine Relevanz für die zu edierenden Materialien besitzen, werden sie ohne
+                        Ausnahme weder kodiert noch transkribiert. Sinnhafte relevante
+                        Strukturelemente der Texte, die durch Zeilenumbrüche Markiert werden
+                        (Absätze, Paragrphen etc.), werden als solche kodiert und dargestellt.</p>
                   </div>
                </div>
                <div>
@@ -1633,8 +1599,7 @@
                      </attDef>
                   </attList>
                   <content>
-                     <alternate minOccurs="0"
-                        maxOccurs="unbounded">
+                     <alternate minOccurs="0" maxOccurs="unbounded">
                         <textNode/>
                         <elementRef key="lg"/>
                         <elementRef key="add"/>
