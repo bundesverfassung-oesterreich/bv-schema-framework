@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-06-07T12:37:03Z. . 
+Schema generated from ODD source 2024-06-07T12:43:39Z. . 
 TEI Edition: P5 Version 4.7.0. Last updated on 16th November 2023, revision e5dd73ed0 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.7.0/ 
   
@@ -237,19 +237,6 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a <code xmlns="http://www.w3.org/1999/xhtml">&lt;handNote&gt;</code> element describing the hand considered responsible for the content of the element concerned.</a:documentation>
             <data type="anyURI">
                <param name="pattern">\S+</param>
-            </data>
-         </attribute>
-      </optional>
-   </define>
-   <define name="undefinedatt.breaking.attributes">
-      <ref name="undefinedatt.breaking.attribute.break"/>
-   </define>
-   <define name="undefinedatt.breaking.attribute.break">
-      <optional>
-         <attribute name="break">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates whether or not the element bearing this attribute should be considered to mark the end of an orthographic token in the same way as whitespace.</a:documentation>
-            <data type="token">
-               <param name="pattern">[^\p{C}\p{Z}]+</param>
             </data>
          </attribute>
       </optional>
@@ -1046,66 +1033,6 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
          </attribute>
       </optional>
    </define>
-   <define name="undefinedatt.edition.attributes">
-      <ref name="undefinedatt.edition.attribute.ed"/>
-      <ref name="undefinedatt.edition.attribute.edRef"/>
-   </define>
-   <define name="undefinedatt.edition.attribute.ed">
-      <optional>
-         <attribute name="ed">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(edition) supplies a sigil or other arbitrary identifier for the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <data type="token">
-                     <param name="pattern">[^\p{C}\p{Z}]+</param>
-                  </data>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="undefinedatt.edition.attribute.edRef">
-      <optional>
-         <attribute name="edRef">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(edition reference) provides a pointer to the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <data type="anyURI">
-                     <param name="pattern">\S+</param>
-                  </data>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="undefinedatt.spanning.attributes">
-      <ref name="undefinedatt.spanning.attribute.spanTo"/>
-   </define>
-   <define name="undefinedatt.spanning.attribute.spanTo">
-      <optional>
-         <attribute name="spanTo">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the end of a span initiated by the element bearing this attribute.</a:documentation>
-            <data type="anyURI">
-               <param name="pattern">\S+</param>
-            </data>
-         </attribute>
-      </optional>
-   </define>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-att.spanning-spanTo-spanTo-points-to-following-constraint-rule-7">
-      <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:eg="http://www.tei-c.org/ns/Examples"
-                xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@spanTo]">
-            <sch:assert test="id(substring(@spanTo,2)) and following::*[@xml:id=substring(current()/@spanTo,2)]">
-The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow the current element <sch:name/>
-            </sch:assert>
-          </sch:rule>
-   </pattern>
    <define name="undefinedatt.citing.attributes">
       <ref name="undefinedatt.citing.attribute.unit"/>
       <ref name="undefinedatt.citing.attribute.from"/>
@@ -1643,28 +1570,22 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    <define name="undefinedmodel.milestoneLike">
       <choice>
          <ref name="undefinedpb"/>
-         <ref name="undefinedlb"/>
          <ref name="undefinedfw"/>
       </choice>
    </define>
    <define name="undefinedmodel.milestoneLike_alternation">
       <choice>
          <ref name="undefinedpb"/>
-         <ref name="undefinedlb"/>
          <ref name="undefinedfw"/>
       </choice>
    </define>
    <define name="undefinedmodel.milestoneLike_sequence">
       <ref name="undefinedpb"/>
-      <ref name="undefinedlb"/>
       <ref name="undefinedfw"/>
    </define>
    <define name="undefinedmodel.milestoneLike_sequenceOptional">
       <optional>
          <ref name="undefinedpb"/>
-      </optional>
-      <optional>
-         <ref name="undefinedlb"/>
       </optional>
       <optional>
          <ref name="undefinedfw"/>
@@ -1675,18 +1596,12 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <ref name="undefinedpb"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="undefinedlb"/>
-      </zeroOrMore>
-      <zeroOrMore>
          <ref name="undefinedfw"/>
       </zeroOrMore>
    </define>
    <define name="undefinedmodel.milestoneLike_sequenceRepeatable">
       <oneOrMore>
          <ref name="undefinedpb"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="undefinedlb"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="undefinedfw"/>
@@ -2542,7 +2457,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-att.calendarSystem-calendar-calendar-constraint-rule-8">
+            id="tei_b_vg-att.calendarSystem-calendar-calendar-constraint-rule-7">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -2570,9 +2485,6 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
                </zeroOrMore>
                <zeroOrMore>
                   <ref name="undefinednote"/>
-               </zeroOrMore>
-               <zeroOrMore>
-                  <ref name="undefinedlb"/>
                </zeroOrMore>
                <zeroOrMore>
                   <ref name="undefinedpb"/>
@@ -2973,7 +2885,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
       
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-list-gloss-list-must-have-labels-constraint-rule-9">
+                  id="tei_b_vg-list-gloss-list-must-have-labels-constraint-rule-8">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -3143,19 +3055,6 @@ Elements]</a:documentation>
          <empty/>
       </element>
    </define>
-   <define name="undefinedlb">
-      <element name="lb">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Zeilenanfang) markiert den Anfang einer neuen typographischen Zeile in einer bestimmten Auflage oder Version eines Textes. [3.11.3. Milestone
-Elements 7.2.5. Speech Contents]</a:documentation>
-         <empty/>
-         <ref name="undefinedatt.global.attributes"/>
-         <ref name="undefinedatt.typed.attributes"/>
-         <ref name="undefinedatt.edition.attributes"/>
-         <ref name="undefinedatt.spanning.attributes"/>
-         <ref name="undefinedatt.breaking.attributes"/>
-         <empty/>
-      </element>
-   </define>
    <define name="undefinedauthor">
       <element name="author">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Autor) enthält in einer bibliografischen Referenz den oder die Namen eines Autors eines Werks (oder einer für das Werk verantwortlichen Körperschaft); zum Beispiel in der Form, wie sie eine anerkannte bibliografische Instanz anbietet. [3.12.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement]</a:documentation>
@@ -3176,7 +3075,7 @@ Elements 7.2.5. Speech Contents]</a:documentation>
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-author-calendar-calendar-check-author-constraint-rule-10">
+                  id="tei_b_vg-author-calendar-calendar-check-author-constraint-rule-9">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -3251,7 +3150,7 @@ Elements 7.2.5. Speech Contents]</a:documentation>
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-resp-calendar-calendar-check-resp-constraint-rule-11">
+                  id="tei_b_vg-resp-calendar-calendar-check-resp-constraint-rule-10">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -3297,7 +3196,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-title-calendar-calendar-check-title-constraint-rule-12">
+                  id="tei_b_vg-title-calendar-calendar-check-title-constraint-rule-11">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -3464,7 +3363,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-funder-calendar-calendar-check-funder-constraint-rule-13">
+                  id="tei_b_vg-funder-calendar-calendar-check-funder-constraint-rule-12">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -3501,7 +3400,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-principal-calendar-calendar-check-principal-constraint-rule-14">
+                  id="tei_b_vg-principal-calendar-calendar-check-principal-constraint-rule-13">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -3579,7 +3478,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-idno-calendar-check-idno-constraint-rule-15">
+                  id="tei_b_vg-idno-calendar-check-idno-constraint-rule-14">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -3625,7 +3524,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-idno-calendar-calendar-check-idno-constraint-rule-16">
+                  id="tei_b_vg-idno-calendar-calendar-check-idno-constraint-rule-15">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -3684,7 +3583,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-licence-calendar-calendar-check-licence-constraint-rule-17">
+                  id="tei_b_vg-licence-calendar-calendar-check-licence-constraint-rule-16">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -3772,7 +3671,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-creation-calendar-calendar-check-creation-constraint-rule-18">
+                  id="tei_b_vg-creation-calendar-calendar-check-creation-constraint-rule-17">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -3821,7 +3720,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Änderung) verzeichnet Änderungen oder Korrekturen während der Erstellung eines Basisdokuments oder während der Überarbeitung einer elektronischen Datei. [2.6. The Revision Description 2.4.1. Creation 11.7. Identifying Changes and Revisions]</a:documentation>
          <ref name="undefinedmacro.specialPara"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-change-calendar-check-change-constraint-rule-19">
+                  id="tei_b_vg-change-calendar-check-change-constraint-rule-18">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -3865,7 +3764,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-change-calendar-calendar-check-change-constraint-rule-20">
+                  id="tei_b_vg-change-calendar-calendar-check-change-constraint-rule-19">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -4347,7 +4246,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
       
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-facsimile-no_facsimile_text_nodes-constraint-rule-21">
+                  id="tei_b_vg-facsimile-no_facsimile_text_nodes-constraint-rule-20">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -4501,7 +4400,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </choice>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-msDesc-one_ms_singleton_max-constraint-rule-22">
+                  id="tei_b_vg-msDesc-one_ms_singleton_max-constraint-rule-21">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -4777,7 +4676,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-origin-calendar-calendar-check-origin-constraint-rule-23">
+                  id="tei_b_vg-origin-calendar-calendar-check-origin-constraint-rule-22">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5040,7 +4939,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-orgName-calendar-calendar-check-orgName-constraint-rule-24">
+                  id="tei_b_vg-orgName-calendar-calendar-check-orgName-constraint-rule-23">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5079,7 +4978,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-persName-calendar-calendar-check-persName-constraint-rule-25">
+                  id="tei_b_vg-persName-calendar-calendar-check-persName-constraint-rule-24">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5118,7 +5017,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-placeName-calendar-calendar-check-placeName-constraint-rule-26">
+                  id="tei_b_vg-placeName-calendar-calendar-check-placeName-constraint-rule-25">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5156,7 +5055,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-country-calendar-calendar-check-country-constraint-rule-27">
+                  id="tei_b_vg-country-calendar-calendar-check-country-constraint-rule-26">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5194,7 +5093,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-settlement-calendar-calendar-check-settlement-constraint-rule-28">
+                  id="tei_b_vg-settlement-calendar-calendar-check-settlement-constraint-rule-27">
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5484,7 +5383,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                         </s:pattern>
                      </s:schema>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-address_usage-constraint-rule-30">
+            id="tei_b_vg-address_usage-constraint-rule-29">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
@@ -5496,7 +5395,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                      </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-country_settlement_usage-constraint-rule-31">
+            id="tei_b_vg-country_settlement_usage-constraint-rule-30">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
@@ -5509,7 +5408,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                      </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-other_headerelements_usage-constraint-rule-32">
+            id="tei_b_vg-other_headerelements_usage-constraint-rule-31">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
@@ -5522,7 +5421,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                      </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-check_corr-constraint-rule-33">
+            id="tei_b_vg-check_corr-constraint-rule-32">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
@@ -5536,7 +5435,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                      </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-check_sic-constraint-rule-34">
+            id="tei_b_vg-check_sic-constraint-rule-33">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
@@ -5547,7 +5446,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                      </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-div_nesting-constraint-rule-35">
+            id="tei_b_vg-div_nesting-constraint-rule-34">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
@@ -5566,7 +5465,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                      </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-head_rules-constraint-rule-36">
+            id="tei_b_vg-head_rules-constraint-rule-35">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
@@ -5578,7 +5477,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                      </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-check_note_position-constraint-rule-37">
+            id="tei_b_vg-check_note_position-constraint-rule-36">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
@@ -5590,7 +5489,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                      </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-check_note_seg-constraint-rule-38">
+            id="tei_b_vg-check_note_seg-constraint-rule-37">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron"
               xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
