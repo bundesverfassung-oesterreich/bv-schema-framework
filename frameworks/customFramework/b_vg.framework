@@ -2817,16 +2817,6 @@
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>insert.lb_in_word</String>
-															</field>
-														</toolbarItem>
-														<toolbarItem>
-															<field name="actionID">
-																<String>insert.lb</String>
-															</field>
-														</toolbarItem>
-														<toolbarItem>
-															<field name="actionID">
 																<String>insert.pb</String>
 															</field>
 														</toolbarItem>
