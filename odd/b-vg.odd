@@ -427,18 +427,18 @@
                            <!--Ein Paragraph eines Gesetzestextes muss mit type-Attribut versehen
                               werden:-->
                            <p type="legal_section"> Der Bundesversammlung obliegt im
-                              <lb break="yes"/> Zusammenwirken mit dem Bundesrate die
-                              <lb break="yes"/> Gesetzgebung des Bundes.
-                              <lb break="yes"/>Die Bundesversammlung allein hat
-                              <lb break="yes"/>das Recht Krieg zu erklären und Friedens
-                              <lb break="no"/>verträge zu genehmigen. Ein solcher Be
-                              <lb break="no"/>schluß bedarf auch der Genehmigung des
-                              <lb break="yes"/>Bundesrates. </p>
+                              Zusammenwirken mit dem Bundesrate die
+                              Gesetzgebung des Bundes.
+                              Die Bundesversammlung allein hat
+                              das Recht Krieg zu erklären und Friedens
+                              verträge zu genehmigen. Ein solcher Be
+                              schluß bedarf auch der Genehmigung des
+                              Bundesrates. </p>
                            <!--Wenn die Paragraphen nummeriert sind, muss diese Nummerierung mit einem label-Tag getagt werden.-->
                            <p type="legal_section">
                               <label>(1)</label>Oesterreich ist eine demokratische Republik
-                              <lb break="yes"/>(2) Alle Öffentliche Gewalt geht vom Volke aus und
-                              <lb break="yes"/>wird in dessen Namen ausgeübt <note type="comment"
+                              <label>(2)</label> Alle Öffentliche Gewalt geht vom Volke aus und
+                              wird in dessen Namen ausgeübt <note type="comment"
                                  >Art. 1</note>
                            </p>
                         </div>
@@ -604,7 +604,7 @@
                         <text>
                            <body>
                               <div> Hier ist der Text auf Seite 5. Der Absatz wird jedoch auf der
-                                 <lb/>./. <pb facs="#facs_6" n="6" xml:id="img_0006" break="yes"/>
+                                 ./. <pb facs="#facs_6" n="6" xml:id="img_0006" break="yes"/>
                                  Folgeseite fortgesetzt, was durch das im historischen Medium
                                  nötige, heute aber überflüssige Zeichen „./.“ markiert wird. </div>
                            </body>
@@ -989,7 +989,7 @@
                ID, die auch in der XML-Struktur des folgenden Handbuchs zu finden ist. Sie dient dem
                schnelleren Auffinden der Aktionen im Falle einer notwendigen Überprüfung,
                Aktualisierung oder Anpassung. Die ID-Struktur folgt stets dem Muster
-               "action_[Aktionsname]".<lb/>Das folgende Handbuch ist untergliedert in Fließtext- und
+               "action_[Aktionsname]". Das folgende Handbuch ist untergliedert in Fließtext- und
                Register-Aktionen. Der Aufbau eines Handbucheintrags lautet wiefolgt:</p>
             <div xml:id="action_Muster">
                <table>
@@ -1026,12 +1026,12 @@
                </table>
                <p>* Um ein schnelles Auffinden der einzelnen Aktionen zu gewährleisten, bietet der
                   Punkt "Fundort" eine kurze Beschreibung. Hierbei wird zwischen drei
-                  unterschiedlichen Menüs im Oxygen XML Editor unterschieden:<lb/>1) <hi rend="bold"
+                  unterschiedlichen Menüs im Oxygen XML Editor unterschieden: 1) <hi rend="bold"
                      >Menü</hi>: Bezeichnet die Menüleiste am obersten Rand des Fensters. Hier
                   lassen sich unter dem Menüpunkt "ediarum" vor allem allgemeinere Aktionen
-                  finden.<lb/>2) <hi rend="bold">Kontextmenü</hi>: Bezeichnet das Menü, das sich
+                  finden. 2) <hi rend="bold">Kontextmenü</hi>: Bezeichnet das Menü, das sich
                   durch Rechtsklick mit der Maus öffnen lässt. Hier finden sich häufig genutzte
-                  Aktionen, die eine schnellere Bearbeitung der Texte ermöglichen soll.<lb/>3) <hi
+                  Aktionen, die eine schnellere Bearbeitung der Texte ermöglichen soll. 3) <hi
                      rend="bold">Symbolleiste</hi>: Bezeichnet die Menüleiste unmittelbar über dem
                   Texteditor (bzw. unter der XPath-Suchleiste). Hier finden sich jegliche Aktionen,
                   die für die Bearbeitung bzw. Auszeichnung von Texten und Registern benötigt
@@ -1115,9 +1115,8 @@
             <schemaSpec ident="tei_b_vg" start="TEI" prefix="undefined" targetLang="de" docLang="de">
                <moduleRef key="header"
                   include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
-               <!-- remove lb after asking  -->
                <moduleRef key="core"
-                  include=" rs lb p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address pubPlace author title graphic street unclear postCode del gap"/>
+                  include=" rs p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address pubPlace author title graphic street unclear postCode del gap"/>
                <!--hi-->
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
@@ -1621,7 +1620,7 @@
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="list"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="note"/>
                         <!--<elementRef maxOccurs="unbounded" minOccurs="0" key="rs"/>-->
-                        <elementRef maxOccurs="unbounded" minOccurs="0" key="lb"/>
+                        <!--<elementRef maxOccurs="unbounded" minOccurs="0" key="lb"/>-->
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="pb"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="emph"/>
                         <!--<elementRef maxOccurs="unbounded" minOccurs="0" key="unclear"/>-->
