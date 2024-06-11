@@ -638,7 +638,7 @@ head{
     "\a";
 }
 
-div:not([type='article'])>head {
+/*div:not([type='article'])>head {
     color: black;
     font-weight: bold;
     font-size: 1.5rem;
@@ -655,7 +655,7 @@ div:not([type='article'])>head {
         columns, 140,
         fontInherit, true
     );
-}
+}*/
 
 head:before {
     content: "\a";
