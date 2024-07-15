@@ -2,7 +2,7 @@ name: deploy addon with pages
 on:
   push:
     paths:
-      - "frameworks/*"
+      - "frameworks/**"
 jobs:
   deploy:
     name: package
