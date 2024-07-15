@@ -60,18 +60,6 @@ jobs:
             -F 'fileToConvert=@./odd/b-vg.odd' \
             -o "$index_path"
           cp -r $rng_output_dir $HTML_OUTOUT_DIR
-      - name: publish framework addon
-        run: |
-          ADDON_DIR="html/ADDON/"
-          FRAMEWORKS_DIR="frameworks"
-          CUSTOM_FRAMEWORK_FOLDER="customFramework"
-          TARGET_ZIP="../${ADDON_DIR}b-vg-framework.zip"
-          if [ -d $ADDON_DIR ]; then rm -rf $ADDON_DIR; fi
-          mkdir $ADDON_DIR
-          cp "${FRAMEWORKS_DIR}/b-vg-addon.xml" $ADDON_DIR
-          cd $FRAMEWORKS_DIR
-          zip -r $TARGET_ZIP $CUSTOM_FRAMEWORK_FOLDER
-          cd ~
       - name: Commit data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
