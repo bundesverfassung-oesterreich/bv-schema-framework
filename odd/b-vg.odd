@@ -26,15 +26,14 @@
    <text>
       <body>
          <head>Überblick</head>
-         <p>Dieses TEI ODD umfasst die Editionsrichtlinien und Datenmodellierung für das Projekt
-            „Die Entstehung des Bundes‐Verfassungsgesetzes 1920“</p>
+         <p>Dieses TEI ODD umfasst die Datenmodellierung für das Projekt „Die Entstehung des
+            Bundes‐Verfassungsgesetzes 1920“</p>
          <div xml:id="introduction">
             <head>Einführung</head>
             <p>Es werden die einzelnen Aspekte des Edierens in den Blick genommen sowie die
                entsprechende Modellierung des Textes mittels TEI XML anhand von Beispielen
                erläutert. </p>
-            <p>Diese Datei wird laufend weiterentwickelt und aktualisiert. Vorschläge zur Anpassung
-               von allen Seiten sind willkommen.</p>
+            <p>Diese Datei wird laufend weiterentwickelt und aktualisiert.</p>
             <p>Stand: Juni 2024</p>
          </div>
          <div xml:id="ocr">
@@ -44,20 +43,21 @@
                alle basalen textuellen Informationen zu sichern; typographische und strukturelle
                Informationen können ignoriert werden. Der zu edierende Text wird in diesem
                Arbeitschritt also zunächst als Buchstabenkette betrachtet.</p>
-            <p>Nach erfolgter Transkription wird der Text automatisiert in einem Export-Repository
-               auf Github verfügbar gemacht. Bearbeiter:innen wählen einen unbearbeiteten Text und
-               kopieren ihn in das Repository für manuelle Korrekturen und Tagging. In diesem
-               Bearbeitungsschritt werden unter anderem<list>
+            <p>Nach erfolgter basaler Transkription wird der Text als XML-Datei automatisiert in
+               einem Export-Repository auf Github verfügbar gemacht. Von dort aus wird der Text
+               automatisch transformiert und auf der Website in vorläufiger Form publiziert, um die
+               Dokumente möglichst schnelle zugänglich zu machen. Bearbeiter:innen wählen
+               gleichzeitig jeweils einen unbearbeiteten Text und kopieren ihn in das Repository für
+               manuelle Korrekturen und Tagging. In diesem Bearbeitungsschritt werden unter anderem<list>
                   <item>die semantischen Strukturelemente des Dokuments kodiert</item>
-                  <item>Entitäten – wie Personen, Orte und Texte – mit den Indizes / externen
-                     Quellen verlinkt</item>
                   <item>Metadaten erzeugt</item>
+                  <item>Entitäten in den Metadaten – wie Personen, Orte und Texte – mit den Indizes
+                     / externen Quellen verlinkt</item>
                   <item>die Transkriptionen der Dokumente auf Integrität überprüft</item>
-               </list></p>
-            <p>Der Stand der Bearbeitung wird in den Metadaten festgehalten. Wenn der
-               Bearbeitungsstand eines Dokumentes auf „abgeschlossen“ gesetzt ist und das Dokument
-               zur ‚Publikation‘ freigegeben wird, wird es automatisiert auf der Website
-               publiziert.</p>
+                  <item>Textriktische Entscheidungen umgesetzt</item>
+               </list>
+            Da davon ausgegangen wird, dass die Textqualität nach einer manuellen Bearbeitung besser ist, als nach dem automatisierten Export, werden die vorläufig auf der Website publizierten Dokumente sukzessive durch manuell überarbeitete Versionen ersetzt. Der jeweilige Bearbeitungsstand wird auf der Website angezeigt. 
+            </p>
          </div>
          <div xml:id="oxygen">
             <head>Arbeiten im Oxygen XML Editor</head>
