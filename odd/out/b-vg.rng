@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-05-27T12:58:32Z. .
+Schema generated from ODD source 2024-07-22T13:23:32Z. .
 TEI Edition: Version 4.4.0. Last updated on
         19th April 2022, revision ff9cc28b0
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0/
@@ -242,19 +242,6 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a <code xmlns="http://www.w3.org/1999/xhtml">&lt;handNote&gt;</code> element describing the hand considered responsible for the content of the element concerned.</a:documentation>
             <data type="anyURI">
                <param name="pattern">\S+</param>
-            </data>
-         </attribute>
-      </optional>
-   </define>
-   <define name="undefinedatt.breaking.attributes">
-      <ref name="undefinedatt.breaking.attribute.break"/>
-   </define>
-   <define name="undefinedatt.breaking.attribute.break">
-      <optional>
-         <attribute name="break">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates whether or not the element bearing this attribute should be considered to mark the end of an orthographic token in the same way as whitespace.</a:documentation>
-            <data type="token">
-               <param name="pattern">[^\p{C}\p{Z}]+</param>
             </data>
          </attribute>
       </optional>
@@ -1067,66 +1054,6 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
          </attribute>
       </optional>
    </define>
-   <define name="undefinedatt.edition.attributes">
-      <ref name="undefinedatt.edition.attribute.ed"/>
-      <ref name="undefinedatt.edition.attribute.edRef"/>
-   </define>
-   <define name="undefinedatt.edition.attribute.ed">
-      <optional>
-         <attribute name="ed">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(edition) supplies a sigil or other arbitrary identifier for the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <data type="token">
-                     <param name="pattern">[^\p{C}\p{Z}]+</param>
-                  </data>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="undefinedatt.edition.attribute.edRef">
-      <optional>
-         <attribute name="edRef">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(edition reference) provides a pointer to the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <data type="anyURI">
-                     <param name="pattern">\S+</param>
-                  </data>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="undefinedatt.spanning.attributes">
-      <ref name="undefinedatt.spanning.attribute.spanTo"/>
-   </define>
-   <define name="undefinedatt.spanning.attribute.spanTo">
-      <optional>
-         <attribute name="spanTo">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the end of a span initiated by the element bearing this attribute.</a:documentation>
-            <data type="anyURI">
-               <param name="pattern">\S+</param>
-            </data>
-         </attribute>
-      </optional>
-   </define>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-att.spanning-spanTo-spanTo-points-to-following-constraint-rule-8">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:eg="http://www.tei-c.org/ns/Examples"
-                xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@spanTo]">
-         <sch:assert test="id(substring(@spanTo,2)) and following::*[@xml:id=substring(current()/@spanTo,2)]">
-The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow the current element <sch:name/>
-         </sch:assert>
-      </sch:rule>
-   </pattern>
    <define name="undefinedatt.citing.attributes">
       <ref name="undefinedatt.citing.attribute.unit"/>
       <ref name="undefinedatt.citing.attribute.from"/>
@@ -1490,7 +1417,6 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    <define name="undefinedmodel.milestoneLike">
       <choice>
          <ref name="undefinedpb"/>
-         <ref name="undefinedlb"/>
          <ref name="undefinedfw"/>
       </choice>
    </define>
@@ -2218,9 +2144,6 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
                   <ref name="undefinednote"/>
                </zeroOrMore>
                <zeroOrMore>
-                  <ref name="undefinedlb"/>
-               </zeroOrMore>
-               <zeroOrMore>
                   <ref name="undefinedpb"/>
                </zeroOrMore>
                <zeroOrMore>
@@ -2591,7 +2514,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_b_vg-list-gloss-list-must-have-labels-constraint-rule-9">
+                  id="tei_b_vg-list-gloss-list-must-have-labels-constraint-rule-8">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:eg="http://www.tei-c.org/ns/Examples"
                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
@@ -2651,7 +2574,17 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
    <define name="undefinedlabel">
       <element name="label">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Label) enthält ein Label oder eine Überschrift zur Identifikation eines Textteils, insbesondere in einer Liste oder einem Glossar. [3.8. Lists]</a:documentation>
-         <ref name="undefinedmacro.phraseSeq"/>
+         <zeroOrMore>
+            <choice>
+               <ref name="undefinedmacro.specialPara"/>
+               <zeroOrMore>
+                  <ref name="undefineddel"/>
+               </zeroOrMore>
+               <zeroOrMore>
+                  <ref name="undefinedadd"/>
+               </zeroOrMore>
+            </choice>
+         </zeroOrMore>
          <ref name="undefinedatt.global.attributes"/>
          <ref name="undefinedatt.typed.attributes"/>
          <ref name="undefinedatt.placement.attributes"/>
@@ -2744,23 +2677,19 @@ Elements]</a:documentation>
          </attribute>
          <attribute name="break">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Auf "no" setzen, wenn der Seitenumbruch ein Wort trennt, auf "yes" setzen, wenn der Seitenumbruch mit der Wortgrenze korreliert.</a:documentation>
-            <data type="token">
-               <param name="pattern">[^\p{C}\p{Z}]+</param>
-            </data>
+            <choice>
+               <value>yes</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Wort nicht getrennt</a:documentation>
+               <value>no</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Wort durch Seitenwechsel getrennt</a:documentation>
+               <value>maybe</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>yes</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Wort nicht getrennt</a:documentation>
+               <value>no</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Wort durch Seitenwechsel getrennt</a:documentation>
+            </choice>
          </attribute>
-         <empty/>
-      </element>
-   </define>
-   <define name="undefinedlb">
-      <element name="lb">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Zeilenanfang) markiert den Anfang einer neuen typographischen Zeile in einer bestimmten Auflage oder Version eines Textes. [3.11.3. Milestone
-Elements 7.2.5. Speech Contents]</a:documentation>
-         <empty/>
-         <ref name="undefinedatt.global.attributes"/>
-         <ref name="undefinedatt.typed.attributes"/>
-         <ref name="undefinedatt.edition.attributes"/>
-         <ref name="undefinedatt.spanning.attributes"/>
-         <ref name="undefinedatt.breaking.attributes"/>
          <empty/>
       </element>
    </define>
@@ -4496,7 +4425,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
       </s:pattern>
    </s:schema>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-address_usage-constraint-rule-11">
+            id="tei_b_vg-address_usage-constraint-rule-10">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
               xmlns:egXML="http://www.tei-c.org/ns/Examples"
@@ -4508,7 +4437,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
       </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-country_settlement_usage-constraint-rule-12">
+            id="tei_b_vg-country_settlement_usage-constraint-rule-11">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
               xmlns:egXML="http://www.tei-c.org/ns/Examples"
@@ -4521,7 +4450,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
       </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-other_headerelements_usage-constraint-rule-13">
+            id="tei_b_vg-other_headerelements_usage-constraint-rule-12">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
               xmlns:egXML="http://www.tei-c.org/ns/Examples"
@@ -4534,7 +4463,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
       </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-check_corr-constraint-rule-14">
+            id="tei_b_vg-check_corr-constraint-rule-13">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
               xmlns:egXML="http://www.tei-c.org/ns/Examples"
@@ -4548,7 +4477,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
       </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-check_sic-constraint-rule-15">
+            id="tei_b_vg-check_sic-constraint-rule-14">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
               xmlns:egXML="http://www.tei-c.org/ns/Examples"
@@ -4559,7 +4488,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
       </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-div_nesting-constraint-rule-16">
+            id="tei_b_vg-div_nesting-constraint-rule-15">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
               xmlns:egXML="http://www.tei-c.org/ns/Examples"
@@ -4578,7 +4507,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
       </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-head_rules-constraint-rule-17">
+            id="tei_b_vg-head_rules-constraint-rule-16">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
               xmlns:egXML="http://www.tei-c.org/ns/Examples"
@@ -4590,7 +4519,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
       </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-check_note_position-constraint-rule-18">
+            id="tei_b_vg-check_note_position-constraint-rule-17">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
               xmlns:egXML="http://www.tei-c.org/ns/Examples"
@@ -4602,7 +4531,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
       </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_b_vg-check_note_seg-constraint-rule-19">
+            id="tei_b_vg-check_note_seg-constraint-rule-18">
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:eg="http://www.tei-c.org/ns/Examples"
               xmlns:egXML="http://www.tei-c.org/ns/Examples"

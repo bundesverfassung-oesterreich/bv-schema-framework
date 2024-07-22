@@ -733,6 +733,22 @@ pb {
     color: gray;
 }
 
+pb[break="yes"]{
+    content: oxy_editor(
+        type, combo,
+        edit, 'break'
+    )
+    ' –– Seitenbeginn –– ';
+}
+
+pb[break="no"]{
+    content: oxy_editor(
+        type, combo,
+        edit, 'break'
+    )
+    ' –– Seitenbeginn (mit Worttrennung) –– ';
+}
+
 lb {
     color: gray;
     font-size: 1.5rem;

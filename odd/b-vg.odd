@@ -1874,6 +1874,14 @@
                      <attDef ident="break" mode="change" usage="req">
                         <desc>Auf "no" setzen, wenn der Seitenumbruch ein Wort trennt, auf "yes"
                            setzen, wenn der Seitenumbruch mit der Wortgrenze korreliert.</desc>
+                        <valList type="closed" mode="change">
+                           <valItem mode="add" ident="yes">
+                              <desc>Wort nicht getrennt</desc>
+                           </valItem>
+                           <valItem mode="add" ident="no">
+                              <desc>Wort durch Seitenwechsel getrennt</desc>
+                           </valItem>
+                        </valList>
                      </attDef>
                      <attDef ident="ana" mode="delete"/>
                      <attDef ident="change" mode="delete"/>
