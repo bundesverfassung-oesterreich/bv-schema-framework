@@ -789,7 +789,7 @@ pb {
 }
 
 pb[break = "no"]:before {
-    content: "–";
+    content: " – ";
     color: yellow;
     font-weight: bold;
 }
