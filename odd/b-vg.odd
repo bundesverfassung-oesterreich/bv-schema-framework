@@ -1871,7 +1871,7 @@
                      <attDef ident="xml:id" mode="change" usage="req">
                         <desc>automatisch generierte id (img)</desc>
                      </attDef>
-                     <attDef ident="break" mode="change" usage="req">
+                     <attDef ident="break" mode="replace" usage="req">
                         <desc>Auf "no" setzen, wenn der Seitenumbruch ein Wort trennt, auf "yes"
                            setzen, wenn der Seitenumbruch mit der Wortgrenze korreliert.</desc>
                         <valList type="closed" mode="change" usage="req">

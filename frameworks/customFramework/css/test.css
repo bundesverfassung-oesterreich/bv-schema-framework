@@ -736,7 +736,7 @@ pb {
 pb[break="yes"]{
     content: oxy_editor(
         type, combo,
-        edit, 'break'
+        edit, '@break'
     )
     ' –– Seitenbeginn –– ';
 }
@@ -744,7 +744,7 @@ pb[break="yes"]{
 pb[break="no"]{
     content: oxy_editor(
         type, combo,
-        edit, 'break'
+        edit, '@break'
     )
     ' –– Seitenbeginn (mit Worttrennung) –– ';
 }
