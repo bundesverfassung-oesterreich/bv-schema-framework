@@ -749,6 +749,14 @@ pb[break="no"]{
     ' –– Seitenbeginn (mit Worttrennung) –– ';
 }
 
+pb[break="maybe"]{
+    content: oxy_editor(
+        type, combo,
+        edit, '@break'
+    )
+    ' –– Seitenbeginn (break-Atribut bitte ändern) –– ';
+}
+
 lb {
     color: gray;
     font-size: 1.5rem;
