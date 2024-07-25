@@ -21,7 +21,14 @@ jobs:
       - name: check for framework changes & increment version nmbr
         run: |
           changed_files=$(git diff --name-only ${{github.event.before}} ${{github.sha}})
-          echo "$changed_files" | grep -c "frameworks/customFramework/"
+          if [[ $changed_files == *"frameworks/customFramework"* ]]; then
+            echo "changes found in framework"
+          fi
+          # if [ "$changes_in_framework" != 0 ]; then
+          #   
+          #   pip install -r pyscripts/requirements.txt
+          #   python pyscripts/increment_version.py
+          # fi
       - name: send odd get xhtml/rng
         run: |
           index_path="${HTML_OUTOUT_DIR}index.html"
