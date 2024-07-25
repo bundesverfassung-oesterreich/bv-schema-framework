@@ -12,9 +12,16 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: check
+      - name: check for framework changes & increment version nmbr
         run: |
-          git diff ${{github.event.before}} ${{github.sha}}
+          changes_in_framework=`git diff ${{github.event.before}} ${{github.sha}}|grep -c "frameworks/customFramework/"`
+          if [ "$changes_in_framework" != 0 ]; then
+            echo "changes found in framework"
+            pip install -r pyscripts/requirements.txt
+            python pyscripts/increment_version.py
+          else
+            echo "no changes in framework"
+          fi
       - name: send odd get xhtml/rng
         run: |
           index_path="${HTML_OUTOUT_DIR}index.html"
@@ -61,10 +68,6 @@ jobs:
             -F 'fileToConvert=@./odd/b-vg.odd' \
             -o "$index_path"
           cp -r $rng_output_dir $HTML_OUTOUT_DIR
-      - name: increment version nmbr
-        run: |
-          pip install -r pyscripts/requirements.txt
-          python pyscripts/increment_version.py
       - name: prepare framework addon
         run: |
           ADDON_DIR="html/ADDON/"
