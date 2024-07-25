@@ -18,8 +18,8 @@ jobs:
         run: |
           index_path="${HTML_OUTOUT_DIR}index.html"
           css_path="${HTML_OUTOUT_DIR}site.css"
-          rm -rf "$HTML_OUTOUT_DIR"
-          mkdir "$HTML_OUTOUT_DIR"
+          # rm -rf "$HTML_OUTOUT_DIR"
+          # mkdir "$HTML_OUTOUT_DIR"
           echo "sending post request to teigarage"
           curl -X 'POST' \
             'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/oddhtml%3Aapplication%3Axhtml%2Bxml/' \
