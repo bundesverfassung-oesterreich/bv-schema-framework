@@ -17,8 +17,8 @@ jobs:
           changes_in_framework=`git diff --name-only ${{github.event.before}} ${{github.sha}}|grep -c "frameworks/customFramework/"`
           if [ "$changes_in_framework" != 0 ]; then
             echo "changes found in framework"
-            pip install -r pyscripts/requirements.txt
-            python pyscripts/increment_version.py
+            # pip install -r pyscripts/requirements.txt
+            # python pyscripts/increment_version.py
           else
             echo "no changes in framework"
           fi
