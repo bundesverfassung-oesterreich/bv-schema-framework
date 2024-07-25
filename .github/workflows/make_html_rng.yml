@@ -8,11 +8,11 @@ jobs:
     name: convert odd
     runs-on: ubuntu-latest
     steps:
+      - name: Perfom Checkout
+        uses: actions/checkout@v4
       - name: check
         run: |
           git diff ${{github.event.before}} ${{github.sha}}
-      - name: Perfom Checkout
-        uses: actions/checkout@v4
       - name: send odd get xhtml/rng
         run: |
           index_path="${HTML_OUTOUT_DIR}index.html"
