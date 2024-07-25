@@ -58,6 +58,7 @@ jobs:
           cp -r $rng_output_dir $HTML_OUTOUT_DIR
       - name: increment version nmbr
         run: |
+          git diff ${{github.event.before}} ${{github.sha}}
           pip install -r pyscripts/requirements.txt
           python pyscripts/increment_version.py
       - name: prepare framework addon
