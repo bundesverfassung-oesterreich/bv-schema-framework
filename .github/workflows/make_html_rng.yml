@@ -22,6 +22,7 @@ jobs:
         run: |
           changed_files=$(git diff --name-only ${{github.event.before}} ${{github.sha}})
           # changes_in_framework=`echo $changed_files | grep -c "frameworks/customFramework/"`
+          echo $changed_files | grep -c "frameworks/customFramework/"
           # if [ "$changes_in_framework" != 0 ]; then
           #   echo "changes found in framework"
           #   pip install -r pyscripts/requirements.txt
@@ -94,12 +95,4 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-      # - name: Commit data
-      #   uses: stefanzweifel/git-auto-commit-action@v5
-      #   with:
-      #     commit_message: created new html/rng from odd
-      # - name: Deploy Online
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     github_token: ${{secrets.GITHUB_TOKEN}}
-      #     publish_dir: ./html
+
