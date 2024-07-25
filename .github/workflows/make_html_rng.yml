@@ -25,6 +25,8 @@ jobs:
             echo "changes found in framework"
             pip install -r pyscripts/requirements.txt
             python pyscripts/increment_version.py
+            git add frameworks/b-vg-addon.xml
+            git commit "new version"
           else
             echo "no changes in framework"
           fi
