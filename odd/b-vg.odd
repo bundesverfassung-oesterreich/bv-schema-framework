@@ -55,9 +55,10 @@
                      / externen Quellen verlinkt</item>
                   <item>die Transkriptionen der Dokumente auf Integrität überprüft</item>
                   <item>Textriktische Entscheidungen umgesetzt</item>
-               </list>
-            Da davon ausgegangen wird, dass die Textqualität nach einer manuellen Bearbeitung besser ist, als nach dem automatisierten Export, werden die vorläufig auf der Website publizierten Dokumente sukzessive durch manuell überarbeitete Versionen ersetzt. Der jeweilige Bearbeitungsstand wird auf der Website angezeigt. 
-            </p>
+               </list> Da davon ausgegangen wird, dass die Textqualität nach einer manuellen
+               Bearbeitung besser ist, als nach dem automatisierten Export, werden die vorläufig auf
+               der Website publizierten Dokumente sukzessive durch manuell überarbeitete Versionen
+               ersetzt. Der jeweilige Bearbeitungsstand wird auf der Website angezeigt. </p>
          </div>
          <div xml:id="oxygen">
             <head>Arbeiten im Oxygen XML Editor</head>
@@ -426,31 +427,28 @@
                               Kommentare etc.</p>
                            <!--Ein Paragraph eines Gesetzestextes muss mit type-Attribut versehen
                               werden:-->
-                           <p type="legal_section"> Der Bundesversammlung obliegt im
-                              Zusammenwirken mit dem Bundesrate die
-                              Gesetzgebung des Bundes.
-                              Die Bundesversammlung allein hat
-                              das Recht Krieg zu erklären und Friedens
-                              verträge zu genehmigen. Ein solcher Be
-                              schluß bedarf auch der Genehmigung des
+                           <p type="legal_section"> Der Bundesversammlung obliegt im Zusammenwirken
+                              mit dem Bundesrate die Gesetzgebung des Bundes. Die Bundesversammlung
+                              allein hat das Recht Krieg zu erklären und Friedens verträge zu
+                              genehmigen. Ein solcher Be schluß bedarf auch der Genehmigung des
                               Bundesrates. </p>
                            <!--Wenn die Paragraphen nummeriert sind, muss diese Nummerierung mit einem label-Tag getagt werden.-->
                            <p type="legal_section">
                               <label>(1)</label>Oesterreich ist eine demokratische Republik
-                              <label>(2)</label> Alle Öffentliche Gewalt geht vom Volke aus und
-                              wird in dessen Namen ausgeübt <note type="comment"
-                                 >Art. 1</note>
+                                 <label>(2)</label> Alle Öffentliche Gewalt geht vom Volke aus und
+                              wird in dessen Namen ausgeübt <note type="comment">Art. 1</note>
                            </p>
                         </div>
                      </body>
                   </egXML>
                   <div>
                      <head>Zeilenumbrüche</head>
-                     <p>Da Zeilenumbrüche als bloß materiell bedingte typographische Konvention und Notwendigkeit
-                        keine Relevanz für die zu edierenden Materialien besitzen, werden sie ohne
-                        Ausnahme weder kodiert noch transkribiert. Sinnhafte relevante
-                        Strukturelemente der Texte, die durch Zeilenumbrüche Markiert werden
-                        (Absätze, Paragrphen etc.), werden als solche kodiert und dargestellt.</p>
+                     <p>Da Zeilenumbrüche als bloß materiell bedingte typographische Konvention und
+                        Notwendigkeit keine Relevanz für die zu edierenden Materialien besitzen,
+                        werden sie ohne Ausnahme weder kodiert noch transkribiert. Sinnhafte
+                        relevante Strukturelemente der Texte, die durch Zeilenumbrüche Markiert
+                        werden (Absätze, Paragrphen etc.), werden als solche kodiert und
+                        dargestellt.</p>
                   </div>
                </div>
                <div>
@@ -1507,8 +1505,8 @@
                   <desc>Dokument auf dem der Inhalt der Datei basiert.</desc>
                   <content>
                      <alternate>
-                     <!--<elementRef key="msDesc" minOccurs="1" maxOccurs="1"/>-->
-                     <elementRef key="listWit" minOccurs="0" maxOccurs="2"/>
+                        <elementRef key="msDesc" minOccurs="1" maxOccurs="1"/>
+                        <elementRef key="listWit" minOccurs="0" maxOccurs="2"/>
                      </alternate>
                   </content>
                </elementSpec>
