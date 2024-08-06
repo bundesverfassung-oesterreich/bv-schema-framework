@@ -1506,7 +1506,10 @@
                <elementSpec ident="sourceDesc" mode="change">
                   <desc>Dokument auf dem der Inhalt der Datei basiert.</desc>
                   <content>
+                     <alternate>
                      <elementRef key="msDesc" minOccurs="1" maxOccurs="1"/>
+                     <elementRef key="listWit" minOccurs="0" maxOccurs="2"/>
+                     </alternate>
                   </content>
                </elementSpec>
                <elementSpec ident="availability" mode="change">
