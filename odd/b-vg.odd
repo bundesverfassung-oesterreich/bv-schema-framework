@@ -1504,11 +1504,23 @@
                <elementSpec ident="sourceDesc" mode="change">
                   <desc>Dokument auf dem der Inhalt der Datei basiert.</desc>
                   <content>
-                     <alternate maxOccurs="3" minOccurs="1">
+                     <alternate maxOccurs="2" minOccurs="1">
                         <elementRef key="msDesc" minOccurs="1" maxOccurs="1"/>
-                        <elementRef key="listWit" minOccurs="0" maxOccurs="2"/>
+                        <elementRef key="listWit" minOccurs="0" maxOccurs="1"/>
                      </alternate>
                   </content>
+               </elementSpec>
+               <elementSpec ident="witness">
+                  <desc>Verlinkt alle weiteren Textzeugen zu einem Dokument, die nicht grundlage der aktuellen Darstellung sind.</desc>
+                  <content>
+                     <text/>
+                  </content>
+                  <attList mode="replace">
+                     <attDef ident="sameAs" mode="replace" usage="req">
+                        <valList type="closed">                         
+                        </valList>
+                     </attDef>
+                  </attList>
                </elementSpec>
                <elementSpec ident="availability" mode="change">
                   <desc>Dokument auf dem der Inhalt der Datei basiert.</desc>
