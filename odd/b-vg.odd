@@ -560,7 +560,7 @@
                      <text>
                         <body>
                            <div> Hier ist der Text auf Seite 5. <pb facs="#facs_6" n="6"
-                                 xml:id="img_0006" break="yes"/> Hier beginnt der Text auf Seite 6 </div>
+                                 xml:id="img_0060" break="yes"/> Hier beginnt der Text auf Seite 6 </div>
                            <div> Hier ist der Text auf Seite 6. Ein Wort wird im Seitenwechsel ge
                                  <pb break="no" facs="#facs_7" n="7" xml:id="img_0007"/> trennt und
                               auf Seite 7 fortgesetzt. </div>
@@ -602,7 +602,7 @@
                         <text>
                            <body>
                               <div> Hier ist der Text auf Seite 5. Der Absatz wird jedoch auf der
-                                 ./. <pb facs="#facs_6" n="6" xml:id="img_0006" break="yes"/>
+                                 ./. <pb facs="#facs_6" n="6" xml:id="img_0012" break="yes"/>
                                  Folgeseite fortgesetzt, was durch das im historischen Medium
                                  nötige, heute aber überflüssige Zeichen „./.“ markiert wird. </div>
                            </body>
