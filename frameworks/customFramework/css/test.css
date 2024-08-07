@@ -173,9 +173,21 @@ teiHeader sourceDesc msDesc {
     font-size: 1.5rem;
 }
 
+teiHeader sourceDesc listWit + msDesc::after {
+    display: None;
+}
+
+teiHeader sourceDesc msDesc::after {
+    display: block;
+    content: oxy_button(action, oxy_action(
+    name, 'Zusätzliche Textzeugen verlinken', description, 'fügt Liste mit weiteren Textzeugen ein', operation, 'InsertFragmentOperation', arg-fragment, '<listWit xmlns="http://www.tei-c.org/ns/1.0"></listWit>', arg-insertLocation, '.', arg-insertPosition, 'Before'
+    ));
+}
+    
+
 teiHeader sourceDesc listWit {
     display: block;
-    content: "Weitere Textzeugen";
+    content: "Weitere Textzeugen\a";
     -oxy-foldable:true;
     -oxy-folded:true;
     -oxy-display-tags: none;
@@ -199,10 +211,7 @@ listWit witness {
     border: 1px black solid;
     -oxy-display-tags: none;
     color: black;
-}
-
-witness{
-    content: oxy_combobox(
+        content: oxy_combobox(
         edit, 'sameAs'
     )
     "\a";
@@ -217,7 +226,7 @@ listWit witness::after {
 
 listWit::after {
     content: oxy_button(action, oxy_action(
-    name, 'weiteren Textzeugen verlinken', description, 'fügt weiteren Link ein', operation, 'InsertFragmentOperation', arg-fragment, '<witness xmlns="http://www.tei-c.org/ns/1.0" sameAs=""></witness>', arg-insertLocation, '.', arg-insertPosition, 'Inside'
+    name, 'Textzeugen hinzufügen', description, 'fügt weiteren Link ein', operation, 'InsertFragmentOperation', arg-fragment, '<witness xmlns="http://www.tei-c.org/ns/1.0" sameAs=""></witness>', arg-insertLocation, '.', arg-insertPosition, 'Inside'
     ));
 }
 
