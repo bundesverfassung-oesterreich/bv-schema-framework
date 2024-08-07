@@ -1193,6 +1193,20 @@
                      </attDef>
                   </attList>
                </elementSpec>
+               <elementSpec ident="msDesc" mode="change">
+                  <attLis>
+                     <attDef ident="subtyp" mode="replace" usage="rec">
+                        <valList type="closed">
+                           <valItem ident="primary">
+                              <desc>Primäre Quelle für die Edition</desc>
+                           </valItem>
+                           <valItem ident="secondary">
+                              <desc>Sekundäre Quelle für die Edition</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attLis>
+               </elementSpec>
                <elementSpec ident="revisionDesc" mode="change">
                   <classes mode="change">
                      <memberOf key="att.global" mode="delete"/>
