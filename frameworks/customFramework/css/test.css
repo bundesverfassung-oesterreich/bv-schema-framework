@@ -230,6 +230,15 @@ listWit::after {
     ));
 }
 
+teiHeader sourceDesc msDesc::before {
+    font-size: small;
+    color: black;
+        content: "Art des Textzeugen " oxy_combobox(
+        edit, 'subtype'
+    )
+    "\a";
+}
+
 teiHeader sourceDesc msDesc msIdentifier {
     -oxy-display-tags: none;
      visibility:-oxy-collapse-text;
