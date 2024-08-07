@@ -15,9 +15,10 @@ class CFG:
         source_json_url: str,
         type_column_name: str,
         targeted_element_name: str,
-        targeted_attribute_name: str,
+        targeted_attribute_name: str,        
         type_description_field_name: str = "description",
         local_dump_copy_file=None,
+        attribute_lpad: str = ""
     ):
         self.tageted_element_name = targeted_element_name
         self.targeted_attribute_name = targeted_attribute_name
@@ -26,6 +27,7 @@ class CFG:
         self.type_column_name = type_column_name
         self.type_description_field_name = type_description_field_name
         self.local_dump_copy_file = local_dump_copy_file
+        self.attrib_lpad = attribute_lpad
 
 
 def fetch_metadata_json(
@@ -55,7 +57,7 @@ def get_valItems_from_json(cfg: CFG) -> list:
             "\n",
             NewElement.desc(description_text),
             "\n",
-            ident=value
+            ident=cfg.attrib_lpad + value
         )
         valItems.append(valItem)
     return valItems
@@ -132,7 +134,8 @@ if __name__ == "__main__":
             type_column_name="bv_id",
             targeted_element_name="witness",
             targeted_attribute_name="sameAs",
-            type_description_field_name="doc_title"
+            type_description_field_name="doc_title",
+            attribute_lpad="#",
         )
     ]
     for cfg in cfgs:
