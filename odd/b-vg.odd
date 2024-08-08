@@ -264,6 +264,31 @@
                      </revisionDesc>
                   </egXML>
                </div>
+               <div xml:id="zeugen">
+                  <head>Multiple Textzeugen</head>
+                  <p>Existieren für einen Text multiple Textzeugen, müssen zwei relevante
+                     informationen kodiert werden: <list>
+                        <item>Für das aktuelle Dokument muss vermerkt werden, ob es sich um den auf
+                           der Website primär zu präsentierenden Text handelt oder bloß um ein vom
+                           primären Textzeugen aus zu verlinkendem Textzeugen. Im ersten Falle muss
+                           das <att>subtype</att>-Attribut des <gi>msDesc</gi>-Element in den
+                           Metadaten mit dem Wert <val>primary</val>, im zweiten Fall mit dem Wert
+                              <val>secondary</val> versehen werden. Dies ist im Framework über das
+                           Feld ‚Art des Textzeugen‘ oberhalb der ‚Dokumentenbeschreibung‘
+                           möglich. Existiert nur ein Textzeuge muss kein Wert gesetzt werden.</item>
+                        <item>Alle Textzeugen des gleichen Textes müssen untereinander verlinkt
+                           werden. Dazu wird dem <gi>listWit</gi>-Element ein
+                           <gi>witness</gi>-Element hinzugefügt, dessen <att>sameAs</att>-Attribut
+                           die Dokumenten-Id des jeweiligen Textzeugen enthält. Über das Framework kann unter ‚Dokumentenbeschreibung‘ das Feld ‚Zusätzliche Textzeugen verlinken‘ ausgewählt werden. Unter dem dann generierten Feld ‚Weitere Textzeugen‘ kann dann für jeden Textzeugen ein eigenes Feld angelegt werden, in dem über ein Dropdown die jeweilige B-VG-Id ausgewählt wird.</item>
+                     </list></p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <revisionDesc status="text_correct">
+                        <change when="2024-02-27" who="#cfh">document automatically created</change>
+                        <change when="2024-02-27" who="#cfh">tagged structure</change>
+                        <change when="2024-02-27" who="#cfh">text endgülitg korrigiert</change>
+                     </revisionDesc>
+                  </egXML>
+               </div>
             </div>
             <div xml:id="structure_text">
                <head>Haupttexte</head>
@@ -956,7 +981,6 @@
                      </attDef>
                   </attList>
                </elementSpec>
-               
                <elementSpec ident="msDesc" mode="change">
                   <classes mode="change">
                      <memberOf key="att.global" mode="delete"/>
@@ -984,7 +1008,6 @@
                      </attDef>
                   </attList>
                </elementSpec>
-               
                <elementSpec ident="revisionDesc" mode="change">
                   <classes mode="change">
                      <memberOf key="att.global" mode="delete"/>
