@@ -1193,27 +1193,37 @@
                      </attDef>
                   </attList>
                </elementSpec>
+               
                <elementSpec ident="msDesc" mode="change">
-                  <attLis>
-                     <attDef ident="subtype" mode="replace" usage="req">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.sortable" mode="delete"/>
+                     <memberOf key="att.typed" mode="delete"/>
+                     <memberOf key="att.declaring" mode="delete"/>
+                     <memberOf key="att.docStatus" mode="delete"/>
+                  </classes>
+<!--                  <attList>
+                     <attDef ident="status" mode="replace" usage="req">
                         <valList type="closed">
-                           <valItem ident="primary">
-                              <desc>Primäre Quelle für die Edition</desc>
+                           <valItem ident="created">
+                              <desc>The document was created by an automated workflow.</desc>
                            </valItem>
-                           <valItem ident="secondary">
-                              <desc>Sekundäre Quelle für die Edition</desc>
+                           <valItem ident="structured">
+                              <desc>The document makro structure was checked/corrected by
+                                 hand.</desc>
+                           </valItem>
+                           <valItem ident="text_correct">
+                              <desc>All text in the document is correct.</desc>
+                           </valItem>
+                           <valItem ident="done">
+                              <desc>Document is done and should be published.</desc>
                            </valItem>
                         </valList>
                      </attDef>
-                     <attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="inventory">
-                              <desc>Beschreibung des Dokuments</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                  </attLis>
+                  </attList>-->
                </elementSpec>
+               
+               
                <elementSpec ident="revisionDesc" mode="change">
                   <classes mode="change">
                      <memberOf key="att.global" mode="delete"/>
