@@ -1195,7 +1195,7 @@
                </elementSpec>
                <elementSpec ident="msDesc" mode="change">
                   <attLis>
-                     <attDef ident="subtype" mode="replace" usage="req">
+                     <attDef ident="subtype" mode="add" usage="req">
                         <valList type="closed">
                            <valItem ident="primary">
                               <desc>Primäre Quelle für die Edition</desc>
