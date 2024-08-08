@@ -1193,7 +1193,7 @@
                      </attDef>
                   </attList>
                </elementSpec>
-               <elementSpec ident="msDesc" mode="change">
+               <elementSpec ident="msDesc" mode="add">
                   <attLis>
                      <attDef ident="subtype" mode="add" usage="req">
                         <valList type="closed">
@@ -1202,6 +1202,13 @@
                            </valItem>
                            <valItem ident="secondary">
                               <desc>Sekundäre Quelle für die Edition</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="type" mode="change" usage="req">
+                        <valList type="closed">
+                           <valItem ident="inventory">
+                              <desc>Beschreibung des Dokuments</desc>
                            </valItem>
                         </valList>
                      </attDef>
