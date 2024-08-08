@@ -1202,6 +1202,25 @@
                      <memberOf key="att.declaring" mode="delete"/>
                      <memberOf key="att.docStatus" mode="delete"/>
                   </classes>
+                  <attList>
+                     <attDef ident="type" mode="add" usage="req">
+                        <valList type="closed">
+                           <valItem ident="invetory">
+                              <desc>Beschreibung des Archivguts</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="subtype" mode="add" usage="rec">
+                        <valList type="closed">
+                           <valItem ident="primary">
+                              <desc>Primäre Quelle / Haupttextzeuge</desc>
+                           </valItem>
+                           <valItem ident="secondary">
+                              <desc>Sekundäre Quelle / zusätzlicher Textzeuge</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
 <!--                  <attList>
                      <attDef ident="status" mode="replace" usage="req">
                         <valList type="closed">
