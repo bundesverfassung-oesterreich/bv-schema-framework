@@ -1,5 +1,9 @@
 name: html from odd
 on:
+  workflow_run:
+    workflows: ["update types in odd from baserow dump"]
+    types:
+      - completed
   push:
 env:
   HTML_OUTOUT_DIR: ./html/
