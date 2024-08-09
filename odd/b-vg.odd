@@ -1708,6 +1708,7 @@
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="note"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="add"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="fw"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="sp"/>
                      </alternate>
                   </content>
                   <attList>
@@ -1776,6 +1777,13 @@
                   </content>
                </elementSpec>
                <!-- Anpassung des p Elements -->
+               <constraintSpec ident="check_p_encapsulation" scheme="schematron">
+                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                     <s:rule context="//tei:p[.//tei:p]">  
+                        <s:assert test="not(@type) and .//tei:p[@type='legal_section']">nur typographische Absätze (p-Element ohne type) dürfen einen juristischen Paragraphen (p-Element mit type=legal_section) enthalten</s:assert>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
                <elementSpec ident="p" mode="change">
                   <content>
                      <alternate maxOccurs="unbounded" minOccurs="0">
@@ -1794,6 +1802,9 @@
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="choice"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="fw"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="label"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="sp"/>
+                        <!-- typographic paragraphs might contain juristic articles in protocolls, see constrain spec -->
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="p"/>
                      </alternate>
                   </content>
                   <attList>
@@ -1898,9 +1909,6 @@
                      <attDef ident="resp" mode="delete"/>
                      <attDef ident="source" mode="delete"/>
                      <attDef ident="n" mode="delete"/>
-                     <!--<attDef ident="xml:id" mode="change" usage="opt">
-                        <desc>Sollte durch das Framework generiert werden.</desc>
-                     </attDef>-->
                      <attDef ident="subtype" mode="delete"/>
                   </attList>
                </elementSpec>
