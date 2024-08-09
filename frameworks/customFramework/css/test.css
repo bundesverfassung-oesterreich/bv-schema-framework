@@ -862,6 +862,23 @@ p[type="legal_section"] label {
     border-radius: 15px;
 }
 
+speaker {
+    border: black;
+    padding: 0.3rem;
+    border-radius: 15px;
+    background-color: pink;
+}
+
+sp {
+    display: inline-block;
+    width: fit-content;
+    color: black;
+    background-color: pink;
+    padding: 0.3rem;
+    border-radius: 15px;
+    border: solid black 1px;
+}
+
 note {
     display: block;
     border: dashed green 3px;

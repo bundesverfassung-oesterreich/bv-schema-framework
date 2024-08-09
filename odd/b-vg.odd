@@ -287,6 +287,19 @@
                            wird.</item>
                      </list></p>
                </div>
+               <div xml:id="protokoll_metadaten">
+                  <head>Teilnehmende Personen</head>
+                  <p>Für manche Textsorten – namentlich Protokolle verschiedener Sitzungen – lassen
+                     sich teilnehmende Personen ermitteln. Diese sollten in den Metadaten verlinkt
+                     werden. Dafür wird bei Bedarf in <gi>profileDesc</gi> ein
+                     <gi>particDesc</gi>-Element eingefügt, in das wiederum die benötigte Menge an
+                        <gi>person</gi>-Elementen eingefügt wird, die jeweils eine der teilnehmden
+                     Personen rerpäsentieren. Jedes <gi>person</gi>-Element hat zwei Attribute,
+                     deren erstes – <att>sameAs</att> – mittels der jeweiligen Id die betreffende
+                     Person referenziert, während das zweite – <att>role</att> – vermerkt ob die
+                     Person im Rahmen des Protokolls mit Redebeiträgen – <val>speaker</val> – oder
+                     nur passiv – <val>participant</val> – teilnimmt.</p>
+               </div>
             </div>
             <div xml:id="structure_text">
                <head>Haupttexte</head>
@@ -464,6 +477,7 @@
                         </div>
                      </body>
                   </egXML>
+                  <p>Im normalfall sollten <gi>p</gi>-Elemente nicht verschachtetl werden. Es kann jedoch in Protokollen vorkommen, dass typographische Absätze juristische Paragraphen enhalten. Ausschließlich in diesen Fällen ist eine Verschachtelung von <gi>p</gi>-Elementen zulässig.</p>
                   <div>
                      <head>Zeilenumbrüche</head>
                      <p>Da Zeilenumbrüche als bloß materiell bedingte typographische Konvention und
@@ -510,6 +524,22 @@
                      </list>
                   </egXML>
                </div>
+               <div>
+                  <head>Redebeiträge</head>
+                  <p>In den Protokollen des Datensets B sind teilweise direkte Redebeiträge protokolliert. Während das indirekte Replizieren oder
+                     Paraphrasieren von Redebeiträgen keiner besonderer Kodierung bedarf, müssen diese spezialfälle anders Kodiert werden. Ein Redebeitrag wird durch ein <gi>sp</gi>-Element kodiert. Wenn die redende Person am Anfang des Beitrags angeführt wird (z.B. »Delegierter Breukler: Ich beantrage zunächst […]«) muss diese mittels eines <gi>speaker</gi>-Elements kodidert werden. (Eine Referenz mittels Id ist hier vorerst nicht angedacht.)
+                  </p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <sp>
+                        <speaker>Delegierter Dr. Rehrl</speaker>:
+                        <p>Ich beantrage für die chriftlichfoziale Partei als Vorfitzenden den Herrn Landeshauptmann von Steiermark Dr. Rintelen.</p>
+                     </sp>
+                     <sp>
+                        <speaker>Delegierter Breukler</speaker>:
+                        <p>Ich beantrage zunächst daß drei Vorsitzende bestimmt werden, mit gleichen Rechten. […]</p>
+                     </sp>
+                  </egXML>
+               </div>
                <!--
                <div>
                   <head>Tabellen</head>
@@ -537,7 +567,6 @@
                      </table>
                   </egXML>
                </div>
-               -->
                <div>
                   <head>Hervorhebungen</head>
                   <p>Xml ist nicht primär dazu bestimmt, typographische Informationen als solche
@@ -1779,8 +1808,10 @@
                <!-- Anpassung des p Elements -->
                <constraintSpec ident="check_p_encapsulation" scheme="schematron">
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
-                     <s:rule context="//tei:p[.//tei:p]">  
-                        <s:assert test="not(@type) and .//tei:p[@type='legal_section']">nur typographische Absätze (p-Element ohne type) dürfen einen juristischen Paragraphen (p-Element mit type=legal_section) enthalten</s:assert>
+                     <s:rule context="//tei:p[.//tei:p]">
+                        <s:assert test="not(@type) and .//tei:p[@type='legal_section']">nur
+                           typographische Absätze (p-Element ohne type) dürfen einen juristischen
+                           Paragraphen (p-Element mit type=legal_section) enthalten</s:assert>
                      </s:rule>
                   </constraint>
                </constraintSpec>
