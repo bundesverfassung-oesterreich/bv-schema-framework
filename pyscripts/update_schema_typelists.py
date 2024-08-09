@@ -136,6 +136,14 @@ if __name__ == "__main__":
             targeted_attribute_name="sameAs",
             type_description_field_name="doc_title",
             attribute_lpad="#",
+        ),
+        CFG(
+            source_json_url="https://raw.githubusercontent.com/bundesverfassung-oesterreich/bv-entities/main/json_dumps/person.json",
+            type_column_name="bv_id",
+            targeted_element_name="person",
+            targeted_attribute_name="sameAs",
+            type_description_field_name="name",
+            attribute_lpad="#",
         )
     ]
     for cfg in cfgs:
