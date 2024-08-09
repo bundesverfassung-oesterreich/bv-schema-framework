@@ -535,9 +535,110 @@ teiHeader profileDesc abstract p{
 }
 
 
-teiHeader profileDesc creation {
-    display: none;
+teiHeader profileDesc particDesc{
+    content:"Teilnehmer:innen\a";
+    display: block;
+    -oxy-foldable:true;
+    -oxy-folded: true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1.5rem;
 }
+
+teiHeader profileDesc particDesc person{
+    width: 100%;
+    border: solid black 1px;
+    display: block;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+/*    content:
+        oxy_textArea(
+            width, 70%,
+            fontInherit, true,
+            edit, '#text'
+           )
+        "\a";*/
+}
+
+teiHeader profileDesc particDesc person::after{
+    content:
+        "person-id: "
+        oxy_editor(
+            type, combo,
+            edit, "@sameAs"
+        )
+        "\a"
+        "rolle: "
+        oxy_editor(
+            type, combo,
+            edit, "@role"
+        );
+}
+
+
+teiHeader profileDesc particDesc person:last-child::after{
+    content:
+        "person-id: "
+        oxy_editor(
+            type, combo,
+            edit, "@sameAs"
+        )
+        "\a"
+        "rolle: "
+        oxy_editor(
+            type, combo,
+            edit, "@role"
+        )
+        "\a"
+        oxy_button(action, oxy_action(
+            name, 'Weitere teilnehmende Person hinzufügen (Protokolle)',
+            description, 'fügt der Liste der teilnhemende Personen eine weitere hinzu (particDesc / person)', 
+            operation, 'InsertFragmentOperation', 
+            arg-fragment, '<person role="" sameAs="" xmlns="http://www.tei-c.org/ns/1.0"></person>', arg-insertLocation, '.', arg-insertPosition, 'After'
+    ));
+        ;
+}
+
+teiHeader profileDesc creation {
+    content:"Entstehung\a";
+    display: block;
+    -oxy-foldable:true;
+    -oxy-folded: true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+teiHeader profileDesc creation date {
+    width: 100%;
+    margin: 0;
+    display: block;
+    font-size: 1rem;
+    content:
+        oxy_textArea(
+            width, 70%,
+            fontInherit, true,
+            edit, '#text'
+           );
+}
+
+teiHeader profileDesc abstract + creation::after {
+    content: oxy_button(action, oxy_action(
+    name, 'Teilnehmer:innen-Liste hinzufügen (Protokolle)', description, 'fügt Liste für teilnhemende Personen ein (particDesc / person)', operation, 'InsertFragmentOperation', arg-fragment, '<particDesc xmlns="http://www.tei-c.org/ns/1.0"><person role="" sameAs=""></person></particDesc>', arg-insertLocation, '.', arg-insertPosition, 'Before'
+    ));
+}
+
 
 /* END abstract END */
 
