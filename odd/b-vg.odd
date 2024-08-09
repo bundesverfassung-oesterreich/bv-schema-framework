@@ -914,7 +914,7 @@
                <moduleRef key="textcrit" include="listWit witness"/>
                <moduleRef key="corpus" include="particDesc"/>
                <!-- make sure there is only one title in the doc -->
-               <constraintSpec ident="only_one_main_head" scheme="schematron">
+                <constraintSpec ident="only_one_main_head" scheme="schematron">
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron"
                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                      <s:schema>
@@ -958,7 +958,7 @@
                   </constraint>
                </constraintSpec>
                <elementSpec ident="person" mode="change">
-                  <desc>Repräsentiert eine Person</desc>
+                  <desc>Repräsentiert eine Person in der Liste der Teilnehmer:innen protokollierter Sitzungen</desc>
                   <classes mode="change">
                      <memberOf key="att.global" mode="delete"/>
                      <memberOf key="att.editLike" mode="delete"/>
@@ -979,7 +979,7 @@
                            </valItem>
                         </valList>
                      </attDef>
-                     <attDef ident="corresp" mode="add" usage="req">
+                     <attDef ident="sameAs" mode="add" usage="req">
                         <valList type="closed"/>
                      </attDef>
                   </attList>
