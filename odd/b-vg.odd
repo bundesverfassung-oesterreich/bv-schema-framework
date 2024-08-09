@@ -900,7 +900,7 @@
                <moduleRef key="header"
                   include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
                <moduleRef key="core"
-                  include=" rs p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address pubPlace author title graphic street unclear postCode del gap"/>
+                  include=" rs p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address pubPlace author title graphic street unclear postCode del gap speaker sp"/>
                <!--hi-->
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
