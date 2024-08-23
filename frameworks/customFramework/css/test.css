@@ -557,13 +557,13 @@ teiHeader profileDesc particDesc person{
     margin: 1rem;
     padding: 1rem;
     font-size: 1rem;
-/*    content:
+    content:
         oxy_textArea(
             width, 70%,
             fontInherit, true,
             edit, '#text'
            )
-        "\a";*/
+        "\a";
 }
 
 teiHeader profileDesc particDesc person::after{
@@ -571,7 +571,7 @@ teiHeader profileDesc particDesc person::after{
         "person-id: "
         oxy_editor(
             type, combo,
-            edit, "@sameAs"
+            edit, "@xml:id"
         )
         "\a"
         "rolle: "
