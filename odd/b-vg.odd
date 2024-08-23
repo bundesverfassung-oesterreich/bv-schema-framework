@@ -299,6 +299,8 @@
                      Person referenziert, während das zweite – <att>role</att> – vermerkt ob die
                      Person im Rahmen des Protokolls mit Redebeiträgen – <val>speaker</val> – oder
                      nur passiv – <val>participant</val> – teilnimmt. Jeder Person kann auch ein freier Text (z.B. "Kelsen") hinzugefügt werden, um die Arbeit mit der Liste zu vereinfachen. Dieser Text wird später automatisiert wieder entfernt und durch die jeweilige Index-Ansetzung ersetzt.</p>
+                  <p>Die bereits indizierten Personen werden im Framework in einem Dropdownmenü angezeigt. Ist eine benötigte Person dort noch nicht enthalten, muss sie zun</p>
+               </div>
             </div>
             <div xml:id="structure_text">
                <head>Haupttexte</head>
