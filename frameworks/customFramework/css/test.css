@@ -605,7 +605,7 @@ teiHeader profileDesc particDesc person:last-child::after{
             name, 'Weitere teilnehmende Person hinzufügen (Protokolle)',
             description, 'fügt der Liste der teilnhemende Personen eine weitere hinzu (particDesc / person)', 
             operation, 'InsertFragmentOperation', 
-            arg-fragment, '<person role="" sameAs="" xmlns="http://www.tei-c.org/ns/1.0"></person>', arg-insertLocation, '.', arg-insertPosition, 'After'
+            arg-fragment, '<person role="" xml:id="" xmlns="http://www.tei-c.org/ns/1.0"></person>', arg-insertLocation, '.', arg-insertPosition, 'After'
     ));
         ;
 }
