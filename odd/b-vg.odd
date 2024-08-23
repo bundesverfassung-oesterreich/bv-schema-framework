@@ -295,10 +295,10 @@
                      <gi>particDesc</gi>-Element eingefügt, in das wiederum die benötigte Menge an
                         <gi>person</gi>-Elementen eingefügt wird, die jeweils eine der teilnehmden
                      Personen rerpäsentieren. Jedes <gi>person</gi>-Element hat zwei Attribute,
-                     deren erstes – <att>sameAs</att> – mittels der jeweiligen Id die betreffende
+                     deren erstes – <att>id</att> – mittels der jeweiligen Id die betreffende
                      Person referenziert, während das zweite – <att>role</att> – vermerkt ob die
                      Person im Rahmen des Protokolls mit Redebeiträgen – <val>speaker</val> – oder
-                     nur passiv – <val>participant</val> – teilnimmt.</p>
+                     nur passiv – <val>participant</val> – teilnimmt. Jeder Person kann auch ein freier Text (z.B. "Kelsen") hinzugefügt werden, um die Arbeit mit der Liste zu vereinfachen. Dieser Text wird später automatisiert wieder entfernt und durch die jeweilige Index-Ansetzung ersetzt.</p>
                </div>
             </div>
             <div xml:id="structure_text">
