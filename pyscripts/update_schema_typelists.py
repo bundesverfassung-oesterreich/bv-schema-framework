@@ -82,7 +82,7 @@ def write_values_to_closed_val_list(
     try:
         attDef = odd_doc.any_xpath(cfg.target_attDef_xpath)[0]
     except IndexError as e:
-        print(f"\nTrying to find attDef with xpath:\"{cfg.target_attDef_xpath}\" fails.\nDoes this element realy exist in your odd?\n")
+        print(f"\nTrying to find attDef with xpath:\"{cfg.target_attDef_xpath}\" fails.\nDoes this element really exist in your odd?\n")
         raise e
     # remove old closed valList if existing
     old_closed_valLists = odd_doc.any_xpath(
