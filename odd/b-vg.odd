@@ -1,9 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:eg="http://www.tei-c.org/ns/Examples"
-   xmlns:egXML="http://www.tei-c.org/ns/Examples" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-   xmlns:tei="http://www.tei-c.org/ns/1.0" xml:lang="de">
+	schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:eg="http://www.tei-c.org/ns/Examples" xmlns:egXML="http://www.tei-c.org/ns/Examples" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0" xml:lang="de">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -79,8 +76,7 @@
                   im Falle von Seitenumbrüchen die entsprechende Stelle im Text explizit
                   kennzeichnen (&lt;tag/&gt;). Die Kombination aus Start-Tag, Textabschnitt und
                   End-Tag wird als <hi rend="bold">Element</hi> bezeichnet, ein selbstschließendes
-                  Tag hingegen als <hi rend="bold">leeres Element</hi>. <hi rend="bold"
-                     >Attribute</hi> ermöglichen eine Konkretisierung der ausgezeichneten Textstelle
+                  Tag hingegen als <hi rend="bold">leeres Element</hi>. <hi rend="bold">Attribute</hi> ermöglichen eine Konkretisierung der ausgezeichneten Textstelle
                   durch Hinzufügen zusätzlicher Informationen. Sie werden innerhalb des Start-Tags
                   notiert und bestehen aus einem Attributnamen, der die Zusatzinformation
                   klassifiziert, und einem Attributwert, der in Anführungszeichen angegeben wird
@@ -94,8 +90,7 @@
                      "<val>original</val>". Das vollständige Element lautet wie folgt: <tag>note
                      type="editorial"</tag> bzw. <tag>note type="original"</tag>.</p>
                <p>Die Grundstruktur von XML zeichnet sich vor allem durch zwei Aspekte aus:
-                  Verschachtelung und Hierarchisierung. Sie wird allgemein als <hi rend="bold"
-                     >Baumstruktur</hi> bezeichnet. Elemente können innerhalb von anderen Elementen
+                  Verschachtelung und Hierarchisierung. Sie wird allgemein als <hi rend="bold">Baumstruktur</hi> bezeichnet. Elemente können innerhalb von anderen Elementen
                   stehen - sie sind also teils über mehrere Ebenen ineinander verschachtelt - dürfen
                   sich jedoch nicht überlappen. Jedes Element, das innerhalb eines Elements steht,
                   muss innerhalb dessen auch wieder geschlossen werden (z.B. &lt;starttag1
@@ -105,8 +100,7 @@
                   festlegt, lassen sich diese für die Bedürfnisse unterschiedlichster
                   Forschungsvorhaben anpassen und erweitern. Dennoch existieren bereits zahlreiche
                   Standards, die für die als Grundlage für die Arbeit mit XML verwendet und
-                  angepasst werden können (z.B. der Standard der <ref target="https://tei-c.org"
-                     >Text Encoding Initiative (TEI)</ref>). Aus Erfahrung lässt sich jedoch sagen,
+                  angepasst werden können (z.B. der Standard der <ref target="https://tei-c.org">Text Encoding Initiative (TEI)</ref>). Aus Erfahrung lässt sich jedoch sagen,
                   dass die Anpassung der Auszeichnungen ein gewisses Maß an Komplexität nicht
                   übersteigen sollte, da mit steigender Komplexität auch Bearbeitungszeit und
                   Fehlerquote steigen.</p>
@@ -119,16 +113,14 @@
                <p>
                   <hi rend="smaller">Quellen: Vogeler, Georg/Sahle/Patrick: XML. In: Jannidis,
                      Fotis/Kohle, Hubertus/Rehbein, Malte (Hg.): Digital Humanities. Eine
-                     Einführung. Stuttgart, 2017, S. 128-146; <ref
-                        target="https://www.w3schools.com/xml/default.asp">XML Tutorial,
+                     Einführung. Stuttgart, 2017, S. 128-146; <ref target="https://www.w3schools.com/xml/default.asp">XML Tutorial,
                         w3Schools</ref>.</hi>
                </p>
             </div>
          </div>
          <div xml:id="structure">
             <head>Daten-/Dokumentenstruktur</head>
-            <p>Die digitale Edition der Dokumente basiert auf den Standards der <ref
-                  target="https://tei-c.org">Text Encoding Initiative (TEI)</ref></p>
+            <p>Die digitale Edition der Dokumente basiert auf den Standards der <ref target="https://tei-c.org">Text Encoding Initiative (TEI)</ref></p>
             <div xml:id="metadata_text">
                <head>Metadaten</head>
                <p><hi rend="bold">Metadaten</hi> zu den Dokumenten und ihren Texten stehen im
@@ -170,14 +162,12 @@
                            </respStmt>
                            <respStmt>
                               <resp>XML/TEI Datenmodellierung und Datengenerierung</resp>
-                              <persName role="acdh:hasContributor"
-                                 key="https://orcid.org/0000-0002-9575-9372">Peter
+                              <persName role="acdh:hasContributor" key="https://orcid.org/0000-0002-9575-9372">Peter
                                  Andorfer</persName>
                            </respStmt>
                            <respStmt>
                               <resp>XML/TEI Datenmodellierung und Datengenerierung</resp>
-                              <persName role="acdh:hasContributor"
-                                 key="https://orcid.org/0009-0006-7740-542X">Carl Friedrich
+                              <persName role="acdh:hasContributor" key="https://orcid.org/0009-0006-7740-542X">Carl Friedrich
                                  Haak</persName>
                            </respStmt>
                         </titleStmt>
@@ -372,8 +362,7 @@
                      mittels <att>type</att>="<val>article</val>" markiert.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <body>
-                        <div type="main"> [Umfasst das einzelne Werk im Gesamten] <div
-                              type="section">
+                        <div type="main"> [Umfasst das einzelne Werk im Gesamten] <div type="section">
                               <head>Abschnitt I. </head>
                               <div type="article">
                                  <head>Artikel XVII. </head>
@@ -621,8 +610,7 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text>
                         <body>
-                           <div> Hier ist der Text auf Seite 5. <pb facs="#facs_6" n="6"
-                                 xml:id="img_0060" break="yes"/> Hier beginnt der Text auf Seite 6 </div>
+                           <div> Hier ist der Text auf Seite 5. <pb facs="#facs_6" n="6" xml:id="img_0060" break="yes"/> Hier beginnt der Text auf Seite 6 </div>
                            <div> Hier ist der Text auf Seite 6. Ein Wort wird im Seitenwechsel ge
                                  <pb break="no" facs="#facs_7" n="7" xml:id="img_0007"/> trennt und
                               auf Seite 7 fortgesetzt. </div>
@@ -887,8 +875,7 @@
                      <body>
                         <div>
                            <p>Hier existiert eine Lücke in der Transkription, der Text solle
-                              leserlich geschrieben sein, ist aber nicht <gap extend="1 Wort"
-                                 reason="illegible"/> geschrieben.</p>
+                              leserlich geschrieben sein, ist aber nicht <gap extend="1 Wort" reason="illegible"/> geschrieben.</p>
                         </div>
                      </body>
                   </egXML>
@@ -917,8 +904,7 @@
                                  die Überschrift, weil er sich im head-Element befindet.) Nicht sehr
                                  catchy.</note>
                            </head>
-                           <p> Das Bundes-Verfassungsgesetz darf keinen Artikel 12. enthalten. <note
-                                 type="comment">(Dieser Kommentar bezieht sich auf den Absatz.)
+                           <p> Das Bundes-Verfassungsgesetz darf keinen Artikel 12. enthalten. <note type="comment">(Dieser Kommentar bezieht sich auf den Absatz.)
                                  Warum nicht? Gründe angeben!</note>
                            </p>
                            <p> Ein Bundes-Verfassungsgesetz, das einen <fw type="pageNum"> Artikel
@@ -936,26 +922,21 @@
          <div xml:id="appendix">
             <head>Appendix</head>
             <schemaSpec ident="tei_b_vg" start="TEI" prefix="undefined" targetLang="de" docLang="de">
-               <moduleRef key="header"
-                  include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
-               <moduleRef key="core"
-                  include=" rs p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address pubPlace author title graphic street unclear postCode del gap speaker sp"/>
+               <moduleRef key="header" include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
+               <moduleRef key="core" include=" rs p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address pubPlace author title graphic street unclear postCode del gap speaker sp"/>
                <!--hi-->
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
                <moduleRef key="transcr" include="facsimile surface fw"/>
-               <moduleRef key="msdescription"
-                  include="msDesc history  msIdentifier msContents physDesc institution repository                    msItem objectDesc handDesc origin"/>
-               <moduleRef key="namesdates"
-                  include="persName orgName placeName country settlement person"/>
+               <moduleRef key="msdescription" include="msDesc history  msIdentifier msContents physDesc institution repository                    msItem objectDesc handDesc origin"/>
+               <moduleRef key="namesdates" include="persName orgName placeName country settlement person"/>
                <moduleRef key="figures" include="cell table row"/>
                <moduleRef key="linking" include="seg"/>
                <moduleRef key="textcrit" include="listWit witness"/>
                <moduleRef key="corpus" include="particDesc"/>
                <!-- make sure there is only one title in the doc -->
                <constraintSpec ident="only_one_main_head" scheme="schematron">
-                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron"
-                     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                      <s:schema>
                         <s:pattern id="duplicate_id">
                            <s:rule context="titleStmt">
@@ -990,8 +971,7 @@
                   <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                      <s:rule context="//tei:placeName|//tei:persName|//tei:orgName|//tei:msDesc">
                         <s:let name="el_name" value="local-name(.)"/>
-                        <s:report test="not(ancestor::tei:teiHeader)">&lt;"<s:value-of
-                              select="$el_name"/>"&gt; schould be only used the
+                        <s:report test="not(ancestor::tei:teiHeader)">&lt;"<s:value-of select="$el_name"/>"&gt; schould be only used the
                            teiHeader!</s:report>
                      </s:rule>
                   </constraint>
@@ -1020,10 +1000,45 @@
                         </valList>
                      </attDef>
                      <attDef ident="xml:id" mode="add" usage="req">
-                        <valList type="closed">
-                       
-                        </valList>
-                     </attDef>
+                        <valList type="closed"><valItem ident="bv_person_id__1">
+<desc>Kelsen, Hans</desc>
+</valItem><valItem ident="bv_person_id__2">
+<desc>Lein, Richard</desc>
+</valItem><valItem ident="bv_person_id__3">
+<desc>Olechowski, Thomas</desc>
+</valItem><valItem ident="bv_person_id__4">
+<desc>Falser, Stephan</desc>
+</valItem><valItem ident="bv_person_id__5">
+<desc>Verfassungsausschuss</desc>
+</valItem><valItem ident="bv_person_id__6">
+<desc>Gassner, Miriam</desc>
+</valItem><valItem ident="bv_person_id__7">
+<desc>Mayr, Michael</desc>
+</valItem><valItem ident="bv_person_id__8">
+<desc>Danneberg, Robert</desc>
+</valItem><valItem ident="bv_person_id__9">
+<desc>Rehrl, Franz</desc>
+</valItem><valItem ident="bv_person_id__10">
+<desc>Konstituierende Nationalversammlung</desc>
+</valItem><valItem ident="bv_person_id__11">
+<desc>Länderkonferenz</desc>
+</valItem><valItem ident="bv_person_id__12">
+<desc>Christlichsoziale Partei</desc>
+</valItem><valItem ident="bv_person_id__13">
+<desc>Abram, Simon</desc>
+</valItem><valItem ident="bv_person_id__14">
+<desc>Großdeutsche Volkspartei</desc>
+</valItem><valItem ident="bv_person_id__15">
+<desc>Renner, Karl</desc>
+</valItem><valItem ident="bv_person_id__16">
+<desc>Unterausschuss des Verfassungsausschusses</desc>
+</valItem><valItem ident="bv_person_id__17">
+<desc>Staatssekretariat für die Verfasssungs- und Verwaltungsreform</desc>
+</valItem><valItem ident="bv_person_id__18">
+<desc>Staatsamt für Justiz</desc>
+</valItem><valItem ident="bv_person_id__19">
+<desc>Staatskanzlei</desc>
+</valItem></valList></attDef>
                   </attList>
                   <content>
                      <textNode/>
@@ -1107,21 +1122,15 @@
                <elementSpec ident="change" mode="change">
                   <attList>
                      <attDef ident="who" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="#s_kury">
-                              <desc>Sophia Kury</desc>
-                           </valItem>
-                           <valItem ident="#m_huber">
-                              <desc>Moritz Huber</desc>
-                           </valItem>
-                           <valItem ident="#n_zügel">
-                              <desc>Nora Zügel</desc>
-                           </valItem>
-                           <valItem ident="#cfh">
-                              <desc>Carl Friedrich Haak</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
+                        <valList type="closed"><valItem ident="#s_kury">
+<desc>Sophia Kury</desc>
+</valItem><valItem ident="#m_huber">
+<desc>Moritz Huber</desc>
+</valItem><valItem ident="#n_zügel">
+<desc>Nora Zügel</desc>
+</valItem><valItem ident="#cfh">
+<desc>Carl Friedrich Haak</desc>
+</valItem></valList></attDef>
                   </attList>
                </elementSpec>
                <!--
@@ -1139,24 +1148,17 @@
                   <desc>Beschreibt die materielle Form des Dokuments</desc>
                   <attList>
                      <attDef ident="form" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="Manuskript">
-                              <desc>Manuskript</desc>
-                           </valItem>
-                           <valItem ident="Typoskript">
-                              <desc>Typoskript</desc>
-                           </valItem>
-                           <valItem ident="Druck">
-                              <desc>Druck</desc>
-                           </valItem>
-                           <valItem ident="Lithographie">
-                              <desc>Lithographie</desc>
-                           </valItem>
-                           <valItem ident="Manuskript bestehend aus Handschrift und Typoskript">
-                              <desc>Manuskript bestehend aus Handschrift und Typoskript</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
+                        <valList type="closed"><valItem ident="Manuskript">
+<desc>Manuskript</desc>
+</valItem><valItem ident="Typoskript">
+<desc>Typoskript</desc>
+</valItem><valItem ident="Druck">
+<desc>Druck</desc>
+</valItem><valItem ident="Lithographie">
+<desc>Lithographie</desc>
+</valItem><valItem ident="Manuskript bestehend aus Handschrift und Typoskript">
+<desc>Manuskript bestehend aus Handschrift und Typoskript</desc>
+</valItem></valList></attDef>
                   </attList>
                </elementSpec>
                <elementSpec ident="choice" mode="change">
@@ -1405,253 +1407,157 @@
                   </content>
                   <attList>
                      <attDef ident="sameAs" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="#bv_doc_id__1">
-                              <desc>Kelsen Entwurf I</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__2">
-                              <desc>Kelsen Entwurf II</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__3">
-                              <desc>Kelsen Entwurf III</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__4">
-                              <desc>Kelsen Entwurf IV</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__5">
-                              <desc>Kelsen Entwurf V</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__6">
-                              <desc>Kelsen Entwurf VI</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__7">
-                              <desc>Falser Entwurf II</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__8">
-                              <desc>Falser Entwurf I</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__9">
-                              <desc>Mayr Entwurf Druck II</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__10">
-                              <desc>Rehrl Entwurf</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__11">
-                              <desc>B-VG Sonderdruck</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__12">
-                              <desc>VfA Entwurf KNV Beilage</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__13">
-                              <desc>unidentifizierter Entwurf nach Linz</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__14">
-                              <desc>CS Entwurf II KNV Beilage</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__15">
-                              <desc>Abram Entwurf KNV Beilage</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__16">
-                              <desc>Danneberg Entwurf</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__18">
-                              <desc>Evidenzexemplar Entwurf handschriftlich</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__19">
-                              <desc>Großdeutsch Entwurf Sonderdruck</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__20">
-                              <desc>Renner-Mayr mit Einklebungen</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__21">
-                              <desc>UA Entwurf 15.September 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__22">
-                              <desc>UA Entwurf 23. September 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__23">
-                              <desc>UA Entwurf 23. September 1920 Textvariante</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__24">
-                              <desc>UA Entwurf 26. August 1920 Textvariante</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__26">
-                              <desc>Renner-Mayr saubere Version</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__27">
-                              <desc>Ministerial II Typoskript</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__28">
-                              <desc>Großdeutsch Entwurf KNV Beilage</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__29">
-                              <desc>Mayr Entwurf Druck I</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__30">
-                              <desc>Evidenzexemplar Entwurf maschinschriftlich</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__31">
-                              <desc>CS Entwurf I Sonderdruck</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__32">
-                              <desc>Ministerial I Typoskript</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__33">
-                              <desc>UA Entwurf 26. August 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__34">
-                              <desc>UA Entwurf 1. September 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__35">
-                              <desc>Renner Entwurf 1918</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__36">
-                              <desc>Protokoll der 1. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 11. Juli 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__37">
-                              <desc>Protokoll der 2. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 12. Juli 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__38">
-                              <desc>Protokoll der 3. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 20. Juli 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__39">
-                              <desc>Protokoll der 4. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 22. Juli 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__40">
-                              <desc>Protokoll der 5. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 17. August 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__41">
-                              <desc>Protokoll der 6. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 18. August 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__42">
-                              <desc>Protokoll der 7. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 20. August 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__43">
-                              <desc>Protokoll der 8. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 21. August 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__44">
-                              <desc>Protokoll der 9. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 23. August 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__45">
-                              <desc>Protokoll der 10. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 24. August 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__46">
-                              <desc>Protokoll der 11. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 25. August 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__47">
-                              <desc>Protokoll der 12. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 26. August 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__48">
-                              <desc>Protokoll der 13. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 31. August 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__49">
-                              <desc>Protokoll der 14. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 13. September 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__50">
-                              <desc>Protokoll der 15. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 14. September 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__51">
-                              <desc>Protokoll der 16. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 15. September 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__52">
-                              <desc>Protokoll der 17. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 22. September 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__53">
-                              <desc>Protokoll der 18. Sitzung des Subkomitees des
-                                 Verfassungsausschusses vom 23. September 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__54">
-                              <desc>Protokoll Salzburger Länderkonferenz 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__55">
-                              <desc>Protokoll Linzer Länderkonferenz 1920</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__56">
-                              <desc>Protokoll 1. Länderkonferenz 23. November 1918</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__57">
-                              <desc>Protokoll 2. Länderkonferenz 4. und 5. Jänner 1919</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__58">
-                              <desc>Protokoll 3. Länderkonferenz</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__59">
-                              <desc>Protokoll 4. Länderkonferenz</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__60">
-                              <desc>Protokoll 6. Länderkonferenz</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__61">
-                              <desc>Protokoll 7. Länderkonferenz</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__62">
-                              <desc>B-VG saubere Variante</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__63">
-                              <desc>Bericht VfA Sonderdruck</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__64">
-                              <desc>VfÜG Sonderdruck</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__65">
-                              <desc>Gegenüberstellung der Differenzpunkte CS SD</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__66">
-                              <desc>CS I KNV-Beilage</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__67">
-                              <desc>Mayr Entwurf Druck I saubere Fassung</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__68">
-                              <desc>Großdeutsch Sonderdruck Textvariante 1</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__69">
-                              <desc>Großdeutsch Sonderdruck Textvariante 2</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__70">
-                              <desc>Bericht 5. Länderkonferenz 20. Mai 1919</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__71">
-                              <desc>Ministerialentwurf Typoskript aus VGA Archiv</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__72">
-                              <desc>Danneberg Typoskript aus VGA Archiv</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__73">
-                              <desc>Protokoll Zwischenamtliche Sitzung 11. Oktober 1919</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__74">
-                              <desc>Protokoll Zwischenamtliche Sitzung 22. November 1919</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__75">
-                              <desc>Protokoll Zwischenamtliche Sitzung 31. Oktober 1919</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__76">
-                              <desc>Protokoll Zwischenamtliche Sitzung 13 November 1919</desc>
-                           </valItem>
-                           <valItem ident="#bv_doc_id__77">
-                              <desc>Protokoll Zwischenamtliche Sitzung 11. Oktober 1919 (Fassung
-                                 Staatskanzlei)</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
+                        <valList type="closed"><valItem ident="#bv_doc_id__1">
+<desc>Kelsen Entwurf I</desc>
+</valItem><valItem ident="#bv_doc_id__2">
+<desc>Kelsen Entwurf II</desc>
+</valItem><valItem ident="#bv_doc_id__3">
+<desc>Kelsen Entwurf III</desc>
+</valItem><valItem ident="#bv_doc_id__4">
+<desc>Kelsen Entwurf IV</desc>
+</valItem><valItem ident="#bv_doc_id__5">
+<desc>Kelsen Entwurf V</desc>
+</valItem><valItem ident="#bv_doc_id__6">
+<desc>Kelsen Entwurf VI</desc>
+</valItem><valItem ident="#bv_doc_id__7">
+<desc>Falser Entwurf II</desc>
+</valItem><valItem ident="#bv_doc_id__8">
+<desc>Falser Entwurf I</desc>
+</valItem><valItem ident="#bv_doc_id__9">
+<desc>Mayr Entwurf Druck II</desc>
+</valItem><valItem ident="#bv_doc_id__10">
+<desc>Rehrl Entwurf</desc>
+</valItem><valItem ident="#bv_doc_id__11">
+<desc>B-VG Sonderdruck</desc>
+</valItem><valItem ident="#bv_doc_id__12">
+<desc>VfA Entwurf KNV Beilage</desc>
+</valItem><valItem ident="#bv_doc_id__13">
+<desc>unidentifizierter Entwurf nach Linz</desc>
+</valItem><valItem ident="#bv_doc_id__14">
+<desc>CS Entwurf II KNV Beilage</desc>
+</valItem><valItem ident="#bv_doc_id__15">
+<desc>Abram Entwurf KNV Beilage</desc>
+</valItem><valItem ident="#bv_doc_id__16">
+<desc>Danneberg Entwurf</desc>
+</valItem><valItem ident="#bv_doc_id__18">
+<desc>Evidenzexemplar Entwurf handschriftlich</desc>
+</valItem><valItem ident="#bv_doc_id__19">
+<desc>Großdeutsch Entwurf Sonderdruck</desc>
+</valItem><valItem ident="#bv_doc_id__20">
+<desc>Renner-Mayr mit Einklebungen</desc>
+</valItem><valItem ident="#bv_doc_id__21">
+<desc>UA Entwurf 15.September 1920</desc>
+</valItem><valItem ident="#bv_doc_id__22">
+<desc>UA Entwurf 23. September 1920</desc>
+</valItem><valItem ident="#bv_doc_id__23">
+<desc>UA Entwurf 23. September 1920 Textvariante</desc>
+</valItem><valItem ident="#bv_doc_id__24">
+<desc>UA Entwurf 26. August 1920 Textvariante</desc>
+</valItem><valItem ident="#bv_doc_id__26">
+<desc>Renner-Mayr saubere Version</desc>
+</valItem><valItem ident="#bv_doc_id__27">
+<desc>Ministerial II Typoskript</desc>
+</valItem><valItem ident="#bv_doc_id__28">
+<desc>Großdeutsch Entwurf KNV Beilage</desc>
+</valItem><valItem ident="#bv_doc_id__29">
+<desc>Mayr Entwurf Druck I</desc>
+</valItem><valItem ident="#bv_doc_id__30">
+<desc>Evidenzexemplar Entwurf maschinschriftlich</desc>
+</valItem><valItem ident="#bv_doc_id__31">
+<desc>CS Entwurf I Sonderdruck</desc>
+</valItem><valItem ident="#bv_doc_id__32">
+<desc>Ministerial I Typoskript</desc>
+</valItem><valItem ident="#bv_doc_id__33">
+<desc>UA Entwurf 26. August 1920</desc>
+</valItem><valItem ident="#bv_doc_id__34">
+<desc>UA Entwurf 1. September 1920</desc>
+</valItem><valItem ident="#bv_doc_id__35">
+<desc>Renner Entwurf 1918</desc>
+</valItem><valItem ident="#bv_doc_id__36">
+<desc>Protokoll der 1. Sitzung des Subkomitees des Verfassungsausschusses vom 11. Juli 1920</desc>
+</valItem><valItem ident="#bv_doc_id__37">
+<desc>Protokoll der 2. Sitzung des Subkomitees des Verfassungsausschusses vom 12. Juli 1920</desc>
+</valItem><valItem ident="#bv_doc_id__38">
+<desc>Protokoll der 3. Sitzung des Subkomitees des Verfassungsausschusses vom 20. Juli 1920</desc>
+</valItem><valItem ident="#bv_doc_id__39">
+<desc>Protokoll der 4. Sitzung des Subkomitees des Verfassungsausschusses vom 22. Juli 1920</desc>
+</valItem><valItem ident="#bv_doc_id__40">
+<desc>Protokoll der 5. Sitzung des Subkomitees des Verfassungsausschusses vom 17. August 1920</desc>
+</valItem><valItem ident="#bv_doc_id__41">
+<desc>Protokoll der 6. Sitzung des Subkomitees des Verfassungsausschusses vom 18. August 1920</desc>
+</valItem><valItem ident="#bv_doc_id__42">
+<desc>Protokoll der 7. Sitzung des Subkomitees des Verfassungsausschusses vom 20. August 1920</desc>
+</valItem><valItem ident="#bv_doc_id__43">
+<desc>Protokoll der 8. Sitzung des Subkomitees des Verfassungsausschusses vom 21. August 1920</desc>
+</valItem><valItem ident="#bv_doc_id__44">
+<desc>Protokoll der 9. Sitzung des Subkomitees des Verfassungsausschusses vom 23. August 1920</desc>
+</valItem><valItem ident="#bv_doc_id__45">
+<desc>Protokoll der 10. Sitzung des Subkomitees des Verfassungsausschusses vom 24. August 1920</desc>
+</valItem><valItem ident="#bv_doc_id__46">
+<desc>Protokoll der 11. Sitzung des Subkomitees des Verfassungsausschusses vom 25. August 1920</desc>
+</valItem><valItem ident="#bv_doc_id__47">
+<desc>Protokoll der 12. Sitzung des Subkomitees des Verfassungsausschusses vom 26. August 1920</desc>
+</valItem><valItem ident="#bv_doc_id__48">
+<desc>Protokoll der 13. Sitzung des Subkomitees des Verfassungsausschusses vom 31. August 1920</desc>
+</valItem><valItem ident="#bv_doc_id__49">
+<desc>Protokoll der 14. Sitzung des Subkomitees des Verfassungsausschusses vom 13. September 1920</desc>
+</valItem><valItem ident="#bv_doc_id__50">
+<desc>Protokoll der 15. Sitzung des Subkomitees des Verfassungsausschusses vom 14. September 1920</desc>
+</valItem><valItem ident="#bv_doc_id__51">
+<desc>Protokoll der 16. Sitzung des Subkomitees des Verfassungsausschusses vom 15. September 1920</desc>
+</valItem><valItem ident="#bv_doc_id__52">
+<desc>Protokoll der 17. Sitzung des Subkomitees des Verfassungsausschusses vom 22. September 1920</desc>
+</valItem><valItem ident="#bv_doc_id__53">
+<desc>Protokoll der 18. Sitzung des Subkomitees des Verfassungsausschusses vom 23. September 1920</desc>
+</valItem><valItem ident="#bv_doc_id__54">
+<desc>Protokoll Salzburger Länderkonferenz 1920</desc>
+</valItem><valItem ident="#bv_doc_id__55">
+<desc>Protokoll Linzer Länderkonferenz 1920</desc>
+</valItem><valItem ident="#bv_doc_id__56">
+<desc>Protokoll 1. Länderkonferenz 23. November 1918</desc>
+</valItem><valItem ident="#bv_doc_id__57">
+<desc>Protokoll 2. Länderkonferenz 4. und 5. Jänner 1919</desc>
+</valItem><valItem ident="#bv_doc_id__58">
+<desc>Protokoll 3. Länderkonferenz</desc>
+</valItem><valItem ident="#bv_doc_id__59">
+<desc>Protokoll 4. Länderkonferenz</desc>
+</valItem><valItem ident="#bv_doc_id__60">
+<desc>Protokoll 6. Länderkonferenz</desc>
+</valItem><valItem ident="#bv_doc_id__61">
+<desc>Protokoll 7. Länderkonferenz</desc>
+</valItem><valItem ident="#bv_doc_id__62">
+<desc>B-VG saubere Variante</desc>
+</valItem><valItem ident="#bv_doc_id__63">
+<desc>Bericht VfA Sonderdruck</desc>
+</valItem><valItem ident="#bv_doc_id__64">
+<desc>VfÜG Sonderdruck</desc>
+</valItem><valItem ident="#bv_doc_id__65">
+<desc>Gegenüberstellung der Differenzpunkte CS SD</desc>
+</valItem><valItem ident="#bv_doc_id__66">
+<desc>CS I KNV-Beilage</desc>
+</valItem><valItem ident="#bv_doc_id__67">
+<desc>Mayr Entwurf Druck I saubere Fassung</desc>
+</valItem><valItem ident="#bv_doc_id__68">
+<desc>Großdeutsch Sonderdruck Textvariante 1</desc>
+</valItem><valItem ident="#bv_doc_id__69">
+<desc>Großdeutsch Sonderdruck Textvariante 2</desc>
+</valItem><valItem ident="#bv_doc_id__70">
+<desc>Bericht 5. Länderkonferenz 20. Mai 1919</desc>
+</valItem><valItem ident="#bv_doc_id__71">
+<desc>Ministerialentwurf Typoskript aus VGA Archiv</desc>
+</valItem><valItem ident="#bv_doc_id__72">
+<desc>Danneberg Typoskript aus VGA Archiv</desc>
+</valItem><valItem ident="#bv_doc_id__73">
+<desc>Protokoll Zwischenamtliche Sitzung 11. Oktober 1919</desc>
+</valItem><valItem ident="#bv_doc_id__74">
+<desc>Protokoll Zwischenamtliche Sitzung 22. November 1919</desc>
+</valItem><valItem ident="#bv_doc_id__75">
+<desc>Protokoll Zwischenamtliche Sitzung 31. Oktober 1919</desc>
+</valItem><valItem ident="#bv_doc_id__76">
+<desc>Protokoll Zwischenamtliche Sitzung 13 November 1919</desc>
+</valItem><valItem ident="#bv_doc_id__77">
+<desc>Protokoll Zwischenamtliche Sitzung 11. Oktober 1919 (Fassung Staatskanzlei)</desc>
+</valItem></valList></attDef>
                   </attList>
                </elementSpec>
                <elementSpec ident="availability" mode="change">
@@ -1667,12 +1573,10 @@
                         <s:report test="self::tei:div[@type='article']//tei:div[@type='section']">a
                            div representing an article shouldn’t contain a div representing a
                            section</s:report>
-                        <s:report
-                           test="self::tei:div[@type='article' and parent::*[@type!='section']]">a
+                        <s:report test="self::tei:div[@type='article' and parent::*[@type!='section']]">a
                            div representing an article should always have a div representing a
                            section as parent.</s:report>
-                        <s:report
-                           test="self::tei:div[@type='preamble' and parent::*[@type!='main']]">a div
+                        <s:report test="self::tei:div[@type='preamble' and parent::*[@type!='main']]">a div
                            representing a preamble should always be a direct child of the main
                            div</s:report>
                      </s:rule>
@@ -2231,23 +2135,15 @@
                <elementSpec ident="text" mode="change">
                   <attList>
                      <attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="Verfassungsentwurf">
-                              <desc>Verschiedene Entwürfe des Verfassungstextes mit
-                                 unterschiedlichen Autoren bzw. unterschiedlichen Bearbeitern</desc>
-                           </valItem>
-                           <valItem ident="Verfassungstext">
-                              <desc>Text der Bundesverfassung vom 1. Oktober 1920, wie er von der
-                                 Konstituierenden Nationalversammlung beschlossen wurde</desc>
-                           </valItem>
-                           <valItem ident="Sitzungsprotokoll">
-                              <desc>Sitzungsprotokoll</desc>
-                           </valItem>
-                           <valItem ident="Stellungnahme zum Verfassungsentwurf">
-                              <desc>Stellungnahme zum Verfassungsentwurf</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
+                        <valList type="closed"><valItem ident="Verfassungsentwurf">
+<desc>Verschiedene Entwürfe des Verfassungstextes mit unterschiedlichen Autoren bzw. unterschiedlichen Bearbeitern</desc>
+</valItem><valItem ident="Verfassungstext">
+<desc>Text der Bundesverfassung vom 1. Oktober 1920, wie er von der Konstituierenden Nationalversammlung beschlossen wurde</desc>
+</valItem><valItem ident="Sitzungsprotokoll">
+<desc>Sitzungsprotokoll</desc>
+</valItem><valItem ident="Stellungnahme zum Verfassungsentwurf">
+<desc>Stellungnahme zum Verfassungsentwurf</desc>
+</valItem></valList></attDef>
                   </attList>
                </elementSpec>
                <!-- Anpassung des bibl Elements
