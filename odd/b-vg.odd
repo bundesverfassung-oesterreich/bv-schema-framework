@@ -283,13 +283,13 @@
                      sich teilnehmende Personen ermitteln. Diese sollten in den Metadaten verlinkt
                      werden. Dafür wird bei Bedarf in <gi>profileDesc</gi> ein
                      <gi>particDesc</gi>-Element eingefügt, in das wiederum die benötigte Menge an
-                        <gi>person</gi>-Elementen eingefügt wird, die jeweils eine der teilnehmden
+                     <gi>person</gi>-Elementen eingefügt wird, die jeweils eine der teilnehmenden
                      Personen rerpäsentieren. Jedes <gi>person</gi>-Element hat zwei Attribute,
                      deren erstes – <att>id</att> – mittels der jeweiligen Id die betreffende
                      Person referenziert, während das zweite – <att>role</att> – vermerkt ob die
                      Person im Rahmen des Protokolls mit Redebeiträgen – <val>speaker</val> – oder
                      nur passiv – <val>participant</val> – teilnimmt. Jeder Person kann auch ein freier Text (z.B. "Kelsen") hinzugefügt werden, um die Arbeit mit der Liste zu vereinfachen. Dieser Text wird später automatisiert wieder entfernt und durch die jeweilige Index-Ansetzung ersetzt.</p>
-                  <p>Die bereits indizierten Personen werden im Framework in einem Dropdownmenü angezeigt. Ist eine benötigte Person dort noch nicht enthalten, muss sie zun</p>
+                  <p>Die bereits indizierten Personen werden im Framework in einem Dropdownmenü angezeigt. Ist eine benötigte Person dort noch nicht enthalten, muss sie zunächst in die <ref target="https://baserow.acdh-dev.oeaw.ac.at/database/421/table/2290/8963">Liste der referenzierten Personen</ref> eingetragen werden. <hi rend="bold">Es ist wichtig, drauf zu achten, keine Dubletten zu erzeugen!</hi> Wenn die Person dort erzeugt wurde, kann sie in einem nächsten Schritt für die Framework-Ansicht transformiert werden. Dafür muss der <ref target="https://github.com/bundesverfassung-oesterreich/bv-entities/actions/workflows/update_schema.yml">»update_schema« Workflow</ref> auf Github über die <ref target="https://b-vg.acdh.oeaw.ac.at/images/workflow_starten.jpeg">entsprechende Schaltfläche (»Run Workflow«)</ref> gestartet werden.</p>
                </div>
             </div>
             <div xml:id="structure_text">
