@@ -141,7 +141,7 @@ if __name__ == "__main__":
             source_json_url="https://raw.githubusercontent.com/bundesverfassung-oesterreich/bv-entities/main/json_dumps/person.json",
             type_column_name="bv_id",
             targeted_element_name="person",
-            targeted_attribute_name="id",
+            targeted_attribute_name="xml:id",
             type_description_field_name="name",
         )
     ]

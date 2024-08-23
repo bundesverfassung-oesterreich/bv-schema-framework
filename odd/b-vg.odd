@@ -299,7 +299,6 @@
                      Person referenziert, während das zweite – <att>role</att> – vermerkt ob die
                      Person im Rahmen des Protokolls mit Redebeiträgen – <val>speaker</val> – oder
                      nur passiv – <val>participant</val> – teilnimmt. Jeder Person kann auch ein freier Text (z.B. "Kelsen") hinzugefügt werden, um die Arbeit mit der Liste zu vereinfachen. Dieser Text wird später automatisiert wieder entfernt und durch die jeweilige Index-Ansetzung ersetzt.</p>
-               </div>
             </div>
             <div xml:id="structure_text">
                <head>Haupttexte</head>
@@ -1020,64 +1019,7 @@
                      </attDef>
                      <attDef ident="xml:id" mode="add" usage="req">
                         <valList type="closed">
-                           <valItem ident="#bv_person_id__1">
-                              <desc>Kelsen, Hans</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__2">
-                              <desc>Lein, Richard</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__3">
-                              <desc>Olechowski, Thomas</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__4">
-                              <desc>Falser, Stephan</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__5">
-                              <desc>Verfassungsausschuss</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__6">
-                              <desc>Gassner, Miriam</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__7">
-                              <desc>Mayr, Michael</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__8">
-                              <desc>Danneberg, Robert</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__9">
-                              <desc>Rehrl, Franz</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__10">
-                              <desc>Konstituierende Nationalversammlung</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__11">
-                              <desc>Länderkonferenz</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__12">
-                              <desc>Christlichsoziale Partei</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__13">
-                              <desc>Abram, Simon</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__14">
-                              <desc>Großdeutsche Volkspartei</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__15">
-                              <desc>Renner, Karl</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__16">
-                              <desc>Unterausschuss des Verfassungsausschusses</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__17">
-                              <desc>Staatssekretariat für die Verfasssungs- und
-                                 Verwaltungsreform</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__18">
-                              <desc>Staatsamt für Justiz</desc>
-                           </valItem>
-                           <valItem ident="#bv_person_id__19">
-                              <desc>Staatskanzlei</desc>
-                           </valItem>
+                       
                         </valList>
                      </attDef>
                   </attList>
