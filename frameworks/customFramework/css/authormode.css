@@ -1,0 +1,1047 @@
+@namespace oxy url('http://www.oxygenxml.com/extensions/author');
+@namespace xml url('http://www.tei-c.org/ns/1.0');
+
+TEI {
+    -oxy-foldable:false;
+    -oxy-display-tags: none;
+}
+
+/*START META*/
+teiHeader {
+    -oxy-display-tags: none;
+}
+
+teiHeader fileDesc{
+    -oxy-display-tags: none;
+}
+
+teiHeader fileDesc titleStmt{
+    -oxy-display-tags: none;
+}
+
+
+teiHeader fileDesc titleStmt *{
+    -oxy-display-tags: default;
+    display: None;
+}
+
+teiHeader fileDesc titleStmt title {
+    display: block;
+    -oxy-foldable:false;
+    -oxy-folded:true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding-left: 1rem;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    content: oxy_textfield(
+        width, 50%,
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+    -oxy-display-tags: none;
+}
+
+teiHeader fileDesc titleStmt title[type="main"] {
+    padding-left: 1rem;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+teiHeader fileDesc titleStmt title[type="main"]:before {
+    content: "Haupttitel:";
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+teiHeader fileDesc titleStmt title[type="sub"] {
+    padding-left: 1rem;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+teiHeader fileDesc titleStmt title[type="sub"]:before {
+    content: "Nebentitel:";
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+teiHeader fileDesc titleStmt title:after {
+    margin-right: 10px;
+    visibility: -oxy-collapse-text;
+    content: 
+    oxy_buttonGroup(label, '+|-', fontInherit, false, actions, 
+        oxy_action_list(
+            oxy_action(name, 'Nebentitel hinzufügen', description, 'fügt Nebentitel nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<title xmlns="http://www.tei-c.org/ns/1.0" type="sub"></title>', arg-insertLocation, '.', arg-insertPosition, 'After'),
+            oxy_action(name, 'Haupttitel hinzufügen', description, 'fügt Titel nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<title xmlns="http://www.tei-c.org/ns/1.0" type="main"></title>', arg-insertLocation, '.', arg-insertPosition, 'After'), 
+            oxy_action(name, 'Titel löschen', description, 'löscht aktuellen Titel', operation, 'DeleteElementOperation')
+        )
+    )
+        
+}
+
+teiHeader fileDesc publicationStmt{
+    display: block;
+    content: "Dokument";
+    -oxy-foldable:true;
+    -oxy-folded:true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+teiHeader fileDesc publicationStmt {
+    display: block;
+    content: "IDs";
+    -oxy-foldable:true;
+    -oxy-folded:true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 1rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+teiHeader fileDesc publicationStmt * {
+    visibility: hidden;
+    display: none;
+}
+
+
+teiHeader publicationStmt idno {
+    padding-top: .5rem;
+    padding-bottom: 0;
+    margin: 0;
+    visibility: visible;
+    display: block!important;
+    font-size: 1rem;
+    font-weight: normal;
+    visibility:-oxy-collapse-text;
+    content: oxy_textfield(
+        width, 50%,
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+    -oxy-display-tags: none;
+}
+
+teiHeader publicationStmt idno[type="transkribus_doc"]:before {
+    content: "Transkribus document-ID: ";
+}
+
+teiHeader publicationStmt idno[type="transkribus_collection"]:before {
+    content: "Transkribus collection-ID: ";
+}
+
+teiHeader publicationStmt idno[type="goobi"]:before {
+    content: "Goobi-ID: ";
+}
+
+teiHeader publicationStmt idno[type="bv_data_set"]:before {
+    content: "Dataset: ";
+}
+
+/* START msDesc START*/
+
+
+teiHeader sourceDesc {
+    -oxy-display-tags: none;
+}
+
+teiHeader sourceDesc msDesc {
+    display: block;
+    content: "Dokumentenbeschreibung";
+    -oxy-foldable:true;
+    -oxy-folded:true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+teiHeader sourceDesc listWit + msDesc::after {
+    display: None;
+}
+
+teiHeader sourceDesc msDesc::after {
+    display: block;
+    content: oxy_button(action, oxy_action(
+    name, 'Zusätzliche Textzeugen verlinken', description, 'fügt Liste mit weiteren Textzeugen ein', operation, 'InsertFragmentOperation', arg-fragment, '<listWit xmlns="http://www.tei-c.org/ns/1.0"></listWit>', arg-insertLocation, '.', arg-insertPosition, 'Before'
+    ));
+}
+    
+
+teiHeader sourceDesc listWit {
+    display: block;
+    content: "Weitere Textzeugen\a";
+    -oxy-foldable:true;
+    -oxy-folded:true;
+    -oxy-display-tags: none;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+
+listWit witness {
+    display: block;
+    font-size: 1rem;
+    color: gray;
+    padding: 0.5rem;
+    border-radius: 15px;
+    margin: 0.5rem;
+    width: fit-content;
+    border: 1px black solid;
+    -oxy-display-tags: none;
+    color: black;
+        content: oxy_combobox(
+        edit, 'sameAs'
+    )
+    "\a";
+}
+
+listWit witness::after {
+          display: block;
+          content: oxy_button(action, oxy_action(
+          name, 'Textzeugen entfernen', description, 'entfernt aktuelle Verlinkung', operation, 'DeleteElementOperation'
+          ));
+}
+
+listWit::after {
+    content: oxy_button(action, oxy_action(
+    name, 'Textzeugen hinzufügen', description, 'fügt weiteren Link ein', operation, 'InsertFragmentOperation', arg-fragment, '<witness xmlns="http://www.tei-c.org/ns/1.0" sameAs=""></witness>', arg-insertLocation, '.', arg-insertPosition, 'Inside'
+    ));
+}
+
+teiHeader sourceDesc msDesc::before {
+    font-size: small;
+    color: black;
+        content: "Art des Textzeugen " oxy_combobox(
+        edit, 'subtype'
+    )
+    "\a";
+}
+
+teiHeader sourceDesc msDesc msIdentifier {
+    -oxy-display-tags: none;
+     visibility:-oxy-collapse-text;
+}
+
+teiHeader sourceDesc msDesc msIdentifier *{
+    -oxy-display-tags: none;
+     margin: 1rem;
+     -oxy-foldable:false;
+}
+
+teiHeader sourceDesc msDesc msIdentifier institution {
+    display: block;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    font-size: 1rem;
+    padding-top:0;
+    content:
+    oxy_textfield(
+        width, 50%,
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    )
+    "\aURL: "
+    oxy_textfield(
+        width, 50%,
+        edit, '@key',
+        columns, 140,
+        fontInherit, true
+    );
+}
+
+teiHeader sourceDesc msDesc msIdentifier institution:before {
+    content: "archivierende Institution: ";
+    font-weight: bolder;
+    font-size: 1.25rem;
+}
+
+
+teiHeader sourceDesc msDesc msIdentifier repository {
+    display: block;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    font-size: 1rem;
+    padding-top:0;
+    content:
+    oxy_textfield(
+        width, 50%,
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    )
+    "\a"
+    "Archiv-URL: "
+    oxy_textfield(
+        width, 50%,
+        edit, '@key',
+        columns, 140,
+        fontInherit, true
+    );
+}
+
+teiHeader sourceDesc msDesc msIdentifier repository:before {
+    content: "Archiv (Name): ";
+    font-weight: bolder;
+    font-size: 1.25rem;
+}
+
+teiHeader sourceDesc msDesc msIdentifier idno[type="archive"] {
+    display: block;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    font-size: 1rem;
+    padding-top:0;
+    content: 
+    oxy_textfield(
+        width, 50%,
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+}
+
+teiHeader sourceDesc msDesc msIdentifier idno:before {
+    content: "Signatur: ";
+    font-weight: bolder;
+    font-size: 1.25rem;
+}
+
+/* END msDesc END */
+
+/* START msContents START */
+
+teiHeader sourceDesc msDesc msContents, teiHeader sourceDesc msDesc msContents * {
+    -oxy-display-tags: none;
+}
+
+teiHeader sourceDesc msDesc msContents msItem *{
+    display: block;
+    border: 1rem;
+    -oxy-display-tags: none;
+}
+
+teiHeader sourceDesc msDesc msContents msItem author[role="acdh\:hasAuthor"] {
+    display: block;
+    visibility:-oxy-collapse-text;
+    font-size: 1rem;
+    padding-top:0;
+    content:
+    "Autor: "
+    oxy_textfield(
+        width, 50%,
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+}
+
+teiHeader sourceDesc msDesc msContents msItem author[role="acdh\:hasAuthor"]:after {
+    content:
+        oxy_buttonGroup(label, '+|-', fontInherit, false, actions, 
+        oxy_action_list(
+            oxy_action(name, 'Autor hinzufügen', description, 'fügt Autor nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<author xmlns="http://www.tei-c.org/ns/1.0" role="acdh\:hasAuthor"></author>', arg-insertLocation, '.', arg-insertPosition, 'After'),
+            oxy_action(name, 'Autor löschen', description, 'löscht aktuellen Autor', operation, 'DeleteElementOperation')
+        )
+    );
+}
+
+teiHeader sourceDesc msDesc msContents msItem title {
+    display: block;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    font-size: 1rem;
+    padding-top:0;
+    content:
+    oxy_textfield(
+        width, 50%,
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+}
+
+teiHeader sourceDesc msDesc msContents msItem title:after {
+    content: 
+    oxy_buttonGroup(label, '+|-', fontInherit, false, actions, 
+        oxy_action_list(
+            oxy_action(name, 'Nebentitel hinzufügen', description, 'fügt Nebentitel nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<title xmlns="http://www.tei-c.org/ns/1.0" type="sub"></title>', arg-insertLocation, '.', arg-insertPosition, 'After'),
+            oxy_action(name, 'Haupttitel hinzufügen', description, 'fügt Titel nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<title xmlns="http://www.tei-c.org/ns/1.0" type="main"></title>', arg-insertLocation, '.', arg-insertPosition, 'After'), 
+            oxy_action(name, 'Titel löschen', description, 'löscht aktuellen Titel', operation, 'DeleteElementOperation')
+        )
+    )
+}
+
+
+teiHeader sourceDesc msDesc msContents msItem title:before {
+    content: "Haupttitel: ";
+}
+
+teiHeader sourceDesc msDesc msContents msItem title[type="sub"]:before {
+    content: "Nebentitel";
+}
+
+teiHeader sourceDesc msDesc msContents msItem note[type="editor"] {
+    content: 
+    oxy_textArea(
+        rows, "5",
+        columns, "70",
+        edit, '#text',
+        columns, "140"
+    )
+    oxy_buttonGroup(label, '+|-', fontInherit, false, actions, 
+        oxy_action_list(
+            oxy_action(name, 'Notiz hinzufügen', description, 'fügt Notiz nach aktueller ein', operation, 'InsertFragmentOperation', arg-fragment, '<note xmlns="http://www.tei-c.org/ns/1.0" type="editor"></note>', arg-insertLocation, '.', arg-insertPosition, 'After'),
+            oxy_action(name, 'Notiz löschen', description, 'löscht aktuelle Notiz', operation, 'DeleteElementOperation')
+        )
+    )
+}
+
+/* END msContents END */
+
+/* START physDesc START */
+
+teiHeader sourceDesc physDesc {
+    -oxy-display-tags: none;
+}
+
+teiHeader sourceDesc msDesc objectDesc {
+    -oxy-display-tags: none;
+    font-size: 1rem;
+    content: 
+    "Typ: "
+     oxy_editor(
+        type, combo,
+        edit, "@form"
+    )
+    "   Editorische Beschreibung: "
+    oxy_textArea(
+        width, 50%,
+        edit, '#text',
+        columns, 80,
+        rows, 2
+    )
+}
+
+teiHeader sourceDesc msDesc handDesc {
+    display: none;
+    font-size: 1rem;
+    content: 
+    "Typ: "
+    oxy_textfield(
+        width, 50%,
+        edit, '@form',
+        columns, 140
+    )
+    "Editorische Beschreibung: "
+    oxy_textfield(
+        width, 50%,
+        edit, '#text',
+        columns, 140
+    )
+}
+
+/* END physDesc END */
+
+/* START history START */
+
+teiHeader sourceDesc history {
+    -oxy-display-tags: none;
+    display: block;
+}
+
+teiHeader sourceDesc history origin {
+        width: 100%;
+        -oxy-display-tags: none;
+        font-size: 1rem;
+        content:
+        "Entstehungszeitraum (Freitext)\a"
+        oxy_textfield(
+            width, 50%,
+            fontInherit, true,
+            edit, '#text'
+           )  
+            
+            "\a"
+                   
+        oxy_datePicker(
+            columns, 16, 
+            edit, "@notBefore-iso",
+            format, "yyyy-MM-dd"
+            validateInput, true
+            )
+        oxy_datePicker(
+            columns, 16, 
+            edit, "@notAfter-iso",
+            format, "yyyy-MM-dd"
+            validateInput, true);
+}
+
+/* END history END */
+
+/* START abstract START */
+teiHeader profileDesc, teiHeader profileDesc * {
+    -oxy-display-tags: none;
+}
+
+teiHeader profileDesc abstract{
+    content:"Inhalt\a";
+    display: block;
+    -oxy-foldable:true;
+    -oxy-folded: true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+teiHeader profileDesc abstract p{
+    width: 100%;
+    margin: 0;
+    display: block;
+    font-size: 1rem;
+    content:
+        oxy_textArea(
+            width, 70%,
+            fontInherit, true,
+            edit, '#text'
+           );
+}
+
+
+teiHeader profileDesc particDesc{
+    content:"Teilnehmer:innen\a";
+    display: block;
+    -oxy-foldable:true;
+    -oxy-folded: true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+teiHeader profileDesc particDesc person{
+    width: 100%;
+    border: solid black 1px;
+    display: block;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+teiHeader profileDesc particDesc person::after{
+    content:
+        oxy_textArea(
+            width, 70%,
+            fontInherit, true,
+            edit, '#text'
+           )
+        "\a"
+        "person-id: "
+        oxy_editor(
+            type, combo,
+            edit, "@xml:id"
+        )
+        "\a"
+        "rolle: "
+        oxy_editor(
+            type, combo,
+            edit, "@role"
+        );
+}
+
+
+teiHeader profileDesc particDesc person:last-child::after{
+    content:
+        oxy_textArea(
+            width, 70%,
+            fontInherit, true,
+            edit, '#text'
+           )
+        "\a"
+        "person-id: "
+        oxy_editor(
+            type, combo,
+            edit, "@xml:id"
+        )
+        "\a"
+        "rolle: "
+        oxy_editor(
+            type, combo,
+            edit, "@role"
+        )
+        "\a"
+        oxy_button(action, oxy_action(
+            name, 'Weitere teilnehmende Person hinzufügen (Protokolle)',
+            description, 'fügt der Liste der teilnhemende Personen eine weitere hinzu (particDesc / person)', 
+            operation, 'InsertFragmentOperation', 
+            arg-fragment, '<person role="" xml:id="" xmlns="http://www.tei-c.org/ns/1.0"></person>', arg-insertLocation, '.', arg-insertPosition, 'After'
+    ));
+        ;
+}
+
+teiHeader profileDesc creation {
+    content:"Entstehung\a";
+    display: block;
+    -oxy-foldable:true;
+    -oxy-folded: true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+teiHeader profileDesc creation date {
+    width: 100%;
+    margin: 0;
+    display: block;
+    font-size: 1rem;
+    content:
+        oxy_textArea(
+            width, 70%,
+            fontInherit, true,
+            edit, '#text'
+           );
+}
+
+teiHeader profileDesc abstract + creation::after {
+    content: oxy_button(action, oxy_action(
+    name, 'Teilnehmer:innen-Liste hinzufügen (Protokolle)', description, 'fügt Liste für teilnhemende Personen ein (particDesc / person)', operation, 'InsertFragmentOperation', arg-fragment, '<particDesc xmlns="http://www.tei-c.org/ns/1.0"><person role="" sameAs=""></person></particDesc>', arg-insertLocation, '.', arg-insertPosition, 'Before'
+    ));
+}
+
+
+/* END abstract END */
+
+/* START revisionDesc START */
+teiHeader revisionDesc {
+    content:
+        "Bearbeitungsstand\a"
+        /*oxy_textfield(
+            width, 100%,
+            fontInherit, true,
+            edit, '@status'
+            values, "created, structured"*/
+        oxy_editor(
+            type, combo,
+            edit, "@status"
+        );
+    display: block;
+    -oxy-foldable:true;
+    -oxy-folded: true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+teiHeader revisionDesc change {
+    display: block;
+    -oxy-foldable:true;
+    -oxy-folded: true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 1rem;
+    margin: 3rem;
+    font-weight: normal;
+    font-size: 1rem;
+    content: 
+        oxy_datePicker(
+            columns, 16, 
+            edit, "@when",
+            format, "yyyy-MM-dd"
+            validateInput, false
+        )
+        "Bemerkung: "
+        oxy_textfield(
+            width, 50%,
+            edit, '#text',
+            columns, 140,
+            fontInherit, true
+        )
+        "\a "
+        "erzeugt von: "
+        oxy_editor(
+            type, combo,
+            edit, '@who'
+        )
+        oxy_buttonGroup(label, '+|-', fontInherit, false, actions, 
+        oxy_action_list(
+            oxy_action(name, 'Bearbeitungsschritt hinzufügen', description, 'fügt Bearbeitungsschritt nach aktuellem ein', operation, 'InsertFragmentOperation', arg-fragment, '<change xmlns="http://www.tei-c.org/ns/1.0" when="" who=""></change>', arg-insertLocation, '.', arg-insertPosition, 'After'),
+            oxy_action(name, 'Bearbeitungsschritt hinzufügen', description, 'löscht aktuellen Bearbeitungsschritt', operation, 'DeleteElementOperation')
+        )
+    );
+}
+
+/* END revisionDesc END */
+
+/*END META*/
+
+facsimile {
+    display: block;
+    content: "Faksimiles";
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    margin: 2rem;
+    -oxy-foldable:true;
+    -oxy-folded:true;
+    -oxy-display-tags: none;
+}
+
+surface {
+    display: block;
+    font-size: 1rem;
+    color: gray;
+    padding: 0.5rem;
+    border-radius: 15px;
+    margin: 0.5rem;
+    width: fit-content;
+    border: 1px black solid;
+    content: attr(xml|id);
+    -oxy-display-tags: none;
+}
+
+graphic {
+    -oxy-display-tags: none;
+    content: oxy_urlChooser(
+        edit, '@url',
+        columns, 140);
+    width: fit-content;
+}
+
+/* display text */
+text {
+    display: block;
+    color: gray;
+    padding: 2rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    content: "Textsorte: "
+        oxy_editor(
+            type, combo,
+            edit, "@type"
+        );
+}
+
+body {
+    -oxy-display-tags: none;
+}
+
+div {
+    display: block;
+    padding: 2rem;
+    margin: 2rem;
+    -oxy-not-foldable-child: head;
+}
+
+div[type = "main"] {
+    border: dotted gray 1px;
+    border-radius: 15px;
+}
+
+div[type = "article"] {
+    border: solid rgb(36, 104, 231) 4px;
+    background-color: AliceBlue;
+    border-radius: 15px;
+    -oxy-foldable:true;
+}
+
+div[type = "section"] {
+    border: dotted CornflowerBlue 6px;
+    background-color: rgb(205, 231, 255);
+    border-radius: 15px;
+    -oxy-foldable:true;
+}
+
+head {
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+    -oxy-foldable:false;
+}
+
+head{
+    content: oxy_editor(
+        type, combo,
+        edit, '@type'
+    )
+    "\a";
+}
+
+/*div:not([type='article'])>head {
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+    -oxy-foldable:false;
+    visibility:-oxy-collapse-text;
+    content: oxy_editor(
+        type, combo,
+        edit, '@type'
+    )
+    "\a"
+    oxy_textfield(
+        width, 50%,
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+}*/
+
+head:before {
+    content: "\a";
+}
+
+p {
+    display: block;
+    color: black;
+    font-size: 1rem;
+    line-height: 1.6;
+    border: dashed lightgrey 2px;
+    border-radius: 15px;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: antiquewhite;
+}
+
+p::before {
+    content:
+    oxy_editor(
+        type, combo,
+        edit, '@type'
+    )
+    "\a";
+}
+
+p[type="legal_section"] {
+    background-color: Gainsboro;
+}
+    
+p[type="legal_section"] label {    
+    display: inline-block;
+    width: fit-content;
+    color: grey;
+    background-color: orange;
+    padding: 0.3rem;
+    border-radius: 15px;
+}
+
+speaker {
+    border: black;
+    padding: 0.3rem;
+    border-radius: 15px;
+    background-color: pink;
+}
+
+sp {
+    display: inline-block;
+    width: fit-content;
+    color: black;
+    background-color: pink;
+    padding: 0.3rem;
+    border-radius: 15px;
+    border: solid black 1px;
+}
+
+note {
+    display: block;
+    border: dashed green 3px;
+}
+
+
+msItem note {
+    display: block;
+    border: none;
+}
+
+list {
+    width: 75%;
+    flex-wrap: wrap;
+    color: black;
+    font-size: 1rem;
+    line-height: 1.6;
+    border: solid orange 2px;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+list label {
+    display: inline-block;
+    width: fit-content;
+    color: grey;
+    background-color: orange;
+    padding: 0.3rem;
+    border-radius: 15px;
+}
+list item {
+    display: block;
+    border: solid orange 1px;
+    border-radius: 15px;
+    margin: 1rem;
+    padding: 1rem;
+}
+pb {
+    display: block;
+    font-size: 2rem;
+    border: solid black 2px;
+    content: ' –– Seitenbeginn –– ';
+    color: gray;
+}
+
+pb[break="yes"]{
+    content: oxy_editor(
+        type, combo,
+        edit, '@break'
+    )
+    ' –– Seitenbeginn –– ';
+}
+
+pb[break="no"]{
+    content: oxy_editor(
+        type, combo,
+        edit, '@break'
+    )
+    ' –– Seitenbeginn (mit Worttrennung) –– ';
+}
+
+pb[break="maybe"]{
+    content: oxy_editor(
+        type, combo,
+        edit, '@break'
+    )
+    ' –– Seitenbeginn (break-Atribut bitte ändern) –– ';
+}
+
+lb {
+    color: gray;
+    font-size: 1.5rem;
+    background-color: lightgrey;
+    visibility:-oxy-collapse-text;
+    -oxy-display-tags: none;
+}
+
+lb:before {
+    content: "·";
+    color: yellow;
+    font-weight: bold;
+}
+
+lb[break = "no"]:before {
+    content: "–";
+    color: yellow;
+    font-weight: bold;
+}
+
+lb:after {
+    content: "\a";
+}
+
+pb {
+    color: gray;
+    font-size: 1.5rem;
+    background-color: lightgrey;
+    visibility:-oxy-collapse-text;
+}
+
+pb[break = "no"]:before {
+    content: " – ";
+    color: yellow;
+    font-weight: bold;
+}
+
+del {
+    text-decoration-line: line-through;
+}
+
+gap {
+    color: grey;
+    visibility:-oxy-collapse-text;
+}
+
+gap:before {
+    content: "[???]";
+}
+
+fw[type="pageNum"]{
+    border: solid #f3f3f3 2px!important;
+    display: inline;
+    padding: .5rem;
+}
+
+seg {
+    display: inline;
+}
+
+
+seg[type="note_ref"]:before{
+    font-size: 2rem;
+    content: "{";
+    color: white;
+}
+
+seg[type="note_ref"]:after{
+    font-size: 2rem;
+    content: "}";
+    color: white;
+}
+
+textArea {
+    white-space: pre-wrap;
+}
+
+textArea[language="CSS"]:before {
+    content: oxy_textArea(
+      edit, '#text',
+      contentType, 'text/css',
+      rows, 10,
+      columns, 30);
+}
+
+textArea[language="XML"]:before {
+    content: oxy_textArea(
+      edit, '#text',
+      contentType, 'text/xml',
+      rows, 10,
+      columns, 30);
+}
