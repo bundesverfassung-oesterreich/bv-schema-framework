@@ -923,7 +923,7 @@
             <head>Appendix</head>
             <schemaSpec ident="tei_b_vg" start="TEI" prefix="undefined" targetLang="de" docLang="de">
                <moduleRef key="header" include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
-               <moduleRef key="core" include=" rs p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address pubPlace author title graphic street unclear postCode del gap speaker sp"/>
+               <moduleRef key="core" include=" rs p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address hi pubPlace author title graphic street unclear postCode del gap speaker sp ref"/>
                <!--hi-->
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
@@ -976,6 +976,29 @@
                      </s:rule>
                   </constraint>
                </constraintSpec>
+               
+               <elementSpec ident="hi" mode="change">
+                  <constraintSpec ident="allow_hi_only_in_commentaries" scheme="schematron">
+                     <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                        <s:rule context="//tei:hi">
+                           <s:assert test="ancestor::tei:div[@type='editorialChapter']">hi elements should only occur in commentaries</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="rend" mode="change" usage="opt">
+                        <valList type="closed">
+                           <valItem ident="bold">
+                              <desc>fett</desc>
+                           </valItem>
+                           <valItem ident="underline">
+                              <desc>unterstrichen</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+
                <elementSpec ident="person" mode="change">
                   <desc>Repräsentiert eine Person in der Liste der Teilnehmer:innen protokollierter
                      Sitzungen</desc>
@@ -1044,6 +1067,7 @@
                      <textNode/>
                   </content>
                </elementSpec>
+               
                <elementSpec ident="idno" mode="change">
                   <desc>contains an identifier equaling the document in different sources</desc>
                   <attList>
@@ -1068,6 +1092,7 @@
                      </attDef>
                   </attList>
                </elementSpec>
+               
                <elementSpec ident="msDesc" mode="change">
                   <classes mode="change">
                      <memberOf key="att.global" mode="delete"/>
@@ -1119,6 +1144,7 @@
                      </attDef>
                   </attList>
                </elementSpec>
+               
                <elementSpec ident="change" mode="change">
                   <attList>
                      <attDef ident="who" mode="replace" usage="req">
@@ -1161,6 +1187,7 @@
 </valItem></valList></attDef>
                   </attList>
                </elementSpec>
+               
                <elementSpec ident="choice" mode="change">
                   <desc>Beschreibt die materielle Form des Dokuments</desc>
                   <attList>
@@ -1191,18 +1218,19 @@
                      </alternate>
                   </content>
                </elementSpec>
-               <constraintSpec ident="check_corr" scheme="schematron">
-                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
-                     <s:rule context="//tei:corr">
-                        <s:report test="parent::*[not(local-name()='choice')]"> a choice must be
-                           placed inside "choice"-tag </s:report>
-                        <s:assert test="parent::*/tei:sic"> document the original variant with a
-                           "sic"-tag </s:assert>
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
+               
                <elementSpec ident="corr" mode="change">
                   <desc>Umschließt korrigierte Texteinheit</desc>
+                  <constraintSpec ident="check_corr" scheme="schematron">
+                     <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                        <s:rule context="//tei:corr">
+                           <s:report test="parent::*[not(local-name()='choice')]"> a choice must be
+                              placed inside "choice"-tag </s:report>
+                           <s:assert test="parent::*/tei:sic"> document the original variant with a
+                              "sic"-tag </s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
                   <attList>
                      <attDef ident="rend" mode="delete"/>
                      <attDef ident="style" mode="delete"/>
@@ -1227,6 +1255,7 @@
                      <attDef ident="subtype" mode="delete"/>
                   </attList>
                </elementSpec>
+               
                <elementSpec ident="gap" mode="change">
                   <desc>markiert nicht entzifferte Stelle</desc>
                   <attList>
@@ -1280,15 +1309,16 @@
                      </attDef>
                   </attList>
                </elementSpec>
-               <constraintSpec ident="check_sic" scheme="schematron">
-                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
-                     <s:rule context="//tei:sic">
-                        <s:assert test="parent::*/tei:corr"> always use sic with corr </s:assert>
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
+
                <elementSpec ident="sic" mode="change">
                   <desc>Dokumentiert modifizierte Texteinheit</desc>
+                  <constraintSpec ident="check_sic" scheme="schematron">
+                     <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                        <s:rule context="//tei:sic">
+                           <s:assert test="parent::*/tei:corr"> always use sic with corr </s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
                   <attList>
                      <attDef ident="rend" mode="delete"/>
                      <attDef ident="style" mode="delete"/>
@@ -1309,6 +1339,7 @@
                      <attDef ident="source" mode="delete"/>
                   </attList>
                </elementSpec>
+               
                <elementSpec ident="add" mode="change">
                   <desc>Text der der Grundschicht hinzugefügt wurde</desc>
                   <attList>
@@ -1350,6 +1381,7 @@
                      <attDef ident="confidence" mode="delete"/>
                   </attList>
                </elementSpec>
+               
                <elementSpec ident="del" mode="change">
                   <desc>Streichung im Dokument</desc>
                   <attList>
@@ -1390,15 +1422,18 @@
                      <attDef ident="confidence" mode="delete"/>
                   </attList>
                </elementSpec>
+               
                <elementSpec ident="sourceDesc" mode="change">
                   <desc>Dokument auf dem der Inhalt der Datei basiert.</desc>
                   <content>
                      <alternate maxOccurs="2" minOccurs="1">
                         <elementRef key="msDesc" minOccurs="1" maxOccurs="1"/>
                         <elementRef key="listWit" minOccurs="0" maxOccurs="1"/>
+                        <elementRef key="p" minOccurs="0" maxOccurs="1"/>
                      </alternate>
                   </content>
                </elementSpec>
+               
                <elementSpec ident="witness" mode="change">
                   <desc>Verlinkt alle weiteren Textzeugen zu einem Dokument, die nicht grundlage der
                      aktuellen Darstellung sind.</desc>
@@ -1560,28 +1595,15 @@
 </valItem></valList></attDef>
                   </attList>
                </elementSpec>
+               
                <elementSpec ident="availability" mode="change">
                   <desc>Dokument auf dem der Inhalt der Datei basiert.</desc>
                   <content>
                      <elementRef key="licence"/>
                   </content>
                </elementSpec>
-               <!-- better create a check her to prevent section-divs in art-divs … -->
-               <constraintSpec ident="div_nesting" scheme="schematron">
-                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
-                     <s:rule context="//tei:div">
-                        <s:report test="self::tei:div[@type='article']//tei:div[@type='section']">a
-                           div representing an article shouldn’t contain a div representing a
-                           section</s:report>
-                        <s:report test="self::tei:div[@type='article' and parent::*[@type!='section']]">a
-                           div representing an article should always have a div representing a
-                           section as parent.</s:report>
-                        <s:report test="self::tei:div[@type='preamble' and parent::*[@type!='main']]">a div
-                           representing a preamble should always be a direct child of the main
-                           div</s:report>
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
+               
+
                <elementSpec ident="div" mode="change">
                   <desc>enthält Makro-Texteinheiten</desc>
                   <content>
@@ -1595,8 +1617,25 @@
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="add"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="fw"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="sp"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="table"/>
                      </alternate>
                   </content>
+                  <!-- better create a check her to prevent section-divs in art-divs … -->
+                  <constraintSpec ident="div_nesting" scheme="schematron">
+                     <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                        <s:rule context="//tei:div">
+                           <s:report test="self::tei:div[@type='article']//tei:div[@type='section']">a
+                              div representing an article shouldn’t contain a div representing a
+                              section</s:report>
+                           <s:report test="self::tei:div[@type='article' and parent::*[@type!='section']]">a
+                              div representing an article should always have a div representing a
+                              section as parent.</s:report>
+                           <s:report test="self::tei:div[@type='preamble' and parent::*[@type!='main']]">a div
+                              representing a preamble should always be a direct child of the main
+                              div</s:report>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
                   <attList>
                      <attDef ident="type" mode="replace" usage="req">
                         <valList type="closed">
@@ -1612,10 +1651,14 @@
                            <valItem ident="preamble">
                               <desc>Präambel eines Gesetztestextes</desc>
                            </valItem>
+                           <valItem ident="editorialChapter">
+                              <desc>Kapitel von Kommentartexten</desc>
+                           </valItem>
                         </valList>
                      </attDef>
                   </attList>
                </elementSpec>
+               
                <elementSpec ident="add" mode="replace">
                   <desc>enthält nachträglich (in eigenem Überarbeitungsvorgang) hinzugefügten
                      Text</desc>
@@ -1625,17 +1668,18 @@
                      <elementRef maxOccurs="unbounded" minOccurs="0" key="head"/>
                   </content>
                </elementSpec>
-               <!-- Anpassung des head Elements -->
-               <constraintSpec ident="head_rules" scheme="schematron">
-                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
-                     <s:rule context="//tei:head[@type='sub']">
-                        <s:assert test="parent::*/tei:head[@type='main']"> "head"-elements with
-                           @type "sub" should have a sibling with @type "main" </s:assert>
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
+
                <elementSpec ident="head" mode="change">
                   <desc>encodes heading of some sort</desc>
+                  <!-- Anpassung des head Elements -->
+                  <constraintSpec ident="head_rules" scheme="schematron">
+                     <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                        <s:rule context="//tei:head[@type='sub']">
+                           <s:assert test="parent::*/tei:head[@type='main']"> "head"-elements with
+                              @type "sub" should have a sibling with @type "main" </s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
                   <attList>
                      <attDef ident="type" mode="replace" usage="opt">
                         <valList type="closed">
@@ -1644,6 +1688,9 @@
                            </valItem>
                            <valItem ident="sub">
                               <desc>subtitle as opposed to one main-title</desc>
+                           </valItem>
+                           <valItem ident="editorialHead">
+                              <desc>head-Element in einem Kommentartext</desc>
                            </valItem>
                         </valList>
                      </attDef>
@@ -1662,16 +1709,7 @@
                      </alternate>
                   </content>
                </elementSpec>
-               <!-- Anpassung des p Elements -->
-               <constraintSpec ident="check_p_encapsulation" scheme="schematron">
-                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
-                     <s:rule context="//tei:p[.//tei:p]">
-                        <s:assert test="not(@type) and .//tei:p[@type='legal_section']">nur
-                           typographische Absätze (p-Element ohne type) dürfen einen juristischen
-                           Paragraphen (p-Element mit type=legal_section) enthalten</s:assert>
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
+               
                <elementSpec ident="p" mode="change">
                   <content>
                      <alternate maxOccurs="unbounded" minOccurs="0">
@@ -1691,10 +1729,22 @@
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="fw"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="label"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="sp"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="hi"/>
                         <!-- typographic paragraphs might contain juristic articles in protocolls, see constrain spec -->
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="p"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="ref"/>
                      </alternate>
                   </content>
+                  <!-- Anpassung des p Elements -->
+                  <constraintSpec ident="check_p_encapsulation" scheme="schematron">
+                     <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                        <s:rule context="//tei:p[.//tei:p and not(ancestor::tei:div[@type='editorialChapter'])]">
+                           <s:assert test="not(@type) and .//tei:p[@type='legal_section']">nur
+                              typographische Absätze (p-Element ohne type) dürfen einen juristischen
+                              Paragraphen (p-Element mit type=legal_section) enthalten</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
                   <attList>
                      <attDef ident="rend" mode="delete"/>
                      <attDef ident="style" mode="delete"/>
@@ -1720,10 +1770,14 @@
                            <valItem mode="add" ident="legal_section">
                               <desc>Das Element enthält einen juristischen Paragraphen.</desc>
                            </valItem>
+                           <valItem mode="add" ident="footnote_text">
+                              <desc>Das Element enthält eine Fußnote in Kommentartexten</desc>
+                           </valItem>
                         </valList>
                      </attDef>
                   </attList>
                </elementSpec>
+               
                <elementSpec ident="item" mode="change">
                   <content>
                      <alternate maxOccurs="unbounded" minOccurs="0">
@@ -1733,6 +1787,7 @@
                      </alternate>
                   </content>
                </elementSpec>
+               
                <elementSpec ident="label" mode="change">
                   <content>
                      <alternate maxOccurs="unbounded" minOccurs="0">
@@ -1742,15 +1797,7 @@
                      </alternate>
                   </content>
                </elementSpec>
-               <!-- Anpassung des note Elementes -->
-               <constraintSpec ident="check_note_position" scheme="schematron">
-                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
-                     <s:rule context="//tei:note[@type='editor']">
-                        <s:assert test="parent::tei:msItem"> note @type="editor" is only allowed
-                           inside the ms-description of the document header </s:assert>
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
+
                <elementSpec ident="note" mode="change">
                   <classes mode="change">
                      <memberOf key="att.pointing" mode="delete"/>
@@ -1759,6 +1806,15 @@
                      <memberOf key="att.placement" mode="delete"/>
                   </classes>
                   <!-- hand? -->
+                  <!-- Anpassung des note Elementes -->
+                  <constraintSpec ident="check_note_position" scheme="schematron">
+                     <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                        <s:rule context="//tei:note[@type='editor']">
+                           <s:assert test="parent::tei:msItem"> note @type="editor" is only allowed
+                              inside the ms-description of the document header </s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
                   <attList>
                      <attDef ident="subtype" mode="delete"/>
                      <attDef iden="n" mode="delete"/>
@@ -1773,6 +1829,9 @@
                            <valItem mode="add" ident="comment">
                               <desc>Das Element enthält einen im edierten Dokument hinzugefügten
                                  Kommentar der (historischen) Autor:innen.</desc>
+                           </valItem>
+                           <valItem mode="add" ident="footnote">
+                              <desc>Das Element enthält eine Fußnote (Kommentartexte)</desc>
                            </valItem>
                         </valList>
                      </attDef>
@@ -1800,6 +1859,7 @@
                      <attDef ident="subtype" mode="delete"/>
                   </attList>
                </elementSpec>
+               
                <!-- Anpassung von rs -->
                <!--<elementSpec ident="rs" mode="change">
                   <classes mode="change">
@@ -1872,6 +1932,7 @@
                      <attDef ident="hand" mode="delete"/>
                   </attList>
                </elementSpec>-->
+               
                <elementSpec ident="emph" mode="change">
                   <classes mode="change">
                      <memberOf key="att.global.rendition"/>
@@ -1901,6 +1962,7 @@
                      <attDef ident="hand" mode="delete"/>
                   </attList>
                </elementSpec>
+               
                <elementSpec ident="fw" mode="change">
                   <attList>
                      <attDef ident="type" mode="replace" usage="req">
@@ -2132,20 +2194,28 @@
                      <attDef ident="xml:lang" mode="delete"/>
                   </attList>
                </elementSpec>
-               <elementSpec ident="text" mode="change">
+               
+               <elementSpec ident="text" mode="change">                
                   <attList>
                      <attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed"><valItem ident="Verfassungsentwurf">
-<desc>Verschiedene Entwürfe des Verfassungstextes mit unterschiedlichen Autoren bzw. unterschiedlichen Bearbeitern</desc>
-</valItem><valItem ident="Verfassungstext">
-<desc>Text der Bundesverfassung vom 1. Oktober 1920, wie er von der Konstituierenden Nationalversammlung beschlossen wurde</desc>
-</valItem><valItem ident="Sitzungsprotokoll">
-<desc>Sitzungsprotokoll</desc>
-</valItem><valItem ident="Stellungnahme zum Verfassungsentwurf">
-<desc>Stellungnahme zum Verfassungsentwurf</desc>
-</valItem></valList></attDef>
+                        <valList type="closed">
+                           <valItem ident="Verfassungsentwurf">
+                              <desc>Verschiedene Entwürfe des Verfassungstextes mit unterschiedlichen Autoren bzw. unterschiedlichen Bearbeitern</desc>
+                           </valItem>
+                           <valItem ident="Verfassungstext">
+                              <desc>Text der Bundesverfassung vom 1. Oktober 1920, wie er von der Konstituierenden Nationalversammlung beschlossen wurde</desc>
+                           </valItem>
+                           <valItem ident="Sitzungsprotokoll">
+                              <desc>Sitzungsprotokoll</desc>
+                           </valItem>
+                           <valItem ident="Stellungnahme zum Verfassungsentwurf">
+                              <desc>Stellungnahme zum Verfassungsentwurf</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
                   </attList>
                </elementSpec>
+               
                <!-- Anpassung des bibl Elements
                <elementSpec ident="bibl" mode="change">
                   <classes mode="change">
