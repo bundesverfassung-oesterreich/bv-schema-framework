@@ -854,6 +854,10 @@ p::before {
     "\a";
 }
 
+p[type="footnote_text"] {
+    font-size: 0.8rem;
+}
+
 p[type="legal_section"] {
     background-color: Gainsboro;
 }
