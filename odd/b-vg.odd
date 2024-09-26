@@ -2198,21 +2198,17 @@
                <elementSpec ident="text" mode="change">                
                   <attList>
                      <attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="Verfassungsentwurf">
-                              <desc>Verschiedene Entwürfe des Verfassungstextes mit unterschiedlichen Autoren bzw. unterschiedlichen Bearbeitern</desc>
-                           </valItem>
-                           <valItem ident="Verfassungstext">
-                              <desc>Text der Bundesverfassung vom 1. Oktober 1920, wie er von der Konstituierenden Nationalversammlung beschlossen wurde</desc>
-                           </valItem>
-                           <valItem ident="Sitzungsprotokoll">
-                              <desc>Sitzungsprotokoll</desc>
-                           </valItem>
-                           <valItem ident="Stellungnahme zum Verfassungsentwurf">
-                              <desc>Stellungnahme zum Verfassungsentwurf</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
+                        <valList type="closed"><valItem ident="Verfassungsentwurf">
+<desc>Verschiedene Entwürfe des Verfassungstextes mit unterschiedlichen Autoren bzw. unterschiedlichen Bearbeitern</desc>
+</valItem><valItem ident="Verfassungstext">
+<desc>Text der Bundesverfassung vom 1. Oktober 1920, wie er von der Konstituierenden Nationalversammlung beschlossen wurde</desc>
+</valItem><valItem ident="Sitzungsprotokoll">
+<desc>Sitzungsprotokoll</desc>
+</valItem><valItem ident="Stellungnahme zum Verfassungsentwurf">
+<desc>Stellungnahme zum Verfassungsentwurf</desc>
+</valItem><valItem ident="Editorisch-rechtswissenschaftlicher Kommentar">
+<desc>nicht für Primärtexte vorgesehen</desc>
+</valItem></valList></attDef>
                   </attList>
                </elementSpec>
                
