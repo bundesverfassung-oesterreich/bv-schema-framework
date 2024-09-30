@@ -861,7 +861,7 @@ p[type="footnote_text"] {
 p[type="legal_section"] {
     background-color: Gainsboro;
 }
-    
+
 p[type="legal_section"] label {    
     display: inline-block;
     width: fit-content;
@@ -1049,3 +1049,16 @@ textArea[language="XML"]:before {
       rows, 10,
       columns, 30);
 }
+
+table, cell {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+}
+
+cell:first-child {
+    width: 90%;
+    color: #333;
+    font-weight: bold;
+}
+ 
