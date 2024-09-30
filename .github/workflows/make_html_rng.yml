@@ -27,6 +27,7 @@ jobs:
           changed_files=$(git diff --name-only ${{github.event.before}} ${{github.sha}})
           if [[ $changed_files == *"frameworks/customFramework"* ]]; then
             echo "changes found in framework"
+            python -m pip config set global.break-system-packages true
             pip install -r pyscripts/requirements.txt
             python pyscripts/increment_version.py
           else
