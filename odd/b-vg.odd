@@ -2163,7 +2163,7 @@
                      <attDef ident="source" mode="delete"/>
                   </attList>
                </elementSpec>
-               <elementSpec ident="ptr" mode="delete"/>
+<!--               <elementSpec ident="ptr" mode="delete"/>-->
                <elementSpec ident="date" mode="change">
                   <attList>
                      <attDef ident="when" mode="change" usage="rec"/>
