@@ -923,7 +923,7 @@
             <head>Appendix</head>
             <schemaSpec ident="tei_b_vg" start="TEI" prefix="undefined" targetLang="de" docLang="de">
                <moduleRef key="header" include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
-               <moduleRef key="core" include=" rs p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address hi pubPlace author title graphic street unclear postCode del gap speaker sp ref relatedItem ptr"/>
+               <moduleRef key="core" include=" rs p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address hi pubPlace author title graphic street unclear postCode del gap speaker sp ref relatedItem"/>
                <!--hi-->
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
@@ -1428,11 +1428,11 @@
                <elementSpec ident="sourceDesc" mode="change">
                   <desc>Dokument auf dem der Inhalt der Datei basiert.</desc>
                   <content>
-                     <alternate maxOccurs="2" minOccurs="1">
+                     <alternate maxOccurs="unbounded" minOccurs="1">
                         <elementRef key="msDesc" minOccurs="1" maxOccurs="1"/>
                         <elementRef key="listWit" minOccurs="0" maxOccurs="1"/>
                         <elementRef key="p" minOccurs="0" maxOccurs="1"/>
-                        <elementRef key="relatedItem" minOccurs="0" maxOccurs="1"/>
+                        <elementRef key="relatedItem" minOccurs="0" maxOccurs="unbounded"/>
                      </alternate>
                   </content>
                </elementSpec>
@@ -1441,25 +1441,14 @@
                   <constraintSpec ident="check_relatedItem_ref" scheme="schematron">
                      <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                         <s:rule context="//tei:relatedItem">
-                           <s:assert test="./tei:ptr[matches(@target, 'bv_doc_id__[0-9]+')]">
-                              Ein relatedItem-Element muss ein ptr-Elelemnt enthalten, dass mittels @target die bv_doc_id des entsprechenden Dokuments verlinkt.
+                           <s:assert test="matches(@target, 'bv_doc_id__[0-9]+')">
+                              Ein relatedItem-Element muss mittels @target die bv_doc_id des entsprechenden Dokuments verlinkt.
                            </s:assert>
                         </s:rule>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec ident="reduce_ptr_usage" scheme="schematron">
-                     <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
-                        <s:rule context="//tei:ptr">
-                           <s:assert test="./parent::tei:realtedItem">
-                              ptr-Elelemnte sind nur innerhalb relatedItem erlaubt.
-                           </s:assert>
-                        </s:rule>
-                     </constraint>
-                  </constraintSpec>
+
                   <desc>Verlinkt ein Dokument, das als Grundlage des konstituierten Textes des aktuellen Dokument dient oder dessen Text auf Grundlage des aktuellen Dokuments konstituiert wurde.</desc>
-                  <content>
-                     <elementRef maxOccurs="1" minOccurs="1" key="ptr"/>
-                  </content>
                   <attList>
                      <attDef ident="type" mode="replace" usage="req">
                         <valList type="closed">
