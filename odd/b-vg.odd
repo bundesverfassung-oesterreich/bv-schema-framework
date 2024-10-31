@@ -1432,6 +1432,7 @@
                         <elementRef key="msDesc" minOccurs="1" maxOccurs="1"/>
                         <elementRef key="listWit" minOccurs="0" maxOccurs="1"/>
                         <elementRef key="p" minOccurs="0" maxOccurs="1"/>
+                        <elementRef key="relatedItem" minOccurs="0" maxOccurs="1"/>
                      </alternate>
                   </content>
                </elementSpec>
