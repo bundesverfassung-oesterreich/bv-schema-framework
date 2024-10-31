@@ -1441,7 +1441,7 @@
                   <constraintSpec ident="check_relatedItem_ref" scheme="schematron">
                      <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                         <s:rule context="//tei:relatedItem">
-                           <s:assert test="./tei:ptr[matches(@target, 'bv_doc_id__[0-9]{2,}')]">
+                           <s:assert test="./tei:ptr[matches(@target, 'bv_doc_id__[0-9]+')]">
                               Ein relatedItem-Element muss ein ptr-Elelemnt enthalten, dass mittels @target die bv_doc_id des entsprechenden Dokuments verlinkt.
                            </s:assert>
                         </s:rule>
