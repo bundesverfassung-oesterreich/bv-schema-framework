@@ -923,7 +923,7 @@
             <head>Appendix</head>
             <schemaSpec ident="tei_b_vg" start="TEI" prefix="undefined" targetLang="de" docLang="de">
                <moduleRef key="header" include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
-               <moduleRef key="core" include=" rs p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address hi pubPlace author title graphic street unclear postCode del gap speaker sp ref relatedItem"/>
+               <moduleRef key="core" include=" rs p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address hi pubPlace author title graphic street unclear postCode del gap speaker sp ref relatedItem ptr"/>
                <!--hi-->
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
