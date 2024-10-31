@@ -923,7 +923,7 @@
             <head>Appendix</head>
             <schemaSpec ident="tei_b_vg" start="TEI" prefix="undefined" targetLang="de" docLang="de">
                <moduleRef key="header" include="teiHeader fileDesc titleStmt publicationStmt sourceDesc abstract change encodingDesc editionStmt revisionDesc profileDesc principal funder idno availability creation licence"/>
-               <moduleRef key="core" include=" rs p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address hi pubPlace author title graphic street unclear postCode del gap speaker sp ref"/>
+               <moduleRef key="core" include=" rs p title note bibl date emph item label pb publisher corr sic choice list author add respStmt resp head biblScope address hi pubPlace author title graphic street unclear postCode del gap speaker sp ref relatedItem"/>
                <!--hi-->
                <moduleRef key="textstructure" include="TEI text body div"/>
                <moduleRef key="tei"/>
@@ -1435,7 +1435,34 @@
                      </alternate>
                   </content>
                </elementSpec>
-               
+               <!-- Da dieser Fall nur wenige Male (4) vorkommt, habe ich ihn nicht in das Framework integiert, sondern selber manuell umgesetzt. -->
+               <elementSpec ident="relatedItem" mode="change">
+                  <constraintSpec ident="check_relatedItem_ref" scheme="schematron">
+                     <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                        <s:rule context="//tei:relatedItem">
+                           <s:assert test="./tei:ptr[matches(@target, 'bv_doc_id__[0-9]{2,}')]">
+                              Ein relatedItem-Element muss ein ptr-Elelemnt enthalten, dass mittels @target die bv_doc_id des entsprechenden Dokuments verlinkt.
+                           </s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  <desc>Verlinkt ein Dokument, das als Grundlage des konstituierten Textes des aktuellen Dokument dient oder dessen Text auf Grundlage des aktuellen Dokuments konstituiert wurde.</desc>
+                  <content>
+                     <elementRef maxOccurs="1" minOccurs="1" key="ptr"/>
+                  </content>
+               </elementSpec>
+               <attList>
+                  <attDef ident="type" mode="replace" usage="req">
+                     <valList type="closed">
+                        <valItem ident="based_on">
+                           <desc>Verlinkt ein Dokument, das als Grundlage des konstituierten Dokumententextes dient.</desc>
+                        </valItem>
+                        <valItem ident="source_for">
+                           <desc>Verlinkt ein Dokument, dessen Text auf Grundlage des aktuellen Dokuments erzeugt wurde.</desc>
+                        </valItem>
+                     </valList>
+                  </attDef>
+               </attList>
                <elementSpec ident="witness" mode="change">
                   <desc>Verlinkt alle weiteren Textzeugen zu einem Dokument, die nicht grundlage der
                      aktuellen Darstellung sind.</desc>
