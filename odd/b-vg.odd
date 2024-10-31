@@ -1447,23 +1447,33 @@
                         </s:rule>
                      </constraint>
                   </constraintSpec>
+                  <constraintSpec ident="reduce_ptr_usage" scheme="schematron">
+                     <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                        <s:rule context="//tei:ptr">
+                           <s:assert test="parent::tei:realtedItem">
+                              Ein relatedItem-Element muss ein ptr-Elelemnt enthalten, dass mittels @target die bv_doc_id des entsprechenden Dokuments verlinkt.
+                           </s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
                   <desc>Verlinkt ein Dokument, das als Grundlage des konstituierten Textes des aktuellen Dokument dient oder dessen Text auf Grundlage des aktuellen Dokuments konstituiert wurde.</desc>
                   <content>
                      <elementRef maxOccurs="1" minOccurs="1" key="ptr"/>
                   </content>
+                  <attList>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList type="closed">
+                           <valItem ident="based_on">
+                              <desc>Verlinkt ein Dokument, das als Grundlage des konstituierten Dokumententextes dient.</desc>
+                           </valItem>
+                           <valItem ident="source_for">
+                              <desc>Verlinkt ein Dokument, dessen Text auf Grundlage des aktuellen Dokuments erzeugt wurde.</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
                </elementSpec>
-               <attList>
-                  <attDef ident="type" mode="replace" usage="req">
-                     <valList type="closed">
-                        <valItem ident="based_on">
-                           <desc>Verlinkt ein Dokument, das als Grundlage des konstituierten Dokumententextes dient.</desc>
-                        </valItem>
-                        <valItem ident="source_for">
-                           <desc>Verlinkt ein Dokument, dessen Text auf Grundlage des aktuellen Dokuments erzeugt wurde.</desc>
-                        </valItem>
-                     </valList>
-                  </attDef>
-               </attList>
+
                <elementSpec ident="witness" mode="change">
                   <desc>Verlinkt alle weiteren Textzeugen zu einem Dokument, die nicht grundlage der
                      aktuellen Darstellung sind.</desc>
