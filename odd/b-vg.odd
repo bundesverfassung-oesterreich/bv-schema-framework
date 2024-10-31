@@ -1450,8 +1450,8 @@
                   <constraintSpec ident="reduce_ptr_usage" scheme="schematron">
                      <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                         <s:rule context="//tei:ptr">
-                           <s:assert test="parent::tei:realtedItem">
-                              Ein relatedItem-Element muss ein ptr-Elelemnt enthalten, dass mittels @target die bv_doc_id des entsprechenden Dokuments verlinkt.
+                           <s:assert test="./parent::tei:realtedItem">
+                              ptr-Elelemnte sind nur innerhalb relatedItem erlaubt.
                            </s:assert>
                         </s:rule>
                      </constraint>
