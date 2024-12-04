@@ -1070,6 +1070,15 @@
                </elementSpec>
                
                <elementSpec ident="idno" mode="change">
+                  <constraintSpec ident="check_setkey" scheme="schematron">
+                     <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                        <s:rule context="//tei:idno[@type='bv_data_set']">
+                           <s:assert test="normalize-space()=('Datenset A', 'Datenset B', 'Datenset C')">
+                              This field shouldn't contain values but 'Datenset A', 'Datenset B' or 'Datenset C'
+                           </s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
                   <desc>contains an identifier equaling the document in different sources</desc>
                   <attList>
                      <attDef ident="type" mode="replace" usage="req">
