@@ -264,7 +264,7 @@
                            das <att>subtype</att>-Attribut des <gi>msDesc</gi>-Element in den
                            Metadaten mit dem Wert <val>primary</val>, im zweiten Fall mit dem Wert
                               <val>secondary</val> versehen werden. Dies ist im Framework über das
-                           Feld ‚Art des Textzeugen‘ oberhalb der ‚Dokumentenbeschreibung‘ möglich.
+                           Feld ‚Art des Textzeugen‘ oberhalb der Überschrift ‚Dokumentenbeschreibung‘ möglich.
                            Existiert nur ein Textzeuge muss kein Wert gesetzt werden.</item>
                         <item>Alle Textzeugen des gleichen Textes müssen untereinander verlinkt
                            werden. Dazu wird dem <gi>listWit</gi>-Element ein
@@ -274,7 +274,8 @@
                            verlinken‘ ausgewählt werden. Unter dem dann generierten Feld ‚Weitere
                            Textzeugen‘ kann dann für jeden Textzeugen ein eigenes Feld angelegt
                            werden, in dem über ein Dropdown die jeweilige B-VG-Id ausgewählt
-                           wird.</item>
+                           wird. Leider müssen die Verlinkungen und Rückverlinkungen zwischen
+                           zwei oder mehr Dokumenten händisch in jedes Dokument eingetragen werden.</item>
                      </list></p>
                </div>
                <div xml:id="protokoll_metadaten">
