@@ -470,8 +470,7 @@
                   </egXML>
                   <p>Im normalfall sollten <gi>p</gi>-Elemente nicht verschachtetl werden. Es kann
                      jedoch in Protokollen vorkommen, dass typographische Absätze juristische
-                     Paragraphen enhalten. Ausschließlich in diesen Fällen ist eine Verschachtelung
-                     von <gi>p</gi>-Elementen zulässig.</p>
+                     Paragraphen enhalten. In diesen Fällen werden die <gi>p</gi> Elemente des zitierten Textes in eine <gi>quote</gi> element gewrapt.</p>
                   <div>
                      <head>Zeilenumbrüche</head>
                      <p>Da Zeilenumbrüche als bloß materiell bedingte typographische Konvention und
@@ -516,6 +515,22 @@
                         <label>2)</label>
                         <item>Inhalt des zweiten Listenpunktes</item>
                      </list>
+                  </egXML>
+               </div>
+               <div>
+                  <head>Zitate</head>
+                  <p>In den Protokollen des Datensets B werden häufig Gesetzestexte zitiert. Um die differenz zum Haupttext zu markieren, müssen diese Zitate von einem <gi>quote</gi>-Element umschlossen werden. Innerhalb dieses Elements sind nur <gi>p</gi> und <gi>head</gi>-Elemente erlaubt, die nicht mit speziellen atrtibuten versehen werden müssen.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p>Der Abgeordnete Kammerhofer schlägt folgende Formulierung vor:
+                        <quote>
+                           <head>Art. III.</head>
+                           <p>Eine Aenderung des Bundesgebietes, die zugleich Aenderung eines
+                              Landesgebietes ist, ebenso eine Aenderung der Landesgrenze innerhalb
+                              des Bundesgebietes, kann nur durch übereinstimmende Verfassungsgesetze
+                              des Bundes und desjenigen Landes erfolgen, dessen Gebiet eine
+                              Veränderung erfährt.</p>
+                        </quote>
+                     </p>
                   </egXML>
                </div>
                <div>
@@ -1838,6 +1853,7 @@
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="fw"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="sp"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="table"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="quote"/>
                      </alternate>
                   </content>
                   <!-- better create a check her to prevent section-divs in art-divs … -->
@@ -1957,6 +1973,7 @@
                         <!-- typographic paragraphs might contain juristic articles in protocolls, see constrain spec -->
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="p"/>
                         <elementRef maxOccurs="unbounded" minOccurs="0" key="ref"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="quote"/>
                      </alternate>
                   </content>
                   <!-- Anpassung des p Elements -->
