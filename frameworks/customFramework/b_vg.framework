@@ -327,7 +327,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>96</Integer>
+											<Integer>92</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -389,7 +389,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>97</Integer>
+											<Integer>93</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -459,7 +459,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>98</Integer>
+											<Integer>94</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -525,7 +525,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>99</Integer>
+											<Integer>95</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -591,7 +591,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>100</Integer>
+											<Integer>96</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -657,7 +657,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>101</Integer>
+											<Integer>97</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -723,7 +723,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>102</Integer>
+											<Integer>98</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -793,7 +793,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>103</Integer>
+											<Integer>99</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -863,7 +863,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>104</Integer>
+											<Integer>100</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -929,7 +929,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>105</Integer>
+											<Integer>101</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -995,7 +995,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>106</Integer>
+											<Integer>102</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1064,7 +1064,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>107</Integer>
+											<Integer>103</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1130,7 +1130,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>108</Integer>
+											<Integer>104</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1197,7 +1197,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>109</Integer>
+											<Integer>105</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1264,7 +1264,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>110</Integer>
+											<Integer>106</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1331,7 +1331,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>111</Integer>
+											<Integer>107</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1400,7 +1400,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>112</Integer>
+											<Integer>108</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1462,7 +1462,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>113</Integer>
+											<Integer>109</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1528,7 +1528,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>114</Integer>
+											<Integer>110</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1591,7 +1591,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>115</Integer>
+											<Integer>111</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1657,7 +1657,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>116</Integer>
+											<Integer>112</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1714,7 +1714,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>117</Integer>
+											<Integer>113</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1781,7 +1781,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>118</Integer>
+											<Integer>114</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1850,7 +1850,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>119</Integer>
+											<Integer>115</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1918,7 +1918,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>120</Integer>
+											<Integer>116</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1984,7 +1984,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>121</Integer>
+											<Integer>117</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -2050,7 +2050,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>122</Integer>
+											<Integer>118</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -2116,6 +2116,72 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
+											<Integer>119</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>insert.quote</String>
+												</field>
+												<field name="name">
+													<String>Zitat</String>
+												</field>
+												<field name="description">
+													<String>Zitat einfügen</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String></String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>element</String>
+																		<String>&lt;quote xmlns="http://www.tei-c.org/ns/1.0">&lt;/quote></String>
+																	</entry>
+																	<entry>
+																		<String>schemaAware</String>
+																		<String>false</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.ToggleSurroundWithElementOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
 											<Integer>7</Integer>
 										</field>
 										<field name="value">
@@ -2133,7 +2199,7 @@
 											<String>authorExtensionDescriptor/menubarDescriptor/menuEntriesDescriptorList</String>
 										</field>
 										<field name="index">
-											<Integer>24</Integer>
+											<Integer>22</Integer>
 										</field>
 										<field name="value">
 											<null/>
@@ -2150,7 +2216,7 @@
 											<String>authorExtensionDescriptor/menubarDescriptor/menuEntriesDescriptorList</String>
 										</field>
 										<field name="index">
-											<Integer>23</Integer>
+											<Integer>21</Integer>
 										</field>
 										<field name="value">
 											<null/>
@@ -2167,40 +2233,6 @@
 											<String>authorExtensionDescriptor/menubarDescriptor/menuEntriesDescriptorList</String>
 										</field>
 										<field name="index">
-											<Integer>22</Integer>
-										</field>
-										<field name="value">
-											<null/>
-										</field>
-										<field name="patchHandling">
-											<String>removeIndex</String>
-										</field>
-										<field name="anchor">
-											<null/>
-										</field>
-									</poPatch>
-									<poPatch>
-										<field name="fieldPath">
-											<String>authorExtensionDescriptor/menubarDescriptor/menuEntriesDescriptorList</String>
-										</field>
-										<field name="index">
-											<Integer>21</Integer>
-										</field>
-										<field name="value">
-											<null/>
-										</field>
-										<field name="patchHandling">
-											<String>removeIndex</String>
-										</field>
-										<field name="anchor">
-											<String>generate.ids</String>
-										</field>
-									</poPatch>
-									<poPatch>
-										<field name="fieldPath">
-											<String>authorExtensionDescriptor/menubarDescriptor/menuEntriesDescriptorList</String>
-										</field>
-										<field name="index">
 											<Integer>20</Integer>
 										</field>
 										<field name="value">
@@ -2210,7 +2242,7 @@
 											<String>removeIndex</String>
 										</field>
 										<field name="anchor">
-											<String>id.options</String>
+											<null/>
 										</field>
 									</poPatch>
 									<poPatch>
@@ -2227,7 +2259,7 @@
 											<String>removeIndex</String>
 										</field>
 										<field name="anchor">
-											<null/>
+											<String>generate.ids</String>
 										</field>
 									</poPatch>
 									<poPatch>
@@ -2244,7 +2276,7 @@
 											<String>removeIndex</String>
 										</field>
 										<field name="anchor">
-											<String>${i18n(table)}</String>
+											<String>id.options</String>
 										</field>
 									</poPatch>
 									<poPatch>
@@ -2261,7 +2293,7 @@
 											<String>removeIndex</String>
 										</field>
 										<field name="anchor">
-											<String>${i18n(list)}</String>
+											<null/>
 										</field>
 									</poPatch>
 									<poPatch>
@@ -2278,7 +2310,7 @@
 											<String>removeIndex</String>
 										</field>
 										<field name="anchor">
-											<String>${i18n(link)}</String>
+											<String>${i18n(table)}</String>
 										</field>
 									</poPatch>
 									<poPatch>
@@ -2295,7 +2327,7 @@
 											<String>removeIndex</String>
 										</field>
 										<field name="anchor">
-											<String>${i18n(style)}</String>
+											<String>${i18n(list)}</String>
 										</field>
 									</poPatch>
 									<poPatch>
@@ -2312,7 +2344,7 @@
 											<String>removeIndex</String>
 										</field>
 										<field name="anchor">
-											<String>${i18n(insert)}</String>
+											<String>${i18n(link)}</String>
 										</field>
 									</poPatch>
 									<poPatch>
@@ -2321,6 +2353,40 @@
 										</field>
 										<field name="index">
 											<Integer>13</Integer>
+										</field>
+										<field name="value">
+											<null/>
+										</field>
+										<field name="patchHandling">
+											<String>removeIndex</String>
+										</field>
+										<field name="anchor">
+											<String>${i18n(style)}</String>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/menubarDescriptor/menuEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>12</Integer>
+										</field>
+										<field name="value">
+											<null/>
+										</field>
+										<field name="patchHandling">
+											<String>removeIndex</String>
+										</field>
+										<field name="anchor">
+											<String>${i18n(insert)}</String>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/menubarDescriptor/menuEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>11</Integer>
 										</field>
 										<field name="value">
 											<null/>
@@ -2524,40 +2590,6 @@
 											<String>authorExtensionDescriptor/popupMenuDescriptor/menuEntriesDescriptorList</String>
 										</field>
 										<field name="index">
-											<Integer>18</Integer>
-										</field>
-										<field name="value">
-											<null/>
-										</field>
-										<field name="patchHandling">
-											<String>removeIndex</String>
-										</field>
-										<field name="anchor">
-											<null/>
-										</field>
-									</poPatch>
-									<poPatch>
-										<field name="fieldPath">
-											<String>authorExtensionDescriptor/popupMenuDescriptor/menuEntriesDescriptorList</String>
-										</field>
-										<field name="index">
-											<Integer>17</Integer>
-										</field>
-										<field name="value">
-											<null/>
-										</field>
-										<field name="patchHandling">
-											<String>removeIndex</String>
-										</field>
-										<field name="anchor">
-											<String>${i18n(about.element)}</String>
-										</field>
-									</poPatch>
-									<poPatch>
-										<field name="fieldPath">
-											<String>authorExtensionDescriptor/popupMenuDescriptor/menuEntriesDescriptorList</String>
-										</field>
-										<field name="index">
 											<Integer>16</Integer>
 										</field>
 										<field name="value">
@@ -2584,7 +2616,7 @@
 											<String>removeIndex</String>
 										</field>
 										<field name="anchor">
-											<String>show.key.definition</String>
+											<String>${i18n(about.element)}</String>
 										</field>
 									</poPatch>
 									<poPatch>
@@ -2601,7 +2633,7 @@
 											<String>removeIndex</String>
 										</field>
 										<field name="anchor">
-											<String>find.similar.topics</String>
+											<null/>
 										</field>
 									</poPatch>
 									<poPatch>
@@ -2610,6 +2642,40 @@
 										</field>
 										<field name="index">
 											<Integer>13</Integer>
+										</field>
+										<field name="value">
+											<null/>
+										</field>
+										<field name="patchHandling">
+											<String>removeIndex</String>
+										</field>
+										<field name="anchor">
+											<String>show.key.definition</String>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/popupMenuDescriptor/menuEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>12</Integer>
+										</field>
+										<field name="value">
+											<null/>
+										</field>
+										<field name="patchHandling">
+											<String>removeIndex</String>
+										</field>
+										<field name="anchor">
+											<String>find.similar.topics</String>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/popupMenuDescriptor/menuEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>11</Integer>
 										</field>
 										<field name="value">
 											<null/>
@@ -3138,6 +3204,27 @@
 										</field>
 										<field name="index">
 											<Integer>32</Integer>
+										</field>
+										<field name="value">
+											<toolbarItem>
+												<field name="actionID">
+													<String>insert.quote</String>
+												</field>
+											</toolbarItem>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>33</Integer>
 										</field>
 										<field name="value">
 											<toolbarSeparator/>
@@ -5547,7 +5634,7 @@ oxy:allows-global-element("*", "class", " topic/simpletable ")</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("*", "class", " topic/image ") or ancestor-or-self::hazardstatement</String>
+														<String>oxy:allows-child-element("*", "class", " topic/image ")</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap/>
@@ -8000,20 +8087,6 @@ return
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:current-selected-element()[contains(@class," topic/ol ")] or
-oxy:current-selected-element()[contains(@class," topic/ul ")] or
-oxy:current-selected-element()[contains(@class," topic/sl ")] or
-oxy:current-selected-element()[contains(@class," topic/dl ")]</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap/>
-													</field>
-													<field name="operationID">
-														<String>ro.sync.ecss.extensions.commons.sort.DITAListSortOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
 														<String>oxy:current-selected-element()[contains(@class," topic/table ")] or
 oxy:current-selected-element()[contains(@class," topic/tbody ")] or
 oxy:current-selected-element()[contains(@class," topic/thead ")] or
@@ -8043,7 +8116,11 @@ ancestor-or-self::node()[self::*[contains(@class," topic/simpletable ")
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::node()[self::*[contains(@class," topic/tbody ") or contains(@class," topic/thead ") or contains(@class," topic/ul ") or contains(@class," topic/ol ")  or contains(@class," topic/sl ") or contains(@class," topic/dl ")]][1][self::*[ contains(@class," topic/ul ") or contains(@class," topic/ol ") or contains(@class," topic/sl ") or contains(@class," topic/dl ")]]</String>
+														<String>oxy:current-selected-element()[contains(@class," topic/ol ")] or
+oxy:current-selected-element()[contains(@class," topic/ul ")] or
+oxy:current-selected-element()[contains(@class," topic/sl ")] or
+oxy:current-selected-element()[contains(@class," topic/dl ")] or
+ancestor-or-self::node()[self::*[contains(@class," topic/tbody ") or contains(@class," topic/thead ") or contains(@class," topic/ul ") or contains(@class," topic/ol ")  or contains(@class," topic/sl ") or contains(@class," topic/dl ")]][1][self::*[ contains(@class," topic/ul ") or contains(@class," topic/ol ") or contains(@class," topic/sl ") or contains(@class," topic/dl ")]]</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap/>
@@ -10067,261 +10144,6 @@ self::image[empty(parent::imagemap)] or oxy:current-selected-element()[self::ima
 											<Boolean>false</Boolean>
 										</field>
 									</action>
-									<action>
-										<field name="id">
-											<String>create.topic.from.selection</String>
-										</field>
-										<field name="name">
-											<String>${i18n(Extract_Topic_From_Selection)}</String>
-										</field>
-										<field name="description">
-											<String>${i18n(Extract_Topic_From_Selection_description)}</String>
-										</field>
-										<field name="largeIconPath">
-											<String></String>
-										</field>
-										<field name="smallIconPath">
-											<String></String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
-												<actionMode>
-													<field name="xpathCondition">
-														<String></String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap/>
-													</field>
-													<field name="operationID">
-														<String>ro.sync.ecss.extensions.dita.topic.CreateNewTopicFromSelectionOperation</String>
-													</field>
-												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
-									<action>
-										<field name="id">
-											<String>insert.keyword.label</String>
-										</field>
-										<field name="name">
-											<String>${i18n(insert.keyword.label)}</String>
-										</field>
-										<field name="description">
-											<String>${i18n(insert.keyword.label_description)}</String>
-										</field>
-										<field name="largeIconPath">
-											<String></String>
-										</field>
-										<field name="smallIconPath">
-											<String></String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>ancestor-or-self::*[contains(@class, ' topic/topic ')] and not(ancestor-or-self::*[contains(@class, ' topic/topic ')]/*[contains(@class, ' topic/prolog ')])</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>fragment</String>
-																<String>&lt;prolog>
-  &lt;metadata>
-    &lt;keywords>
-      &lt;keyword outputclass="label"/>
-    &lt;/keywords>    
-  &lt;/metadata>
-&lt;/prolog></String>
-															</entry>
-															<entry>
-																<String>insertLocation</String>
-																<String>ancestor-or-self::*[contains(@class, ' topic/topic ')]</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>ancestor-or-self::*[contains(@class, ' topic/topic ')][*[contains(@class, ' topic/prolog ')]] and not(ancestor-or-self::*[contains(@class, ' topic/topic ')]/*[contains(@class, ' topic/prolog ')]/*[contains(@class, ' topic/metadata ')])</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>fragment</String>
-																<String>&lt;metadata>
-    &lt;keywords>
-        &lt;keyword outputclass="label"/>
-    &lt;/keywords>
-&lt;/metadata></String>
-															</entry>
-															<entry>
-																<String>insertLocation</String>
-																<String>ancestor-or-self::*[contains(@class, ' topic/topic ')]/*[contains(@class, ' topic/prolog ')]</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>ancestor-or-self::*[contains(@class, ' topic/topic ')][*[contains(@class, ' topic/prolog ')][*[contains(@class, ' topic/metadata ')]]] and not(ancestor-or-self::*[contains(@class, ' topic/topic ')]/*[contains(@class, ' topic/prolog ')]/*[contains(@class, ' topic/metadata ')]/*[contains(@class, ' topic/keywords ')])</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>fragment</String>
-																<String>&lt;keywords>
-    &lt;keyword outputclass="label"/>
-&lt;/keywords></String>
-															</entry>
-															<entry>
-																<String>insertLocation</String>
-																<String>ancestor-or-self::*[contains(@class, ' topic/topic ')]/*[contains(@class, ' topic/prolog ')]/*[contains(@class, ' topic/metadata ')]</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>ancestor-or-self::*[contains(@class, ' topic/topic ')][*[contains(@class, ' topic/prolog ')][*[contains(@class, ' topic/metadata ')][*[contains(@class, ' topic/keywords ')]]]]</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>fragment</String>
-																<String>&lt;keyword outputclass="label"/></String>
-															</entry>
-															<entry>
-																<String>insertLocation</String>
-																<String>ancestor-or-self::*[contains(@class, ' topic/topic ')]/*[contains(@class, ' topic/prolog ')]/*[contains(@class, ' topic/metadata ')]/*[contains(@class, ' topic/keywords ')]</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
-													</field>
-												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
-									<action>
-										<field name="id">
-											<String>reuse.show.keys</String>
-										</field>
-										<field name="name">
-											<String>${i18n(show.dita.keys)}</String>
-										</field>
-										<field name="description">
-											<String>${i18n(show.dita.keys.description)}</String>
-										</field>
-										<field name="largeIconPath">
-											<String></String>
-										</field>
-										<field name="smallIconPath">
-											<String></String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>oxy:platform()="standalone"</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>show</String>
-																<String>keys</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>ro.sync.ecss.extensions.dita.reuse.ShowKeysAndReusableComponentsOperation</String>
-													</field>
-												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
-									<action>
-										<field name="id">
-											<String>reuse.show.components</String>
-										</field>
-										<field name="name">
-											<String>${i18n(show.dita.components)}</String>
-										</field>
-										<field name="description">
-											<String>${i18n(show.dita.components.description)}</String>
-										</field>
-										<field name="largeIconPath">
-											<String></String>
-										</field>
-										<field name="smallIconPath">
-											<String></String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>oxy:platform()="standalone"</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>show</String>
-																<String>components</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>ro.sync.ecss.extensions.dita.reuse.ShowKeysAndReusableComponentsOperation</String>
-													</field>
-												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -10377,12 +10199,6 @@ self::image[empty(parent::imagemap)] or oxy:current-selected-element()[self::ima
 											<menuItem>
 												<field name="actionID">
 													<String>insert_reusable_component</String>
-												</field>
-											</menuItem>
-											<menuSeparator/>
-											<menuItem>
-												<field name="actionID">
-													<String>create.topic.from.selection</String>
 												</field>
 											</menuItem>
 											<menuSeparator/>
@@ -10484,11 +10300,6 @@ self::image[empty(parent::imagemap)] or oxy:current-selected-element()[self::ima
 															</field>
 														</menuItem>
 														<menuSeparator/>
-														<menuItem>
-															<field name="actionID">
-																<String>insert.keyword.label</String>
-															</field>
-														</menuItem>
 														<menuItem>
 															<field name="actionID">
 																<String>insert.intent.question</String>
@@ -10977,11 +10788,6 @@ self::image[empty(parent::imagemap)] or oxy:current-selected-element()[self::ima
 														<menuSeparator/>
 														<menuItem>
 															<field name="actionID">
-																<String>insert.keyword.label</String>
-															</field>
-														</menuItem>
-														<menuItem>
-															<field name="actionID">
 																<String>insert.intent.question</String>
 															</field>
 														</menuItem>
@@ -11203,12 +11009,6 @@ self::image[empty(parent::imagemap)] or oxy:current-selected-element()[self::ima
 													<null/>
 												</field>
 											</menu>
-											<menuItem>
-												<field name="actionID">
-													<String>create.topic.from.selection</String>
-												</field>
-											</menuItem>
-											<menuSeparator/>
 											<menuItem>
 												<field name="actionID">
 													<String>search.references</String>
@@ -11499,56 +11299,6 @@ self::image[empty(parent::imagemap)] or oxy:current-selected-element()[self::ima
 								<contextProvider>
 									<field name="items">
 										<contextItem-array>
-											<contextItem>
-												<field name="targets">
-													<list>
-														<Integer>0</Integer>
-													</list>
-												</field>
-												<field name="actionID">
-													<String>reuse.show.keys</String>
-												</field>
-												<field name="alias">
-													<String>keyref...</String>
-												</field>
-												<field name="replacementFor">
-													<null/>
-												</field>
-												<field name="replacedElementNs">
-													<String></String>
-												</field>
-												<field name="displayOnlyWhenElementAllowed">
-													<Boolean>false</Boolean>
-												</field>
-												<field name="useReplaceElementName">
-													<Boolean>false</Boolean>
-												</field>
-											</contextItem>
-											<contextItem>
-												<field name="targets">
-													<list>
-														<Integer>0</Integer>
-													</list>
-												</field>
-												<field name="actionID">
-													<String>reuse.show.components</String>
-												</field>
-												<field name="alias">
-													<String>conref...</String>
-												</field>
-												<field name="replacementFor">
-													<null/>
-												</field>
-												<field name="replacedElementNs">
-													<String></String>
-												</field>
-												<field name="displayOnlyWhenElementAllowed">
-													<Boolean>false</Boolean>
-												</field>
-												<field name="useReplaceElementName">
-													<Boolean>false</Boolean>
-												</field>
-											</contextItem>
 											<contextItem>
 												<field name="targets">
 													<list>
@@ -12527,6 +12277,9 @@ self::image[empty(parent::imagemap)] or oxy:current-selected-element()[self::ima
 								<field name="lastCustomSkinCssPath">
 									<null/>
 								</field>
+								<field name="webhelpResponsiveTemplate">
+									<null/>
+								</field>
 								<field name="publishingTemplateDataPO">
 									<null/>
 								</field>
@@ -12698,6 +12451,9 @@ self::image[empty(parent::imagemap)] or oxy:current-selected-element()[self::ima
 								<field name="lastCustomSkinCssPath">
 									<null/>
 								</field>
+								<field name="webhelpResponsiveTemplate">
+									<null/>
+								</field>
 								<field name="publishingTemplateDataPO">
 									<null/>
 								</field>
@@ -12867,6 +12623,9 @@ self::image[empty(parent::imagemap)] or oxy:current-selected-element()[self::ima
 									<null/>
 								</field>
 								<field name="lastCustomSkinCssPath">
+									<null/>
+								</field>
+								<field name="webhelpResponsiveTemplate">
 									<null/>
 								</field>
 								<field name="publishingTemplateDataPO">
@@ -13072,6 +12831,9 @@ self::image[empty(parent::imagemap)] or oxy:current-selected-element()[self::ima
 									<null/>
 								</field>
 								<field name="lastCustomSkinCssPath">
+									<null/>
+								</field>
+								<field name="webhelpResponsiveTemplate">
 									<null/>
 								</field>
 								<field name="publishingTemplateDataPO">

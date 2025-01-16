@@ -833,6 +833,14 @@ head:before {
     content: "\a";
 }
 
+quote {
+    display: block;
+    padding: 1rem;
+    font-size: 0.7rem;
+    margin: 1rem;
+    background-color: rgb(127, 255, 212);
+}
+
 p {
     display: block;
     color: black;
