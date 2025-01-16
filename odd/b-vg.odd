@@ -521,7 +521,7 @@
                   <head>Zitate</head>
                   <p>In den Protokollen des Datensets B werden häufig Gesetzestexte zitiert. Um die differenz zum Haupttext zu markieren, müssen diese Zitate von einem <gi>quote</gi>-Element umschlossen werden. Innerhalb dieses Elements sind nur <gi>p</gi> und <gi>head</gi>-Elemente erlaubt, die nicht mit speziellen atrtibuten versehen werden müssen.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <p>Der Abgeordnete Kammerhofer schlägt folgende Formulierung vor:
+                     <p>Der Abgeordnete schlägt folgende Formulierung vor:
                         <quote>
                            <head>Art. III.</head>
                            <p>Eine Aenderung des Bundesgebietes, die zugleich Aenderung eines
