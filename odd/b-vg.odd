@@ -1980,7 +1980,7 @@
                   <constraintSpec ident="check_p_encapsulation" scheme="schematron">
                      <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
                         <s:rule
-                           context="//tei:p[.//tei:p and not(ancestor::tei:div[@type='editorialChapter'])]">
+                           context="//tei:p[.//tei:p[not(parent::tei:quote)] and not(ancestor::tei:div[@type='editorialChapter'])]">
                            <s:assert test="not(@type) and .//tei:p[@type='legal_section']">nur
                               typographische Absätze (p-Element ohne type) dürfen einen juristischen
                               Paragraphen (p-Element mit type=legal_section) enthalten</s:assert>
