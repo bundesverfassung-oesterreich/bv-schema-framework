@@ -37,12 +37,14 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: prepared new addon version
+      - name: remove older html outputs
+        run: |
+          if [ -d $HTML_OUTOUT_DIR ]; then rm -rf $HTML_OUTOUT_DIR; fi
+          mkdir $HTML_OUTOUT_DIR
       # - name: send odd get xhtml/rng
       #   run: |
       #     index_path="${HTML_OUTOUT_DIR}index.html"
       #     css_path="${HTML_OUTOUT_DIR}site.css"
-      #     rm -rf "$HTML_OUTOUT_DIR"
-      #     mkdir "$HTML_OUTOUT_DIR"
       #     echo "sending post request to teigarage"
       #     curl -X 'POST' \
       #       'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/oddhtml%3Aapplication%3Axhtml%2Bxml/' \
