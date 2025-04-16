@@ -37,40 +37,40 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: prepared new addon version
-      - name: send odd get xhtml/rng
-        run: |
-          index_path="${HTML_OUTOUT_DIR}index.html"
-          css_path="${HTML_OUTOUT_DIR}site.css"
-          rm -rf "$HTML_OUTOUT_DIR"
-          mkdir "$HTML_OUTOUT_DIR"
-          echo "sending post request to teigarage"
-          curl -X 'POST' \
-            'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/oddhtml%3Aapplication%3Axhtml%2Bxml/' \
-            -F 'fileToConvert=@./odd/b-vg.odd' \
-            -o "$index_path"
-          # we link local css to retrieved html
-          # this is how this is supposed to be done ;)
-          sed -i 's/<link rel="stylesheet"/<link rel="stylesheet" type="text\/css" href=".\/site.css"\/><link rel="stylesheet"/g' $index_path
-          # we create a css file
-          cat > $css_path <<- EOM
-            body {
-              padding-left: 25%;
-              padding-right: 25%;
-              max-width: 40rem;
-              min-width: 60rem;
-            }
+      # - name: send odd get xhtml/rng
+      #   run: |
+      #     index_path="${HTML_OUTOUT_DIR}index.html"
+      #     css_path="${HTML_OUTOUT_DIR}site.css"
+      #     rm -rf "$HTML_OUTOUT_DIR"
+      #     mkdir "$HTML_OUTOUT_DIR"
+      #     echo "sending post request to teigarage"
+      #     curl -X 'POST' \
+      #       'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/oddhtml%3Aapplication%3Axhtml%2Bxml/' \
+      #       -F 'fileToConvert=@./odd/b-vg.odd' \
+      #       -o "$index_path"
+      #     # we link local css to retrieved html
+      #     # this is how this is supposed to be done ;)
+      #     sed -i 's/<link rel="stylesheet"/<link rel="stylesheet" type="text\/css" href=".\/site.css"\/><link rel="stylesheet"/g' $index_path
+      #     # we create a css file
+      #     cat > $css_path <<- EOM
+      #       body {
+      #         padding-left: 25%;
+      #         padding-right: 25%;
+      #         max-width: 40rem;
+      #         min-width: 60rem;
+      #       }
 
-            h1 {
-              margin-left: 0rem !important;
-              color: rgb(58, 58, 58) !important;
-            }
+      #       h1 {
+      #         margin-left: 0rem !important;
+      #         color: rgb(58, 58, 58) !important;
+      #       }
 
-            a {
-              color: rgb(58, 58, 58) !important;
-              text-decoration:none !important;
-              font-weight: bolder;
-            }
-          EOM
+      #       a {
+      #         color: rgb(58, 58, 58) !important;
+      #         text-decoration:none !important;
+      #         font-weight: bolder;
+      #       }
+      #     EOM
       - name: send odd get rng
         run: |
           rng_output_dir="./rng/"
