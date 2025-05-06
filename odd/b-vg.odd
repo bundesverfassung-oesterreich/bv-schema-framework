@@ -885,13 +885,12 @@
                      die Stelle der nichtleserlichen Zeichen/Worte der <gi>gap</gi>-Tag gesetzt
                      werden, der die Lücke in der Transkription entsprechend qualifiziert. Mittels
                         <att>reason</att> = <val>illegible</val> wird der Grund – mangelnde
-                     Lesbarkeit – explizit gemacht, mittels <gi>extend</gi>, wird angegeben, welche
-                     mutmaßliche Anzahl von Worten/Zeichen nicht gelesen werden konnte.</p>
+                     Lesbarkeit – explizit gemacht.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <body>
                         <div>
                            <p>Hier existiert eine Lücke in der Transkription, der Text solle
-                              leserlich geschrieben sein, ist aber nicht <gap extend="1 Wort" reason="illegible"/> geschrieben.</p>
+                              leserlich geschrieben sein, ist aber nicht <gap reason="illegible"/> geschrieben.</p>
                         </div>
                      </body>
                   </egXML>
@@ -1332,6 +1331,7 @@
                      <attDef ident="next" mode="delete"/>
                      <attDef ident="prev" mode="delete"/>
                      <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="extent" mode="delete"/>
                      <attDef ident="select" mode="delete"/>
                      <attDef ident="ana" mode="delete"/>
                      <attDef ident="facs" mode="delete"/>
@@ -1362,13 +1362,6 @@
                               <desc>unelserliche Stelle</desc>
                            </valItem>
                         </valList>
-                     </attDef>
-                     <attDef ident="extend" mode="change" usage="rec">
-                        <desc>geschätzter Umfang der unleserlichen Stelle ("1 Wort", "3 Buchstaben"
-                           o.ä.)</desc>
-                        <datatype>
-                           <dataRef key="teidata.text"/>
-                        </datatype>
                      </attDef>
                   </attList>
                </elementSpec>
