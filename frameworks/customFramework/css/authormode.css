@@ -933,6 +933,14 @@ list item {
     margin: 1rem;
     padding: 1rem;
 }
+
+gap {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+}
+
 pb {
     display: block;
     font-size: 2rem;
