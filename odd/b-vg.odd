@@ -1397,7 +1397,8 @@
                </elementSpec>
 
                <elementSpec ident="add" mode="change">
-                  <desc>Text der der Grundschicht hinzugefügt wurde</desc>
+                  <desc>enthält nachträglich (in eigenem Überarbeitungsvorgang) hinzugefügten
+                     Text</desc>
                   <attList>
                      <attDef ident="rend" mode="delete"/>
                      <attDef ident="style" mode="delete"/>
@@ -1436,6 +1437,13 @@
                      <attDef ident="max" mode="delete"/>
                      <attDef ident="confidence" mode="delete"/>
                   </attList>
+                  <content>
+                     <sequence>
+                        <macroRef key="macro.paraContent"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="p"/>
+                        <elementRef maxOccurs="unbounded" minOccurs="0" key="head"/>
+                     </sequence>
+                  </content>
                </elementSpec>
 
                <elementSpec ident="del" mode="change">
@@ -1795,18 +1803,6 @@
                   </attList>
                </elementSpec>
 
-               <elementSpec ident="add" mode="replace">
-                  <desc>enthält nachträglich (in eigenem Überarbeitungsvorgang) hinzugefügten
-                     Text</desc>
-                  <content>
-                     <sequence>
-                        <macroRef key="macro.paraContent"/>
-                        <elementRef maxOccurs="unbounded" minOccurs="0" key="p"/>
-                        <elementRef maxOccurs="unbounded" minOccurs="0" key="head"/>
-                     </sequence>
-                  </content>
-               </elementSpec>
-
                <elementSpec ident="head" mode="change">
                   <desc>encodes heading of some sort</desc>
                   <!-- Anpassung des head Elements -->
@@ -2100,9 +2096,14 @@
                      </attDef>-->
                      <attDef ident="hand" mode="delete"/>
                   </attList>
-                  <content>
-                     <macroRef key="macro.paraContent"/>
-                  </content>
+                  <!--                  <content>
+                     <alternate minOccurs="0"
+                        maxOccurs="unbounded">
+                        <macroRef key="macro.paraContent"/>
+                        <elementRef key="add" minOccurs="0" maxOccurs="1"/>
+                     </alternate>
+                     
+                  </content>-->
                </elementSpec>
 
                <elementSpec ident="fw" mode="change">
