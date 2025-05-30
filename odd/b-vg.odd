@@ -2100,6 +2100,9 @@
                      </attDef>-->
                      <attDef ident="hand" mode="delete"/>
                   </attList>
+                  <content>
+                     <macroRef key="macro.paraContent"/>
+                  </content>
                </elementSpec>
 
                <elementSpec ident="fw" mode="change">
