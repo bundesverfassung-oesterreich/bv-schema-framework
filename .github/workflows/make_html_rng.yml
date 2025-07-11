@@ -40,8 +40,8 @@ jobs:
       - name: send odd get xhtml/rng
         run: |
           docu_source_dir="html_docu_source"
-          index_path="${docu_source_dir}index.html"
-          css_path="${docu_source_dir}site.css"
+          index_path="${docu_source_dir}/index.html"
+          css_path="${docu_source_dir}/site.css"
           echo "sending post request to teigarage"
           curl -X 'POST' \
             'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/oddhtml%3Aapplication%3Axhtml%2Bxml/' \
