@@ -43,8 +43,9 @@ jobs:
           mkdir $HTML_OUTOUT_DIR
       - name: send odd get xhtml/rng
         run: |
-          index_path="${HTML_OUTOUT_DIR}index.html"
-          css_path="${HTML_OUTOUT_DIR}site.css"
+          docu_source_dir="html_docu_source"
+          index_path="${docu_source_dir}index.html"
+          css_path="${docu_source_dir}site.css"
           echo "sending post request to teigarage"
           curl -X 'POST' \
             'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/oddhtml%3Aapplication%3Axhtml%2Bxml/' \
