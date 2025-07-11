@@ -33,10 +33,6 @@ jobs:
           else
             echo "no changes in framework"
           fi
-      - name: Commit data
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: prepared new addon version
       - name: remove older html outputs
         run: |
           if [ -d $HTML_OUTOUT_DIR ]; then rm -rf $HTML_OUTOUT_DIR; fi
@@ -74,6 +70,10 @@ jobs:
               font-weight: bolder;
             }
           EOM
+      - name: Commit data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: prepared new addon version
       - name: send odd get rng
         run: |
           rng_output_dir="./rng/"
