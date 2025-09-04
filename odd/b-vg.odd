@@ -1644,9 +1644,9 @@
 </valItem><valItem ident="#bv_doc_id__55">
 <desc>Protokoll Linzer Länderkonferenz 1920</desc>
 </valItem><valItem ident="#bv_doc_id__56">
-<desc>Protokoll 1. Länderkonferenz 23. November 1918</desc>
+<desc>Protokoll 1. Länderkonferenz</desc>
 </valItem><valItem ident="#bv_doc_id__57">
-<desc>Protokoll 2. Länderkonferenz 4. und 5. Jänner 1919</desc>
+<desc>Protokoll 2. Länderkonferenz</desc>
 </valItem><valItem ident="#bv_doc_id__58">
 <desc>Protokoll 3. Länderkonferenz</desc>
 </valItem><valItem ident="#bv_doc_id__59">
@@ -1660,7 +1660,7 @@
 </valItem><valItem ident="#bv_doc_id__63">
 <desc>Bericht VfA Sonderdruck</desc>
 </valItem><valItem ident="#bv_doc_id__64">
-<desc>VfÜG Sonderdruck</desc>
+<desc>VfÜG Sonderdruck mit Unterschriften der Regierung</desc>
 </valItem><valItem ident="#bv_doc_id__65">
 <desc>Gegenüberstellung der Differenzpunkte CS SD</desc>
 </valItem><valItem ident="#bv_doc_id__66">
@@ -1672,11 +1672,11 @@
 </valItem><valItem ident="#bv_doc_id__69">
 <desc>Großdeutsch Textvariante 2</desc>
 </valItem><valItem ident="#bv_doc_id__70">
-<desc>Bericht 5. Länderkonferenz 20. Mai 1919</desc>
+<desc>Protokoll 5. Länderkonferenz - Bericht</desc>
 </valItem><valItem ident="#bv_doc_id__71">
-<desc>Ministerialentwurf II Typoskript aus VGA Archiv</desc>
+<desc>Ministerial Entwurf II</desc>
 </valItem><valItem ident="#bv_doc_id__72">
-<desc>Danneberg I Typoskript aus VGA Archiv</desc>
+<desc>Danneberg Entwurf I</desc>
 </valItem><valItem ident="#bv_doc_id__73">
 <desc>Protokoll Zwischenamtliche Sitzung 11. Oktober 1919</desc>
 </valItem><valItem ident="#bv_doc_id__74">
@@ -1686,7 +1686,7 @@
 </valItem><valItem ident="#bv_doc_id__76">
 <desc>Protokoll Zwischenamtliche Sitzung 13 November 1919</desc>
 </valItem><valItem ident="#bv_doc_id__77">
-<desc>Protokoll Zwischenamtliche Sitzung 11. Oktober 1919 (Fassung Staatskanzlei)</desc>
+<desc>Protokoll Zwischenamtliche Sitzung 11. Oktober 1919 - Fassung der Staatskanzlei</desc>
 </valItem><valItem ident="#bv_doc_id__78">
 <desc>Renner-Mayr saubere Version – Fassung Renner</desc>
 </valItem><valItem ident="#bv_doc_id__79">
@@ -1696,7 +1696,7 @@
 </valItem><valItem ident="#bv_doc_id__84">
 <desc>Evidenzexemplar Entwurf maschinschriftlich – Sozialdemokratische Fassung</desc>
 </valItem><valItem ident="#bv_doc_id__85">
-<desc>Akademikerentwurf Tirol</desc>
+<desc>Akademiker Entwurf Tirol</desc>
 </valItem><valItem ident="#bv_doc_id__86">
 <desc>Protokoll der 21. Sitzung des Verfassungsausschusses</desc>
 </valItem><valItem ident="#bv_doc_id__87">
@@ -1710,21 +1710,21 @@
 </valItem><valItem ident="#bv_doc_id__91">
 <desc>Protokoll der 26. Sitzung des Verfassungsausschusses</desc>
 </valItem><valItem ident="#bv_doc_id__92">
-<desc>B-VG als Bundesgesetzblatt</desc>
+<desc>B-VG Bundesgesetzblatt</desc>
 </valItem><valItem ident="#bv_doc_id__93">
-<desc>Protokoll Parteienverhandlungen 1.-2.9.1920</desc>
+<desc>Protokoll Parteienverhandlungen CS SD 1.-2.9.1920</desc>
 </valItem><valItem ident="#bv_doc_id__94">
-<desc>Protokoll Parteienverhandlungen 18.9.1920</desc>
+<desc>Protokoll Parteienverhandlungen CS SD 18.9.1920</desc>
 </valItem><valItem ident="#bv_doc_id__95">
-<desc>Kommentar der Christlichsozialen zu Kelsen I</desc>
+<desc>Kommentar der CS zu Kelsen Entwurf I</desc>
 </valItem><valItem ident="#bv_doc_id__96">
-<desc>CS I Textvariante</desc>
+<desc>CS Entwurf I Textvariante</desc>
 </valItem><valItem ident="#bv_doc_id__97">
 <desc>Protokolle über die Verfassungsgespräche Mayrs in den Ländern</desc>
 </valItem><valItem ident="#bv_doc_id__98">
 <desc>Positionspapier Föderative Republik Deutschösterreich</desc>
 </valItem><valItem ident="#bv_doc_id__99">
-<desc>Falser II Typoskript</desc>
+<desc>Falser Entwurf II</desc>
 </valItem><valItem ident="#bv_doc_id__100">
 <desc>Konzept für Kompromissentwurf</desc>
 </valItem><valItem ident="#bv_doc_id__101">
@@ -1737,6 +1737,172 @@
 <desc>Protokoll Konstituierende Nationalversammlung 30. September 1920</desc>
 </valItem><valItem ident="#bv_doc_id__105">
 <desc>Protokoll Konstituierende Nationalversammlung 1. Oktober 1920</desc>
+</valItem><valItem ident="#bv_doc_id__106">
+<desc>Besprechung von Vertretern der Landwirtschaft nach der Salzburger Länderkonferenz</desc>
+</valItem><valItem ident="#bv_doc_id__107">
+<desc>Stellungnahme der Staatskanzlei zu Falser Entwurf II</desc>
+</valItem><valItem ident="#bv_doc_id__108">
+<desc>Stellungnahme des Staatsrechnungshofes zur Verfassungsfrage</desc>
+</valItem><valItem ident="#bv_doc_id__109">
+<desc>Gutachten zur Stellung des Bundespräsidenten in den Verfassungsentwürfen</desc>
+</valItem><valItem ident="#bv_doc_id__110">
+<desc>Minderheitsanträge im Verfassungsausschuss</desc>
+</valItem><valItem ident="#bv_doc_id__111">
+<desc>Abhandlung Kelsens über die Stellung der Länder in der künftigen Verfassung Deutschösterreichs</desc>
+</valItem><valItem ident="#bv_doc_id__112">
+<desc>Dokumente und Stellungnahmen zur Linzer Länderkonferenz</desc>
+</valItem><valItem ident="#bv_doc_id__113">
+<desc>Gutachten Kelsens über die staatsrechtliche Stellung Deutschösterreichs</desc>
+</valItem><valItem ident="#bv_doc_id__114">
+<desc>Amtsveranlassung für die Länderkonferenz in Salzburg</desc>
+</valItem><valItem ident="#bv_doc_id__115">
+<desc>Stellungnahme von Professor Max Kulisch zum Verfassungsentwurf</desc>
+</valItem><valItem ident="#bv_doc_id__116">
+<desc>Stellungnahme von Professor Karl Lamp zum Verfassungsentwurf</desc>
+</valItem><valItem ident="#bv_doc_id__117">
+<desc>Stellungnahme von Professor Friedrich Tezner zum Verfassungsentwurf (betr. Verwaltungsgerichtshof)</desc>
+</valItem><valItem ident="#bv_doc_id__118">
+<desc>Stellungnahme von Professor Max Layer zum Verfassungsentwurf</desc>
+</valItem><valItem ident="#bv_doc_id__119">
+<desc>Systematischer Aufbau der Bundesverfassung nach einem Entwurf Kelsens</desc>
+</valItem><valItem ident="#bv_doc_id__120">
+<desc>Elaborate zur Finanzfrage in der Bundesverfassung</desc>
+</valItem><valItem ident="#bv_doc_id__121">
+<desc>Versuch einer Ausgaben- und Einnahmenrechnung zwischen Bund und Ländern</desc>
+</valItem><valItem ident="#bv_doc_id__122">
+<desc>Studie zur Finanzverfassung im Bundesstaat</desc>
+</valItem><valItem ident="#bv_doc_id__123">
+<desc>Finanzielle Leistungen von Bund und Ländern</desc>
+</valItem><valItem ident="#bv_doc_id__124">
+<desc>Aufteilung des Steuererhebungsrechts auf Bund und Länder</desc>
+</valItem><valItem ident="#bv_doc_id__125">
+<desc>Expose über die innere Organisation des Rechnungshofes</desc>
+</valItem><valItem ident="#bv_doc_id__126">
+<desc>Expose des Präsidenten des Rechnungshofes über dessen Zuständigkeit in den Ländern</desc>
+</valItem><valItem ident="#bv_doc_id__127">
+<desc>Grundsätze und Bemerkungen der Staatskanzlei zu einzelnen Aspekten der Verfassungsfrage</desc>
+</valItem><valItem ident="#bv_doc_id__128">
+<desc>Zusammenfassung der Besprechung von Staatssekretär Mayr mit Vertretern der Christlichsozialen und Deutschn-Freiheitlichen nach der Länderkonferenz in Salzburg</desc>
+</valItem><valItem ident="#bv_doc_id__129">
+<desc>Studie - Die Länder und die Staatsverfassung - betreffend deren verfassungsrechtliche Stellung</desc>
+</valItem><valItem ident="#bv_doc_id__130">
+<desc>Stellungnahmen der Staatssekretariate zur Frage der Kompetenzabgrenzung zwischen Bund und Ländern</desc>
+</valItem><valItem ident="#bv_doc_id__131">
+<desc>Studie über die Grenzen der Kompetenzen des Bundes und seiner Gliedstaaten</desc>
+</valItem><valItem ident="#bv_doc_id__132">
+<desc>Studie über die Regelung der Kompetenzen zwischen Bund und Ländern und die Trennung der Behörden</desc>
+</valItem><valItem ident="#bv_doc_id__133">
+<desc>Frageschema für die Staatsämter betreffend die Grundprinzipien der Verfassung</desc>
+</valItem><valItem ident="#bv_doc_id__134">
+<desc>Grundprinzipien der Verfassungs- und Verwaltungsreform</desc>
+</valItem><valItem ident="#bv_doc_id__135">
+<desc>Protokoll der zwischenamtlichen Sitzung am 9. und 10. September 1919</desc>
+</valItem><valItem ident="#bv_doc_id__136">
+<desc>Expose für die zwischenamtliche Sitzung am 11. Oktober 1919</desc>
+</valItem><valItem ident="#bv_doc_id__137">
+<desc>Allgemeine Bestimmung für den Übergang zur bundesstaatlichen Verfassung</desc>
+</valItem><valItem ident="#bv_doc_id__138">
+<desc>Anträge der Abteilung für Verfassungsgesetzgebung</desc>
+</valItem><valItem ident="#bv_doc_id__139">
+<desc>Bemerkungen des Verwaltungsreformdienstes</desc>
+</valItem><valItem ident="#bv_doc_id__140">
+<desc>Beantwortung des Frageschemas durch die Staatsämter</desc>
+</valItem><valItem ident="#bv_doc_id__141">
+<desc>Einführung zum Vorentwurf einer Bundesverfassung</desc>
+</valItem><valItem ident="#bv_doc_id__142">
+<desc>Übersicht über die grundlegenden Fragen des Bundesstaatsproblems</desc>
+</valItem><valItem ident="#bv_doc_id__143">
+<desc>Dokumente zur Länderkonferenz in Linz</desc>
+</valItem><valItem ident="#bv_doc_id__144">
+<desc>Einladung zur 7. Länderkonferenz</desc>
+</valItem><valItem ident="#bv_doc_id__145">
+<desc>Erörterung der Frage der Umgestaltung Österreichs in einen Bundesstaat durch das Staatssekreariat für Handel und Gewerbe auf Basis von Entwurf CS I</desc>
+</valItem><valItem ident="#bv_doc_id__146">
+<desc>Aufforderung des Staatsamtes für Handel und Gewerbe, sich auf Basis von Entwurf CS I mit der Umwandlung Österreichs in einen Bundesstaat zu beschäftigen</desc>
+</valItem><valItem ident="#bv_doc_id__147">
+<desc>Stellungnahme des Staatsamtes für Handel und Gewerbe zu Mayr I</desc>
+</valItem><valItem ident="#bv_doc_id__148">
+<desc>Ergebnis der Beratungen von Mayr I in der Staatskanzle Ende März 1920</desc>
+</valItem><valItem ident="#bv_doc_id__149">
+<desc>Resolution der Handelskammer zu Mayr I</desc>
+</valItem><valItem ident="#bv_doc_id__150">
+<desc>Stellungnahme des Staatsamtes für Handel und Gewerbe zu Mayr II</desc>
+</valItem><valItem ident="#bv_doc_id__151">
+<desc>Stellungnahme des Staatsamtes für Handel und Gewerbe zur Frage der Einrichtung eigener Bundesbehörden</desc>
+</valItem><valItem ident="#bv_doc_id__152">
+<desc>Stellungnahme des Staatsamtes für Handel und Gewerbe zu den Übergangsbestimmungen der Verfassung</desc>
+</valItem><valItem ident="#bv_doc_id__153">
+<desc>Stellungnahme des Staatsamtes für Handes und Gewerbe zum Entwurf UA September</desc>
+</valItem><valItem ident="#bv_doc_id__154">
+<desc>Stellungnahme des Staatsamtes für Handel und Gewerbe betreffend den Vorbehalt eigener Bundesbehörden</desc>
+</valItem><valItem ident="#bv_doc_id__155">
+<desc>Abänderungsvorschläge des Staatsamtes für Handel und Gewerbe zum VfA ENtwurf</desc>
+</valItem><valItem ident="#bv_doc_id__156">
+<desc>Beantwortung des Frageschemas der Staatskanzlei durch das Staatsamt für Handel und Gewerbe</desc>
+</valItem><valItem ident="#bv_doc_id__157">
+<desc>Stellungnahme des Staatsamtes für Inneres zu den Übergangsbestimmungen der Verfassung</desc>
+</valItem><valItem ident="#bv_doc_id__158">
+<desc>Bericht des Staatsamtes für Inneres über die zwischenamtliche Sitzung am 11. Dezember 1919</desc>
+</valItem><valItem ident="#bv_doc_id__159">
+<desc>Diskussion des Entwurfs CS II im Staatsamt für Land- und Forstwirtschaft</desc>
+</valItem><valItem ident="#bv_doc_id__160">
+<desc>Stellungnahme des Staatsamtes für Land- und Forstwirtschaft zu Entwurf C II</desc>
+</valItem><valItem ident="#bv_doc_id__161">
+<desc>Stellungnahme des Staatsamtes für Land- und Forstwirtschaft zum Abram Entwurf</desc>
+</valItem><valItem ident="#bv_doc_id__162">
+<desc>Stellungnahme des Staatsamtes für Land- und Forstwirtschaft betreffend die Einrichtung von Bundesbehörden</desc>
+</valItem><valItem ident="#bv_doc_id__163">
+<desc>Stellungnahme des Staatsamtes für Land- und Forstwirtschaft zu Übergangsbestimmungen der Verfassung</desc>
+</valItem><valItem ident="#bv_doc_id__164">
+<desc>Stellungnahme des Staatsamtes für Land- und Forstwirtschaft zum Entwurf UA August</desc>
+</valItem><valItem ident="#bv_doc_id__165">
+<desc>Stellungnahme des Staatsamtes für Land- und Forstwirtschaft zur Kompetenzabgrenzung Bund Länder mit Bezugnahme auf die Schweiz</desc>
+</valItem><valItem ident="#bv_doc_id__166">
+<desc>Beantwortung des Frageschemas der Staatskanzlei durch das Staatsamt für Land- und Forstwirtschaft</desc>
+</valItem><valItem ident="#bv_doc_id__167">
+<desc>Staatsamt für Soziale Verwaltung betreffend Beteiligung der Beamten an der Verfassungsdiskussion</desc>
+</valItem><valItem ident="#bv_doc_id__168">
+<desc>Stellungnahme des Staatsamtes für Soziale Verwaltung zu Mayr II</desc>
+</valItem><valItem ident="#bv_doc_id__169">
+<desc>Schreiben Renners an die Landeshauptleute betreffend die Unterbindung von Abspaltungstendenzen</desc>
+</valItem><valItem ident="#bv_doc_id__170">
+<desc>Stellungnahme des Staatsamtes für Justiz zur Kompetenzverteilung gemäß Mayr I</desc>
+</valItem><valItem ident="#bv_doc_id__171">
+<desc>Stellungnahme des Staatsamtes für Justiz betreffend die richterliche Gewalt in der Verfassung</desc>
+</valItem><valItem ident="#bv_doc_id__172">
+<desc>Stellungnahme des Staatsamtes für Justiz zu Mayr I</desc>
+</valItem><valItem ident="#bv_doc_id__173">
+<desc>Bericht des Staatsamtes für Justiz über eine Beratung mit StS Mayr über Mayr I</desc>
+</valItem><valItem ident="#bv_doc_id__174">
+<desc>Vorschlag der Schaffung eines Bundesgerichts für Delikte gegen das Völkerrecht</desc>
+</valItem><valItem ident="#bv_doc_id__175">
+<desc>Stellungnahme des Staatsamtes für Justiz zu Mayr II</desc>
+</valItem><valItem ident="#bv_doc_id__176">
+<desc>Stellungnahme des Staatsamtes für Justiz zu CS I</desc>
+</valItem><valItem ident="#bv_doc_id__177">
+<desc>Stellungnahme der Richtervereinigung zu Renner Mayr</desc>
+</valItem><valItem ident="#bv_doc_id__178">
+<desc>Stellungnahme des Staatsamtes für Justiz zum Großdeutschen Entwurf</desc>
+</valItem><valItem ident="#bv_doc_id__179">
+<desc>Stellungnahme des Staatsamtes für Justiz zu Entwurf Abram</desc>
+</valItem><valItem ident="#bv_doc_id__180">
+<desc>Bericht des Staatsamtes für Justiz über die zwischenamtliche Besprechung am 11. Oktober 1919</desc>
+</valItem><valItem ident="#bv_doc_id__181">
+<desc>Stellungnahme des Staatsamtes für Justiz zum Entwurf UA August</desc>
+</valItem><valItem ident="#bv_doc_id__182">
+<desc>Stellungnahme der Richtervereinigung zum Entwurf UA August</desc>
+</valItem><valItem ident="#bv_doc_id__183">
+<desc>Stellungnahme des Staatsamtes für Justiz zum Entwurf UA September</desc>
+</valItem><valItem ident="#bv_doc_id__184">
+<desc>Stellungnahme des Staatsamtes für Justiz zum Frageschema der Staatskanzlei</desc>
+</valItem><valItem ident="#bv_doc_id__185">
+<desc>Bericht des Staatsamtes für Justiz über die zwischenamtliche Sitzung am 11. November 1919</desc>
+</valItem><valItem ident="#bv_doc_id__186">
+<desc>Bericht des Staatsamtes für Justiz über die zwischenamtliche Sitzung am 11. Dezember 1919</desc>
+</valItem><valItem ident="#bv_doc_id__187">
+<desc>Stellungnahme des Staatsamtes für Justiz zu Falser II</desc>
+</valItem><valItem ident="#bv_doc_id__188">
+<desc>Stellungnahme des Staatsamtes für Justiz zu Renner Mayr</desc>
 </valItem></valList></attDef>
                   </attList>
                </elementSpec>
