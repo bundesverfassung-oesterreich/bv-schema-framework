@@ -186,8 +186,26 @@ teiHeader seriesStmt title:before {
     content: "Teil von Datenset: ";
 }
 
+teiHeader seriesStmt biblScope :before {
+    content: "Sortiernummmer (muss HÖHER sein als die des vorausgehenden Dokuments und NIEDRIGER als die des folgenden Dokuments ";
+}
+
 teiHeader seriesStmt biblScope {
-    
+    padding-top: .5rem;
+    padding-bottom: 0;
+    margin: 0;
+    visibility: visible;
+    display: block!important;
+    font-size: 1rem;
+    font-weight: normal;
+    visibility:-oxy-collapse-text;
+    content: oxy_textfield(
+        width, 50%,
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+    -oxy-display-tags: none;
 }
 /* START msDesc START*/
 
