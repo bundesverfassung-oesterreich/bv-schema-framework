@@ -1025,6 +1025,34 @@
                   </attList>
                </elementSpec>
 
+               <!-- Cross-file uniqueness check for seriesStmt/biblScope per bv_data_set -->
+               <constraintSpec ident="check_dataset_biblscope_unique_collection" scheme="schematron">
+                  <constraint xmlns:s="http://purl.oclc.org/dsdl/schematron">
+                     <!--
+                        This rule uses XSLT/XPath 2.0's collection() to load all XML files
+                        in the same directory as the document being validated. It requires
+                        running the compiled Schematron with an XSLT 2.0+ processor (e.g.
+                        Saxon) that supports collection().
+                     -->
+                     <s:rule context="/*[local-name()='TEI']">
+                        <!-- dataset id of current document -->
+                        <s:let name="ds" value="string(.//tei:idno[@type='bv_data_set'])"/>
+                        <!-- directory of current file (strip filename) -->
+                        <s:let name="dir" value="replace(base-uri(/), '[^/]+$', '')"/>
+                        <!-- load XML files in same directory (Saxon-style collection URI) -->
+                        <s:let name="col" value="collection(concat($dir, '?select=*.xml;recurse=no'))"/>
+                        <!-- select only docs that declare the same dataset -->
+                        <s:let name="sameDocs" value="$col[.//tei:idno[@type='bv_data_set' and normalize-space() = normalize-space($ds)]]"/>
+                        <!-- collect part-values -->
+                        <s:let name="parts" value="$sameDocs//tei:seriesStmt/tei:biblScope[@unit='part']/normalize-space()"/>
+                        <!-- assert uniqueness across the set -->
+                        <s:assert test="every $v in distinct-values($parts) satisfies count($parts[. = $v]) = 1">biblScope[@unit='part'] values must be unique across files in the same bv_data_set (run Schematron with Saxon so collection() is available)</s:assert>
+                        <!-- also ensure this file's seriesStmt title matches the dataset id -->
+                        <s:assert test=".//tei:seriesStmt/tei:title[normalize-space() = normalize-space($ds)]">seriesStmt/title should match the bv_data_set idno</s:assert>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
+
                <elementSpec ident="person" mode="change">
                   <desc>Repräsentiert eine Person in der Liste der Teilnehmer:innen protokollierter
                      Sitzungen</desc>
