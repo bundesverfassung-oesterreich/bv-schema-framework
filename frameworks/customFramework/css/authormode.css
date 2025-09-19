@@ -187,7 +187,7 @@ teiHeader seriesStmt title:before {
 }
 
 teiHeader seriesStmt biblScope:before {
-    content: "Sortiernummmer (muss HÖHER sein als die des vorausgehenden Dokuments und NIEDRIGER als die des folgenden Dokuments ";
+    content: "Sortiernummmer (muss HÖHER sein als die des vorausgehenden Dokuments und NIEDRIGER als die des folgenden Dokuments: ";
 }
 
 teiHeader seriesStmt biblScope {
