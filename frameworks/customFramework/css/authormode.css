@@ -150,7 +150,45 @@ teiHeader publicationStmt idno[type="goobi"]:before {
 teiHeader publicationStmt idno[type="bv_data_set"]:before {
     content: "Dataset: ";
 }
+teiHeader seriesStmt {
+    display: block;
+    content: "Angaben für die Sortierung auf der Website";
+    -oxy-foldable:true;
+    -oxy-folded:true;
+    -oxy-display-tags: none;
+    visibility:-oxy-collapse-text;
+    padding: 1rem;
+    margin: 2rem;
+    border: solid green 4px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
 
+teiHeader seriesStmt title {
+    padding-top: .5rem;
+    padding-bottom: 0;
+    margin: 0;
+    visibility: visible;
+    display: block!important;
+    font-size: 1rem;
+    font-weight: normal;
+    visibility:-oxy-collapse-text;
+    content: oxy_textfield(
+        width, 50%,
+        edit, '#text',
+        columns, 140,
+        fontInherit, true
+    );
+    -oxy-display-tags: none;
+}
+teiHeader seriesStmt title:before {
+    content: "Teil von Datenset: ";
+}
+
+teiHeader seriesStmt biblScope {
+    
+}
 /* START msDesc START*/
 
 
