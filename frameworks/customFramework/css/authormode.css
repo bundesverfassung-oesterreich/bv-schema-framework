@@ -186,7 +186,7 @@ teiHeader seriesStmt title:before {
     content: "Teil von Datenset: ";
 }
 
-teiHeader seriesStmt biblScope :before {
+teiHeader seriesStmt biblScope:before {
     content: "Sortiernummmer (muss HÖHER sein als die des vorausgehenden Dokuments und NIEDRIGER als die des folgenden Dokuments ";
 }
 
