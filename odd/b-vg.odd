@@ -242,7 +242,7 @@
                <div xml:id="sorting">
                   <head>Sortierung der Dokumente auf der Website
                   </head>
-                  <p>Da die Datierungen der Dokumente oft ungenau sind, obwohl sich auf Grundlage textgenetischer Phänomene eine relational sichere Abfolge der Entstehung erschließt, werden die Dokumente innerhalb eines Datensets jeweils mit einer Sortiernummer versehen. Diese kann frei geändert werden. Sie muss <emph>höher</emph> als die des vorausgehnden Dokuments und <emph>niedriger</emph> als die des folgenden Dokuments sein. Die Nummer kann im Framework unter dem Punkt „Angaben für die Sortierung auf der Website“ geändert werden. Im <gi>seriesStmt</gi> wird dadurch die textnode im <gi>biblScope</gi> element mit <att>unit</att> = <val>part</val> editiert.
+                  <p>Da die Datierungen der Dokumente oft ungenau sind, obwohl sich auf Grundlage textgenetischer Phänomene eine relational sichere Abfolge der Entstehung erschließt, werden die Dokumente innerhalb eines Datensets jeweils mit einer Sortiernummer versehen. Diese kann frei geändert werden. Sie muss <emph>höher</emph> als die des vorausgehnden Dokuments und <emph>niedriger</emph> als die des folgenden Dokuments sein. <emph>Da die Sortiernummer automatisch auf Grundlage von Datumsangaben erzeugt wird, ist es notwendig, sie manuell zu überprüfen!</emph>Die Nummer kann im Framework unter dem Punkt „Angaben für die Sortierung auf der Website“ geändert werden. Im <gi>seriesStmt</gi> wird dadurch die textnode im <gi>biblScope</gi> element mit <att>unit</att> = <val>part</val> angepasst.
                   </p>
                </div>
                <div xml:id="revision">
