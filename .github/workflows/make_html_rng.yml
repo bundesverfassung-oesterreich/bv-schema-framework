@@ -110,7 +110,7 @@ jobs:
           mkdir $ADDON_DIR
           cp "${FRAMEWORKS_DIR}/b-vg-addon.xml" $ADDON_DIR
           cd $FRAMEWORKS_DIR
-          unzip $TARGET_ZIP -d$CUSTOM_FRAMEWORK_FOLDER
+          zip -r $TARGET_ZIP $CUSTOM_FRAMEWORK_FOLDER
           cd ~
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
