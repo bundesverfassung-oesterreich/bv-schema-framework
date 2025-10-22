@@ -94,15 +94,10 @@ jobs:
           mkdir "$xsd_output_dir"
           echo "sending post request to teigarage"
           curl -X 'POST' \
-            'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/xsd%3Aapplication%3Axml-xsd/'
+            'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/xsd%3Aapplication%3Axml-xsd/' \
             -F 'fileToConvert=@./odd/b-vg.odd' \
             -o "$index_path"
           cp -r $xsd_output_dir $HTML_OUTOUT_DIR
-
-            'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/relaxng%3Aapplication%3Axml-relaxng/' \
-            -F 'fileToConvert=@./odd/b-vg.odd' \
-            -o "$index_path"
-          cp -r $rng_output_dir $HTML_OUTOUT_DIR
       - name: prepare framework addon
         run: |
           ADDON_DIR="html/ADDON/"
