@@ -61,30 +61,40 @@
                 <idno type="bv_data_set">Datenset A</idno>
                 <idno type="goobi">14541</idno>
             </publicationStmt>
-            <sourceDesc>
-                <msDesc type="invetory">
-                    <msIdentifier>
-                        <institution key="https://d-nb.info/gnd/37748-X">Österreichisches Staatsarchiv</institution>
-                        <repository key="https://d-nb.info/gnd/1601181-8">Archiv der Republik (Wien)</repository>
-                        <idno type="archive">AdR, BKA Inneres, Staatskanzlei, Karton 251, Mappe 16</idno>
-                    </msIdentifier>
-                    <msContents>
-                        <msItem>
-                            <author role="acdh:hasAuthor">Konstituierende Nationalversammlung</author>
-                            <title>B-VG Sonderdruck</title>
-                            <note type="editor">B-VG (Titel des Dokuments: "Gesetz vom 1. Oktober 1920, Bundesverfassungsgesetz") Sonderdruck aus der Wiener Zeitung, Zustand gut, keine Anmerkungen, 152 Artikel</note>
-                        </msItem>
-                    </msContents>
-                    <physDesc>
-                        <objectDesc form="Druck">
-                        </objectDesc>
-                        <handDesc>
-                        </handDesc>
-                    </physDesc>
-                    <history>
-                        <origin notBefore-iso="1920-10-01" notAfter-iso="1920-10-01">1. Oktober 1920</origin>
-                    </history>
-                </msDesc>
+            <seriesStmt>
+<title>Datenset A</title>
+<biblScope unit="part">2802</biblScope>
+</seriesStmt>
+<sourceDesc>
+        <listWit>
+          <witness sameAs="#bv_doc_id__92"/>
+          <witness sameAs="#bv_doc_id__62"/>
+        </listWit>
+                <msDesc type="invetory" subtype="secondary">
+          <msIdentifier>
+            <institution key="https://d-nb.info/gnd/37748-X">Österreichisches
+              Staatsarchiv</institution>
+            <repository key="https://d-nb.info/gnd/1601181-8">Archiv der Republik
+              (Wien)</repository>
+            <idno type="archive">AdR, BKA Inneres, Staatskanzlei, Karton 251, Mappe 16</idno>
+          </msIdentifier>
+          <msContents>
+            <msItem>
+              <author role="acdh:hasAuthor">Konstituierende Nationalversammlung</author>
+              <title>B-VG Sonderdruck</title>
+              <note type="editor">B-VG (Titel des Dokuments: "Gesetz vom 1. Oktober 1920,
+                Bundesverfassungsgesetz") Sonderdruck aus der Wiener Zeitung, Zustand gut, keine
+                Anmerkungen, 152 Artikel</note>
+            </msItem>
+          </msContents>
+          <physDesc>
+            <objectDesc form="Druck"/>
+            <handDesc/>
+          </physDesc>
+          <history>
+            <origin notBefore-iso="1920-10-01" notAfter-iso="1920-10-01">1. Oktober 1920</origin>
+          </history>
+        </msDesc>
             </sourceDesc>
         </fileDesc>
         <profileDesc>
@@ -97,12 +107,12 @@
                 </date>
             </creation>
         </profileDesc>
-        <revisionDesc status="created">
-            <change when="2024-02-27" who="#cfh">document automatically created</change>
-                  <change when="2024-04-10" who="#m_huber">all div for articles &amp; §§
-                        generated</change>
+        <revisionDesc status="text_correct">
+      <change when="2024-02-27" who="#cfh">document automatically created</change>
+      <change when="2024-04-10" who="#m_huber">all div for articles &amp; §§ generated</change>
       <change when="2024-05-24" who="#m_huber">formatting completed</change>
-        </revisionDesc>
+      <change when="2024-10-24" who="#t_voegtlin">Silbentrennung</change>
+    </revisionDesc>
     </teiHeader>
     <facsimile xmlns="http://www.tei-c.org/ns/1.0"><surface ulx="0" uly="0" lrx="3105" lry="4967" xml:id="facs_2"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0032/full/full/0/default.jpg" width="3105px" height="4967px"/></surface><surface ulx="0" uly="0" lrx="3022" lry="4979" xml:id="facs_3"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0033/full/full/0/default.jpg" width="3022px" height="4979px"/></surface><surface ulx="0" uly="0" lrx="2976" lry="4961" xml:id="facs_4"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0034/full/full/0/default.jpg" width="2976px" height="4961px"/></surface><surface ulx="0" uly="0" lrx="2976" lry="4961" xml:id="facs_5"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0035/full/full/0/default.jpg" width="2976px" height="4961px"/></surface><surface ulx="0" uly="0" lrx="3057" lry="4971" xml:id="facs_6"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0036/full/full/0/default.jpg" width="3057px" height="4971px"/></surface><surface ulx="0" uly="0" lrx="3017" lry="4967" xml:id="facs_7"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0037/full/full/0/default.jpg" width="3017px" height="4967px"/></surface><surface ulx="0" uly="0" lrx="3032" lry="4957" xml:id="facs_8"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0038/full/full/0/default.jpg" width="3032px" height="4957px"/></surface><surface ulx="0" uly="0" lrx="3029" lry="4954" xml:id="facs_9"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0039/full/full/0/default.jpg" width="3029px" height="4954px"/></surface><surface ulx="0" uly="0" lrx="3038" lry="4960" xml:id="facs_10"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0040/full/full/0/default.jpg" width="3038px" height="4960px"/></surface><surface ulx="0" uly="0" lrx="3031" lry="4968" xml:id="facs_11"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0041/full/full/0/default.jpg" width="3031px" height="4968px"/></surface><surface ulx="0" uly="0" lrx="3026" lry="4947" xml:id="facs_12"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0042/full/full/0/default.jpg" width="3026px" height="4947px"/></surface><surface ulx="0" uly="0" lrx="3045" lry="4954" xml:id="facs_13"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0043/full/full/0/default.jpg" width="3045px" height="4954px"/></surface><surface ulx="0" uly="0" lrx="3032" lry="4952" xml:id="facs_14"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0044/full/full/0/default.jpg" width="3032px" height="4952px"/></surface><surface ulx="0" uly="0" lrx="3053" lry="4966" xml:id="facs_15"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0046/full/full/0/default.jpg" width="3053px" height="4966px"/></surface><surface ulx="0" uly="0" lrx="3031" lry="4955" xml:id="facs_16"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0048/full/full/0/default.jpg" width="3031px" height="4955px"/></surface><surface ulx="0" uly="0" lrx="3054" lry="4957" xml:id="facs_17"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0049/full/full/0/default.jpg" width="3054px" height="4957px"/></surface><surface ulx="0" uly="0" lrx="3025" lry="4949" xml:id="facs_18"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0050/full/full/0/default.jpg" width="3025px" height="4949px"/></surface><surface ulx="0" uly="0" lrx="3043" lry="4955" xml:id="facs_19"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0051/full/full/0/default.jpg" width="3043px" height="4955px"/></surface><surface ulx="0" uly="0" lrx="3034" lry="4955" xml:id="facs_20"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__11/files/images/IMG_0052/full/full/0/default.jpg" width="3034px" height="4955px"/></surface></facsimile>
     <text type="Verfassungstext">
@@ -491,10 +501,8 @@
               <div type="article">
                 <head>Artikel 25.</head>
                 <p type="legal_section"><label>(1)</label> Der Sitz des Nationalrates ist die
-                  Bundeshauptstadt Wien. </p>
-                <pb facs="#facs_5" n="5" xml:id="img_0005" break="yes"/>
-                <fw type="pageNum">4</fw>
-                <p type="legal_section"><label>(2)</label> Für die Dauer außerordentlicher
+                  Bundeshauptstadt Wien.</p>
+                <p type="legal_section"><pb facs="#facs_5" n="5" xml:id="img_0005" break="yes"/><fw type="pageNum">4</fw><label>(2)</label> Für die Dauer außerordentlicher
                   Verhältnisse kann der Bundespräsident auf Antrag der Bundesregierung den
                   Nationalrat in einen anderen Ort des Bundesgebietes berufen. </p>
               </div>
@@ -820,7 +828,7 @@
               <div type="article">
                 <head>Artikel 54. </head>
                 <p type="legal_section">Der Nationalrat wirkt an der Festsetzung von
-                  Eisenbahntarifen, Post,- Telegraphen,- und Fernsprechgebühren und Preisen der
+                  Eisenbahntarifen, Post-, Telegraphen-, und Fernsprechgebühren und Preisen der
                   Monopolgegenstände sowie von Bezügen der in Betrieben des Bundes ständig
                   beschäftigten Personen mit. Diese Mitwirkung wird durch Bundesverfassungsgesetz
                   geregelt. </p>
@@ -1060,7 +1068,7 @@
                   <p type="legal_section"><label>(2)</label> Zu einem Beschluß des Nationalrates,
                     mit dem das Vertrauen versagt wird, ist die Anwesenheit der Hälfte der
                     Mitglieder des Nationalrates erforderlich. Doch ist, wenn es ein Fünftel der
-                    anwesenden Mitglieder verlangt, die Abstimmung auf den zweit-<pb facs="#facs_9" n="9" xml:id="img_0009" break="no"/>
+                    anwesenden Mitglieder verlangt, die Abstimmung auf den zweit<pb facs="#facs_9" n="9" xml:id="img_0009" break="no"/>
                     <fw type="pageNum">8</fw>nächsten Werktag zu vertagen. Eine neuerliche Vertagung
                     der Abstimmung kann nur durch Beschluß des Nationalrates erfolgen. </p>
                   <p type="legal_section"><label>(3)</label> Die Bundesregierung und ihre einzelnen Mitglieder werden in den gesetzlich bestimmten Fällen oder auf ihren Wunsch vom Bundespräsidenten ihres Amtes enthoben. </p>
@@ -1990,8 +1998,7 @@
                 Veterinärdienst, Archiv- und Bibliotheksdienst, Rechnungsdienst) und der
                 Agrarbehörden erster und zweiter Instanz (Agrarbezirksbehörden und
                 Agrarlandesbehörden) — werden Behörden des Bundes.</p>
-              <p type="legal_section"><pb facs="#facs_17" n="17" xml:id="img_0017" break="yes"/><fw
-                  type="pageNum">16</fw><label>(2)</label> Die Stellung der im Absatz 1
+              <p type="legal_section"><pb facs="#facs_17" n="17" xml:id="img_0017" break="yes"/><fw type="pageNum">16</fw><label>(2)</label> Die Stellung der im Absatz 1
                 ausgenommenen staatlichen Behörden wird durch das Verfassungsgesetz des Bundes über
                 die Organisation der Verwaltung in den Ländern (Artikel 12, 3. 1, und Artikel 120,
                 Absatz 1, des Bundesverfassungsgesetzes) geregelt. </p>
@@ -2119,9 +2126,8 @@
               <p><emph>Zu Artikel 23.</emph>
               </p>
               <p type="legal_section">Die Bestimmungen des Gesetzes vom 12. Juli 1872, R. G. Bl. Nr.
-                112 (Syndikatsgesetz), bleiben mit den durch § 12, Absatz 2, des Grund-<pb
-                  facs="#facs_18" n="18" xml:id="img_0018" break="no"/><fw type="pageNum">17</fw>
-                gesetzes vom 22. November 1918,  St. G. Bl. Nr. 38, über die richterliche Gewalt
+                112 (Syndikatsgesetz), bleiben mit den durch § 12, Absatz 2, des Grund<pb facs="#facs_18" n="18" xml:id="img_0018" break="no"/><fw type="pageNum">17</fw>
+                gesetzes vom 22. November 1918, St. G. Bl. Nr. 38, über die richterliche Gewalt
                 vorgenommenen Änderungen bis zur Erlassung des zur Durchführung des Artikels 23
                 erforderlichen Gesetzes in Wirksamkeit.</p>
             </div>
@@ -2311,7 +2317,7 @@
                 Wahl der neuen Landesregierung vorläufig die nicht aus einem Wiener Wahlkreis
                 gewählten Mitglieder der jetzigen Landesregierung und des derzeitigen Landesrates
                 die Geschäfte der Landesregierung und der nicht aus einem Wiener Wahlkreis gewählte
-                Landeshauptmannstellvertreter die Geschäfte des Landeshamptmannes im Sinne des
+                Landeshauptmannstellvertreter die Geschäfte des Landeshauptmannes im Sinne des
                 Bundesverfassungsgesetzes. </p>
               <p type="legal_section"><label>(5)</label> Bis zur Erlassung des Verfassungsgesetzes
                 des Bundes über die Organisation der Verwaltung in den Ländern (Artikel 12, Zahl 1)
@@ -2362,8 +2368,7 @@
               <p type="legal_section"><label>(1) </label>Der bisherige Staatsrechnungshof wird zum
                 Rechnungshof im Sinne des Bundesverfassungsgesetzes. </p>
               <p type="legal_section"><label>(2)</label> Bis zur Wahl des Präsidenten des
-                  Rechnungs-<pb facs="#facs_20" n="20" xml:id="img_0020" break="no"/><fw
-                  type="pageNum">19</fw>hofes versieht der bisherige Präsident des
+                  Rechnungs<pb facs="#facs_20" n="20" xml:id="img_0020" break="no"/><fw type="pageNum">19</fw>hofes versieht der bisherige Präsident des
                 Staatsrechnungshofes dessen Funktionen. </p>
             </div>
             <div type="article">

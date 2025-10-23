@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bv_doc_id__88">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Protokoll der 23. Sitzung des Verfassungsausschusses</title>
+                <title type="sub">Die Entstehung des Bundes-Verfassungsgesetzes 1920</title>
+                <principal>
+                    <persName role="acdh:hasPrincipialInvestigator">Olechowski, Thomas</persName>
+                </principal>
+                <funder>
+                    <orgName>FWF - Der Wissenschaftsfonds</orgName>
+                    <address>
+                        <street>Sensengasse 1</street>
+                        <postCode>1090 Wien</postCode>
+                        <placeName>
+                            <country>A</country>
+                            <settlement>Wien</settlement>
+                        </placeName>
+                    </address>
+                </funder>
+                <respStmt>
+                    <resp>Digitalisierung (Fotografieren) des Archivmaterials</resp>
+                    <persName role="acdh:hasDigitisingAgent">Lein, Richard</persName>
+                </respStmt>
+                <respStmt>
+                    <resp>Digitalisierung (Fotografieren) des Archivmaterials</resp>
+                    <persName role="acdh:hasDigitisingAgent">Gassner, Miriam</persName>
+                </respStmt>
+                <respStmt>
+                    <resp>XML/TEI Datenmodellierung und Datengenerierung</resp>
+                    <persName role="acdh:hasContributor" key="https://orcid.org/0000-0002-9575-9372">Peter Andorfer
+                    </persName>
+                </respStmt>
+                <respStmt>
+                    <resp>XML/TEI Datenmodellierung und Datengenerierung</resp>
+                    <persName role="acdh:hasContributor" key="https://orcid.org/0009-0006-7740-542X">Carl Friedrich Haak
+                    </persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>
+                    <orgName key="https://d-nb.info/gnd/1226158307">Austrian Centre for Digital Humanities and Cultural
+                        Heritage an der Österreichischen Akademie der Wissenschaften</orgName>
+                </publisher>
+                <publisher>
+                    <orgName key="https://d-nb.info/gnd/1026192285">Universität Wien. Institut für Rechts- und
+                        Verfassungsgeschichte</orgName>
+                </publisher>
+                <pubPlace ref="http://d-nb.info/gnd/4066009-6">Vienna</pubPlace>
+                <date when="2023">2023</date>
+                <availability>
+                    <licence target="https://creativecommons.org/licenses/by/4.0/">
+                        <p>The Creative Commons Attribution 4.0 International (CC BY 4.0) License
+                            applies to this text.</p>
+                        <p>The CC BY 4.0 License also applies to this TEI XML file.</p>
+                    </licence>
+                </availability>
+                <idno type="transkribus_doc">9217645</idno>
+                <idno type="transkribus_collection">196428</idno>
+                <idno type="bv_data_set">Datenset B</idno>
+                <idno type="goobi">18736</idno>
+            </publicationStmt>
+            <seriesStmt>
+<title>Datenset B</title>
+<biblScope unit="part">1100</biblScope>
+</seriesStmt>
+<sourceDesc>
+                <msDesc type="invetory">
+                    <msIdentifier>
+                        <institution key="https://d-nb.info/gnd/37748-X">Österreichisches Staatsarchiv</institution>
+                        <repository key="https://d-nb.info/gnd/1601181-8">Archiv der Republik (Wien)</repository>
+                        <idno type="archive">Parlamentsarchiv, Ausschussprotokolle</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItem>
+                            <author role="acdh:hasAuthor">Verfassungsausschuss</author>
+                            <title>Protokoll der 23. Sitzung des Verfassungsausschusses</title>
+                            <note type="editor">Protokoll der 23. Sitzung des Verfassungsausschusses vom 23. Juli 1920, handschriftlicher Protokolltext, mit Bleistift geschrieben, Papier zum Teil beschädigt, dadurch einzelne Wörter unleserlich. Zum Teil handschriftliche oder maschinschriftliche Beilagen.</note>
+                        </msItem>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="Handschriftlicher Protokolltext">
+                        </objectDesc>
+                        <handDesc>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin notBefore-iso="1920-07-23" notAfter-iso="1920-07-23">23. Juli 1920</origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <abstract>
+                <p/>
+            </abstract>
+            <creation>
+                <date notBefore-iso="1920-07-23" notAfter-iso="1920-07-23">
+                    23. Juli 1920
+                </date>
+            </creation>
+        </profileDesc>
+        <revisionDesc status="created">
+            <change when="2025-07-23" who="#cfh">document automatically created</change>
+        </revisionDesc>
+    </teiHeader>
+    <facsimile xmlns="http://www.tei-c.org/ns/1.0">
+      <surface ulx="0" uly="0" lrx="3840" lry="5120" xml:id="facs_1">
+         <graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__88/files/images/IMG_0205/full/full/0/default.jpg" width="3840px" height="5120px"/>
+         </surface>
+      <surface ulx="0" uly="0" lrx="3840" lry="5120" xml:id="facs_2">
+         <graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__88/files/images/IMG_0207/full/full/0/default.jpg" width="3840px" height="5120px"/>
+         </surface>
+      <surface ulx="0" uly="0" lrx="3840" lry="5120" xml:id="facs_3">
+         <graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__88/files/images/IMG_0208/full/full/0/default.jpg" width="3840px" height="5120px"/>
+         </surface>
+      <surface ulx="0" uly="0" lrx="3840" lry="5120" xml:id="facs_4">
+         <graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__88/files/images/IMG_0209/full/full/0/default.jpg" width="3840px" height="5120px"/>
+         </surface>
+      <surface ulx="0" uly="0" lrx="5120" lry="3840" xml:id="facs_5">
+         <graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__88/files/images/IMG_0210/full/full/0/default.jpg" width="5120px" height="3840px"/>
+         </surface>
+   </facsimile>
+   
+    <text type="Sitzungsprotokoll">
+        <body>
+         <div type="main">
+            <p> </p>
+            
+            <p><pb facs="#facs_2" n="2" xml:id="img_0002" break="yes"/>Konstituierende
+                    Nationalversammlung der Republik Österreich.</p>
+                <head>Verfassungs-Ausschuss </head>
+                <p>Protokoll über die Sitzung am 23. Juli 1920</p>
+                <p>Anwesende: </p>
+                <p>Seitens der Regierung: </p>
+                <p>Obmann: <list>
+                        <item>Dr. Bauer </item>
+                    </list></p>
+                <p>Obmann-Stellvertreter: <list>
+                        <item>Prof. Seipel </item>
+                    </list></p>
+                <p>Schriftführer: <list>
+                        <item>Hafner </item>
+                    </list></p>
+                <p>Mitglieder: <list>
+                        <item>Prof Dr Gürtler, </item>
+                        <item>Wagner, </item>
+                        <item>Clessin, </item>
+                        <item>Fink, </item>
+                        <item>Ramek, </item>
+                        <item>Ulrich. </item>
+                    </list></p>
+            
+            <p><pb facs="#facs_3" n="3" xml:id="img_0003" break="yes"/>Protokoll  über die Sitzung
+                    des Verfassungs<choice>
+                        <sic/>
+                        <corr>-</corr>
+                    </choice>Ausschusses am 23. VII 20 ½ 10h V[ormi]tt[ags] </p>
+                <p>Vorsitz: Dr Bauer  </p>
+                <p>I. Der Vorsitzende teilt mit daß die Abg. <choice>
+                        <del>Abram <choice>
+                                <sic/>
+                                <corr>und</corr>
+                            </choice> Leuttner</del>
+                        <add>Eldorrff u. Dr. Eisler</add>
+                    </choice> ihre Mandate im Verf. Ausschusse zurückgelegt haben.  An ihrer Stelle
+                    werden über Antrag Hafner die Abg. <emph>Abram</emph> u. Leuttner gewählt.  </p>
+                <p>II. Zuweisungen: Auslieferungsbegehren gegen den Abg. Witternitz (zugewiesen Abg.
+                    Ulrich). Petitionen wegen Ansschluß an Deutschl<choice>
+                        <sic/>
+                        <corr>an</corr>
+                    </choice>d  " zur Verfassungsfrage.</p>
+                <p>III. Gesetz über das Burgenland ferner ein diesbezüglicher Antrag des Abg.
+                    Müller-Huttenbrunn. Bestellung eines Referenten über das Gesetz:
+                        <emph>Clessin</emph>  Prof. Seipel ist mit den Vorschlägen des Vorsitzenden
+                    betr. die Behandlung der Regierungsvorlage einverstanden. </p>
+                <p>IV. Antrag Dinghofer betr. Plebiszit wegen des Anschlusses an
+                    Deutschland. Bestellung eines Referenten: Dr. Schönbauer. ad II. beantragt Abg.
+                    Ulrich auf die Auslieferung nicht einzugehen – angenommen.  Dr Bauer teilt mit,
+                    daß der Unter<choice>
+                        <sic/>
+                        <corr>-</corr>
+                    </choice>Ausschuß seine Tätigkeit am 17. VIII wieder aufnehmen wird.   </p>
+                <p>Schriftführer Hafner d. Obmann Bauer</p>
+                <p><pb facs="#facs_4" n="4" xml:id="img_0004" break="yes"/>Präsenzliste des Verfassungs<choice>
+                        <sic/>
+                        <corr>-</corr>
+                    </choice>Ausschusses vom 23. Juli 1920  <list>
+                        <item>Bauer</item>
+                        <item>Seipel </item>
+                        <item>Fink</item>
+                        <item><gap reason="illegible"/></item>
+                        <item>Clessin </item>
+                        <item>Wagner </item>
+                        <item><gap reason="illegible"/>
+                        </item>
+                        <item>Hafner </item>
+                        <item><gap reason="illegible"/>
+                        </item>
+                        <item><gap reason="illegible"/>
+                        </item>
+                        <item> Min. Rat Dr. Froehlich Staatskanzlei </item>
+                    </list></p>
+                <p><pb facs="#facs_5" n="5" xml:id="img_0005" break="yes"/>Der Verfassungsausschuß
+                    hält morgen, Freitag, den 23. d.M., um ½ 10 Uhr vormittags im Lokale I eine
+                    Sitzung.</p>
+                <p>Tagesordnung: <list>
+                        <item>1. Zuweisungen. </item>
+                        <item>2. Nachwahl in den Unterausschuß.</item>
+                    </list>Wien, am 22. Juli 1920.</p>
+                <p>Bauer</p>
+                <p>Obmann. </p>
+            
+            
+         </div>
+      </body>
+   
+    </text>
+</TEI>

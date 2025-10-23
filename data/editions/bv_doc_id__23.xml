@@ -61,30 +61,48 @@
                 <idno type="bv_data_set">Datenset A</idno>
                 <idno type="goobi">14547</idno>
             </publicationStmt>
-            <sourceDesc>
-                <msDesc type="invetory">
-                    <msIdentifier>
-                        <institution key="https://d-nb.info/gnd/37748-X">Österreichisches Staatsarchiv</institution>
-                        <repository key="https://d-nb.info/gnd/1601181-8">Archiv der Republik (Wien)</repository>
-                        <idno type="archive">AVA, Nachlasssammlung, E1717 (Nachlass Fink) Karton 3, Mappe 2</idno>
-                    </msIdentifier>
-                    <msContents>
-                        <msItem>
-                            <author role="acdh:hasAuthor">Unterausschuss des Verfassungsausschusses</author>
-                            <title>UA Entwurf 23. September 1920 Textvariante</title>
-                            <note type="editor">UA 23. September Textvariante (Titel des Dokuments: "Ergebnis der Beratungen des Unterausschusses des Verfassungsausschusses"), dabei manche Artikel auf andersformatigen Blättern (Lithographien) eingelegt. Unklar, ob Vorstufe zum Druck oder Textvariante des UA 23. September, Zustand gut, einige handschriftliche Ergänzungen in Bleistift, eingelegte, lithographierten Blätter mit Textvarianten einzelner Artikel oder Passagen, 157 Artikel</note>
-                        </msItem>
-                    </msContents>
-                    <physDesc>
-                        <objectDesc form="Druck">
-                        </objectDesc>
-                        <handDesc>
-                        </handDesc>
-                    </physDesc>
-                    <history>
-                        <origin notBefore-iso="1920-09-23" notAfter-iso="1920-09-23">23. September 1920</origin>
-                    </history>
-                </msDesc>
+            <seriesStmt>
+<title>Datenset A</title>
+<biblScope unit="part">2601</biblScope>
+</seriesStmt>
+<sourceDesc>
+                        <listWit>
+                              <witness sameAs="#bv_doc_id__22"/>
+                        </listWit>
+                <msDesc type="invetory" subtype="secondary">
+                              <msIdentifier>
+                                    <institution key="https://d-nb.info/gnd/37748-X">Österreichisches Staatsarchiv</institution>
+                                    <repository key="https://d-nb.info/gnd/1601181-8">Archiv der
+                                          Republik (Wien)</repository>
+                                    <idno type="archive">AVA, Nachlasssammlung, E1717 (Nachlass
+                                          Fink) Karton 3, Mappe 2</idno>
+                              </msIdentifier>
+                              <msContents>
+                                    <msItem>
+                                          <author role="acdh:hasAuthor">Unterausschuss des
+                                                Verfassungsausschusses</author>
+                                          <title>UA Entwurf 23. September 1920 Textvariante</title>
+                                          <note type="editor">UA 23. September Textvariante (Titel
+                                                des Dokuments: "Ergebnis der Beratungen des
+                                                Unterausschusses des Verfassungsausschusses"), dabei
+                                                manche Artikel auf andersformatigen Blättern
+                                                (Lithographien) eingelegt. Unklar, ob Vorstufe zum
+                                                Druck oder Textvariante des UA 23. September,
+                                                Zustand gut, einige handschriftliche Ergänzungen in
+                                                Bleistift, eingelegte, lithographierten Blätter mit
+                                                Textvarianten einzelner Artikel oder Passagen, 157
+                                                Artikel</note>
+                                    </msItem>
+                              </msContents>
+                              <physDesc>
+                                    <objectDesc form="Druck"/>
+                                    <handDesc/>
+                              </physDesc>
+                              <history>
+                                    <origin notBefore-iso="1920-09-23" notAfter-iso="1920-09-23">23.
+                                          September 1920</origin>
+                              </history>
+                        </msDesc>
             </sourceDesc>
         </fileDesc>
         <profileDesc>
@@ -106,10 +124,8 @@
     <facsimile xmlns="http://www.tei-c.org/ns/1.0"><surface ulx="0" uly="0" lrx="2741" lry="3737" xml:id="facs_2"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0136/full/full/0/default.jpg" width="2741px" height="3737px"/></surface><surface ulx="0" uly="0" lrx="2733" lry="3791" xml:id="facs_3"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0137/full/full/0/default.jpg" width="2733px" height="3791px"/></surface><surface ulx="0" uly="0" lrx="2765" lry="3775" xml:id="facs_4"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0138/full/full/0/default.jpg" width="2765px" height="3775px"/></surface><surface ulx="0" uly="0" lrx="2716" lry="3758" xml:id="facs_5"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0139/full/full/0/default.jpg" width="2716px" height="3758px"/></surface><surface ulx="0" uly="0" lrx="2754" lry="3790" xml:id="facs_6"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0140/full/full/0/default.jpg" width="2754px" height="3790px"/></surface><surface ulx="0" uly="0" lrx="2724" lry="3742" xml:id="facs_7"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0141/full/full/0/default.jpg" width="2724px" height="3742px"/></surface><surface ulx="0" uly="0" lrx="2748" lry="3738" xml:id="facs_8"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0142/full/full/0/default.jpg" width="2748px" height="3738px"/></surface><surface ulx="0" uly="0" lrx="2720" lry="3764" xml:id="facs_9"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0143/full/full/0/default.jpg" width="2720px" height="3764px"/></surface><surface ulx="0" uly="0" lrx="2767" lry="3746" xml:id="facs_10"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0144/full/full/0/default.jpg" width="2767px" height="3746px"/></surface><surface ulx="0" uly="0" lrx="2743" lry="3755" xml:id="facs_11"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0145/full/full/0/default.jpg" width="2743px" height="3755px"/></surface><surface ulx="0" uly="0" lrx="2819" lry="3718" xml:id="facs_12"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0146/full/full/0/default.jpg" width="2819px" height="3718px"/></surface><surface ulx="0" uly="0" lrx="2787" lry="3816" xml:id="facs_13"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0147/full/full/0/default.jpg" width="2787px" height="3816px"/></surface><surface ulx="0" uly="0" lrx="2825" lry="3806" xml:id="facs_14"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0148/full/full/0/default.jpg" width="2825px" height="3806px"/></surface><surface ulx="0" uly="0" lrx="2795" lry="3749" xml:id="facs_15"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0149/full/full/0/default.jpg" width="2795px" height="3749px"/></surface><surface ulx="0" uly="0" lrx="2803" lry="3846" xml:id="facs_16"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0150/full/full/0/default.jpg" width="2803px" height="3846px"/></surface><surface ulx="0" uly="0" lrx="2809" lry="3758" xml:id="facs_17"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0151/full/full/0/default.jpg" width="2809px" height="3758px"/></surface><surface ulx="0" uly="0" lrx="2770" lry="4429" xml:id="facs_18"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0152/full/full/0/default.jpg" width="2770px" height="4429px"/></surface><surface ulx="0" uly="0" lrx="2814" lry="3759" xml:id="facs_19"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0153/full/full/0/default.jpg" width="2814px" height="3759px"/></surface><surface ulx="0" uly="0" lrx="2837" lry="3817" xml:id="facs_20"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0154/full/full/0/default.jpg" width="2837px" height="3817px"/></surface><surface ulx="0" uly="0" lrx="2787" lry="3776" xml:id="facs_21"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0155/full/full/0/default.jpg" width="2787px" height="3776px"/></surface><surface ulx="0" uly="0" lrx="2789" lry="3784" xml:id="facs_22"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0156/full/full/0/default.jpg" width="2789px" height="3784px"/></surface><surface ulx="0" uly="0" lrx="2799" lry="3744" xml:id="facs_23"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0157/full/full/0/default.jpg" width="2799px" height="3744px"/></surface><surface ulx="0" uly="0" lrx="2781" lry="3762" xml:id="facs_24"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0158/full/full/0/default.jpg" width="2781px" height="3762px"/></surface><surface ulx="0" uly="0" lrx="2806" lry="3767" xml:id="facs_25"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0159/full/full/0/default.jpg" width="2806px" height="3767px"/></surface><surface ulx="0" uly="0" lrx="2806" lry="3842" xml:id="facs_26"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0160/full/full/0/default.jpg" width="2806px" height="3842px"/></surface><surface ulx="0" uly="0" lrx="2772" lry="4555" xml:id="facs_27"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0161/full/full/0/default.jpg" width="2772px" height="4555px"/></surface><surface ulx="0" uly="0" lrx="2788" lry="4542" xml:id="facs_28"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0162/full/full/0/default.jpg" width="2788px" height="4542px"/></surface><surface ulx="0" uly="0" lrx="2777" lry="4481" xml:id="facs_29"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0163/full/full/0/default.jpg" width="2777px" height="4481px"/></surface><surface ulx="0" uly="0" lrx="2791" lry="4559" xml:id="facs_30"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0164/full/full/0/default.jpg" width="2791px" height="4559px"/></surface><surface ulx="0" uly="0" lrx="2797" lry="4562" xml:id="facs_31"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0165/full/full/0/default.jpg" width="2797px" height="4562px"/></surface><surface ulx="0" uly="0" lrx="2828" lry="4576" xml:id="facs_32"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0166/full/full/0/default.jpg" width="2828px" height="4576px"/></surface><surface ulx="0" uly="0" lrx="2777" lry="4527" xml:id="facs_33"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0167/full/full/0/default.jpg" width="2777px" height="4527px"/></surface><surface ulx="0" uly="0" lrx="2813" lry="4537" xml:id="facs_34"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0168/full/full/0/default.jpg" width="2813px" height="4537px"/></surface><surface ulx="0" uly="0" lrx="2786" lry="4523" xml:id="facs_35"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0169/full/full/0/default.jpg" width="2786px" height="4523px"/></surface><surface ulx="0" uly="0" lrx="2777" lry="4500" xml:id="facs_36"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0170/full/full/0/default.jpg" width="2777px" height="4500px"/></surface><surface ulx="0" uly="0" lrx="2787" lry="4502" xml:id="facs_37"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0171/full/full/0/default.jpg" width="2787px" height="4502px"/></surface><surface ulx="0" uly="0" lrx="2773" lry="4540" xml:id="facs_38"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0172/full/full/0/default.jpg" width="2773px" height="4540px"/></surface><surface ulx="0" uly="0" lrx="2783" lry="4541" xml:id="facs_39"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0173/full/full/0/default.jpg" width="2783px" height="4541px"/></surface><surface ulx="0" uly="0" lrx="2774" lry="4500" xml:id="facs_40"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0174/full/full/0/default.jpg" width="2774px" height="4500px"/></surface><surface ulx="0" uly="0" lrx="2781" lry="4505" xml:id="facs_41"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0175/full/full/0/default.jpg" width="2781px" height="4505px"/></surface><surface ulx="0" uly="0" lrx="2773" lry="4429" xml:id="facs_42"><graphic url="https://viewer.acdh.oeaw.ac.at/viewer/api/v1/records/bv_doc_id__23/files/images/IMG_0176/full/full/0/default.jpg" width="2773px" height="4429px"/></surface></facsimile>
     <text type="Verfassungsentwurf">
         <body><div type="main">
-                        <pb facs="#facs_2" n="2" xml:id="img_0002" break="yes"/>
-                        <fw type="pageNum">1</fw>
-                        <p><emph>Ergebnis der Beratungen des Unterausschusses des
-                                    Verfassungsausschustes.</emph></p>
+                        <p><pb facs="#facs_2" n="2" xml:id="img_0002" break="yes"/><fw type="pageNum">1</fw><emph>Ergebnis der Beratungen des
+                                    Unterausschusses des Verfassungsausschustes.</emph></p>
                         <head>Entwurf der Bundesstaatsverfassung. </head>
                         <div type="section">
                               <head>Erster Abschnitt. </head>
@@ -146,17 +162,15 @@
                                           innerhalb des Bundesgebietes kann — abgesehen von
                                           Friedensverträgennur durch übereinstimmende
                                           Verfassungsgesetze des Bundes und jenes Landes erfolgen,
-                                          dessen Gebiet eine Änderung erfährt.  </p>
+                                          dessen Gebiet eine Änderung erfährt. </p>
                               </div>
                               <div type="article">
                                     <head>Artikel 3a.</head>
                                     <p type="legal_section"><label>(1)</label> Das Bundesgebiet
-                                          bildet ein einheitliches Währungs-, Wirtschafts= und
+                                          bildet ein einheitliches Währungs-, Wirtschafts- und
                                           Zollgebiet.</p>
-                                    <pb facs="#facs_3" n="3" xml:id="img_0003" break="yes"/>
-                                    <fw type="pageNum">2</fw>
-                                    <p type="legal_section"><label>(2)</label> Innerhalb der Grenzen
-                                          des Bundes dürfen keinerlei Zwischenzollinien errichtet
+                                    <p type="legal_section"><pb facs="#facs_3" n="3" xml:id="img_0003" break="yes"/><fw type="pageNum">2</fw><label>(2)</label> Innerhalb der Grenzen des
+                                          Bundes dürfen keinerlei Zwischenzollinien errichtet
                                           werden. Artikel 3b. Bundeshauptstadt und Sitz der obersten
                                           Organe des Bundes ist Wien. </p>
                               </div>
@@ -173,7 +187,7 @@
                                           Landesbürgerschaft wird die Bundesbürgerschaft erworben. </p>
                                     <p type="legal_section"><label>(4)</label> Jeder Bundesbürger
                                           hat in jedem Lande die gleichen Rechte und Pflichten wie
-                                          die Bürger des Landes selbst.  </p>
+                                          die Bürger des Landes selbst. </p>
                               </div>
                               <div type="article">
                                     <head>Artikel 4a.</head>
@@ -187,13 +201,13 @@
                                           Ausübung ihrer politischen Rechte gewährleistet. </p>
                               </div>
                               <div type="article">
-                                    <p>(Artikel 5 fällt aus.)</p>
+                                    <p type="legal_section">(Artikel 5 fällt aus.)</p>
                               </div>
                               <div type="article">
                                     <head>Artikel 6. </head>
                                     <p type="legal_section">Die deutsche Sprache ist, unbeschadet
                                           der den sprachlichen Minderheiten gesetzlich eingeräumten
-                                          Rechte, die Staatssprache der Republik.  </p>
+                                          Rechte, die Staatssprache der Republik. </p>
                               </div>
                               <div type="article">
                                     <head>Artikel 6a. </head>
@@ -202,7 +216,7 @@
                                           Bundesrechten.</p>
                               </div>
                               <div type="article">
-                                    <p>(Artikel 7, 8 und 9 fallen aus.) </p>
+                                    <p type="legal_section">(Artikel 7, 8 und 9 fallen aus.) </p>
                               </div>
                               <div type="article">
                                     <head>Artikel 9. </head>
@@ -234,7 +248,7 @@
                                                   das Bundesgebiet und des Austrittes aus ihm; Ein=
                                                   und Auswanderungswesen; Abschiebung, Abschaffung,
                                                   Ausweisung und Auslieferung aus dem Bundesgebiete
-                                                  sowie Durchlieferung;  </item>
+                                                  sowie Durchlieferung; </item>
                                                 <label>4.</label>
                                                 <item> Bundesfinanzen, insbesondere öffentliche
                                                   Abgaben, die ausschließlich oder teilweise für den
@@ -243,10 +257,10 @@
                                                   Regelung der Anteilnahme der Länder an den
                                                   Einnahmen des Bundes und Regelung der Beiträge und
                                                   Zuschüsse aus Bundesmitteln zu den Ausgaben der
-                                                  Länder;  </item>
+                                                  Länder; </item>
                                                 <label>5.</label>
                                                 <item>Geld=, Kredit=, Börse= und Bankwesen; Maß= und
-                                                  Gewichts=, Normen= und Punzierungs wesen;   </item>
+                                                  Gewichts=, Normen= und Punzierungs wesen; </item>
                                                 <label>6.</label>
                                                 <item>Zivil= und Strafrechtswesen einschließlich des
                                                   wirtschaftlichen Assoziationswesens; Justizwesen;
@@ -256,7 +270,7 @@
                                                   Pressewesen; Enteignung, soweit sie nicht
                                                   Angelegenheiten betrifft, die in den Wirkungskreis
                                                   der Länder fallen; Angelegenheiten der Notare, der
-                                                  Rechtsanwälte und verwandter Berufe  </item>
+                                                  Rechtsanwälte und verwandter Berufe </item>
                                                 <label>7.</label>
                                                 <item> Angelegenheiten des Gewerbes und der
                                                   Industrie; Bekämpfung des unlauteren Wettbewerbes;
@@ -279,7 +293,7 @@
                                                   durchfließen; Bau derjenigen Wasserstraßen, die
                                                   das Inland mit dem Ausland oder die mehrere Länder
                                                   verbinden; Dampfkessel= und Kraftmaschinenwesen;
-                                                  Vermessungswesen;  </item>
+                                                  Vermessungswesen; </item>
                                                 <label>10.</label>
                                                 <item> Bodenreform (agrarische Operationen,
                                                   Wiederbesiedelung usw.) und Bodenentschuldung; </item>
@@ -287,14 +301,14 @@
                                                 <item>gesamtesArbeiterrecht sowie Arbeiter- und
                                                   Angestelltenschutz, soweit es sich nicht um land-
                                                   und forstwirtschaftliche Arbeiter und Angestellte
-                                                  handelt; Sozial= und Vertragsversicherungswesen;  </item>
+                                                  handelt; Sozial= und Vertragsversicherungswesen; </item>
                                                 <label>12.</label>
                                                 <item>Gesundheits und Veterinärwesen, jedoch mit
                                                   Ausnahme der Heil= und Pflegeanstalten und
                                                   Ambularien, des Kurortes, Leichen= und
                                                   Bestattungswesens sowie des
                                                   Gemeindesanitätsdienstes und Rettungswesens;
-                                                  Nahrungsmittelkontrolle; </item>
+                                                  Nahrungsmittelkontrolle;</item>
                                                 <fw type="pageNum">125</fw>
                                                 <pb facs="#facs_5" n="5" xml:id="img_0005" break="yes"/>
                                                 <fw type="pageNum">4</fw>
@@ -312,7 +326,7 @@
                                                   handelt, die nach ihren Zwecken über den
                                                   Interessenbereich eines Landes hinausgehen und
                                                   nicht schon bisher von den Ländern autonom
-                                                  verwaltet wurden;  </item>
+                                                  verwaltet wurden; </item>
                                                 <label>14.</label>
                                                 <item>militärische Angelegenheiten;
                                                   Kriegsschadenangelegenheiten und Fürsorge für
@@ -322,11 +336,11 @@
                                                   einheitlichen Führung der Wirtschaft notwendig
                                                   erscheinende Maßnahmen, insbesondere auch
                                                   hinsichtlich der Versorgung der Bevölkerung mit
-                                                  Bedarfsgegenständen;  </item>
+                                                  Bedarfsgegenständen; </item>
                                                 <label>15.</label>
                                                 <item> Einrichtung der Bundesämter und sonstigen
                                                   Bundesbehörden; Dienstrecht der
-                                                  Bundesangestellten.  </item>
+                                                  Bundesangestellten. </item>
                                           </list></p>
                               </div>
                               <div type="article">
@@ -335,20 +349,20 @@
                                           Gesetzgebung, Landessache die Vollziehung in folgenden
                                           Angelegenheiten: <list>
                                                 <label>1.</label>
-                                                <item>Staatsbürgerschaft und Heimatrecht:  </item>
+                                                <item>Staatsbürgerschaft und Heimatrecht: </item>
                                                 <label>2.</label>
-                                                <item>Vereins= und Versammlungsrecht;  </item>
+                                                <item>Vereins= und Versammlungsrecht; </item>
                                                 <label>3.</label>
                                                 <item> nicht im Artikel 10 angeführte berufliche
-                                                  Vertretungen;  </item>
+                                                  Vertretungen; </item>
                                                 <label>4.</label>
                                                 <item> Personenstandsangelegenheiten einschließlich
-                                                  des Matrikenwesens und der Namensänderung;  </item>
+                                                  des Matrikenwesens und der Namensänderung; </item>
                                                 <label>5.</label>
-                                                <item> Paßwesen und Fremdenpolizei;  </item>
+                                                <item> Paßwesen und Fremdenpolizei; </item>
                                                 <label>6.</label>
                                                 <item> öffentliche Agentien und
-                                                  Privatgeschäftsvermittlung;  </item>
+                                                  Privatgeschäftsvermittlung; </item>
                                                 <label>7.</label>
                                                 <item>hinsichtlich der öffentlichen Abgaben, die
                                                   nicht ausschließlich oder teilweise für den Bund
@@ -362,25 +376,25 @@
                                                   oder verkehrserschwerenden Belastung der Benutzung
                                                   öffentlicher Verkehrswege und Einrichtungen mit
                                                   Gebühren und zur Verhinderung der Schädigung der
-                                                  Bundesfinanzen;  </item>
+                                                  Bundesfinanzen; </item>
                                                 <label>8.</label>
                                                 <item> Munitions=, Schieß= und Sprengmittelwesen,
                                                   soweit es nicht dem Monopol unterliegt, sowie
                                                   Waffenwesen; betriebstechnische Vorschriften beim
-                                                  Kraftfahrwesen; </item>
+                                                  Kraftfahrwesen;</item>
                                                 <pb facs="#facs_6" n="6" xml:id="img_0006" break="yes"/>
                                                 <fw type="pageNum">5</fw>
                                                 <label>9.</label>
-                                                <item>Elektrizitätswesen;  </item>
+                                                <item>Elektrizitätswesen; </item>
                                                 <label>10.</label>
                                                 <item>Volkswohnungs= und Volkspflegestätten= wesen;
-                                                  Leichen= und Bestattungswesen:  </item>
+                                                  Leichen= und Bestattungswesen: </item>
                                                 <label>11.</label>
                                                 <item>Verwaltungs= und Verwattungsstrafverfahren
                                                   einschließlich der Zwangsvollstreckung sowie
                                                   allgemeine Bestimmungen des
                                                   Verwaltungsstrafrechtes in Angelegenheiten, deren
-                                                  Vollziehung den Ländern zusteht.  </item>
+                                                  Vollziehung den Ländern zusteht. </item>
                                           </list></p>
                                     <p type="legal_section"><label>(2)</label> Die
                                           Durchführungsverordnungen zu den nach dem Absatz 1
@@ -394,7 +408,7 @@
                                           Ausführungsgesetzen und die Vollziehung in folgenden
                                           Angelegenheiten: <list>
                                                 <label>1. </label>
-                                                <item>Organisation der Verwaltung in den Ländern;  </item>
+                                                <item>Organisation der Verwaltung in den Ländern; </item>
                                                 <label>2.</label>
                                                 <item>Armenwesen: Bevölkerungspolitik;
                                                   Mutterschafts=, Säuglings= und Jugendfürsorge;
@@ -408,12 +422,12 @@
                                                   aus einem in ein anderes Land; </item>
                                                 <label>4.</label>
                                                 <item>öffentliche Einrichtungen zur
-                                                  außergerichtlichen Vermittlung von Streitigkeiten;  </item>
+                                                  außergerichtlichen Vermittlung von Streitigkeiten; </item>
                                                 <label>5.</label>
                                                 <item>Arbeiterrecht sowie Arbeiter= und
                                                   Angestelltenschutz, soweit es sich um land= und
                                                   forstwirtschaftliche Arbeiter und Angestellte
-                                                  handelt;  </item>
+                                                  handelt; </item>
                                                 <label>6.</label>
                                                 <item>Forstwesen einschließlich des Triftwesens; der
                                                   Pflanzen gegen Krankheiten und Schutz Schädlinge;
@@ -422,7 +436,7 @@
                                                 <item> Regelung des Bauwesens; </item>
                                                 <label>8.</label>
                                                 <item>Dienstrecht der Organe der Länder, die
-                                                  behördliche Aufgaben zu besorgen haben.  </item>
+                                                  behördliche Aufgaben zu besorgen haben. </item>
                                           </list></p>
                               </div>
                               <div type="article">
@@ -443,9 +457,7 @@
                                           nicht eingehalten, so geht die Zuständigkeit zur Erlassung
                                           des Ausführungsgesetzes für dieses Land auf den Bund
                                           über.</p>
-                                    <pb facs="#facs_7" n="7" xml:id="img_0007" break="yes"/>
-                                    <fw type="pageNum">6</fw>
-                                    <p type="legal_section"><label>(3)</label> Soll ein Akt der
+                                    <p type="legal_section"><pb facs="#facs_7" n="7" xml:id="img_0007" break="yes"/><fw type="pageNum">6</fw><label>(3)</label> Soll ein Akt der
                                           vollziehenden Gewalt mehrere Länder Rechtswirksamkeit
                                           äußern und ist in dem die Angelegenheit regelnden
                                           Bundesgesetz nicht ein anderer Vorgang vorgesehen, so geht
@@ -466,9 +478,9 @@
                                           erlassenen Vorschriften wahrzunehmen. </p>
                               </div>
                               <div type="article">
-                                    <head>Artikel 13 a.  </head>
-                                    <p type="legal_section"><label>(1)  </label>Wenn zur
-                                          Durchführung von Staatsverträgen gesetzliche Maßnahmen im
+                                    <head>Artikel 13a. </head>
+                                    <p type="legal_section"><label>(1) </label>Wenn zur Durchführung
+                                          von Staatsverträgen gesetzliche Maßnahmen im
                                           Wirkungskreise der Länder erforderlich sind, sind die
                                           Länder verpflichtet, die betreffenden Gesetze zu erlassen;
                                           kommt ein Land dieser Verpflichtung nicht rechtzeitig
@@ -512,7 +524,7 @@
                                           anordnen. </p>
                               </div>
                               <div type="article">
-                                    <head>Artikel 14 a.</head>
+                                    <head>Artikel 14a.</head>
                                     <p type="legal_section"><label>(1)</label> Die Organisation der
                                           Gütererzeugung und der Güterverteilung ist Aufgabe des
                                           Gemeinwesens Durch planmäßigen Aufbau dieser Organisation
@@ -524,10 +536,10 @@
                                           Verwaltung in wirtschaftlichen und sozialen
                                           Angelegenheiten heranzuziehen.</p>
                               </div>
-                              <fw type="pageNum">129</fw>
-                              <pb facs="#facs_9" n="9" xml:id="img_0009" break="yes"/>
-                              <fw type="pageNum">7a</fw>
                               <div type="article">
+                                    <fw type="pageNum">129</fw>
+                                    <pb facs="#facs_9" n="9" xml:id="img_0009" break="yes"/>
+                                    <fw type="pageNum">7a</fw>
                                     <head>Artikel 14a </head>
                                     <p type="legal_section"><label>(1)</label> Die Organisation der
                                           Gütererzeugung und der Güterverteilung ist Aufgabe des
@@ -570,7 +582,7 @@
                                           Tätigkeit verantwortlich. </p>
                               </div>
                               <div type="article">
-                                    <head>Artikel 14 d. </head>
+                                    <head>Artikel 14d. </head>
                                     <p type="legal_section"><label>(1)</label> Das Dienstrecht -
                                           einschließlich des Besoldungssystems und des
                                           Disziplinarrechtes — wird für jene Organe des Bundes und
@@ -585,13 +597,11 @@
                                           Volksbeauftragten des Bundes, die Diensthoheit der Länder
                                           gegenüber ihren Organen von den Volksbeauftragten der
                                           Länder ausgeübt.</p>
-                                    <fw type="pageNum">138</fw>
-                                    <pb facs="#facs_10" n="10" xml:id="img_0010" break="yes"/>
-                                    <fw type="pageNum">7b</fw>
-                                    <p type="legal_section"><label>(3)</label> Die Bestellung und
-                                          das Dienstrecht der Organe der Gebiets= und Ortsgemeinden,
-                                          die behördliche Aufgaben zu vollziehen haben, werden durch
-                                          die Gesetze über die Organisation der Verwaltung geregelt. </p>
+                                    <p type="legal_section"><fw type="pageNum">138</fw><pb facs="#facs_10" n="10" xml:id="img_0010" break="yes"/><fw type="pageNum">7b</fw><label>(3)</label> Die
+                                          Bestellung und das Dienstrecht der Organe der Gebiets= und
+                                          Ortsgemeinden, die behördliche Aufgaben zu vollziehen
+                                          haben, werden durch die Gesetze über die Organisation der
+                                          Verwaltung geregelt. </p>
                                     <p type="legal_section"><label>(4)</label> Die Möglichkeit des
                                           Übertrittes aus dem Dienste des Bundes in den eines Landes
                                           oder einer Gemeinde und umgekehrt, aus dem Dienste eines
@@ -608,7 +618,7 @@
                                           gesetzlich geschützt. </p>
                               </div>
                               <div type="article">
-                                    <head>Artikel 14 e. </head>
+                                    <head>Artikel 14e. </head>
                                     <p type="legal_section"><label>(1)</label> Zur Unterstützung der
                                           mit der Aufrechterhaltung der öffentlichen Ordnung, Ruhe
                                           und Sicherheit im Bundesgebiete betrauten Behörden dient
@@ -636,15 +646,15 @@
                                           unmittelbar in Anspruch zu nehmen. </p>
                               </div>
                               <div type="article">
-                                    <head>Artikel 14 f. </head>
+                                    <head>Artikel 14f. </head>
                                     <p type="legal_section">Alle Behörden und Ämter im Bundesgebiete
                                           sind im Rahmen ihres gesetzmäßigen Wirkungskreises zur
                                           wechselseitigen Hilfeleistung verpflichtet.</p>
                               </div>
-                              <fw type="pageNum">131</fw>
-                              <pb facs="#facs_11" n="11" xml:id="img_0011" break="yes"/>
-                              <fw type="pageNum">7c</fw>
                               <div type="article">
+                                    <fw type="pageNum">131</fw>
+                                    <pb facs="#facs_11" n="11" xml:id="img_0011" break="yes"/>
+                                    <fw type="pageNum">7c</fw>
                                     <head>Artikel 14 g. </head>
                                     <p type="legal_section"><label>(1)</label> Alle mit der Ausübung
                                           der Bundes-, Landes- oder Gemeindeverwaltung oder der
@@ -660,9 +670,9 @@
                                     <p type="legal_section"><label>(3)</label> Die näheren
                                           Bestimmungen trifft ein Bundesgesetz.</p>
                               </div>
-                              <fw type="pageNum">132</fw>
                         </div>
                         <div type="section">
+                              <fw type="pageNum">132</fw>
                               <pb facs="#facs_12" n="12" xml:id="img_0012" break="yes"/>
                               <fw type="pageNum">8</fw>
                               <head>Zweiter Abschnitt. </head>
@@ -687,7 +697,8 @@
                                                 berufen. </p>
                                     </div>
                                     <div type="article">
-                                          <p>(Artikel 17 und 18 fallen aus.) </p>
+                                          <p type="legal_section">(Artikel 17 und 18 fallen aus.)
+                                          </p>
                                     </div>
                                     <div type="article">
                                           <head>Artikel 19. </head>
@@ -725,11 +736,11 @@
                                                 Dieser ist verpflichtet, den Nationalrat sofort
                                                 einzuberufen, wenn wenigstens ein Viertel seiner
                                                 Mitglieder oder die Bundesregierung es verlangt.</p>
-                                          <fw type="pageNum">133</fw>
                                     </div>
-                                    <pb facs="#facs_13" n="13" xml:id="img_0013" break="yes"/>
-                                    <fw type="pageNum">9</fw>
                                     <div type="article">
+                                          <fw type="pageNum">133</fw>
+                                          <pb facs="#facs_13" n="13" xml:id="img_0013" break="yes"/>
+                                          <fw type="pageNum">9</fw>
                                           <p>(Artikel 21 fällt aus.) </p>
                                     </div>
                                     <div type="article">
@@ -792,19 +803,17 @@
                                                 von wenigstens drei Mitgliedern. </p>
                                           <p type="legal_section"><label>(3)</label> Für jedes
                                                 Mitglied wird ein Ersatzmann bestellt.</p>
-                                          <pb facs="#facs_14" n="14" xml:id="img_0014" break="yes"/>
-                                          <fw type="pageNum">10</fw>
-                                          <p type="legal_section"><label>(4)</label> Die Mitglieder
-                                                des Bundesrates und deren Ersatzmänner werden von
-                                                den Landtagen für die Dauer ihrer
-                                                Gesetzgebungsperiode nach dem Grundsatze der
-                                                Verhältniswahl gewählt, jedoch muß wenigstens ein
-                                                Mandat der Partei zufallen, welche die zweithöchste
-                                                Anzahl von Sitzen im Landtage oder, wenn mehrere
-                                                Parteien die gleiche Anzahl von Sitzen haben, die
-                                                zweithöchste Zahl von Wählerstimmen bei der letzten
-                                                Landtagswahl ausweist. Bei gleichen Ansprüchen
-                                                mehrerer Parteien entscheidet das Los. </p>
+                                          <p type="legal_section"><pb facs="#facs_14" n="14" xml:id="img_0014" break="yes"/><fw type="pageNum">10</fw><label>(4)</label> Die Mitglieder des
+                                                Bundesrates und deren Ersatzmänner werden von den
+                                                Landtagen für die Dauer ihrer Gesetzgebungsperiode
+                                                nach dem Grundsatze der Verhältniswahl gewählt,
+                                                jedoch muß wenigstens ein Mandat der Partei
+                                                zufallen, welche die zweithöchste Anzahl von Sitzen
+                                                im Landtage oder, wenn mehrere Parteien die gleiche
+                                                Anzahl von Sitzen haben, die zweithöchste Zahl von
+                                                Wählerstimmen bei der letzten Landtagswahl ausweist.
+                                                Bei gleichen Ansprüchen mehrerer Parteien
+                                                entscheidet das Los. </p>
                                           <p type="legal_section"><label>(5)</label> In den
                                                 Bundesrat kann nur gewählt werden, wer zum Landtage
                                                 wählbar ist. </p>
@@ -853,16 +862,16 @@
                                                 Ausschüsse. </p>
                                     </div>
                                     <div type="article">
-                                          <p>(Artikel 29 fällt aus.)</p>
+                                          <p type="legal_section">(Artikel 29 fällt aus.)</p>
                                     </div>
-                                    <fw type="pageNum">135</fw>
                               </div>
                               <div type="section">
+                                    <fw type="pageNum">135</fw>
                                     <pb facs="#facs_15" n="15" xml:id="img_0015" break="yes"/>
                                     <fw type="pageNum">11</fw>
                                     <head>C. Die Bundesversammlung.</head>
                                     <div type="article">
-                                          <head>Artikel 29 a. </head>
+                                          <head>Artikel 29a. </head>
                                           <p type="legal_section"><label>(1)</label> Nationalrat und
                                                 Bundesrat treten als Bundesversammlung in
                                                 gemeinsamer öffentlicher Sitzung zur Wahl des
@@ -885,11 +894,11 @@
                                                 Sitzungen der Bundesversammlung. </p>
                                     </div>
                                     <div type="article">
-                                          <head>Artikel 29 b.  </head>
-                                          <p type="legal_section"><label>(1)  </label>Die Beschlüsse
+                                          <head>Artikel 29b. </head>
+                                          <p type="legal_section"><label>(1) </label>Die Beschlüsse
                                                 der Bundesversammlung werden von ihrem Vorsitzenden
-                                                beurkundet und vom Bundeskanzler gegengezeichnet.  </p>
-                                          <p type="legal_section"><label>(2)  </label>Die amtliche
+                                                beurkundet und vom Bundeskanzler gegengezeichnet. </p>
+                                          <p type="legal_section"><label>(2) </label>Die amtliche
                                                 Kundmachung obliegt dem Bundeskanzler.</p>
                                     </div>
                               </div>
@@ -923,11 +932,11 @@
                                                 von mindestens der Hälfte aller Mitglieder und mit
                                                 einer Mehrheit von zwei Dritteln aller abgegebenen
                                                 Stimmen beschlossen werden.</p>
-                                          <fw type="pageNum">136</fw>
                                     </div>
-                                    <pb facs="#facs_16" n="16" xml:id="img_0016" break="yes"/>
-                                    <fw type="pageNum">12</fw>
                                     <div type="article">
+                                          <fw type="pageNum">136</fw>
+                                          <pb facs="#facs_16" n="16" xml:id="img_0016" break="yes"/>
+                                          <fw type="pageNum">12</fw>
                                           <head>Artikel 32. </head>
                                           <p type="legal_section">Jede Gesamtänderung der
                                                 Bundesverfassung, eine teilweise Änderung aber nur,
@@ -957,7 +966,8 @@
                                           </p>
                                     </div>
                                     <div type="article">
-                                          <p>(Artikel 35 und 36 fallen aus.) </p>
+                                          <p type="legal_section">(Artikel 35 und 36 fallen aus.)
+                                          </p>
                                     </div>
                                     <div type="article">
                                           <head>Artikel 37. </head>
@@ -988,11 +998,7 @@
                                                 Nationalrate innerhalb acht Wochen nach Einlangen
                                                 des Gesetzesbeschlusses beim Bundesrate schriftlich
                                                 mitgeteilt werden.</p>
-                                          <p type="legal_section"/>
-                                          <fw type="pageNum">137</fw>
-                                          <pb facs="#facs_17" n="17" xml:id="img_0017" break="yes"/>
-                                          <fw type="pageNum">18</fw>
-                                          <p type="legal_section"><label>(4)</label> Wiederholt der
+                                          <p type="legal_section"><fw type="pageNum">137</fw><pb facs="#facs_17" n="17" xml:id="img_0017" break="yes"/><fw type="pageNum">18</fw><label>(4)</label> Wiederholt der
                                                 Nationalrat seinen ursprünglichen Beschluß, so ist
                                                 dieser zu beurkunden und kundzumachen. Beschließt
                                                 der Bundesrat, keinen Einspruch zu erheben, oder
@@ -1010,7 +1016,7 @@
                                                 Sache Nationalrates. </p>
                                     </div>
                                     <div type="article">
-                                          <p>(Artikel 39 fällt aus.) </p>
+                                          <p type="legal_section">(Artikel 39 fällt aus.) </p>
                                     </div>
                                     <div type="article">
                                           <head>Artikel 40. </head>
@@ -1024,11 +1030,11 @@
                                           <p type="legal_section"><label>(3)</label> Die Beurkundung
                                                 ist vom Bundeskanzler und von den zuständigen
                                                 Bundesministern gegenzuzeichnen.</p>
-                                          <p type="legal_section"><fw type="pageNum">138</fw></p>
                                     </div>
-                                    <pb facs="#facs_18" n="18" xml:id="img_0018" break="yes"/>
-                                    <fw type="pageNum">13 a </fw>
                                     <div type="article">
+                                          <fw type="pageNum">138</fw>
+                                          <pb facs="#facs_18" n="18" xml:id="img_0018" break="yes"/>
+                                          <fw type="pageNum">13 a </fw>
                                           <head>Artikel 41. </head>
                                           <p type="legal_section">Die Kundmachung der Bundesgesetze,
                                                 der in Artikel 38 Abs. 5 erwähnten Beschlüsse des
@@ -1055,16 +1061,16 @@
                                           <p type="legal_section"><label>(2)</label> Ueber das
                                                 Bundesgesetzblatt ergeht ein besonderes
                                                 Bundesgesetz.</p>
-                                          <fw type="pageNum">139</fw>
                                     </div>
                               </div>
                               <div type="section">
+                                    <fw type="pageNum">139</fw>
                                     <pb facs="#facs_19" n="19" xml:id="img_0019" break="yes"/>
                                     <fw type="pageNum">14</fw>
                                     <head>E. Mitwirkung des Nationalrates und des Bundesrates an der
                                           Vollziehung des Bundes. </head>
                                     <div type="article">
-                                          <head>Artikel 42 a. </head>
+                                          <head>Artikel 42a. </head>
                                           <p type="legal_section"><label>(1)</label> Alle
                                                 politischen Staatsverträge, andere nur, sofern sie
                                                 gesetzesändernden Inhalt haben, bedürfen zu ihrer
@@ -1075,18 +1081,18 @@
                                                 38, Absatz 1 bis 4, sinngemäß Anwendung. </p>
                                     </div>
                                     <div type="article">
-                                          <head>Artikel 42 b.   </head>
-                                          <p type="legal_section"><label>(1)  </label>Dem
-                                                Nationalrat ist spätestens sechs Wochen vor Ablauf
-                                                des Finanzjahres von der Bundesregierung ein
-                                                Vorschlag der Einnahmen und Ausgaben des Bundes für
-                                                das folgende Finanzjahr vorzulegen.  </p>
+                                          <head>Artikel 42b. </head>
+                                          <p type="legal_section"><label>(1) </label>Dem Nationalrat
+                                                ist spätestens sechs Wochen vor Ablauf des
+                                                Finanzjahres von der Bundesregierung ein Vorschlag
+                                                der Einnahmen und Ausgaben des Bundes für das
+                                                folgende Finanzjahr vorzulegen. </p>
                                           <p type="legal_section"><label>(2) </label> Die
                                                 Bewilligung des Bundesvoranschlages erfolgt in
                                                 Gesetzesform.</p>
                                     </div>
                                     <div type="article">
-                                          <head>Artikel 42 c.  </head>
+                                          <head>Artikel 42c. </head>
                                           <p type="legal_section">Der Nationalrat wirkt an der
                                                 Festsetzung von Eisenbahntarifen, Post-,
                                                 Telegraphen= und Fernsprechgebühren und Preisen der
@@ -1121,12 +1127,9 @@
                                                 Nationalrat verlangt, muß der Verhaft aufgehoben
                                                 oder die Verfolgung auf die Dauer der
                                                 Gesetzgebungsperiode aufgeschoben werden.</p>
-                                          <fw type="pageNum">140</fw>
-                                          <pb facs="#facs_20" n="20" xml:id="img_0020" break="yes"/>
-                                          <fw type="pageNum">15</fw>
-                                          <p type="legal_section"><label>(5)</label> Die Immunität
-                                                der Organe des Nationalrates, deren Funktion über
-                                                die Gesetzgebungsperiode hinausgeht, bleibt für die
+                                          <p type="legal_section"><fw type="pageNum">140</fw><pb facs="#facs_20" n="20" xml:id="img_0020" break="yes"/><fw type="pageNum">15</fw><label>(5)</label> Die Immunität der
+                                                Organe des Nationalrates, deren Funktion über die
+                                                Gesetzgebungsperiode hinausgeht, bleibt für die
                                                 Dauer dieser Funktion bestehen. </p>
                                     </div>
                                     <div type="article">
@@ -1192,10 +1195,10 @@
                                                 der Untersuchungsausschüsse wird durch das
                                                 Geschäftsordnungsgesetz geregelt.</p>
                                     </div>
-                                    <fw type="pageNum">141</fw>
                               </div>
                         </div>
                         <div type="section">
+                              <fw type="pageNum">141</fw>
                               <pb facs="#facs_21" n="21" xml:id="img_0021" break="yes"/>
                               <fw type="pageNum">16</fw>
                               <head>Dritter Abschnitt. </head>
@@ -1260,10 +1263,10 @@
                                                   der Bundeskanzler die Bundesversammlung innerhalb
                                                   dreier Wochen einzuberufen.</p>
                                           </div>
-                                          <fw type="pageNum">142</fw>
-                                          <pb facs="#facs_22" n="22" xml:id="img_0022" break="yes"/>
-                                          <fw type="pageNum">17</fw>
                                           <div type="article">
+                                                <fw type="pageNum">142</fw>
+                                                <pb facs="#facs_22" n="22" xml:id="img_0022" break="yes"/>
+                                                <fw type="pageNum">17</fw>
                                                 <head>Artikel 53. </head>
                                                 <p type="legal_section"><label>(1)</label> Wenn der
                                                   Bundespräsident verhindert oder wenn seine Stelle
@@ -1331,10 +1334,10 @@
                                                   ressortmäßig zuständigen Mitgliedern der
                                                   Bundesregierung übertragen.</p>
                                           </div>
-                                          <fw type="pageNum">143</fw>
-                                          <pb facs="#facs_23" n="23" xml:id="img_0023" break="yes"/>
-                                          <fw type="pageNum">18</fw>
                                           <div type="article">
+                                                <fw type="pageNum">143</fw>
+                                                <pb facs="#facs_23" n="23" xml:id="img_0023" break="yes"/>
+                                                <fw type="pageNum">18</fw>
                                                 <head>Artikel 56. </head>
                                                 <p type="legal_section">Alle Akte des
                                                   Bundespräsidenten bedürfen zu ihrer Gültigkeit der
@@ -1401,10 +1404,10 @@
                                                   Bundesregierung finden die Bestimmungen der
                                                   Absätze 2 bis 4 sinngemäße Anwendung.</p>
                                           </div>
-                                          <fw type="pageNum">144</fw>
-                                          <pb facs="#facs_24" n="24" xml:id="img_0024" break="yes"/>
-                                          <fw type="pageNum">19</fw>
                                           <div type="article">
+                                                <fw type="pageNum">144</fw>
+                                                <pb facs="#facs_24" n="24" xml:id="img_0024" break="yes"/>
+                                                <fw type="pageNum">19</fw>
                                                 <head>Artikel 61. </head>
                                                 <p type="legal_section">Ist die Bundesregierung
                                                   zurückgetreten, so hat der Bundespräsident bis zur
@@ -1418,7 +1421,7 @@
                                                   ausgeschieden sind. </p>
                                           </div>
                                           <div type="article">
-                                                <head>Artikel 61 a. </head>
+                                                <head>Artikel 61a. </head>
                                                 <p type="legal_section"><label>(1) </label> Die
                                                   Bestallungsurkunden des Bundeskanzlers, des
                                                   Vizekanzlers und der übrigen Bundesminister werden
@@ -1433,7 +1436,7 @@
                                                   Artikels 61 sinngemäß Anwendung.</p>
                                           </div>
                                           <div type="article">
-                                                <head>Artikel 61 b.</head>
+                                                <head>Artikel 61b.</head>
                                                 <p type="legal_section">Im Falle der zeitweiligen
                                                   Verhinderung eines Bundesministers, betraut der
                                                   Bundespräsident einen der Bundesminister oder
@@ -1470,9 +1473,9 @@
                                                 <p type="legal_section">Die Mitglieder der
                                                   Bundesregierung (Artikel 60 und 61) sind gemäß
                                                   Artikel 152 dem Nationalrat verantwortlich.</p>
-                                                <fw type="pageNum">145</fw>
                                           </div>
                                           <div type="article">
+                                                <fw type="pageNum">145</fw>
                                                 <pb facs="#facs_25" n="25" xml:id="img_0025" break="yes"/>
                                                 <fw type="pageNum">20</fw>
                                                 <head>Artikel 64. </head>
@@ -1489,7 +1492,8 @@
                                                   Bundesministeriums betraut werden.</p>
                                           </div>
                                           <div type="article">
-                                                <p> (Artikel 65 fällt aus.) </p>
+                                                <p type="legal_section"> (Artikel 65 fällt aus.)
+                                                </p>
                                           </div>
                                           <div type="article">
                                                 <head>Artikel 66. </head>
@@ -1508,13 +1512,13 @@
                                                   und an seine Weisungen gebunden. </p>
                                           </div>
                                           <div type="article">
-                                                <p>(Artikel 67 fällt aus.) </p>
+                                                <p type="legal_section">(Artikel 67 fällt aus.) </p>
                                           </div>
                                     </div>
                                     <div type="section">
                                           <head>3. Das Bundesheer.</head>
                                           <div type="article">
-                                                <p> (Artikel 68 fällt aus.) </p>
+                                                <p type="legal_section"> (Artikel 68 fällt aus.) </p>
                                           </div>
                                           <div type="article">
                                                 <head>Artikel 69. </head>
@@ -1540,9 +1544,7 @@
                                                   die Bundesregierung oder innerhalb der von dieser
                                                   erteilten Ermächtigung der zuständige
                                                   Bundesminister betraut.</p>
-                                                <fw type="pageNum">146</fw>
-                                                <pb facs="#facs_26" n="26" xml:id="img_0026" break="yes"/>
-                                                <p type="legal_section"><label>(2) </label>
+                                                <p type="legal_section"><fw type="pageNum">146</fw><pb facs="#facs_26" n="26" xml:id="img_0026" break="yes"/><label>(2) </label>
                                                   Inwieweit auch die Behörden der Länder und
                                                   Gemeinden die Mitwirkung des Bundesheeres zu den
                                                   im Artikel 69, Absatz 2, erwähnten Zwecken
@@ -1596,12 +1598,12 @@
                                           <p type="legal_section">Die Militärgerichtsbarkeit ist -
                                                 außer für Kriegszeiten — aufgehoben.</p>
                                     </div>
-                                    <fw type="pageNum">147</fw>
                               </div>
                               <div type="section">
+                                    <fw type="pageNum">147</fw>
                                     <pb facs="#facs_27" n="27" xml:id="img_0027" break="yes"/>
                                     <fw type="pageNum">33</fw>
-                                    <p> (Fortsetzung zu den gedruckten Exemplare)</p>
+                                    <p>(Fortsetzung zu den gedruckten Exemplare)</p>
                                     <head>B) Von der Gerichtsbarkeit des Bundes. </head>
                                     <div type="article">
                                           <head>Artikel 72. </head>
@@ -1636,12 +1638,12 @@
                                     <div type="article">
                                           <head>Artikel 74. </head>
                                           <p type="legal_section">Die Militärgerichtsbarkeit ist -
-                                                außer für Kriegszeiten aufgehoben.  </p>
+                                                außer für Kriegszeiten aufgehoben. </p>
                                     </div>
-                                    <fw type="pageNum">148</fw>
-                                    <pb facs="#facs_28" n="28" xml:id="img_0028" break="yes"/>
-                                    <fw type="pageNum">34</fw>
                                     <div type="article">
+                                          <fw type="pageNum">148</fw>
+                                          <pb facs="#facs_28" n="28" xml:id="img_0028" break="yes"/>
+                                          <fw type="pageNum">34</fw>
                                           <head>Artikel 75. </head>
                                           <p type="legal_section">Die Todesstrafe im ordentlichen
                                                 Verfahren ist abgeschafft. </p>
@@ -1691,23 +1693,21 @@
                                           <p type="legal_section"><label>(1)</label> Im
                                                 Gerichtsverfassungsgesetz wird eine Altersgrenze
                                                 bestimmt, nach deren Erreichung die Richter in den
-                                                dauernden Ruhe stand zu versetzen sind. </p>
-                                          <pb facs="#facs_29" n="29" xml:id="img_0029" break="yes"/>
-                                          <fw type="pageNum">35</fw>
-                                          <p type="legal_section"><label>(2)</label> Im übrigen
-                                                dürfen Richter nur in den vom Gesetze
-                                                vorgeschriebenen Fällen und Formen und auf Grund
-                                                eines förmlichen richterlichen Erkenntnisses ihres
-                                                Amtes entsetzt oder wider ihren Willen an eine
-                                                andere Stelle oder in den Ruhestand versetzt werden.
-                                                Diese Bestimmungen finden jedoch auf Uebersetzungen
-                                                und Versetzungen in den Ruhestand keine Anwendung,
-                                                die durch Veränderungen in der Verfassung der
-                                                Gerichte nötig werden. In einem solchen Falle wird
-                                                durch Gesetz festgestellt, innerhalb welchen
-                                                Zeitraumes Richter ohne die sonst vorgeschriebenen
-                                                Förmlichkeiten übersetzt und in den Ruhestand
-                                                versetzt werden können. </p>
+                                                dauernden Ruhe stand zu versetzen sind.</p>
+                                          <p type="legal_section"><pb facs="#facs_29" n="29" xml:id="img_0029" break="yes"/><fw type="pageNum">35</fw><label>(2)</label> Im übrigen dürfen
+                                                Richter nur in den vom Gesetze vorgeschriebenen
+                                                Fällen und Formen und auf Grund eines förmlichen
+                                                richterlichen Erkenntnisses ihres Amtes entsetzt
+                                                oder wider ihren Willen an eine andere Stelle oder
+                                                in den Ruhestand versetzt werden. Diese Bestimmungen
+                                                finden jedoch auf Uebersetzungen und Versetzungen in
+                                                den Ruhestand keine Anwendung, die durch
+                                                Veränderungen in der Verfassung der Gerichte nötig
+                                                werden. In einem solchen Falle wird durch Gesetz
+                                                festgestellt, innerhalb welchen Zeitraumes Richter
+                                                ohne die sonst vorgeschriebenen Förmlichkeiten
+                                                übersetzt und in den Ruhestand versetzt werden
+                                                können. </p>
                                           <p type="legal_section"><label>(3)</label> Die zeitweise
                                                 Enthebung der Richter vom Amte darf nur durch
                                                 Verfügung des Gerichtsvorstandes oder der höheren
@@ -1744,13 +1744,9 @@
                                                 Gesetz zu bezeichnen hat, sowie bei allen
                                                 politischen Verbrechen und Vergehen entscheiden
                                                 Geschworene über die Schuld des Angeklagten.</p>
-                                          <fw type="pageNum">149</fw>
-                                          <pb facs="#facs_30" n="30" xml:id="img_0030" break="yes"/>
-                                          <fw type="pageNum">36</fw>
-                                          <p type="legal_section"><label>(3)</label> Im
-                                                Strafverfahren wegen niederer Verbrechen und
-                                                Vergehen nehmen Schöffen an der Rechtsprechung teil.
-                                          </p>
+                                          <p type="legal_section"><fw type="pageNum">149</fw><pb facs="#facs_30" n="30" xml:id="img_0030" break="yes"/><fw type="pageNum">36</fw><label>(3)</label> Im Strafverfahren wegen
+                                                niederer Verbrechen und Vergehen nehmen Schöffen an
+                                                der Rechtsprechung teil. </p>
                                     </div>
                                     <div type="article">
                                           <head>Artikel 82 </head>
@@ -1798,10 +1794,8 @@
                                     <p type="legal_section"><label>(1)</label> Die Mitglieder des
                                           Landtages geniessen die gleiche Immunität wie die
                                           Mitglieder des Nationalrates, wobei die Bestimmungen des
-                                          Artikels 43 sinngemäß Anwendung finden. </p>
-                                    <pb facs="#facs_31" n="31" xml:id="img_0031" break="yes"/>
-                                    <fw type="pageNum">37</fw>
-                                    <p type="legal_section"><label>(2)</label> Die Bestimmungen der
+                                          Artikels 43 sinngemäß Anwendung finden.</p>
+                                    <p type="legal_section"><pb facs="#facs_31" n="31" xml:id="img_0031" break="yes"/><fw type="pageNum">37</fw><label>(2)</label> Die Bestimmungen der
                                           Artikel 24 und 25 gelten auch für die Sitzungen der
                                           Landtage und ihrer Ausschüsse, </p>
                               </div>
@@ -1850,10 +1844,10 @@
                                           von zwei Dritteln aller abgegebenen Stimmen beschlossen
                                           werden</p>
                               </div>
-                              <fw type="pageNum">150</fw>
-                              <pb facs="#facs_32" n="32" xml:id="img_0032" break="yes"/>
-                              <fw type="pageNum">38</fw>
                               <div type="article">
+                                    <fw type="pageNum">150</fw>
+                                    <pb facs="#facs_32" n="32" xml:id="img_0032" break="yes"/>
+                                    <fw type="pageNum">38</fw>
                                     <head>Artikel 90. </head>
                                     <p type="legal_section"><label>(1)</label> Jeder Landtag kann
                                           auf Antrag der Bundesregierung mit Zustimmung des
@@ -1931,7 +1925,7 @@
                                           Landeshauptmannes.</p>
                               </div>
                               <div type="article">
-                                    <p> (Artikel 95 und 96 fallen aus.) </p>
+                                    <p type="legal_section"> (Artikel 95 und 96 fallen aus.) </p>
                               </div>
                               <div type="article">
                                     <head>Artikel 97. </head>
@@ -1940,10 +1934,10 @@
                                           Wirkungskreises getroffen werden und sind der
                                           Bundesregierung unverzüglich anzuzeigen. </p>
                                     <p>Einlage.</p>
-                                    <fw type="pageNum">151</fw>
                               </div>
                         </div>
                         <div type="section">
+                              <fw type="pageNum">151</fw>
                               <pb facs="#facs_34" n="34" xml:id="img_0034" break="yes"/>
                               <head>Fünfter Abschnitt. </head>
                               <head>Von der Rechnungskontrolle des Bundes. </head>
@@ -1985,7 +1979,7 @@
                               <div type="article">
                                     <head>Artikel 100. </head>
                                     <p type="legal_section"><label>(1)</label> Der Präsident des
-                                          Rechnungshofes ist in bezug auf Verant-<pb facs="#facs_35" n="35" xml:id="img_0035" break="no"/><fw type="pageNum">41</fw> wortlichkeit den Mitgliedern
+                                          Rechnungshofes ist in bezug auf Verant<pb facs="#facs_35" n="35" xml:id="img_0035" break="no"/><fw type="pageNum">41</fw> wortlichkeit den Mitgliedern
                                           der Bundesregierung gleichgestellt. </p>
                                     <p type="legal_section"><label>(2)</label> Er kann durch
                                           Beschluss des Nationalrates abberufen werden. </p>
@@ -2024,18 +2018,18 @@
                                           Angehörigen zum Zwecke haben. </p>
                               </div>
                               <div type="article">
-                                    <p>(Artikel 104, Artikel 105 und Artickel 106 fallen aus.) </p>
+                                    <p type="legal_section">(Artikel 104, Artikel 105 und Artickel
+                                          106 fallen aus.) </p>
                               </div>
                               <div type="article">
                                     <head>Artikel 107. </head>
                                     <p type="legal_section">Die näheren Bestimmungen über die
                                           Tätigkeit des Rechnungshofes erfolgen durch
                                           Bundesgesetz.</p>
-                                    <p type="legal_section"><fw type="pageNum">152</fw>
-                                    </p>
                               </div>
                         </div>
                         <div type="section">
+                              <fw type="pageNum">152</fw>
                               <pb facs="#facs_36" n="36" xml:id="img_0036" break="yes"/>
                               <fw type="pageNum">42</fw>
                               <head>Sechster Abschnitt. </head>
@@ -2083,10 +2077,10 @@
                                                 Angelegenheiten: <list>
                                                   <label>1.</label>
                                                   <item> über die den ordentlichen Gerichten die
-                                                  Entscheidung zusteht;  </item>
+                                                  Entscheidung zusteht; </item>
                                                   <label>2.</label>
                                                   <item>die zur Kompetenz des
-                                                  Verfassungsgerichtshofes gehören; </item>
+                                                  Verfassungsgerichtshofes gehören;</item>
                                                   <pb facs="#facs_37" n="37" xml:id="img_0037" break="yes"/>
                                                   <fw type="pageNum">43</fw>
                                                   <label>3.</label>
@@ -2096,11 +2090,11 @@
                                                   <label>4.</label>
                                                   <item> in denen und insoweit die
                                                   Verwaltungsbehörden nach freiem Ermessen
-                                                  vorzugehen haben.   </item>
+                                                  vorzugehen haben. </item>
                                                 </list></p>
                                     </div>
                                     <div type="article">
-                                          <p>(Artikel 141 fällt aus.)</p>
+                                          <p type="legal_section">(Artikel 141 fällt aus.)</p>
                                     </div>
                                     <div type="article">
                                           <head>Artikel 142. </head>
@@ -2138,11 +2132,11 @@
                                           <p type="legal_section"><label>(3)</label> Wenigstens die
                                                 Hälfte der Mitglieder muss die Eignung zum
                                                 Richteramte haben.</p>
-                                          <fw type="pageNum">153</fw>
                                     </div>
-                                    <pb facs="#facs_38" n="38" xml:id="img_0038" break="yes"/>
-                                    <fw type="pageNum">44</fw>
                                     <div type="article">
+                                          <fw type="pageNum">153</fw>
+                                          <pb facs="#facs_38" n="38" xml:id="img_0038" break="yes"/>
+                                          <fw type="pageNum">44</fw>
                                           <head>Artikel 145 </head>
                                           <p type="legal_section">Der Präsident, der Vizepräaident
                                                 und die Hälfte der Mitglieder des
@@ -2176,7 +2170,7 @@
                                                 entscheidet ferner: Kompetenzkonflikte <list>
                                                   <label>a) </label>
                                                   <item> zwischen Gerichten und Verwaltungsbehörden
-                                                  des Bundes oder der Länder  </item>
+                                                  des Bundes oder der Länder </item>
                                                   <label>b) </label>
                                                   <item> zwischen dem Verwaltungsgerichtshof und den
                                                   ordentlichen Gerichten, </item>
@@ -2191,15 +2185,9 @@
                                           <p type="legal_section"><label>(1)</label> Der
                                                 Verfassungsgerichtshof entscheidet über
                                                 Gesetzwidrigkeit von Verordnungen einer Bundes -
-                                                oder Landesbehörde auf Antrag eines Gerichtes;</p>
-                                          <pb facs="#facs_39" n="39" xml:id="img_0039" break="yes"/>
-                                          <fw type="pageNum">45</fw>
-                                          <p type="legal_section"> über Gesetzwidrigkeit von
-                                                Verordnungen einer Landesbehörde auch auf Antrag der
-                                                Bundesregierung; </p>
-                                          <p type="legal_section">über Gesetzwidrigkeit von
-                                                Verordnungen der Bundesbehörden auch auf Antrag
-                                                einer Landesregierung. </p>
+                                                oder Landesbehörde auf Antrag eines Gerichtes;<pb facs="#facs_39" n="39" xml:id="img_0039" break="yes"/><fw type="pageNum">45</fw>über
+                                                Gesetzwidrigkeit von Verordnungen einer
+                                                Landesbehörde auch auf Antrag der Bundesregierung; </p>
                                           <p type="legal_section"><label>(2)</label> Das
                                                 stattgebende Erkenntnis des Verfassungsgerichtshofes
                                                 bewirkt die Aufhebung der gesetzwidrigen Verordnung
@@ -2242,8 +2230,8 @@
                                     <div type="article">
                                           <head>Artikel 152. </head>
                                           <p type="legal_section"><label>(1)</label> Der
-                                                Verfassungsgerichtshof entscheidet über die Ver-<fw type="pageNum">154</fw><pb facs="#facs_40" n="40" xml:id="img_0040" break="no"/><fw type="pageNum">46</fw> antwortlichkeit: <list>
-                                                  <label>a)  </label>
+                                                Verfassungsgerichtshof entscheidet über die Ver<fw type="pageNum">154</fw><pb facs="#facs_40" n="40" xml:id="img_0040" break="no"/><fw type="pageNum">46</fw>antwortlichkeit: <list>
+                                                  <label>a) </label>
                                                   <item>des Bundespräsidenten, </item>
                                                   <label>b) </label>
                                                   <item> der Mitglieder der Bundesregierung und der
@@ -2257,7 +2245,7 @@
                                                   <item> wegen voreätzlicher oder grobfahrlässiger
                                                   Verletzung der Bundesverfassung durch den
                                                   Bundespräsidenten auf einen Antrag der
-                                                  Bundesversammlung;  </item>
+                                                  Bundesversammlung; </item>
                                                   <label>2.</label>
                                                   <item>wegen vorsätzlicher oder grobfahrlässiger
                                                   Gesetzesverletzung der unter b genannten Personen
@@ -2265,7 +2253,7 @@
                                                   Nationalrates und wegen vorsätzlicher oder
                                                   grobfahrlässiger Gesetzesverletzung der unter o
                                                   genannten Personen durch ihre Amtstätigkeit auf
-                                                  Antrag des zuständigen Landtages;  </item>
+                                                  Antrag des zuständigen Landtages; </item>
                                                   <label>3.</label>
                                                   <item> über die Verantwortlichkeit des
                                                   Landeshauptmannes wegen vorsätzlicher und
@@ -2295,7 +2283,7 @@
                                                 Verfassungsgerichtshof entscheidet über Beschwerden
                                                 wegen Verletzung der verfassungsmässig
                                                 gewährleisteten politischen Rechte durch eine
-                                                Behörde nach Erschöpfung des admini-<pb facs="#facs_41" n="41" xml:id="img_0041" break="no"/><fw type="pageNum">47</fw> strativen
+                                                Behörde nach Erschöpfung des admini<pb facs="#facs_41" n="41" xml:id="img_0041" break="no"/><fw type="pageNum">47</fw>strativen
                                                 Instanzenzuges. </p>
                                           <p type="legal_section"><label>(2)</label> Das
                                                 stattgebende Erkenntnis des Verfassungsgerichtshofes
@@ -2341,16 +2329,17 @@
                                           <p type="legal_section">Die nähere Organisation und das
                                                 Verfahren des Verfassungsgerichtshofes wird durch
                                                 Bundesgesetz geregelt.</p>
-                                          <p type="legal_section"><fw type="pageNum">155</fw><pb facs="#facs_42" n="42" xml:id="img_0042" break="yes"/></p>
                                     </div>
                                     <div type="article">
+                                          <fw type="pageNum">155</fw>
+                                          <pb facs="#facs_42" n="42" xml:id="img_0042" break="yes"/>
                                           <head>Art. 92. </head>
                                           <p type="legal_section"><label>(1)</label> Im Bereiche der
                                                 Länder wird die vollziehende Gewalt des Bundes
                                                 entweder durch eigene Bundesbehörden (unmittelbare
                                                 Bundesverwaltung) oder durch die Landesregierungen
                                                 und die ihnen unterstellten Landesbehörden
-                                                (mittelbare Bundesverwaltung) ausgeübt.  </p>
+                                                (mittelbare Bundesverwaltung) ausgeübt. </p>
                                           <p type="legal_section"><label>(2)</label> Folgende
                                                 Angelegenheiten können unmittelbar durch
                                                 Bundesbehörden versehen werden: </p>
@@ -2358,14 +2347,14 @@
                                                 Auslande, Grenzvermarkung, Zollwesen, Bundesfinanzen
                                                 und Regelung der Finanzangelegenheiten zwischen Bund
                                                 und Ländern, Monopolwesen, Maß-, Gewichts-,
-                                                Normen-und  Punzierungswesen, Justizpflege,
+                                                Normen-und Punzierungswesen, Justizpflege,
                                                 Verkehrsresen, Bundesstraßen, Strom- und
                                                 Schiffahrtspolizei, Post-, Telegraphen- und
                                                 Fernsprechwesen, Bergwesen, militärische
                                                 Angelegenheiten, Angelegeneiten des Gewerbes und der
                                                 Industrie, Patentwesen, Ingenieur- und
                                                 Ziviltechnikerwesen, Regulierung und Instandhaltung
-                                                von Gewässern, Erbauung und  Erhaltung von
+                                                von Gewässern, Erbauung und Erhaltung von
                                                 Wasserstraßen, Vermessungswesen, Arbeiter- und
                                                 Angestelltenschutz, Sozialversicherungswesen,
                                                 Fürsorge für Kriegsteil nehmer und deren
@@ -2390,7 +2379,7 @@
                                                 zu den zuständigen Bundesministerien. </p>
                                     </div>
                                     <div type="article">
-                                          <head>Art. 92 a. </head>
+                                          <head>Art. 92a. </head>
                                           <p type="legal_section">Die Bestimmungen des Artikels 92,
                                                 Absatz 2 und 4, finden nicht Anwendung auf
                                                 Einrichtungen zur Besorgung der Geschäfte des Bundes
