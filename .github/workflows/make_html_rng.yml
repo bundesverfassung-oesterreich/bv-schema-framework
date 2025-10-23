@@ -86,6 +86,14 @@ jobs:
             -F 'fileToConvert=@./odd/b-vg.odd' \
             -o "$index_path"
           cp -r $rng_output_dir $HTML_OUTOUT_DIR
+      - name: provide schematron to check for uniqueness across files
+        run: |
+          schematron_src="./schematron/biblscope-uniqueness-validation.sch"
+          schematron_dst="${HTML_OUTOUT_DIR}schematron/"
+          if [[ ! -d $schematron_dst ]]; then
+            mkdir -p $schematron_dst
+          fi
+          cp $schematron_src $schematron_dst
       - name: prepare framework addon
         run: |
           ADDON_DIR="html/ADDON/"
