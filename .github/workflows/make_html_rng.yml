@@ -86,20 +86,6 @@ jobs:
             -F 'fileToConvert=@./odd/b-vg.odd' \
             -o "$index_path"
           cp -r $rng_output_dir $HTML_OUTOUT_DIR
-      - name: send odd get xsd
-        run: |
-          xsd_output_dir="./xsd/"
-          index_path="${xsd_output_dir}schema.zip"
-          if [[ -d "$xsd_output_dir" ]]; then rm -rf "$xsd_output_dir"; fi
-          mkdir "$xsd_output_dir"
-          echo "sending post request to teigarage"
-          curl -X 'POST' \
-            'https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/xsd%3Aapplication%3Axml-xsd/' \
-            -F 'fileToConvert=@./odd/b-vg.odd' \
-            -o "$index_path"
-          unzip "$index_path" -d "$xsd_output_dir"
-          rm "$index_path"
-          cp -r $xsd_output_dir $HTML_OUTOUT_DIR
       - name: prepare framework addon
         run: |
           ADDON_DIR="html/ADDON/"
