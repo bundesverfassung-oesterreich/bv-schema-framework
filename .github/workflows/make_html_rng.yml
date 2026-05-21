@@ -19,7 +19,7 @@ jobs:
       name: github-pages
     steps:
       - name: Perfom Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: check for framework changes & increment version nmbr
@@ -71,7 +71,7 @@ jobs:
             }
           EOM
       - name: Commit data
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: prepared new addon version
       - name: send odd get rng
